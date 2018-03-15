@@ -1,7 +1,7 @@
 require_relative 'setup'
 RSpec.describe "Bypass List", type: :feature do
-  let(:textarea_placeholder) do
-    'hello1.com, *.hello2.com, *.hello3.*'
+  let(:input_placeholder) do
+    'Add URL to bypass list'
   end
 
   before do
@@ -13,7 +13,7 @@ RSpec.describe "Bypass List", type: :feature do
 
 
   specify 'has placeholder' do
-    expect(page).to have_selector("textarea[placeholder='#{textarea_placeholder}']")
+    expect(page).to have_selector("input[placeholder='#{input_placeholder}']")
   end
 
   specify 'add netflix as enabled popular rule' do
@@ -28,8 +28,8 @@ RSpec.describe "Bypass List", type: :feature do
 
   specify "bypasses https://www.privateinternetaccess.com" do
     connect!
-    fill_in "bypasslist", with: "https://www.privateinternetaccess.com"
-    click_on t("SaveProxyBypassList")
+    fill_in_bypass_list "https://www.privateinternetaccess.com"
+    click_save_bypass_list
     visit "https://www.privateinternetaccess.com/api/client/services/https/status"
     resp = JSON.parse page.find("pre").text
     expect(resp).to include("connected" => false)
@@ -37,8 +37,8 @@ RSpec.describe "Bypass List", type: :feature do
 
   specify "does not bypass https://www.privateinternetaccess.com" do
     connect!
-    fill_in "bypasslist", with: "https://www.privateinternetaccess.co.uk"
-    click_on t("SaveProxyBypassList")
+    fill_in_bypass_list "https://www.privateinternetaccess.co.uk"
+    click_save_bypass_list
     visit "https://www.privateinternetaccess.com/api/client/services/https/status"
     resp = JSON.parse page.find("pre").text
     expect(resp).to include("connected" => true)

@@ -83,7 +83,7 @@ module SpecMixin
   end
 
   def fill_in_bypass_list(str)
-    find('textarea[name="bypasslist"]').set str
+    find('input[name="rule"]').set str
   end
 
   def click_setting_section(section)
@@ -97,7 +97,7 @@ module SpecMixin
   end
 
   def click_save_bypass_list
-    find('div#bypasslist .btn-save').click
+    find('input.add-btn').click
   end
 
   def click_back_button
