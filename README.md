@@ -27,7 +27,7 @@ This client allows a user to sign-in to their PIA account and choose a particula
  - Allow direct connections for whitelisted sites
 
 ## Usage
-Please start by ensuing that all the requirements in the [Requirements](#requirements) section of this README is installed.   
+Please start by ensuring that all the requirements in the [Requirements](#requirements) section of this README is installed.
 
 Building the client is as simple as running the build command:
 
@@ -79,7 +79,7 @@ by including gitinfo=yes at command line:
 
     $ browser=chrome build=webstore gitinfo=yes grunt
 
-The git infomation is shown on the extension settings page if the build was configured to
+The git information is shown on the extension settings page if the build was configured to
 include it. By default this feature is turned off but enabled when publishing a QA build
 to the webstore.
 
