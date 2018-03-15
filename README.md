@@ -6,7 +6,7 @@ README v0.1 / 10 March 2018
 Private Internet Access is the world's leading consumer VPN service. At Private Internet Access we believe in unfettered access for all, and as a firm supporter of the open source ecosystem we have made the decision to open source our VPN clients. For more information about the PIA service, please visit our website [privateinternetaccess.com](https://privateinternetaccess.com).
 
 # Chrome Web Extension
-This repo contains all the code needed to build and run the Private Internet Access Chrome Web Extension. This extension allows a user to access our network of proxies across the world from their web browser. Users can choose a proxy server location and connect to it directly from the extension. Additional privacy and security features include disabling microphone and camera, blocking flash and ip discovery through WebRTC, and can automatically block ads and tracking through PIA MACE™.  
+This repo contains all the code needed to build and run the Private Internet Access Chrome Web Extension. This extension allows a user to access our network of proxies across the world from their web browser. Users can choose a proxy server location and connect to it directly from the extension. Additional privacy and security features include disabling microphone and camera, blocking flash and ip discovery through WebRTC, and can automatically block ads and tracking through PIA MACE™.
 
 Please be advised that connecting to a proxy through our extension only protects traffic from that particular browser and not on applications that may be installed on the operating system itself.
 
@@ -27,7 +27,7 @@ This client allows a user to sign-in to their PIA account and choose a particula
  - Allow direct connections for whitelisted sites
 
 ## Usage
-Please start by ensuing that all the requirements in the [Requirements](#requirements) section of this README is installed.   
+Please start by ensuring that all the requirements in the [Requirements](#requirements) section of this README is installed.
 
 Building the client is as simple as running the build command:
 
@@ -79,7 +79,7 @@ by including gitinfo=yes at command line:
 
     $ browser=chrome build=webstore gitinfo=yes grunt
 
-The git infomation is shown on the extension settings page if the build was configured to
+The git information is shown on the extension settings page if the build was configured to
 include it. By default this feature is turned off but enabled when publishing a QA build
 to the webstore.
 
@@ -91,10 +91,10 @@ to the webstore.
 
 
 ### Testing
-**Ensure that the following environment variables are set before running tests**  
-**EXTENSION_ID**  
-**TEST_USERNAME**  
-**TEST_PASSWORD**  
+**Ensure that the following environment variables are set before running tests**
+**EXTENSION_ID**
+**TEST_USERNAME**
+**TEST_PASSWORD**
 
 There are feature specs written in Ruby ("./spec/features").
 To run these specs, "chromedriver" needs to be installed and available on $PATH.
@@ -118,7 +118,7 @@ that:
 
 ### Translations
 
-**Ensure that a `config/oneskyauthfile.json` exist before uploading translations. This file should contain the public and secret keys for your 1sky account**  
+**Ensure that a `config/oneskyauthfile.json` exist before uploading translations. This file should contain the public and secret keys for your 1sky account**
 **Ensure that the ONESKY_PROJECT_ID environment variable is set**
 
 The extension supports all locales found in `src/_locales`. The translations are
@@ -134,14 +134,14 @@ Translations for all locales can be downloaded with the following task:
 ### Deployment
 #### Deploying to the Chrome Webstore
 
-**Ensure the `webstore.pem` file exists.**  
-**Ensure the following environment variables are set before uploading to the webstore.**  
-**WEBSTORE_CLIENT_ID**  
-**WEBSTORE_CLIENT_SECRET**  
-**WEBSTORE_REFRESH_TOKEN**  
-**WEBSTORE_PUBLIC_ID**  
-**WEBSTORE_INTERNAL_ID**  
-**SLACK_HOOK**  
+**Ensure the `webstore.pem` file exists.**
+**Ensure the following environment variables are set before uploading to the webstore.**
+**WEBSTORE_CLIENT_ID**
+**WEBSTORE_CLIENT_SECRET**
+**WEBSTORE_REFRESH_TOKEN**
+**WEBSTORE_PUBLIC_ID**
+**WEBSTORE_INTERNAL_ID**
+**SLACK_HOOK**
 
 
 To publish the extension onto the webstore from the command line for either internal
