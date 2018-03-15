@@ -42,7 +42,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    rubyzip (1.2.0)
+    rubyzip (1.2.1)
     sass (3.4.19)
     selenium-webdriver (3.0.1)
       childprocess (~> 0.5)
