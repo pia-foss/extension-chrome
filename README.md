@@ -158,6 +158,7 @@ By contributing to this project you are agreeing to the terms stated in the Cont
 
 ## Authors
  - Edward Kim
+ - Pericles
 
 ## License
 This project is licensed under the [MIT (Expat) license](https://choosealicense.com/licenses/mit/), which can be found [here](/LICENSE).
