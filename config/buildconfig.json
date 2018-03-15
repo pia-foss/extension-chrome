@@ -1,0 +1,20 @@
+{
+  "debug": {
+    "options": {
+      "variables": {
+        "buildname":    "debug",
+        "coupon":       "PIACHROME",
+        "buildpath":    "./builds/debug"
+      }
+    }
+  },
+  "webstore": {
+    "options": {
+      "variables": {
+        "buildname":    "webstore",
+        "coupon":       "PIACHROME",
+        "buildpath":    "./builds/webstore"
+      }
+    }
+  }
+}

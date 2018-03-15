@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "ภาษา UI"
+  },
+  "UILanguageTooltip": {
+    "message": "ภาษาที่ใช้โดยส่วนเสริมขณะแสดงข้อความ"
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "ยังกำลังดาวน์โหลดส่วนเสริมอยู่และไม่สามารถโหลดบันทึกการแก้จุดบกพร่อง"
+  },
+  "ReloadPage": {
+    "message": "รีโหลดเพจ"
+  },
+  "Extension": {
+    "message": "ส่วนเสริม"
+  },
+  "ResetPasswordText": {
+    "message": "รีเซ็ตรหัสผ่าน"
+  },
+  "DeleteDebugLog": {
+    "message": "ล้างบันทึก"
+  },
+  "SettingNotControllable": {
+    "message": "ส่วนเสริมไม่สามารถควบคุมการตั้งค่านี้"
+  },
+  "SettingControlledByOther": {
+    "message": "การตั้งค่านี้ถูกควบคุมโดยส่วนเสริมอื่น"
+  },
+  "AllowExtensionNotifications": {
+    "message": "อนุญาตการแจ้งเตือนทางเดสก์ท็อป"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "อนุญาตส่วนเสริมให้สร้างการแจ้งเตือนทางเดสก์ท็อปเมื่อมีสิ่งสำคัญเกิดขึ้น ไม่แนะนำให้ปิดการใช้งาน"
+  },
+  "Tracking": {
+    "message": "การติดตาม"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "ปิดใช้งานการตรวจสอบไฮเปอร์ลิงก์"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "ปิดใช้งานการตรวจสอบไฮเปอร์ลิงก์ ซึ่งเป็นคุณสมบัติ HTML ล่าสุดที่ออกแบบมาสำหรับแจ้งเตือนผู้สะกดรอยตามและบริการวิเคราะห์เมื่อคุณคลิกลิงก์"
+  },
+  "DebugMode": {
+    "message": "โหมดแก้จุดบกพร่อง"
+  },
+  "DebugModeTooltip": {
+    "message": "เขียนข้อความไปยังบันทึกจุดบกพร่อง กดปุ่ม ctrl แล้วตามด้วยปุ่ม d เพื่อแสดงบันทึกจุดบกพร่อง"
+  },
+  "DebugLogIsEmpty": {
+    "message": "บันทึกการแก้จุดบกพร่องว่างเปล่า"
+  },
+  "UsernamePlaceholder": {
+    "message": "ชื่อผู้ใช้"
+  },
+  "PasswordPlaceholder": {
+    "message": "รหัสผ่าน"
+  },
+  "TryAgain": {
+    "message": "ลองใหม่อีกครั้ง"
+  },
+  "LoginText": {
+    "message": "เข้าสู่ระบบ"
+  },
+  "SelectRegionText": {
+    "message": "เลือกภูมิภาค"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "ชื่อผู้ใช้และ/หรือรหัสผ่านไม่ถูกต้อง"
+  },
+  "NetworkError": {
+    "message": "คำขอเข้าสู่ระบบล้มเหลวเนื่องจากข้อผิดพลาดของเครือข่าย โปรดลองใหม่อีกครั้ง"
+  },
+  "OfflineError": {
+    "message": "คำขอเข้าสู่ระบบล้มเหลวเนื่องจากคุณออฟไลน์อยู่ โปรดตรวจสอบว่าคุณเชื่อมต่อกับอินเทอร์เน็ตหรือไม่"
+  },
+  "TimeoutError": {
+    "message": "คำขอเข้าสู่ระบบสิ้นสุดลงภายใน %{seconds} วินาที โปรดลองใหม่อีกครั้ง"
+  },
+  "AbortError": {
+    "message": "คำขอเข้าสู่ระบบถูกยกเลิกโดยเบราวเซอร์ โปรดลองใหม่อีกครั้ง"
+  },
+  "UnexpectedServerResponse": {
+    "message": "คำขอเข้าสู่ระบบตีกลับการตอบสนองที่ไม่คาดฝันจากเซิร์ฟเวอร์ (%{statusLine})"
+  },
+  "TooManyRequestsError": {
+    "message": "ล้มเหลวในการเข้าสู่ระบบหลายครั้ง โปรดลองใหม่ภายหลัง"
+  },
+  "CopyToClipboard": {
+    "message": "คัดลอกบันทึกจุดบกพร่อง"
+  },
+  "CopiedToClipboard": {
+    "message": "คัดลอกบันทึกจุดบกพร่องแล้ว"
+  },
+  "NoAccountQuestion": {
+    "message": "ไม่มีบัญชี?"
+  },
+  "JoinText": {
+    "message": "ลงทะเบียนบัญชี VPN"
+  },
+  "JoinURL": {
+    "message": "https://tha.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "เว็บไซต์ยอดนิยม"
+  },
+  "OtherWebsites": {
+    "message": "เว็บไซต์อื่นๆ"
+  },
+  "SettingsWarning": {
+    "message": "การตั้งค่าเหล่านี้ไม่ได้มีผลอยู่ในขณะนี้ และจะมีผลเมื่อคุณเชื่อมต่อกับพื้นที่"
+  },
+  "SettingsWarningConnected": {
+    "message": "การตั้งค่าเหล่านี้มีผลอยู่ และจะถูกเรียกคืนไปยังการตั้งค่าเริ่มต้นของ %{browser} เมื่อคุณเลิกเชื่อมต่อกับ %{region}"
+  },
+  "BypassWarning": {
+    "message": "คำขอเข้าถึงเว็บไซต์ซึ่งพบบน Bypass List ใช้ <span class=\"bold-underline\">การเชื่อมต่อโดยตรง</span> ซึ่ง <span class=\"bold-underline\">ไม่ได้รับ</span> การป้องกันจากPrivate Internet Access™"
+  },
+  "AccountSettingsText": {
+    "message": "ตั้งค่าบัญชี"
+  },
+  "AutoLoginURL": {
+    "message": "https://tha.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://tha.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "ช่วยเหลือและสนับสนุน"
+  },
+  "StatusText": {
+    "message": "สถานะ"
+  },
+  "OfflineText": {
+    "message": "ออฟไลน์"
+  },
+  "PleaseWait": {
+    "message": "กำลังโหลด โปรดรอสักครู่"
+  },
+  "Security": {
+    "message": "ความปลอดภัย"
+  },
+  "AdsTrackersProtection": {
+    "message": "ป้องกันโฆษณา, ตัวติดตามและมัลแวร์"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "MACE™ คืออะไร?"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ ช่วยปกป้องความเป็นส่วนตัวและความปลอดภัยของคุณโดยบล็อกเนื้อหาอันตราย ตัวติดตาม และโฆษณาต่างๆ"
+  },
+  "WebRTCLeakProtection": {
+    "message": "บล็อกการป้องกัน IP WebRTC"
+  },
+  "WebRTCTooltip": {
+    "message": "บล็อก %{browser} ไม่ให้เปิดเผยที่อยู่ IP ส่วนตัวและสาธารณะของคุณขณะใช้งาน WebRTC อยู่ ไม่แนะนำให้ปิดการใช้งาน"
+  },
+  "BlockAdobeFlash": {
+    "message": "บล็อก Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "บล็อก %{browser} ไม่ให้รับโปรแกรม Adobe Flash เนื่องจาก Adobe Flash สามารถเปิดเผยที่อยู่ IP สาธารณะของคุณ ไม่แนะนำให้ปิดการใช้งาน"
+  },
+  "BlockUTM": {
+    "message": "ลบพารามิเตอร์ UTM"
+  },
+  "BlockUTMTooltip": {
+    "message": "ลบพารามิเตอร์มอดูลติดตามของ Urchin (UTM) จาก URL ที่คุณคลิก พารามิเตอร์ UTM ใช้ติดตามข้อมูลการเข้าเว็บไซต์ของคุณ"
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "รายชื่อปล่อยผ่าน"
+  },
+  "SaveProxyBypassList": {
+    "message": "บันทึก"
+  },
+  "OKSaved": {
+    "message": "ตกลง บันทึกแล้ว"
+  },
+  "WelcomeToNewVersion": {
+    "message": "ยินดีต้อนรับสู่ %{appVersion}"
+  },
+  "ExtensionUpdated": {
+    "message": "อัปเดตส่วนเสริมแล้ว"
+  },
+  "OneRuleAdded": {
+    "message": "เพิ่มกฎ 1 ข้อแล้ว"
+  },
+  "NoRulesAdded": {
+    "message": "ไม่มีกฎที่เพิ่ม"
+  },
+  "MultipleRulesAdded": {
+    "message": "เพิ่มกฎ %{count} ข้อแล้ว"
+  },
+  "DebugLog": {
+    "message": "บันทึกการแก้จุดบกพร่อง"
+  },
+  "BlockNetworkPrediction": {
+    "message": "ปิดใช้งานการคาดการณ์เครือข่าย"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "ปิดใช้งาน %{browser} จากบริการคาดการณ์เครือข่าย ซึ่งสามารถแก้ปัญหาข้อสอบถาม DNS และเรียกข้อมูลเว็บเพจล่วงหน้าจากคอนเทนต์ที่พบในเพจที่คุณเยี่ยมชม"
+  },
+  "BlockSafeBrowsing": {
+    "message": "ปิดใช้งาน SafeBrowsing"
+  },
+  "ReadMore": {
+    "message": "อ่านเพิ่มเติม"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "ปิดใช้งาน %{browser} จากการเชื่อมต่อทิศทางไปยังบริการเครือข่ายซึ่งมีข้อกังวลด้านความเป็นส่วนตัวในการเก็บบันทึก PIA Mace™ ได้ทำการลดความเสี่ยงโดยการปิดใช้งานบริการนี้"
+  },
+  "BlockLocationAccess": {
+    "message": "บล็อกการใช้ตำแหน่งที่ตั้ง"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "บล็อกเว็บไซต์จากการเข้าถึงข้อมูลเกี่ยวกับตำแหน่งที่ตั้งของคุณ"
+  },
+  "BlockHTTPReferer": {
+    "message": "ปิดใช้งานการส่งต่อเว็บไซต์"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "ปิดใช้งาน %{browser} จากการส่งที่อยู่เว็บเพจปัจจุบันไปยังเว็บเพจอื่นเมื่อติดตามลิงก์"
+  },
+  "BlockThirdpartycookies": {
+    "message": "ปิดใช้งานคุกกี้บุคคลที่ 3"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "ปิดใช้งาน %{browser} จากการยอมรับคุกกี้จากเว็บไซต์บุคคลที่ 3 คุกกี้บุคคลที่ 3 อาจถูกใช้เพื่อติดตามการเยี่ยมชมเว็บไซต์ของคุณโดยบุคคลที่ 3 (เว็บไซต์หรือบริการเว็บ)"
+  },
+  "BlockCameraAccess": {
+    "message": "บล็อกการใช้กล้อง"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "บล็อกเว็บไซต์จากการเข้าถึงกล้องคอมพิวเตอร์ของคุณ"
+  },
+  "BlockMicrophoneAccess": {
+    "message": "บล็อกใช้ไมโครโฟน"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "บล็อกเว็บไซต์จากการเข้าถึงไมโครโฟนคอมพิวเตอร์ของคุณ"
+  },
+  "UseRegionLocale": {
+    "message": "พื้นที่ส่วนตัวและการตั้งค่าภาษา"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "การตั้งค่าสถานที่ตั้งและภาษาเริ่มต้นของเบราว์เซอร์จะถูกเก็บเป็นข้อมูลส่วนตัวโดยการแทนที่ด้วยการตั้งค่าสถานที่ตั้งและภาษาของสถานที่ปัจจุบัน"
+  },
+  "Privacy": {
+    "message": "ความเป็นส่วนตัว"
+  },
+  "OnText": {
+    "message": "เปิด"
+  },
+  "OffText": {
+    "message": "ปิด"
+  },
+  "CurrentRegionText": {
+    "message": "ภูมิภาคปัจจุบัน"
+  },
+  "ChangeExtensionSettings": {
+    "message": "ตั้งค่าส่วนขยาย"
+  },
+  "CannotUsePIAMessage": {
+    "message": "Private Internet Access ไม่สามารถทำงานได้เนื่องจากมีส่วนขยายอื่นที่กำลังควบคุมการตั้งค่าพร็อกซีของเบราว์เซอร์อยู่"
+  },
+  "ManageExtensions": {
+    "message": "จัดการส่วนขยาย"
+  },
+  "RegionName": {
+    "message": "ชื่อ"
+  },
+  "RegionLatency": {
+    "message": "ความหน่วงเวลา"
+  },
+  "SortBy": {
+    "message": "เรียงตาม:"
+  },
+  "CloseText": {
+    "message": "ปิด"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "Private Internet Access ไม่สามารถทำงานได้เนื่องจากเวอร์ชัน %{browser} ของคุณเก่า โปรดอัปเกรด %{browser} ของคุณเป็นเวอร์ชันล่าสุด"
+  },
+  "LoadingText": {
+    "message": "กำลังโหลด"
+  },
+  "LogoutText": {
+    "message": "ออกจากระบบ"
+  },
+  "AuthFailPageTitle": {
+    "message": "ข้อผิดพลาดการยืนยันตัวตน | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "ข้อผิดพลาดในการยืนยันตัวตน"
+  },
+  "AuthFailMessage": {
+    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็ว ๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br/><br/>สำหรับความช่วยเหลือและสอบถาม กรุณาติดต่อ <a href=\"https://helpdesk.privateinternetaccess.com\">ทีมช่วยเหลือ</a>"
+  },
+  "ConnectionFailPageTitle": {
+    "message": "ข้อผิดพลาดการเชื่อมต่อ | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "เกิดข้อผิดพลาดในการเชื่อมต่อ"
+  },
+  "ConnectionFailMessage": {
+    "message": "คุณอาจสูญเสียการเชื่อมต่ออินเทอร์เน็ต การเชื่อมต่อของคุณอาจถูกรบกวนชั่วคราว หรือเซิร์ฟเวอร์ Private Internet Access ที่คุณเชื่อมต่ออาจมีปัญหาในการเชื่อมต่อ"
+  },
+  "YouAreConnectedTo": {
+    "message": "คุณกำลังเชื่อมต่อไปยัง %{region}"
+  },
+  "YouAreNotConnected": {
+    "message": "คุณไม่มีการเชื่อมต่ออยู่ในขณะนี้"
+  },
+  "enabled": {
+    "message": "เปิดใช้งาน"
+  },
+  "disabled": {
+    "message": "ปิดใช้งาน"
+  },
+  "RememberMe": {
+    "message": "จดจำฉัน"
+  },
+  "us_california": {
+    "message": "แคลิฟอร์เนีย สหรัฐอเมริกา"
+  },
+  "us2": {
+    "message": "สหรัฐอเมริกาตะวันออก"
+  },
+  "us1": {
+    "message": "สหรัฐอเมริกาตะวันตกกลาง"
+  },
+  "us_chicago": {
+    "message": "ชิคาโก้ สหรัฐอเมริกา"
+  },
+  "us_south_west": {
+    "message": "เท็กซัส สหรัฐอเมริกา"
+  },
+  "us_florida": {
+    "message": "ฟลอริดา สหรัฐอเมริกา"
+  },
+  "us_seattle": {
+    "message": "ซีแอตเทิล สหรัฐอเมริกา"
+  },
+  "us3": {
+    "message": "สหรัฐอเมริกา ตะวันตก"
+  },
+  "us_silicon_valley": {
+    "message": "ซิลิคอนแวลลีย์ สหรัฐอเมริกา"
+  },
+  "us_new_york_city": {
+    "message": "นิวยอร์ก สหรัฐอเมริกา"
+  },
+  "uk": {
+    "message": "ลอนดอน สหราชอาณาจักร"
+  },
+  "uk_southampton": {
+    "message": "เซาแทมป์ตัน สหราชอาณาจักร"
+  },
+  "ca": {
+    "message": "มอนทรีออล แคนาดา"
+  },
+  "ca_toronto": {
+    "message": "โตรอนโต แคนาดา"
+  },
+  "aus": {
+    "message": "ซิดนีย์ ออสเตรเลีย"
+  },
+  "aus_melbourne": {
+    "message": "เมลเบิร์น ออสเตรเลีย"
+  },
+  "nl": {
+    "message": "เนเธอร์แลนด์"
+  },
+  "swiss": {
+    "message": "สวิตเซอร์แลนด์"
+  },
+  "sweden": {
+    "message": "สวีเดน"
+  },
+  "france": {
+    "message": "ฝรั่งเศส"
+  },
+  "germany": {
+    "message": "เยอรมนี"
+  },
+  "ro": {
+    "message": "โรมาเนีย"
+  },
+  "turkey": {
+    "message": "ตุรกี"
+  },
+  "hk": {
+    "message": "ฮ่องกง"
+  },
+  "sg": {
+    "message": "สิงคโปร์"
+  },
+  "japan": {
+    "message": "ญี่ปุ่น"
+  },
+  "israel": {
+    "message": "อิสราเอล"
+  },
+  "mexico": {
+    "message": "เม็กซิโก"
+  },
+  "brazil": {
+    "message": "บราซิล"
+  },
+  "ireland": {
+    "message": "ไอร์แลนด์"
+  },
+  "italy": {
+    "message": "อิตาลี"
+  },
+  "nz": {
+    "message": "นิวซีแลนด์"
+  },
+  "denmark": {
+    "message": "เดนมาร์ก"
+  },
+  "in": {
+    "message": "อินเดีย"
+  },
+  "fi": {
+    "message": "ฟินแลนด์"
+  },
+  "no": {
+    "message": "นอร์เวย์"
+  },
+  "kr": {
+    "message": "เกาหลีใต้"
+  }
+}

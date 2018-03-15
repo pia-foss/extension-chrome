@@ -1,0 +1,28 @@
+{
+  "options": {
+    "transform": [["babelify", {"presets": ["es2015"], "plugins": ["transform-async-to-generator"]}]],
+    "browserifyOptions" : {
+      "paths": ["./tmp/js", "./src/js", "./src/jsx"]
+    }
+  },
+  "background": {
+    "src":  "./tmp/src/js/background.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/background.js"
+  },
+  "foreground": {
+    "src": "./src/js/foreground.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/foreground.js"
+  },
+  "clientsignin": {
+    "src": "./src/js/contentscripts/clientsignin.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/contentscripts/clientsignin.js"
+  },
+  "authfail": {
+    "src": "./src/js/errorpages/authfail.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/errorpages/authfail.js"
+  },
+  "connfail": {
+    "src": "./src/js/errorpages/connfail.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/errorpages/connfail.js"
+  }
+}

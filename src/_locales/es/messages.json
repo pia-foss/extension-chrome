@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "Idioma de la interfaz"
+  },
+  "UILanguageTooltip": {
+    "message": "El idioma que usa la extensión al mostrar el texto."
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "La extensión aún se está cargando y todavía no se puede cargar el registro de depuración."
+  },
+  "ReloadPage": {
+    "message": "Recargar página"
+  },
+  "Extension": {
+    "message": "Extensión"
+  },
+  "ResetPasswordText": {
+    "message": "Restablecer contraseña"
+  },
+  "DeleteDebugLog": {
+    "message": "Borrar registro"
+  },
+  "SettingNotControllable": {
+    "message": "La extensión no ha podido controlar esta configuración."
+  },
+  "SettingControlledByOther": {
+    "message": "Esta configuración está bajo control de otra extensión."
+  },
+  "AllowExtensionNotifications": {
+    "message": "Permitir notificaciones de escritorio"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "Permite que la extensión cree una notificación de escritorio cuando suceda algo importante. No es recomendable desactivarlo."
+  },
+  "Tracking": {
+    "message": "Rastreo"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "Deshabilitar auditoría de hipervínculo"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "Deshabilitar auditoría de hipervínculo, una característica HTML reciente para notificar de rastreadores y servicios de analíticas al hacer clic en un vínculo."
+  },
+  "DebugMode": {
+    "message": "Modo de depuración"
+  },
+  "DebugModeTooltip": {
+    "message": "Escribe mensajes en el registro de depuración. Pulsa la tecla \"Ctrl\" seguida la tecla \"d\" para mostrar el registro de depuración."
+  },
+  "DebugLogIsEmpty": {
+    "message": "El registro de depuración está vacío."
+  },
+  "UsernamePlaceholder": {
+    "message": "Nombre de usuario"
+  },
+  "PasswordPlaceholder": {
+    "message": "Contraseña"
+  },
+  "TryAgain": {
+    "message": "Intente de nuevo"
+  },
+  "LoginText": {
+    "message": "Iniciar sesión"
+  },
+  "SelectRegionText": {
+    "message": "Seleccione una región"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "El nombre de usuario o la contraseña son incorrectos."
+  },
+  "NetworkError": {
+    "message": "No se pudo iniciar sesión debido a un error de red. Vuelve a intentarlo más tarde."
+  },
+  "OfflineError": {
+    "message": "No se pudo iniciar sesión porque pareces desconectado. Comprueba si estás conectado a Internet."
+  },
+  "TimeoutError": {
+    "message": "La solicitud de inicio de sesión agotó el tiempo de espera tras %{seconds} segundos. Vuelve a intentarlo."
+  },
+  "AbortError": {
+    "message": "La solicitud de inicio de sesión fue cancelada por el navegador. Vuelve a intentarlo."
+  },
+  "UnexpectedServerResponse": {
+    "message": "La solicitud de inicio de sesión devolvió una respuesta inesperada del servidor (%{statusLine})."
+  },
+  "TooManyRequestsError": {
+    "message": "Demasiados intentos de inicio de sesión erróneos. Vuelve a intentarlo más tarde."
+  },
+  "CopyToClipboard": {
+    "message": "Copiar registro de depuración"
+  },
+  "CopiedToClipboard": {
+    "message": "Registro de depuración copiado"
+  },
+  "NoAccountQuestion": {
+    "message": "¿No tiene una cuenta?"
+  },
+  "JoinText": {
+    "message": "REGISTRAR UNA CUENTA DE VPN"
+  },
+  "JoinURL": {
+    "message": "https://mex.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "Sitios web populares"
+  },
+  "OtherWebsites": {
+    "message": "Otros sitios web"
+  },
+  "SettingsWarning": {
+    "message": "Estos ajustes no están activos. Solo tendrán efecto mientras estés conectado a una región."
+  },
+  "SettingsWarningConnected": {
+    "message": "Estos ajustes no están activos. Se restablecerán los ajustes predeterminados de %{browser} cuando te desconectes de %{region}."
+  },
+  "BypassWarning": {
+    "message": "Las solicitudes realizadas a sitios web que se encuentran en la lista de omisiones usan una <span class='bold-underline'>conexión directa</span> que <span class='bold-underline'>no</span> está protegida por Private Internet Access™. "
+  },
+  "AccountSettingsText": {
+    "message": "Ajustes de cuenta"
+  },
+  "AutoLoginURL": {
+    "message": "https://mex.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://mex.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "Ayuda y soporte"
+  },
+  "StatusText": {
+    "message": "Estado"
+  },
+  "OfflineText": {
+    "message": "SIN CONEXIÓN"
+  },
+  "PleaseWait": {
+    "message": "Cargando. Espera."
+  },
+  "Security": {
+    "message": "Seguridad"
+  },
+  "AdsTrackersProtection": {
+    "message": "Protección contra anuncios, rastreadores y malware"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "¿Qué es MACE™?"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ bloquea contenido malicioso, rastreadores y publicidad para ayudar a proyeger su privacidad y su seguridad."
+  },
+  "WebRTCLeakProtection": {
+    "message": "Bloquear detección de IP de WebRTC"
+  },
+  "WebRTCTooltip": {
+    "message": "Impide que %{browser} muestre tus direcciones IP públicas y privadas cuando se usa WebRTC. Te recomendamos no deshabilitarlo."
+  },
+  "BlockAdobeFlash": {
+    "message": "Bloquear Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "Impide que %{browser} ejecute Adobe Flash. Adobe Flash se puede usar para mostrar tu dirección IP pública. Te recomendamos no deshabilitarlo."
+  },
+  "BlockUTM": {
+    "message": "Eliminar parámetros UTM"
+  },
+  "BlockUTMTooltip": {
+    "message": "Eliminar parámetros de modelo de rastreo urchin (UTM) de las URL en las que haces clic. Los parámetros UTM se usan para rastrear la información sobre tu visita a un sitio web."
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "Lista de omisiones"
+  },
+  "SaveProxyBypassList": {
+    "message": "Guardar"
+  },
+  "OKSaved": {
+    "message": "De acuerdo. Guardado."
+  },
+  "WelcomeToNewVersion": {
+    "message": "Bienvenido a %{appVersion}"
+  },
+  "ExtensionUpdated": {
+    "message": "Extensión actualizada"
+  },
+  "OneRuleAdded": {
+    "message": "1 regla añadida"
+  },
+  "NoRulesAdded": {
+    "message": "No se han añadido reglas"
+  },
+  "MultipleRulesAdded": {
+    "message": "%{count} reglas añadidas"
+  },
+  "DebugLog": {
+    "message": "Registro de depuración"
+  },
+  "BlockNetworkPrediction": {
+    "message": "Deshabilitar predicción de red"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "Impide que %{browser} use un servicio de predicción de red, que puede resolver con anterioridad consultas de DNS y extrae con anterioridad páginas web del contenido que se encuentra en la página web que visites."
+  },
+  "BlockSafeBrowsing": {
+    "message": "Desactivar SafeBrowsing"
+  },
+  "ReadMore": {
+    "message": "Más información"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "Impide que %{browser} realice conexiones de dirección a un servicio de red con inquietudes de privacidad acerca del mantenimiento de registros. PIA Mace™ deshabilita este servicio para mitigar el riesgo."
+  },
+  "BlockLocationAccess": {
+    "message": "Bloquea acceso a la ubicación"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "Bloquea el acceso de los sitios web a la información sobre tu ubicación física."
+  },
+  "BlockHTTPReferer": {
+    "message": "Deshabilitar remitente de sitio web"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "Impide que %{browser} envíe la dirección de la página web actual a otra página web al seguir un vínculo."
+  },
+  "BlockThirdpartycookies": {
+    "message": "Deshabilitar cookies de terceros"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "Impide que %{browser} acepte cookies de sitios web de terceros. Las cookies de terceros se usan para que un sitio web de terceros o un servicio web de terceros rastree tu visita a un sitio web determinado."
+  },
+  "BlockCameraAccess": {
+    "message": "Bloquea el acceso a la cámara"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "Bloquea los sitios web para impedir su acceso a la cámara de tu equipo."
+  },
+  "BlockMicrophoneAccess": {
+    "message": "Bloquea el acceso al micrófono"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "Bloquea los sitios web para impedir su acceso al micrófono de tu equipo."
+  },
+  "UseRegionLocale": {
+    "message": "Configuración regional y de idioma privada"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "La configuración regional y de idioma de tu navegador se mantienen privadas sustituyéndoas por la configuración regional y de idioma de la región actual."
+  },
+  "Privacy": {
+    "message": "Privacidad"
+  },
+  "OnText": {
+    "message": "Sí"
+  },
+  "OffText": {
+    "message": "No"
+  },
+  "CurrentRegionText": {
+    "message": "Región actual"
+  },
+  "ChangeExtensionSettings": {
+    "message": "Ajustes de extensión"
+  },
+  "CannotUsePIAMessage": {
+    "message": "No se puede usar Private Internet Access debido a que otra extensión está controlando los ajustes de proxy de sus navegadores."
+  },
+  "ManageExtensions": {
+    "message": "Administrar extensiones"
+  },
+  "RegionName": {
+    "message": "Nombre"
+  },
+  "RegionLatency": {
+    "message": "Latencia"
+  },
+  "SortBy": {
+    "message": "Ordenar por:"
+  },
+  "CloseText": {
+    "message": "Cerrar"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "Private Internet Access no se puede usar porque tu versión de %{browser} está obsoleta. Actualiza %{browser} a la versión más reciente."
+  },
+  "LoadingText": {
+    "message": "Cargando"
+  },
+  "LogoutText": {
+    "message": "Cerrar sesión"
+  },
+  "AuthFailPageTitle": {
+    "message": "Error de autenticación | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "Error de autenticación"
+  },
+  "AuthFailMessage": {
+    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema.<br><br>Para obtener ayuda y asistencia, ponte en contacto con nuestro <a href=\"https://helpdesk.privateinternetaccess.com\">equipo de asistencia</a>."
+  },
+  "ConnectionFailPageTitle": {
+    "message": "Error de conexión | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "Error de conexión"
+  },
+  "ConnectionFailMessage": {
+    "message": "Puede que hayas perdido la conectividad a Internet, la conexión se haya interrumpido temporalmente o el servidor de Private Internet Access al que te estás conectado tenga problemas de conectividad."
+  },
+  "YouAreConnectedTo": {
+    "message": "Estás conectado a %{region}"
+  },
+  "YouAreNotConnected": {
+    "message": "No estás conectado."
+  },
+  "enabled": {
+    "message": "habilitado"
+  },
+  "disabled": {
+    "message": "deshabilitado"
+  },
+  "RememberMe": {
+    "message": "Recordarme"
+  },
+  "us_california": {
+    "message": "EE. UU. California"
+  },
+  "us2": {
+    "message": "EE. UU. Este"
+  },
+  "us1": {
+    "message": "EE. UU. Medio Oeste"
+  },
+  "us_chicago": {
+    "message": "EE. UU. Chicago"
+  },
+  "us_south_west": {
+    "message": "EE. UU. Texas"
+  },
+  "us_florida": {
+    "message": "EE. UU. Florida"
+  },
+  "us_seattle": {
+    "message": "EE. UU. Seattle"
+  },
+  "us3": {
+    "message": "EE. UU. Oeste"
+  },
+  "us_silicon_valley": {
+    "message": "EE. UU. Silicon Valley"
+  },
+  "us_new_york_city": {
+    "message": "EE. UU. New York"
+  },
+  "uk": {
+    "message": "Reino Unido Londres"
+  },
+  "uk_southampton": {
+    "message": "Reino Unido Southampton"
+  },
+  "ca": {
+    "message": "Canadá Montreal"
+  },
+  "ca_toronto": {
+    "message": "Canadá Toronto"
+  },
+  "aus": {
+    "message": "Australia Sydney"
+  },
+  "aus_melbourne": {
+    "message": "Australia Melbourne"
+  },
+  "nl": {
+    "message": "Países Bajos"
+  },
+  "swiss": {
+    "message": "Suiza"
+  },
+  "sweden": {
+    "message": "Suecia"
+  },
+  "france": {
+    "message": "Francia"
+  },
+  "germany": {
+    "message": "Alemania"
+  },
+  "ro": {
+    "message": "Rumanía"
+  },
+  "turkey": {
+    "message": "Turquía"
+  },
+  "hk": {
+    "message": "Hong Kong"
+  },
+  "sg": {
+    "message": "Singapur"
+  },
+  "japan": {
+    "message": "Japón"
+  },
+  "israel": {
+    "message": "Israel"
+  },
+  "mexico": {
+    "message": "México"
+  },
+  "brazil": {
+    "message": "Brasil"
+  },
+  "ireland": {
+    "message": "Irlanda"
+  },
+  "italy": {
+    "message": "Italia"
+  },
+  "nz": {
+    "message": "Nueva Zelanda"
+  },
+  "denmark": {
+    "message": "Dinamarca"
+  },
+  "in": {
+    "message": "India"
+  },
+  "fi": {
+    "message": "Finlandia"
+  },
+  "no": {
+    "message": "Noruega"
+  },
+  "kr": {
+    "message": "Corea del Sur"
+  }
+}

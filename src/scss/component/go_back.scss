@@ -1,0 +1,82 @@
+//
+//  SCSS styles for markup in src/jsx/ui/go_back.jsx
+//
+@import "../colors";
+#template-content {
+    .back-row {
+        color: $black;
+        font-size: 12px;
+        overflow: auto;
+        border-bottom: solid 1px #F0F0F0;
+        .text {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 15px;
+            color: #555;
+            font-weight:500;
+            text-align:center;
+        }
+        .back-icon {
+            background-image: url('/images/back_2x.png');
+            background-repeat: no-repeat;
+            background-size: 24px;
+            background-position: 0 0;
+            width: 24px;
+            height: 24px;
+            margin: 4px 0px 10px 20px;
+            &:hover {
+                cursor: pointer;
+                background-position: 0 -24px;
+            }
+        }
+    }
+    .regionfilter {
+        padding: 5px 15px 10px 15px;
+        border-bottom: 1px solid #ddd;
+        border-top: 1px solid #fff;
+        margin: -1px 0px 0px 0px;
+        #list-icon {
+            background-image: url('/images/list_icon_2x.png');
+            background-repeat: no-repeat;
+            background-size: 38px;
+            background-position: center 0px;
+            background-color: #fff;
+            width: 38px;
+            height: 33px;
+            float:left;
+            border: 1px solid #ccc;
+            padding: 10px;
+            &:hover {
+                cursor: pointer;
+                background-position: center -31px;
+            }
+            &.active {
+                cursor: pointer;
+                background-position: center -62px;
+                border: 1px solid #39b54a;
+            }
+        }
+        #grid-icon {
+            background-image: url('/images/grid_icon_2x.png');
+            background-repeat: no-repeat;
+            background-size: 38px;
+            background-position: center 0px;
+            background-color: #fff;
+            width: 38px;
+            height: 33px;
+            float:left;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-left:-1px;
+            &:hover {
+                cursor: pointer;
+                background-position: center -31px;
+            }
+            &.active {
+                cursor: pointer;
+                background-position: center -62px;
+                border: 1px solid #39b54a;
+            }
+        }
+    }
+}

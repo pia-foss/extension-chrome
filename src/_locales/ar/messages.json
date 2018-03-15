@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "لغة واجهة المستخدم"
+  },
+  "UILanguageTooltip": {
+    "message": "اللغة المستخدمة من قبل الملحق عند عرض النص."
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "ما زال الامتداد بصدد التحميل وتعذر تحمسل سجل الأخطاء."
+  },
+  "ReloadPage": {
+    "message": "إعادة تحميل الصفحة"
+  },
+  "Extension": {
+    "message": "الملحق"
+  },
+  "ResetPasswordText": {
+    "message": "إعادة ضبط كلمة السر"
+  },
+  "DeleteDebugLog": {
+    "message": "محو السجل"
+  },
+  "SettingNotControllable": {
+    "message": "لا يمكن لهذا الملحق التحكم في هذا الإعداد."
+  },
+  "SettingControlledByOther": {
+    "message": "يتم التحكم في هذا الإعداد بواسطة ملحق آخر."
+  },
+  "AllowExtensionNotifications": {
+    "message": "السماح بإشعارات سطح المكتب"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "السماح للملحق بإنشاء إشعار سطح المكتب عند حدوث شيء مهم. لا ينصح بتعطيله."
+  },
+  "Tracking": {
+    "message": "التعقب"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "تعطيل تدقيق الارتباط التشعبي"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "تعطيل تدقيق الارتباط التشعبي، وهي ميزة HTML حديثة مصممة لإشعار أجهزة التعقب والخدمات التحليلية عند النقر على رابط."
+  },
+  "DebugMode": {
+    "message": "وضع التصحيح"
+  },
+  "DebugModeTooltip": {
+    "message": "اكتب الرسائل في سجل تصحيح الأخطاء. اضغط مفتاح \"ctrl\" متبوعًا بمفتاح \"d\" لعرض سجل تصحيح الأخطاء."
+  },
+  "DebugLogIsEmpty": {
+    "message": "سجل تصحيح الأخطاء فارغ."
+  },
+  "UsernamePlaceholder": {
+    "message": "اسم المستخدم"
+  },
+  "PasswordPlaceholder": {
+    "message": "كلمة المرور"
+  },
+  "TryAgain": {
+    "message": "إعادة المحاولة"
+  },
+  "LoginText": {
+    "message": "تسجيل الدخول"
+  },
+  "SelectRegionText": {
+    "message": "حدّد منطقة"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "اسم المستخدم و/أو كلمة المرور خطأ."
+  },
+  "NetworkError": {
+    "message": "فشل طلب تسجيل الدخول بسبب خطأ في الخادم. يرجى إعادة المحاولة."
+  },
+  "OfflineError": {
+    "message": "فشل طلب تسجيل الدخول لأنك تبدو غير متصل. يرجى التحقق من اتصالك بالإنترنت."
+  },
+  "TimeoutError": {
+    "message": "انتهت مهلة طلب تسجيل الدخول بعد %{seconds} ثوان. يرجى إعادة المحاولة."
+  },
+  "AbortError": {
+    "message": "تم إحباط طلب تسجيل الدخول من قبل المتصفح. يرجى إعادة المحاولة."
+  },
+  "UnexpectedServerResponse": {
+    "message": "فشل تسجيل الدخول بسبب استجابة غير متوقعة من الخادم (%{statusLine})"
+  },
+  "TooManyRequestsError": {
+    "message": "محاولات كثيرة لتسجيل الدخول. أعد المحاولة لاحقًا."
+  },
+  "CopyToClipboard": {
+    "message": "نسخ سجل التصحيح"
+  },
+  "CopiedToClipboard": {
+    "message": "تم نسخ سجل التصحيح"
+  },
+  "NoAccountQuestion": {
+    "message": "ليس لديك حساب؟"
+  },
+  "JoinText": {
+    "message": "سجّل الدخول لإنشاء حساب VPN"
+  },
+  "JoinURL": {
+    "message": "https://ara.privateinternetaccess.com/pages/buy-vpn"
+  },
+  "PopularWebsites": {
+    "message": "مواقع الإنترنت الشهيرة"
+  },
+  "OtherWebsites": {
+    "message": "مواقع الإنترنت الأخرى"
+  },
+  "SettingsWarning": {
+    "message": "هذه الإعدادات غير سارية. ستسري هذه الإعدادات فقط أثناء اتصالك بإحدى المناطق."
+  },
+  "SettingsWarningConnected": {
+    "message": "هذه الإعدادات سارية. وستتم إعادة هذه الإعدادات إلى الإعدادات الافتراضية لتطبيق %{browser} عند قطع الاتصال من %{region}."
+  },
+  "BypassWarning": {
+    "message": "تستخدم الطلبات المقدمة إلى مواقع الويب الموجودة في قائمة التجاوز<span class=\"bold-underline\"> اتصالًا مباشرًا</span> وهو <span class=\"bold-underline\">غير</span> محمي من قِبل ™Private Internet Access."
+  },
+  "AccountSettingsText": {
+    "message": "إعدادات الحساب"
+  },
+  "AutoLoginURL": {
+    "message": "https://ara.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://ara.privateinternetaccess.com/pages/client-support"
+  },
+  "SupportText": {
+    "message": "المساعدة والدعم"
+  },
+  "StatusText": {
+    "message": "الحالة"
+  },
+  "OfflineText": {
+    "message": "غير متصل"
+  },
+  "PleaseWait": {
+    "message": "جارٍ التحميل. يرجى الانتظار."
+  },
+  "Security": {
+    "message": "الحماية"
+  },
+  "AdsTrackersProtection": {
+    "message": "حماية من الإعلانات والمهاجمين والبرمجيات الضارة"
+  },
+  "MaceProtection": {
+    "message": "™PIA MACE"
+  },
+  "WhatIsMace": {
+    "message": "ما هو ™MACE؟"
+  },
+  "MaceTooltip": {
+    "message": "يساعد ™PIA MACE في حماية الخصوصية وأمنك من خلال حظر المحتوى الخبيث والمتتبعين والإعلانات."
+  },
+  "WebRTCLeakProtection": {
+    "message": "حظر حماية عناوين IP الخاصة بخدمة WebRTC"
+  },
+  "WebRTCTooltip": {
+    "message": "حظر %{browser} لمنع كشف عناوين IP العامة والخاصة عند استخدام WebRTC. لا ينصح بتعطيله."
+  },
+  "BlockAdobeFlash": {
+    "message": "حظر Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "حظر %{browser} من تشغيل Adobe Flash. يمكن أن يُستخدم Adobe Flash في الكشف عن عناوين IP العامة. لا ينصح بتعطيله."
+  },
+  "BlockUTM": {
+    "message": "إزالة معلمات UTM"
+  },
+  "BlockUTMTooltip": {
+    "message": "إزالة معلمات UTM من الروابط التي تضغط عليها. وتستخدم معلمات UTM لتتبع المعلومات حول زيارتك للمواقع على شبكة الإنترنت."
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "تجاوز القائمة"
+  },
+  "SaveProxyBypassList": {
+    "message": "حفظ"
+  },
+  "OKSaved": {
+    "message": "حسنًا. تم الحفظ"
+  },
+  "WelcomeToNewVersion": {
+    "message": "مرحبًا بك في %{appVersion}"
+  },
+  "ExtensionUpdated": {
+    "message": "تم تحديث الملحق"
+  },
+  "OneRuleAdded": {
+    "message": "تمت إضافة 1 قاعدة"
+  },
+  "NoRulesAdded": {
+    "message": "لم تتم إضافة قواعد"
+  },
+  "MultipleRulesAdded": {
+    "message": "تمت إضافة %{count} قواعد"
+  },
+  "DebugLog": {
+    "message": "سجل التصحيح"
+  },
+  "BlockNetworkPrediction": {
+    "message": "تعطيل التنبؤ بالشبكة"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "تعطيل %{browser} لمنع استخدام خدمة التنبؤ بشبكة التي تحل مسبقا استعلامات نظام أسماء النطاقات DNS وتجلب صفحات الويب مسبقا من المحتوى الموجود على صفحة الويب التي تزورها."
+  },
+  "BlockSafeBrowsing": {
+    "message": "تعطيل SafeBrowsing"
+  },
+  "ReadMore": {
+    "message": "المزيد"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "تعطيل %{browser} لمنع إجراء اتصالات الاتجاه إلى خدمة شبكة لها مخاوف تتعلق بالخصوصية حول حفظ السجلات. PIA Mace™ يقلل  من مخاطر تعطيل هذه الخدمة."
+  },
+  "BlockLocationAccess": {
+    "message": "حظر الوصول للموقع"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "يمنع مواقع الإنترنت من الوصول إلى معلومات عن موقعك الفعلي."
+  },
+  "BlockHTTPReferer": {
+    "message": "تعطيل محيل مواقع الويب"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "تعطيل %{browser} لمنع إرسال عنوان صفحة الويب الحالية إلى صفحة ويب أخرى عند اتباع رابط."
+  },
+  "BlockThirdpartycookies": {
+    "message": "تعطيل ملفات تعريف ارتباط الطرف الثالث"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "تعطيل %{browser} لمنع قبول كوكيهات من مواقع ويب تابعة لأطراف أخرى. يمكن استخدام الكوكيهات لتتبع زيارتك لموقع إنترنت من قبل ويب أطراف ثالثة أو خدمة إنترنت."
+  },
+  "BlockCameraAccess": {
+    "message": "حظر الوصول للكاميرا"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "حظر مواقع الويب من الوصول إلى كاميرا حاسوبك."
+  },
+  "BlockMicrophoneAccess": {
+    "message": "حظر الوصول للميكروفون"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "حظر مواقع الويب من الوصول إلى ميكروفون حاسوبك."
+  },
+  "UseRegionLocale": {
+    "message": "اللغة المحلية وإعدادات اللغة"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "يتم الحفاظ على سرية اللغة الافتراضية وإعدادات اللغة بمتصفحك من خلال استبدالها بلغة وإعدادات لغة المنطقة الحالية."
+  },
+  "Privacy": {
+    "message": "الخصوصية"
+  },
+  "OnText": {
+    "message": "مفعل"
+  },
+  "OffText": {
+    "message": "غير مفعل"
+  },
+  "CurrentRegionText": {
+    "message": "المنطقة الحالية"
+  },
+  "ChangeExtensionSettings": {
+    "message": "إعدادات الملحق"
+  },
+  "CannotUsePIAMessage": {
+    "message": "لا يمكن استخدام Private Internet Access بسبب وجود ملحق آخر يتحكم في إعدادات وكيل متصفحك."
+  },
+  "ManageExtensions": {
+    "message": "إدارة الملحقات"
+  },
+  "RegionName": {
+    "message": "الاسم"
+  },
+  "RegionLatency": {
+    "message": "التأخير"
+  },
+  "SortBy": {
+    "message": "فرز حسب:"
+  },
+  "CloseText": {
+    "message": "إغلاق"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "لا يمكن استخدام الوصول إلى الإنترنت الخاص نظرا لأن إصدارك من %{browser} قديم. يرجى ترقية %{browser} إلى أحدث إصدار."
+  },
+  "LoadingText": {
+    "message": "جارٍ التحميل"
+  },
+  "LogoutText": {
+    "message": "تسجيل الخروج"
+  },
+  "AuthFailPageTitle": {
+    "message": "خطأ في المصادقة | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "خطأ في المصادقة"
+  },
+  "AuthFailMessage": {
+    "message": "إذا قمت بتغيير كلمة مرورك مؤخرًا على موقع Private Internet Access الإلكتروني فقد تحل عملية إعادة إجراء عملية المصادقة هذا الخطأ.<br /><br />للحصول على المساعدة والدعم، اتصل بـ <a href=\"https://helpdesk.privateinternetaccess.com\">فريق الدعم</a>."
+  },
+  "ConnectionFailPageTitle": {
+    "message": "خطأ في الاتصال | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "خطأ في الاتصال"
+  },
+  "ConnectionFailMessage": {
+    "message": "قد تكون فقدت الاتصال بالإنترنت، أو انقطع الاتصال مؤقتًا، أو قد يكون خادم Private Internet Access الذي تحاول الاتصال به يواجه مشاكل في الاتصال."
+  },
+  "YouAreConnectedTo": {
+    "message": "أنت متصل بدولة %{region}"
+  },
+  "YouAreNotConnected": {
+    "message": "أنت لست متصلًا"
+  },
+  "enabled": {
+    "message": "تم التمكين"
+  },
+  "disabled": {
+    "message": "تم التعطيل"
+  },
+  "RememberMe": {
+    "message": "تذكرني"
+  },
+  "us_california": {
+    "message": "الولايات المتحدة - كاليفورنيا"
+  },
+  "us2": {
+    "message": "الولايات المتحدة - شرق"
+  },
+  "us1": {
+    "message": "الولايات المتحدة - وسط غرب"
+  },
+  "us_chicago": {
+    "message": "الولايات المتحدة - شيكاغو"
+  },
+  "us_south_west": {
+    "message": "الولايات المتحدة - تكساس"
+  },
+  "us_florida": {
+    "message": "الولايات المتحدة - فلوريدا"
+  },
+  "us_seattle": {
+    "message": "الولايات المتحدة - سياتل"
+  },
+  "us3": {
+    "message": "الولايات المتحدة - غرب"
+  },
+  "us_silicon_valley": {
+    "message": "الولايات المتحدة - وادي السيليكون"
+  },
+  "us_new_york_city": {
+    "message": "الولايات المتحدة - مدينة نيويورك"
+  },
+  "uk": {
+    "message": "المملكة المتحدة - لندن"
+  },
+  "uk_southampton": {
+    "message": "المملكة المتحدة - ساوثهامبتون"
+  },
+  "ca": {
+    "message": "كندا - مونتريال"
+  },
+  "ca_toronto": {
+    "message": "كندا - تورونتو"
+  },
+  "aus": {
+    "message": "أستراليا - سيدني"
+  },
+  "aus_melbourne": {
+    "message": "أستراليا - ملبورن"
+  },
+  "nl": {
+    "message": "هولندا"
+  },
+  "swiss": {
+    "message": "سويسرا"
+  },
+  "sweden": {
+    "message": "السويد"
+  },
+  "france": {
+    "message": "فرنسا"
+  },
+  "germany": {
+    "message": "ألمانيا"
+  },
+  "ro": {
+    "message": "رومانيا"
+  },
+  "turkey": {
+    "message": "تركيا"
+  },
+  "hk": {
+    "message": "هونغ كونغ"
+  },
+  "sg": {
+    "message": "سنغافورة"
+  },
+  "japan": {
+    "message": "اليابان"
+  },
+  "israel": {
+    "message": "إسرائيل"
+  },
+  "mexico": {
+    "message": "المكسيك"
+  },
+  "brazil": {
+    "message": "البرازيل"
+  },
+  "ireland": {
+    "message": "إيرلندا"
+  },
+  "italy": {
+    "message": "إيطاليا"
+  },
+  "nz": {
+    "message": "نيوزيلندا"
+  },
+  "denmark": {
+    "message": "الدانمارك"
+  },
+  "in": {
+    "message": "الهند"
+  },
+  "fi": {
+    "message": "فنلندا"
+  },
+  "no": {
+    "message": "النرويج"
+  },
+  "kr": {
+    "message": "كوريا الجنوبية"
+  }
+}

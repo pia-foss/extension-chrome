@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "UI 언어"
+  },
+  "UILanguageTooltip": {
+    "message": "텍스트를 표시할 때 확장 프로그램이 사용하는 언어."
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "확장을 아직 로드하고 있어서 디버그 로그를 로드할 수 없습니다."
+  },
+  "ReloadPage": {
+    "message": "페이지 다시 로드"
+  },
+  "Extension": {
+    "message": "확장 프로그램"
+  },
+  "ResetPasswordText": {
+    "message": "비밀번호 재설정"
+  },
+  "DeleteDebugLog": {
+    "message": "로그 지우기"
+  },
+  "SettingNotControllable": {
+    "message": "해당 확장 프로그램은 이 설정을 관리할 수 없습니다."
+  },
+  "SettingControlledByOther": {
+    "message": "다른 확장 프로그램이 이 설정을 관리하고 있습니다."
+  },
+  "AllowExtensionNotifications": {
+    "message": "데스크톱 알림 허용"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "중요한 사항이 발생하면 확장 프로그램이 데스크톱 알림을 보내도록 허용합니다. 이 옵션의\n 비활성화는 추천하지 않습니다."
+  },
+  "Tracking": {
+    "message": "추적"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "하이퍼링크 감사 비활성화"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "링크를 클릭할 때 트래커 및 분석 서비스를 알려주는 최신 HTML 기능인 하이퍼링크 감사를 비활성화합니다."
+  },
+  "DebugMode": {
+    "message": "디버그 모드"
+  },
+  "DebugModeTooltip": {
+    "message": "디버그 로그에 메시지를 기록합니다. 'ctrl' 키를 누르고 'd' 키를 누르면 디버그 로그가 표시됩니다."
+  },
+  "DebugLogIsEmpty": {
+    "message": "디버그 로그가 비어 있습니다."
+  },
+  "UsernamePlaceholder": {
+    "message": "사용자 이름"
+  },
+  "PasswordPlaceholder": {
+    "message": "비밀번호"
+  },
+  "TryAgain": {
+    "message": "다시 시도"
+  },
+  "LoginText": {
+    "message": "로그인"
+  },
+  "SelectRegionText": {
+    "message": "지역 선택"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "사용자 이름 및/또는 비밀번호가 잘못되었습니다."
+  },
+  "NetworkError": {
+    "message": "네트워크 오류로 로그인 요청이 실패했습니다. 다시 시도해주십시오."
+  },
+  "OfflineError": {
+    "message": "로그인 요청이 실패했습니다. 오프라인 상태인 것 같습니다. 인터넷에 연결되어 있는지 확인하십시오."
+  },
+  "TimeoutError": {
+    "message": "%{seconds}초 후 로그인 요청 시간이 초과했습니다. 다시 시도해주십시오."
+  },
+  "AbortError": {
+    "message": "브라우저가 로그인 요청을 중단했습니다. 다시 시도해주십시오."
+  },
+  "UnexpectedServerResponse": {
+    "message": "로그인 요청이 예기치 않은 서버 응답(%{statusLine})을 반환했습니다"
+  },
+  "TooManyRequestsError": {
+    "message": "로그인 실패가 너무 많았습니다. 나중에 다시 시도하십시오."
+  },
+  "CopyToClipboard": {
+    "message": "디버그 로그 복사"
+  },
+  "CopiedToClipboard": {
+    "message": "디버그 로그 복사 완료"
+  },
+  "NoAccountQuestion": {
+    "message": "계정이 없으세요?"
+  },
+  "JoinText": {
+    "message": "VPN 계정 가입"
+  },
+  "JoinURL": {
+    "message": "https://kor.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "인기 웹사이트"
+  },
+  "OtherWebsites": {
+    "message": "기타 웹사이트"
+  },
+  "SettingsWarning": {
+    "message": "이 설정은 적용되고 있지 않습니다. 지역에 연결될 때 적용됩니다."
+  },
+  "SettingsWarningConnected": {
+    "message": "이 설정은 적용되고 있습니다. %{region}에서 연결을 해제할 때 %{browser}의 기본 설정으로 복원됩니다."
+  },
+  "BypassWarning": {
+    "message": "우회 목록에 있는 웹사이트에 대한 요청은 Private Internet Access™의 보호를 <span class='bold-underline'>받지 않는</span> <span class='bold-underline'>직접 연결</span>을 사용합니다."
+  },
+  "AccountSettingsText": {
+    "message": "계정 설정"
+  },
+  "AutoLoginURL": {
+    "message": "https://kor.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://kor.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "도움말 및 지원"
+  },
+  "StatusText": {
+    "message": "상태"
+  },
+  "OfflineText": {
+    "message": "오프라인"
+  },
+  "PleaseWait": {
+    "message": "로드 중. 잠시만 기다려주십시오."
+  },
+  "Security": {
+    "message": "보안"
+  },
+  "AdsTrackersProtection": {
+    "message": "광고, 트래커, 맬웨어 방지"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "MACE™는 무엇입니까?"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™는 악성 콘텐츠, 트래커 및 광고를 차단해서 사용자의 개인정보와 보안을 보호합니다."
+  },
+  "WebRTCLeakProtection": {
+    "message": "WebRTC IP 보호 차단"
+  },
+  "WebRTCTooltip": {
+    "message": "WebRTC를 사용할 때 %{browser}이(가) 사용자의 공용 및 개인 IP 주소를 드러내는 것을 차단합니다. 비활성화를 권장하지 않습니다."
+  },
+  "BlockAdobeFlash": {
+    "message": "Adobe Flash 차단"
+  },
+  "AdobeFlashTooltip": {
+    "message": "%{browser}이(가) Adobe Flash를 실행하는 것을 차단합니다. Adobe Flash는 사용자의 공용 IP 주소를 드러낼 때 사용될 수 있습니다. 비활성화를 권장하지 않습니다."
+  },
+  "BlockUTM": {
+    "message": "UTM 매개 변수 제거"
+  },
+  "BlockUTMTooltip": {
+    "message": "클릭한 URL에서 어친 트래킹 모델(UTM) 매개 변수를 제거합니다. UTM 매개 변수는 웹사이트에 대한 방문 정보를 추적할 때 사용됩니다."
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "우회 목록"
+  },
+  "SaveProxyBypassList": {
+    "message": "저장"
+  },
+  "OKSaved": {
+    "message": "확인. 저장 완료"
+  },
+  "WelcomeToNewVersion": {
+    "message": "%{appVersion}에 환영합니다"
+  },
+  "ExtensionUpdated": {
+    "message": "확장 프로그램이 업데이트되었습니다"
+  },
+  "OneRuleAdded": {
+    "message": "1개의 규칙이 추가됨"
+  },
+  "NoRulesAdded": {
+    "message": "규칙이 추가되지 않음"
+  },
+  "MultipleRulesAdded": {
+    "message": "%{count}개의 규칙이 추가됨"
+  },
+  "DebugLog": {
+    "message": "디버그 로그"
+  },
+  "BlockNetworkPrediction": {
+    "message": "네트워크 예측 비활성화"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "DNS 쿼리를 사전에 확인하고 방문한 페이지에서 발견된 콘텐츠의 웹페이지를 미리 가져오는 네트워크 예측 서비스를 %{browser}이(가) 사용하지 않도록 합니다."
+  },
+  "BlockSafeBrowsing": {
+    "message": "안전 브라우징 비활성화"
+  },
+  "ReadMore": {
+    "message": "더 보기"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "%{browser}이(가) 로그를 보관해서 프라이버시를 침해할 우려가 있는 네트워크 서비스에 직접 연결을 하지 못하게 합니다. PIA Mace™는 이러한 서비스를 비활성화해서 리스크를 완화합니다."
+  },
+  "BlockLocationAccess": {
+    "message": "위치 접근 차단"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "웹사이트가 사용자의 물리적 위치 정보에 접근하는 것을 차단합니다."
+  },
+  "BlockHTTPReferer": {
+    "message": "웹사이트 참조 페이지 비활성화"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "링크를 팔로우할 때 %{browser}이(가) 현재 웹페이지의 주소를 다른 웹페이지에 보내지 않도록 합니다."
+  },
+  "BlockThirdpartycookies": {
+    "message": "타사 쿠키 비활성화"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "%{browser}이(가) 타사 웹사이트의 쿠키를 받지 않도록 합니다. 타사 쿠키는 사용자가 웹사이트를 방문할 때 타사 웹사이트 또는 웹 서비스가 추적하는 데 사용될 수 있습니다."
+  },
+  "BlockCameraAccess": {
+    "message": "카메라 접근 차단"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "웹사이트가 컴퓨터의 카메라에 접근하는 것을 차단합니다."
+  },
+  "BlockMicrophoneAccess": {
+    "message": "마이크 접근 차단"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "웹사이트가 컴퓨터의 마이크에 접근하는 것을 차단합니다."
+  },
+  "UseRegionLocale": {
+    "message": "비공개 로캘 및 언어 설정"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "브라우저의 기본 로캘 및 언어 설정을 현재 지역의 로캘 및 언어 설정으로 교체해서 비공개로 유지합니다."
+  },
+  "Privacy": {
+    "message": "개인정보"
+  },
+  "OnText": {
+    "message": "켬"
+  },
+  "OffText": {
+    "message": "끔"
+  },
+  "CurrentRegionText": {
+    "message": "현재 지역"
+  },
+  "ChangeExtensionSettings": {
+    "message": "확장 프로그램 설정"
+  },
+  "CannotUsePIAMessage": {
+    "message": "다른 확장 프로그램이 현재 브라우저의 프록시 설정을 제어하고 있어서 Private Internet Access를 사용할 수 없습니다."
+  },
+  "ManageExtensions": {
+    "message": "확장 프로그램 관리"
+  },
+  "RegionName": {
+    "message": "이름"
+  },
+  "RegionLatency": {
+    "message": "지연 시간"
+  },
+  "SortBy": {
+    "message": "정렬 기준:"
+  },
+  "CloseText": {
+    "message": "닫기"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "현재 %{browser}의 버전이 오래되어서 Private Internet Access를 사용할 수 없습니다. %{browser}을(를) 최신 버전으로 업그레이드하세요."
+  },
+  "LoadingText": {
+    "message": "불러오는 중"
+  },
+  "LogoutText": {
+    "message": "로그아웃"
+  },
+  "AuthFailPageTitle": {
+    "message": "인증 오류 | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "인증 오류"
+  },
+  "AuthFailMessage": {
+    "message": "최근 Private Internet Access 웹사이트에서 비밀번호를 변경한 경우 확장 프로그램을 다시 인증하면 이 오류가 수정될 수 있습니다.<br /><br />도움이 필요할 경우 당사의 <a href=\"https://helpdesk.privateinternetaccess.com\">지원팀</a>에 문의하십시오."
+  },
+  "ConnectionFailPageTitle": {
+    "message": "연결 오류 | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "연결 오류"
+  },
+  "ConnectionFailMessage": {
+    "message": "인터넷의 연결이 끊겼거나, 연결이 잠시 중단되었거나, 연결 중인 Private Internet Access에 연결 문제가 있을 수 있습니다."
+  },
+  "YouAreConnectedTo": {
+    "message": "%{region}에 연결되었습니다"
+  },
+  "YouAreNotConnected": {
+    "message": "연결되지 않았습니다"
+  },
+  "enabled": {
+    "message": "활성화됨"
+  },
+  "disabled": {
+    "message": "비활성화됨"
+  },
+  "RememberMe": {
+    "message": "ID 기억하기"
+  },
+  "us_california": {
+    "message": "미국 캘리포니아"
+  },
+  "us2": {
+    "message": "미국 동부"
+  },
+  "us1": {
+    "message": "미국 중서부"
+  },
+  "us_chicago": {
+    "message": "미국 시카고"
+  },
+  "us_south_west": {
+    "message": "미국 텍사스"
+  },
+  "us_florida": {
+    "message": "미국 플로리다"
+  },
+  "us_seattle": {
+    "message": "미국 시애틀"
+  },
+  "us3": {
+    "message": "미국 서부"
+  },
+  "us_silicon_valley": {
+    "message": "미국 실리콘밸리"
+  },
+  "us_new_york_city": {
+    "message": "미국 뉴욕 시"
+  },
+  "uk": {
+    "message": "영국 런던"
+  },
+  "uk_southampton": {
+    "message": "영국 사우샘프턴"
+  },
+  "ca": {
+    "message": "캐나다 몬트리올"
+  },
+  "ca_toronto": {
+    "message": "캐나다 토론토"
+  },
+  "aus": {
+    "message": "호주 시드니"
+  },
+  "aus_melbourne": {
+    "message": "호주 멜버른"
+  },
+  "nl": {
+    "message": "네덜란드"
+  },
+  "swiss": {
+    "message": "스위스"
+  },
+  "sweden": {
+    "message": "스웨덴"
+  },
+  "france": {
+    "message": "프랑스"
+  },
+  "germany": {
+    "message": "독일"
+  },
+  "ro": {
+    "message": "루마니아"
+  },
+  "turkey": {
+    "message": "터키"
+  },
+  "hk": {
+    "message": "홍콩"
+  },
+  "sg": {
+    "message": "싱가포르"
+  },
+  "japan": {
+    "message": "일본"
+  },
+  "israel": {
+    "message": "이스라엘"
+  },
+  "mexico": {
+    "message": "멕시코"
+  },
+  "brazil": {
+    "message": "브라질"
+  },
+  "ireland": {
+    "message": "아일랜드"
+  },
+  "italy": {
+    "message": "이탈리아"
+  },
+  "nz": {
+    "message": "뉴질랜드"
+  },
+  "denmark": {
+    "message": "덴마크"
+  },
+  "in": {
+    "message": "인도"
+  },
+  "fi": {
+    "message": "핀란드"
+  },
+  "no": {
+    "message": "노르웨이"
+  },
+  "kr": {
+    "message": "대한민국"
+  }
+}

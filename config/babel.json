@@ -1,0 +1,15 @@
+{
+  "options": {
+    "sourceMap": false,
+    "presets": ["react"]
+  },
+  "dist": {
+    "files": [{
+      "expand": true,
+      "cwd": "./src/jsx/",
+      "src": ["**/*.jsx"],
+      "dest": "./src/js/",
+      "ext": ".js"
+    }]
+  }
+}

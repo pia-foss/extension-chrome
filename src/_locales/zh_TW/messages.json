@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "UI 語言"
+  },
+  "UILanguageTooltip": {
+    "message": "這是擴充功能顯示文字時所使用的語言。"
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "擴充功能仍在讀取中，目前還沒擷取到錯誤偵測紀錄。"
+  },
+  "ReloadPage": {
+    "message": "重新載入頁面"
+  },
+  "Extension": {
+    "message": "擴充功能"
+  },
+  "ResetPasswordText": {
+    "message": "重置密碼"
+  },
+  "DeleteDebugLog": {
+    "message": "清除紀錄"
+  },
+  "SettingNotControllable": {
+    "message": "本擴充功能無法控制此設定。"
+  },
+  "SettingControlledByOther": {
+    "message": "此設定由另一擴充功能控制。"
+  },
+  "AllowExtensionNotifications": {
+    "message": "允許桌面通知"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "允許擴充功能在有重要事情發生時建立桌面通知。不建議停用。"
+  },
+  "Tracking": {
+    "message": "追蹤"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "停用超連結審查"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "停用超連結審查。超連結審查是一項新 HTML 功能，用來在您點進連結時通知追蹤工具及分析服務。"
+  },
+  "DebugMode": {
+    "message": "錯誤偵測模式"
+  },
+  "DebugModeTooltip": {
+    "message": "將訊息寫到錯誤偵測紀錄。按 Ctrl + D 鍵可顯示錯誤偵測紀錄。"
+  },
+  "DebugLogIsEmpty": {
+    "message": "錯誤偵測紀錄目前為空白。"
+  },
+  "UsernamePlaceholder": {
+    "message": "使用者名稱"
+  },
+  "PasswordPlaceholder": {
+    "message": "密碼"
+  },
+  "TryAgain": {
+    "message": "請再試一次"
+  },
+  "LoginText": {
+    "message": "登入"
+  },
+  "SelectRegionText": {
+    "message": "請選取一個區域"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "使用者名稱及/或密碼錯誤。"
+  },
+  "NetworkError": {
+    "message": "網路發生錯誤，目前無法登入，請再試一次。"
+  },
+  "OfflineError": {
+    "message": "登入失敗。您似乎處於離線狀態，請檢查您是否已連線到網際網路。"
+  },
+  "TimeoutError": {
+    "message": "登入要求已超逾 %{seconds} 秒的時限，請再試一次。"
+  },
+  "AbortError": {
+    "message": "瀏覽器終止了登入要求，請再試一次。"
+  },
+  "UnexpectedServerResponse": {
+    "message": "伺服器傳回未知的回應（%{statusLine}）"
+  },
+  "TooManyRequestsError": {
+    "message": "登入失敗次數太多，請稍後再試。"
+  },
+  "CopyToClipboard": {
+    "message": "複製錯誤偵測紀錄"
+  },
+  "CopiedToClipboard": {
+    "message": "已複製錯誤偵測紀錄"
+  },
+  "NoAccountQuestion": {
+    "message": "沒有帳號？"
+  },
+  "JoinText": {
+    "message": "註冊一個VPN帳號"
+  },
+  "JoinURL": {
+    "message": "https://cht.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "熱門網站"
+  },
+  "OtherWebsites": {
+    "message": "其他網站"
+  },
+  "SettingsWarning": {
+    "message": "這些設定並未生效，它們只會在連線至區域時生效。"
+  },
+  "SettingsWarningConnected": {
+    "message": "這些設定已生效。當您中斷%{region}連線時，它們便會回復 %{browser} 的預設設定。"
+  },
+  "BypassWarning": {
+    "message": "向繞路清單上的網頁傳送要求時是使用<span class=\"bold-underline\">不</span>受 Private Internet Access™ 保護的<span class=\"bold-underline\">直接連線</span>。"
+  },
+  "AccountSettingsText": {
+    "message": "帳戶設定"
+  },
+  "AutoLoginURL": {
+    "message": "https://cht.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://cht.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "協助與支援"
+  },
+  "StatusText": {
+    "message": "狀態"
+  },
+  "OfflineText": {
+    "message": "離線"
+  },
+  "PleaseWait": {
+    "message": "載入中，請稍候。"
+  },
+  "Security": {
+    "message": "安全性"
+  },
+  "AdsTrackersProtection": {
+    "message": "廣告、追蹤器及惡意程式防護"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "MACE™ 是什麼？"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ 透過封鎖惡意內容、追蹤器及廣告來協助您保障隱私及網路安全。"
+  },
+  "WebRTCLeakProtection": {
+    "message": "阻止 WebRTC IP 位址偵測"
+  },
+  "WebRTCTooltip": {
+    "message": "阻止 %{browser} 在使用 WebRTC 時披露您的公開及私人 IP 位址。不建議停用。"
+  },
+  "BlockAdobeFlash": {
+    "message": "封鎖 Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "阻止 %{browser} 運行 Adobe Flash。Adobe Flash 可以用來披露您的公開 IP 位址。不建議停用。"
+  },
+  "BlockUTM": {
+    "message": "移除 UTM 參數"
+  },
+  "BlockUTMTooltip": {
+    "message": "從您所點擊的網址移除 UTM（Urchin 追蹤模組）參數。UTM 參數用來追蹤您造訪網站的狀況。"
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com、*.hello2.com、*.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "繞道列表"
+  },
+  "SaveProxyBypassList": {
+    "message": "儲存"
+  },
+  "OKSaved": {
+    "message": "好的，已儲存。"
+  },
+  "WelcomeToNewVersion": {
+    "message": "歡迎使用 %{appVersion}"
+  },
+  "ExtensionUpdated": {
+    "message": "擴充功能已更新"
+  },
+  "OneRuleAdded": {
+    "message": "已新增 1 條規則"
+  },
+  "NoRulesAdded": {
+    "message": "目前未新增任何規則"
+  },
+  "MultipleRulesAdded": {
+    "message": "已新增 %{count} 條規則"
+  },
+  "DebugLog": {
+    "message": "錯誤偵測紀錄"
+  },
+  "BlockNetworkPrediction": {
+    "message": "停用網路預測"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "停用 %{browser} 的網路預測服務。這項服務會預先解析 DNS 查詢以及預先從您造訪的網頁中所發現的內容擷取網頁。"
+  },
+  "BlockSafeBrowsing": {
+    "message": "停用安全瀏覽功能"
+  },
+  "ReadMore": {
+    "message": "閱讀更多"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "不允許 %{browser} 直接連接存在隱私問題（會保留瀏覽紀錄）的網際網路服務。PIA Mace™ 透過停用該服務來降低風險。"
+  },
+  "BlockLocationAccess": {
+    "message": "封鎖位置存取權"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "封鎖網站存取您的地理位置資訊。"
+  },
+  "BlockHTTPReferer": {
+    "message": "停用網站參照位址"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "不允許 %{browser} 在點進網頁連結時將目前網頁的位址傳送給另一網頁。"
+  },
+  "BlockThirdpartycookies": {
+    "message": "停用第三方 Cookies"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "不允許 %{browser} 接受來自第三方網站的 Cookie。第三方 Cookie 可以讓第三方網站或網頁服務追蹤您造訪網站的狀況。"
+  },
+  "BlockCameraAccess": {
+    "message": "封鎖相機存取權"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "封鎖網站存取您電腦的相機。"
+  },
+  "BlockMicrophoneAccess": {
+    "message": "封鎖麥克風存取權"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "封鎖網站存取您電腦的麥克風。"
+  },
+  "UseRegionLocale": {
+    "message": "讓地理位置及語言設定保持私密"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "要讓瀏覽器的預設地理位置及語言設定保持私密，您需要用目前區域的地理位置及語言設定來取代它。"
+  },
+  "Privacy": {
+    "message": "隱私"
+  },
+  "OnText": {
+    "message": "開啟"
+  },
+  "OffText": {
+    "message": "關閉"
+  },
+  "CurrentRegionText": {
+    "message": "目前區域"
+  },
+  "ChangeExtensionSettings": {
+    "message": "擴充功能設定"
+  },
+  "CannotUsePIAMessage": {
+    "message": "Private Internet Access 無法使用，因為目前有另一個擴充功能正在控制您的瀏覽器代理伺服器設定。"
+  },
+  "ManageExtensions": {
+    "message": "管理擴充功能"
+  },
+  "RegionName": {
+    "message": "名稱"
+  },
+  "RegionLatency": {
+    "message": "延遲"
+  },
+  "SortBy": {
+    "message": "排序依據："
+  },
+  "CloseText": {
+    "message": "關閉"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "Private Internet Access 目前無法使用，因為您的 %{browser} 版本已過時。請將 %{browser} 提升至最新版本。"
+  },
+  "LoadingText": {
+    "message": "載入中"
+  },
+  "LogoutText": {
+    "message": "登出"
+  },
+  "AuthFailPageTitle": {
+    "message": "驗證錯誤 | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "驗證錯誤"
+  },
+  "AuthFailMessage": {
+    "message": "如果您最近曾在 Private Internet Access 網站上更改密碼，為擴充功能重新進行驗證應該能修正此錯誤。<br/><br/>若您需要協助與支援，請聯繫我們的<a href=\"https://helpdesk.privateinternetaccess.com\">支援團隊</a>。"
+  },
+  "ConnectionFailPageTitle": {
+    "message": "連線錯誤 | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "連線錯誤"
+  },
+  "ConnectionFailMessage": {
+    "message": "您的網路連線可能已中斷或暫時中斷，或者您所連接的 Private Internet Access 伺服器可能發生連線問題。"
+  },
+  "YouAreConnectedTo": {
+    "message": "您正在連線至%{region}"
+  },
+  "YouAreNotConnected": {
+    "message": "您尚未連線"
+  },
+  "enabled": {
+    "message": "已啟用"
+  },
+  "disabled": {
+    "message": "已停用"
+  },
+  "RememberMe": {
+    "message": "記住我"
+  },
+  "us_california": {
+    "message": "美國加州"
+  },
+  "us2": {
+    "message": "美國東岸"
+  },
+  "us1": {
+    "message": "美國中西部"
+  },
+  "us_chicago": {
+    "message": "美國芝加哥"
+  },
+  "us_south_west": {
+    "message": "美國德州"
+  },
+  "us_florida": {
+    "message": "美國佛羅里達州"
+  },
+  "us_seattle": {
+    "message": "美國西雅圖"
+  },
+  "us3": {
+    "message": "美國西岸"
+  },
+  "us_silicon_valley": {
+    "message": "美國矽谷"
+  },
+  "us_new_york_city": {
+    "message": "美國紐約市"
+  },
+  "uk": {
+    "message": "英國倫敦"
+  },
+  "uk_southampton": {
+    "message": "英國南安普敦"
+  },
+  "ca": {
+    "message": "加拿大蒙特利爾"
+  },
+  "ca_toronto": {
+    "message": "加拿大多倫多"
+  },
+  "aus": {
+    "message": "澳洲悉尼"
+  },
+  "aus_melbourne": {
+    "message": "澳洲墨爾本"
+  },
+  "nl": {
+    "message": "荷蘭"
+  },
+  "swiss": {
+    "message": "瑞士"
+  },
+  "sweden": {
+    "message": "瑞典"
+  },
+  "france": {
+    "message": "法國"
+  },
+  "germany": {
+    "message": "德國"
+  },
+  "ro": {
+    "message": "羅馬尼亞"
+  },
+  "turkey": {
+    "message": "土耳其"
+  },
+  "hk": {
+    "message": "香港"
+  },
+  "sg": {
+    "message": "新加坡"
+  },
+  "japan": {
+    "message": "日本"
+  },
+  "israel": {
+    "message": "以色列"
+  },
+  "mexico": {
+    "message": "墨西哥"
+  },
+  "brazil": {
+    "message": "巴西"
+  },
+  "ireland": {
+    "message": "愛爾蘭"
+  },
+  "italy": {
+    "message": "義大利 / 意大利"
+  },
+  "nz": {
+    "message": "紐西蘭"
+  },
+  "denmark": {
+    "message": "丹麥"
+  },
+  "in": {
+    "message": "印度"
+  },
+  "fi": {
+    "message": "芬蘭"
+  },
+  "no": {
+    "message": "挪威"
+  },
+  "kr": {
+    "message": "南韓"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "target": {
+    "options": {
+      "removeComments": true,
+      "collapseWhitespace": true
+    },
+    "files": {
+      "<%= grunt.config.get('buildpath') %>/html/foreground.html": "<%= grunt.config.get('buildpath') %>/html/foreground.html",
+      "<%= grunt.config.get('buildpath') %>/html/errorpages/connfail.html": "<%= grunt.config.get('buildpath') %>/html/errorpages/connfail.html",
+      "<%= grunt.config.get('buildpath') %>/html/errorpages/authfail.html": "<%= grunt.config.get('buildpath') %>/html/errorpages/authfail.html",
+      "<%= grunt.config.get('buildpath') %>/html/CHANGELOG.html": "<%= grunt.config.get('buildpath') %>/html/CHANGELOG.html"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "replacements": {
+    "options": {
+      "patterns": [
+        {"match": "buildname"       , "replacement": "<%= grunt.config.get('buildname') %>"},
+        {"match": "dateofbuild"     , "replacement": "<%= new Date(Date.now()).toUTCString() %>"},
+        {"match": "version"         , "replacement": "<%= grunt.file.read('./VERSION').trim() %>"},
+        {"match": "nodeEnvironment" , "replacement": "<%= grunt.config.data.env[grunt.config.get('buildname')]['NODE_ENV'] %>"},
+        {"match": "coupon"   , "replacement": "<%= grunt.config.get('coupon') %>" },
+        {"match": "gitcommit", "replacement": "<%= grunt.getCommit() %>"},
+        {"match": "gitbranch", "replacement": "<%= grunt.getBranch() %>"},
+        {"match": "freezeApp", "replacement": "<%= grunt.freezeApp() %>"},
+        {"match": "browser"  , "replacement": "<%= process.env.browser === 'opera' ? 'Opera' : 'Chrome' %>"
+        }]
+    },
+    "files": [
+      {"expand": false, "flatten": true, "src": "./src/js/background.js" , "dest": "./tmp/src/js/background.js"},
+      {"expand": false, "flatten": true, "src": "./src/js/util/buildinfo.js" , "dest": "./tmp/js/util/buildinfo.js"},
+      {"expand": false, "flatten": true, "src": "./src/js/util/regionlist.js", "dest": "./tmp/js/util/regionlist.js"},
+      {"expand": false, "flatten": true, "src": "./src/js/util/user.js"      , "dest": "./tmp/js/util/user.js"},
+      {"expand": false, "flatten": true, "src": "./src/manifest.json"        , "dest": "<%= grunt.config.get('buildpath') %>/manifest.json"},
+      {"expand": false, "flatten": true, "src": "./src/manifest.opera.json", "dest": "<%= grunt.config.get('buildpath') %>/manifest.opera.json"}
+    ]
+  }
+}

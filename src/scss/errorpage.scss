@@ -1,0 +1,97 @@
+@import "vendored/bootstrap/variables";
+@import "vendored/bootstrap/normalize";
+@import "vendored/bootstrap/mixins";
+@import "vendored/bootstrap/grid";
+@import "vendored/bootstrap/buttons";
+@import "colors";
+@import "roboto_font";
+
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+h1  {
+    margin: 10px 0;
+}
+#PIALogo {
+    margin-top: 75px;
+    margin-bottom: 150px;
+    text-align: center;
+}
+
+#PIALogo img {
+    max-width: 210px;
+}
+
+.btn-orange {
+    color: #543802 !important;
+    background-image: linear-gradient(-180deg, #FAD961 0%, #F9C152 6%, #F89033 88%, #F76B1C 100%) !important;
+    border: 1px solid #D1900D !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100px;
+    padding: 10px 15px;
+    &:focus, &:hover {
+        background-image: linear-gradient(-180deg, #FAD961 0%, #F9C152 25%, #F89033 100%) !important;
+        color: #543802 !important;
+        font-weight: 500;
+    }
+
+    &:active {
+        background-image: linear-gradient(0deg, #FAD961 0%, #F9C152 6%, #F89033 88%, #F76B1C 100%) !important;
+        color: #543802 !important;
+        font-weight: 500;
+    }
+}
+
+#title {
+    font-size: 2.75em;
+    margin-bottom: 0px !important;
+}
+
+#error {
+    color: #666;
+    font-size: 13px;
+    line-height: 2;
+}
+
+#message {
+    color: #818181;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0px 30px;
+}
+
+.container {
+    max-width: 720px;
+}
+
+.leftcontainer img {
+    max-width: 200px;
+}
+
+.leftcontainer, .rightcontainer {
+    text-align: center;
+    padding: 0px;
+}
+
+@media (min-width: 992px) {
+    #message {
+        padding: 0px;
+    }
+    .leftcontainer img {
+        max-width: 300px;
+    }
+    .leftcontainer img {
+        margin-right: 50px;
+    }
+    .leftcontainer {
+        text-align: right;
+    }
+    .rightcontainer {
+        text-align: left;
+    }
+}

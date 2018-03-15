@@ -1,0 +1,28 @@
+{
+  "options": {
+    "banner": "/* Private Internet Access(TM) browser extension (v<%= grunt.file.read('./VERSION').trim() %>) */\n",
+    "mangle": {"toplevel": true, "eval": false},
+    "compression": {"sequences": true, "dead_code": true, "conditionals": true, "booleans": true,
+		    "unused": true, "if_return": true, "warnings": true}
+  },
+  "background": {
+    "src": "<%= grunt.config.get('buildpath') %>/js/background.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/background.js"
+  },
+  "foreground": {
+    "src": "<%= grunt.config.get('buildpath') %>/js/foreground.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/foreground.js"
+  },
+  "authfail": {
+    "src": "<%= grunt.config.get('buildpath') %>/js/errorpages/authfail.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/errorpages/authfail.js"
+  },
+  "connfail": {
+    "src": "<%= grunt.config.get('buildpath') %>/js/errorpages/connfail.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/errorpages/connfail.js"
+  },
+  "clientsignin": {
+    "src": "<%= grunt.config.get('buildpath') %>/js/contentscripts/clientsignin.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/contentscripts/clientsignin.js"
+  }
+}

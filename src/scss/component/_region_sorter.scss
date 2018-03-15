@@ -1,0 +1,28 @@
+#change-region-template {
+    .caret {
+        margin-top: 8.5px;
+        float: right;
+    }
+}
+
+#dropdownMenu1 {
+    background: #fff;
+    outline: none;
+    span:first-child {
+        color: #999;
+    }
+}
+.dropdownMenu1:hover, .dropdownMenu1:active {
+    background: #f2f2f2;
+    outline: none;
+}
+.dropdown-menu, .dropdown-toggle {
+    width: 90%;
+    text-align: left;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: #e8f1e9;
+}
+.dropdown-menu span {
+    pointer-events: none;
+}

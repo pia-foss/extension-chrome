@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "Grænsefladesprog"
+  },
+  "UILanguageTooltip": {
+    "message": "Sproget, der bruges af udvidelsen, når der vises tekst."
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "Udvidelsen opdateres stadig og kan ikke indlæse fejlfindingsloggen endnu."
+  },
+  "ReloadPage": {
+    "message": "Genindlæs side"
+  },
+  "Extension": {
+    "message": "Forlængelse"
+  },
+  "ResetPasswordText": {
+    "message": "Nulstil kodeord"
+  },
+  "DeleteDebugLog": {
+    "message": "Ryd logfil"
+  },
+  "SettingNotControllable": {
+    "message": "Forlængelsen kan ikke styre denne indstilling."
+  },
+  "SettingControlledByOther": {
+    "message": "Denne indstilling styres af en anden forlængelse."
+  },
+  "AllowExtensionNotifications": {
+    "message": "Tillad desktopnotifikationer"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "Tillad forlængelsen at oprette en desktopnotifikation, når der sker noget vigtigt. Anbefales ikke at deaktivere."
+  },
+  "Tracking": {
+    "message": "Sporing"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "Deaktiver hyperlinkrevision"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "Deaktiver hyperlinkrevision, en ny HTML-funktion, der er designet til at underrette sporere og analytiske tjenester, når du klikker på et link."
+  },
+  "DebugMode": {
+    "message": "Fejlretningstilstand"
+  },
+  "DebugModeTooltip": {
+    "message": "Skriv beskeder til fejlretningslogfilen. Tryk på tasten 'ctrl', og derefter tasten 'd', for at vise fejlretningslogfilen."
+  },
+  "DebugLogIsEmpty": {
+    "message": "Denne fejlretningslogfil er tom."
+  },
+  "UsernamePlaceholder": {
+    "message": "Brugernavn"
+  },
+  "PasswordPlaceholder": {
+    "message": "Adgangskode"
+  },
+  "TryAgain": {
+    "message": "Prøv igen"
+  },
+  "LoginText": {
+    "message": "Log ind"
+  },
+  "SelectRegionText": {
+    "message": "Vælg en region"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "Brugernavn og/eller adgangskode er forkert."
+  },
+  "NetworkError": {
+    "message": "Anmoding om logon mislykkedes på grund af en netværksfejl. Prøv igen."
+  },
+  "OfflineError": {
+    "message": "Anmodning om logon mislykkedes, fordi du tilsyneladende er offline. Tjek, om du har forbindelse til internettet."
+  },
+  "TimeoutError": {
+    "message": "Anmodning om logon fik timeout efter %{seconds} sekunder. Prøv igen."
+  },
+  "AbortError": {
+    "message": "Anmodning om logon blev afbrudt af browseren. Prøv igen."
+  },
+  "UnexpectedServerResponse": {
+    "message": "Anmodning om logon gav et uventet serversvar (%{statusLine})"
+  },
+  "TooManyRequestsError": {
+    "message": "For mange mislykkede forsøg på at logge på. Prøv igen senere."
+  },
+  "CopyToClipboard": {
+    "message": "Kopier fejlretningslogfil"
+  },
+  "CopiedToClipboard": {
+    "message": "Fejlretningslogfil kopieret"
+  },
+  "NoAccountQuestion": {
+    "message": "Har du ikke en konto?"
+  },
+  "JoinText": {
+    "message": "TILMELD DIG EN VPN-KONTO"
+  },
+  "JoinURL": {
+    "message": "https://dnk.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "Populære hjemmesider"
+  },
+  "OtherWebsites": {
+    "message": "Andre hjemmesider"
+  },
+  "SettingsWarning": {
+    "message": "Disse indstillinger er ikke gældende. De vil være gældende når du er tilsluttet en region."
+  },
+  "SettingsWarningConnected": {
+    "message": "Disse indstillinger er sat i kraft. De vil blive gendannet til %{browser}s standardindstillinger, når du afbryder forbindelsen fra %{region}."
+  },
+  "BypassWarning": {
+    "message": "Anmodninger lavet til hjemmesider fundet på Bypass-listen, bruger en <span class=\"bold-underline\">direkte forbindelse</span> der <span class=\"bold-underline\">ikke</span> er beskyttet af Private Internet Access™."
+  },
+  "AccountSettingsText": {
+    "message": "Kontoindstillinger"
+  },
+  "AutoLoginURL": {
+    "message": "https://dnk.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://dnk.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "Hjælp og support"
+  },
+  "StatusText": {
+    "message": "Status"
+  },
+  "OfflineText": {
+    "message": "OFFLINE"
+  },
+  "PleaseWait": {
+    "message": "Loader. Vent venligst."
+  },
+  "Security": {
+    "message": "Sikkerhed"
+  },
+  "AdsTrackersProtection": {
+    "message": "Beskyttelse fra reklamer, trackers og malware"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "Hvad er MACE™?"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ hjælper med at beskytte dit privatliv og din sikkerhed ved at blokere ondsindet indhold, trackers og annoncer."
+  },
+  "WebRTCLeakProtection": {
+    "message": "Bloker WebRTC IP-detektion"
+  },
+  "WebRTCTooltip": {
+    "message": "Bloker %{browser} fra at afsløre dine offentlige og private IP-adresser, når WebRTC bruges. Anbefales ikke at deaktivere."
+  },
+  "BlockAdobeFlash": {
+    "message": "Bloker Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "Bloker %{browser} fra at køre Adobe Flash. Adobe Flash kan bruges til at afsløre din offentlige IP-adresse. Anbefales ikke at deaktivere."
+  },
+  "BlockUTM": {
+    "message": "Fjern UTM-parametre"
+  },
+  "BlockUTMTooltip": {
+    "message": "Fjern parametre for Urchin Tracking Model (UTM) fra de webadresser, du klikker på. UTM-parametre bruges til at spore oplysninger om dit besøg på en webside."
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "Bypass-liste"
+  },
+  "SaveProxyBypassList": {
+    "message": "Gem"
+  },
+  "OKSaved": {
+    "message": "OK. Gemt"
+  },
+  "WelcomeToNewVersion": {
+    "message": "Velkommen til %{appVersion}"
+  },
+  "ExtensionUpdated": {
+    "message": "Forlængelse opdateret"
+  },
+  "OneRuleAdded": {
+    "message": "1 regel tilføjet"
+  },
+  "NoRulesAdded": {
+    "message": "Ingen regler tilføjet"
+  },
+  "MultipleRulesAdded": {
+    "message": "%{count} regler tilføjet"
+  },
+  "DebugLog": {
+    "message": "Fejlretningslogfil"
+  },
+  "BlockNetworkPrediction": {
+    "message": "Deaktiver netværksforudsigelse"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "Deaktiver %{browser} fra at bruge en netværksforudsigelsestjeneste, der forudfortolker DNS-forespørgsler og forudindlæser websider fra det indhold, der findes på en webside, du besøger."
+  },
+  "BlockSafeBrowsing": {
+    "message": "Deaktiver SafeBrowsing"
+  },
+  "ReadMore": {
+    "message": "Læs mere"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "Deaktiver %{browser} fra at oprette retningsforbindelser til en netværkstjeneste, der har fortrolighedsproblemer angående logføring. PIA Mace™ mindsker risikoen ved at deaktivere denne service."
+  },
+  "BlockLocationAccess": {
+    "message": "Bloker adgang til placering"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "Bloker websider fra at få adgang til oplysninger om din fysiske placering."
+  },
+  "BlockHTTPReferer": {
+    "message": "Deaktiver websidehenviser"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "Deaktiver %{browser} fra at sende adressen på den aktuelle webside til en anden webside, når du følger et link."
+  },
+  "BlockThirdpartycookies": {
+    "message": "Deaktiver cookies fra tredjepart"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "Deaktiver %{browser} i at acceptere cookies fra tredjepartswebsider. Cookies fra tredjepart kan bruges til at spore dit besøg på en webside af en tredjepart (webside eller webtjeneste)."
+  },
+  "BlockCameraAccess": {
+    "message": "Bloker adgang til kamera"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "Bloker websider fra at få adgang til din computers kamera."
+  },
+  "BlockMicrophoneAccess": {
+    "message": "Bloker adgang til mikrofon"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "Bloker websider fra at få adgang til din computers mikrofon."
+  },
+  "UseRegionLocale": {
+    "message": "Private lokale og sprogindstillinger"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "Standard lokale og sprogindstillinger i din browser holdes private, ved at erstatte dem med indstillingerne for det aktuelle områdes lokale og sprog."
+  },
+  "Privacy": {
+    "message": "Fortrolighed"
+  },
+  "OnText": {
+    "message": "Til"
+  },
+  "OffText": {
+    "message": "Fra"
+  },
+  "CurrentRegionText": {
+    "message": "Aktuelle region"
+  },
+  "ChangeExtensionSettings": {
+    "message": "Udvidelsesindstillinger"
+  },
+  "CannotUsePIAMessage": {
+    "message": "Private Internet Access kan ikke bruges, fordi en anden udvidelse styrer din browsers proxyindstillinger."
+  },
+  "ManageExtensions": {
+    "message": "Håndter udvidelser"
+  },
+  "RegionName": {
+    "message": "Navn"
+  },
+  "RegionLatency": {
+    "message": "Latenstid"
+  },
+  "SortBy": {
+    "message": "Sorter efter:"
+  },
+  "CloseText": {
+    "message": "Luk"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "Private Internet Access kan ikke bruges, fordi din version af %{browser} er forældet. Opgrader venligst %{browser} til den nyeste version."
+  },
+  "LoadingText": {
+    "message": "Loader"
+  },
+  "LogoutText": {
+    "message": "Log ud"
+  },
+  "AuthFailPageTitle": {
+    "message": "Autentifikationsfejl | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "Autentifikationsfejl"
+  },
+  "AuthFailMessage": {
+    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl.<br /><br />For hjælp og support, kontakt vores <a href=\"https://helpdesk.privateinternetaccess.com\">support-team</a>."
+  },
+  "ConnectionFailPageTitle": {
+    "message": "Forbindelsesfejl | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "Forbindelsesfejl"
+  },
+  "ConnectionFailMessage": {
+    "message": "Du har måske mistet forbindelse til internettet, din forbindelse kan være blevet midlertidigt afbrudt, eller Private Internet Access-serveren du forbinder med, kan have forbindelsesproblemer."
+  },
+  "YouAreConnectedTo": {
+    "message": "Du er forbundet til %{region}"
+  },
+  "YouAreNotConnected": {
+    "message": "Du er ikke forbundet"
+  },
+  "enabled": {
+    "message": "aktiveret"
+  },
+  "disabled": {
+    "message": "deaktiveret"
+  },
+  "RememberMe": {
+    "message": "Husk mig"
+  },
+  "us_california": {
+    "message": "USA, Californien"
+  },
+  "us2": {
+    "message": "USA, østkyst"
+  },
+  "us1": {
+    "message": "USA, midtvest"
+  },
+  "us_chicago": {
+    "message": "USA, Chicago"
+  },
+  "us_south_west": {
+    "message": "USA, Texas"
+  },
+  "us_florida": {
+    "message": "USA, Florida"
+  },
+  "us_seattle": {
+    "message": "USA, Seattle"
+  },
+  "us3": {
+    "message": "USA, vestkyst"
+  },
+  "us_silicon_valley": {
+    "message": "USA, Silicon Valley"
+  },
+  "us_new_york_city": {
+    "message": "USA, New York"
+  },
+  "uk": {
+    "message": "England, London"
+  },
+  "uk_southampton": {
+    "message": "England, Southampton"
+  },
+  "ca": {
+    "message": "CA, Montreal"
+  },
+  "ca_toronto": {
+    "message": "CA, Toronto"
+  },
+  "aus": {
+    "message": "AU, Sydney"
+  },
+  "aus_melbourne": {
+    "message": "AU, Melbourne"
+  },
+  "nl": {
+    "message": "Holland"
+  },
+  "swiss": {
+    "message": "Schweiz"
+  },
+  "sweden": {
+    "message": "Sverige"
+  },
+  "france": {
+    "message": "Frankrig"
+  },
+  "germany": {
+    "message": "Tyskland"
+  },
+  "ro": {
+    "message": "Rumænien"
+  },
+  "turkey": {
+    "message": "Tyrkiet"
+  },
+  "hk": {
+    "message": "Hong Kong"
+  },
+  "sg": {
+    "message": "Singapore"
+  },
+  "japan": {
+    "message": "Japan"
+  },
+  "israel": {
+    "message": "Israel"
+  },
+  "mexico": {
+    "message": "Mexico"
+  },
+  "brazil": {
+    "message": "Brasilien"
+  },
+  "ireland": {
+    "message": "Irland"
+  },
+  "italy": {
+    "message": "Italien"
+  },
+  "nz": {
+    "message": "New Zealand"
+  },
+  "denmark": {
+    "message": "Denmark"
+  },
+  "in": {
+    "message": "Indien"
+  },
+  "fi": {
+    "message": "Finland"
+  },
+  "no": {
+    "message": "Norge"
+  },
+  "kr": {
+    "message": "Sydkorea"
+  }
+}

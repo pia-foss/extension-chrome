@@ -1,0 +1,19 @@
+{
+  "dist": {
+    "options": {
+      "style": "compressed",
+      "trace": true,
+      "unixNewlines": true,
+      "bundleExec": true,
+      "precision": 10,
+      "sourcemap": "none"
+    },
+    "files": [{
+      "expand": true,
+      "cwd": "./src/scss",
+      "src": ["*.scss"],
+      "dest": "<%= grunt.config.get('buildpath') %>/css/",
+      "ext": ".css"
+    }]
+  }
+}

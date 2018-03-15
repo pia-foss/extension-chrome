@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "UI言語"
+  },
+  "UILanguageTooltip": {
+    "message": "テキスト表示時に拡張機能により使用される言語"
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "拡張機能を読み込み中のため、デバッグのログをまだ読み込むことができません。"
+  },
+  "ReloadPage": {
+    "message": "ページを再読込"
+  },
+  "Extension": {
+    "message": "拡張機能"
+  },
+  "ResetPasswordText": {
+    "message": "パスワードを再設定"
+  },
+  "DeleteDebugLog": {
+    "message": "ログを消去"
+  },
+  "SettingNotControllable": {
+    "message": "拡張子はこの設定を制御できません。"
+  },
+  "SettingControlledByOther": {
+    "message": "この設定は別の拡張子により制御されています。"
+  },
+  "AllowExtensionNotifications": {
+    "message": "デスクトップ通知を許可"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "重要なことが起きたとき、拡張機能にデスクトップ通知作成を許可します。\n有効にしておくことが推奨されています。"
+  },
+  "Tracking": {
+    "message": "トラッキング"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "ハイパーリンク監査を無効にする"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "最近追加されたHTML機能であるハイパーリンク監査を無効にします。ハイパーリンク監査は、ユーザーがリンクをクリックすると、トラッカーとアナリティクスサービスに通知するようにデザインされた機能です。"
+  },
+  "DebugMode": {
+    "message": "デバッグモード"
+  },
+  "DebugModeTooltip": {
+    "message": "デバッグログにメッセージを入力します。「Ctrl」キーを押しながら「d」キーを押してデバッグログを表示します。"
+  },
+  "DebugLogIsEmpty": {
+    "message": "デバッグログが空です。"
+  },
+  "UsernamePlaceholder": {
+    "message": "ユーザー名"
+  },
+  "PasswordPlaceholder": {
+    "message": "パスワード"
+  },
+  "TryAgain": {
+    "message": "もう一度お試しください"
+  },
+  "LoginText": {
+    "message": "ログイン"
+  },
+  "SelectRegionText": {
+    "message": "地域を選択"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "ユーザー名および/またはパスワードが正しくありません。"
+  },
+  "NetworkError": {
+    "message": "ネットワークエラーが発生したため、ログインリクエストに失敗しました。もう一度お試しください。"
+  },
+  "OfflineError": {
+    "message": "ログインリクエストに失敗しました。オフラインになっていることが原因と考えられます。インターネットに接続していることを確認してください。"
+  },
+  "TimeoutError": {
+    "message": "%{seconds}秒後にログインリクエストが時間切れとなりました。もう一度お試しください。"
+  },
+  "AbortError": {
+    "message": "ログインリクエストがブラウザによって中断されました。もう一度お試しください。"
+  },
+  "UnexpectedServerResponse": {
+    "message": "ログインリクエストに対してサーバーから予期せぬ応答がありました（%{statusLine}）"
+  },
+  "TooManyRequestsError": {
+    "message": "ログイン最大試行回数を超えました。後でもう一度お試しください。"
+  },
+  "CopyToClipboard": {
+    "message": "デバッグログをコピー"
+  },
+  "CopiedToClipboard": {
+    "message": "デバッグログがコピーされました"
+  },
+  "NoAccountQuestion": {
+    "message": "アカウントをお持ちでありませんか？"
+  },
+  "JoinText": {
+    "message": "VPNアカウントにサインアップ"
+  },
+  "JoinURL": {
+    "message": "https://jpn.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "人気のウェブサイト"
+  },
+  "OtherWebsites": {
+    "message": "その他のウェブサイト"
+  },
+  "SettingsWarning": {
+    "message": "これらの設定が無効になっています。お客様が地域に接続されると有効になります。"
+  },
+  "SettingsWarningConnected": {
+    "message": "これらの設定が有効になっています。%{region}から切断されると%{browser}のデフォルト設定に戻されます。"
+  },
+  "BypassWarning": {
+    "message": "バイパスリストで見つかったウェブサイトに行われたリクエストは、Private Internet Access™ゲートウェイで保護<span class='bold-underline'>されていない</span><span class='bold-underline'>直接の接続</span>を使用します。"
+  },
+  "AccountSettingsText": {
+    "message": "アカウント設定"
+  },
+  "AutoLoginURL": {
+    "message": "https://jpn.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://jpn.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "ヘルプ＆サポート"
+  },
+  "StatusText": {
+    "message": "状態"
+  },
+  "OfflineText": {
+    "message": "オフライン"
+  },
+  "PleaseWait": {
+    "message": "読み込み中。お待ちください。"
+  },
+  "Security": {
+    "message": "安全性"
+  },
+  "AdsTrackersProtection": {
+    "message": "広告、トラッカー＆マルウェア保護"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "MACE™とは？"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ は悪意のあるコンテンツ、トラッカー、および広告をブロックすることにより、あなたのプライバシーとセキュリティーを保護します。"
+  },
+  "WebRTCLeakProtection": {
+    "message": "WebRTCとIP検出をブロックしましょう"
+  },
+  "WebRTCTooltip": {
+    "message": "WebRTCが使用されているとき、%{browser}がお客様の公開および非公開IPアドレスを暴露するのをブロックします。無効にすることは奨励されていません。"
+  },
+  "BlockAdobeFlash": {
+    "message": "Adobe Flashをブロック"
+  },
+  "AdobeFlashTooltip": {
+    "message": "%{browser}がAdobe Flashを実行するのをブロックします。Adobe Flashは公開IPアドレスを暴露するのに使用される場合があります。無効にすることは奨励されていません。"
+  },
+  "BlockUTM": {
+    "message": "UTMパラメタを除去"
+  },
+  "BlockUTMTooltip": {
+    "message": "ユーザーがクリックするURLからUrchinトラッキングモード（UTM）パラメタを取り除きます。UTMパラメタはユーザーのウェブサイトへの訪問に関する情報追跡のために使用されます。"
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com、*.hello2.com、*.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "バイパスリスト"
+  },
+  "SaveProxyBypassList": {
+    "message": "保存"
+  },
+  "OKSaved": {
+    "message": "OK。保存されました"
+  },
+  "WelcomeToNewVersion": {
+    "message": "%{appVersion}へようこそ"
+  },
+  "ExtensionUpdated": {
+    "message": "拡張機能がアップデートされました"
+  },
+  "OneRuleAdded": {
+    "message": "1個のルールが追加されました"
+  },
+  "NoRulesAdded": {
+    "message": "追加されたルールはありません"
+  },
+  "MultipleRulesAdded": {
+    "message": "%{count}個のルールが追加されました"
+  },
+  "DebugLog": {
+    "message": "デバッグログ"
+  },
+  "BlockNetworkPrediction": {
+    "message": "ネットワーク予測を無効にする"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "%{browser}のネットワーク動作予測サービスの利用を無効にします。これは、ユーザーが訪問するページにあるコンテンツからDNSクエリを事前に解決し、ウェブページを事前に読み出すサービスです。"
+  },
+  "BlockSafeBrowsing": {
+    "message": "セーフブラウジングを無効にする"
+  },
+  "ReadMore": {
+    "message": "詳しく読む"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "ログの保存でプライバシー上の懸念を生む%{browser}のネットワークサービス直接接続を無効にします。PIA Mace™はこのサービスの無効化にあたってのリスクを緩和します。"
+  },
+  "BlockLocationAccess": {
+    "message": "位置情報アクセスをブロック"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "ウェブサイトがあなたの物理的な位置情報にアクセスするのをブロックします。"
+  },
+  "BlockHTTPReferer": {
+    "message": "ウェブサイトリファラを無効にする"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "リンクをたどる際に、%{browser}が現在のウェブページのアドレスを別のウェブページへ送信する機能を無効にします。"
+  },
+  "BlockThirdpartycookies": {
+    "message": "サードパーティークッキーを無効にする"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "%{browser}がサードパーティーのウェブサイトからのクッキーを許可するのを無効にします。サードパーティークッキーは、ユーザーのサードパーティーウェブサイトやウェブサービスへの訪問を追跡するために使用されます。"
+  },
+  "BlockCameraAccess": {
+    "message": "カメラへのアクセスをブロック"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "ウェブサイトがコンピューターのカメラにアクセスするのをブロックします。"
+  },
+  "BlockMicrophoneAccess": {
+    "message": "マイクへのアクセスをブロック"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "ウェブサイトがコンピューターのマイクにアクセスするのをブロックします。"
+  },
+  "UseRegionLocale": {
+    "message": "位置設定と言語設定をプライベートに"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "デフォルトの位置設定と言語設定を現在の地域の位置と言語設定で置き換えることにより、ブラウザのデフォルトの位置設定と言語設定をプライベートに保ちます。"
+  },
+  "Privacy": {
+    "message": "プライバシー"
+  },
+  "OnText": {
+    "message": "オン"
+  },
+  "OffText": {
+    "message": "オフ"
+  },
+  "CurrentRegionText": {
+    "message": "現在の地域"
+  },
+  "ChangeExtensionSettings": {
+    "message": "拡張機能設定"
+  },
+  "CannotUsePIAMessage": {
+    "message": "別の拡張機能がブラウザーのプロキシ設定をコントロールしているため、Private Internet Accessがご利用いただけなくなっています。"
+  },
+  "ManageExtensions": {
+    "message": "拡張機能を管理"
+  },
+  "RegionName": {
+    "message": "名前"
+  },
+  "RegionLatency": {
+    "message": "待ち時間"
+  },
+  "SortBy": {
+    "message": "並び替え順:"
+  },
+  "CloseText": {
+    "message": "閉じる"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "%{browser}のバージョンが古いため、プライベートインターネットアクセスが使用できません。%{browser}を最新バージョンにアップデートしてください。"
+  },
+  "LoadingText": {
+    "message": "読み込み中"
+  },
+  "LogoutText": {
+    "message": "ログアウト"
+  },
+  "AuthFailPageTitle": {
+    "message": "認証エラー | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "認証エラー"
+  },
+  "AuthFailMessage": {
+    "message": "最近Private Internet Accessウェブサイトのパスワードを変更した方は、このエラーを拡張機能で再認証することより解決できる場合があります。<br /><br />ヘルプとサポートが必要な方は、<a href=\"https://helpdesk.privateinternetaccess.com\">サポートチーム</a>までお問い合わせください。"
+  },
+  "ConnectionFailPageTitle": {
+    "message": "接続エラー | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "接続エラー"
+  },
+  "ConnectionFailMessage": {
+    "message": "インターネット接続が失われたか、接続が一時的に中断されたか、お客様が接続しようとしているPrivate Internet Accessサーバーに接続問題が発生している可能性があります。"
+  },
+  "YouAreConnectedTo": {
+    "message": "お客様は%{region}に接続されています"
+  },
+  "YouAreNotConnected": {
+    "message": "接続されていません"
+  },
+  "enabled": {
+    "message": "有効にされました"
+  },
+  "disabled": {
+    "message": "無効にされました"
+  },
+  "RememberMe": {
+    "message": "記憶させる"
+  },
+  "us_california": {
+    "message": "米国 カリフォルニア"
+  },
+  "us2": {
+    "message": "米国東部"
+  },
+  "us1": {
+    "message": "米国中西部"
+  },
+  "us_chicago": {
+    "message": "米国 シカゴ"
+  },
+  "us_south_west": {
+    "message": "米国 テキサス"
+  },
+  "us_florida": {
+    "message": "米国 フロリダ"
+  },
+  "us_seattle": {
+    "message": "米国 シアトル"
+  },
+  "us3": {
+    "message": "米国西部"
+  },
+  "us_silicon_valley": {
+    "message": "米国 シリコンバレー"
+  },
+  "us_new_york_city": {
+    "message": "米国 ニューヨーク市"
+  },
+  "uk": {
+    "message": "英国 ロンドン"
+  },
+  "uk_southampton": {
+    "message": "英国 サウザンプトン"
+  },
+  "ca": {
+    "message": "カナダ モントリオール"
+  },
+  "ca_toronto": {
+    "message": "カナダ トロント"
+  },
+  "aus": {
+    "message": "オーストラリア シドニー"
+  },
+  "aus_melbourne": {
+    "message": "オーストラリア メルボルン"
+  },
+  "nl": {
+    "message": "オランダ"
+  },
+  "swiss": {
+    "message": "スイス"
+  },
+  "sweden": {
+    "message": "スウェーデン"
+  },
+  "france": {
+    "message": "フランス"
+  },
+  "germany": {
+    "message": "ドイツ"
+  },
+  "ro": {
+    "message": "ルーマニア"
+  },
+  "turkey": {
+    "message": "トルコ"
+  },
+  "hk": {
+    "message": "香港"
+  },
+  "sg": {
+    "message": "シンガポール"
+  },
+  "japan": {
+    "message": "日本"
+  },
+  "israel": {
+    "message": "イスラエル"
+  },
+  "mexico": {
+    "message": "メキシコ"
+  },
+  "brazil": {
+    "message": "ブラジル"
+  },
+  "ireland": {
+    "message": "アイルランド"
+  },
+  "italy": {
+    "message": "イタリア"
+  },
+  "nz": {
+    "message": "ニュージーランド"
+  },
+  "denmark": {
+    "message": "デンマーク"
+  },
+  "in": {
+    "message": "インド"
+  },
+  "fi": {
+    "message": "フィンランド"
+  },
+  "no": {
+    "message": "ノルウェー"
+  },
+  "kr": {
+    "message": "韓国"
+  }
+}

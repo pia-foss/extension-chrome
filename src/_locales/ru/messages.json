@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "Язык интерфейса"
+  },
+  "UILanguageTooltip": {
+    "message": "Язык, используемый расширением для отображения текста."
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "Это расширение все еще загружается, загрузка журнала отладки пока невозможна."
+  },
+  "ReloadPage": {
+    "message": "Перезагрузить страницу"
+  },
+  "Extension": {
+    "message": "Расширение"
+  },
+  "ResetPasswordText": {
+    "message": "Сбросить пароль"
+  },
+  "DeleteDebugLog": {
+    "message": "Очистить журнал"
+  },
+  "SettingNotControllable": {
+    "message": "Расширение не может управлять этим параметром."
+  },
+  "SettingControlledByOther": {
+    "message": "Этот параметр управляется другим расширением."
+  },
+  "AllowExtensionNotifications": {
+    "message": "Разрешить уведомления рабочего стола"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "Разрешите расширению создавать уведомления рабочего стола, когда происходит что-то важное. Не рекомендуется отключать эту функцию."
+  },
+  "Tracking": {
+    "message": "Отслеживание"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "Отключить аудит гиперссылок"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "Отключение аудита гиперссылок – недавно введенная HTML-функция, назначение которой – уведомлять трекеры и аналитические службы о том, что вы активировали ссылку."
+  },
+  "DebugMode": {
+    "message": "Режим отладки"
+  },
+  "DebugModeTooltip": {
+    "message": "Запись сообщений в журнал отладки. Нажмите «ctrl», а затем клавишу «d», чтобы отобразить журнал отладки."
+  },
+  "DebugLogIsEmpty": {
+    "message": "Журнал отладки пустой."
+  },
+  "UsernamePlaceholder": {
+    "message": "Имя пользователя"
+  },
+  "PasswordPlaceholder": {
+    "message": "Пароль"
+  },
+  "TryAgain": {
+    "message": "Повторить"
+  },
+  "LoginText": {
+    "message": "Вход"
+  },
+  "SelectRegionText": {
+    "message": "Выберите регион"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "Неверное сочетание имени пользователя и пароля."
+  },
+  "NetworkError": {
+    "message": "Не удалось выполнить вход из-за ошибки сети. Повторите попытку."
+  },
+  "OfflineError": {
+    "message": "Не удалось выполнить вход, т.к., судя по всему, вы не в сети. Проверьте подключение к Интернету."
+  },
+  "TimeoutError": {
+    "message": "Превышен интервал ожидания входа: %{seconds} сек. Повторите попытку."
+  },
+  "AbortError": {
+    "message": "Попытка входа прервана браузером. Повторите попытку."
+  },
+  "UnexpectedServerResponse": {
+    "message": "Непредвиденный ответ сервера при попытке выполнить вход (%{statusLine})."
+  },
+  "TooManyRequestsError": {
+    "message": "Слишком много неудачных попыток входа. Повторите попытку позже."
+  },
+  "CopyToClipboard": {
+    "message": "Копировать журнал отладки"
+  },
+  "CopiedToClipboard": {
+    "message": "Журнал отладки скопирован"
+  },
+  "NoAccountQuestion": {
+    "message": "Нет учетной записи?"
+  },
+  "JoinText": {
+    "message": "ЗАРЕГИСТРИРОВАТЬ УЧЕТНУЮ ЗАПИСЬ VPN"
+  },
+  "JoinURL": {
+    "message": "https://rus.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "Популярные веб-сайты"
+  },
+  "OtherWebsites": {
+    "message": "Другие веб-сайты"
+  },
+  "SettingsWarning": {
+    "message": "Эти настройки не действительны. Они действуют, только когда вы соединены с регионом."
+  },
+  "SettingsWarningConnected": {
+    "message": "Эти настройки действуют. Сброс до настроек по умолчанию браузера %{browser} произойдет, когда вы отсоединитесь от региона «%{region}»."
+  },
+  "BypassWarning": {
+    "message": "Запросы к веб-сайтам, входящим в «Список обходов», используют <span class=\"bold-underline\">прямое подключение</span>, которое <span class=\"bold-underline\">не</span> защищено Private Internet Access™"
+  },
+  "AccountSettingsText": {
+    "message": "Настройки учетной записи"
+  },
+  "AutoLoginURL": {
+    "message": "https://rus.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://rus.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "Справка и поддержка"
+  },
+  "StatusText": {
+    "message": "Статус"
+  },
+  "OfflineText": {
+    "message": "НЕ В СЕТИ"
+  },
+  "PleaseWait": {
+    "message": "Выполняется загрузка. Ожидайте."
+  },
+  "Security": {
+    "message": "Безопасность"
+  },
+  "AdsTrackersProtection": {
+    "message": "Защита от рекламы, трекеров и вредоносного ПО"
+  },
+  "MaceProtection": {
+    "message": "PIA MACE™"
+  },
+  "WhatIsMace": {
+    "message": "Что такое MACE™?"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ помогает обеспечить вам конфиденциальность и безопасность, блокируя вредоносный контент, трекеры и рекламу."
+  },
+  "WebRTCLeakProtection": {
+    "message": "Блокировать определение IP в WebRTC"
+  },
+  "WebRTCTooltip": {
+    "message": "Запрет браузеру %{browser} определять ваши общедоступные и закрытые IP-адреса при использовании WebRTC. Рекомендуется не отключать эту настройку."
+  },
+  "BlockAdobeFlash": {
+    "message": "Блокировать Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "Запретите браузеру %{browser} запускать Adobe Flash. Adobe Flash может использоваться для определения ваших общедоступных и закрытых IP-адресов. Рекомендуется не отключать эту настройку."
+  },
+  "BlockUTM": {
+    "message": "Удалять параметры UTM"
+  },
+  "BlockUTMTooltip": {
+    "message": "Удаление параметров UTM (Urchin Tracking Mode) из URL-адресов, которые вы активируете. Параметры UTM  используются для отслеживания информации о вашем посещении веб-сайта."
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "Список обходов"
+  },
+  "SaveProxyBypassList": {
+    "message": "Сохранить"
+  },
+  "OKSaved": {
+    "message": "ОК. Сохранено"
+  },
+  "WelcomeToNewVersion": {
+    "message": "Добро пожаловать в %{appVersion}!"
+  },
+  "ExtensionUpdated": {
+    "message": "Расширение обновлено"
+  },
+  "OneRuleAdded": {
+    "message": "Добавлено 1 правило"
+  },
+  "NoRulesAdded": {
+    "message": "Правила не добавлены"
+  },
+  "MultipleRulesAdded": {
+    "message": "Добавлено правил: %{count}"
+  },
+  "DebugLog": {
+    "message": "Журнал отладки"
+  },
+  "BlockNetworkPrediction": {
+    "message": "Отключить прогнозирование сети"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "Отключение службы прогнозирования сети в составе %{browser}. Эта служба заранее разрешает запросы DNS и предварительно доставляет веб-страницы с контентом, обнаруженным на посещаемой вами странице."
+  },
+  "BlockSafeBrowsing": {
+    "message": "Отключить SafeBrowsing"
+  },
+  "ReadMore": {
+    "message": "Подробности"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "Отключение возможности совершения направленных подключений браузером %{browser} к сетевой службе, в которой возможны проблемы с хранением журналов. PIA Mace™ нейтрализует риск, связанный с этой службой."
+  },
+  "BlockLocationAccess": {
+    "message": "Блокировать доступ к местоположению"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "Блокировка доступа веб-сайтов к информации о вашем физическом местоположении."
+  },
+  "BlockHTTPReferer": {
+    "message": "Отключить реферер веб-сайта"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "Отключение отправки браузером %{browser} адреса текущей веб-страницы на другую веб-страницу при переходе по ссылке."
+  },
+  "BlockThirdpartycookies": {
+    "message": "Отключить сторонние cookie-файлы"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "Отключение  принятия браузером %{browser} cookie-файлов от сторонних веб-сайтов. Cookie-файлы от сторонних веб-сайтов могут использоваться для отслеживания вашего посещения веб-сайтов сторонними сайтами или веб-службами."
+  },
+  "BlockCameraAccess": {
+    "message": "Блокировать доступ к камере"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "Блокировка доступа к камере компьютера для веб-сайтов."
+  },
+  "BlockMicrophoneAccess": {
+    "message": "Блокировать доступ к микрофону"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "Блокировка доступа к микрофону компьютера для веб-сайтов."
+  },
+  "UseRegionLocale": {
+    "message": "Конфиденциальные национальные и языковые настройки"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "Обеспечение конфиденциальности используемых по умолчанию национальных и языковых настроек браузера путем замены их национальными и языковыми настройками текущего региона."
+  },
+  "Privacy": {
+    "message": "Конфиденциальность"
+  },
+  "OnText": {
+    "message": "Вкл."
+  },
+  "OffText": {
+    "message": "Выкл."
+  },
+  "CurrentRegionText": {
+    "message": "Текущий регион"
+  },
+  "ChangeExtensionSettings": {
+    "message": "Настройки расширения"
+  },
+  "CannotUsePIAMessage": {
+    "message": "Использование Private Internet Access невозможно: настройками прокси ваших браузеров управляет другое расширение."
+  },
+  "ManageExtensions": {
+    "message": "Управление расширениями"
+  },
+  "RegionName": {
+    "message": "Имя"
+  },
+  "RegionLatency": {
+    "message": "Латентность"
+  },
+  "SortBy": {
+    "message": "Упорядочить по:"
+  },
+  "CloseText": {
+    "message": "Закрыть"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "Использование Private Internet Access невозможно, т.к. вы используете устаревшую версию браузера %{browser}. Please Обновите %{browser} до последней версии."
+  },
+  "LoadingText": {
+    "message": "Загрузка..."
+  },
+  "LogoutText": {
+    "message": "Выход"
+  },
+  "AuthFailPageTitle": {
+    "message": "Ошибка аутентиификации| Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "Ошибка аутентификации."
+  },
+  "AuthFailMessage": {
+    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения.<br /><br />Для получения справки и поддержки обращайтесь в нашу <a href=\"https://helpdesk.privateinternetaccess.com\">службу поддержки</a>."
+  },
+  "ConnectionFailPageTitle": {
+    "message": "Ошибка подключения | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "Ошибка соединения"
+  },
+  "ConnectionFailMessage": {
+    "message": "Возможно, у вас исчезла возможность соединения с Интернетом, ваше интернет-соединение разорвано, или на сервере Private Internet Access, к которому вы подключаетесь, возникли технические проблемы."
+  },
+  "YouAreConnectedTo": {
+    "message": "Вы соединены с регионом «%{region}»"
+  },
+  "YouAreNotConnected": {
+    "message": "Вы не соединены"
+  },
+  "enabled": {
+    "message": "активировано"
+  },
+  "disabled": {
+    "message": "отключено"
+  },
+  "RememberMe": {
+    "message": "Запомнить меня"
+  },
+  "us_california": {
+    "message": "США, Калифорния"
+  },
+  "us2": {
+    "message": "США, Восток"
+  },
+  "us1": {
+    "message": "США, Средний Запад"
+  },
+  "us_chicago": {
+    "message": "США, Чикаго"
+  },
+  "us_south_west": {
+    "message": "США, Техас"
+  },
+  "us_florida": {
+    "message": "США, Флорида"
+  },
+  "us_seattle": {
+    "message": "США, Сиэттл"
+  },
+  "us3": {
+    "message": "США, Запад"
+  },
+  "us_silicon_valley": {
+    "message": "США, Кремниевая Долина"
+  },
+  "us_new_york_city": {
+    "message": "США, г. Нью-Йорк"
+  },
+  "uk": {
+    "message": "Великобритания, Лондон"
+  },
+  "uk_southampton": {
+    "message": "Великобритания, Саутхэмптон"
+  },
+  "ca": {
+    "message": "Канада, Монреаль"
+  },
+  "ca_toronto": {
+    "message": "Канада, Торонто"
+  },
+  "aus": {
+    "message": "Австралия, Сидней"
+  },
+  "aus_melbourne": {
+    "message": "Австралия, Мельбурн"
+  },
+  "nl": {
+    "message": "Нидерланды"
+  },
+  "swiss": {
+    "message": "Швейцария"
+  },
+  "sweden": {
+    "message": "Швеция"
+  },
+  "france": {
+    "message": "Франция"
+  },
+  "germany": {
+    "message": "Германия"
+  },
+  "ro": {
+    "message": "Румыния"
+  },
+  "turkey": {
+    "message": "Турция"
+  },
+  "hk": {
+    "message": "Гонконг"
+  },
+  "sg": {
+    "message": "Сингапур"
+  },
+  "japan": {
+    "message": "Япония"
+  },
+  "israel": {
+    "message": "Израиль"
+  },
+  "mexico": {
+    "message": "Мексика"
+  },
+  "brazil": {
+    "message": "Бразилия"
+  },
+  "ireland": {
+    "message": "Ирландия"
+  },
+  "italy": {
+    "message": "Италия"
+  },
+  "nz": {
+    "message": "Новая Зеландия"
+  },
+  "denmark": {
+    "message": "Дания"
+  },
+  "in": {
+    "message": "Индия"
+  },
+  "fi": {
+    "message": "Финляндия"
+  },
+  "no": {
+    "message": "Норвегия"
+  },
+  "kr": {
+    "message": "Южная Корея"
+  }
+}

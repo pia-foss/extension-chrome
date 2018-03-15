@@ -1,0 +1,25 @@
+@import "../colors";
+#template-content {
+  #region {
+    &:hover {
+      background-color: $blue;
+      color: $white !important;
+      #go-forward-image {
+          background-image: url('/images/forward_2xwhover.png');
+          background-position: 0 -20px;
+      }
+    }
+    #go-forward-image {
+        background-image: url('/images/forward_2xwhover.png');
+        background-repeat: no-repeat;
+        background-size: 20px 40px;
+        background-position: 0 0;
+        width: 20px;
+        height: 20px;
+    }
+    #go-forward-image:hover {
+        background-image: url('/images/forward_2xwhover.png');
+        background-position: 0 -20px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "options": {"clean": true},
+  "scss": {
+    "options": {
+      "destPrefix": "src/scss/"
+    },
+    "files": {"vendored": "bootstrap-sass/assets/stylesheets/*"}
+  }
+}

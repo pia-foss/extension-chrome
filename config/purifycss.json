@@ -1,0 +1,8 @@
+{
+  "options": {},
+    "target": {
+      "src": ["src/html/*.html", "src/jsx/**/*.jsx", "src/_locales/en/messages.json"],
+      "css": ["<%= grunt.config.get('buildpath') %>/css/pia.css"],
+      "dest": "<%= grunt.config.get('buildpath') %>/css/pia.css"
+    }
+}

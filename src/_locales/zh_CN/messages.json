@@ -1,0 +1,440 @@
+{
+  "UILanguage": {
+    "message": "用户界面语言"
+  },
+  "UILanguageTooltip": {
+    "message": "扩展程序显示文本时使用的语言"
+  },
+  "TheExtensionIsStillLoading": {
+    "message": "该扩展程序仍在加载，尚无法加载调试日志。"
+  },
+  "ReloadPage": {
+    "message": "重新载入页面"
+  },
+  "Extension": {
+    "message": "扩展程序"
+  },
+  "ResetPasswordText": {
+    "message": "重设密码"
+  },
+  "DeleteDebugLog": {
+    "message": "清除日志"
+  },
+  "SettingNotControllable": {
+    "message": "扩展程序无法控制此设置。"
+  },
+  "SettingControlledByOther": {
+    "message": "此设置被另一扩展程序控制。"
+  },
+  "AllowExtensionNotifications": {
+    "message": "允许桌面通知"
+  },
+  "AllowExtensionNotificationsTooltip": {
+    "message": "允许扩展程序在发生重要事件时创建桌面通知。不建议禁用。"
+  },
+  "Tracking": {
+    "message": "跟踪"
+  },
+  "BlockHyperlinkAuditing": {
+    "message": "禁用超链接审核"
+  },
+  "BlockHyperlinkAuditingTooltip": {
+    "message": "禁用超链接审核是最新的 HTML 功能，用于在您点击链接时通知跟踪程序和分析服务。"
+  },
+  "DebugMode": {
+    "message": "调试模式"
+  },
+  "DebugModeTooltip": {
+    "message": "将消息写入调试日志。按“ctrl”键，然后按“d”键以显示调试日志。"
+  },
+  "DebugLogIsEmpty": {
+    "message": "调试日志为空。"
+  },
+  "UsernamePlaceholder": {
+    "message": "用户名"
+  },
+  "PasswordPlaceholder": {
+    "message": "密码"
+  },
+  "TryAgain": {
+    "message": "重试"
+  },
+  "LoginText": {
+    "message": "登录"
+  },
+  "SelectRegionText": {
+    "message": "选择区域"
+  },
+  "WrongUsernameAndPassword": {
+    "message": "用户名和/或密码错误。"
+  },
+  "NetworkError": {
+    "message": "由于网络错误，登录请求失败。请稍后重试。"
+  },
+  "OfflineError": {
+    "message": "登录请求失败，因为您似乎处于离线状态。请检查您是否连接到互联网。"
+  },
+  "TimeoutError": {
+    "message": "登录请求在 %{seconds} 秒后超时。请重试。"
+  },
+  "AbortError": {
+    "message": "登录请求被浏览器中止。请重试。"
+  },
+  "UnexpectedServerResponse": {
+    "message": "登录请求返回意外的服务器响应 (%{statusLine})"
+  },
+  "TooManyRequestsError": {
+    "message": "登录尝试失败次数过多。请稍后重试。"
+  },
+  "CopyToClipboard": {
+    "message": "复制调试日志"
+  },
+  "CopiedToClipboard": {
+    "message": "调试日志已复制"
+  },
+  "NoAccountQuestion": {
+    "message": "还没有帐户？"
+  },
+  "JoinText": {
+    "message": "注册 VPN 帐户"
+  },
+  "JoinURL": {
+    "message": "https://chi.privateinternetaccess.com/pages/buy-vpn/"
+  },
+  "PopularWebsites": {
+    "message": "热门网站"
+  },
+  "OtherWebsites": {
+    "message": "其他网站"
+  },
+  "SettingsWarning": {
+    "message": "这些设置没有生效。它们在您已连接到某区域时生效。"
+  },
+  "SettingsWarningConnected": {
+    "message": "这些设置已生效。当您与 %{region} 断开连接时，它们将恢复为 %{browser} 的默认设置。"
+  },
+  "BypassWarning": {
+    "message": "对免过滤清单中的网站提出的请求使用的是<span class=\"bold-underline\">直接连接</span>，<span class=\"bold-underline\">不</span>受 Private Internet Access™ 保护。"
+  },
+  "AccountSettingsText": {
+    "message": "帐户设置"
+  },
+  "AutoLoginURL": {
+    "message": "https://chi.privateinternetaccess.com/xpages/sign-in"
+  },
+  "SupportURL": {
+    "message": "https://chi.privateinternetaccess.com/pages/client-support/"
+  },
+  "SupportText": {
+    "message": "帮助和支持"
+  },
+  "StatusText": {
+    "message": "状态"
+  },
+  "OfflineText": {
+    "message": "离线"
+  },
+  "PleaseWait": {
+    "message": "正在加载。请稍候。"
+  },
+  "Security": {
+    "message": "安全"
+  },
+  "AdsTrackersProtection": {
+    "message": "广告、跟踪程序和恶意软件防护"
+  },
+  "MaceProtection": {
+    "message": "PIA Mace™"
+  },
+  "WhatIsMace": {
+    "message": "什么是 MACE™？"
+  },
+  "MaceTooltip": {
+    "message": "PIA MACE™ 通过阻止恶意内容、跟踪程序和广告来保护您的隐私和安全。"
+  },
+  "WebRTCLeakProtection": {
+    "message": "阻止 WebRTC 检测 IP"
+  },
+  "WebRTCTooltip": {
+    "message": "当使用 WebRTC 时，阻止 %{browser} 显示您的公用和专用 IP 地址。不建议禁用。"
+  },
+  "BlockAdobeFlash": {
+    "message": "阻止 Adobe Flash"
+  },
+  "AdobeFlashTooltip": {
+    "message": "阻止 %{browser} 运行 Adobe Flash。Adobe Flash 可用于显示您的公用 IP 地址。不建议禁用。"
+  },
+  "BlockUTM": {
+    "message": "移除 UTM 参数"
+  },
+  "BlockUTMTooltip": {
+    "message": "从您点击的 URL 中删除 Urchin 跟踪模型 (UTM) 参数。UTM 参数用于跟踪您访问某网站的信息。"
+  },
+  "BypassListPlaceholder": {
+    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  },
+  "ProxyBypassList": {
+    "message": "绕过清单"
+  },
+  "SaveProxyBypassList": {
+    "message": "保存"
+  },
+  "OKSaved": {
+    "message": "好的。已保存"
+  },
+  "WelcomeToNewVersion": {
+    "message": "欢迎使用 %{appVersion}"
+  },
+  "ExtensionUpdated": {
+    "message": "扩展程序已更新"
+  },
+  "OneRuleAdded": {
+    "message": "添加了 1 个规则"
+  },
+  "NoRulesAdded": {
+    "message": "未添加规则"
+  },
+  "MultipleRulesAdded": {
+    "message": "添加了 %{count} 个规则"
+  },
+  "DebugLog": {
+    "message": "调试日志"
+  },
+  "BlockNetworkPrediction": {
+    "message": "禁用网络预测"
+  },
+  "BlockNetworkPredictionTooltip": {
+    "message": "禁止 %{browser} 使用网络预测服务，这种服务可以预先解析 DNS 查询并从您访问的网页上找到的内容中预取网页。"
+  },
+  "BlockSafeBrowsing": {
+    "message": "禁用安全浏览"
+  },
+  "ReadMore": {
+    "message": "阅读更多"
+  },
+  "BlockSafeBrowsingTooltip": {
+    "message": "禁止 %{browser} 直接连接到因保留日志而存在隐私问题的的网络服务。 PIA Mace™ 通过禁用此服务来减轻风险。"
+  },
+  "BlockLocationAccess": {
+    "message": "阻止访问位置"
+  },
+  "BlockLocationAccessTooltip": {
+    "message": "阻止网站访问与您的实际位置有关的信息。"
+  },
+  "BlockHTTPReferer": {
+    "message": "禁用网站引荐"
+  },
+  "BlockHTTPRefererTooltip": {
+    "message": "禁止 %{browser} 在跟踪某链接时将当前网页的地址发送到另一个网页。"
+  },
+  "BlockThirdpartycookies": {
+    "message": "禁用第三方 Cookie"
+  },
+  "BlockThirdpartycookiesTooltip": {
+    "message": "禁止 %{browser} 接受来自第三方网站的 Cookie。第三方 Cookie 可被第三方网站或网页服务用来跟踪您访问网站的 情况。"
+  },
+  "BlockCameraAccess": {
+    "message": "阻止访问相机"
+  },
+  "BlockCameraAccessTooltip": {
+    "message": "阻止网站访问计算机的相机。"
+  },
+  "BlockMicrophoneAccess": {
+    "message": "阻止访问麦克风"
+  },
+  "BlockMicrophoneAccessTooltip": {
+    "message": "阻止网站访问计算机的麦克风。"
+  },
+  "UseRegionLocale": {
+    "message": "专用区域设置和语言设置"
+  },
+  "UseRegionLocaleTooltip": {
+    "message": "将浏览器的默认区域设置和语言设置替换为当前区域的区域设置和语言设置，从而使其保持为专用。"
+  },
+  "Privacy": {
+    "message": "隐私"
+  },
+  "OnText": {
+    "message": "开"
+  },
+  "OffText": {
+    "message": "关"
+  },
+  "CurrentRegionText": {
+    "message": "当前区域"
+  },
+  "ChangeExtensionSettings": {
+    "message": "扩展程序设置"
+  },
+  "CannotUsePIAMessage": {
+    "message": "其他扩展程序正在控制您的浏览器代理设置，因此无法使用 Private Internet Access。"
+  },
+  "ManageExtensions": {
+    "message": "管理扩展程序"
+  },
+  "RegionName": {
+    "message": "名称"
+  },
+  "RegionLatency": {
+    "message": "延迟时间"
+  },
+  "SortBy": {
+    "message": "排序方式："
+  },
+  "CloseText": {
+    "message": "关闭"
+  },
+  "UpgradeBrowserMessage": {
+    "message": "无法使用 Private Internet Access ，因为您的 %{browser} 版本已过时。请将 %{browser} 升级到最新版本。"
+  },
+  "LoadingText": {
+    "message": "正在加载"
+  },
+  "LogoutText": {
+    "message": "注销"
+  },
+  "AuthFailPageTitle": {
+    "message": "身份验证错误 | Private Internet Access"
+  },
+  "AuthFailTitle": {
+    "message": "身份验证错误"
+  },
+  "AuthFailMessage": {
+    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://helpdesk.privateinternetaccess.com\">支持团队</a>。"
+  },
+  "ConnectionFailPageTitle": {
+    "message": "连接错误 | Private Internet Access"
+  },
+  "ConnectionFailTitle": {
+    "message": "连接错误"
+  },
+  "ConnectionFailMessage": {
+    "message": "您可能未连接互联网、连接暂时中断，或者您连接到的 Private Internet Access 服务器存在连接问题。"
+  },
+  "YouAreConnectedTo": {
+    "message": "您已连接到 %{region}"
+  },
+  "YouAreNotConnected": {
+    "message": "您没有连接"
+  },
+  "enabled": {
+    "message": "已启用"
+  },
+  "disabled": {
+    "message": "已禁用"
+  },
+  "RememberMe": {
+    "message": "记住我"
+  },
+  "us_california": {
+    "message": "美国加利福尼亚"
+  },
+  "us2": {
+    "message": "美国东部"
+  },
+  "us1": {
+    "message": "美国中西部"
+  },
+  "us_chicago": {
+    "message": "美国芝加哥"
+  },
+  "us_south_west": {
+    "message": "美国德克萨斯"
+  },
+  "us_florida": {
+    "message": "美国佛罗里达"
+  },
+  "us_seattle": {
+    "message": "美国西雅图"
+  },
+  "us3": {
+    "message": "美国西部"
+  },
+  "us_silicon_valley": {
+    "message": "美国硅谷"
+  },
+  "us_new_york_city": {
+    "message": "美国纽约"
+  },
+  "uk": {
+    "message": "英国伦敦"
+  },
+  "uk_southampton": {
+    "message": "英国南安普敦"
+  },
+  "ca": {
+    "message": "加拿大蒙特利尔"
+  },
+  "ca_toronto": {
+    "message": "加拿大多伦多"
+  },
+  "aus": {
+    "message": "澳大利亚悉尼"
+  },
+  "aus_melbourne": {
+    "message": "澳大利亚墨尔本"
+  },
+  "nl": {
+    "message": "荷兰"
+  },
+  "swiss": {
+    "message": "瑞士"
+  },
+  "sweden": {
+    "message": "瑞典"
+  },
+  "france": {
+    "message": "法国"
+  },
+  "germany": {
+    "message": "德国"
+  },
+  "ro": {
+    "message": "罗马尼亚"
+  },
+  "turkey": {
+    "message": "土耳其"
+  },
+  "hk": {
+    "message": "中国香港"
+  },
+  "sg": {
+    "message": "新加坡"
+  },
+  "japan": {
+    "message": "日本"
+  },
+  "israel": {
+    "message": "以色列"
+  },
+  "mexico": {
+    "message": "墨西哥"
+  },
+  "brazil": {
+    "message": "巴西"
+  },
+  "ireland": {
+    "message": "爱尔兰"
+  },
+  "italy": {
+    "message": "意大利"
+  },
+  "nz": {
+    "message": "新西兰"
+  },
+  "denmark": {
+    "message": "丹麦"
+  },
+  "in": {
+    "message": "印度"
+  },
+  "fi": {
+    "message": "芬兰"
+  },
+  "no": {
+    "message": "挪威"
+  },
+  "kr": {
+    "message": "韩国"
+  }
+}
