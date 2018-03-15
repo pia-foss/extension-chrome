@@ -3,7 +3,7 @@
 README v0.1 / 10 March 2018
 
 # Private Internet Access
-Private Internet Access is the world's leading consumer VPN service. At Private Internet Access we believe in unfettered access for all, and as a firm supporter of the open source ecosystem we have made the decision to open source our VPN clients. For more information about the PIA service, please visit our website [privateinternetaccess.com](https://privateinternetaccess.com) or check out the wiki.
+Private Internet Access is the world's leading consumer VPN service. At Private Internet Access we believe in unfettered access for all, and as a firm supporter of the open source ecosystem we have made the decision to open source our VPN clients. For more information about the PIA service, please visit our website [privateinternetaccess.com](https://privateinternetaccess.com).
 
 # Chrome Web Extension
 This repo contains all the code needed to build and run the Private Internet Access Chrome Web Extension. This extension allows a user to access our network of proxies across the world from their web browser. Users can choose a proxy server location and connect to it directly from the extension. Additional privacy and security features include disabling microphone and camera, blocking flash and ip discovery through WebRTC, and can automatically block ads and tracking through PIA MACE™.  
