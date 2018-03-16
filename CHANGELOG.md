@@ -1,6 +1,6 @@
 __HEAD__
 
-* Clean secrets from repo.
+* Clean chrome webstore and OneSky keys from repo.
 
 * Add new bypass list page
 

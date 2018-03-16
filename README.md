@@ -157,6 +157,7 @@ users(eg QA) or the general public, you can run one of the following:
 By contributing to this project you are agreeing to the terms stated in the Contributor License Agreement (CLA) [here](/CLA.rst). For more details please see  [CONTRIBUTING.md](/.github/CONTRIBUTING.md). Issues and Pull Requests should use these templates: [ISSUES](/.github/ISSUE_TEMPLATE.md) and [PULL REQUESTS](/.github/PULL_REQUEST_TEMPLATE.md)
 
 ## Authors
+ - Robert Gleeson
  - Edward Kim
  - Pericles
 
