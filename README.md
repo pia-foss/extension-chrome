@@ -159,6 +159,7 @@ By contributing to this project you are agreeing to the terms stated in the Cont
 ## Authors
  - Robert Gleeson
  - Edward Kim
+ - Amir Malik
  - Pericles
 
 ## License
