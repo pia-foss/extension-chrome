@@ -27,9 +27,11 @@ export default function(app) {
     tabQueries.forEach((query) => {
       chrome.tabs.query(query, (tabs) => {
         tabs.forEach((tab) => {
-          const errorID      = app.util.errorinfo.set(details.error, details.url),
-                errorPageURL = chrome.extension.getURL(`html/errorpages/connfail.html?id=${errorID}`)
-          chrome.tabs.update(tab.id, {url: errorPageURL})
+          if (tab.id === details.tabId) {
+            const errorID      = app.util.errorinfo.set(details.error, details.url),
+            errorPageURL = chrome.extension.getURL(`html/errorpages/connfail.html?id=${errorID}`)
+            chrome.tabs.update(tab.id, {url: errorPageURL})
+          }
         })
       })
     })
