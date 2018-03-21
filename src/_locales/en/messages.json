@@ -224,6 +224,12 @@
   "BlockSafeBrowsingTooltip": {
     "message": "Disable %{browser} from making direct connections to a network service that has privacy concerns around keeping logs. PIA Mace™ mitigates the risk in disabling this service."
   },
+  "BlockAutofill": {
+    "message": "Disable Autofill"
+  },
+  "BlockAutofillTooltip": {
+    "message": "Disable %{browser} from automatically filling in forms. This could leak personal data via hidden form fields."
+  },
   "BlockLocationAccess": {
     "message": "Block location access"
   },
@@ -364,6 +370,9 @@
   },
   "us_new_york_city": {
     "message": "US New York City"
+  },
+  "us_las_vegas": {
+    "message": "US Las Vegas"
   },
   "uk": {
     "message": "UK London"

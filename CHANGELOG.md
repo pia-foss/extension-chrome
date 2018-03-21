@@ -1,5 +1,7 @@
 __HEAD__
 
+* Add Disable Autofill setting in extension settings.
+
 * Fix wrong url bug on error page due to network connection being unavailable.
 
 * Clean chrome webstore and OneSky keys from repo.

@@ -1,49 +1,52 @@
 import "babel-polyfill";
-import storage            from "util/storage"
-import settings           from "util/settings"
-import icon               from "util/icon"
-import regionlist         from "util/regionlist"
-import regionsorter       from "util/regionsorter"
-import user               from "util/user"
-import bypasslist         from "util/bypasslist"
-import latencytest        from "util/latencytest"
-import buildinfo          from "util/buildinfo"
-import logger             from "util/logger"
-import counter            from "util/counter"
-import settingsmanager    from "util/settingsmanager"
-import errorinfo          from "util/errorinfo"
-import i18n               from "util/i18n"
-import platforminfo       from "util/platforminfo"
+import storage            from "util/storage";
+import settings           from "util/settings";
+import icon               from "util/icon";
+import regionlist         from "util/regionlist";
+import regionsorter       from "util/regionsorter";
+import user               from "util/user";
+import bypasslist         from "util/bypasslist";
+import latencytest        from "util/latencytest";
+import buildinfo          from "util/buildinfo";
+import logger             from "util/logger";
+import counter            from "util/counter";
+import settingsmanager    from "util/settingsmanager";
+import errorinfo          from "util/errorinfo";
+import i18n               from "util/i18n";
+import platforminfo       from "util/platforminfo";
 
-import microphone            from "contentsettings/microphone"
-import camera                from "contentsettings/camera"
-import location              from "contentsettings/location"
-import flash                 from "contentsettings/flash"
-import extensionNotification from "contentsettings/extension_notification"
+import microphone            from "contentsettings/microphone";
+import camera                from "contentsettings/camera";
+import location              from "contentsettings/location";
+import flash                 from "contentsettings/flash";
+import extensionNotification from "contentsettings/extension_notification";
 
-import hyperlinkaudit    from "chromesettings/hyperlinkaudit"
-import webrtc            from "chromesettings/webrtc"
-import thirdpartycookies from "chromesettings/thirdpartycookies"
-import httpreferer       from "chromesettings/httpreferer"
-import networkprediction from "chromesettings/networkprediction"
-import safebrowsing      from "chromesettings/safebrowsing"
-import BrowserProxy      from "chromesettings/proxy"
-import eventhandler from "eventhandler/eventhandler"
+import hyperlinkaudit    from "chromesettings/hyperlinkaudit";
+import webrtc            from "chromesettings/webrtc";
+import thirdpartycookies from "chromesettings/thirdpartycookies";
+import httpreferer       from "chromesettings/httpreferer";
+import networkprediction from "chromesettings/networkprediction";
+import safebrowsing      from "chromesettings/safebrowsing";
+import BrowserProxy      from "chromesettings/proxy";
+import autofill          from "chromesettings/autofill";
+import eventhandler from "eventhandler/eventhandler";
 
 (new function(window) {
-  const self = Object.create(null),
-        deepFreeze = (obj) => {
-          if(@@freezeApp)
-            for(let p in obj)
-              obj[p] = Object.freeze(obj[p])
-          return Object.freeze(obj)
-        }
+  const self = Object.create(null);
+  const deepFreeze = (obj) => {
+    if(@@freezeApp) {
+      for(let p in obj) {
+        obj[p] = Object.freeze(obj[p]);
+      }
+    }
+    return Object.freeze(obj);
+  }
 
-  self.frozen = @@freezeApp
-  self.buildinfo    = new buildinfo(self)
-  self.logger       = new logger(self)
-  self.eventhandler = new eventhandler(self)
-  window.debug = self.logger.debug /* eslint-ignore no-unused-vars */
+  self.frozen = @@freezeApp;
+  self.buildinfo    = new buildinfo(self);
+  self.logger       = new logger(self);
+  self.eventhandler = new eventhandler(self);
+  window.debug = self.logger.debug; /* eslint-ignore no-unused-vars */
 
   self.util = Object.create(null);
   self.util.platforminfo       = new platforminfo(self);
@@ -79,25 +82,25 @@ import eventhandler from "eventhandler/eventhandler"
   self.chromesettings.webrtc            = new webrtc(self);
   self.chromesettings.thirdpartycookies = new thirdpartycookies(self);
   self.chromesettings.safebrowsing      = new safebrowsing(self);
+  self.chromesettings.autofill          = new autofill(self);
   self.chromesettings = deepFreeze(self.chromesettings);
 
   (() => {
-    const {proxy} = self,
-          {user,settings,regionlist} = self.util
-    settings.setDefaults()
+    const {proxy} = self;
+    const {user,settings,regionlist} = self.util;
+    settings.setDefaults();
 
-    if(!user.inStorage())
-      proxy.disable()
-    if(!regionlist.synced)
-      regionlist.sync()
+    if(!user.inStorage()) { proxy.disable(); }
+    if(!regionlist.synced) { regionlist.sync(); }
 
-    proxy.readSettings().then(() => {
-      if(!proxy.isControllable())
-        return
-      if(user.inStorage())
-        user.auth().catch(proxy.disable)
-    })
-    window.app = Object.freeze(self)
-    debug("background.js: initialized")
-  })()
+    proxy.readSettings()
+    .then(() => {
+      if(!proxy.isControllable()) { return; }
+      if(user.inStorage()) { user.auth().catch(proxy.disable);  }
+    });
+
+    window.app = Object.freeze(self);
+    debug("background.js: initialized");
+  })();
+
 }(window, document))

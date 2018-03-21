@@ -73,6 +73,14 @@ export default function(renderer, app, window, document) {
                       learnMore={t("ReadMore")}
                       setting={chromesettings.safebrowsing}
                   />
+                  <SettingItem
+                      id={chromesettings.autofill.settingID}
+                      controllable={chromesettings.autofill.isControllable()}
+                      label={t("BlockAutofill")}
+                      tooltip={t("BlockAutofillTooltip", {browser: app.buildinfo.browser})}
+                      setting={chromesettings.autofill}
+                  />
+
               </SettingSection>
             </div>
             <div className="sectionwrapper tracking">
