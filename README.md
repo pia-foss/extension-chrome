@@ -160,6 +160,7 @@ By contributing to this project you are agreeing to the terms stated in the Cont
  - Robert Gleeson
  - Edward Kim
  - Amir Malik
+ - Manish Jethani
  - Pericles
 
 ## License
