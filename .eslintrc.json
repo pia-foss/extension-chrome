@@ -49,7 +49,6 @@
     "consistent-this": "off",
     "curly": "off",
     "default-case": "off",
-    "dot-location": "error",
     "dot-notation": "error",
     "eol-last": "error",
     "eqeqeq": "error",
@@ -178,7 +177,6 @@
     "no-trailing-spaces": "error",
     "no-undef-init": "off",
     "no-undef": "off",
-    "no-underscore-dangle": "error",
     "no-unmodified-loop-condition": "error",
     "no-unneeded-ternary": "error",
     "no-unused-expressions": [
