@@ -15,8 +15,7 @@ Feature requests can also be submitted as issues. We’d be grateful if you chec
 
 ## Making Pull Requests
 * Sync the develop branch in your fork with the develop branch in the source repo.
-* Merge your feature branch into “develop”.
-* Make your pull request from “develop” in your fork to “develop” in the source.
+* Make your pull request from “feature” in your fork to “develop” in the source.
 * Use short and concise commit messages.
 * Lint your code before committing and making a pull request.
 * Write unit tests for new features and make sure all tests are passing.
