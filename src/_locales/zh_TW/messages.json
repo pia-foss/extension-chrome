@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "停用超連結審查。超連結審查是一項新 HTML 功能，用來在您點進連結時通知追蹤工具及分析服務。"
   },
+  "ViewDebugLog": {
+    "message": "檢視錯誤偵測紀錄"
+  },
   "DebugMode": {
     "message": "錯誤偵測模式"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://cht.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "將網址加到繞路清單"
   },
   "SupportURL": {
     "message": "https://cht.privateinternetaccess.com/pages/client-support/"
@@ -214,6 +220,12 @@
   },
   "BlockSafeBrowsingTooltip": {
     "message": "不允許 %{browser} 直接連接存在隱私問題（會保留瀏覽紀錄）的網際網路服務。PIA Mace™ 透過停用該服務來降低風險。"
+  },
+  "BlockAutofill": {
+    "message": "停用自動填表功能"
+  },
+  "BlockAutofillTooltip": {
+    "message": "不允許 %{browser} 自動填表。自動填表功能有機會透過隱藏表格欄位洩漏個人資料。"
   },
   "BlockLocationAccess": {
     "message": "封鎖位置存取權"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "美國紐約市"
+  },
+  "us_las_vegas": {
+    "message": "美國拉斯維加斯"
   },
   "uk": {
     "message": "英國倫敦"

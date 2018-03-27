@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "Deaktiver hyperlinkrevision, en ny HTML-funktion, der er designet til at underrette sporere og analytiske tjenester, når du klikker på et link."
   },
+  "ViewDebugLog": {
+    "message": "Se fejlfindingslogfil"
+  },
   "DebugMode": {
     "message": "Fejlretningstilstand"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://dnk.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "Tilføj URL til at bypass-liste"
   },
   "SupportURL": {
     "message": "https://dnk.privateinternetaccess.com/pages/client-support/"
@@ -213,7 +219,13 @@
     "message": "Læs mere"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "Deaktiver %{browser} fra at oprette retningsforbindelser til en netværkstjeneste, der har fortrolighedsproblemer angående logføring. PIA Mace™ mindsker risikoen ved at deaktivere denne service."
+    "message": "Deaktiver %{browser} fra at oprette direkte forbindelser til en netværkstjeneste, der har fortrolighedsproblemer angående logføring. PIA Mace™ mindsker risikoen ved at deaktivere denne service."
+  },
+  "BlockAutofill": {
+    "message": "Deaktiver Autoudfyld"
+  },
+  "BlockAutofillTooltip": {
+    "message": "Deaktiver %{browser} fra automatisk udfyldning af formularer. Dette kan lække personlige data via skjulte formularfelter."
   },
   "BlockLocationAccess": {
     "message": "Bloker adgang til placering"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "USA, New York"
+  },
+  "us_las_vegas": {
+    "message": "USA, Las Vegas"
   },
   "uk": {
     "message": "England, London"

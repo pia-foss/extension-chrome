@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "最近追加されたHTML機能であるハイパーリンク監査を無効にします。ハイパーリンク監査は、ユーザーがリンクをクリックすると、トラッカーとアナリティクスサービスに通知するようにデザインされた機能です。"
   },
+  "ViewDebugLog": {
+    "message": "デバッグログを表示"
+  },
   "DebugMode": {
     "message": "デバッグモード"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://jpn.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "URLをバイパスリストに追加"
   },
   "SupportURL": {
     "message": "https://jpn.privateinternetaccess.com/pages/client-support/"
@@ -213,7 +219,13 @@
     "message": "詳しく読む"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "ログの保存でプライバシー上の懸念を生む%{browser}のネットワークサービス直接接続を無効にします。PIA Mace™はこのサービスの無効化にあたってのリスクを緩和します。"
+    "message": "ログの保存でプライバシー上の懸念を生むネットワークサービスに%{browser}が直接接続するのを無効にします。PIA Mace™はこのサービスの無効化にあたってのリスクを緩和します。"
+  },
+  "BlockAutofill": {
+    "message": "自動入力を無効化"
+  },
+  "BlockAutofillTooltip": {
+    "message": "%{browser}の自動フォーム入力を無効にします。自動フォーム入力により、隠れたフォームフィールド経由で個人情報が漏洩する場合があります。"
   },
   "BlockLocationAccess": {
     "message": "位置情報アクセスをブロック"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "米国 ニューヨーク市"
+  },
+  "us_las_vegas": {
+    "message": "米国 ラスベガス"
   },
   "uk": {
     "message": "英国 ロンドン"

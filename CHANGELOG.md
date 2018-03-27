@@ -1,5 +1,7 @@
 __HEAD__
 
+* Updated new translations
+
 * Add Disable Autofill setting in extension settings.
 
 * Fix wrong url bug on error page due to network connection being unavailable.

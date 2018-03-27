@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "ปิดใช้งานการตรวจสอบไฮเปอร์ลิงก์ ซึ่งเป็นคุณสมบัติ HTML ล่าสุดที่ออกแบบมาสำหรับแจ้งเตือนผู้สะกดรอยตามและบริการวิเคราะห์เมื่อคุณคลิกลิงก์"
   },
+  "ViewDebugLog": {
+    "message": "ดูบันทึกการแก้จุดบกพร่อง"
+  },
   "DebugMode": {
     "message": "โหมดแก้จุดบกพร่อง"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://tha.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "เพิ่ม URL ไปยังรายชื่อปล่อยผ่าน"
   },
   "SupportURL": {
     "message": "https://tha.privateinternetaccess.com/pages/client-support/"
@@ -213,7 +219,13 @@
     "message": "อ่านเพิ่มเติม"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "ปิดใช้งาน %{browser} จากการเชื่อมต่อทิศทางไปยังบริการเครือข่ายซึ่งมีข้อกังวลด้านความเป็นส่วนตัวในการเก็บบันทึก PIA Mace™ ได้ทำการลดความเสี่ยงโดยการปิดใช้งานบริการนี้"
+    "message": "ปิดใช้งาน %{browser} จากการเชื่อมต่อโดยตรงไปยังบริการเครือข่ายซึ่งมีข้อกังวลด้านความเป็นส่วนตัวในการเก็บบันทึก PIA Mace™ ได้ทำการลดความเสี่ยงโดยการปิดใช้งานบริการนี้"
+  },
+  "BlockAutofill": {
+    "message": "ปิดใช้งานการป้อนอัตโนมัติ"
+  },
+  "BlockAutofillTooltip": {
+    "message": "ปิดใช้งาน %{browser} จากการกรอกแบบฟอร์มโดยอัตโนมัติ ฟังก์ชั่นนี้อาจทำให้ข้อมูลส่วนบุคคลรั่วไหลผ่านช่องในแบบฟอร์มที่ซ่อนอยู่"
   },
   "BlockLocationAccess": {
     "message": "บล็อกการใช้ตำแหน่งที่ตั้ง"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "นิวยอร์ก สหรัฐอเมริกา"
+  },
+  "us_las_vegas": {
+    "message": "สหรัฐอเมริกา ลาสเวกัส"
   },
   "uk": {
     "message": "ลอนดอน สหราชอาณาจักร"

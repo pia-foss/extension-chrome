@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "링크를 클릭할 때 트래커 및 분석 서비스를 알려주는 최신 HTML 기능인 하이퍼링크 감사를 비활성화합니다."
   },
+  "ViewDebugLog": {
+    "message": "디버그 로그 보기"
+  },
   "DebugMode": {
     "message": "디버그 모드"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://kor.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "우회 목록에 URL 추가"
   },
   "SupportURL": {
     "message": "https://kor.privateinternetaccess.com/pages/client-support/"
@@ -214,6 +220,12 @@
   },
   "BlockSafeBrowsingTooltip": {
     "message": "%{browser}이(가) 로그를 보관해서 프라이버시를 침해할 우려가 있는 네트워크 서비스에 직접 연결을 하지 못하게 합니다. PIA Mace™는 이러한 서비스를 비활성화해서 리스크를 완화합니다."
+  },
+  "BlockAutofill": {
+    "message": "자동 기입 비활성화"
+  },
+  "BlockAutofillTooltip": {
+    "message": "%{browser}이(가) 양식에 자동으로 기입하지 못하게 합니다. 숨겨진 양식 필드를 통해 개인 정보가 유출될 수 있습니다."
   },
   "BlockLocationAccess": {
     "message": "위치 접근 차단"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "미국 뉴욕 시"
+  },
+  "us_las_vegas": {
+    "message": "미국 라스베가스"
   },
   "uk": {
     "message": "영국 런던"

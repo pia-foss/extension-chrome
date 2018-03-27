@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "Disabilita il controllo del collegamento ipertestuale, una recente funzione HTML progettata per avvisare di tracker e servizi di analisi quando fai clic su un link."
   },
+  "ViewDebugLog": {
+    "message": "Visualizza registro di debug"
+  },
   "DebugMode": {
     "message": "Modalità debug"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://ita.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "Aggiungi URL per bypassare l'elenco"
   },
   "SupportURL": {
     "message": "https://ita.privateinternetaccess.com/pages/client-support/"
@@ -214,6 +220,12 @@
   },
   "BlockSafeBrowsingTooltip": {
     "message": "Impedisci a %{browser} di completare connessioni dirette ad un servizio di rete con restrizioni di privacy relative all'archiviazione di registri. Disattivando questo servizio, PIA Mace™ riduce i rischi."
+  },
+  "BlockAutofill": {
+    "message": "Riemp. automatico"
+  },
+  "BlockAutofillTooltip": {
+    "message": "Disattiva il riempimento automatico di moduli su %{browser} . Ciò potrebbe rivelare informazioni personali mediante campi di moduli nascosti."
   },
   "BlockLocationAccess": {
     "message": "Blocca accesso alla località"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "New York City USA"
+  },
+  "us_las_vegas": {
+    "message": "US Las Vegas"
   },
   "uk": {
     "message": "Londra Regno Unito"

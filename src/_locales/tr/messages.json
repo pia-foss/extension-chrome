@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "Hiperlink denetimini devre dışı bırak, bir bağlantıya tıkladığınızda izleyicilerin ve analitik hizmetlerin uyarılması için tasarlanan yeni bir HTML özelliğidir."
   },
+  "ViewDebugLog": {
+    "message": "Hata Ayıklama Günlüğünü Göster"
+  },
   "DebugMode": {
     "message": "Hata ayıklama modu"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://tur.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "URL'yi atlama listesine ekle"
   },
   "SupportURL": {
     "message": "https://tur.privateinternetaccess.com/pages/client-support/"
@@ -213,7 +219,13 @@
     "message": "Devamını Oku"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "%{browser} tarayıcısının günlük tutmayla ilgili gizlilik hususları içeren bir ağa yön bağlantısı gerçekleştirmesine engel olun. PIA Mace™, bu hizmetin kapatılmasındaki riski düşürür."
+    "message": "%{browser} tarayıcısının doğrudan günlük tutmayla ilgili gizlilik hususları içeren bir ağa bağlanmasına engel olun. PIA Mace™, bu hizmetin kapatılmasındaki riski düşürür."
+  },
+  "BlockAutofill": {
+    "message": "Otomatik Doldurmayı Kapat"
+  },
+  "BlockAutofillTooltip": {
+    "message": "%{browser} tarayıcısının formları otomatik doldurma işlevini devre dışı bırakın. Gizli form alanlarıyla kişisel verilerin sızmasına neden olabilir."
   },
   "BlockLocationAccess": {
     "message": "Konuma erişimi engelleyin"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "ABD New York City"
+  },
+  "us_las_vegas": {
+    "message": "ABD Las Vegas"
   },
   "uk": {
     "message": "Birleşik Krallık Londra"

@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "禁用超链接审核是最新的 HTML 功能，用于在您点击链接时通知跟踪程序和分析服务。"
   },
+  "ViewDebugLog": {
+    "message": "查看调试日志"
+  },
   "DebugMode": {
     "message": "调试模式"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://chi.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "将 URL 添加到免过滤清单"
   },
   "SupportURL": {
     "message": "https://chi.privateinternetaccess.com/pages/client-support/"
@@ -213,7 +219,13 @@
     "message": "阅读更多"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "禁止 %{browser} 直接连接到因保留日志而存在隐私问题的的网络服务。 PIA Mace™ 通过禁用此服务来减轻风险。"
+    "message": "禁止 %{browser} 直接连接到因保留日志而存在隐私问题的的网络服务。PIA Mace™ 通过禁用此服务来减轻风险。"
+  },
+  "BlockAutofill": {
+    "message": "禁用自动填充"
+  },
+  "BlockAutofillTooltip": {
+    "message": "禁止 %{browser} 自动填充表单。自动填充可能会通过隐藏的表单域泄漏个人数据。"
   },
   "BlockLocationAccess": {
     "message": "阻止访问位置"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "美国纽约"
+  },
+  "us_las_vegas": {
+    "message": "美国洛杉矶"
   },
   "uk": {
     "message": "英国伦敦"
