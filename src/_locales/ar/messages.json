@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "تعطيل تدقيق الارتباط التشعبي، وهي ميزة HTML حديثة مصممة لإشعار أجهزة التعقب والخدمات التحليلية عند النقر على رابط."
   },
+  "ViewDebugLog": {
+    "message": "عرض سجل التصحيح"
+  },
   "DebugMode": {
     "message": "وضع التصحيح"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://ara.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "أضف رابط URL لاجتياز القائمة"
   },
   "SupportURL": {
     "message": "https://ara.privateinternetaccess.com/pages/client-support"
@@ -213,7 +219,13 @@
     "message": "المزيد"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "تعطيل %{browser} لمنع إجراء اتصالات الاتجاه إلى خدمة شبكة لها مخاوف تتعلق بالخصوصية حول حفظ السجلات. PIA Mace™ يقلل  من مخاطر تعطيل هذه الخدمة."
+    "message": "تعطيل %{browser} لمنع إجراء الاتصالات المباشرة إلى خدمة شبكة لها مخاوف تتعلق بالخصوصية حول حفظ السجلات. ™PIA Mace يقلل من مخاطر تعطيل هذه الخدمة."
+  },
+  "BlockAutofill": {
+    "message": "تعطيل التعبئة التلقائية"
+  },
+  "BlockAutofillTooltip": {
+    "message": "قم بتعطيل %{browser} من ملء النماذج تلقائيًا. هذا يمكن أن يؤدي إلى تسرب البيانات الشخصية عبر خانات النماذج المخفية."
   },
   "BlockLocationAccess": {
     "message": "حظر الوصول للموقع"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "الولايات المتحدة - مدينة نيويورك"
+  },
+  "us_las_vegas": {
+    "message": "الولايات المتحدة، لاس فيغاس"
   },
   "uk": {
     "message": "المملكة المتحدة - لندن"

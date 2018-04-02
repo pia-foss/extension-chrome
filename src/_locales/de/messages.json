@@ -41,6 +41,9 @@
   "BlockHyperlinkAuditingTooltip": {
     "message": "Hyperlink-Prüfung deaktivieren, eine neue HTML-Funktion entwickelt, um Tracker und Analyse-Dienste zu benachrichtigen, wenn Sie auf einen Link klicken."
   },
+  "ViewDebugLog": {
+    "message": "Debug-Protokoll anzeigen"
+  },
   "DebugMode": {
     "message": "Debug-Modus"
   },
@@ -121,6 +124,9 @@
   },
   "AutoLoginURL": {
     "message": "https://deu.privateinternetaccess.com/xpages/sign-in"
+  },
+  "AddUrlToBypassList": {
+    "message": "URL zu Bypass-Liste hinzufügen"
   },
   "SupportURL": {
     "message": "https://deu.privateinternetaccess.com/pages/client-support/"
@@ -213,7 +219,13 @@
     "message": "Mehr lesen"
   },
   "BlockSafeBrowsingTooltip": {
-    "message": "Verhindert, dass %{browser} Richtungsverbindungen zu einem Netzwerkdienst herstellen kann, der aus Datenschutzgründen keine Protokolle führt. PIA Mace™ verringert das Risiko, diesen Dienst zu deaktivieren."
+    "message": "Verhindert, dass %{browser} direkte Verbindungen zu einem Netzwerkdienst herstellen kann, der aus Datenschutzgründen keine Protokolle führt. PIA Mace™ verringert das Risiko, diesen Dienst zu deaktivieren."
+  },
+  "BlockAutofill": {
+    "message": "Automatisches Ausfüllen deaktivieren"
+  },
+  "BlockAutofillTooltip": {
+    "message": "Verhindert, dass %{browser} Formulare automatisch ausfüllt. Dies kann dazu führen, dass persönliche Daten über versteckte Formularfelder preisgegeben werden."
   },
   "BlockLocationAccess": {
     "message": "Standortzugriff sperren"
@@ -355,6 +367,9 @@
   },
   "us_new_york_city": {
     "message": "US New York City"
+  },
+  "us_las_vegas": {
+    "message": "USA Las Vegas"
   },
   "uk": {
     "message": "GB London"
