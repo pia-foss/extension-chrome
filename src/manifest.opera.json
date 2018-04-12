@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Private Internet Access",
-  "description": "Defeat censorship, unblock any website and access the open Internet the way it was meant to be with Private Internet Access™",
+  "description": "Defeat censorship, unblock any website and access the open Internet the way it was meant to be with Private Internet Access®",
   "version": "@@version",
   "default_locale": "en",
   "browser_action": {
