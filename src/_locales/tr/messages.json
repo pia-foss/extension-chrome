@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "İzleme"
   },
+  "FingerprintProtection": {
+    "message": "Parmak izi koruması"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Bilgisayarınız hakkında özel olmayan bilgiler sağlayarak ve belirli tarayıcı API'lerine erişilmesini engelleyerek tarayıcı parmak izi çıkarılmasına karşı korunun."
+  },
+  "TrackingProtection": {
+    "message": "İzlenme koruması"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Kullanıcıların hangi sitelere gittiğini izledikleri bilinen etki alanlarına (domain) gönderilen istekleri engelleyin."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Hiperlink denetimini devre dışı bırak"
   },

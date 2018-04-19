@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "التعقب"
   },
+  "FingerprintProtection": {
+    "message": "الحماية من بصمات المتصفح"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "حماية ضد بصمات المتصفح من خلال توفير معلومات عامة حول جهاز الكمبيوتر ومنع الوصول إلى واجهات برمجة تطبيقات معينة للمتصفح."
+  },
+  "TrackingProtection": {
+    "message": "الحماية من التعقب"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "حظر الطلبات التي يتم إجراؤها على النطاقات المعروف عنها أنها تشارك في تعقب المستخدمين عبر المواقع."
+  },
   "BlockHyperlinkAuditing": {
     "message": "تعطيل تدقيق الارتباط التشعبي"
   },

@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Отслеживание"
   },
+  "FingerprintProtection": {
+    "message": "Защита идентификационных данных"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Защититесь от сбора идентификационных данных из браузера, предоставив общую информацию о своем ПК и предотвратив доступ к определенным API браузера."
+  },
+  "TrackingProtection": {
+    "message": "Защита от отслеживания"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Блокирует запросы к доменам, замеченные на участии в межсайтовом отслеживании пользователей."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Отключить аудит гиперссылок"
   },

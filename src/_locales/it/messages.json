@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Tracking"
   },
+  "FingerprintProtection": {
+    "message": "Protezione da fingerptint"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Proteggiti contro il browser fingerprint fornendo informazioni generiche sul tuo computer ed impedendo l'accesso a determinati API di browser."
+  },
+  "TrackingProtection": {
+    "message": "Protezione da tracciamento"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Blocca le richieste effettuate da domini conosciuti per eseguire il tracciamento degli utenti tramite cross-site."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Disabilita controllo collegamento ipertestuale"
   },

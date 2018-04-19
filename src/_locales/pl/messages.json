@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Śledzenie"
   },
+  "FingerprintProtection": {
+    "message": "Ochrona przed śledzeniem przez przeglądarkę"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Chroni przed „odciskiem palca“ przeglądarki, podając tylko ogólne informacje o komputerze i nie udzielając dostępu do niektórych interfejsów API przeglądarki."
+  },
+  "TrackingProtection": {
+    "message": "Ochrona przed śledzeniem"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Blokuje zapytania skierowane do domen, o których wiadomo, że zajmują się śledzeniem użytkowników."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Wyłącz audyt hiperłączy"
   },

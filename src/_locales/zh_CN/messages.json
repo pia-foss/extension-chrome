@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "跟踪"
   },
+  "FingerprintProtection": {
+    "message": "指纹防护"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "提供有关计算机的通用信息并防止访问某些浏览器 API ，从而防止浏览器指纹识别。"
+  },
+  "TrackingProtection": {
+    "message": "跟踪防护"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "如果某域已知参与过跨站点跟踪用户的行为，则阻止对该域所做的请求。"
+  },
   "BlockHyperlinkAuditing": {
     "message": "禁用超链接审核"
   },

@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Tracken"
   },
+  "FingerprintProtection": {
+    "message": "Bescherming tegen fingerprinting"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Voorkom dat uw specifieke apparaat en browser worden herkend door algemene informatie over uw computer te verstrekken en de toegang tot bepaalde browser-API's te voorkomen."
+  },
+  "TrackingProtection": {
+    "message": "Trackbescherming"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Blokkeert verzoeken aan domeinen waarvan bekend is dat ze gebruikers via meerdere sites volgen."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Hyperlinkcontrole uitschakelen"
   },
