@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Rastreamento"
   },
+  "FingerprintProtection": {
+    "message": "Proteção contra impressão digital"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Proteja-se contra impressão digital de navegadores com o fornecimento de informações gerais sobre o seu computador e evite o acesso a determinadas APIs de navegador."
+  },
+  "TrackingProtection": {
+    "message": "Proteção contra rastreamento"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Bloqueie solicitações feitas a domínios conhecidos pela participação em rastreamentos de usuários entre sites."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Desativar auditoria de hiperlink"
   },

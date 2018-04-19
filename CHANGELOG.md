@@ -1,5 +1,13 @@
 __HEAD__
 
+__v1.5.8__
+
+* Bug fix for copy pasting url into bypass list (trailing slash)
+
+* Cosmetic changes to Bypass list view.
+
+__v1.5.6__
+
 * Updated new translations
 
 * Add Disable Autofill setting in extension settings.

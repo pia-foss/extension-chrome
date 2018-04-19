@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "추적"
   },
+  "FingerprintProtection": {
+    "message": "지문 보호"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "컴퓨터에 대한 일반적인 정보를 제공하고 특정 브라우저 API에 대한 접근을 방지하여 브라우저 지문에 대해 보호합니다."
+  },
+  "TrackingProtection": {
+    "message": "추적 보호"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "사용자의 교차 사이트 추적에 관여하는 것으로 알려진 도메인에 대한 요청을 차단합니다."
+  },
   "BlockHyperlinkAuditing": {
     "message": "하이퍼링크 감사 비활성화"
   },

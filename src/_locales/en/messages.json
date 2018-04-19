@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Tracking"
   },
+  "FingerprintProtection": {
+    "message": "Fingerprint protection"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Protect against browser fingerprinting by providing generic information about your computer and preventing access to certain browser APIs."
+  },
+  "TrackingProtection": {
+    "message": "Tracking protection"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Blocks requests made to domains that are known to engage in cross-site tracking of users."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Disable hyperlink auditing"
   },
@@ -190,9 +202,6 @@
   },
   "WelcomeToNewVersion": {
     "message": "Welcome to %{appVersion}"
-  },
-  "Extension": {
-    "message": "Extension"
   },
   "ExtensionUpdated": {
     "message": "Extension updated"

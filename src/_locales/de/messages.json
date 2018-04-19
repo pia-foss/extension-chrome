@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Verfolgen"
   },
+  "FingerprintProtection": {
+    "message": "Fingerabdruck-Schutz"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Schützen Sie sich vor Browser-Fingerabdrücken, indem Sie generische Informationen über Ihren Computer bereitstellen und den Zugriff auf bestimmte Browser-APIs verhindern."
+  },
+  "TrackingProtection": {
+    "message": "Tracking-Schutz"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Blockiert Anfragen an Domains, von denen bekannt ist, dass sie eine seitenübergreifende Verfolgung von Benutzern durchführen."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Hyperlink-Prüfung deaktivieren"
   },

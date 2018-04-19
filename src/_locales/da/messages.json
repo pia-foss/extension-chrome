@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Sporing"
   },
+  "FingerprintProtection": {
+    "message": "Fingeraftrykbeskyttelse"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Beskyt mod browser-fingeraftryk ved at give generisk information om din computer og forhindre adgang til visse browser-API'er."
+  },
+  "TrackingProtection": {
+    "message": "Sporingsbeskyttelse"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Blokerer forespørgsler til domæner, der vides at deltage i sporing af brugere på tværs af websteder."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Deaktiver hyperlinkrevision"
   },

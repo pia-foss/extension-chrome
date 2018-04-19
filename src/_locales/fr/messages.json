@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "Suivi"
   },
+  "FingerprintProtection": {
+    "message": "Protection contre le fingerprinting"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "Protégez-vous contre le fingerprinting en fournissant des informations génériques sur votre ordinateur et en empêchant l'accès à certaines API du navigateur."
+  },
+  "TrackingProtection": {
+    "message": "Protection contre le traçage"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "Bloque les demandes effectuées vers des domaines connus pour leur participation au traçage inter-site des utilisateurs."
+  },
   "BlockHyperlinkAuditing": {
     "message": "Désactivation de la vérification de l'hyperlien"
   },

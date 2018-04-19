@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "追蹤"
   },
+  "FingerprintProtection": {
+    "message": "瀏覽器指紋保護"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "提供電腦的普通資料，和防止存取某些瀏覽器的 API，以保護瀏覽器指紋。"
+  },
+  "TrackingProtection": {
+    "message": "追蹤防護"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "封鎖要求發出予對使用者進行跨網站追蹤的網域。"
+  },
   "BlockHyperlinkAuditing": {
     "message": "停用超連結審查"
   },

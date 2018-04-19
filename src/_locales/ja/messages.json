@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "トラッキング"
   },
+  "FingerprintProtection": {
+    "message": "フィンガープリント保護"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "ご利用のコンピューターについて一般的な情報を提供し、特定のブラウザAPIへのアクセスを防止することにより、ブラウザフィンガープリントから保護します。"
+  },
+  "TrackingProtection": {
+    "message": "トラッキング保護"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "サイトをまたがってユーザーを追跡することが知られているドメインに対して行われるリクエストをブロックします。"
+  },
   "BlockHyperlinkAuditing": {
     "message": "ハイパーリンク監査を無効にする"
   },

@@ -35,6 +35,18 @@
   "Tracking": {
     "message": "การติดตาม"
   },
+  "FingerprintProtection": {
+    "message": "ป้องกันการเก็บร่องรอย"
+  },
+  "FingerprintProtectionTooltip": {
+    "message": "ป้องกันการเก็บร่องรอยการใช้งานเบราว์เซอร์ด้วยการให้ข้อมูลทั่วไปเกี่ยวกับคอมพิวเตอร์ของคุณ และป้องกันการเข้าถึง API บางเบราว์เซอร์"
+  },
+  "TrackingProtection": {
+    "message": "ป้องกันการติดตาม"
+  },
+  "TrackingProtectionTooltip": {
+    "message": "บล็อกคำขอไปยังโดเมน ซึ่งเป็นคำขอที่เกี่ยวข้องกับการติดตามผู้ใช้ข้ามเว็บไซต์"
+  },
   "BlockHyperlinkAuditing": {
     "message": "ปิดใช้งานการตรวจสอบไฮเปอร์ลิงก์"
   },
