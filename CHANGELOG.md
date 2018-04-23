@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.5.9__
+
+* Bug fix for translation text overflow on login view
+
 __v1.5.8__
 
 * Bug fix for copy pasting url into bypass list (trailing slash)

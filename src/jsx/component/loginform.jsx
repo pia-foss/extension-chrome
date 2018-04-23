@@ -32,16 +32,16 @@ export default function(renderer, app, window, document) {
             </div>
             <div className="form-group">
               <RememberMeField remember={true} name="rememberme" labelLocaleKey="RememberMe"/>
-	      <div>
-		<a className="resetpw" href={this.resetPasswordURL()} target="_blank">
-		  {t("ResetPasswordText")}
-		</a>
-	      </div>
             </div>
             <div className="form-group text-center">
               <button id="submit-form-button" type="submit" className="upcase-bold btn-success form-control">
                 {t('LoginText')}
               </button>
+              <div className="resetpw text-center">>
+            		<a href={this.resetPasswordURL()} target="_blank">
+            		  {t("ResetPasswordText")}
+            		</a>
+  	          </div>
               <div className="loader login-loader hidden"></div>
             </div>
           </div>
