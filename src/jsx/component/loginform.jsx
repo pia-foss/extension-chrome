@@ -37,7 +37,7 @@ export default function(renderer, app, window, document) {
               <button id="submit-form-button" type="submit" className="upcase-bold btn-success form-control">
                 {t('LoginText')}
               </button>
-              <div className="resetpw text-center">>
+              <div className="resetpw text-center">
             		<a href={this.resetPasswordURL()} target="_blank">
             		  {t("ResetPasswordText")}
             		</a>
