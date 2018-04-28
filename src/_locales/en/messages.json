@@ -350,6 +350,12 @@
   "RememberMe": {
     "message": "Remember me"
   },
+  "AllRegions": {
+    "message": "ALL REGIONS"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORITE REGIONS"
+  },
   "us_california": {
     "message": "US California"
   },
@@ -382,6 +388,9 @@
   },
   "us_las_vegas": {
     "message": "US Las Vegas"
+  },
+  "us-wdc": {
+    "message": "US Washington DC"
   },
   "uk": {
     "message": "UK London"
