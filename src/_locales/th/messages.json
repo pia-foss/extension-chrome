@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "ทุกภูมิภาค"
+  },
+  "FavoriteRegions": {
+    "message": "ภูมิภาคโปรด"
+  },
+  "us-wdc": {
+    "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
+  },
   "UILanguage": {
     "message": "ภาษา UI"
   },

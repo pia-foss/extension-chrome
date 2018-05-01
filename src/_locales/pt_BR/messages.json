@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "TODAS AS REGIÕES"
+  },
+  "FavoriteRegions": {
+    "message": "REGIÕES FAVORITAS"
+  },
+  "us-wdc": {
+    "message": "EUA, Washington DC"
+  },
   "UILanguage": {
     "message": "Idioma da IU"
   },

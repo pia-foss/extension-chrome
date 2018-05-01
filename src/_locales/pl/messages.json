@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "WSZYSTKIE REGIONY"
+  },
+  "FavoriteRegions": {
+    "message": "ULUBIONE REGIONY"
+  },
+  "us-wdc": {
+    "message": "USA Waszyngton, DC"
+  },
   "UILanguage": {
     "message": "Język IU"
   },

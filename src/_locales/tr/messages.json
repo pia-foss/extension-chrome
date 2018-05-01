@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "TÜM BÖLGELER"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORİ BÖLGELER"
+  },
+  "us-wdc": {
+    "message": "ABD Washington DC"
+  },
   "UILanguage": {
     "message": "Arayüz Dili"
   },

@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "جميع المناطق"
+  },
+  "FavoriteRegions": {
+    "message": "المناطق المفضلة"
+  },
+  "us-wdc": {
+    "message": "الولايات المتحدة، واشنطن العاصمة"
+  },
   "UILanguage": {
     "message": "لغة واجهة المستخدم"
   },

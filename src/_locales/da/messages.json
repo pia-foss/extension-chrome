@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "ALLE REGIONER"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORITREGIONER"
+  },
+  "us-wdc": {
+    "message": "USA, Washington DC"
+  },
   "UILanguage": {
     "message": "Grænsefladesprog"
   },

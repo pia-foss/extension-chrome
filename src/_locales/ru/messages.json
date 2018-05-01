@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "ВСЕ РЕГИОНЫ"
+  },
+  "FavoriteRegions": {
+    "message": "ИЗБРАННЫЕ РЕГИОНЫ"
+  },
+  "us-wdc": {
+    "message": "США, Вашингтон (округ Колумбия)"
+  },
   "UILanguage": {
     "message": "Язык интерфейса"
   },

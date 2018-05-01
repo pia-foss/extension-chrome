@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "ALLE REGIO'S"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORIETE REGIO'S"
+  },
+  "us-wdc": {
+    "message": "VS Washington DC"
+  },
   "UILanguage": {
     "message": "Taal UI"
   },

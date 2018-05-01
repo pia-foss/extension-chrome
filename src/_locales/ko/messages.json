@@ -1,4 +1,13 @@
 {
+  "AllRegions": {
+    "message": "모든 지역"
+  },
+  "FavoriteRegions": {
+    "message": "선호 지역"
+  },
+  "us-wdc": {
+    "message": "미국 워싱턴 DC"
+  },
   "UILanguage": {
     "message": "UI 언어"
   },
