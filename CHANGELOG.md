@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.5.10__
+
+* Update translations for Washington DC region.
+
 __v1.5.9__
 
 * Bug fix for translation text overflow on login view
