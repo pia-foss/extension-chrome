@@ -333,6 +333,14 @@ header {
     margin-bottom: 10px;
     text-align: center;
   }
+  .heart {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 20px;
+    height: 17px;
+    z-index: 10;
+  }
   .flag {
     float: left;
     img {
@@ -394,7 +402,7 @@ header {
     background: url(../images/selected_2x.png) no-repeat;
     position: absolute;
     top: -10px;
-    left: -10px;
+    right: -10px;
     background-size: contain;
   }
 }
