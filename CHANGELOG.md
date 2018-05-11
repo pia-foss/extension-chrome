@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.0__
+
+* Add Favorite Region view
+
 __v1.5.10__
 
 * Update translations for Washington DC region.

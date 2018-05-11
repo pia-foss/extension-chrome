@@ -67,6 +67,7 @@ li.popular-rule {
     min-height: 210px;
     width: 370px;
     padding: 10px;
+    overflow-x: hidden;
 }
 
 #changelog-template {
@@ -189,11 +190,36 @@ li.popular-rule {
             margin: 10px 0px 0px 0px;
         }
     }
+    .favorite-region-selector {
+      padding: 5px 15px;
+      background-color: rgba(230,230,230,0.5);
+
+      button {
+        border: 0px;
+        color: #b5b5b5;
+        padding: 3px 10px;
+        background-color: transparent;
+        &:first-child { margin-right: 15px; }
+
+        &.active {
+          color: $black;
+          border: 1px solid #b5b5b5;
+          background-color: $white;
+          border-radius: 30px;
+        }
+      }
+    }
     #region-list {
+        a { display: flex; align-items: center; padding: 10px 20px; }
+        .heart {
+          width: 20px;
+          height: 17px;
+          margin-right: 10px;
+        }
         .flag {
             height: 24px;
             width: 40px;
-            margin: -10px 10px 0px 0px;
+            margin: 0 10px 0px 0px;
             border: 1px solid #ddd;
         }
         .active {
