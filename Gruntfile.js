@@ -31,7 +31,7 @@ const panic = (s) => {
   process.exit(1); // eslint-disable-line no-process-exit
 }
 
-const sendToSlack = (text, channels=['#pia-qa-extension'], iconEmoji='robot_face') => {
+const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') => {
   return new Promise((resolve, reject) => {
     if(process.env.slack === "no") { resolve(); }
     else {
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-env');
   grunt.loadNpmTasks('grunt-purifycss');
 
-  grunt.registerTask("build", "Builds the extension.", function() {
+  grunt.registerTask("build", "Builds the extension.", () => {
     switch(browserName) {
       case "opera":
         break;
@@ -116,11 +116,11 @@ module.exports = function(grunt) {
   grunt.registerTask("setreleaseenv", "set release env vars", () => {
     const empty = (s) => !s || (s.trim && s.trim().length === 0);
     if(process.env.audience === "internal" && empty(process.env.gitinfo)) {
-      process.env.gitinfo = "yes"
+      process.env.gitinfo = "yes";
     }
   });
 
-  grunt.registerTask("webstorepublish", "publish extension on webstore", function() {
+  grunt.registerTask("webstorepublish", "publish extension on webstore", () => {
     const {audience,build} = process.env,
           finished        = this.async(),
           webstoreKeys    = webstoreConfigs.keys,
@@ -181,17 +181,17 @@ module.exports = function(grunt) {
     webstore.fetchToken().then(uploadPackage);
   });
 
-  grunt.registerTask("changelog", "Convert CHANGELOG.md from markdown to HTML", function() {
-    const marked    = require('marked'),
-          changelog = grunt.file.read('./CHANGELOG.md');
+  grunt.registerTask("changelog", "Convert CHANGELOG.md from markdown to HTML", () => {
+    const marked    = require('marked');
+    const changelog = grunt.file.read('./CHANGELOG.md');
     marked.setOptions({sanitize: false, smartypants: true, gfm: true});
     grunt.file.write(`${grunt.config.get('buildpath')}/html/CHANGELOG.html`, marked(changelog));
   });
 
-  grunt.registerTask("createzip", "Builds the extension, and then creates a .zip file from the build directory.", function() {
-    const buildname   = process.env.build,
-          fullZipPath = getZipPath(buildname),
-          zipFilename = path.basename(fullZipPath);
+  grunt.registerTask("createzip", "Builds the extension, and then creates a .zip file from the build directory.", () => {
+    const buildname   = process.env.build;
+    const fullZipPath = getZipPath(buildname);
+    const zipFilename = path.basename(fullZipPath);
 
     if(!buildname) {
       panic("The build name was not set, set $build and then rerun this task.");
@@ -210,15 +210,15 @@ module.exports = function(grunt) {
     ok(`Created ${fullZipPath}`);
   });
 
-  grunt.registerTask("deletebuild", "Delete a build directory.", function() {
+  grunt.registerTask("deletebuild", "Delete a build directory.", () => {
     return system("rm -rf " + grunt.config.get("buildpath"));
   });
 
-  grunt.registerTask("createbuild", "Create a build directory.", function() {
+  grunt.registerTask("createbuild", "Create a build directory.", () => {
     return system("mkdir -p " + grunt.config.get("buildpath"));
   });
 
-  grunt.registerTask("copyfiles", "Copy static assets to a build directory.", function() {
+  grunt.registerTask("copyfiles", "Copy static assets to a build directory.", () => {
     switch(process.env.browser) {
       case "opera":
         system(`cp ${grunt.config.get('buildpath')}/manifest.opera.json ${grunt.config.get('buildpath')}/manifest.json`);
@@ -230,7 +230,7 @@ module.exports = function(grunt) {
     return system("cp -R src/{_locales,images,html,css,fonts} " + grunt.config.get("buildpath"));
   });
 
-  grunt.registerTask("removeartifacts", "Remove artifacts created during the build process.", function() {
+  grunt.registerTask("removeartifacts", "Remove artifacts created during the build process.", () => {
     return system("rm -rf src/scss/vendored/ src/js/{templates,component}/ tmp/");
   });
 }
