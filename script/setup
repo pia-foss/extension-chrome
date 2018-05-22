@@ -25,6 +25,5 @@ exit_if_missing "bundle" "<any version>"
 exit_if_missing "npm" "<any version>"
 
 run "bundle install"
-run "npm install -g yarn"
-run "yarn install"
+run "npm install"
 echo "DONE!"

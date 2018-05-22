@@ -1,17 +1,17 @@
 // third party requirements
 require('dotenv').config();
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs-extra');
 const color = require('colors');
 const echomd = require('echomd');
 const config = require('./config');
 const Slack = require('node-slack');
-const system = require("child_process").execSync;
 const webstoreConfigs = require('./config/webstorekeys');
 
+
 // variables
+let gitinfo = process.env.gitinfo; // eslint-disable-line no-process-env
 const slack = new Slack(config.slack.hook, {});
-const browserName = process.env.browser; // eslint-disable-line no-process-env
+const {build, freezeApp, audience, browser} = process.env; // eslint-disable-line no-process-env
 
 // helper functions
 const stringify = (s) => {
@@ -33,7 +33,7 @@ const panic = (s) => {
 
 const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') => {
   return new Promise((resolve, reject) => {
-    if(process.env.slack === "no") { resolve(); }
+    if(process.env.slack === "no") { resolve(); } // eslint-disable-line no-process-env
     else {
       channels.forEach((channel) => {
         return slack.send({
@@ -49,11 +49,12 @@ const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') =
 
 
 module.exports = function(grunt) {
-  const srcfiles = ["src/manifest.json", "src/_locales", "src/html", "src/css", "src/images"];
+  const browserName = browser;
   const pkgVersion = grunt.file.read('./VERSION').trim();
-  const getZipPath = (buildname) => `./zips/${buildname}-${browserName}-v${pkgVersion}.zip`;
+  const getZipPath = (buildname) => `./zips/private_internet_access-${browserName}-v${pkgVersion}.zip`;
 
   grunt.initConfig(config);
+  grunt.loadNpmTasks('grunt-gitinfo');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-bowercopy');
@@ -66,118 +67,120 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-onesky-export');
   grunt.loadNpmTasks('grunt-onesky-import');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-env');
   grunt.loadNpmTasks('grunt-purifycss');
 
   grunt.registerTask("build", "Builds the extension.", () => {
-    switch(browserName) {
-      case "opera":
-        break;
-      case "chrome":
-        break;
-      default:
-        panic("The $browser variable was not set, set $browser and rerun this task.");
+    if (browserName !== 'opera' && browserName !== 'chrome') {
+      return panic("The $browser variable was not set, set $browser and rerun this task.");
     }
 
-    switch(process.env.build) { // eslint-disable-line no-process-env
+    let tasks = [];
+    switch(build) {
       case "debug":
-        var tasks = ["env:debug", "config:debug", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
-        grunt.task.run(tasks);
+        tasks = ["env:debug", "config:debug", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
         break;
       case "webstore":
-        var tasks = ["env:webstore", "config:webstore", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "uglify", "copyfiles",
+        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "uglify", "copyfiles",
                      "purifycss", "cssmin", "changelog", "htmlmin", "removeartifacts"];
-        grunt.task.run(tasks);
         break;
       default:
-        panic("The build name was not set, set $build and then rerun this task.");
-        break;
+        return panic("The build name was not set, set $build and then rerun this task.");
     }
+    grunt.task.run(tasks);
   });
 
   grunt.registerTask("default", "build");
 
-  grunt.registerTask("release", ["setreleaseenv", "createzip", "webstorepublish"]);
+  grunt.registerTask("release", ["setreleaseenv", "build", "createzip", "compress"]);
 
-  grunt.freezeApp = () => { return process.env.freezeApp !== "0"; }
+  grunt.freezeApp = () => { return freezeApp !== "0"; }
 
   grunt.getCommit = () => {
-    if(["yes", "1", "true"].includes(process.env.gitinfo)) {
-      return String(system('git log | head -n 1 | sed "s/commit //"')).trim();
+    if(["yes", "1", "true"].includes(gitinfo)) {
+      return grunt.config.get('gitinfo').local.branch.current.SHA;
     }
   }
 
   grunt.getBranch = () => {
-    if(["yes", "1", "true"].includes(process.env.gitinfo)) {
-      return String(system("git branch | grep '^*' | sed 's/* //'")).trim();
+    if(["yes", "1", "true"].includes(gitinfo)) {
+      return grunt.config.get('gitinfo').local.branch.current.name;
     }
   }
 
-  grunt.registerTask("setreleaseenv", "set release env vars", () => {
+  grunt.zipName = () => { return getZipPath(build); }
+
+  grunt.registerTask("setreleaseenv", "Set release env vars", () => {
     const empty = (s) => !s || (s.trim && s.trim().length === 0);
-    if(process.env.audience === "internal" && empty(process.env.gitinfo)) {
-      process.env.gitinfo = "yes";
-    }
+    if(audience === "internal" && empty(gitinfo)) { gitinfo = "yes"; }
   });
 
-  grunt.registerTask("webstorepublish", "publish extension on webstore", () => {
-    const {audience,build} = process.env,
-          finished        = this.async(),
-          webstoreKeys    = webstoreConfigs.keys,
-          webstoreTargets = {public: "default", internal: "trustedTesters"},
-          webstoreIDs     = webstoreConfigs.ids,
-          webstoreURL     = `https://chrome.google.com/webstore/detail/private-internet-access/${webstoreIDs[audience]}`,
-          availableAnnoucement = (audience, webstoreURL) => {
-            if(audience === "internal")
-              return `New extension *v${pkgVersion}* published for *testers*.\n` +
-                     `URL: ${webstoreURL}\n` +
-                     `It can take up to 15 minutes to become available on the store.`
-            else
-              return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
-                     `URL: ${webstoreURL}\n` +
-                     `It can take up to 15 minutes to become available on the store.`
-          },
-          pendingAnnoucement = (audience, webstoreURL) => {
-            if(audience === "internal")
-              return `New extension *v${pkgVersion}* published for *testers*\n` +
-                     `URL: ${webstoreURL}\n` +
-                     `It will be available on store after review, which can take up to 60 minutes.`
-            else
-              return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
-                     `URL: ${webstoreURL}\n` +
-                     `It will be available on store after review, which can take up to 60 minutes.`
-          },
-          confirmPublish  = (res) => {
-            if(res.status.indexOf("ITEM_PENDING_REVIEW") >= 0) {
-              const msg = pendingAnnoucement(webstoreURL);
-              sendToSlack(msg).then(() => ok(msg)).then(finished);
-            } else if(res.status.indexOf("OK") >= 0) {
-              const msg = availableAnnoucement(audience, webstoreURL);
-              sendToSlack(msg).then(() => ok(msg)).then(finished);
-            } else {
-              panic(res);
-              finished();
-            }
-          },
-          publishUpload = (res, token) => {
-            if(res.uploadState !== 'SUCCESS') {
-              panic(res.itemError.map((e) => e.error_detail).join(","));
-            }
-            info(`Uploaded "${getZipPath(build)}". Please wait.`);
-            webstore.publish(webstoreTargets[audience], token).then(confirmPublish);
-          },
-          uploadPackage = (token) => {
-            webstore.uploadExisting(fs.createReadStream(getZipPath(build)), token).then((res) => publishUpload(res, token));
-          };
+  grunt.registerTask("webstorepublish", "Publish extension on webstore", function() {
+    const finished        = this.async();
+    const webstoreKeys    = webstoreConfigs.keys;
+    const webstoreTargets = {public: "default", internal: "trustedTesters"};
+    const webstoreIDs     = webstoreConfigs.ids;
+    const webstoreURL     = `https://chrome.google.com/webstore/detail/private-internet-access/${webstoreIDs[audience]}`;
+    const webstore = require('chrome-webstore-upload')(Object.assign({extensionId: webstoreIDs[audience]}, webstoreKeys));
+
+    const availableAnnoucement = (audience, webstoreURL) => {
+      if(audience === "internal")
+        return `New extension *v${pkgVersion}* published for *testers*.\n` +
+               `URL: ${webstoreURL}\n` +
+               `It can take up to 15 minutes to become available on the store.`
+      else
+        return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
+               `URL: ${webstoreURL}\n` +
+               `It can take up to 15 minutes to become available on the store.`
+    };
+
+    const pendingAnnoucement = (audience, webstoreURL) => {
+      if(audience === "internal")
+        return `New extension *v${pkgVersion}* published for *testers*\n` +
+               `URL: ${webstoreURL}\n` +
+               `It will be available on store after review, which can take up to 60 minutes.`
+      else
+        return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
+               `URL: ${webstoreURL}\n` +
+               `It will be available on store after review, which can take up to 60 minutes.`
+    };
+
+    const confirmPublish  = (res) => {
+      if(res.status.indexOf("ITEM_PENDING_REVIEW") >= 0) {
+        const msg = pendingAnnoucement(webstoreURL);
+        sendToSlack(msg).then(() => ok(msg)).then(finished);
+      } else if(res.status.indexOf("OK") >= 0) {
+        const msg = availableAnnoucement(audience, webstoreURL);
+        sendToSlack(msg).then(() => ok(msg)).then(finished);
+      }
+      else {
+        panic(res);
+        finished();
+      }
+    };
+
+    const publishUpload = (res, token) => {
+      if(res.uploadState !== 'SUCCESS') {
+        return panic(res.itemError.map((e) => e.error_detail).join(","));
+      }
+      info(`Uploaded "${getZipPath(build)}". Please wait.`);
+      webstore.publish(webstoreTargets[audience], token)
+      .then(confirmPublish);
+    };
+
+    const uploadPackage = (token) => {
+      webstore.uploadExisting(fs.createReadStream(getZipPath(build)), token)
+      .then((res) => publishUpload(res, token));
+    };
 
     grunt.task.requires("createzip");
 
     if(Object.keys(webstoreIDs).indexOf(audience) < 0) {
-      panic("$audience must be set to 'public' or 'internal'");
+      return panic("$audience must be set to 'public' or 'internal'");
     }
 
     info("Starting upload");
-    const webstore = require('chrome-webstore-upload')(Object.assign({extensionId: webstoreIDs[audience]}, webstoreKeys));
     webstore.fetchToken().then(uploadPackage);
   });
 
@@ -189,48 +192,50 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask("createzip", "Builds the extension, and then creates a .zip file from the build directory.", () => {
-    const buildname   = process.env.build;
-    const fullZipPath = getZipPath(buildname);
-    const zipFilename = path.basename(fullZipPath);
-
-    if(!buildname) {
-      panic("The build name was not set, set $build and then rerun this task.");
+    if(!build) {
+      return panic("The build name was not set, set $build and then rerun this task.");
     }
 
     if(!browserName) {
-      panic("The $browser variable was not set, set $browser and then rerun this task.");
+      return panic("The $browser variable was not set, set $browser and then rerun this task.");
     }
 
     info("Building extension");
-    system("mkdir -p zips");
-    system(`build=${buildname} gitinfo=${process.env.gitinfo} grunt`);
+    fs.mkdirpSync('zips');
     info("Building zip archive");
-    system(`cd builds/ && zip -r ${zipFilename} ${buildname}`);
-    system(`mv builds/${zipFilename} zips/`);
-    ok(`Created ${fullZipPath}`);
   });
 
   grunt.registerTask("deletebuild", "Delete a build directory.", () => {
-    return system("rm -rf " + grunt.config.get("buildpath"));
+    return fs.removeSync(grunt.config.get('buildpath'));
   });
 
   grunt.registerTask("createbuild", "Create a build directory.", () => {
-    return system("mkdir -p " + grunt.config.get("buildpath"));
+    return fs.mkdirpSync(grunt.config.get('buildpath'));
   });
 
   grunt.registerTask("copyfiles", "Copy static assets to a build directory.", () => {
-    switch(process.env.browser) {
+    const buildPath = grunt.config.get('buildpath');
+
+    switch(browserName) {
       case "opera":
-        system(`cp ${grunt.config.get('buildpath')}/manifest.opera.json ${grunt.config.get('buildpath')}/manifest.json`);
+        fs.copySync(buildPath + '/manifest.opera.json', buildPath + '/manifest.json');
         break;
       default:
-        system(`rm ${grunt.config.get('buildpath')}/manifest.opera.json`);
+        fs.removeSync(buildPath + '/manifest.opera.json');
         break;
     }
-    return system("cp -R src/{_locales,images,html,css,fonts} " + grunt.config.get("buildpath"));
+
+    fs.copySync('src/_locales', buildPath + '/_locales');
+    fs.copySync('src/css', buildPath + '/css');
+    fs.copySync('src/fonts', buildPath + '/fonts');
+    fs.copySync('src/html', buildPath + '/html');
+    fs.copySync('src/images', buildPath + '/images');
   });
 
   grunt.registerTask("removeartifacts", "Remove artifacts created during the build process.", () => {
-    return system("rm -rf src/scss/vendored/ src/js/{templates,component}/ tmp/");
+    fs.removeSync('src/scss/vendored');
+    fs.removeSync('src/js/templates');
+    fs.removeSync('src/js/component');
+    fs.removeSync('tmp/');
   });
 }
