@@ -1,0 +1,15 @@
+{
+  "main": {
+    "options": {
+      "archive": "<%= grunt.zipName() %>",
+      "mode": "zip"
+    },
+    "files": [
+      {
+        "expand": true,
+        "cwd": "./builds/webstore",
+        "src": ["**"]
+      }
+    ]
+  }
+}

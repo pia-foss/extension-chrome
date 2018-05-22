@@ -14,5 +14,6 @@ module.exports = {
   config: require("./buildconfig.json"),
   replace: require("./replacements.json"),
   purifycss: require("./purifycss.json"),
-  slack: require('./slack')
+  slack: require('./slack'),
+  compress: require('./compress.json')
 }
