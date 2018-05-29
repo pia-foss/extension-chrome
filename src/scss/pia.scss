@@ -192,25 +192,38 @@ li.popular-rule {
     }
     .favorite-region-selector {
       padding: 5px 15px;
-      background-color: rgba(230,230,230,0.5);
-
+      padding-top: 10px;
+      padding-bottom: 0px;
+      background-color: #fafafa;
+      border-bottom: 1px solid #ddd;
       button {
-        border: 0px;
-        color: #b5b5b5;
-        padding: 3px 10px;
+        outline:0;
+        border:0px;
+        border-left: 1px solid #fafafa;
+        border-right: 1px solid #fafafa;
+        color: #888;
+        padding: 7px 24px;
+        font-size:12px;
         background-color: transparent;
-        &:first-child { margin-right: 15px; }
-
+        &:first-child { margin-right: 0px; }
         &.active {
-          color: $black;
-          border: 1px solid #b5b5b5;
-          background-color: $white;
-          border-radius: 30px;
+          color: #666;
+          font-weight: 500;
+          border: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          background-color: #fff;
+          border-radius: 3px 3px 0 0;
+          border-bottom: 1px solid #fff;
+          margin-bottom: -1px;
+          font-size: 12px;
+          padding: 7px 24px;
         }
       }
     }
     #region-list {
         a { display: flex; align-items: center; padding: 10px 20px; }
+        a:first-child {border-top:0px;}
         .heart {
           width: 20px;
           height: 17px;
@@ -229,6 +242,8 @@ li.popular-rule {
         max-height:350px;
         overflow:scroll;
         margin-bottom:-10px;
+        padding-top:10px;
+        margin-top: 1px;
     }
     .status {
         color: $grey;
@@ -320,7 +335,6 @@ padding-right: 0px;
 .form-control:focus {
 box-shadow:none;
 }
-
 
 .connection #region:hover .title {
     color: #fff;

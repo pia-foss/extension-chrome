@@ -1,5 +1,7 @@
 __HEAD__
 
+ * Update Region selection/favorite tab design
+
 __v1.6.0__
 
 * Add Favorite Region view
