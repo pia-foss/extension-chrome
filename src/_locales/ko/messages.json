@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "모든 지역"
-  },
-  "FavoriteRegions": {
-    "message": "선호 지역"
-  },
-  "us_wdc": {
-    "message": "미국 워싱턴 DC"
-  },
   "UILanguage": {
     "message": "UI 언어"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "ID 기억하기"
   },
+  "AllRegions": {
+    "message": "모든 지역"
+  },
+  "FavoriteRegions": {
+    "message": "선호 지역"
+  },
   "us_california": {
     "message": "미국 캘리포니아"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "미국 뉴욕 시"
   },
+  "us_atlanta": {
+    "message": "미국 애틀랜타"
+  },
   "us_las_vegas": {
     "message": "미국 라스베가스"
+  },
+  "us_houston": {
+    "message": "미국 휴스턴"
+  },
+  "us_wdc": {
+    "message": "미국 워싱턴 DC"
   },
   "uk": {
     "message": "영국 런던"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "영국 사우샘프턴"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "캐나다 몬트리올"
   },
   "ca_toronto": {
     "message": "캐나다 토론토"
+  },
+  "ca_vancouver": {
+    "message": "캐나다 밴쿠버"
   },
   "aus": {
     "message": "호주 시드니"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "독일"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "오스트리아"
+  },
+  "czech": {
+    "message": "체코 공화국"
   },
   "ro": {
     "message": "루마니아"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "이탈리아"
   },
+  "spain": {
+    "message": "스페인"
+  },
   "nz": {
     "message": "뉴질랜드"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "대한민국"
+  },
+  "poland": {
+    "message": "폴란드"
+  },
+  "hungary": {
+    "message": "헝가리"
   }
 }

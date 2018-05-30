@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "ทุกภูมิภาค"
-  },
-  "FavoriteRegions": {
-    "message": "ภูมิภาคโปรด"
-  },
-  "us_wdc": {
-    "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
-  },
   "UILanguage": {
     "message": "ภาษา UI"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "จดจำฉัน"
   },
+  "AllRegions": {
+    "message": "ทุกภูมิภาค"
+  },
+  "FavoriteRegions": {
+    "message": "ภูมิภาคโปรด"
+  },
   "us_california": {
     "message": "แคลิฟอร์เนีย สหรัฐอเมริกา"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "นิวยอร์ก สหรัฐอเมริกา"
   },
+  "us_atlanta": {
+    "message": "สหรัฐอเมริกา แอตแลนตา"
+  },
   "us_las_vegas": {
     "message": "สหรัฐอเมริกา ลาสเวกัส"
+  },
+  "us_houston": {
+    "message": "สหรัฐอเมริกา ฮุสตัน"
+  },
+  "us_wdc": {
+    "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
   },
   "uk": {
     "message": "ลอนดอน สหราชอาณาจักร"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "เซาแทมป์ตัน สหราชอาณาจักร"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "มอนทรีออล แคนาดา"
   },
   "ca_toronto": {
     "message": "โตรอนโต แคนาดา"
+  },
+  "ca_vancouver": {
+    "message": "แคนาดา แวนคูเวอร์"
   },
   "aus": {
     "message": "ซิดนีย์ ออสเตรเลีย"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "เยอรมนี"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "ออสเตรีย"
+  },
+  "czech": {
+    "message": "สาธารณรัฐเช็ก"
   },
   "ro": {
     "message": "โรมาเนีย"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "อิตาลี"
   },
+  "spain": {
+    "message": "สเปน"
+  },
   "nz": {
     "message": "นิวซีแลนด์"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "เกาหลีใต้"
+  },
+  "poland": {
+    "message": "โปแลนด์"
+  },
+  "hungary": {
+    "message": "ฮังการี"
   }
 }

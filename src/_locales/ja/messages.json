@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "すべての地域"
-  },
-  "FavoriteRegions": {
-    "message": "お気に入りの地域"
-  },
-  "us_wdc": {
-    "message": "アメリカ合衆国 ワシントンDC"
-  },
   "UILanguage": {
     "message": "UI言語"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "記憶させる"
   },
+  "AllRegions": {
+    "message": "すべての地域"
+  },
+  "FavoriteRegions": {
+    "message": "お気に入りの地域"
+  },
   "us_california": {
     "message": "米国 カリフォルニア"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "米国 ニューヨーク市"
   },
+  "us_atlanta": {
+    "message": "米国 アトランタ"
+  },
   "us_las_vegas": {
     "message": "米国 ラスベガス"
+  },
+  "us_houston": {
+    "message": "米国 ヒューストン"
+  },
+  "us_wdc": {
+    "message": "米国 ワシントンDC"
   },
   "uk": {
     "message": "英国 ロンドン"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "英国 サウザンプトン"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "カナダ モントリオール"
   },
   "ca_toronto": {
     "message": "カナダ トロント"
+  },
+  "ca_vancouver": {
+    "message": "カナダ バンクーバー"
   },
   "aus": {
     "message": "オーストラリア シドニー"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "ドイツ"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "オーストラリア"
+  },
+  "czech": {
+    "message": "チェコ共和国"
   },
   "ro": {
     "message": "ルーマニア"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "イタリア"
   },
+  "spain": {
+    "message": "スペイン"
+  },
   "nz": {
     "message": "ニュージーランド"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "韓国"
+  },
+  "poland": {
+    "message": "ポーランド"
+  },
+  "hungary": {
+    "message": "ハンガリー"
   }
 }

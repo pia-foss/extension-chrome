@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "TÜM BÖLGELER"
-  },
-  "FavoriteRegions": {
-    "message": "FAVORİ BÖLGELER"
-  },
-  "us_wdc": {
-    "message": "ABD Washington DC"
-  },
   "UILanguage": {
     "message": "Arayüz Dili"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "Beni hatırla"
   },
+  "AllRegions": {
+    "message": "TÜM BÖLGELER"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORİ BÖLGELER"
+  },
   "us_california": {
     "message": "ABD Kaliforniya"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "ABD New York City"
   },
+  "us_atlanta": {
+    "message": "ABD Atlanta"
+  },
   "us_las_vegas": {
     "message": "ABD Las Vegas"
+  },
+  "us_houston": {
+    "message": "ABD Houston"
+  },
+  "us_wdc": {
+    "message": "ABD Washington DC"
   },
   "uk": {
     "message": "Birleşik Krallık Londra"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "Birleşik Kralllık Southampton"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "Kanada Montreal"
   },
   "ca_toronto": {
     "message": "Kanada Toronto"
+  },
+  "ca_vancouver": {
+    "message": "CA Vancouver"
   },
   "aus": {
     "message": "Avustralya Sidney"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "Almanya"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "Avusturya"
+  },
+  "czech": {
+    "message": "Çek Cumhuriyeti"
   },
   "ro": {
     "message": "Romanya"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "İtalya"
   },
+  "spain": {
+    "message": "İspanya"
+  },
   "nz": {
     "message": "Yeni Zelanda"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "Güney Kore"
+  },
+  "poland": {
+    "message": "Polonya"
+  },
+  "hungary": {
+    "message": "Macaristan"
   }
 }
