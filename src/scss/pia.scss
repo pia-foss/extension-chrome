@@ -1,19 +1,19 @@
 // Bootstrap
-@import "vendored/bootstrap/variables";
-@import "vendored/bootstrap/mixins";
-@import "vendored/bootstrap/normalize";
-@import "vendored/bootstrap/print";
-@import "vendored/bootstrap/glyphicons";
-@import "vendored/bootstrap/scaffolding";
-@import "vendored/bootstrap/type";
-@import "vendored/bootstrap/code";
-@import "vendored/bootstrap/grid";
-@import "vendored/bootstrap/tables";
-@import "vendored/bootstrap/forms";
-@import "vendored/bootstrap/buttons";
-@import "vendored/bootstrap/tooltip";
-@import "vendored/bootstrap/list-group";
-@import "vendored/bootstrap/dropdowns";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/glyphicons";
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/tooltip";
+@import "bootstrap/list-group";
+@import "bootstrap/dropdowns";
 
 // Extension
 @import "colors";
@@ -390,6 +390,7 @@ box-shadow:none;
 }
 .rememberme input, .rememberme span{
     float:left;
+    margin-right: 10px;
 }
 .rememberme span {
     font-weight:normal;

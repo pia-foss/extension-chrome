@@ -1,8 +1,19 @@
 {
   "options": {
-    "transform": [["babelify", {"presets": ["es2015"], "plugins": ["transform-async-to-generator"]}]],
+    "transform": [
+      [
+        "babelify", {
+          "presets": ["es2015"],
+          "plugins": ["transform-async-to-generator"]
+        }
+      ]
+    ],
     "browserifyOptions" : {
-      "paths": ["./tmp/js", "./src/js", "./src/jsx"]
+      "paths": [
+        "./tmp/js",
+        "./src/js",
+        "./src/jsx"
+      ]
     }
   },
   "background": {
