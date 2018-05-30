@@ -57,8 +57,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-gitinfo');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-babel');
-  grunt.loadNpmTasks('grunt-bowercopy');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
@@ -79,10 +78,10 @@ module.exports = function(grunt) {
     let tasks = [];
     switch(build) {
       case "debug":
-        tasks = ["env:debug", "config:debug", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
+        tasks = ["env:debug", "config:debug", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
         break;
       case "webstore":
-        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "uglify", "copyfiles",
+        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "uglify", "copyfiles",
                      "purifycss", "cssmin", "changelog", "htmlmin", "removeartifacts"];
         break;
       default:
@@ -93,7 +92,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask("default", "build");
 
-  grunt.registerTask("release", ["setreleaseenv", "build", "createzip", "compress"]);
+  grunt.registerTask("release", ["setreleaseenv", "build", "createzip", "compress", "webstorepublish"]);
 
   grunt.freezeApp = () => { return freezeApp !== "0"; }
 
@@ -233,7 +232,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask("removeartifacts", "Remove artifacts created during the build process.", () => {
-    fs.removeSync('src/scss/vendored');
     fs.removeSync('src/js/templates');
     fs.removeSync('src/js/component');
     fs.removeSync('tmp/');

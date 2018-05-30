@@ -1,5 +1,11 @@
 __HEAD__
 
+__v1.6.2__
+
+* Update project dependencies
+
+__v1.6.1__
+
  * Update Region selection/favorite tab design
 
 __v1.6.0__
