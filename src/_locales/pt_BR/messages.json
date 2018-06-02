@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "TODAS AS REGIÕES"
-  },
-  "FavoriteRegions": {
-    "message": "REGIÕES FAVORITAS"
-  },
-  "us_wdc": {
-    "message": "EUA, Washington DC"
-  },
   "UILanguage": {
     "message": "Idioma da IU"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "Lembrar de mim"
   },
+  "AllRegions": {
+    "message": "TODAS AS REGIÕES"
+  },
+  "FavoriteRegions": {
+    "message": "REGIÕES FAVORITAS"
+  },
   "us_california": {
     "message": "Califórnia, EUA"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "EUA  Cidade de Nova Iorque"
   },
+  "us_atlanta": {
+    "message": "EUA, Atlanta"
+  },
   "us_las_vegas": {
     "message": "EUA, Las Vegas"
+  },
+  "us_houston": {
+    "message": "EUA, Houston"
+  },
+  "us_wdc": {
+    "message": "EUA, Washington DC"
   },
   "uk": {
     "message": "Londres, Reino Unido"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "Southampton, Reino Unido"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "Montreal, Canadá"
   },
   "ca_toronto": {
     "message": "Toronto, Canadá"
+  },
+  "ca_vancouver": {
+    "message": "Canadá, Vancouver"
   },
   "aus": {
     "message": "Sidney, Austrália"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "Alemanha"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "Áustria"
+  },
+  "czech": {
+    "message": "República Tcheca"
   },
   "ro": {
     "message": "Romênia"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "Itália"
   },
+  "spain": {
+    "message": "Espanha"
+  },
   "nz": {
     "message": "Nova Zelândia"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "Coreia do Sul"
+  },
+  "poland": {
+    "message": "Polônia"
+  },
+  "hungary": {
+    "message": "Hungria"
   }
 }

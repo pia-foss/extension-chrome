@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "ALLE REGIO'S"
-  },
-  "FavoriteRegions": {
-    "message": "FAVORIETE REGIO'S"
-  },
-  "us_wdc": {
-    "message": "VS Washington DC"
-  },
   "UILanguage": {
     "message": "Taal UI"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "Mij onthouden"
   },
+  "AllRegions": {
+    "message": "ALLE REGIO'S"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORIETE REGIO'S"
+  },
   "us_california": {
     "message": "VS Californië"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "VS New York (stad)"
   },
+  "us_atlanta": {
+    "message": "VS Atlanta"
+  },
   "us_las_vegas": {
     "message": "VS Las Vegas"
+  },
+  "us_houston": {
+    "message": "VS Houston"
+  },
+  "us_wdc": {
+    "message": "VS Washington DC"
   },
   "uk": {
     "message": "VK Londen"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "VK Southampton"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "Montreal (Canada)"
   },
   "ca_toronto": {
     "message": "Toronto (Canada)"
+  },
+  "ca_vancouver": {
+    "message": "CA Vancouver"
   },
   "aus": {
     "message": "Sydney (Australië)"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "Duitsland"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "Oostenrijk"
+  },
+  "czech": {
+    "message": "Tsjechië"
   },
   "ro": {
     "message": "Roemenië"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "Italië"
   },
+  "spain": {
+    "message": "Spanje"
+  },
   "nz": {
     "message": "Nieuw-Zeeland"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "Zuid-Korea"
+  },
+  "poland": {
+    "message": "Polen"
+  },
+  "hungary": {
+    "message": "Hongarije"
   }
 }

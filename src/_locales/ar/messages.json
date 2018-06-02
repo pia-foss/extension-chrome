@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "جميع المناطق"
-  },
-  "FavoriteRegions": {
-    "message": "المناطق المفضلة"
-  },
-  "us_wdc": {
-    "message": "الولايات المتحدة، واشنطن العاصمة"
-  },
   "UILanguage": {
     "message": "لغة واجهة المستخدم"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "تذكرني"
   },
+  "AllRegions": {
+    "message": "جميع المناطق"
+  },
+  "FavoriteRegions": {
+    "message": "المناطق المفضلة"
+  },
   "us_california": {
     "message": "الولايات المتحدة - كاليفورنيا"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "الولايات المتحدة - مدينة نيويورك"
   },
+  "us_atlanta": {
+    "message": "الولايات المتحدة، أتلانتا"
+  },
   "us_las_vegas": {
     "message": "الولايات المتحدة، لاس فيغاس"
+  },
+  "us_houston": {
+    "message": "الولايات المتحدة، هيوستن"
+  },
+  "us_wdc": {
+    "message": "الولايات المتحدة، واشنطن العاصمة"
   },
   "uk": {
     "message": "المملكة المتحدة - لندن"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "المملكة المتحدة - ساوثهامبتون"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "كندا - مونتريال"
   },
   "ca_toronto": {
     "message": "كندا - تورونتو"
+  },
+  "ca_vancouver": {
+    "message": "كندا، فانكوفر"
   },
   "aus": {
     "message": "أستراليا - سيدني"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "ألمانيا"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "النمسا"
+  },
+  "czech": {
+    "message": "جمهورية التشيك"
   },
   "ro": {
     "message": "رومانيا"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "إيطاليا"
   },
+  "spain": {
+    "message": "إسبانيا"
+  },
   "nz": {
     "message": "نيوزيلندا"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "كوريا الجنوبية"
+  },
+  "poland": {
+    "message": "بولندا"
+  },
+  "hungary": {
+    "message": "المجر"
   }
 }

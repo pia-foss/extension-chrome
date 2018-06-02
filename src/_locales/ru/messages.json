@@ -1,13 +1,4 @@
 {
-  "AllRegions": {
-    "message": "ВСЕ РЕГИОНЫ"
-  },
-  "FavoriteRegions": {
-    "message": "ИЗБРАННЫЕ РЕГИОНЫ"
-  },
-  "us_wdc": {
-    "message": "США, Вашингтон (округ Колумбия)"
-  },
   "UILanguage": {
     "message": "Язык интерфейса"
   },
@@ -359,6 +350,12 @@
   "RememberMe": {
     "message": "Запомнить меня"
   },
+  "AllRegions": {
+    "message": "ВСЕ РЕГИОНЫ"
+  },
+  "FavoriteRegions": {
+    "message": "ИЗБРАННЫЕ РЕГИОНЫ"
+  },
   "us_california": {
     "message": "США, Калифорния"
   },
@@ -389,8 +386,17 @@
   "us_new_york_city": {
     "message": "США, г. Нью-Йорк"
   },
+  "us_atlanta": {
+    "message": "США, Атланта"
+  },
   "us_las_vegas": {
     "message": "США, Лас-Вегас"
+  },
+  "us_houston": {
+    "message": "США, Хьюстон"
+  },
+  "us_wdc": {
+    "message": "США, Вашингтон (округ Колумбия)"
   },
   "uk": {
     "message": "Великобритания, Лондон"
@@ -398,11 +404,17 @@
   "uk_southampton": {
     "message": "Великобритания, Саутхэмптон"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "Канада, Монреаль"
   },
   "ca_toronto": {
     "message": "Канада, Торонто"
+  },
+  "ca_vancouver": {
+    "message": "Канада, Ванкувер"
   },
   "aus": {
     "message": "Австралия, Сидней"
@@ -424,6 +436,15 @@
   },
   "germany": {
     "message": "Германия"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "Австрия"
+  },
+  "czech": {
+    "message": "Чешская Республика"
   },
   "ro": {
     "message": "Румыния"
@@ -455,6 +476,9 @@
   "italy": {
     "message": "Италия"
   },
+  "spain": {
+    "message": "Испания"
+  },
   "nz": {
     "message": "Новая Зеландия"
   },
@@ -472,5 +496,11 @@
   },
   "kr": {
     "message": "Южная Корея"
+  },
+  "poland": {
+    "message": "Польша"
+  },
+  "hungary": {
+    "message": "Венгрия"
   }
 }
