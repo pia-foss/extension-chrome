@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "TODAS AS REGIÕES"
+  "ImportExportHeader": {
+    "message": "Regras de importação/exportação"
   },
-  "FavoriteRegions": {
-    "message": "REGIÕES FAVORITAS"
+  "ImportLabel": {
+    "message": "Importar"
   },
-  "us_wdc": {
-    "message": "EUA, Washington DC"
+  "ExportLabel": {
+    "message": "Exportar"
   },
   "UILanguage": {
     "message": "Idioma da IU"
@@ -333,7 +333,7 @@
     "message": "Erro de autenticação"
   },
   "AuthFailMessage": {
-    "message": "Se você alterou recentemente sua senha no site da Private Internet Access, uma nova autenticação com a extensão pode corrigir o erro.<br /><br />Para obter ajuda e suporte, entre em contato com a nossa <a href=\"https://helpdesk.privateinternetaccess.com\">equipe de suporte</a>."
+    "message": "Se você alterou recentemente sua senha no site da Private Internet Access, uma nova autenticação com a extensão pode corrigir o erro.<br /><br />Para obter ajuda e suporte, entre em contato com a nossa <a href=\"https://privateinternetaccess.com/helpdesk\">equipe de suporte</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Erro de conexão | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "Lembrar de mim"
+  },
+  "AllRegions": {
+    "message": "TODAS AS REGIÕES"
+  },
+  "FavoriteRegions": {
+    "message": "REGIÕES FAVORITAS"
   },
   "us_california": {
     "message": "Califórnia, EUA"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "EUA  Cidade de Nova Iorque"
   },
+  "us_atlanta": {
+    "message": "EUA, Atlanta"
+  },
   "us_las_vegas": {
     "message": "EUA, Las Vegas"
+  },
+  "us_houston": {
+    "message": "EUA, Houston"
+  },
+  "us_wdc": {
+    "message": "EUA, Washington DC"
   },
   "uk": {
     "message": "Londres, Reino Unido"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "Southampton, Reino Unido"
   },
+  "uk_manchester": {
+    "message": "Manchester, Reino Unido"
+  },
   "ca": {
     "message": "Montreal, Canadá"
   },
   "ca_toronto": {
     "message": "Toronto, Canadá"
+  },
+  "ca_vancouver": {
+    "message": "Canadá, Vancouver"
   },
   "aus": {
     "message": "Sidney, Austrália"
@@ -423,7 +444,19 @@
     "message": "França"
   },
   "germany": {
-    "message": "Alemanha"
+    "message": "Alemanha, Frankfurt"
+  },
+  "de_berlin": {
+    "message": "Alemanha, Berlim"
+  },
+  "belgium": {
+    "message": "Bélgica"
+  },
+  "austria": {
+    "message": "Áustria"
+  },
+  "czech": {
+    "message": "República Tcheca"
   },
   "ro": {
     "message": "Romênia"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "Itália"
   },
+  "spain": {
+    "message": "Espanha"
+  },
   "nz": {
     "message": "Nova Zelândia"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "Coreia do Sul"
+  },
+  "poland": {
+    "message": "Polônia"
+  },
+  "hungary": {
+    "message": "Hungria"
   }
 }

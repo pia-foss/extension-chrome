@@ -69,7 +69,7 @@ RSpec.describe 'authenticated page', type: :feature do
   describe 'when the help button is clicked' do
     specify 'the helpdesk page is opened', pending: true do
       new_tab = window_opened_by { click_help_button }
-      page.within_window(new_tab) { expect(current_url).to eq("https://helpdesk.privateinternetaccess.com/hc/en-us") }
+      page.within_window(new_tab) { expect(current_url).to eq("https://www.privateinternetaccess.com/helpdesk/") }
     end
   end
 

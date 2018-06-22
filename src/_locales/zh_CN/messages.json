@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "所有地区"
+  "ImportExportHeader": {
+    "message": "导入/导出规则"
   },
-  "FavoriteRegions": {
-    "message": "喜爱地区"
+  "ImportLabel": {
+    "message": "导入"
   },
-  "us_wdc": {
-    "message": "美国华盛顿特区"
+  "ExportLabel": {
+    "message": "导出"
   },
   "UILanguage": {
     "message": "用户界面语言"
@@ -333,7 +333,7 @@
     "message": "身份验证错误"
   },
   "AuthFailMessage": {
-    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://helpdesk.privateinternetaccess.com\">支持团队</a>。"
+    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://privateinternetaccess.com/helpdesk\">支持团队</a>。"
   },
   "ConnectionFailPageTitle": {
     "message": "连接错误 | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "记住我"
+  },
+  "AllRegions": {
+    "message": "所有地区"
+  },
+  "FavoriteRegions": {
+    "message": "喜爱地区"
   },
   "us_california": {
     "message": "美国加利福尼亚"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "美国纽约"
   },
+  "us_atlanta": {
+    "message": "美国亚特兰大"
+  },
   "us_las_vegas": {
     "message": "美国洛杉矶"
+  },
+  "us_houston": {
+    "message": "美国休斯顿"
+  },
+  "us_wdc": {
+    "message": "美国华盛顿特区"
   },
   "uk": {
     "message": "英国伦敦"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "英国南安普敦"
   },
+  "uk_manchester": {
+    "message": "英国曼彻斯特"
+  },
   "ca": {
     "message": "加拿大蒙特利尔"
   },
   "ca_toronto": {
     "message": "加拿大多伦多"
+  },
+  "ca_vancouver": {
+    "message": "加拿大温哥华"
   },
   "aus": {
     "message": "澳大利亚悉尼"
@@ -423,7 +444,19 @@
     "message": "法国"
   },
   "germany": {
-    "message": "德国"
+    "message": "德国法兰克福"
+  },
+  "de_berlin": {
+    "message": "德国柏林"
+  },
+  "belgium": {
+    "message": "比利时"
+  },
+  "austria": {
+    "message": "奥地利"
+  },
+  "czech": {
+    "message": "捷克共和国"
   },
   "ro": {
     "message": "罗马尼亚"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "意大利"
   },
+  "spain": {
+    "message": "西班牙"
+  },
   "nz": {
     "message": "新西兰"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "韩国"
+  },
+  "poland": {
+    "message": "波兰"
+  },
+  "hungary": {
+    "message": "匈牙利"
   }
 }

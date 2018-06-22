@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "ทุกภูมิภาค"
+  "ImportExportHeader": {
+    "message": "นำเข้า/ส่งออกกฎ"
   },
-  "FavoriteRegions": {
-    "message": "ภูมิภาคโปรด"
+  "ImportLabel": {
+    "message": "นำเข้า"
   },
-  "us_wdc": {
-    "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
+  "ExportLabel": {
+    "message": "ส่งออก"
   },
   "UILanguage": {
     "message": "ภาษา UI"
@@ -333,7 +333,7 @@
     "message": "ข้อผิดพลาดในการยืนยันตัวตน"
   },
   "AuthFailMessage": {
-    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็ว ๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br/><br/>สำหรับความช่วยเหลือและสอบถาม กรุณาติดต่อ <a href=\"https://helpdesk.privateinternetaccess.com\">ทีมช่วยเหลือ</a>"
+    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็วๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br /><br />สำหรับความช่วยเหลือและสอบถาม กรุณาติดต่อ <a href=\"https://privateinternetaccess.com/helpdesk\">ทีมช่วยเหลือ</a>"
   },
   "ConnectionFailPageTitle": {
     "message": "ข้อผิดพลาดการเชื่อมต่อ | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "จดจำฉัน"
+  },
+  "AllRegions": {
+    "message": "ทุกภูมิภาค"
+  },
+  "FavoriteRegions": {
+    "message": "ภูมิภาคโปรด"
   },
   "us_california": {
     "message": "แคลิฟอร์เนีย สหรัฐอเมริกา"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "นิวยอร์ก สหรัฐอเมริกา"
   },
+  "us_atlanta": {
+    "message": "สหรัฐอเมริกา แอตแลนตา"
+  },
   "us_las_vegas": {
     "message": "สหรัฐอเมริกา ลาสเวกัส"
+  },
+  "us_houston": {
+    "message": "สหรัฐอเมริกา ฮุสตัน"
+  },
+  "us_wdc": {
+    "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
   },
   "uk": {
     "message": "ลอนดอน สหราชอาณาจักร"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "เซาแทมป์ตัน สหราชอาณาจักร"
   },
+  "uk_manchester": {
+    "message": "แมนเชสเตอร์ สหราชอาณาจักร"
+  },
   "ca": {
     "message": "มอนทรีออล แคนาดา"
   },
   "ca_toronto": {
     "message": "โตรอนโต แคนาดา"
+  },
+  "ca_vancouver": {
+    "message": "แคนาดา แวนคูเวอร์"
   },
   "aus": {
     "message": "ซิดนีย์ ออสเตรเลีย"
@@ -423,7 +444,19 @@
     "message": "ฝรั่งเศส"
   },
   "germany": {
-    "message": "เยอรมนี"
+    "message": "เยอรมนี แฟรงเฟิร์ต"
+  },
+  "de_berlin": {
+    "message": "เยอรมนี เบอร์ลิน"
+  },
+  "belgium": {
+    "message": "เบลเยี่ยม"
+  },
+  "austria": {
+    "message": "ออสเตรีย"
+  },
+  "czech": {
+    "message": "สาธารณรัฐเช็ก"
   },
   "ro": {
     "message": "โรมาเนีย"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "อิตาลี"
   },
+  "spain": {
+    "message": "สเปน"
+  },
   "nz": {
     "message": "นิวซีแลนด์"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "เกาหลีใต้"
+  },
+  "poland": {
+    "message": "โปแลนด์"
+  },
+  "hungary": {
+    "message": "ฮังการี"
   }
 }
