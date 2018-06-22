@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "규칙 가져오기/내보내기"
+  },
+  "ImportLabel": {
+    "message": "가져오기"
+  },
+  "ExportLabel": {
+    "message": "내보내기"
+  },
   "UILanguage": {
     "message": "UI 언어"
   },
@@ -324,7 +333,7 @@
     "message": "인증 오류"
   },
   "AuthFailMessage": {
-    "message": "최근 Private Internet Access 웹사이트에서 비밀번호를 변경한 경우 확장 프로그램을 다시 인증하면 이 오류가 수정될 수 있습니다.<br /><br />도움이 필요할 경우 당사의 <a href=\"https://helpdesk.privateinternetaccess.com\">지원팀</a>에 문의하십시오."
+    "message": "최근 Private Internet Access 웹사이트에서 비밀번호를 변경한 경우 확장 프로그램을 다시 인증하면 이 오류가 수정될 수 있습니다.<br /><br />도움이 필요할 경우 당사의 <a href=\"https://privateinternetaccess.com/helpdesk\">지원팀</a>에 문의하십시오. "
   },
   "ConnectionFailPageTitle": {
     "message": "연결 오류 | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "영국 사우샘프턴"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "영국 맨체스터"
   },
   "ca": {
     "message": "캐나다 몬트리올"
@@ -435,10 +444,13 @@
     "message": "프랑스"
   },
   "germany": {
-    "message": "독일"
+    "message": "독일 프랑크푸르트"
+  },
+  "de_berlin": {
+    "message": "독일 베를린"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "벨기에"
   },
   "austria": {
     "message": "오스트리아"

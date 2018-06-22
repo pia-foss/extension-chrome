@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "匯入/匯出規則"
+  },
+  "ImportLabel": {
+    "message": "匯入"
+  },
+  "ExportLabel": {
+    "message": "匯入"
+  },
   "UILanguage": {
     "message": "UI 語言"
   },
@@ -324,7 +333,7 @@
     "message": "驗證錯誤"
   },
   "AuthFailMessage": {
-    "message": "如果您最近曾在 Private Internet Access 網站上更改密碼，為擴充功能重新進行驗證應該能修正此錯誤。<br/><br/>若您需要協助與支援，請聯繫我們的<a href=\"https://helpdesk.privateinternetaccess.com\">支援團隊</a>。"
+    "message": "如果您最近曾在 Private Internet Access 網站上更改密碼，為擴充功能重新進行驗證應該能修正此錯誤。<br/><br/>若您需要協助與支援，請聯繫我們的<a href=\"https://privateinternetaccess.com/helpdesk\">支援團隊</a>。"
   },
   "ConnectionFailPageTitle": {
     "message": "連線錯誤 | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "英國南安普敦"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "英國曼徹斯特"
   },
   "ca": {
     "message": "加拿大蒙特利爾"
@@ -435,10 +444,13 @@
     "message": "法國"
   },
   "germany": {
-    "message": "德國"
+    "message": "德國法蘭克福"
+  },
+  "de_berlin": {
+    "message": "德國柏林"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "比利時"
   },
   "austria": {
     "message": "奧地利"

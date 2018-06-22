@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Kuralları İçe/Dışa Aktar"
+  },
+  "ImportLabel": {
+    "message": "İçe Aktar"
+  },
+  "ExportLabel": {
+    "message": "Dışa Aktar"
+  },
   "UILanguage": {
     "message": "Arayüz Dili"
   },
@@ -324,7 +333,7 @@
     "message": "Kimlik doğrulama hatası"
   },
   "AuthFailMessage": {
-    "message": "Private Internet Access web sitesinde parolanızı yakın zamanda değiştirdiyseniz, uzantı ile yeniden kimlik doğrulayarak giriş yapmak bu hatayı düzeltebilir.<br /><br />Yardım ve destek için <a href=\"https://helpdesk.privateinternetaccess.com\">destek ekibimizle</a> iletişime geçebilirsiniz."
+    "message": "Private Internet Access web sitesinde parolanızı yakın zamanda değiştirdiyseniz, uzantı ile yeniden kimlik doğrulayarak giriş yapmak bu hatayı düzeltebilir.<br /><br />Yardım ve destek için <a href=\"https://privateinternetaccess.com/helpdesk\">destek ekibimizle</a> iletişime geçebilirsiniz."
   },
   "ConnectionFailPageTitle": {
     "message": "Bağlantı hatası | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "Birleşik Kralllık Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "Birleşik Kralllık Manchester"
   },
   "ca": {
     "message": "Kanada Montreal"
@@ -435,10 +444,13 @@
     "message": "Fransa"
   },
   "germany": {
-    "message": "Almanya"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlin"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "Belçika"
   },
   "austria": {
     "message": "Avusturya"

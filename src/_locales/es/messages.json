@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Reglas de importación/exportación"
+  },
+  "ImportLabel": {
+    "message": "Importar"
+  },
+  "ExportLabel": {
+    "message": "Exportar"
+  },
   "UILanguage": {
     "message": "Idioma de la interfaz"
   },
@@ -324,7 +333,7 @@
     "message": "Error de autenticación"
   },
   "AuthFailMessage": {
-    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema.<br><br>Para obtener ayuda y asistencia, ponte en contacto con nuestro <a href=\"https://helpdesk.privateinternetaccess.com\">equipo de asistencia</a>."
+    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema.<br /><br />Para obtener ayuda y asistencia, ponte en contacto con nuestro <a href=\"https://privateinternetaccess.com/helpdesk\">equipo de asistencia</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Error de conexión | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "Reino Unido Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "Reino Unido Manchester"
   },
   "ca": {
     "message": "Canadá Montreal"
@@ -435,7 +444,10 @@
     "message": "Francia"
   },
   "germany": {
-    "message": "Alemania"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlín"
   },
   "belgium": {
     "message": "Belgium"

@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Regole importazione/esportazione"
+  },
+  "ImportLabel": {
+    "message": "Importa"
+  },
+  "ExportLabel": {
+    "message": "Esporta"
+  },
   "UILanguage": {
     "message": "Lingua IU"
   },
@@ -174,7 +183,7 @@
     "message": "Blocca il rilevamento IP di WebRTC"
   },
   "WebRTCTooltip": {
-    "message": "Impedisci a Chrome di rivelare i tuoi indirizzi IP pubblici e privati quando WebRTC è in uso. Non consigliamo la disattivazione."
+    "message": "Impedisci a %{browser} di rivelare i tuoi indirizzi IP pubblici e privati quando WebRTC non è in uso. Non consigliamo la disattivazione."
   },
   "BlockAdobeFlash": {
     "message": "Blocca Adobe Flash"
@@ -324,7 +333,7 @@
     "message": "Errore di autenticazione."
   },
   "AuthFailMessage": {
-    "message": "Se hai recentemente cambiato la password sul sito web Private Internet Access, la riautenticazione con l'estensione dovrebbe correggere l'errore.<br /><br />Per ricevere assistenza, contatta il nostro <a href=\"https://helpdesk.privateinternetaccess.com\">support team</a>."
+    "message": "Se hai recentemente cambiato la password sul sito web Private Internet Access, la riautenticazione con l'estensione dovrebbe correggere l'errore.<br /><br />Per ricevere assistenza, contatta il nostro <a href=\"https://privateinternetaccess.com/helpdesk\">support team</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Errore di connessione | Private Internet Access"
@@ -399,13 +408,13 @@
     "message": "US Washington DC"
   },
   "uk": {
-    "message": "Londra Regno Unito"
+    "message": "Regno Unito, Londra"
   },
   "uk_southampton": {
-    "message": "Southampton Regno Unito"
+    "message": "Regno Unito, Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "Regno Unito, Manchester"
   },
   "ca": {
     "message": "Montreal CA"
@@ -435,10 +444,13 @@
     "message": "Francia"
   },
   "germany": {
-    "message": "Germania"
+    "message": "DE Francoforte"
+  },
+  "de_berlin": {
+    "message": "DE Berlino"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "Belgio"
   },
   "austria": {
     "message": "Austria"

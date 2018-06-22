@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "导入/导出规则"
+  },
+  "ImportLabel": {
+    "message": "导入"
+  },
+  "ExportLabel": {
+    "message": "导出"
+  },
   "UILanguage": {
     "message": "用户界面语言"
   },
@@ -324,7 +333,7 @@
     "message": "身份验证错误"
   },
   "AuthFailMessage": {
-    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://helpdesk.privateinternetaccess.com\">支持团队</a>。"
+    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://privateinternetaccess.com/helpdesk\">支持团队</a>。"
   },
   "ConnectionFailPageTitle": {
     "message": "连接错误 | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "英国南安普敦"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "英国曼彻斯特"
   },
   "ca": {
     "message": "加拿大蒙特利尔"
@@ -435,10 +444,13 @@
     "message": "法国"
   },
   "germany": {
-    "message": "德国"
+    "message": "德国法兰克福"
+  },
+  "de_berlin": {
+    "message": "德国柏林"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "比利时"
   },
   "austria": {
     "message": "奥地利"

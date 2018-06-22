@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Regels importeren/exporteren"
+  },
+  "ImportLabel": {
+    "message": "Importeren"
+  },
+  "ExportLabel": {
+    "message": "Exporteren"
+  },
   "UILanguage": {
     "message": "Taal UI"
   },
@@ -324,7 +333,7 @@
     "message": "Authenticatiefout"
   },
   "AuthFailMessage": {
-    "message": "Als u recentelijk uw wachtwoord hebt gewijzigd op de website van Private Internet Access, kunt u deze fout mogelijk verhelpen door de extensie opnieuw te verifiëren.<br /><br />Neem contact op met onze <a href=\"https://helpdesk.privateinternetaccess.com\">klantenservice</a> voor hulp en ondersteuning."
+    "message": "Als u recentelijk uw wachtwoord hebt gewijzigd op de website van Private Internet Access, kunt u deze fout mogelijk verhelpen door de extensie opnieuw te verifiëren.<br /><br />Neem contact op met onze <a href=\"https://privateinternetaccess.com/helpdesk\">klantenservice</a> voor hulp en ondersteuning."
   },
   "ConnectionFailPageTitle": {
     "message": "Verbindingsfout | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "VK Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "VK Manchester"
   },
   "ca": {
     "message": "Montreal (Canada)"
@@ -435,10 +444,13 @@
     "message": "Frankrijk"
   },
   "germany": {
-    "message": "Duitsland"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlijn"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "België"
   },
   "austria": {
     "message": "Oostenrijk"

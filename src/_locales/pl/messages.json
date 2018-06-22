@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Zasady importu/eksportu"
+  },
+  "ImportLabel": {
+    "message": "Import"
+  },
+  "ExportLabel": {
+    "message": "Eksport"
+  },
   "UILanguage": {
     "message": "Język IU"
   },
@@ -324,7 +333,7 @@
     "message": "Uwierzytelnianie"
   },
   "AuthFailMessage": {
-    "message": "Jeśli ostatnio zmieniono hasło w witrynie Private Internet Access, to ponowne uwierzytelnienie z rozszerzeniem może usunąć ten błąd.<br /><br /> Jeśli potrzebujesz pomocy i wsparcia, skontaktuj się z naszym <a href=\"https://helpdesk.privateinternetaccess.com\">support team</a>."
+    "message": "Jeśli ostatnio zmieniono hasło w witrynie Private Internet Access, to ponowne uwierzytelnienie z rozszerzeniem może usunąć ten błąd.<br /><br /> Jeśli potrzebujesz pomocy i wsparcia, skontaktuj się z naszym <a href=\"https://privateinternetaccess.com/helpdesk\">Działem Obsługi Klienta</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Błąd połączenia | Private Internet Access"
@@ -399,13 +408,13 @@
     "message": "USA Waszyngton, DC"
   },
   "uk": {
-    "message": "Londyn, WB"
+    "message": "WB Londyn"
   },
   "uk_southampton": {
-    "message": "Southampton, WB"
+    "message": "WB Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "WB Manchester"
   },
   "ca": {
     "message": "Montreal, CA"
@@ -435,7 +444,10 @@
     "message": "Francja"
   },
   "germany": {
-    "message": "Niemcy"
+    "message": "Niemcy Frankfurt"
+  },
+  "de_berlin": {
+    "message": "Niemcy Berlin"
   },
   "belgium": {
     "message": "Belgia"
