@@ -122,6 +122,15 @@
   "OtherWebsites": {
     "message": "Other websites"
   },
+  "ImportExportHeader": {
+    "message": "Import/Export Rules"
+  },
+  "ImportLabel": {
+    "message": "Import"
+  },
+  "ExportLabel": {
+    "message": "Export"
+  },
   "SettingsWarning": {
     "message": "These settings are not in effect. They come into effect while you are connected to a region."
   },
@@ -324,7 +333,7 @@
     "message": "Authentication error"
   },
   "AuthFailMessage": {
-    "message": "If you recently changed your password on the Private Internet Access website then re-authenticating with the extension might fix this error.<br /><br />For help and support, contact our <a href=\"https://helpdesk.privateinternetaccess.com\">support team</a>."
+    "message": "If you recently changed your password on the Private Internet Access website then re-authenticating with the extension might fix this error.<br /><br />For help and support, contact our <a href=\"https://privateinternetaccess.com/helpdesk\">support team</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Connection error | Private Internet Access"
@@ -435,7 +444,19 @@
     "message": "France"
   },
   "germany": {
-    "message": "Germany"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlin"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "Austria"
+  },
+  "czech": {
+    "message": "Czech Republic"
   },
   "belgium": {
     "message": "Belgium"

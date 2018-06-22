@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "ルールのインポート/エクスポート"
+  },
+  "ImportLabel": {
+    "message": "インポート"
+  },
+  "ExportLabel": {
+    "message": "エクスポート"
+  },
   "UILanguage": {
     "message": "UI言語"
   },
@@ -324,7 +333,7 @@
     "message": "認証エラー"
   },
   "AuthFailMessage": {
-    "message": "最近Private Internet Accessウェブサイトのパスワードを変更した方は、このエラーを拡張機能で再認証することより解決できる場合があります。<br /><br />ヘルプとサポートが必要な方は、<a href=\"https://helpdesk.privateinternetaccess.com\">サポートチーム</a>までお問い合わせください。"
+    "message": "最近Private Internet Accessウェブサイトのパスワードを変更した方は、このエラーを拡張機能で再認証することより解決できる場合があります。<br /><br />ヘルプとサポートが必要な方は、<a href=\"https://privateinternetaccess.com/helpdesk\">サポートチーム</a>までお問い合わせください。"
   },
   "ConnectionFailPageTitle": {
     "message": "接続エラー | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "英国 サウザンプトン"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "イギリス マンチェスター"
   },
   "ca": {
     "message": "カナダ モントリオール"
@@ -435,10 +444,13 @@
     "message": "フランス"
   },
   "germany": {
-    "message": "ドイツ"
+    "message": "ドイツ フランクフルト"
+  },
+  "de_berlin": {
+    "message": "ドイツ ベルリン"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "ベルギー"
   },
   "austria": {
     "message": "オーストラリア"

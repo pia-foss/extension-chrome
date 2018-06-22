@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Import-/Export-Regeln"
+  },
+  "ImportLabel": {
+    "message": "Import"
+  },
+  "ExportLabel": {
+    "message": "Export"
+  },
   "UILanguage": {
     "message": "Sprache (Benutzeroberfläche)"
   },
@@ -324,7 +333,7 @@
     "message": "Authentifizierungsfehler"
   },
   "AuthFailMessage": {
-    "message": "Wenn Sie vor Kurzem Ihr Passwort auf der Website von Private Internet Access geändert haben, könnte eine erneute Authentifizierung mit der Erweiterung diesen Fehler beheben.<br /><br />Bitte kontaktieren Sie unseren <a href=\"https://helpdesk.privateinternetaccess.com\">Kundendienst</a>, wenn Sie Hilfe benötigen."
+    "message": "Wenn Sie vor Kurzem Ihr Passwort auf der Website von Private Internet Access geändert haben, könnte eine erneute Authentifizierung mit der Erweiterung diesen Fehler beheben.<br /><br />Bitte kontaktieren Sie unseren <a href=\"https://privateinternetaccess.com/helpdesk\">Kundendienst</a>, wenn Sie Hilfe benötigen."
   },
   "ConnectionFailPageTitle": {
     "message": "Verbindungsfehler | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "GB Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "GB Manchester"
   },
   "ca": {
     "message": "CAN Montreal"
@@ -435,10 +444,13 @@
     "message": "Frankreich"
   },
   "germany": {
-    "message": "Deutschland"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlin"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "Belgien"
   },
   "austria": {
     "message": "Österreich"

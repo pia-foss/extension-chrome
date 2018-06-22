@@ -13,7 +13,7 @@ RSpec.describe 'Page shown on authentication failure', type: :feature do
 
     specify 'clicking on "support team" opens helpdesk' do
       click_on "support team"
-      expect(current_url).to eq("https://helpdesk.privateinternetaccess.com/hc/en-us")
+      expect(current_url).to eq("https://www.privateinternetaccess.com/helpdesk/")
     end
   end
 

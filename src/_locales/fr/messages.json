@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Règles d'importation/d'exportation"
+  },
+  "ImportLabel": {
+    "message": "Importer"
+  },
+  "ExportLabel": {
+    "message": "Exporter"
+  },
   "UILanguage": {
     "message": "Langue de l'interface"
   },
@@ -324,7 +333,7 @@
     "message": "Erreur d'authentification"
   },
   "AuthFailMessage": {
-    "message": "Si vous avez récemment modifié votre mot de passe sur le site web Private Internet Access, une réauthentification avec l'extension pourrait réparer l'erreur.<br/><br/>Pour toute demande d'aide et d'assistance, contactez notre <a href=\"https://helpdesk.privateinternetaccess.com\">équipe d'assistance.</a>"
+    "message": "Si vous avez récemment modifié votre mot de passe sur le site web Private Internet Access, une réauthentification avec l'extension pourrait réparer l'erreur.<br/><br/>Pour toute demande d'aide et d'assistance, contactez notre <a href=\"https://privateinternetaccess.com/helpdesk\">équipe d'assistance.</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Erreur de connexion | Private Internet Access"
@@ -435,10 +444,13 @@
     "message": "France"
   },
   "germany": {
-    "message": "Allemagne"
+    "message": "Allemagne Francfort"
+  },
+  "de_berlin": {
+    "message": "Allemagne Berlin"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "Belgique"
   },
   "austria": {
     "message": "Autriche"

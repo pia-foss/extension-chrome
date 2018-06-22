@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Importer/Eksporter regler"
+  },
+  "ImportLabel": {
+    "message": "Importer"
+  },
+  "ExportLabel": {
+    "message": "Eksporter"
+  },
   "UILanguage": {
     "message": "Grænsefladesprog"
   },
@@ -324,7 +333,7 @@
     "message": "Autentifikationsfejl"
   },
   "AuthFailMessage": {
-    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl.<br /><br />For hjælp og support, kontakt vores <a href=\"https://helpdesk.privateinternetaccess.com\">support-team</a>."
+    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl.<br /><br />For hjælp og support, kontakt vores <a href=\"https://privateinternetaccess.com/helpdesk\">supportteam</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Forbindelsesfejl | Private Internet Access"
@@ -435,10 +444,13 @@
     "message": "Frankrig"
   },
   "germany": {
-    "message": "Tyskland"
+    "message": "Tyskland, Frankfurt"
+  },
+  "de_berlin": {
+    "message": "Tyskland, Berlin"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "Belgien"
   },
   "austria": {
     "message": "Østrig"

@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "นำเข้า/ส่งออกกฎ"
+  },
+  "ImportLabel": {
+    "message": "นำเข้า"
+  },
+  "ExportLabel": {
+    "message": "ส่งออก"
+  },
   "UILanguage": {
     "message": "ภาษา UI"
   },
@@ -324,7 +333,7 @@
     "message": "ข้อผิดพลาดในการยืนยันตัวตน"
   },
   "AuthFailMessage": {
-    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็ว ๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br/><br/>สำหรับความช่วยเหลือและสอบถาม กรุณาติดต่อ <a href=\"https://helpdesk.privateinternetaccess.com\">ทีมช่วยเหลือ</a>"
+    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็วๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br /><br />สำหรับความช่วยเหลือและสอบถาม กรุณาติดต่อ <a href=\"https://privateinternetaccess.com/helpdesk\">ทีมช่วยเหลือ</a>"
   },
   "ConnectionFailPageTitle": {
     "message": "ข้อผิดพลาดการเชื่อมต่อ | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "เซาแทมป์ตัน สหราชอาณาจักร"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "แมนเชสเตอร์ สหราชอาณาจักร"
   },
   "ca": {
     "message": "มอนทรีออล แคนาดา"
@@ -435,10 +444,13 @@
     "message": "ฝรั่งเศส"
   },
   "germany": {
-    "message": "เยอรมนี"
+    "message": "เยอรมนี แฟรงเฟิร์ต"
+  },
+  "de_berlin": {
+    "message": "เยอรมนี เบอร์ลิน"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "เบลเยี่ยม"
   },
   "austria": {
     "message": "ออสเตรีย"

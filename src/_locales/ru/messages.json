@@ -1,4 +1,13 @@
 {
+  "ImportExportHeader": {
+    "message": "Правила импорта/экспорта"
+  },
+  "ImportLabel": {
+    "message": "Импорт"
+  },
+  "ExportLabel": {
+    "message": "Экспорт"
+  },
   "UILanguage": {
     "message": "Язык интерфейса"
   },
@@ -324,7 +333,7 @@
     "message": "Ошибка аутентификации."
   },
   "AuthFailMessage": {
-    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения.<br /><br />Для получения справки и поддержки обращайтесь в нашу <a href=\"https://helpdesk.privateinternetaccess.com\">службу поддержки</a>."
+    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения.<br /><br />Для получения справки и поддержки обращайтесь в нашу <a href=\"https://privateinternetaccess.com/helpdesk\">службу поддержки</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Ошибка подключения | Private Internet Access"
@@ -405,7 +414,7 @@
     "message": "Великобритания, Саутхэмптон"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "Великобритания, Манчестер"
   },
   "ca": {
     "message": "Канада, Монреаль"
@@ -435,10 +444,13 @@
     "message": "Франция"
   },
   "germany": {
-    "message": "Германия"
+    "message": "Германия (Франкфурт)"
+  },
+  "de_berlin": {
+    "message": "Германия (Берлин)"
   },
   "belgium": {
-    "message": "Belgium"
+    "message": "Бельгия"
   },
   "austria": {
     "message": "Австрия"
