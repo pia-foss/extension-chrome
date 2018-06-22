@@ -1,4 +1,4 @@
-module.exports =  {
+module.exports = {
   "options": {
     "authFile": "config/oneskyauthfile.json",
     "projectId": process.env.ONESKY_PROJECT_ID, // eslint-disable-line no-process-env
