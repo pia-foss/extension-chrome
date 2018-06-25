@@ -122,6 +122,15 @@
   "OtherWebsites": {
     "message": "Other websites"
   },
+  "ImportExportHeader": {
+    "message": "Import/Export Rules"
+  },
+  "ImportLabel": {
+    "message": "Import"
+  },
+  "ExportLabel": {
+    "message": "Export"
+  },
   "SettingsWarning": {
     "message": "These settings are not in effect. They come into effect while you are connected to a region."
   },
@@ -324,7 +333,7 @@
     "message": "Authentication error"
   },
   "AuthFailMessage": {
-    "message": "If you recently changed your password on the Private Internet Access website then re-authenticating with the extension might fix this error.<br /><br />For help and support, contact our <a href=\"https://helpdesk.privateinternetaccess.com\">support team</a>."
+    "message": "If you recently changed your password on the Private Internet Access website then re-authenticating with the extension might fix this error.<br /><br />For help and support, contact our <a href=\"https://privateinternetaccess.com/helpdesk\">support team</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Connection error | Private Internet Access"
@@ -386,8 +395,14 @@
   "us_new_york_city": {
     "message": "US New York City"
   },
+  "us_atlanta": {
+    "message": "US Atlanta"
+  },
   "us_las_vegas": {
     "message": "US Las Vegas"
+  },
+  "us_houston": {
+    "message": "US Houston"
   },
   "us_wdc": {
     "message": "US Washington DC"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "UK Southampton"
   },
+  "uk_manchester": {
+    "message": "UK Manchester"
+  },
   "ca": {
     "message": "CA Montreal"
   },
   "ca_toronto": {
     "message": "CA Toronto"
+  },
+  "ca_vancouver": {
+    "message": "CA Vancouver"
   },
   "aus": {
     "message": "AU Sydney"
@@ -423,7 +444,19 @@
     "message": "France"
   },
   "germany": {
-    "message": "Germany"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlin"
+  },
+  "belgium": {
+    "message": "Belgium"
+  },
+  "austria": {
+    "message": "Austria"
+  },
+  "czech": {
+    "message": "Czech Republic"
   },
   "ro": {
     "message": "Romania"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "Italy"
   },
+  "spain": {
+    "message": "Spain"
+  },
   "nz": {
     "message": "New Zealand"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "South Korea"
+  },
+  "poland": {
+    "message": "Poland"
+  },
+  "hungary": {
+    "message": "Hungary"
   }
 }

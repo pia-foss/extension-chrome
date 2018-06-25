@@ -116,7 +116,7 @@ export default function(renderer, app, window, document) {
                       label={t("MaceProtection")}
                       tooltip={t("MaceTooltip")}
                       learnMore={t("WhatIsMace")}
-                      learnMoreHref={"https://helpdesk.privateinternetaccess.com/hc/en-us/articles/222979528"}
+                      learnMoreHref={"https://www.privateinternetaccess.com/helpdesk/kb/articles/what-is-mace"}
                   />
               </SettingSection>
             </div>

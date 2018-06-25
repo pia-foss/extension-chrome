@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "TUTTE LE REGIONI"
+  "ImportExportHeader": {
+    "message": "Regole importazione/esportazione"
   },
-  "FavoriteRegions": {
-    "message": "REGIONI PREFERITE"
+  "ImportLabel": {
+    "message": "Importa"
   },
-  "us_wdc": {
-    "message": "US Washington DC"
+  "ExportLabel": {
+    "message": "Esporta"
   },
   "UILanguage": {
     "message": "Lingua IU"
@@ -183,7 +183,7 @@
     "message": "Blocca il rilevamento IP di WebRTC"
   },
   "WebRTCTooltip": {
-    "message": "Impedisci a Chrome di rivelare i tuoi indirizzi IP pubblici e privati quando WebRTC è in uso. Non consigliamo la disattivazione."
+    "message": "Impedisci a %{browser} di rivelare i tuoi indirizzi IP pubblici e privati quando WebRTC non è in uso. Non consigliamo la disattivazione."
   },
   "BlockAdobeFlash": {
     "message": "Blocca Adobe Flash"
@@ -333,7 +333,7 @@
     "message": "Errore di autenticazione."
   },
   "AuthFailMessage": {
-    "message": "Se hai recentemente cambiato la password sul sito web Private Internet Access, la riautenticazione con l'estensione dovrebbe correggere l'errore.<br /><br />Per ricevere assistenza, contatta il nostro <a href=\"https://helpdesk.privateinternetaccess.com\">support team</a>."
+    "message": "Se hai recentemente cambiato la password sul sito web Private Internet Access, la riautenticazione con l'estensione dovrebbe correggere l'errore.<br /><br />Per ricevere assistenza, contatta il nostro <a href=\"https://privateinternetaccess.com/helpdesk\">support team</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "Errore di connessione | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "Ricordami"
+  },
+  "AllRegions": {
+    "message": "TUTTE LE REGIONI"
+  },
+  "FavoriteRegions": {
+    "message": "REGIONI PREFERITE"
   },
   "us_california": {
     "message": "California USA"
@@ -389,20 +395,35 @@
   "us_new_york_city": {
     "message": "New York City USA"
   },
+  "us_atlanta": {
+    "message": "US Atlanta"
+  },
   "us_las_vegas": {
     "message": "US Las Vegas"
   },
+  "us_houston": {
+    "message": "US Houston"
+  },
+  "us_wdc": {
+    "message": "US Washington DC"
+  },
   "uk": {
-    "message": "Londra Regno Unito"
+    "message": "Regno Unito, Londra"
   },
   "uk_southampton": {
-    "message": "Southampton Regno Unito"
+    "message": "Regno Unito, Southampton"
+  },
+  "uk_manchester": {
+    "message": "Regno Unito, Manchester"
   },
   "ca": {
     "message": "Montreal CA"
   },
   "ca_toronto": {
     "message": "Toronto CA"
+  },
+  "ca_vancouver": {
+    "message": "CA Vancouver"
   },
   "aus": {
     "message": "Sydney AU"
@@ -423,7 +444,19 @@
     "message": "Francia"
   },
   "germany": {
-    "message": "Germania"
+    "message": "DE Francoforte"
+  },
+  "de_berlin": {
+    "message": "DE Berlino"
+  },
+  "belgium": {
+    "message": "Belgio"
+  },
+  "austria": {
+    "message": "Austria"
+  },
+  "czech": {
+    "message": "Repubblica Ceca"
   },
   "ro": {
     "message": "Romania"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "Italia"
   },
+  "spain": {
+    "message": "Spagna"
+  },
   "nz": {
     "message": "Nuova Zelanda"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "Corea del Sud"
+  },
+  "poland": {
+    "message": "Polonia"
+  },
+  "hungary": {
+    "message": "Ungheria"
   }
 }

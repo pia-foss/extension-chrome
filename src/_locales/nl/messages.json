@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "ALLE REGIO'S"
+  "ImportExportHeader": {
+    "message": "Regels importeren/exporteren"
   },
-  "FavoriteRegions": {
-    "message": "FAVORIETE REGIO'S"
+  "ImportLabel": {
+    "message": "Importeren"
   },
-  "us_wdc": {
-    "message": "VS Washington DC"
+  "ExportLabel": {
+    "message": "Exporteren"
   },
   "UILanguage": {
     "message": "Taal UI"
@@ -333,7 +333,7 @@
     "message": "Authenticatiefout"
   },
   "AuthFailMessage": {
-    "message": "Als u recentelijk uw wachtwoord hebt gewijzigd op de website van Private Internet Access, kunt u deze fout mogelijk verhelpen door de extensie opnieuw te verifiëren.<br /><br />Neem contact op met onze <a href=\"https://helpdesk.privateinternetaccess.com\">klantenservice</a> voor hulp en ondersteuning."
+    "message": "Als u recentelijk uw wachtwoord hebt gewijzigd op de website van Private Internet Access, kunt u deze fout mogelijk verhelpen door de extensie opnieuw te verifiëren.<br /><br />Neem contact op met onze <a href=\"https://privateinternetaccess.com/helpdesk\">klantenservice</a> voor hulp en ondersteuning."
   },
   "ConnectionFailPageTitle": {
     "message": "Verbindingsfout | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "Mij onthouden"
+  },
+  "AllRegions": {
+    "message": "ALLE REGIO'S"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORIETE REGIO'S"
   },
   "us_california": {
     "message": "VS Californië"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "VS New York (stad)"
   },
+  "us_atlanta": {
+    "message": "VS Atlanta"
+  },
   "us_las_vegas": {
     "message": "VS Las Vegas"
+  },
+  "us_houston": {
+    "message": "VS Houston"
+  },
+  "us_wdc": {
+    "message": "VS Washington DC"
   },
   "uk": {
     "message": "VK Londen"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "VK Southampton"
   },
+  "uk_manchester": {
+    "message": "VK Manchester"
+  },
   "ca": {
     "message": "Montreal (Canada)"
   },
   "ca_toronto": {
     "message": "Toronto (Canada)"
+  },
+  "ca_vancouver": {
+    "message": "CA Vancouver"
   },
   "aus": {
     "message": "Sydney (Australië)"
@@ -423,7 +444,19 @@
     "message": "Frankrijk"
   },
   "germany": {
-    "message": "Duitsland"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlijn"
+  },
+  "belgium": {
+    "message": "België"
+  },
+  "austria": {
+    "message": "Oostenrijk"
+  },
+  "czech": {
+    "message": "Tsjechië"
   },
   "ro": {
     "message": "Roemenië"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "Italië"
   },
+  "spain": {
+    "message": "Spanje"
+  },
   "nz": {
     "message": "Nieuw-Zeeland"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "Zuid-Korea"
+  },
+  "poland": {
+    "message": "Polen"
+  },
+  "hungary": {
+    "message": "Hongarije"
   }
 }

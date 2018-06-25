@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "جميع المناطق"
+  "ImportExportHeader": {
+    "message": "قوانين الاستيراد/التصدير"
   },
-  "FavoriteRegions": {
-    "message": "المناطق المفضلة"
+  "ImportLabel": {
+    "message": "استيراد"
   },
-  "us_wdc": {
-    "message": "الولايات المتحدة، واشنطن العاصمة"
+  "ExportLabel": {
+    "message": "تصدير"
   },
   "UILanguage": {
     "message": "لغة واجهة المستخدم"
@@ -333,7 +333,7 @@
     "message": "خطأ في المصادقة"
   },
   "AuthFailMessage": {
-    "message": "إذا قمت بتغيير كلمة مرورك مؤخرًا على موقع Private Internet Access الإلكتروني فقد تحل عملية إعادة إجراء عملية المصادقة هذا الخطأ.<br /><br />للحصول على المساعدة والدعم، اتصل بـ <a href=\"https://helpdesk.privateinternetaccess.com\">فريق الدعم</a>."
+    "message": "إذا قمت بتغيير كلمة مرورك مؤخرًا على موقع Private Internet Access الإلكتروني فقد تحل عملية إعادة إجراء عملية المصادقة هذا الخطأ.<br /><br />للحصول على المساعدة والدعم، اتصل بـ <a href=\"https://privateinternetaccess.com/helpdesk\">فريق الدعم</a>."
   },
   "ConnectionFailPageTitle": {
     "message": "خطأ في الاتصال | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "تذكرني"
+  },
+  "AllRegions": {
+    "message": "جميع المناطق"
+  },
+  "FavoriteRegions": {
+    "message": "المناطق المفضلة"
   },
   "us_california": {
     "message": "الولايات المتحدة - كاليفورنيا"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "الولايات المتحدة - مدينة نيويورك"
   },
+  "us_atlanta": {
+    "message": "الولايات المتحدة، أتلانتا"
+  },
   "us_las_vegas": {
     "message": "الولايات المتحدة، لاس فيغاس"
+  },
+  "us_houston": {
+    "message": "الولايات المتحدة، هيوستن"
+  },
+  "us_wdc": {
+    "message": "الولايات المتحدة، واشنطن العاصمة"
   },
   "uk": {
     "message": "المملكة المتحدة - لندن"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "المملكة المتحدة - ساوثهامبتون"
   },
+  "uk_manchester": {
+    "message": "مانشستر المملكة المتحدة"
+  },
   "ca": {
     "message": "كندا - مونتريال"
   },
   "ca_toronto": {
     "message": "كندا - تورونتو"
+  },
+  "ca_vancouver": {
+    "message": "كندا، فانكوفر"
   },
   "aus": {
     "message": "أستراليا - سيدني"
@@ -423,7 +444,19 @@
     "message": "فرنسا"
   },
   "germany": {
-    "message": "ألمانيا"
+    "message": "ألمانيا، فرانكفورت"
+  },
+  "de_berlin": {
+    "message": "ألمانيا، برلين"
+  },
+  "belgium": {
+    "message": "بلجيكا"
+  },
+  "austria": {
+    "message": "النمسا"
+  },
+  "czech": {
+    "message": "جمهورية التشيك"
   },
   "ro": {
     "message": "رومانيا"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "إيطاليا"
   },
+  "spain": {
+    "message": "إسبانيا"
+  },
   "nz": {
     "message": "نيوزيلندا"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "كوريا الجنوبية"
+  },
+  "poland": {
+    "message": "بولندا"
+  },
+  "hungary": {
+    "message": "المجر"
   }
 }

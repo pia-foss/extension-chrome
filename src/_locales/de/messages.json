@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "ALLE REGIONEN"
+  "ImportExportHeader": {
+    "message": "Import-/Export-Regeln"
   },
-  "FavoriteRegions": {
-    "message": "BEVORZUGTE REGIONEN"
+  "ImportLabel": {
+    "message": "Import"
   },
-  "us_wdc": {
-    "message": "USA, Washington DC"
+  "ExportLabel": {
+    "message": "Export"
   },
   "UILanguage": {
     "message": "Sprache (Benutzeroberfläche)"
@@ -333,7 +333,7 @@
     "message": "Authentifizierungsfehler"
   },
   "AuthFailMessage": {
-    "message": "Wenn Sie vor Kurzem Ihr Passwort auf der Website von Private Internet Access geändert haben, könnte eine erneute Authentifizierung mit der Erweiterung diesen Fehler beheben.<br /><br />Bitte kontaktieren Sie unseren <a href=\"https://helpdesk.privateinternetaccess.com\">Kundendienst</a>, wenn Sie Hilfe benötigen."
+    "message": "Wenn Sie vor Kurzem Ihr Passwort auf der Website von Private Internet Access geändert haben, könnte eine erneute Authentifizierung mit der Erweiterung diesen Fehler beheben.<br /><br />Bitte kontaktieren Sie unseren <a href=\"https://privateinternetaccess.com/helpdesk\">Kundendienst</a>, wenn Sie Hilfe benötigen."
   },
   "ConnectionFailPageTitle": {
     "message": "Verbindungsfehler | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "Angemeldet bleiben"
+  },
+  "AllRegions": {
+    "message": "ALLE REGIONEN"
+  },
+  "FavoriteRegions": {
+    "message": "BEVORZUGTE REGIONEN"
   },
   "us_california": {
     "message": "US Kalifornien"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "US New York City"
   },
+  "us_atlanta": {
+    "message": "USA, Atlanta"
+  },
   "us_las_vegas": {
     "message": "USA Las Vegas"
+  },
+  "us_houston": {
+    "message": "USA, Houston"
+  },
+  "us_wdc": {
+    "message": "USA, Washington DC"
   },
   "uk": {
     "message": "GB London"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "GB Southampton"
   },
+  "uk_manchester": {
+    "message": "GB Manchester"
+  },
   "ca": {
     "message": "CAN Montreal"
   },
   "ca_toronto": {
     "message": "CAN Toronto"
+  },
+  "ca_vancouver": {
+    "message": "Kanada, Vancouver"
   },
   "aus": {
     "message": "Australien Sydney"
@@ -423,7 +444,19 @@
     "message": "Frankreich"
   },
   "germany": {
-    "message": "Deutschland"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlin"
+  },
+  "belgium": {
+    "message": "Belgien"
+  },
+  "austria": {
+    "message": "Österreich"
+  },
+  "czech": {
+    "message": "Tschechien"
   },
   "ro": {
     "message": "Rumänien"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "Italien"
   },
+  "spain": {
+    "message": "Spanien"
+  },
   "nz": {
     "message": "Neuseeland"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "Südkorea"
+  },
+  "poland": {
+    "message": "Polen"
+  },
+  "hungary": {
+    "message": "Ungarn"
   }
 }
