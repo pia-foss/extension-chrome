@@ -41,7 +41,7 @@ export default function(renderer, app, window, document) {
 	    <div className="external-buttons">
               <SettingsIcon/>
               <a title={t("AccountSettingsText")} className="col-xs-4 btn-icon btn-account invokepop" href={this.autologinURL()} target="_blank"><div className="popover darkpopover arrow-bottom">{t("AccountSettingsText")}</div></a>
-              <a title={t("SupportText")} className="col-xs-4 btn-icon btn-help" href={"https://helpdesk.privateinternetaccess.com/hc/en-us"} target="_blank"><div className="popover darkpopover arrow-bottom">{t("SupportText")}</div></a>
+              <a title={t("SupportText")} className="col-xs-4 btn-icon btn-help" href={"https://www.privateinternetaccess.com/helpdesk/"} target="_blank"><div className="popover darkpopover arrow-bottom">{t("SupportText")}</div></a>
               <ActionButton extraClassList="col-xs-3 btn-icon btn-logout" title={t("LogoutText")} tooltip={t("LogoutText")} callback={logout}/>
 	    </div>
           </div>

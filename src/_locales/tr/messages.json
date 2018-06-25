@@ -1,12 +1,12 @@
 {
-  "AllRegions": {
-    "message": "TÜM BÖLGELER"
+  "ImportExportHeader": {
+    "message": "Kuralları İçe/Dışa Aktar"
   },
-  "FavoriteRegions": {
-    "message": "FAVORİ BÖLGELER"
+  "ImportLabel": {
+    "message": "İçe Aktar"
   },
-  "us_wdc": {
-    "message": "ABD Washington DC"
+  "ExportLabel": {
+    "message": "Dışa Aktar"
   },
   "UILanguage": {
     "message": "Arayüz Dili"
@@ -333,7 +333,7 @@
     "message": "Kimlik doğrulama hatası"
   },
   "AuthFailMessage": {
-    "message": "Private Internet Access web sitesinde parolanızı yakın zamanda değiştirdiyseniz, uzantı ile yeniden kimlik doğrulayarak giriş yapmak bu hatayı düzeltebilir.<br /><br />Yardım ve destek için <a href=\"https://helpdesk.privateinternetaccess.com\">destek ekibimizle</a> iletişime geçebilirsiniz."
+    "message": "Private Internet Access web sitesinde parolanızı yakın zamanda değiştirdiyseniz, uzantı ile yeniden kimlik doğrulayarak giriş yapmak bu hatayı düzeltebilir.<br /><br />Yardım ve destek için <a href=\"https://privateinternetaccess.com/helpdesk\">destek ekibimizle</a> iletişime geçebilirsiniz."
   },
   "ConnectionFailPageTitle": {
     "message": "Bağlantı hatası | Private Internet Access"
@@ -358,6 +358,12 @@
   },
   "RememberMe": {
     "message": "Beni hatırla"
+  },
+  "AllRegions": {
+    "message": "TÜM BÖLGELER"
+  },
+  "FavoriteRegions": {
+    "message": "FAVORİ BÖLGELER"
   },
   "us_california": {
     "message": "ABD Kaliforniya"
@@ -389,8 +395,17 @@
   "us_new_york_city": {
     "message": "ABD New York City"
   },
+  "us_atlanta": {
+    "message": "ABD Atlanta"
+  },
   "us_las_vegas": {
     "message": "ABD Las Vegas"
+  },
+  "us_houston": {
+    "message": "ABD Houston"
+  },
+  "us_wdc": {
+    "message": "ABD Washington DC"
   },
   "uk": {
     "message": "Birleşik Krallık Londra"
@@ -398,11 +413,17 @@
   "uk_southampton": {
     "message": "Birleşik Kralllık Southampton"
   },
+  "uk_manchester": {
+    "message": "Birleşik Kralllık Manchester"
+  },
   "ca": {
     "message": "Kanada Montreal"
   },
   "ca_toronto": {
     "message": "Kanada Toronto"
+  },
+  "ca_vancouver": {
+    "message": "CA Vancouver"
   },
   "aus": {
     "message": "Avustralya Sidney"
@@ -423,7 +444,19 @@
     "message": "Fransa"
   },
   "germany": {
-    "message": "Almanya"
+    "message": "DE Frankfurt"
+  },
+  "de_berlin": {
+    "message": "DE Berlin"
+  },
+  "belgium": {
+    "message": "Belçika"
+  },
+  "austria": {
+    "message": "Avusturya"
+  },
+  "czech": {
+    "message": "Çek Cumhuriyeti"
   },
   "ro": {
     "message": "Romanya"
@@ -455,6 +488,9 @@
   "italy": {
     "message": "İtalya"
   },
+  "spain": {
+    "message": "İspanya"
+  },
   "nz": {
     "message": "Yeni Zelanda"
   },
@@ -472,5 +508,11 @@
   },
   "kr": {
     "message": "Güney Kore"
+  },
+  "poland": {
+    "message": "Polonya"
+  },
+  "hungary": {
+    "message": "Macaristan"
   }
 }
