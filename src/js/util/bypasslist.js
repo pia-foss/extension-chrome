@@ -6,6 +6,8 @@ export default class BypassList {
     this._trimUserRules = this._trimUserRules.bind(this);
     this._initialRules = this._initialEnabledRules.bind(this);
     this.init = this.init.bind(this);
+    this.generatePingGateways = this.generatePingGateways.bind(this);
+    this.updatePingGateways = this.updatePingGateways.bind(this);
     this.isRuleEnabled = this.isRuleEnabled.bind(this);
     this.popularRulesByName = this.popularRulesByName.bind(this);
     this.getUserRules = this.getUserRules.bind(this);
@@ -48,9 +50,7 @@ export default class BypassList {
         , '*.local'
         ]
       ]
-      , [ 'pinggateways'
-        , () => this._regionList.toArray().map((r) => `http://${r.host}:8888`)
-        ]
+      , [ 'pinggateways', this.generatePingGateways() ]
       , [this._storageKeys.userrk, []]
       , [this._storageKeys.poprk, []]
     ]);
@@ -85,6 +85,25 @@ export default class BypassList {
 
     if(this._storage.hasItem(poprk) && this._storage.getItem(poprk).length > 0) {
       this._storage.getItem(poprk).split(',').forEach((name) => this.enablePopularRule(name));
+    }
+  }
+
+  generatePingGateways () {
+    let http = this._regionList.toArray().map((r) => {
+      return `http://${r.host}:8888`;
+    });
+
+    let https = this._regionList.toArray().map((r) => {
+      return `https://${r.host}:8888`;
+    });
+
+    return http.concat(https);
+  }
+
+  updatePingGateways () {
+    this._enabledRules.set('pinggateways', this.generatePingGateways());
+    if(this._app.proxy.enabled()) {
+      this._app.proxy.enable(this._regionList.getSelectedRegion());
     }
   }
 

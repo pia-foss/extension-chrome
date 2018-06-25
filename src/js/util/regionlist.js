@@ -85,6 +85,7 @@ export default function(app) {
       self.setSelectedRegion(storage.getItem("activeproxy") || defaultRegionID);
       self.syncing = false;
       self.synced = true;
+      app.util.bypasslist.updatePingGateways();
       debug("regionlist.js: sync ok");
       return xhr;
     })
