@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.3__
+
+* Add import/export feature for bypass list
+
 __v1.6.2__
 
 * Update project dependencies

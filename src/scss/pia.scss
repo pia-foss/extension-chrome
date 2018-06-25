@@ -848,6 +848,10 @@ div#debuglog-template ul time {
 }
 .bypass-wrap {
     padding: 15px;
+
+    #export-bypass-rules {
+        display: none;
+    }
 }
 
 .checkmarkcontainer input[type=checkbox] {

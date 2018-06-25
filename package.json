@@ -32,7 +32,7 @@
     "grunt-replace": "^1.0.1",
     "grunt-sass": "^2.1.0",
     "marked": "^0.4.0",
-    "prop-types": "^15.0.0",
+    "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-timeago": "^4.1.9",
