@@ -25,6 +25,7 @@
     "contentSettings",
     "alarms",
     "background",
+    "downloads",
     "<all_urls>"
   ],
   "content_scripts": [

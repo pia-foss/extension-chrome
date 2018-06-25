@@ -10,13 +10,17 @@ export default function(app) {
         }
 
   this.debug = async (message, condition) => {
-    if(app.util.settings.getItem("debugmode"))
+    if(app.util.settings.getItem("debugmode")) {
       if(!condition || condition()) {
-        if(entries.length === maxsize)
+        if(entries.length === maxsize) {
           entries.shift()
+        }
         entries.push([new Date().toISOString(), stringify(message)])
         listeners.get("NewMessage").forEach((func) => func(stringify(message)))
       }
+    }
+
+    return message;
   }
 
   this.getEntries = () => {

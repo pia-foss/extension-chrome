@@ -24,5 +24,9 @@
   "clientsignin": {
     "src": "<%= grunt.config.get('buildpath') %>/js/contentscripts/clientsignin.js",
     "dest": "<%= grunt.config.get('buildpath') %>/js/contentscripts/clientsignin.js"
+  },
+  "importrules": {
+    "src": "<%= grunt.config.get('buildpath') %>/js/popups/importrules.js",
+    "dest": "<%= grunt.config.get('buildpath') %>/js/popups/importrules.js"
   }
 }

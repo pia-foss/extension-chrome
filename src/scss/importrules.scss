@@ -1,0 +1,21 @@
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  #import-rules-popup {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > label {
+      width: 200px
+    }
+
+    > input {
+      display: none;
+    }
+  }
+}

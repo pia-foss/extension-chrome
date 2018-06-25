@@ -25,7 +25,7 @@ export default function(renderer, app, window, document) {
               checked={checked}
               type="checkbox"
             />
-            <label className="checkboxlabel" for={name}></label>
+            <label className="checkboxlabel" htmlFor={name}></label>
           </div>
         </li>
       )

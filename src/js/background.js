@@ -1,4 +1,5 @@
 import "babel-polyfill";
+
 import storage            from "util/storage";
 import settings           from "util/settings";
 import icon               from "util/icon";
@@ -31,7 +32,7 @@ import BrowserProxy      from "chromesettings/proxy";
 import autofill          from "chromesettings/autofill";
 import eventhandler from "eventhandler/eventhandler";
 
-(new function(window) {
+(function(window) {
   const self = Object.create(null);
   const deepFreeze = (obj) => {
     if(@@freezeApp) {
@@ -66,6 +67,7 @@ import eventhandler from "eventhandler/eventhandler";
 
   /* self.proxy is a %{browser}Setting like self.chromesettings.* objects are. */
   self.proxy = Object.freeze(BrowserProxy(self));
+  self.util.bypasslist.init();
 
   self.contentsettings = Object.create(null);
   self.contentsettings.camera      = new camera(self);
@@ -103,4 +105,4 @@ import eventhandler from "eventhandler/eventhandler";
     debug("background.js: initialized");
   })();
 
-}(window, document))
+}(window))
