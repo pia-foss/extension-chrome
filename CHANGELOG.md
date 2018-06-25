@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.4__
+
+* Route Latency checks through HTTPS
+
 __v1.6.3__
 
 * Add import/export feature for bypass list
