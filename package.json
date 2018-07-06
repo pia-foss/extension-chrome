@@ -1,5 +1,14 @@
 {
   "private": true,
+  "scripts": {
+    "dev": "cross-env browser=chrome build=debug gitinfo=yes grunt",
+    "qa:chrome": "cross-env browser=chrome build=webstore gitinfo=yes grunt",
+    "qa:opera": "cross-env browser=opera build=webstore gitinfo=yes grunt",
+    "deploy:chrome": "cross-env browser=chrome build=webstore audience=public grunt release",
+    "deploy:opera": "cross-env browser=opera build=webstore grunt",
+    "translation:import": "grunt oneskyImport",
+    "translation:export": "grunt oneskyExport"
+  },
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
@@ -40,6 +49,7 @@
     "tinyhttp": "https://github.com/r-obert/tinyhttp.js"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.8.2",
     "node-slack": "^0.0.7"
