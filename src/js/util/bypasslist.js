@@ -128,9 +128,6 @@ export default class BypassList {
     if (!proxy) {
       throw new Error(debug('proxy not ready'));
     }
-    if (!proxy) {
-      throw new Error(debug('proxy is not available'));
-    }
     if (proxy.enabled()) {
       return void proxy.enable(this._regionList.getSelectedRegion()).then(cb);
     } else {

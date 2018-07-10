@@ -183,6 +183,12 @@ li.popular-rule {
             width: 100%;
         }
     }
+    #bypasslist-template {
+        .add-container {
+            overflow: auto;
+            margin: 15px 0px 10px 0px;
+        }
+    }
     #select-region {
         margin: 20px 0px 0px 0px;
         #region-grid {
@@ -793,6 +799,13 @@ div#debuglog-template ul time {
   border:0;
   color: #fff;
   font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > p {
+      pointer-events: none;
+  }
 }
 
 .add-btn:hover, .add-btn:active, .add-btn:focus{
