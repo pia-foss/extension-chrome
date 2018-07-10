@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.5__
+
+* Center add button on bypass list
+
 __v1.6.4__
 
 * Route Latency checks through HTTPS
