@@ -6,7 +6,7 @@ export default function(app) {
             domains = i18n.domainMap.values(),
             allowedUrls = Array.from(domains).map((v) => `https://${v}/xpages/sign-in`)
       if(user.authed && allowedUrls.includes(msg.url))
-        sendResponse({user: user.username(), pass: user.password()})
+        sendResponse({user: user.getUsername(), pass: user.getPassword()})
       break
     }
     case "RequestErrorInfo": {

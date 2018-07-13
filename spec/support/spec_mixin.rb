@@ -15,11 +15,11 @@ module SpecMixin
   end
 
   def stored_username
-    jseval('app.util.user.username()')
+    jseval('app.util.user.getUsername()')
   end
 
   def stored_password
-    jseval('app.util.user.password()')
+    jseval('app.util.user.getPassword()')
   end
 
   def inmemory_username

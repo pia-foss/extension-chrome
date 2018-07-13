@@ -37,7 +37,7 @@ export default function(app) {
       return {cancel: true}
     } else if(user.inStorage()) {
       debug("onAuthRequired/1: allowed.")
-      return {authCredentials: {username: user.username(), password: user.password()}}
+      return {authCredentials: {username: user.getUsername(), password: user.getPassword()}}
     } else {
       debug("onAuthRequired/1: user not in storage")
       proxy.disable().then(() => chrome.tabs.reload(details.tabId))
