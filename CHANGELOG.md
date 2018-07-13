@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.6__
+
+* Fixed a bug where localStorage was not being cleared by unchecking "remember me"
+
 __v1.6.5__
 
 * Center add button on bypass list
