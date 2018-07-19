@@ -97,7 +97,7 @@ module SpecMixin
   end
 
   def click_save_bypass_list
-    find('input.add-btn').click
+    find('input.add-rule-btn').click
   end
 
   def click_back_button
