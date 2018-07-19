@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.7__
+
+* Added try/catch along code base to catch any 'dead object' errors that hang the UI
+
 __v1.6.6__
 
 * Fixed a bug where localStorage was not being cleared by unchecking "remember me"

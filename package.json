@@ -51,7 +51,7 @@
   "devDependencies": {
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react": "^7.10.0",
     "node-slack": "^0.0.7"
   }
 }

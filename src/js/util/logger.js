@@ -1,47 +1,67 @@
-export default function(app) {
-  let entries  = [];
-  const listeners = new Map([["NewMessage", []]]),
-        maxsize   = 200,
-        stringify = (message) => {
-          if(typeof(message) === "string")
-            return message
-          else
-            return JSON.stringify(message)
-        }
+export default class Logger {
+  constructor(app) {
+    this.app = app;
+    this.entries = [];
+    this.MAX_LOG_SIZE = 200;
+    this.listeners = new Map([
+      ['NewMessage', []]
+    ]);
 
-  this.debug = async (message, condition) => {
-    if(app.util.settings.getItem("debugmode")) {
-      if(!condition || condition()) {
-        if(entries.length === maxsize) {
-          entries.shift()
-        }
-        entries.push([new Date().toISOString(), stringify(message)])
-        listeners.get("NewMessage").forEach((func) => func(stringify(message)))
-      }
+    // bindings
+    this.debug = this.debug.bind(this);
+    this.getEntries = this.getEntries.bind(this);
+    this.removeEntries = this.removeEntries.bind(this);
+    this.addEventListener = this.addEventListener.bind(this);
+    this.removeEventListener = this.removeEventListener.bind(this);
+    this.stringify = this.stringify.bind(this);
+  }
+
+  debug (message, condition) {
+    if (this.app.util.settings.getItem('debugmode') && (!condition || condition())) {
+      // remove extraneous entries
+      while (this.entries.length >= this.MAX_LOG_SIZE) { this.entries.shift(); }
+
+      // add this error to the debug log
+      this.entries.push([new Date().toISOString(), this.stringify(message)]);
+
+      // update any UIs with new debug messages
+      this.listeners.get('NewMessage').forEach((listener) => {
+        // try calling functions bound to 'NewMessage'
+        try { listener(this.stringify(message)); }
+        /**
+         * NOTE: This will catch a bug where if the the user is on the debug log view
+         * and resizes the window, the browser will kill the extension without giving
+         * the extension enough time to clear out the functions tied to the debug log.
+         */
+        catch (err) { this.removeEventListener('NewMessage', listener); }
+      });
     }
 
     return message;
   }
 
-  this.getEntries = () => {
-    return Array.from(entries).reverse()
+  getEntries () {
+    return Array.from(this.entries).reverse();
   }
 
-  this.removeEntries = () => {
-    entries = []
+  removeEntries () {
+    this.entries = [];
   }
 
-  this.addEventListener = (event, func) => {
-    listeners.get(event).push(func)
+  addEventListener (event, listener) {
+    this.listeners.get(event).push(listener);
   }
 
-  this.removeEventListener = (event, func) => {
-    const funcs = listeners.get(event)
-    Array.from(funcs).forEach((f, index) => {
-      if(f === func)
-        delete(funcs[index])
-    })
+  removeEventListener (event, listener) {
+    const currentListeners = this.listeners.get(event);
+    let filteredListeners = currentListeners.filter((item) => {
+      return item !== listener;
+    });
+    this.listeners.set(event, filteredListeners);
   }
 
-  return this
+  stringify (message) {
+    if(typeof(message) === 'string') { return message; }
+    else { return JSON.stringify(message); }
+  }
 }
