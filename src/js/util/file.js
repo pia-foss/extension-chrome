@@ -7,7 +7,6 @@ class File {
    *
    * @param {string} fileType Type of file
    * @param {any[]} fileParts Parts to include in file blob
-   * @param {function} debugLogger Logger
    */
   constructor (fileType, fileParts) {
     // Bindings
