@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.8__
+
+* Fixed bug where extension automatically attempted to log user in
+
 __v1.6.7__
 
 * Added try/catch along code base to catch any 'dead object' errors that hang the UI

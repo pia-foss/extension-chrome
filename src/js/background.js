@@ -90,15 +90,15 @@ import eventhandler from "eventhandler/eventhandler";
   (() => {
     const {proxy} = self;
     const {user,settings,regionlist} = self.util;
-    settings.setDefaults();
+    settings.init();
 
-    if(!user.inStorage()) { proxy.disable(); }
+    if(!user.loggedIn) { proxy.disable(); }
     if(!regionlist.synced) { regionlist.sync(); }
 
     proxy.readSettings()
     .then(() => {
       if(!proxy.isControllable()) { return; }
-      if(user.inStorage()) { user.auth().catch(proxy.disable);  }
+      if(user.loggedIn) { user.auth().catch(proxy.disable);  }
     });
 
     window.app = Object.freeze(self);

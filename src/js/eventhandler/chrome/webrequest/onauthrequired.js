@@ -35,11 +35,11 @@ export default function(app) {
       chrome.tabs.update({url: chrome.extension.getURL("html/errorpages/authfail.html")})
       proxy.disable().then(() => user.authed = false)
       return {cancel: true}
-    } else if(user.inStorage()) {
+    } else if(user.loggedIn) {
       debug("onAuthRequired/1: allowed.")
       return {authCredentials: {username: user.getUsername(), password: user.getPassword()}}
     } else {
-      debug("onAuthRequired/1: user not in storage")
+      debug("onAuthRequired/1: user not logged in")
       proxy.disable().then(() => chrome.tabs.reload(details.tabId))
       return {cancel: true}
     }
