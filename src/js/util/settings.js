@@ -1,43 +1,56 @@
-export default function(app) {
-  const {storage} = app.util
+class Settings {
+  constructor (app) {
+    this._app = app;
 
-  this.setDefaults = () => {
-    const {contentsettings, chromesettings} = app,
-          defaults = {
-            "blockplugins":          true, /* TODO: unused until a bug in chrome is fixed. */
-            "blockutm":              true,
-            "maceprotection":        true,
-            "debugmode":             false,
-            "rememberme":            true
-          }
-    for(let k in contentsettings) {
-      let s = contentsettings[k]
-      defaults[s.settingID] = s.settingDefault
-    }
-    for(let k in chromesettings) {
-      let s = chromesettings[k]
-      defaults[s.settingID] = s.settingDefault
-    }
-    Object.keys(defaults).forEach((key) => {
-      if(!this.hasItem(key))
-        this.setItem(key, defaults[key])
-    })
+    this.init = this.init.bind(this);
+    this.hasItem = this.hasItem.bind(this);
+    this.getItem = this.getItem.bind(this);
+    this.setItem = this.setItem.bind(this);
   }
 
-  this.hasItem = (key) => {
-    return storage.hasItem(`settings:${key}`)
+  static get _defaults () {
+    return {
+      'blockplugins': true, /* TODO: unused until a bug in chrome is fixed. */
+      'blockutm': true,
+      'maceprotection': true,
+      'debugmode': false,
+      'rememberme': true,
+    };
   }
 
-  this.getItem = (key) => {
-    return storage.getItem(`settings:${key}`) === "true"
+  init () {
+    const getDefaultSettings = (settingsMap) => Object.values(settingsMap).reduce(
+      (accum, s) => {
+        return Object.assign({}, accum, {
+          [s.settingID]: s.settingDefault,
+        });
+      },
+      {}
+    );
+    const {contentsettings, chromesettings} = this._app;
+    const defaultSettings = Object.assign(
+      Settings._defaults,
+      getDefaultSettings(contentsettings),
+      getDefaultSettings(chromesettings)
+    );
+    Object.keys(defaultSettings).forEach((settingId) => {
+      if (!this.hasItem(settingId)) {
+        this.setItem(settingId, defaultSettings[settingId]);
+      }
+    });
   }
 
-  this.setItem = (key, value) => {
-    if(value === true || value === "true")
-      storage.setItem(`settings:${key}`, "true")
-    else
-      storage.setItem(`settings:${key}`, "false")
+  hasItem (key) {
+    return this._app.util.storage.hasItem(`settings:${key}`);
   }
 
-  return this
+  getItem (key) {
+    return this._app.util.storage.getItem(`settings:${key}`) === 'true';
+  }
+
+  setItem (key, value) {
+    this._app.util.storage.setItem(`settings:${key}`, String(value) === 'true');
+  }
 }
+
+export default Settings;
