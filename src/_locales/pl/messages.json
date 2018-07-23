@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Zasady importu/eksportu"
-  },
-  "ImportLabel": {
-    "message": "Import"
-  },
-  "ExportLabel": {
-    "message": "Eksport"
-  },
   "UILanguage": {
     "message": "Język IU"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Inne witryny"
+  },
+  "ImportExportHeader": {
+    "message": "Zasady importu/eksportu"
+  },
+  "ImportLabel": {
+    "message": "Import"
+  },
+  "ExportLabel": {
+    "message": "Eksport"
   },
   "SettingsWarning": {
     "message": "Te ustawienia nie działają. Zaczynają obowiązywać, gdy masz połączenie z regionem."
@@ -366,34 +366,34 @@
     "message": "ULUBIONE REGIONY"
   },
   "us_california": {
-    "message": "Kalifornia, USA"
+    "message": "USA Kalifornia"
   },
   "us2": {
-    "message": "Wschodnie Wybrzeże USA"
+    "message": "USA Wschodnie Wybrzeże"
   },
   "us1": {
-    "message": "Środkowy Zachód USA"
+    "message": "USA Środkowy Zachód"
   },
   "us_chicago": {
-    "message": "Chicago, USA"
+    "message": "USA Chicago"
   },
   "us_south_west": {
-    "message": "Teksas, USA"
+    "message": "USA Teksas"
   },
   "us_florida": {
-    "message": "Floryda, USA"
+    "message": "USA Floryda"
   },
   "us_seattle": {
-    "message": "Seattle, USA"
+    "message": "USA Seattle"
   },
   "us3": {
-    "message": "Zachodnie Wybrzeże USA"
+    "message": "USA Zachodnie Wybrzeże"
   },
   "us_silicon_valley": {
-    "message": "Dolina Krzemowa, USA"
+    "message": "USA Dolina Krzemowa"
   },
   "us_new_york_city": {
-    "message": "Nowy Jork, USA"
+    "message": "USA Nowy Jork"
   },
   "us_atlanta": {
     "message": "USA Atlanta"
@@ -405,7 +405,13 @@
     "message": "USA Houston"
   },
   "us_wdc": {
-    "message": "USA Waszyngton, DC"
+    "message": "USA Washington DC"
+  },
+  "us_washington_dc": {
+    "message": "USA Washington DC"
+  },
+  "us_denver": {
+    "message": "USA Denver"
   },
   "uk": {
     "message": "WB Londyn"
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Węgry"
+  },
+  "lu": {
+    "message": "Luksemburg"
   }
 }

@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Import-/Export-Regeln"
-  },
-  "ImportLabel": {
-    "message": "Import"
-  },
-  "ExportLabel": {
-    "message": "Export"
-  },
   "UILanguage": {
     "message": "Sprache (Benutzeroberfläche)"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Andere Websites"
+  },
+  "ImportExportHeader": {
+    "message": "Import-/Export-Regeln"
+  },
+  "ImportLabel": {
+    "message": "Import"
+  },
+  "ExportLabel": {
+    "message": "Export"
   },
   "SettingsWarning": {
     "message": "Diese Einstellungen sind nicht wirksam. Sie gelten, wenn Sie mit einer Region verbunden sind."
@@ -366,46 +366,52 @@
     "message": "BEVORZUGTE REGIONEN"
   },
   "us_california": {
-    "message": "US Kalifornien"
+    "message": "USA, Kalifornien"
   },
   "us2": {
-    "message": "USA Osten"
+    "message": "USA, Osten"
   },
   "us1": {
-    "message": "USA Mittlerer Westen"
+    "message": "USA, Mittlerer Westen"
   },
   "us_chicago": {
-    "message": "US Chicago"
+    "message": "USA, Chicago"
   },
   "us_south_west": {
-    "message": "USA Texas"
+    "message": "USA, Texas"
   },
   "us_florida": {
-    "message": "US Florida"
+    "message": "USA, Florida"
   },
   "us_seattle": {
-    "message": "US Seattle"
+    "message": "USA, Seattle"
   },
   "us3": {
-    "message": "USA Westen"
+    "message": "USA, Westen"
   },
   "us_silicon_valley": {
-    "message": "US Silicon Valley"
+    "message": "USA, Silicon Valley"
   },
   "us_new_york_city": {
-    "message": "US New York City"
+    "message": "USA, New York City"
   },
   "us_atlanta": {
     "message": "USA, Atlanta"
   },
   "us_las_vegas": {
-    "message": "USA Las Vegas"
+    "message": "USA, Las Vegas"
   },
   "us_houston": {
     "message": "USA, Houston"
   },
   "us_wdc": {
     "message": "USA, Washington DC"
+  },
+  "us_washington_dc": {
+    "message": "USA, Washington DC"
+  },
+  "us_denver": {
+    "message": "US Denver"
   },
   "uk": {
     "message": "GB London"
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Ungarn"
+  },
+  "lu": {
+    "message": "Luxemburg"
   }
 }

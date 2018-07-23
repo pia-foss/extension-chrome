@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "قوانين الاستيراد/التصدير"
-  },
-  "ImportLabel": {
-    "message": "استيراد"
-  },
-  "ExportLabel": {
-    "message": "تصدير"
-  },
   "UILanguage": {
     "message": "لغة واجهة المستخدم"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "مواقع الإنترنت الأخرى"
+  },
+  "ImportExportHeader": {
+    "message": "قوانين الاستيراد/التصدير"
+  },
+  "ImportLabel": {
+    "message": "استيراد"
+  },
+  "ExportLabel": {
+    "message": "تصدير"
   },
   "SettingsWarning": {
     "message": "هذه الإعدادات غير سارية. ستسري هذه الإعدادات فقط أثناء اتصالك بإحدى المناطق."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "الولايات المتحدة، واشنطن العاصمة"
   },
+  "us_washington_dc": {
+    "message": "الولايات المتحدة، واشنطن العاصمة"
+  },
+  "us_denver": {
+    "message": "الولايات المتحدة، دنفر"
+  },
   "uk": {
     "message": "المملكة المتحدة - لندن"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "المجر"
+  },
+  "lu": {
+    "message": "لوكسمبورج"
   }
 }

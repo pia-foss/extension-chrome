@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "ルールのインポート/エクスポート"
-  },
-  "ImportLabel": {
-    "message": "インポート"
-  },
-  "ExportLabel": {
-    "message": "エクスポート"
-  },
   "UILanguage": {
     "message": "UI言語"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "その他のウェブサイト"
+  },
+  "ImportExportHeader": {
+    "message": "ルールのインポート/エクスポート"
+  },
+  "ImportLabel": {
+    "message": "インポート"
+  },
+  "ExportLabel": {
+    "message": "エクスポート"
   },
   "SettingsWarning": {
     "message": "これらの設定が無効になっています。お客様が地域に接続されると有効になります。"
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "米国 ワシントンDC"
   },
+  "us_washington_dc": {
+    "message": "米国ワシントンDC"
+  },
+  "us_denver": {
+    "message": "米国デンバー"
+  },
   "uk": {
     "message": "英国 ロンドン"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "ハンガリー"
+  },
+  "lu": {
+    "message": "ルクセンブルク"
   }
 }

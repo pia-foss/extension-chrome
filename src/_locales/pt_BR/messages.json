@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Regras de importação/exportação"
-  },
-  "ImportLabel": {
-    "message": "Importar"
-  },
-  "ExportLabel": {
-    "message": "Exportar"
-  },
   "UILanguage": {
     "message": "Idioma da IU"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Outros sites"
+  },
+  "ImportExportHeader": {
+    "message": "Regras de importação/exportação"
+  },
+  "ImportLabel": {
+    "message": "Importar"
+  },
+  "ExportLabel": {
+    "message": "Exportar"
   },
   "SettingsWarning": {
     "message": "Estas configurações não estão em vigor. Elas entrarão em vigor após sua conexão a uma região."
@@ -366,34 +366,34 @@
     "message": "REGIÕES FAVORITAS"
   },
   "us_california": {
-    "message": "Califórnia, EUA"
+    "message": "EUA, Califórnia"
   },
   "us2": {
-    "message": "Leste dos EUA"
+    "message": "EUA, Leste dos"
   },
   "us1": {
-    "message": "Oeste dos EUA"
+    "message": "EUA, Oeste dos"
   },
   "us_chicago": {
-    "message": "Chicago, EUA"
+    "message": "EUA, Chicago"
   },
   "us_south_west": {
-    "message": "Texas, EUA"
+    "message": "EUA, Texas"
   },
   "us_florida": {
-    "message": "Flórida, EUA"
+    "message": "EUA, Flórida"
   },
   "us_seattle": {
-    "message": "Seattle, EUA"
+    "message": "EUA, Seattle"
   },
   "us3": {
-    "message": "Oeste dos EUA"
+    "message": "EUA, Oeste dos"
   },
   "us_silicon_valley": {
-    "message": "Vale do Silício, EUA"
+    "message": "EUA, Vale do Silício"
   },
   "us_new_york_city": {
-    "message": "EUA  Cidade de Nova Iorque"
+    "message": "EUA,  Cidade de Nova Iorque"
   },
   "us_atlanta": {
     "message": "EUA, Atlanta"
@@ -406,6 +406,12 @@
   },
   "us_wdc": {
     "message": "EUA, Washington DC"
+  },
+  "us_washington_dc": {
+    "message": "EUA, Washington DC"
+  },
+  "us_denver": {
+    "message": "EUA, Denver"
   },
   "uk": {
     "message": "Londres, Reino Unido"
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Hungria"
+  },
+  "lu": {
+    "message": "Luxemburgo"
   }
 }

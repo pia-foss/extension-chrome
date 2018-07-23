@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "규칙 가져오기/내보내기"
-  },
-  "ImportLabel": {
-    "message": "가져오기"
-  },
-  "ExportLabel": {
-    "message": "내보내기"
-  },
   "UILanguage": {
     "message": "UI 언어"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "기타 웹사이트"
+  },
+  "ImportExportHeader": {
+    "message": "규칙 가져오기/내보내기"
+  },
+  "ImportLabel": {
+    "message": "가져오기"
+  },
+  "ExportLabel": {
+    "message": "내보내기"
   },
   "SettingsWarning": {
     "message": "이 설정은 적용되고 있지 않습니다. 지역에 연결될 때 적용됩니다."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "미국 워싱턴 DC"
   },
+  "us_washington_dc": {
+    "message": "미국 워싱턴 DC"
+  },
+  "us_denver": {
+    "message": "미국 덴버"
+  },
   "uk": {
     "message": "영국 런던"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "헝가리"
+  },
+  "lu": {
+    "message": "룩셈부르크"
   }
 }
