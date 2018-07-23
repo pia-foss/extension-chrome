@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Importer/Eksporter regler"
-  },
-  "ImportLabel": {
-    "message": "Importer"
-  },
-  "ExportLabel": {
-    "message": "Eksporter"
-  },
   "UILanguage": {
     "message": "Grænsefladesprog"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Andre hjemmesider"
+  },
+  "ImportExportHeader": {
+    "message": "Importer/Eksporter regler"
+  },
+  "ImportLabel": {
+    "message": "Importer"
+  },
+  "ExportLabel": {
+    "message": "Eksporter"
   },
   "SettingsWarning": {
     "message": "Disse indstillinger er ikke gældende. De vil være gældende når du er tilsluttet en region."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "USA, Washington DC"
   },
+  "us_washington_dc": {
+    "message": "USA, Washington DC"
+  },
+  "us_denver": {
+    "message": "USA, Denver"
+  },
   "uk": {
     "message": "England, London"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Ungarn"
+  },
+  "lu": {
+    "message": "Luxembourg"
   }
 }

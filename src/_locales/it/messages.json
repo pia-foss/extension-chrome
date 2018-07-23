@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Regole importazione/esportazione"
-  },
-  "ImportLabel": {
-    "message": "Importa"
-  },
-  "ExportLabel": {
-    "message": "Esporta"
-  },
   "UILanguage": {
     "message": "Lingua IU"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Altri siti web"
+  },
+  "ImportExportHeader": {
+    "message": "Regole importazione/esportazione"
+  },
+  "ImportLabel": {
+    "message": "Importa"
+  },
+  "ExportLabel": {
+    "message": "Esporta"
   },
   "SettingsWarning": {
     "message": "Queste impostazioni non sono in uso. Saranno attivate quando ti connetti a una regone."
@@ -366,34 +366,34 @@
     "message": "REGIONI PREFERITE"
   },
   "us_california": {
-    "message": "California USA"
+    "message": "US California"
   },
   "us2": {
-    "message": "Est USA"
+    "message": "US Est"
   },
   "us1": {
-    "message": "Midwest USA"
+    "message": "US Midwest"
   },
   "us_chicago": {
-    "message": "Chicago USA"
+    "message": "US Chicago"
   },
   "us_south_west": {
-    "message": "Texas USA"
+    "message": "US Texas"
   },
   "us_florida": {
-    "message": "Florida USA"
+    "message": "US Florida"
   },
   "us_seattle": {
-    "message": "Seattle USA"
+    "message": "US Seattle"
   },
   "us3": {
-    "message": "Ovest USA"
+    "message": "US Ovest"
   },
   "us_silicon_valley": {
-    "message": "Silicon Valley USA"
+    "message": "US Silicon Valley"
   },
   "us_new_york_city": {
-    "message": "New York City USA"
+    "message": "US New York City"
   },
   "us_atlanta": {
     "message": "US Atlanta"
@@ -406,6 +406,12 @@
   },
   "us_wdc": {
     "message": "US Washington DC"
+  },
+  "us_washington_dc": {
+    "message": "US Washington DC"
+  },
+  "us_denver": {
+    "message": "US Denver"
   },
   "uk": {
     "message": "Regno Unito, Londra"
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Ungheria"
+  },
+  "lu": {
+    "message": "Lussemburgo"
   }
 }

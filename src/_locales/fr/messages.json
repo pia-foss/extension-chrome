@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Règles d'importation/d'exportation"
-  },
-  "ImportLabel": {
-    "message": "Importer"
-  },
-  "ExportLabel": {
-    "message": "Exporter"
-  },
   "UILanguage": {
     "message": "Langue de l'interface"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Autres sites Internet"
+  },
+  "ImportExportHeader": {
+    "message": "Règles d'importation/d'exportation"
+  },
+  "ImportLabel": {
+    "message": "Importer"
+  },
+  "ExportLabel": {
+    "message": "Exporter"
   },
   "SettingsWarning": {
     "message": "Ces paramètres ne sont pas en vigueur. Ils prennent effet lorsque vous êtes connecté(e) à une région."
@@ -393,7 +393,7 @@
     "message": "US Silicon Valley"
   },
   "us_new_york_city": {
-    "message": "US (New York)"
+    "message": "US New York"
   },
   "us_atlanta": {
     "message": "US Atlanta"
@@ -406,6 +406,12 @@
   },
   "us_wdc": {
     "message": "US Washington DC"
+  },
+  "us_washington_dc": {
+    "message": "US Washington DC"
+  },
+  "us_denver": {
+    "message": "US Denver"
   },
   "uk": {
     "message": "UK Londres"
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Hongrie"
+  },
+  "lu": {
+    "message": "Luxembourg"
   }
 }
