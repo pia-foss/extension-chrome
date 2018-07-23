@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Правила импорта/экспорта"
-  },
-  "ImportLabel": {
-    "message": "Импорт"
-  },
-  "ExportLabel": {
-    "message": "Экспорт"
-  },
   "UILanguage": {
     "message": "Язык интерфейса"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Другие веб-сайты"
+  },
+  "ImportExportHeader": {
+    "message": "Правила импорта/экспорта"
+  },
+  "ImportLabel": {
+    "message": "Импорт"
+  },
+  "ExportLabel": {
+    "message": "Экспорт"
   },
   "SettingsWarning": {
     "message": "Эти настройки не действительны. Они действуют, только когда вы соединены с регионом."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "США, Вашингтон (округ Колумбия)"
   },
+  "us_washington_dc": {
+    "message": "США (Вашингтон, округ Колумбия)"
+  },
+  "us_denver": {
+    "message": "США, Денвер"
+  },
   "uk": {
     "message": "Великобритания, Лондон"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Венгрия"
+  },
+  "lu": {
+    "message": "Люксембург"
   }
 }

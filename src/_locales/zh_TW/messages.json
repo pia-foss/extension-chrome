@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "匯入/匯出規則"
-  },
-  "ImportLabel": {
-    "message": "匯入"
-  },
-  "ExportLabel": {
-    "message": "匯入"
-  },
   "UILanguage": {
     "message": "UI 語言"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "其他網站"
+  },
+  "ImportExportHeader": {
+    "message": "匯入/匯出規則"
+  },
+  "ImportLabel": {
+    "message": "匯入"
+  },
+  "ExportLabel": {
+    "message": "匯入"
   },
   "SettingsWarning": {
     "message": "這些設定並未生效，它們只會在連線至區域時生效。"
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "美國華盛頓哥倫比亞特區"
   },
+  "us_washington_dc": {
+    "message": "美國華盛頓哥倫比亞特區"
+  },
+  "us_denver": {
+    "message": "美國丹佛"
+  },
   "uk": {
     "message": "英國倫敦"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "匈牙利"
+  },
+  "lu": {
+    "message": "盧森堡"
   }
 }

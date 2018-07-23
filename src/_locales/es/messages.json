@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Reglas de importación/exportación"
-  },
-  "ImportLabel": {
-    "message": "Importar"
-  },
-  "ExportLabel": {
-    "message": "Exportar"
-  },
   "UILanguage": {
     "message": "Idioma de la interfaz"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Otros sitios web"
+  },
+  "ImportExportHeader": {
+    "message": "Reglas de importación/exportación"
+  },
+  "ImportLabel": {
+    "message": "Importar"
+  },
+  "ExportLabel": {
+    "message": "Exportar"
   },
   "SettingsWarning": {
     "message": "Estos ajustes no están activos. Solo tendrán efecto mientras estés conectado a una región."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "EE. UU. Washington DC"
   },
+  "us_washington_dc": {
+    "message": "EE. UU. Washington DC"
+  },
+  "us_denver": {
+    "message": "EE. UU. Denver"
+  },
   "uk": {
     "message": "Reino Unido Londres"
   },
@@ -414,7 +420,7 @@
     "message": "Reino Unido Southampton"
   },
   "uk_manchester": {
-    "message": "UK Manchester"
+    "message": "Reino Unido Manchester"
   },
   "ca": {
     "message": "Canadá Montreal"
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Hungría"
+  },
+  "lu": {
+    "message": "Luxemburgo"
   }
 }

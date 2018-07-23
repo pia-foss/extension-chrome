@@ -2,6 +2,8 @@ __HEAD__
 
 __v1.6.0__
 
+* Update region translations
+
 * Add Favorite Region view
 
 __v1.5.11__
