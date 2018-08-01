@@ -27,7 +27,10 @@ export default function(app) {
     })
   }
 
-  self.blockable = chrome.privacy.network.webRTCIPHandlingPolicy !== undefined
+  self.init = () => {
+    self.blockable = chrome.privacy.network.webRTCIPHandlingPolicy !== undefined;
+  };
+
 
   return self
 }

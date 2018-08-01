@@ -40,8 +40,12 @@ export default function(app) {
     new Notification(title, Object.assign({}, defaultOptions, options))
   }
 
-  if(!settings.hasItem(self.settingID) || settings.getItem(self.settingID))
-    self.applySetting()
+  self.init = () => {
+    if(!settings.hasItem(self.settingID) || settings.getItem(self.settingID)) {
+      self.applySetting();
+    }
+  };
+
 
   return self
 }

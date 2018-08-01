@@ -75,7 +75,6 @@ import eventhandler from "eventhandler/eventhandler";
   self.contentsettings.location    = new location(self);
   self.contentsettings.flash       = new flash(self);
   self.contentsettings.extensionNotification = new extensionNotification(self);
-  self.contentsettings = deepFreeze(self.contentsettings);
 
   self.chromesettings = Object.create(null);
   self.chromesettings.networkprediction = new networkprediction(self);
@@ -85,6 +84,17 @@ import eventhandler from "eventhandler/eventhandler";
   self.chromesettings.thirdpartycookies = new thirdpartycookies(self);
   self.chromesettings.safebrowsing      = new safebrowsing(self);
   self.chromesettings.autofill          = new autofill(self);
+
+  // Initialize settings
+  const initSettings = (settings) => Object.values(settings)
+    .filter((setting) => setting.init)
+    .forEach((setting) => setting.init());
+
+  initSettings(self.chromesettings);
+  initSettings(self.contentsettings);
+
+  // Freeze settings
+  self.contentsettings = deepFreeze(self.contentsettings);
   self.chromesettings = deepFreeze(self.chromesettings);
 
   (() => {
@@ -98,7 +108,15 @@ import eventhandler from "eventhandler/eventhandler";
     proxy.readSettings()
     .then(() => {
       if(!proxy.isControllable()) { return; }
-      if(user.loggedIn) { user.auth().catch(proxy.disable);  }
+      const {loggedIn, logOutOnClose} = user;
+      if (loggedIn) {
+        if (logOutOnClose) {
+          user.logout().catch(proxy.disable);
+        }
+        else {
+          user.auth().catch(proxy.disable);
+        }
+      }
     });
 
     window.app = Object.freeze(self);

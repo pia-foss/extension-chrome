@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Renderer from "renderer/renderer";
 import initOnError from "eventhandler/onerror";
 

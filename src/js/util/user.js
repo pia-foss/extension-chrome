@@ -19,8 +19,6 @@ class User {
     this.username = this.username.bind(this);
     this.auth = this.auth.bind(this);
     this.logout = this.logout.bind(this);
-    this._getLoggedInStorageItem = this._getLoggedInStorageItem.bind(this);
-    this._setLoggedInStorageItem = this._setLoggedInStorageItem.bind(this);
     this._removeUsernameAndPasswordFromStorage = this._removeUsernameAndPasswordFromStorage.bind(this);
     this._removeLoggedInFromStorage = this._removeLoggedInFromStorage.bind(this);
     this._getLoggedInStorageItem = this._getLoggedInStorageItem.bind(this);
@@ -38,6 +36,10 @@ class User {
   get _settings () { return this._app.util.settings; }
   get _icon () { return this._app.util.icon; }
   get _proxy () { return this._app.proxy; }
+
+  get logOutOnClose () {
+    return this._app.util.settings.getItem('logoutOnClose');
+  }
 
   get loggedIn () {
     const loggedInStorageItem = this._getLoggedInStorageItem();
@@ -95,7 +97,7 @@ class User {
       // Swap storage
       this._settings.setItem('rememberme', Boolean(rememberMe));
 
-      // Store in new storage medium
+      // Save in new storage medium
       this.setUsername(username);
       this.setPassword(password);
       this._setLoggedInStorageItem(loggedIn);
@@ -164,8 +166,10 @@ class User {
   logout (afterLogout) { /* FIXME: remove callback for promise chaining. */
     return this._proxy.disable().then(() => {
       this.authed = false;
+      if (!this.getRememberMe()) {
+        this._removeUsernameAndPasswordFromStorage();
+      }
       this._setLoggedInStorageItem(false);
-      this._removeUsernameAndPasswordFromStorage();
       this._icon.updateTooltip();
       if (afterLogout) {
         afterLogout();

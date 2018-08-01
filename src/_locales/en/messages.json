@@ -62,6 +62,15 @@
   "DebugModeTooltip": {
     "message": "Write messages to the debug log. Press the 'ctrl' key followed by the 'd' key to show the debug log."
   },
+  "LogMeOutOnClose": {
+    "message": "Log me out on browser close"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "After reopening the browser you will not be logged back in automatically"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "This setting cannot be controlled while credentials are not being remembered (login screen)"
+  },
   "DebugLogIsEmpty": {
     "message": "The debug log is empty."
   },
