@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import Checkbox from 'component/checkbox';
+
 class SettingItem extends Component {
   constructor (props) {
     super(props);
@@ -120,19 +122,13 @@ class SettingItem extends Component {
         <div className='col-xs-10 settingblock'>
           {this.buildLabel()}
         </div>
-        <div className="col-xs-2 checkmarkcontainer">
-          <input
-            onChange={this.toggle}
-            disabled={!controllable}
-            checked={checked}
-            type="checkbox"
-            id={settingID}
-          />
-          <label
-            className="checkboxlabel"
-            htmlFor={settingID}
-          />
-        </div>
+        <Checkbox
+          className="col-xs-2"
+          onChange={this.toggle}
+          disabled={!controllable}
+          checked={checked}
+          id={settingID}
+        />
       </div>
     );
   }

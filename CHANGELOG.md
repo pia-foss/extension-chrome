@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.11__
+
+* Update remember me checkbox design
+
 __v1.6.10__
 
 * Adding "Log me out on browser close" setting
