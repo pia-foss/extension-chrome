@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.10__
+
+* Adding "Log me out on browser close" setting
+
 __v1.6.9__
 
 * Debounce proxy button to avoid crashing browser

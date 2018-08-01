@@ -1,28 +1,20 @@
-export default function(renderer, app) {
-  const self   = this,
-        React  = renderer.react
+import React from 'react';
+import PropType from 'prop-types';
 
-  return class extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = props
-    }
+const DebugSettingItem = ({onClick}) => {
+  return (
+    <div className='field settingitem noselect'>
+      <div className="col-xs-12 dlviewbtn">
+        <button className="col-xs-12 btn btn-success" onClick={onClick}>
+          {t("ViewDebugLog")}
+        </button>
+      </div>
+    </div>
+  );
+};
 
-    onClick(event) {
-      event.preventDefault()
-      renderer.renderTemplate("debuglog")
-    }
+DebugSettingItem.propTypes = {
+  onClick: PropType.func,
+};
 
-    render() {
-      return (
-        <div className='field settingitem noselect'>
-          <div className="col-xs-12 dlviewbtn">
-            <button className="col-xs-12 btn btn-success" onClick={this.onClick.bind(this)}>
-              {t("ViewDebugLog")}
-            </button>
-          </div>
-        </div>
-      )
-    }
-  }
-}
+export default DebugSettingItem;

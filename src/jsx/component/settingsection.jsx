@@ -1,57 +1,84 @@
-export default function(renderer, app) {
-  const self  = this,
-        React = renderer.react,
-        createRandomID = (label) => {
-          let id = "_"
-          for(let i = 0; i < label.length; i++)
-            id += label.charCodeAt(i) || Math.ceil(Math.random()*1000)
-          return id
-        }
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-  return class extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {label: this.props.label, enabledCount: 0, randomID: createRandomID(this.props.label)}
-    }
+import SettingItem from './settingitem';
+import { getChecked } from '../../js/data/sectionInfos';
 
-    toggleSection(event) {
-      let target = event.target
-      while(!target.classList.contains("sectionwrapper"))
-        target = target.parentNode
-      target.classList.contains("open") ? target.classList.remove("open") : target.classList.add("open")
-    }
+class SettingsSection extends Component {
+  constructor (props) {
+    super(props);
 
-    getEnabledCount() {
-      return document.querySelectorAll(`div#${this.state.randomID} input[type='checkbox']:checked`).length
-    }
+    // Bindings
+    this.toggleSection = this.toggleSection.bind(this);
 
-    getTotalCount() {
-      return document.querySelectorAll(`div#${this.state.randomID} input[type='checkbox']`).length
-    }
+    // Init
+    this.state = {open: false};
+  }
 
-    componentDidMount() {
-      this.setState({enabledCount: this.getEnabledCount(), totalCount: this.getTotalCount()})
-    }
+  get settings () {
+    return this.props.app.util.settings;
+  }
 
-    render() {
-      const totalCount = this.state.totalCount || this.getTotalCount(),
-            {label, enabledCount, randomID} = this.state
-      return (
-        <div id={randomID}>
-          <div className='firstfield field' onClick={this.toggleSection.bind(this)}>
-            <div className='col-xs-12 settingblock settingheader noselect'>
-              <span className="sectiontitle col-xs-6">{label}</span>
-              <div className="rightalign">
-                <span className="counts">{enabledCount}/{totalCount} {t("enabled")}</span>
-                <span className="expandicon"></span>
-              </div>
+  toggleSection () {
+    this.setState(({open: prevOpen}) => ({open: !prevOpen}));
+  }
+
+  render () {
+    const {settingInfos} = this.props;
+    return (
+      <div className={`setting-section sectionwrapper ${this.state.open ? 'open' : 'closed'} ${this.props.name}`}>
+        <div className='firstfield field' onClick={this.toggleSection}>
+          <div className='col-xs-12 settingblock settingheader noselect'>
+            <span className="sectiontitle col-xs-6">{this.props.label}</span>
+            <div className="rightalign">
+              <span className="counts">{this.props.enabledCount}/{this.props.totalCount} {t("enabled")}</span>
+              <span className="expandicon"></span>
             </div>
           </div>
-          <div className="SettingItemContainer">
-            {React.Children.map(this.props.children, (c) => React.cloneElement(c, {parent: this}))}
-          </div>
         </div>
-      )
-    }
+        <div className="SettingItemContainer">
+          { settingInfos.map((settingInfo) => {
+              if (settingInfo.builder) {
+                // Inject component
+                const Builder = settingInfo.builder;
+                return <Builder key={settingInfo.key} />;
+              }
+              else {
+                // Build SettingItem from information
+                return (
+                  <SettingItem
+                    app={this.props.app}
+                    sectionName={this.props.name}
+                    key={settingInfo.settingID}
+                    checked={getChecked(settingInfo)}
+                    controllable={settingInfo.controllable}
+                    disabledValue={settingInfo.disabledValue}
+                    tooltip={settingInfo.tooltip}
+                    label={settingInfo.label}
+                    warning={settingInfo.warning}
+                    learnMore={settingInfo.learnMore}
+                    learnMoreHref={settingInfo.learnMoreHref}
+                    onSettingChange={this.props.onSettingChange}
+                    settingID={settingInfo.settingID}
+                  />
+                );
+              }
+            })
+          }
+        </div>
+      </div>
+    );
   }
 }
+
+SettingsSection.propTypes = {
+  app: PropTypes.object.isRequired,
+  enabledCount: PropTypes.number.isRequired,
+  totalCount: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  settingInfos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onSettingChange: PropTypes.func,
+};
+
+export default SettingsSection;
