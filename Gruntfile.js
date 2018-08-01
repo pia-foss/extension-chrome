@@ -234,6 +234,7 @@ module.exports = function(grunt) {
   grunt.registerTask("removeartifacts", "Remove artifacts created during the build process.", () => {
     fs.removeSync('src/js/templates');
     fs.removeSync('src/js/component');
+    fs.removeSync('src/js/hoc');
     fs.removeSync('tmp/');
   });
 }
