@@ -16,20 +16,20 @@ const {build, freezeApp, audience, browser} = process.env; // eslint-disable-lin
 // helper functions
 const stringify = (s) => {
   return typeof(s) === "string" ? s : JSON.stringify(s);
-}
+};
 
 const info = (s) => {
   echomd(`${color.yellow("INFO")}: ${stringify(s)}`);
-}
+};
 
 const ok = (s) => {
   echomd(`${color.green("OK")}: ${stringify(s)}`);
-}
+};
 
 const panic = (s) => {
   echomd(`${color.red("PANIC")}: ${stringify(s)}`);
   process.exit(1); // eslint-disable-line no-process-exit
-}
+};
 
 const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') => {
   return new Promise((resolve, reject) => {
@@ -44,8 +44,8 @@ const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') =
         }).finally(resolve);
       });
     }
-  })
-}
+  });
+};
 
 
 module.exports = function(grunt) {
@@ -94,21 +94,21 @@ module.exports = function(grunt) {
 
   grunt.registerTask("release", ["setreleaseenv", "build", "createzip", "compress", "webstorepublish"]);
 
-  grunt.freezeApp = () => { return freezeApp !== "0"; }
+  grunt.freezeApp = () => { return freezeApp !== "0"; };
 
   grunt.getCommit = () => {
     if(["yes", "1", "true"].includes(gitinfo)) {
       return grunt.config.get('gitinfo').local.branch.current.SHA;
     }
-  }
+  };
 
   grunt.getBranch = () => {
     if(["yes", "1", "true"].includes(gitinfo)) {
       return grunt.config.get('gitinfo').local.branch.current.name;
     }
-  }
+  };
 
-  grunt.zipName = () => { return getZipPath(build); }
+  grunt.zipName = () => { return getZipPath(build); };
 
   grunt.registerTask("setreleaseenv", "Set release env vars", () => {
     const empty = (s) => !s || (s.trim && s.trim().length === 0);
@@ -127,22 +127,22 @@ module.exports = function(grunt) {
       if(audience === "internal")
         return `New extension *v${pkgVersion}* published for *testers*.\n` +
                `URL: ${webstoreURL}\n` +
-               `It can take up to 15 minutes to become available on the store.`
+               `It can take up to 15 minutes to become available on the store.`;
       else
         return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
                `URL: ${webstoreURL}\n` +
-               `It can take up to 15 minutes to become available on the store.`
+               `It can take up to 15 minutes to become available on the store.`;
     };
 
     const pendingAnnoucement = (audience, webstoreURL) => {
       if(audience === "internal")
         return `New extension *v${pkgVersion}* published for *testers*\n` +
                `URL: ${webstoreURL}\n` +
-               `It will be available on store after review, which can take up to 60 minutes.`
+               `It will be available on store after review, which can take up to 60 minutes.`;
       else
         return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
                `URL: ${webstoreURL}\n` +
-               `It will be available on store after review, which can take up to 60 minutes.`
+               `It will be available on store after review, which can take up to 60 minutes.`;
     };
 
     const confirmPublish  = (res) => {
@@ -237,4 +237,4 @@ module.exports = function(grunt) {
     fs.removeSync('src/js/hoc');
     fs.removeSync('tmp/');
   });
-}
+};

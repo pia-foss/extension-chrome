@@ -2,6 +2,8 @@ __HEAD__
 
 __v1.6.17__
 
+* Updated NPM build script to include automated packaging
+
 * Updated the Bypass list custom rule instructions and placeholder
 
 __v1.6.16__

@@ -1,11 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "dev": "cross-env browser=chrome build=debug gitinfo=yes grunt",
-    "qa:chrome": "cross-env browser=chrome build=webstore gitinfo=yes grunt",
-    "qa:opera": "cross-env browser=opera build=webstore gitinfo=yes grunt",
-    "deploy:chrome": "cross-env browser=chrome build=webstore audience=public grunt release",
-    "deploy:opera": "cross-env browser=opera build=webstore grunt",
+    "dev": "node script/dev.js",
+    "qa": "node script/qa.js",
+    "deploy": "node script/deploy.js",
+    "release": "node script/release.js",
     "translation:import": "grunt oneskyImport",
     "translation:export": "grunt oneskyExport",
     "lint": "eslint \"src/**/*.js\""
@@ -50,7 +49,6 @@
     "tinyhttp": "https://github.com/r-obert/tinyhttp.js"
   },
   "devDependencies": {
-    "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
