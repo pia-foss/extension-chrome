@@ -91,6 +91,7 @@
 
 .popover.darkpopover {
   width: 7.5em;
+  max-width: 7.5em;
   text-align: center;
   color: #fff;
   margin-left:-23px;
@@ -172,4 +173,14 @@
 
 .settings-icon .popover.darkpopover {
   bottom: 48px;
+}
+
+
+.sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover {
+  margin-top: -125px;
+}
+
+.sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-bottom::before, .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-bottom::after {
+  margin-top: 70px;
+  transform: rotate(45deg);
 }
