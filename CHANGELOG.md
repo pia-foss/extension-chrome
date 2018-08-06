@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.16__
+
+* Fixing bug where foreground would not close on Windows 10
+
 __v1.6.15__
 
 * Adding error messages to import popup if file is invalid

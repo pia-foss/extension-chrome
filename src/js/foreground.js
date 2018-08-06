@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import Renderer from "renderer/renderer";
 import initOnError from "eventhandler/onerror";
+import { sendMessage, Target, Type } from './helpers/messaging';
 
 (new function() {
   const app      = chrome.extension.getBackgroundPage().app;
@@ -87,4 +88,9 @@ import initOnError from "eventhandler/onerror";
       else { lastKeyIsCtrl = false; }
     };
   })();
+
+  sendMessage({
+    target: Target.ALL,
+    type: Type.FOREGROUND_OPEN,
+  });
 }());

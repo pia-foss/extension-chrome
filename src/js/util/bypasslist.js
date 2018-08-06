@@ -1,4 +1,4 @@
-import {File} from './file';
+import {File} from '../helpers/file';
 
 export default class BypassList {
   constructor (app) {
