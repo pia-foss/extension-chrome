@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.13__
+
+* Fix components breaking out of parent styling
+
 __v1.6.12__
 
 * Added tooltip to remember me checkbox
