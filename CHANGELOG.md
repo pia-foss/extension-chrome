@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.14__
+
+* Adding linting for airbnb style guide
+
 __v1.6.13__
 
 * Fix components breaking out of parent styling

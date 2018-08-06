@@ -7,7 +7,8 @@
     "deploy:chrome": "cross-env browser=chrome build=webstore audience=public grunt release",
     "deploy:opera": "cross-env browser=opera build=webstore grunt",
     "translation:import": "grunt oneskyImport",
-    "translation:export": "grunt oneskyExport"
+    "translation:export": "grunt oneskyExport",
+    "lint": "eslint \"src/**/*.js\""
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -51,6 +52,9 @@
   "devDependencies": {
     "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "node-slack": "^0.0.7"
   }
