@@ -9,7 +9,7 @@
 		"files": [{
       "expand": true,
       "cwd": "./src/scss",
-      "src": ["*.scss"],
+      "src": ["*.scss", "popups/*.scss"],
       "dest": "<%= grunt.config.get('buildpath') %>/css/",
       "ext": ".css"
     }]

@@ -1,4 +1,3 @@
-
 body {
   height: 100vh;
   width: 100vw;
@@ -9,13 +8,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
-    > label {
-      width: 200px
+    #import-file-label {
+      width: 200px;
+      margin-top: 30px;
     }
 
-    > input {
+    #import-file-input {
       display: none;
+    }
+
+    .import-error {
+      color: red;
+      height: 30px;
     }
   }
 }
