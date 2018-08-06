@@ -12,6 +12,7 @@ class ImportExportRules extends Component {
   onImportClick () {
     const {util: {bypasslist}} = this.props.app;
     bypasslist.spawnImportTab();
+    window.close();
   }
 
   render () {

@@ -1,3 +1,5 @@
+import { onMessage, Type, Target } from '../helpers/messaging';
+
 chrome.runtime.getBackgroundPage(({app}) => {
   const {
     util: {
@@ -6,6 +8,12 @@ chrome.runtime.getBackgroundPage(({app}) => {
     },
     logger: {debug},
   } = app;
+
+  const closeWindow = function () {
+    chrome.windows.getCurrent(({ id }) => {
+      chrome.windows.remove(id);
+    });
+  };
 
   /**
    * Set error message
@@ -73,7 +81,7 @@ chrome.runtime.getBackgroundPage(({app}) => {
       return;
     }
     bypasslist.importRules(rules);
-    window.close();
+    closeWindow();
   };
 
   /**
@@ -90,6 +98,13 @@ chrome.runtime.getBackgroundPage(({app}) => {
     }
   };
 
+  onMessage(
+    {
+      target: Target.POPUPS,
+      type: Type.FOREGROUND_OPEN,
+    },
+    closeWindow,
+  );
   document.getElementById('import-file-label').innerHTML = t('ImportLabel');
   document.getElementById('import-file-input').addEventListener('change', onFileChange);
 });
