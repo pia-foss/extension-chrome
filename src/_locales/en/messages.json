@@ -368,6 +368,9 @@
   "RememberMe": {
     "message": "Remember me"
   },
+  "RememberMeTooltip": {
+    "message": "Saves your credentials between browser restarts"
+  },
   "AllRegions": {
     "message": "ALL REGIONS"
   },

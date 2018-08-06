@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.12__
+
+* Added tooltip to remember me checkbox
+
 __v1.6.11__
 
 * Update remember me checkbox design
