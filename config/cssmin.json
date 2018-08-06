@@ -7,7 +7,7 @@
       {
         "expand": true,
         "cwd": "<%= grunt.config.get('buildpath') %>",
-        "src": ["css/pia.css", "css/locales/*.css"],
+        "src": ["css/pia.css", "css/popups/*.css", "css/locales/*.css"],
         "dest": "<%= grunt.config.get('buildpath') %>",
         "ext": ".css"
       }

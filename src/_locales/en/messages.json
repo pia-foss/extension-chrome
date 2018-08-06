@@ -302,6 +302,9 @@
   "OffText": {
     "message": "Off"
   },
+  "InvalidImportFileStructure": {
+    "message": "File cannot be read, pelase select a valid file"
+  },
   "CurrentRegionText": {
     "message": "Current Region"
   },

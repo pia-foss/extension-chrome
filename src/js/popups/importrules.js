@@ -8,17 +8,68 @@ chrome.runtime.getBackgroundPage(({app}) => {
   } = app;
 
   /**
+   * Set error message
+   *
+   * **DO NOT CALL WITH ANY USER INPUT**
+   *
+   * @param {string} msg Error message
+   *
+   * @returns {void}
+   */
+  function setError(msg) {
+    debug(`importrules.js: ${msg}`);
+    const [errElement] = document.getElementsByClassName('import-error');
+    errElement.innerHTML = msg;
+
+    return new Error(`importrules.js: ${msg}`);
+  }
+
+  function setInvalidFileError () {
+    setError(t('InvalidImportFileStructure'));
+  }
+
+  function clearError() {
+    setError('');
+  }
+
+  function parse(result) {
+    let rules = null;
+    try {
+      rules = JSON.parse(result);
+    }
+    catch (_) {
+      throw setInvalidFileError();
+    }
+
+    const { popularRules, userRules } = rules;
+    if (!Array.isArray(popularRules) || !Array.isArray(userRules)) {
+      throw setInvalidFileError();
+    }
+
+    const allRules = [...popularRules, ...userRules];
+    allRules.forEach(function (rule) {
+      if (typeof rule !== 'string') {
+        throw setInvalidFileError();
+      }
+    });
+
+    clearError();
+
+    return rules;
+  }
+
+  /**
    * Called when the imported file has been read successfully
    *
    * @returns {void}
    */
-  const loadEndListener = function () {
+  function loadEndListener() {
     const {result} = this;
     let rules;
     try {
-      rules = JSON.parse(result);
+      rules = parse(result);
     } catch (err) {
-      debug('failed to parse rules file, ensure valid JSON');
+      debug('importrules.js: failed to parse rules file, ensure valid JSON');
       return;
     }
     bypasslist.importRules(rules);
@@ -30,7 +81,7 @@ chrome.runtime.getBackgroundPage(({app}) => {
    *
    * @returns {void}
    */
-  const onFileChange = function () {
+  function onFileChange() {
     const [file] = this.files;
     if (file) {
       const reader = new FileReader();

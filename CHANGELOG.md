@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.15__
+
+* Adding error messages to import popup if file is invalid
+
 __v1.6.14__
 
 * Adding linting for airbnb style guide
