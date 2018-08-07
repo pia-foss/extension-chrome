@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.17__
+
+* Updated the Bypass list custom rule instructions and placeholder
+
 __v1.6.16__
 
 * Fixing bug where foreground would not close on Windows 10

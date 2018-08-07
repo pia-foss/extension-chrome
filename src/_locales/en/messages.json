@@ -209,6 +209,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* prefix required"
+  },
+  "BypassInstructions": {
+    "message": "to bypass all subdomains for a website."
+  },
   "ProxyBypassList": {
     "message": "Bypass List"
   },

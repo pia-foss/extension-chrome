@@ -38,21 +38,22 @@ export default class BypassList {
 
   _initialEnabledRules() {
     return new Map([
-      [ 'privatenetworks'
-      , [ '0.0.0.0/8'
-        , '10.0.0.0/8'
-        , '127.0.0.0/8'
-        , '169.254.0.0/16'
-        , '192.168.0.0/16'
-        , '172.16.0.0/12'
-        , '::1'
-        , 'localhost'
-        , '*.local'
+      [
+        'privatenetworks', [
+          '0.0.0.0/8',
+          '10.0.0.0/8',
+          '127.0.0.0/8',
+          '169.254.0.0/16',
+          '192.168.0.0/16',
+          '172.16.0.0/12',
+          '::1',
+          'localhost',
+          '*.local'
         ]
-      ]
-      , [ 'pinggateways', this.generatePingGateways() ]
-      , [this._storageKeys.userrk, []]
-      , [this._storageKeys.poprk, []]
+      ],
+      ['pinggateways', this.generatePingGateways()],
+      [this._storageKeys.userrk, []],
+      [this._storageKeys.poprk, []]
     ]);
   }
 
@@ -206,7 +207,7 @@ export default class BypassList {
 
   toArray () {
     const rules = [...Array.from(this._enabledRules.values())];
-    return [].concat(...rules.map((r) => typeof(r) === "function" ? r() : r));
+    return [].concat(...rules.map((r) => { return typeof(r) === "function" ? r() : r; }));
   }
 
   /**
@@ -234,18 +235,16 @@ export default class BypassList {
       if (Array.isArray(importedRules)) {
         // Disable rules not in importedRules
         getRules().forEach(rule => {
-          if (!importedRules.includes(rule)) {
-            disableRule(rule);
-          }
+          if (!importedRules.includes(rule)) { disableRule(rule); }
         });
         // Enable importedRules
-        importedRules.forEach(enableRule)
-      } else if (typeof importedRules === 'undefined') {
-        // Disable all rules
-        getRules().forEach(disableRule);
-      } else {
-        debug('rule set is invalid type, expected array');
+        importedRules.forEach(enableRule);
       }
+      // Disable all rules
+      else if (typeof importedRules === 'undefined') {
+        getRules().forEach(disableRule);
+      }
+      else { debug('rule set is invalid type, expected array'); }
     };
     try {
       importRuleSet(
@@ -261,7 +260,8 @@ export default class BypassList {
         (name) => this.disablePopularRule(name, false)
       );
       this.restartProxy();
-    } catch (err) {
+    }
+    catch (err) {
       debug(`failed to update rules with error: ${err}`);
     }
   }
@@ -272,14 +272,12 @@ export default class BypassList {
    * @returns {void}
    */
   spawnImportTab () {
-    chrome.windows.create(
-      {
-        focused: true,
-        url: chrome.extension.getURL('html/popups/importrules.html'),
-        type: 'popup',
-        width: 400,
-        height: 400,
-      }
-    );
+    chrome.windows.create({
+      focused: true,
+      url: chrome.extension.getURL('html/popups/importrules.html'),
+      type: 'popup',
+      width: 400,
+      height: 400,
+    });
   }
 }

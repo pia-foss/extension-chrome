@@ -19,7 +19,7 @@ const PopularRules = ({app}) => {
 };
 
 PopularRules.propTypes = {
-  app: PropType.object.isRequired,
+  app: PropType.object.isRequired
 };
 
 export default PopularRules;
