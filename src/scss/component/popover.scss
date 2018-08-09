@@ -179,10 +179,14 @@
 
 
 .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover {
-  margin-top: -125px;
+  top: initial;
+  bottom: 35px;
+  min-height: 200%;
+  margin-bottom: 10px;
 }
 
 .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-bottom::before, .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-bottom::after {
-  margin-top: 70px;
   transform: rotate(45deg);
+  top: 100%;
+  margin-top: -7px;
 }
