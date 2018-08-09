@@ -164,12 +164,15 @@
   }
 }
 
-.rememberme .popover {
-  left: -8.3333333333%;
-  top: 128px;
+.remember-me-container {
+  .popover {
+    margin-left: auto;
+    margin-right: auto;
+    top: 128px;
 
-  &::after,&::before {
-    left: 80px;
+    &::after,&::before {
+      left: 10%;
+    }
   }
 }
 
