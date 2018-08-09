@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.18__
+
+* Fixing bug on Windows where foreground would not close when losing focus
+
 __v1.6.17__
 
 * Updated NPM build script to include automated packaging
