@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import UncontrolledCheckbox from './uncontrolledcheckbox';
+import Tooltip from 'component/tooltip';
 
 /**
  * Checkbox to toggle where user credentials are stored (memory/localStorage)
@@ -28,13 +29,14 @@ class RememberMeCheckbox extends Component {
 
   render () {
     return (
-      <div className={`remember-me-container`}>
+      <div className="remember-me-container popover-owner">
         <UncontrolledCheckbox
           defaultChecked={this.defaultChecked}
           onChange={this.onChange}
           id="remember-checkbox"
         />
         <label htmlFor="remember-checkbox">{t(this.props.labelLocaleKey)}</label>
+        <Tooltip message={t('RememberMeTooltip')} />
       </div>
     );
   }

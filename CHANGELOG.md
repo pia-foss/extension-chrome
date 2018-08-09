@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.20__
+
+* Fixed bug where remember me tooltip was not showing on hover
+
 __v1.6.19__
 
 * Fixed visual bug with popover on extension settings
@@ -9,7 +13,6 @@ __v1.6.19__
 __v1.6.18__
 
 * Fixed bug on Windows where foreground would not close when losing focus
-
 
 __v1.6.17__
 
