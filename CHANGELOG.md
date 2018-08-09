@@ -1,8 +1,15 @@
 __HEAD__
 
+__v1.6.19__
+
+* Fixed visual bug with popover on extension settings
+
+* Updated Changelog to have consistent phrasing
+
 __v1.6.18__
 
-* Fixing bug on Windows where foreground would not close when losing focus
+* Fixed bug on Windows where foreground would not close when losing focus
+
 
 __v1.6.17__
 
@@ -12,19 +19,19 @@ __v1.6.17__
 
 __v1.6.16__
 
-* Fixing bug where foreground would not close on Windows 10
+* Fixed bug where foreground would not close on Windows 10
 
 __v1.6.15__
 
-* Adding error messages to import popup if file is invalid
+* Added error messages to import popup if file is invalid
 
 __v1.6.14__
 
-* Adding linting for airbnb style guide
+* Added linting for airbnb style guide
 
 __v1.6.13__
 
-* Fix components breaking out of parent styling
+* Fixed components breaking out of parent styling
 
 __v1.6.12__
 
@@ -32,15 +39,15 @@ __v1.6.12__
 
 __v1.6.11__
 
-* Update remember me checkbox design
+* Updated remember me checkbox design
 
 __v1.6.10__
 
-* Adding "Log me out on browser close" setting
+* Added "Log me out on browser close" setting
 
 __v1.6.9__
 
-* Debounce proxy button to avoid crashing browser
+* Debounced proxy button to avoid crashing browser
 
 __v1.6.8__
 
@@ -56,37 +63,37 @@ __v1.6.6__
 
 __v1.6.5__
 
-* Center add button on bypass list
+* Centered add button on bypass list
 
 __v1.6.4__
 
-* Route Latency checks through HTTPS
+* Routed Latency checks through HTTPS
 
 __v1.6.3__
 
-* Add import/export feature for bypass list
+* Added import/export feature for bypass list
 
 __v1.6.2__
 
-* Update project dependencies
+* Updated project dependencies
 
 __v1.6.1__
 
- * Update Region selection/favorite tab design
+ * Updated Region selection/favorite tab design
 
 __v1.6.0__
 
-* Add Favorite Region view
+* Added Favorite Region view
 
 __v1.5.11__
 
-* Update Helpdesk links
+* Updated Helpdesk links
 
-* Update translations for new Berlin region.
+* Updated translations for new Berlin region.
 
 __v1.5.10__
 
-* Update translations for Washington DC region.
+* Updated translations for Washington DC region.
 
 __v1.5.9__
 
