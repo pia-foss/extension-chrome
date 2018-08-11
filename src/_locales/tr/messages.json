@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Kuralları İçe/Dışa Aktar"
-  },
-  "ImportLabel": {
-    "message": "İçe Aktar"
-  },
-  "ExportLabel": {
-    "message": "Dışa Aktar"
-  },
   "UILanguage": {
     "message": "Arayüz Dili"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Diğer web siteleri"
+  },
+  "ImportExportHeader": {
+    "message": "Kuralları İçe/Dışa Aktar"
+  },
+  "ImportLabel": {
+    "message": "İçe Aktar"
+  },
+  "ExportLabel": {
+    "message": "Dışa Aktar"
   },
   "SettingsWarning": {
     "message": "Bu ayarlar etkin değil. Bir bölgeye bağlı olduğunuzda etkinleşir."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "ABD Washington DC"
   },
+  "us_washington_dc": {
+    "message": "ABD Washington DC"
+  },
+  "us_denver": {
+    "message": "ABD Denver"
+  },
   "uk": {
     "message": "Birleşik Krallık Londra"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Macaristan"
+  },
+  "lu": {
+    "message": "Lüksemburg"
   }
 }

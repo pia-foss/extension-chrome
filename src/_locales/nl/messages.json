@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "Regels importeren/exporteren"
-  },
-  "ImportLabel": {
-    "message": "Importeren"
-  },
-  "ExportLabel": {
-    "message": "Exporteren"
-  },
   "UILanguage": {
     "message": "Taal UI"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "Andere websites"
+  },
+  "ImportExportHeader": {
+    "message": "Regels importeren/exporteren"
+  },
+  "ImportLabel": {
+    "message": "Importeren"
+  },
+  "ExportLabel": {
+    "message": "Exporteren"
   },
   "SettingsWarning": {
     "message": "Deze instellingen zijn niet van kracht. Ze worden van kracht wanneer u met een regio bent verbonden."
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "VS Washington DC"
   },
+  "us_washington_dc": {
+    "message": "VS Washington DC"
+  },
+  "us_denver": {
+    "message": "VS Denver"
+  },
   "uk": {
     "message": "VK Londen"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "Hongarije"
+  },
+  "lu": {
+    "message": "Luxemburg"
   }
 }

@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "นำเข้า/ส่งออกกฎ"
-  },
-  "ImportLabel": {
-    "message": "นำเข้า"
-  },
-  "ExportLabel": {
-    "message": "ส่งออก"
-  },
   "UILanguage": {
     "message": "ภาษา UI"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "เว็บไซต์อื่นๆ"
+  },
+  "ImportExportHeader": {
+    "message": "นำเข้า/ส่งออกกฎ"
+  },
+  "ImportLabel": {
+    "message": "นำเข้า"
+  },
+  "ExportLabel": {
+    "message": "ส่งออก"
   },
   "SettingsWarning": {
     "message": "การตั้งค่าเหล่านี้ไม่ได้มีผลอยู่ในขณะนี้ และจะมีผลเมื่อคุณเชื่อมต่อกับพื้นที่"
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
   },
+  "us_washington_dc": {
+    "message": "สหรัฐอเมริกา วอชิงตัน ดี.ซี."
+  },
+  "us_denver": {
+    "message": "สหรัฐอเมริกา เดนเวอร์"
+  },
   "uk": {
     "message": "ลอนดอน สหราชอาณาจักร"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "ฮังการี"
+  },
+  "lu": {
+    "message": "ลักเซมเบิร์ก"
   }
 }

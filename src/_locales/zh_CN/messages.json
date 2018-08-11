@@ -1,13 +1,4 @@
 {
-  "ImportExportHeader": {
-    "message": "导入/导出规则"
-  },
-  "ImportLabel": {
-    "message": "导入"
-  },
-  "ExportLabel": {
-    "message": "导出"
-  },
   "UILanguage": {
     "message": "用户界面语言"
   },
@@ -130,6 +121,15 @@
   },
   "OtherWebsites": {
     "message": "其他网站"
+  },
+  "ImportExportHeader": {
+    "message": "导入/导出规则"
+  },
+  "ImportLabel": {
+    "message": "导入"
+  },
+  "ExportLabel": {
+    "message": "导出"
   },
   "SettingsWarning": {
     "message": "这些设置没有生效。它们在您已连接到某区域时生效。"
@@ -407,6 +407,12 @@
   "us_wdc": {
     "message": "美国华盛顿特区"
   },
+  "us_washington_dc": {
+    "message": "美国华盛顿特区"
+  },
+  "us_denver": {
+    "message": "美国丹佛"
+  },
   "uk": {
     "message": "英国伦敦"
   },
@@ -514,5 +520,8 @@
   },
   "hungary": {
     "message": "匈牙利"
+  },
+  "lu": {
+    "message": "卢森堡"
   }
 }
