@@ -1,5 +1,5 @@
 class Storage {
-  constructor (app) {
+  constructor(app) {
     this._app = app;
 
     // bindings
@@ -15,7 +15,7 @@ class Storage {
     };
   }
 
-  _validateStore (store) {
+  _validateStore(store) {
     switch (store) {
       case Storage.LOCAL:
       case Storage.MEMORY:
@@ -27,7 +27,7 @@ class Storage {
     }
   }
 
-  _validateKey (key) {
+  _validateKey(key) {
     const type = typeof key;
     const isString = type === 'string';
     const isEmpty = isString && !key;
@@ -45,43 +45,43 @@ class Storage {
     return true;
   }
 
-  _validateStoreAndKey ({store, key}) {
+  _validateStoreAndKey({ store, key }) {
     return this._validateStore(store) && this._validateKey(key);
   }
 
-  _createOperationError (operation) {
+  _createOperationError(operation) {
     // Refer to errors thrown in _validateStore or _validateKey
     return new Error(`could not ${operation} item, see above error for more information`);
   }
 
-  hasItem (key, store = Storage.LOCAL) {
+  hasItem(key, store = Storage.LOCAL) {
     const item = this.getItem(key, store);
     return item !== null;
   }
 
-  getItem (key, store = Storage.LOCAL) {
-    if (this._validateStoreAndKey({store, key})) {
+  getItem(key, store = Storage.LOCAL) {
+    if (this._validateStoreAndKey({ store, key })) {
       return this._stores[store].getItem(key);
     }
-    else {
-      throw this._createOperationError('get');
-    }
+
+    throw this._createOperationError('get');
   }
 
-  setItem (key, value, store = Storage.LOCAL) {
-    if (this._validateStoreAndKey({store, key})) {
-      if (typeof value === 'undefined' || value === null) {
-        value = '';
+  setItem(key, value, store = Storage.LOCAL) {
+    if (this._validateStoreAndKey({ store, key })) {
+      let newValue = value;
+      if (typeof newValue === 'undefined' || newValue === null) {
+        newValue = '';
       }
-      this._stores[store].setItem(key, value);
+      this._stores[store].setItem(key, newValue);
     }
     else {
       throw this._createOperationError('set');
     }
   }
 
-  removeItem (key, store = Storage.LOCAL) {
-    if (this._validateStoreAndKey({store, key})) {
+  removeItem(key, store = Storage.LOCAL) {
+    if (this._validateStoreAndKey({ store, key })) {
       this._stores[store].removeItem(key);
     }
     else {
