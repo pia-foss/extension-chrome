@@ -220,9 +220,7 @@ class Settings {
   setItem (settingID, value) {
     if (this._validID(settingID)) {
       const newValue = String(value) === 'true';
-      if (newValue !== this.getItem(settingID)) {
-        this._storage.setItem(`settings:${settingID}`, newValue);
-      }
+      this._storage.setItem(`settings:${settingID}`, newValue);
     }
     else {
       throw new Error('settings.js: cannot perform set without valid settingID');

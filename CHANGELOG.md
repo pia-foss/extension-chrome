@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.21__
+
+* Fixed settings not being initialised properly
+
 __v1.6.20__
 
 * Fixed bug where remember me tooltip was not showing on hover
