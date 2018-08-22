@@ -383,6 +383,7 @@ body a, body a:active, body a:focus, body a:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    position: relative;
 
     .remember-checkbox-container {
         margin-right: 10px;
