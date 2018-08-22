@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.22__
+
+* Fixed a styling issue with "Remember me" tooltip misplaced during login error.
+
 __v1.6.21__
 
 * Fixed settings not being initialised properly
