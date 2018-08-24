@@ -48,9 +48,9 @@ export default class Renderer {
     /**
      * NOTE: This will catch any initial rendering bugs that might come about from the
      * background process dying and leaving the foreground unusable. Closing the window
-     * and bringing it back up should retrieve the new background process.
-     * Originated in Firefox, Ported to Chrome. May not be of any use here though.
-     * This should be replaced with an error boundary as soon as it is ready.
+     * and bringing it back up should retrieve the new background process. This originated
+     * in Firefox but has been ported over to chrome. This should be replaced with an
+     ErrorBoundary at some point in the future.
      */
     catch (err) { window.close(); }
   }

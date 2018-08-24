@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.6.24__
+
+* Updated Error handling to open close popup windows
+
 __v1.6.22__
 
 * Fixed a styling issue with "Remember me" tooltip misplaced during login error.
