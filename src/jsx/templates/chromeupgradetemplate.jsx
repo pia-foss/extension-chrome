@@ -1,31 +1,29 @@
-import initCompanyLogo from 'component/companylogo'
+import React from 'react';
+import CompanyLogo from '../component/companylogo';
 
-export default function(renderer, app, window, document) {
-  const React = renderer.react,
-        CompanyLogo = initCompanyLogo(renderer, app, window, document)
-
-  class ChromeUpgradeTemplate extends React.Component {
-    closeWindow() {
-      window.close()
-    }
-
-    render() {
-      return (
-        <div>
-          <CompanyLogo/>
-          <div className="top-border">
-            <div className="warningicon"></div>
-            <p className="warningtext">
-              {t("UpgradeBrowserMessage", {browser: app.buildinfo.browser})}
-            </p>
-            <p className="btn-center">
-              <a className="btn btn-success" href="#" onClick={this.closeWindow.bind(this)}>{t("CloseText")}</a>
-            </p>
-          </div>
+export default function (renderer, app) {
+  const ChromeUpgradeTemplate = () => {
+    return (
+      <div>
+        <CompanyLogo />
+        <div className="top-border">
+          <div className="warningicon" />
+          <p className="warningtext">
+            { t('UpgradeBrowserMessage', { browser: app.buildinfo.browser }) }
+          </p>
+          <p className="btn-center">
+            <button
+              type="button"
+              className="btn btn-success"
+              onClick={window.close}
+            >
+              { t('CloseText') }
+            </button>
+          </p>
         </div>
-      )
-    }
-  }
+      </div>
+    );
+  };
 
-  return ChromeUpgradeTemplate
+  return ChromeUpgradeTemplate;
 }
