@@ -1,19 +1,50 @@
+import 'babel-polyfill';
 import { onMessage, Type, Target } from '../helpers/messaging';
 
-chrome.runtime.getBackgroundPage(({app}) => {
+chrome.runtime.getBackgroundPage(({ app }) => {
   const {
     util: {
       bypasslist,
-      i18n: {t}
+      i18n: { t },
     },
-    logger: {debug},
+    logger: { debug },
   } = app;
 
-  const closeWindow = function () {
-    chrome.windows.getCurrent(({ id }) => {
-      chrome.windows.remove(id);
+  /**
+   * Get the file input
+   *
+   * @returns {HTMLInputElement}
+   */
+  function getInput() {
+    return document.getElementById('import-file-input');
+  }
+
+  /**
+   * Get the input label
+   *
+   * @returns {HTMLLabelElement}
+   */
+  function getLabel() {
+    return document.getElementById('import-file-label');
+  }
+
+  function getCurrentWindowID() {
+    return new Promise((resolve) => {
+      chrome.windows.getCurrent(({ id: windowID }) => {
+        resolve(windowID);
+      });
     });
-  };
+  }
+
+  async function closeWindow() {
+    const windowID = await getCurrentWindowID();
+
+    return new Promise((resolve) => {
+      chrome.windows.remove(windowID, (...args) => {
+        resolve(...args);
+      });
+    });
+  }
 
   /**
    * Set error message
@@ -32,14 +63,25 @@ chrome.runtime.getBackgroundPage(({app}) => {
     return new Error(`importrules.js: ${msg}`);
   }
 
-  function setInvalidFileError () {
+  /**
+   * Set error for invalid file
+   */
+  function setInvalidFileError() {
     setError(t('InvalidImportFileStructure'));
   }
 
+  /**
+   * Clear the error message
+   */
   function clearError() {
     setError('');
   }
 
+  /**
+   * Attempt to parse the JSON file
+   *
+   * Sets error message if parsing fails
+   */
   function parse(result) {
     let rules = null;
     try {
@@ -55,7 +97,7 @@ chrome.runtime.getBackgroundPage(({app}) => {
     }
 
     const allRules = [...popularRules, ...userRules];
-    allRules.forEach(function (rule) {
+    allRules.forEach((rule) => {
       if (typeof rule !== 'string') {
         throw setInvalidFileError();
       }
@@ -72,17 +114,18 @@ chrome.runtime.getBackgroundPage(({app}) => {
    * @returns {void}
    */
   function loadEndListener() {
-    const {result} = this;
+    const { result } = this;
     let rules;
     try {
       rules = parse(result);
-    } catch (err) {
+    }
+    catch (err) {
       debug('importrules.js: failed to parse rules file, ensure valid JSON');
       return;
     }
     bypasslist.importRules(rules);
     closeWindow();
-  };
+  }
 
   /**
    * Listen for file to be uploaded
@@ -96,7 +139,30 @@ chrome.runtime.getBackgroundPage(({app}) => {
       reader.addEventListener('loadend', loadEndListener);
       reader.readAsText(file);
     }
-  };
+  }
+
+  /**
+   * Handle clicking of file input
+   *
+   * Clear current files and re-register the onfilechange listener
+   *
+   * @this {HTMLInputElement}
+   */
+  function onImportClick() {
+    this.removeEventListener('change', onFileChange);
+    this.value = null;
+    this.addEventListener('change', onFileChange);
+  }
+
+  /**
+   * Update the label text
+   *
+   * @param label {HTMLLabelElement}
+   */
+  function updateLabel(label) {
+    // eslint-disable-next-line no-param-reassign
+    label.innerHTML = t('ImportLabel');
+  }
 
   onMessage(
     {
@@ -105,6 +171,8 @@ chrome.runtime.getBackgroundPage(({app}) => {
     },
     closeWindow,
   );
-  document.getElementById('import-file-label').innerHTML = t('ImportLabel');
-  document.getElementById('import-file-input').addEventListener('change', onFileChange);
+  const label = getLabel();
+  const input = getInput();
+  updateLabel(label);
+  input.addEventListener('click', onImportClick);
 });
