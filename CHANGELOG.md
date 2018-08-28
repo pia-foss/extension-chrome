@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.0__
+
+* Updated Translations
+
 __v1.6.24__
 
 * Updated Error handling to open close popup windows
@@ -14,7 +18,7 @@ __v1.6.22__
 
 __v1.6.21__
 
-* Fixed settings not being initialised properly
+* Fixed settings not being initialized properly
 
 __v1.6.20__
 

@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "ป้องกันการเก็บร่องรอยการใช้งานเบราว์เซอร์ด้วยการให้ข้อมูลทั่วไปเกี่ยวกับคอมพิวเตอร์ของคุณ และป้องกันการเข้าถึง API บางเบราว์เซอร์"
   },
+  "FingerprintProtectionHeader": {
+    "message": "การตั้งค่าการป้องกันลายนิ้วมือ"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "การตั้งค่านี้สามารถช่วยเพิ่มความเป็นส่วนตัวและความปลอดภัยเพิ่มเติมได้แต่อาจทำให้เว็บไซต์บางเว็บไม่ทำงานและทำให้เบราว์เซอร์ทำงานผิดปกติ รายการแก้ไขทั้งหมดสามารถพบได้ที่นี่:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "คุณสมบัตินี้เป็นที่แนะนำแต่ผู้ใช้บางคนพบว่ามันไม่สะดวก กรุณาเลือกเปิดใช้งานหรือปิดใช้งานการป้องกันลายนิ้วมือ"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "เปิดใช้งาน"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "ปิดใช้งาน"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "การตั้งค่านี้สามารถเปลี่ยนได้จากช่อง \"การตั้งค่าส่วนขยาย\" หลังจากเข้าสู่ระบบไปที่ส่วนขยาย"
+  },
   "TrackingProtection": {
     "message": "ป้องกันการติดตาม"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "เขียนข้อความไปยังบันทึกจุดบกพร่อง กดปุ่ม ctrl แล้วตามด้วยปุ่ม d เพื่อแสดงบันทึกจุดบกพร่อง"
+  },
+  "LogMeOutOnClose": {
+    "message": "ออกจากระบบเมื่อปิดเบราว์เซอร์"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "หลังจากทำการเปิดเบราว์เซอร์ใหม่คุณจะไม่ออกจากระบบอัตโนมัติ"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "การตั้งค่านี้ไม่สามารถถูกควบคุมได้ขณะที่ข้อมูลไม่ถูกจดจำ (หน้าจอเข้าสู่ระบบ)"
   },
   "DebugLogIsEmpty": {
     "message": "บันทึกการแก้จุดบกพร่องว่างเปล่า"
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* ต้องมีคำนำหน้า"
+  },
+  "BypassInstructions": {
+    "message": "เพื่อบายพาสโดเมนย่อยทั้งหมดสำหรับเว็บไซต์"
+  },
   "ProxyBypassList": {
     "message": "รายชื่อปล่อยผ่าน"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "ปิด"
   },
+  "InvalidImportFileStructure": {
+    "message": "ไม่สามารถอ่านไฟล์ได้ กรุณาเลือกไฟล์ที่ถูกต้อง"
+  },
   "CurrentRegionText": {
     "message": "ภูมิภาคปัจจุบัน"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "จดจำฉัน"
+  },
+  "RememberMeTooltip": {
+    "message": "บันทึกข้อมูลของคุณระหว่างรีสตาร์ทเบราว์เซอร์"
   },
   "AllRegions": {
     "message": "ทุกภูมิภาค"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "ลักเซมเบิร์ก"
+  },
+  "ae": {
+    "message": "United Arab Emirates"
+  },
+  "za": {
+    "message": "แอฟริกาใต้"
   }
 }

@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Protégete frente a la huella digital del navegador proporcionando información genérica de tu equipo e impide el acceso a determinadas API del ordenador."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Ajustes de protección de huella dactilar"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Este ajuste puede aumentar la privacidad y la seguridad, pero puede bloquear algunos sitios web y hacer que el navegador se comporte de forma distinta a la esperada. Aquí encontrarás una lista completa de las modificaciones:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Esta característica es recomendable pero para algunos usuarios puede resultar incómoda. Elige habilitar o deshabilitar la protección de huella dactilar."
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Habilitar"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Deshabilitar"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Este ajuste se puede cambiar en el panel \"Ajustes de extensión\" después de iniciar sesión en la extensión."
+  },
   "TrackingProtection": {
     "message": "Protección de rastreo"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Escribe mensajes en el registro de depuración. Pulsa la tecla \"Ctrl\" seguida la tecla \"d\" para mostrar el registro de depuración."
+  },
+  "LogMeOutOnClose": {
+    "message": "Cerrar sesión al cerrar el navegador"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Cuando se vuelva a abrir el navegador, no iniciarás sesión automáticamente"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Este ajuste no se puede controlar si no se recuerdan las credenciales (pantalla de inicio de sesión)"
   },
   "DebugLogIsEmpty": {
     "message": "El registro de depuración está vacío."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "*se requiere prefijo"
+  },
+  "BypassInstructions": {
+    "message": "para saltar todos los subdominios de un sitio web."
+  },
   "ProxyBypassList": {
     "message": "Lista de omisiones"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "No"
   },
+  "InvalidImportFileStructure": {
+    "message": "No se puede leer el archivo, selecciona uno válido"
+  },
   "CurrentRegionText": {
     "message": "Región actual"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "Recordarme"
+  },
+  "RememberMeTooltip": {
+    "message": "Guarda tus credenciales entre los reinicios del navegador"
   },
   "AllRegions": {
     "message": "TODAS LAS REGIONES"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "Luxemburgo"
+  },
+  "ae": {
+    "message": "Emiratos Árabes Unidos"
+  },
+  "za": {
+    "message": "Sudáfrica"
   }
 }
