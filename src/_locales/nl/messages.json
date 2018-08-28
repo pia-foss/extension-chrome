@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Voorkom dat uw specifieke apparaat en browser worden herkend door algemene informatie over uw computer te verstrekken en de toegang tot bepaalde browser-API's te voorkomen."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Instelling voor fingerprintbescherming"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Deze instelling biedt extra privacy en veiligheid, maar kan ook problemen veroorzaken op bepaalde websites en ervoor zorgen dat de browser zich anders gedraagt dan verwacht. Een volledige lijst met wijzigingen vindt u hier:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Deze functie wordt aanbevolen, maar sommige gebruikers vinden hem niet handig. Kies of u bescherming tegen fingerprinting wilt in- of uitschakelen."
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Inschakelen"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Uitschakelen"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Deze instellingen kunnen ook worden gewijzigd via het scherm Extensie-instellingen nadat u op de extensie bent ingelogd."
+  },
   "TrackingProtection": {
     "message": "Trackbescherming"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Schrijf berichten in het debuglogboek. Druk op de 'ctrl'-toets gevolgd door de 'd'-toets om het debuglogboek weer te geven."
+  },
+  "LogMeOutOnClose": {
+    "message": "Log uit bij sluiten van browser"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "U wordt niet automatisch ingelogd als u de browser opnieuw opent"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Deze instelling kan niet worden beheerd als gegevens niet worden onthouden (inlogscherm)"
   },
   "DebugLogIsEmpty": {
     "message": "Het debuglogboek is leeg."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* titel vereist"
+  },
+  "BypassInstructions": {
+    "message": "om alle subdomeinen van een website over te slaan."
+  },
   "ProxyBypassList": {
     "message": "Bypasslijst"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Uit"
   },
+  "InvalidImportFileStructure": {
+    "message": "Bestand kan niet worden gelezen. Kies een geldig bestand."
+  },
   "CurrentRegionText": {
     "message": "Huidige regio"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "Mij onthouden"
+  },
+  "RememberMeTooltip": {
+    "message": "Slaat uw gegevens op bij het opnieuw opstarten van de browser"
   },
   "AllRegions": {
     "message": "ALLE REGIO'S"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "Luxemburg"
+  },
+  "ae": {
+    "message": "Verenigde Arabische Emiraten"
+  },
+  "za": {
+    "message": "Zuid-Afrika"
   }
 }

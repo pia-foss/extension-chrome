@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Proteja-se contra impressão digital de navegadores com o fornecimento de informações gerais sobre o seu computador e evite o acesso a determinadas APIs de navegador."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Configuração de proteção contra impressão digital"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Essa configuração pode fornecer privacidade e segurança extras, mas pode “quebrar” determinados sites e fazer com que o navegador se comporte de modo diferente do esperado. Uma lista completa de modificações pode ser encontrada aqui:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Esse recurso é recomendado, mas alguns usuários podem achá-lo inconveniente. Por favor, escolha se deseja ativar ou desativar a Proteção contra impressão digital:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Ativar"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Desativar"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Essas configurações também podem ser alteradas no painel \"Configurações de extensão\" após o login na extensão."
+  },
   "TrackingProtection": {
     "message": "Proteção contra rastreamento"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Grave as mensagens para o log de depuração. Pressione a tecla “Ctrl” seguida da tecla “d” para exibir o log de depuração."
+  },
+  "LogMeOutOnClose": {
+    "message": "Desconecte-me após o fechamento do navegador"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Após a reabertura do navegador, você não será conectado automaticamente"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Essa configuração não poderá ser controlada quando as credenciais não estiverem sendo lembradas (tela de login)"
   },
   "DebugLogIsEmpty": {
     "message": "O log de depuração está vazio."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* prefixo obrigatório"
+  },
+  "BypassInstructions": {
+    "message": "para ignorar todos os subdomínios de um site."
+  },
   "ProxyBypassList": {
     "message": "Lista de ignorados"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Desligado"
   },
+  "InvalidImportFileStructure": {
+    "message": "O arquivo não pode ser lido. Selecione um arquivo válido."
+  },
   "CurrentRegionText": {
     "message": "Região atual"
   },
@@ -359,6 +395,9 @@
   "RememberMe": {
     "message": "Lembrar de mim"
   },
+  "RememberMeTooltip": {
+    "message": "Salva suas credenciais entre as reinicializações do navegador"
+  },
   "AllRegions": {
     "message": "TODAS AS REGIÕES"
   },
@@ -394,9 +433,6 @@
   },
   "us_new_york_city": {
     "message": "EUA,  Cidade de Nova Iorque"
-  },
-  "us_atlanta": {
-    "message": "EUA, Atlanta"
   },
   "us_atlanta": {
     "message": "EUA, Atlanta"
@@ -526,5 +562,11 @@
   },
   "lu": {
     "message": "Luxemburgo"
+  },
+  "ae": {
+    "message": "Emirados Árabes Unidos"
+  },
+  "za": {
+    "message": "África do Sul"
   }
 }

@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "حماية ضد بصمات المتصفح من خلال توفير معلومات عامة حول جهاز الكمبيوتر ومنع الوصول إلى واجهات برمجة تطبيقات معينة للمتصفح."
   },
+  "FingerprintProtectionHeader": {
+    "message": "إعداد الحماية من بصمات المتصفح"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "يمكن أن يوفر هذا الإعداد مزيدًا من الخصوصية والأمان ولكن قد يؤدي إلى تعطيل بعض مواقع الإنترنت والتسبب في سلوك مختلف للمتصفح عمّا هو متوقع. يمكنك العثور على قائمة كاملة بالتعديلات هنا:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "هذه الميزة موصى بها ولكن قد يجدها بعض المستخدمين غير ملائمة. يرجى اختيار تمكين أو تعطيل الحماية من بصمات المتصفح:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "تمكين"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "تعطيل"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "يمكن أيضًا تغيير هذه الإعدادات من لوحة \"إعدادات الملحقات\" بعد تسجيل الدخول إلى الملحق."
+  },
   "TrackingProtection": {
     "message": "الحماية من التعقب"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "اكتب الرسائل في سجل تصحيح الأخطاء. اضغط مفتاح \"ctrl\" متبوعًا بمفتاح \"d\" لعرض سجل تصحيح الأخطاء."
+  },
+  "LogMeOutOnClose": {
+    "message": "سجّل خروجي عند إغلاق المتصفح"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "بعد إعادة فتح المتصفح، لن يتم تسجيل دخولك تلقائيًا"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "لا يمكن التحكم في هذا الإعداد إذا تم عدم تذكر بيانات تسجيل الدخول (شاشة تسجيل الدخول)"
   },
   "DebugLogIsEmpty": {
     "message": "سجل تصحيح الأخطاء فارغ."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* بادئة مطلوبة"
+  },
+  "BypassInstructions": {
+    "message": "لتجاوز جميع النطاقات الفرعية لموقع الإنترنت."
+  },
   "ProxyBypassList": {
     "message": "تجاوز القائمة"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "غير مفعل"
   },
+  "InvalidImportFileStructure": {
+    "message": "لا يمكن قراءة الملف، يرجى تحديد ملف صحيح"
+  },
   "CurrentRegionText": {
     "message": "المنطقة الحالية"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "تذكرني"
+  },
+  "RememberMeTooltip": {
+    "message": "يحفظ بيانات تسجيل دخولك ما بين مرات إعادة تشغيل المتصفح"
   },
   "AllRegions": {
     "message": "جميع المناطق"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "لوكسمبورج"
+  },
+  "ae": {
+    "message": "الإمارات العربية المتحدة"
+  },
+  "za": {
+    "message": "جنوب أفريقيا"
   }
 }

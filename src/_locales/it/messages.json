@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Proteggiti contro il browser fingerprint fornendo informazioni generiche sul tuo computer ed impedendo l'accesso a determinati API di browser."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Impostazione potezione fingerprint"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Questa impostazione offre sicurezza e privacy extra, ma potrebbe influire su alcuni siti web e causare un comportamento del browser diverso dal solito. Ecco un elenco completo delle modifiche:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Questa funzione è consigliato ma alcuni utenti potrebbero trovarla scomoda. Scegli se abilitare o disabilitare la protezione fingerprint:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Abilita"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Disabilita"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Questa impostazione può anche essere modificata dal pannello Impostazioni di Estensione dopo aver effettuato l'accesso all'estensione."
+  },
   "TrackingProtection": {
     "message": "Protezione da tracciamento"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Scrivi messaggi sull'archivio di debug. Premi il tasto \"ctrl\" seguito da \"d\" per mostrare l'archivio di debug."
+  },
+  "LogMeOutOnClose": {
+    "message": "Disconnettimi alla chiusura del browser"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Dopo la riapertura del browser, non accederai automaticamente"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Questa impostazione non può essere controllata se non si ricordano le credenziali (schermata di accesso)"
   },
   "DebugLogIsEmpty": {
     "message": "L'archivio di debug è vuoto."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* prefisso obbligatorio"
+  },
+  "BypassInstructions": {
+    "message": "per saltare tutti i sottodomini per un sito web."
+  },
   "ProxyBypassList": {
     "message": "Elenco eccezioni"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Off"
   },
+  "InvalidImportFileStructure": {
+    "message": "Impossibile leggere il file. Seleziona un file valido."
+  },
   "CurrentRegionText": {
     "message": "Regione corrente"
   },
@@ -359,6 +395,9 @@
   "RememberMe": {
     "message": "Ricordami"
   },
+  "RememberMeTooltip": {
+    "message": "Salva le credenziali tra i riavvii del browser"
+  },
   "AllRegions": {
     "message": "TUTTE LE REGIONI"
   },
@@ -394,9 +433,6 @@
   },
   "us_new_york_city": {
     "message": "US New York City"
-  },
-  "us_atlanta": {
-    "message": "US Atlanta"
   },
   "us_atlanta": {
     "message": "US Atlanta"
@@ -526,5 +562,11 @@
   },
   "lu": {
     "message": "Lussemburgo"
+  },
+  "ae": {
+    "message": "Emirati Arabi Uniti"
+  },
+  "za": {
+    "message": "Sudafrica"
   }
 }

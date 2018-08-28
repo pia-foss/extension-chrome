@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Schützen Sie sich vor Browser-Fingerabdrücken, indem Sie generische Informationen über Ihren Computer bereitstellen und den Zugriff auf bestimmte Browser-APIs verhindern."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Einstellung des Fingerabdruckschutzes"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Diese Einstellung kann zusätzliche Privatsphäre und Sicherheit bieten, aber bestimmte Websites stören und dazu führen, dass sich der Browser anders als erwartet verhält. Eine vollständige Liste der Änderungen finden Sie hier:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Diese Funktion wird empfohlen, kann aber von einigen Benutzern als störend empfunden werden. Bitte entscheiden Sie, ob Sie den Fingerabdruckschutz aktivieren oder deaktivieren möchten:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Aktivieren"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Deaktivieren"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Diese Einstellungen können auch nach dem Anmelden bei der Erweiterung über das Fenster „Erweiterungseinstellungen“ geändert werden."
+  },
   "TrackingProtection": {
     "message": "Tracking-Schutz"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Schreiben Sie Nachrichten an die Debug-Chronik. Drücken Sie CTRL und dann die d-Taste, um die Debug-Chronik anzuzeigen."
+  },
+  "LogMeOutOnClose": {
+    "message": "Beim Schließen des Browsers abmelden"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Nach dem erneuten Öffnen des Browsers werden Sie nicht automatisch angemeldet"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Diese Einstellung ist nicht verfügbar, wenn die Anmeldeinformationen nicht gespeichert werden (Anmeldebildschirm)."
   },
   "DebugLogIsEmpty": {
     "message": "Die Debug-Chronik ist leer."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* Präfix erforderlich"
+  },
+  "BypassInstructions": {
+    "message": "um alle Subdomains für eine Website zu umgehen."
+  },
   "ProxyBypassList": {
     "message": "Bypass-Liste"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Aus"
   },
+  "InvalidImportFileStructure": {
+    "message": "Datei kann nicht gelesen werden. Bitte eine gültige Datei auswählen."
+  },
   "CurrentRegionText": {
     "message": "Aktuelle Region"
   },
@@ -359,6 +395,9 @@
   "RememberMe": {
     "message": "Angemeldet bleiben"
   },
+  "RememberMeTooltip": {
+    "message": "Speichert Ihre Anmeldeinformationen zwischen den Neustarts des Browsers."
+  },
   "AllRegions": {
     "message": "ALLE REGIONEN"
   },
@@ -398,9 +437,6 @@
   "us_atlanta": {
     "message": "USA, Atlanta"
   },
-  "us_atlanta": {
-    "message": "USA, Atlanta"
-  },
   "us_las_vegas": {
     "message": "USA, Las Vegas"
   },
@@ -415,12 +451,6 @@
   },
   "us_denver": {
     "message": "US Denver"
-  },
-  "us_houston": {
-    "message": "USA, Houston"
-  },
-  "us_wdc": {
-    "message": "USA, Washington DC"
   },
   "uk": {
     "message": "GB London"
@@ -532,5 +562,11 @@
   },
   "lu": {
     "message": "Luxemburg"
+  },
+  "ae": {
+    "message": "Vereinigte Arabische Emirate"
+  },
+  "za": {
+    "message": "Südafrika"
   }
 }
