@@ -47,14 +47,30 @@ export default function(renderer, app, window, document) {
             sortByText   = t("SortBy"),
             translations = {"name": t("RegionName"), "latency": t("RegionLatency")}
       return (
-        <div className="dropdown">
+        <div className="dropdown region-sorter-dropdown">
           <button onClick={this.toggleDropdown.bind(this)} className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             {sortByText} {translations[sortBy]}
             <span className="caret"></span>
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#" id="sort-by-name" data-value="name" onClick={this.changeSortBy.bind(this)}>{t("RegionName")}</a></li>
-            <li><a href="#" id="sort-by-latency" data-value="latency" onClick={this.changeSortBy.bind(this)}>{t("RegionLatency")}</a></li>
+            <li>
+              <a
+                className={`${sortBy === 'name' ? 'active' : ''}`}
+                href="#"
+                id="sort-by-name"
+                data-value="name"
+                onClick={this.changeSortBy.bind(this)}
+              >{t("RegionName")}</a>
+            </li>
+            <li>
+              <a
+                className={`${sortBy === 'latency' ? 'active' : ''}`}
+                href="#"
+                id="sort-by-latency"
+                data-value="latency"
+                onClick={this.changeSortBy.bind(this)}
+              >{t("RegionLatency")}</a>
+            </li>
           </ul>
         </div>
       )

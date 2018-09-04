@@ -1,4 +1,4 @@
-const {compileCode, chrome} = require('./util');
+const { compileCode, chrome } = require('./util');
 
 // set up env vars
 process.env.build = 'debug'; // eslint-disable-line no-process-env
@@ -9,4 +9,4 @@ console.log(`GITINFO=${process.env.gitinfo}`); // eslint-disable-line no-process
 
 // --- Opera ---
 compileCode(chrome)
-.catch((err) => { console.log(err); });
+  .catch((err) => { console.log(err); });

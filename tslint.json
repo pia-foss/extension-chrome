@@ -1,0 +1,11 @@
+{
+  "extends": "tslint-config-airbnb",
+  "rules": {
+    "brace-style": "stroustrup",
+    "arrow-parens": [true, "always"],
+    "ter-prefer-arrow-callback": [false],
+    "await-promise": [true, "IThenable"],
+    "no-floating-promises": [true],
+    "no-unused-variable": false
+  }
+}
