@@ -52,10 +52,10 @@ The unpacked extension can be installed from the following url in chrome: [chrom
  - NodeJS 8.1.0 or greater
  - Chrome Web Browser (support for the latest two versions)
 
-**Git**  
+**Git**
 Please use these instructions to install Git on your computer if it is not already installed: [Installing Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
-**NodeJS**  
+**NodeJS**
 We recommend installing NodeJS via [nvm](https://github.com/creationix/nvm) on MacOS and Linux. On Windows, you can simply use the node installer found [here](https://nodejs.org/en/).
 
 
@@ -130,50 +130,32 @@ to the webstore.
 
 
 ## Testing
-**Ensure that the following environment variables are set before running tests**  
-**EXTENSION_ID**  
-**TEST_USERNAME**  
-**TEST_PASSWORD**  
+**Ensure that the following environment variables are set before running tests**
+
+**WAIT_TIME**
+
+**TEST_USERNAME**
+
+**TEST_PASSWORD**
+
+**EXTENSION_ID**
+
+**MANIFEST_KEY**
 
 
-#### Testing Requirements
- - Ruby 2.4.4 (2.5.1 not yet supported)
- - Bundler
- - ChromeDriver
+#### Testing
 
-**Ruby**  
-We recommend using [rbenv](https://github.com/rbenv/rbenv) to install ruby on MacOS or using the [ruby installer](https://rubyinstaller.org/) for windows. Ruby can be installed on linux using your built in package manager.
+**Requirements**
 
-**ChromeDriver**  
-On MacOS, running this command will install chromedriver:
+- npm
 
-    brew install chromedriver
+**Running tests**
 
-On Windows, please use this [link](http://chromedriver.chromium.org/downloads) to install ChromeDriver and ensure that it is on the $PATH variable.
+Simply run the npm command
 
-On Linux, please install ChromeDriver using your built in package manager.
+    npm test
 
-**Bundler**  
-Bundler can be install through a Ruby Gem with:
-
-    gem install bundler
-    bundle install
-
-**Running the spec files**  
-There are feature specs written in Ruby ("./spec/features").
-To run all the specs:
-
-    rake
-
-Or just one spec file:
-
-    rspec spec/features/extension_settings_page_spec.rb
-
-By default the specs target the `webstore` build but you can set $build to change
-that:
-
-    build=debug rake
-    build=debug rspec spec/features/path/to/feature/test
+And the entire test suite will be run
 
 
 ## Translations

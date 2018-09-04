@@ -20,7 +20,7 @@ class StatusText extends Component {
           <div className="status-title upcase-bold">
             {t("StatusText")}
           </div>
-          <div className={connState}>
+          <div className={`status ${connState}`}>
             {t(connState)}
           </div>
         </div>

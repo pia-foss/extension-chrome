@@ -1,21 +1,57 @@
 const fs = require('fs-extra');
 const path = require('path');
-const {execSync, exec} = require('child_process');
+const { execSync, exec } = require('child_process');
 
+function root(...filesOrDirs) {
+  return path.resolve(__dirname, '..', ...filesOrDirs);
+}
 
 // variables
 const mac = 'darwin';
 const linux = 'linux';
 const opera = 'opera';
 const chrome = 'chrome';
-const platform = process.platform;
+const { platform } = process;
 const webstoreDir = path.join(__dirname, '..', 'builds', 'webstore');
+const executablesDir = root('node_modules', '.bin');
 const webstoreKey = path.join(__dirname, '..', 'webstore.pem');
 const VERSION = fs.readFileSync(path.join(__dirname, '..', 'VERSION')).toString().trim();
 
+function print(message) {
+  // eslint-disable-next-line no-console
+  console.log(message);
+}
+
+function execWithOutput(command, rejectOnErr = false) {
+  return new Promise((resolve, reject) => {
+    print(`running command: ${command}`);
+    const proc = exec(command);
+
+    // Pipe output
+    proc.stdout.pipe(process.stdout);
+    proc.stderr.pipe(process.stderr);
+
+    // Resolve when completed
+    proc.on('exit', () => {
+      resolve();
+    });
+
+    // Reject shortly after error (to allow error messages to be written to stderr)
+    let errTimeout = !rejectOnErr;
+    proc.stderr.on('data', (err) => {
+      // eslint-disable-next-line no-console
+      console.error(err);
+      if (!errTimeout) {
+        errTimeout = setTimeout(() => {
+          reject(new Error('Process terminated due to error'));
+        }, 300);
+      }
+    });
+  });
+}
 
 // generate the command to pack the extension
-const generatePackCommand = function (browser) {
+function generatePackCommand(browser) {
   // general pack flags
   const packExtension = `--pack-extension=${webstoreDir}`;
   const packExtensionKey = `--pack-extension-key=${webstoreKey}`;
@@ -31,23 +67,23 @@ const generatePackCommand = function (browser) {
   else if (browser === opera && platform === mac) { command = `${operaMacApp}`; }
   else if (browser === opera && platform === linux) { command = `${operaLinuxApp}`; }
   return command + ` ${packExtension} ${packExtensionKey}`;
-};
+}
 
-const generateWebstoreFilePath = function(browser) {
+function generateWebstoreFilePath(browser) {
   let webstoreFile = path.join(__dirname, '..', 'builds', 'webstore.');
   if (browser === chrome) { webstoreFile += 'crx'; }
   else if (browser === opera) { webstoreFile += 'nex'; }
   return webstoreFile;
-};
+}
 
-const generateFilePath = function (browser) {
+function generateFilePath(browser) {
   let filename = `private_internet_access-${browser}-v${VERSION}.`;
   if (browser === chrome) { filename += 'crx'; }
   else if (browser === opera) { filename += 'nex'; }
   return path.join(__dirname, '..', 'builds', filename);
-};
+}
 
-const compileCode = function (browser, release = false) {
+function compileCode(browser, release = false) {
   // generate a build and pack the extension
   return new Promise((resolve, reject) => {
     console.log(`--- Building for ${browser}`);
@@ -60,9 +96,9 @@ const compileCode = function (browser, release = false) {
     grunt.stderr.on('data', (err) => { return reject(err); });
     grunt.on('exit', () => { return resolve(); });
   });
-};
+}
 
-const packExtension = function (browser) {
+function packExtension(browser) {
   // package using Chrome browser
   console.log('packing through browser...');
   try { execSync(generatePackCommand(browser)); }
@@ -70,9 +106,9 @@ const packExtension = function (browser) {
 
   fs.moveSync(generateWebstoreFilePath(browser), generateFilePath(browser));
   console.log(`${browser} done`);
-};
+}
 
-const generateExtension = function (browser) {
+function generateExtension(browser) {
   // User Output
   console.log(`Launching from directory: ${__dirname}`);
   console.log(`Building extension version: ${VERSION}`);
@@ -80,13 +116,30 @@ const generateExtension = function (browser) {
 
   // generate a build and pack the extension
   return compileCode(browser)
-  .then(() => { return packExtension(browser); });
-};
+    .then(() => { return packExtension(browser); });
+}
 
+function runMochaTests() {
+  const mochaPath = path.join(executablesDir, 'mocha');
+  const command = `${mochaPath} test/e2e/**/*.spec.ts --opts test/e2e/mocha.opts`;
+  return execWithOutput(command);
+}
+
+function injectJsonProperty(filePath, ...props) {
+  const rawData = fs.readFileSync(filePath);
+  const parsedData = JSON.parse(rawData);
+  const updatedData = Object.assign({}, parsedData, ...props);
+  const updatedJSON = JSON.stringify(updatedData);
+  fs.writeFileSync(filePath, updatedJSON);
+}
 
 module.exports = {
-  chrome: chrome,
-  opera: opera,
-  compileCode: compileCode,
-  generateExtension: generateExtension
+  chrome,
+  opera,
+  compileCode,
+  generateExtension,
+  print,
+  runMochaTests,
+  root,
+  injectJsonProperty,
 };
