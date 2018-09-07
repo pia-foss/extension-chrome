@@ -20,7 +20,11 @@ idescribe('the upgrade chrome page', function () {
   });
 
   iit('is shown when WebRTC API missing', async function () {
-    const expectedText = await translate(this.script, 'UpgradeBrowserMessage');
+    const expectedText = await translate(
+      this.script,
+      'UpgradeBrowserMessage',
+      { browser: 'Chrome' },
+    );
     await upgradePage.warningIcon.expect.visible;
     await upgradePage.warningText.expect.visible;
     const actualText = await upgradePage.warningText.getText();

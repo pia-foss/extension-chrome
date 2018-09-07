@@ -11,6 +11,7 @@
     "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
     "arrow-body-style": ["error", "always"],
     "arrow-parens": ["error", "always"],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "react/jsx-curly-spacing": ["error", {
       "when": "always",
       "children": true,

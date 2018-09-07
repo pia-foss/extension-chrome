@@ -1,0 +1,26 @@
+.chrome-upgrade-template {
+  padding: 0 0 20px;
+
+  .warning {
+    color: #CC0000;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 3px;
+  }
+
+  .warningicon {
+    height: 65px;
+    width: 65px;
+    background-image: url(../images/warning_3x.png);
+    background-size: 65px 65px;
+    margin: 20px auto 0 auto;
+  }
+
+  .warningtext {
+    color: #d33c1a;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .btn-center { text-align: center; }
+}

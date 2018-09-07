@@ -1,90 +1,108 @@
-import initPageTitle       from 'component/pagetitle'
-import initClipboardButton from 'component/clipboardbutton'
-import initDeleteLogButton from 'component/deletelogbutton'
-import Timestamp           from 'react-timeago'
+import React, { Component } from 'react';
+import Timestamp from 'react-timeago';
+import OfflineWarning from '../component/OfflineWarning';
+import initPageTitle from '../component/pagetitle';
+import initClipboardButton from '../component/clipboardbutton';
+import initDeleteLogButton from '../component/deletelogbutton';
 
-export default function(renderer, app, window, document) {
-  const React           = renderer.react,
-        PageTitle       = initPageTitle(renderer, app, window, document),
-        ClipboardButton = initClipboardButton(renderer, app, window, document),
-        DeleteLogButton = initDeleteLogButton(renderer, app, window, document),
-        {logger} = app
+export default function (renderer, app, window, document) {
+  const PageTitle = initPageTitle(renderer, app, window, document);
+  const ClipboardButton = initClipboardButton(renderer, app, window, document);
+  const DeleteLogButton = initDeleteLogButton(renderer, app, window, document);
 
-  return class DebuglogTemplate extends React.Component {
+  return class DebuglogTemplate extends Component {
     constructor(props) {
-      super(props)
-      this.state = {entries: logger.getEntries()}
-      this.handleNewMessage = () => this.setState({entries: logger.getEntries()})
+      super(props);
+
+      // properties
+      this.logger = app.logger;
+      this.state = { entries: this.logger.getEntries() };
+
+      // bindings
+      this.reloadPage = this.reloadPage.bind(this);
+      this.renderEntries = this.renderEntries.bind(this);
+      this.handleNewMessage = this.handleNewMessage.bind(this);
     }
 
     componentDidMount() {
-      logger.addEventListener('NewMessage', this.handleNewMessage)
+      this.logger.addEventListener('NewMessage', this.handleNewMessage);
     }
 
     componentWillUnmount() {
-      logger.removeEventListener('NewMessage', this.handleNewMessage)
-      this.handleNewMessage = null
+      this.logger.removeEventListener('NewMessage', this.handleNewMessage);
+      this.handleNewMessage = null;
+    }
+
+    handleNewMessage() {
+      this.setState({ entries: this.logger.getEntries() });
     }
 
     reloadPage() {
-      this.forceUpdate()
+      this.forceUpdate();
+    }
+
+    renderEntries() {
+      const { entries } = this.state;
+      return entries.map((entry) => {
+        const [timestamp, message] = entry;
+        return (
+          <li>
+            <span className="bold">
+              { message }
+            </span>
+            <br />
+            <Timestamp live={false} date={timestamp} />
+          </li>
+        );
+      });
     }
 
     render() {
-      const entries = this.state.entries,
-	    {platforminfo} = app.util
-      if(platforminfo.ready === false) {
-	return (
-	  <div id="debuglog-template" className="row">
-	    <PageTitle text={t("DebugLog")}/>
-	    <p className="text-left emptytext still-loading">
-	      {t("TheExtensionIsStillLoading")}
-	    </p>
-	    <div className="col-xs-3"></div>
-	    <button className="btn btn-success col-xs-6" onClick={this.reloadPage.bind(this)}>
-	      {t("ReloadPage")}
-	    </button>
-	    <div className="col-xs-3"></div>
-	  </div>
-	)
-      }
-      else if(entries.length === 0) {
+      const { entries } = this.state;
+      const { platforminfo } = app.util;
+
+      if (platforminfo.ready === false) {
         return (
           <div id="debuglog-template" className="row">
-            <PageTitle text={t("DebugLog")}/>
+            <OfflineWarning />
+            <PageTitle text={t('DebugLog')} />
+            <p className="text-left emptytext still-loading">
+              { t('TheExtensionIsStillLoading') }
+            </p>
+            <div className="col-xs-3" />
+            <button type="button" className="btn btn-success col-xs-6" onClick={this.reloadPage}>
+              { t('ReloadPage') }
+            </button>
+            <div className="col-xs-3" />
+          </div>
+        );
+      }
+
+      if (entries.length === 0) {
+        return (
+          <div id="debuglog-template" className="row">
+            <OfflineWarning />
+            <PageTitle text={t('DebugLog')} />
             <p className="text-center emptytext">
-              {t("DebugLogIsEmpty")}
+              { t('DebugLogIsEmpty') }
             </p>
           </div>
-        )
-      } else {
-          return (
-            <div id="debuglog-template" className="row">
-              <PageTitle text={t("DebugLog")}/>
-              <div className="col-xs-12">
-                <ClipboardButton/>
-                <DeleteLogButton parentComponent={this}/>
-              </div>
-              <ul>
-                {this.renderEntries(entries)}
-              </ul>
-            </div>
-          )
-        }
-    }
+        );
+      }
 
-    renderEntries(entries) {
-      return entries.map((entry) => {
-        const [timestamp, message] = entry
-        return (
-          <li>
-            <span style={{wordWrap: 'break-word'}} className="bold">{message}</span>
-            <br/>
-            <Timestamp live={false} date={timestamp}/>
-          </li>
-        )
-      })
+      return (
+        <div id="debuglog-template" className="row">
+          <OfflineWarning />
+          <PageTitle text={t('DebugLog')} />
+          <div className="col-xs-12">
+            <ClipboardButton />
+            <DeleteLogButton parentComponent={this} />
+          </div>
+          <ul>
+            { this.renderEntries() }
+          </ul>
+        </div>
+      );
     }
-
-  }
+  };
 }

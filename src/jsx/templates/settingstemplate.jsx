@@ -1,87 +1,105 @@
-import initPageTitle        from 'component/pagetitle';
-import initBypassSettingSection       from 'component/bypasslist/settingsection';
-import initLanguageDropdown from 'component/languagedropdown';
-import SettingSections from 'component/settingsections';
+import React, { Component } from 'react';
+import initPageTitle from '../component/pagetitle';
+import OfflineWarning from '../component/OfflineWarning';
+import SettingSections from '../component/settingsections';
+import initLanguageDropdown from '../component/languagedropdown';
+import initBypassSettingSection from '../component/bypasslist/settingsection';
 
-export default function(renderer, app, window, document) {
-  const React           = renderer.react,
-        PageTitle       = initPageTitle(renderer, app, window, document),
-        LanguageDropdown = initLanguageDropdown(renderer, app, window, document),
-        BypassSettingSection = initBypassSettingSection(renderer, app, window, document);
+export default function (renderer, app, window, document) {
+  const PageTitle = initPageTitle(renderer, app, window, document);
+  const LanguageDropdown = initLanguageDropdown(renderer, app, window, document);
+  const BypassSettingSection = initBypassSettingSection(renderer, app, window, document);
 
-  return class SettingsTemplate extends React.Component {
-
-    constructor (props) {
+  return class SettingsTemplate extends Component {
+    constructor(props) {
       super(props);
 
-      // Bindings
+      // properties
+      this.app = app;
+      this.renderer = renderer;
+      this.languageDropdown = LanguageDropdown;
+
+      // bindings
+      this.gitInfo = this.gitInfo.bind(this);
+      this.warningDiv = this.warningDiv.bind(this);
       this.onDebugClick = this.onDebugClick.bind(this);
+      this.viewChangeLog = this.viewChangeLog.bind(this);
       this.languageDropdownBuilder = this.languageDropdownBuilder.bind(this);
     }
 
-    onDebugClick (ev) {
+    onDebugClick(ev) {
       ev.preventDefault();
-      renderer.renderTemplate('debuglog');
+      this.renderer.renderTemplate('debuglog');
     }
 
-    warningDiv ({app}) {
-      const regionName = app.util.regionlist.getSelectedRegion().localizedName();
-      if (app.proxy.enabled()) {
+    viewChangeLog(ev) {
+      ev.preventDefault();
+      this.renderer.renderTemplate('changelog');
+    }
+
+    warningDiv() {
+      const regionName = this.app.util.regionlist.getSelectedRegion().localizedName();
+      if (this.app.proxy.enabled()) {
         return (
           <div className="settingswarning-connected noselect">
-            {t("SettingsWarningConnected", {browser: app.buildinfo.browser, region: regionName})}
+            { t('SettingsWarningConnected', { browser: app.buildinfo.browser, region: regionName }) }
           </div>
         );
       }
-      else {
-        return (
-          <div className="settingswarning-disconnected noselect">
-            {t("SettingsWarning")}
-          </div>
-        );
-      }
-    }
 
-    gitRow ({name, message}) {
       return (
-        <div className="row">
-          <span className="branch col-xs-2">{name}</span>
-          <span className="gitbranch">{message}</span>
+        <div className="settingswarning-disconnected noselect">
+          { t('SettingsWarning') }
         </div>
       );
     }
 
-    gitInfo ({row: Row, gitcommit, gitbranch}) {
+    gitInfo() {
+      const { gitcommit, gitbranch } = this.app.buildinfo;
       const numValidHashes = [gitcommit, gitbranch]
-        .filter((e) => e && (/^[a-zA-Z0-9\-.]+$/).test(e))
+        .filter((e) => { return e && (/^[a-zA-Z0-9\-.]+$/).test(e); })
         .length;
 
       if (numValidHashes === 2) {
         return (
           <div className="gitinfo">
-            <Row name="Branch" message={gitbranch} />
-            <Row name="Commit" message={gitcommit} />
+            <div className="row">
+              <span className="branch col-xs-2">
+                Branch
+              </span>
+              <span className="gitbranch">
+                { gitbranch }
+              </span>
+            </div>
+            <div className="row">
+              <span className="branch col-xs-2">
+                Commit
+              </span>
+              <span className="gitbranch">
+                { gitcommit }
+              </span>
+            </div>
           </div>
         );
       }
-      else {
-        return null;
-      }
+
+      return null;
     }
 
-    languageDropdownBuilder () {
+    languageDropdownBuilder() {
+      const LanguageDropDown = this.languageDropdown;
       return (
-        <div style={{color: "#333 !important"}} className='field settingitem noselect'>
-          <div className='col-xs-6 settingblock'>
-            <a className="macetooltip">
-              <label htmlFor="languages">
-                {t("UILanguage")}
-                <div className="popover arrow-bottom">{t("UILanguageTooltip")}</div>
-              </label>
-            </a>
+        <div className="field settingitem noselect">
+          <div className="col-xs-6 settingblock">
+            <label htmlFor="languages" className="macetooltip">
+              { t('UILanguage') }
+              <div className="popover arrow-bottom">
+                { t('UILanguageTooltip') }
+              </div>
+            </label>
           </div>
           <div className="col-xs-6 checkbox-container">
-            <LanguageDropdown/>
+            <LanguageDropDown />
           </div>
         </div>
       );
@@ -93,17 +111,31 @@ export default function(renderer, app, window, document) {
 
       return (
         <div id="settings-template" className="row">
+          <OfflineWarning />
+
           <div className="top-border" id="settings">
-            <PageTitle previousTemplate="authenticated" text={t("ChangeExtensionSettings")}/>
-            <WarningDiv app={app} />
-            <SettingSections app={app} onDebugClick={this.onDebugClick} languageDropdownBuilder={this.languageDropdownBuilder} />
+            <PageTitle
+              previousTemplate="authenticated"
+              text={t('ChangeExtensionSettings')}
+            />
+            <WarningDiv />
+            <SettingSections
+              app={this.app}
+              onDebugClick={this.onDebugClick}
+              languageDropdownBuilder={this.languageDropdownBuilder}
+            />
             <div className="sectionwrapper bypass">
-              <BypassSettingSection/>
+              <BypassSettingSection />
             </div>
-            <div className='field panelfooter'>
-              <div className='col-xs-12 settingblock'>
-                v{app.buildinfo.version} (<a href="#" onClick={() => renderer.renderTemplate("changelog")}>View Changelog</a>)
-                <GitInfo {...app.buildinfo} row={this.gitRow} />
+            <div className="field panelfooter">
+              <div className="col-xs-12 settingblock">
+                v
+                { this.app.buildinfo.version }
+                &nbsp;
+                (
+                <a href="#" onClick={this.viewChangeLog}>View Changelog</a>
+                )
+                <GitInfo />
               </div>
             </div>
           </div>

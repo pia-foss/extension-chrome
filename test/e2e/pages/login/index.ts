@@ -85,7 +85,7 @@ class LoginPage extends PageObject {
     this.logo = new Image(
       {
         selector: createSelector({
-          value: '#company-logo img',
+          value: '.company-logo img',
         }),
         name: 'logo',
       },

@@ -1,22 +1,25 @@
-import initCompanyLogo from 'component/companylogo'
+import React from 'react';
+import CompanyLogo from '../component/CompanyLogo';
+import OfflineWarning from '../component/OfflineWarning';
 
-export default function(renderer, app, window, document) {
-  const React       = renderer.react,
-        CompanyLogo = initCompanyLogo(renderer, app, window, document)
+export default function () {
+  const PleaseWaitTemplate = () => {
+    return (
+      <div id="please-wait-template" className="row">
+        <OfflineWarning />
 
-  return class extends React.Component {
-    render() {
-      return (
-        <div id="please-wait-template">
-          <CompanyLogo/>
-          <div className="top-border">
-            <div className="loader"></div>
-            <p className="loadingtext2">
-              {t("PleaseWait")}
-            </p>
-          </div>
+        <CompanyLogo />
+
+        <div className="top-border">
+          <div className="loader" />
+
+          <p className="loadingtext2">
+            { t('PleaseWait') }
+          </p>
         </div>
-      )
-    }
-  }
+      </div>
+    );
+  };
+
+  return PleaseWaitTemplate;
 }

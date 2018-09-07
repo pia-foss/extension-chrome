@@ -1,10 +1,13 @@
 import React from 'react';
-import CompanyLogo from '../component/companylogo';
+import CompanyLogo from '../component/CompanyLogo';
+import OfflineWarning from '../component/OfflineWarning';
 
 export default function (renderer, app) {
   const ChromeUpgradeTemplate = () => {
     return (
-      <div>
+      <div className="chrome-upgrade-template row">
+        <OfflineWarning />
+
         <CompanyLogo />
         <div className="top-border">
           <div className="warningicon" />
