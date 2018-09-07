@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.2__
+
+* Better Offline startup support
+
 __v1.7.1__
 
 * Converted ruby tests to javascript

@@ -1,126 +1,140 @@
-import "babel-polyfill";
+import 'babel-polyfill';
 
-import storage            from "util/storage";
-import settings           from "util/settings";
-import icon               from "util/icon";
-import regionlist         from "util/regionlist";
-import regionsorter       from "util/regionsorter";
-import user               from "util/user";
-import bypasslist         from "util/bypasslist";
-import latencytest        from "util/latencytest";
-import buildinfo          from "util/buildinfo";
-import Logger             from "util/logger";
-import counter            from "util/counter";
-import settingsmanager    from "util/settingsmanager";
-import errorinfo          from "util/errorinfo";
-import i18n               from "util/i18n";
-import platforminfo       from "util/platforminfo";
+import Storage from 'util/storage';
+import Settings from 'util/settings';
+import Icon from 'util/icon';
+import RegionList from 'util/regionlist';
+import RegionSorter from 'util/regionsorter';
+import User from 'util/user';
+import BypassList from 'util/bypasslist';
+import LatencyTest from 'util/latencytest';
+import BuildInfo from 'util/buildinfo';
+import Logger from 'util/logger';
+import Counter from 'util/counter';
+import SettingsManager from 'util/settingsmanager';
+import ErrorInfo from 'util/errorinfo';
+import I18n from 'util/i18n';
+import PlatformInfo from 'util/platforminfo';
 
-import microphone            from "contentsettings/microphone";
-import camera                from "contentsettings/camera";
-import location              from "contentsettings/location";
-import flash                 from "contentsettings/flash";
-import extensionNotification from "contentsettings/extension_notification";
+import Microphone from 'contentsettings/microphone';
+import Camera from 'contentsettings/camera';
+import Location from 'contentsettings/location';
+import Flash from 'contentsettings/flash';
+import ExtensionNotification from 'contentsettings/extension_notification';
 
-import hyperlinkaudit    from "chromesettings/hyperlinkaudit";
-import webrtc            from "chromesettings/webrtc";
-import thirdpartycookies from "chromesettings/thirdpartycookies";
-import httpreferer       from "chromesettings/httpreferer";
-import networkprediction from "chromesettings/networkprediction";
-import safebrowsing      from "chromesettings/safebrowsing";
-import BrowserProxy      from "chromesettings/proxy";
-import autofill          from "chromesettings/autofill";
-import eventhandler from "eventhandler/eventhandler";
+import HyperlinkAudit from 'chromesettings/hyperlinkaudit';
+import WebRTC from 'chromesettings/webrtc';
+import ThirdPartyCookies from 'chromesettings/thirdpartycookies';
+import HttpReferer from 'chromesettings/httpreferer';
+import NetworkPrediction from 'chromesettings/networkprediction';
+import SafeBrowsing from 'chromesettings/safebrowsing';
+import BrowserProxy from 'chromesettings/proxy';
+import AutoFill from 'chromesettings/autofill';
+import EventHandler from 'eventhandler/eventhandler';
 
-(function() {
-  const self = Object.create(null);
-  const deepFreeze = (obj) => {
-    if(@@freezeApp) {
-      for(let p in obj) {
-        obj[p] = Object.freeze(obj[p]);
-      }
+// build background application (self)
+const self = Object.create(null);
+const deepFreeze = (obj) => {
+  if(@@freezeApp) {
+    for(let p in obj) {
+      obj[p] = Object.freeze(obj[p]);
     }
-    return Object.freeze(obj);
   }
+  return Object.freeze(obj);
+};
 
-  self.frozen = @@freezeApp;
-  self.buildinfo    = new buildinfo(self);
-  self.logger       = new Logger(self);
-  self.eventhandler = new eventhandler(self);
-  window.debug = self.logger.debug; /* eslint-ignore no-unused-vars */
+// event handling and basic browser info gathering
+self.frozen = @@freezeApp;
+self.buildinfo = new BuildInfo(self);
+self.logger = new Logger(self);
+self.eventhandler = new EventHandler(self);
 
-  self.util = Object.create(null);
-  self.util.platforminfo       = new platforminfo(self);
-  self.util.icon               = new icon(self);
-  self.util.storage            = new storage(self);
-  self.util.settings           = new settings(self);
-  self.util.i18n               = new i18n(self);
-  self.util.regionlist         = new regionlist(self);
-  self.util.bypasslist         = new bypasslist(self);
-  self.util.counter            = new counter(self);
-  self.util.user               = new user(self);
-  self.util.latencytest        = new latencytest(self);
-  self.util.regionsorter       = new regionsorter(self);
-  self.util.settingsmanager    = new settingsmanager(self);
-  self.util.errorinfo          = new errorinfo(self);
-  self.util = Object.freeze(self.util);
+// attach debugging to global scope
+window.debug = self.logger.debug;
 
-  /* self.proxy is a %{browser}Setting like self.chromesettings.* objects are. */
-  self.proxy = Object.freeze(BrowserProxy(self));
-  self.util.bypasslist.init();
+// attach utility functions
+self.util = Object.create(null);
+self.util.platforminfo = new PlatformInfo(self);
+self.util.icon = new Icon(self);
+self.util.storage = new Storage(self);
+self.util.settings = new Settings(self);
+self.util.i18n = new I18n(self);
+self.util.regionlist = new RegionList(self);
+self.util.bypasslist = new BypassList(self);
+self.util.counter = new Counter(self);
+self.util.user = new User(self);
+self.util.latencytest = new LatencyTest(self);
+self.util.regionsorter = new RegionSorter(self);
+self.util.settingsmanager = new SettingsManager(self);
+self.util.errorinfo = new ErrorInfo(self);
+self.util = Object.freeze(self.util);
 
-  self.contentsettings = Object.create(null);
-  self.contentsettings.camera      = new camera(self);
-  self.contentsettings.microphone  = new microphone(self);
-  self.contentsettings.location    = new location(self);
-  self.contentsettings.flash       = new flash(self);
-  self.contentsettings.extensionNotification = new extensionNotification(self);
+/* self.proxy is a %{browser}Setting like self.chromesettings.* objects are. */
+self.proxy = Object.freeze(BrowserProxy(self));
+self.util.bypasslist.init();
 
-  self.chromesettings = Object.create(null);
-  self.chromesettings.networkprediction = new networkprediction(self);
-  self.chromesettings.httpreferer       = new httpreferer(self);
-  self.chromesettings.hyperlinkaudit    = new hyperlinkaudit(self);
-  self.chromesettings.webrtc            = new webrtc(self);
-  self.chromesettings.thirdpartycookies = new thirdpartycookies(self);
-  self.chromesettings.safebrowsing      = new safebrowsing(self);
-  self.chromesettings.autofill          = new autofill(self);
+// attach browser specific functions
+self.contentsettings = Object.create(null);
+self.contentsettings.camera = new Camera(self);
+self.contentsettings.microphone = new Microphone(self);
+self.contentsettings.location = new Location(self);
+self.contentsettings.flash = new Flash(self);
+self.contentsettings.extensionNotification = new ExtensionNotification(self);
 
-  // Initialize settings
-  const initSettings = (settings) => Object.values(settings)
-    .filter((setting) => setting.init)
-    .forEach((setting) => setting.init());
+// attach chrome settings functions
+self.chromesettings = Object.create(null);
+self.chromesettings.networkprediction = new NetworkPrediction(self);
+self.chromesettings.httpreferer = new HttpReferer(self);
+self.chromesettings.hyperlinkaudit = new HyperlinkAudit(self);
+self.chromesettings.webrtc = new WebRTC(self);
+self.chromesettings.thirdpartycookies = new ThirdPartyCookies(self);
+self.chromesettings.safebrowsing = new SafeBrowsing(self);
+self.chromesettings.autofill = new AutoFill(self);
 
-  initSettings(self.chromesettings);
-  initSettings(self.contentsettings);
+// Initialize all functions
+const initSettings = (settings) => {
+  return Object.values(settings)
+    .filter((setting) => { return setting.init; })
+    .forEach((setting) => { return setting.init(); });
+};
 
-  // Freeze settings
-  self.contentsettings = deepFreeze(self.contentsettings);
-  self.chromesettings = deepFreeze(self.chromesettings);
+initSettings(self.chromesettings);
+initSettings(self.contentsettings);
+self.util.settings.init();
 
-  (() => {
-    const {proxy} = self;
-    const {user,settings,regionlist} = self.util;
-    settings.init();
+// Freeze settings
+self.contentsettings = deepFreeze(self.contentsettings);
+self.chromesettings = deepFreeze(self.chromesettings);
 
-    if(!user.loggedIn) { proxy.disable(); }
-    if(!regionlist.synced) { regionlist.sync(); }
+// check if regions are set
+const { regionlist } = self.util;
+const regionsSet = regionlist.hasRegions();
+if (!regionsSet) { regionlist.sync(); }
 
-    proxy.readSettings()
-    .then(() => {
-      if(!proxy.isControllable()) { return; }
-      const {loggedIn, logOutOnClose} = user;
-      if (loggedIn) {
-        if (logOutOnClose) {
-          user.logout().catch(proxy.disable);
-        }
-        else {
-          user.auth().catch(proxy.disable);
-        }
-      }
-    });
+// check if application should logout on close, will disable proxy as well
+let userPromise;
+const { user } = self.util;
+if (user.loggedIn && user.logOutOnClose) { userPromise = user.logout(); }
 
-    window.app = Object.freeze(self);
-    debug("background.js: initialized");
-  })();
+// check if proxy is controllable
+const { proxy } = self;
+const controllablePromise = proxy.readSettings()
+  .then(() => { return proxy.isControllable(); });
 
-}());
+Promise.all([controllablePromise, userPromise])
+  /* NOTE: controllable handinling here should be ported to firefox */
+  .then(([controllable]) => {
+    const proxyOnline = self.util.storage.getItem('online') === 'true';
+    if (user.loggedIn && proxyOnline && controllable) {
+      const currentRegion = regionlist.getSelectedRegion();
+      return proxy.enable(currentRegion);
+    }
+    return proxy.disable();
+  })
+  .catch((err) => {
+    debug(err);
+    return proxy.disable();
+  });
+
+window.app = Object.freeze(self);
+debug('background.js: initialized');
