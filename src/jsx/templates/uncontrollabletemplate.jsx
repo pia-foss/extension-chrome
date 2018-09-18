@@ -1,31 +1,51 @@
-import initCompanyLogo from 'component/companylogo'
+import React, { Component } from 'react';
+import CompanyLogo from '../component/CompanyLogo';
+import OfflineWarning from '../component/OfflineWarning';
 
-export default function(renderer, app, window, document) {
-  const React       = renderer.react,
-        CompanyLogo = initCompanyLogo(renderer, app, window, document)
+export default function () {
+  class UncontrollableTemplate extends Component {
+    constructor(props) {
+      super(props);
 
-  class UncontrollableTemplate extends React.Component {
+      // Properties
+      this.extensionsUrl = 'chrome://extensions';
+
+      // Bindings
+      this.openExtensionsPage = this.openExtensionsPage.bind(this);
+    }
+
     openExtensionsPage() {
-      chrome.tabs.create({url: "chrome://extensions"});
+      chrome.tabs.create({ url: this.extensionsUrl });
     }
 
     render() {
       return (
-        <div>
-          <CompanyLogo/>
+        <div className="uncontrollable-template row">
+          <OfflineWarning />
+
+          <CompanyLogo />
+
           <div className="top-border">
-            <div className="warningicon"></div>
+            <div className="warningicon" />
+
             <p className="warningtext">
-              {t("CannotUsePIAMessage")}
+              { t('CannotUsePIAMessage') }
             </p>
+
             <p className="btn-center">
-              <a className="btn btn-success" href="#" onClick={this.openExtensionsPage.bind(this)}>{t("ManageExtensions")}</a>
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={this.openExtensionsPage}
+              >
+                { t('ManageExtensions') }
+              </button>
             </p>
           </div>
         </div>
-      )
+      );
     }
   }
 
-  return UncontrollableTemplate
+  return UncontrollableTemplate;
 }

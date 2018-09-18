@@ -14,7 +14,7 @@ window.addEventListener('error', initOnError(app));
 window.addEventListener('blur', () => {
   // TODO: Remove me when https://bugs.chromium.org/p/chromium/issues/detail?id=825867
   // is in General Availability Chrome
-  // window.close();
+  window.close();
 });
 
 // inject locale stylesheet

@@ -1,0 +1,179 @@
+#settings-template {
+  max-height: 580px;
+  overflow: auto;
+
+  #settings {
+    padding: 0;
+
+    .field {
+      padding: 10px 5px;
+
+      label {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        font-weight: normal;
+
+        &.uncontrollable-setting span { opacity: 0.5; }
+      }
+    }
+
+    .sectionwrapper {
+      background: #f9f9f9;
+
+      &:hover {
+        .firstfield .settingheader .rightalign .expandicon { background-position: -20px 0px; }
+        .firstfield .settingheader .rightalign .counts { color: #555; }
+      }
+
+      &.open {
+        &:hover .firstfield .settingheader .rightalign .expandicon { background-position: 0px 0px; }
+
+        .firstfield .settingheader .rightalign .expandicon {
+          background-position: 0px 0px;
+          &:hover { background-position: 0px 0px; }
+        }
+
+        .SettingItemContainer{
+          height: auto;
+          overflow: visible;
+        }
+      }
+
+      &:hover, &.open { color: #5cb85c; }
+
+      &::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .firstfield {
+        border-top: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+        padding: 10px 5px;
+        float:left;
+        width:100%;
+        background: #fff;
+        margin:-1px;
+        cursor:pointer;
+
+        .settingheader {
+          margin-top: 0px;
+          float:left;
+          width:100%;
+          padding:0px 15px;
+          font-weight: 500;
+          font-size: 13px;
+
+          &.settingblock { padding: 0 15px; }
+
+          .sectiontitle { pointer-events: none; }
+
+          .rightalign {
+            float: right;
+
+            .counts {
+              color: #A9A9A9;
+              font-weight: normal;
+              font-size: 12px;
+              margin-right: 10px;
+            }
+
+            .expandicon {
+              width: 15px;
+              height: 10px;
+              background-image: url(../images/expand_2x.png);
+              background-size: 35px;
+              background-position: -20px -15px;
+              display: inline-block;
+              float: right;
+              margin-top: 5px;
+              pointer-events: none;
+            }
+          }
+        }
+
+        &.field { padding: 10px 5px; }
+      }
+
+      .SettingItemContainer {
+        display:block;
+        clear: both;
+        overflow:hidden;
+        height:0px;
+
+        .settingitem {
+          color: #333;
+
+          .settingblock {
+            padding: 0px 15px 5px 15px;
+
+            .errorsubline {
+              font-size: 10px;
+              color: #cc0000;
+              margin-top: -4px;
+              float: left;
+            }
+          }
+
+          .dlviewbtn { padding: 0 15px 25px; }
+          .dlviewbtn .btn { font-size: 13px; }
+
+          .checkbox-container {
+            float: right;
+            text-align: right;
+            margin-right: 15px;
+            padding-right: 20px;
+
+            .dropdown {
+              margin-bottom: 10px;
+
+              #languages {
+                margin: 0;
+                padding: 3px 6px;
+                background: #fff;
+                color: #333;
+                outline: none;
+                display: inline-block;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border-radius: 1px;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                font-size: 12px;
+
+                &:hover { border: 1px solid #5cb85c; }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sectionwrapper.bypass .lefticon {
+      -webkit-transform: rotate(270deg);
+      -moz-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
+
+    .panelfooter {
+      font-size: 10px;
+      text-align: center;
+      overflow: auto;
+
+      .gitinfo {
+        text-align: left;
+        margin: 0 15px 0 15px;
+        padding: 5px 15px 0 20px;
+
+        .commit, .branch { font-weight: bold }
+      }
+    }
+  }
+}
+
+// setting-section not used in css

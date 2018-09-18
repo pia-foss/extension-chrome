@@ -5,6 +5,61 @@
   .bypass-wrap {
     padding: 15px;
 
+
+    // shared within component
+    .introtext {
+      font-size: 11px;
+      color: #888;
+
+      strong {
+        font-weight: 500;
+        color: #555355;
+        text-decoration: underline;
+      }
+    }
+
+    .bl_sectionheader {
+      font-size: 13px;
+      color: #333;
+      font-weight: 500;
+      display: block;
+      clear: both;
+
+      &.instructions { margin-bottom: 5px; }
+    }
+
+
+    // popularrules.jsx
+    .popular {
+      display: block;
+      clear: both;
+      overflow: hidden;
+
+      // popularrule.jsx
+      .popular-rule {
+        padding: 7px 15px 2px 15px;
+        border-radius: 25px;
+        margin: 0 5px 5px 0;
+
+        label {
+          font-weight: 400;
+          font-size: 13px;
+          padding-top: 1px;
+
+          &.popular-rule-name { text-transform: capitalize; }
+        }
+
+        .checkmarkcontainer { margin-right: 0px; }
+
+        .checkbox-container {
+          float: right;
+          text-alijgn: right;
+          margin-right: 0px;
+          padding-right: 20px;
+        }
+      }
+    }
+
     // userrules.jsx
     .add-container {
       display: flex;
@@ -89,7 +144,7 @@
         .rem {
           width: 16px;
           height: 20px;
-          background-image: url(../images/delete@2x.png);
+          background-image: url('../images/delete@2x.png');
           background-size: 11px;
           background-position: 2px 10px;
           background-repeat: no-repeat;
@@ -103,50 +158,5 @@
         }
       }
     }
-  }
-}
-
-// popularrules.jsx
-.popular {
-  display: block;
-  clear: both;
-  overflow: hidden;
-
-  // popularrule.jsx
-  .popular-rule {
-    padding: 7px 15px 2px 15px;
-    border-radius: 25px;
-    margin: 0 5px 5px 0;
-
-    label{
-      font-weight: 400;
-      font-size: 13px;
-      padding-top: 1px;
-
-      &.popular-rule-name { text-transform: capitalize; }
-    }
-  }
-}
-
-// shared
-.introtext {
-  font-size: 11px;
-  color: #888;
-
-  strong {
-    font-weight: 500;
-    color: #555355;
-    text-decoration: underline;
-  }
-}
-
-.bl_sectionheader {
-  font-size: 13px;
-  color: #333;
-  font-weight: 500;
-  display: block;
-  clear: both;
-  &.instructions {
-    margin-bottom: 5px;
   }
 }

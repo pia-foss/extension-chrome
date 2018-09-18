@@ -16,7 +16,7 @@ class BrowserUpgradePage extends PageObject {
     this.warningIcon = new Image(
       {
         selector: createSelector({
-          value: '.warningIcon',
+          value: '.warningicon',
         }),
         name: 'warningIcon',
       },
@@ -25,7 +25,7 @@ class BrowserUpgradePage extends PageObject {
     this.warningText = new Text(
       {
         selector: createSelector({
-          value: '.warningText',
+          value: '.warningtext',
         }),
         name: 'warningText',
       },
