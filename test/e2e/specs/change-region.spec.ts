@@ -103,6 +103,7 @@ idescribe('the change region page', function () {
 
       iit('sorting by latency includes ping times of regions', async function () {
         await regionPage.sort.selectOption(RegionPage.SORT_BY_LATENCY);
+        await regionPage.picker.loader.waitForNotPresent();
         await regionPage.picker.melbourneLatency.expect.visible;
       });
     });

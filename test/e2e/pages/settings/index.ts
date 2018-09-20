@@ -4,7 +4,7 @@ import { ExtensionSection } from './extension';
 import { PrivacySection } from './privacy';
 import { TrackingSection } from './tracking';
 import { SecuritySection } from './security';
-import { Text, Button, Link, Dropdown } from '../../elements';
+import { Text, Button, Link, Select } from '../../elements';
 
 class SettingsPage extends PageObject {
   public static readonly FRENCH = 'language-option-fr';
@@ -17,7 +17,7 @@ class SettingsPage extends PageObject {
   public connectedWarning: Text;
   public disconnectedWarning: Text;
   public back: Button;
-  public language: Dropdown;
+  public language: Select;
   public title: Text;
 
   constructor() {
@@ -32,12 +32,12 @@ class SettingsPage extends PageObject {
     this.privacySection = new PrivacySection(this);
     this.trackingSection = new TrackingSection(this);
     this.securitySection = new SecuritySection(this);
-    this.language = new Dropdown(
+    this.language = new Select(
       {
         selector: createSelector({
           value: '#languages',
         }),
-        name: 'LanguageDropdown',
+        name: 'LanguageSelect',
       },
       this,
       SettingsPage.FRENCH,

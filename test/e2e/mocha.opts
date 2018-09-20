@@ -1,3 +1,4 @@
 --require ts-node/register
 --file ./test/e2e/core/runner/setup.ts
 --inspect
+--retries 2

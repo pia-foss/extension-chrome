@@ -1,5 +1,5 @@
 import { PageObject } from '../../core';
-import { Button } from '../../elements';
+import { Button, Container } from '../../elements';
 import { createSelector } from '../../core/entities/selector';
 
 class RegionPicker extends PageObject {
@@ -9,6 +9,7 @@ class RegionPicker extends PageObject {
   public melbourneLatency: Button;
   public grid: Button;
   public list: Button;
+  public loader: Container;
 
   constructor(parent: PageObject) {
     super(
@@ -74,16 +75,16 @@ class RegionPicker extends PageObject {
       },
       this,
     );
+    this.loader = new Container(
+      {
+        selector: createSelector({
+          value: '.loader',
+        }),
+        name: 'loader',
+      },
+      this,
+    );
   }
-
-  // buildSelector(regionName) {
-  //   const selectors = [
-  //     foreground.sections.regionPage.selector,
-  //     foreground.sections.regionPage.sections.regions.selector,
-  //   ];
-  //   const selector = `${selectors.join(' ')} *[data-region-id=${regionName}]`;
-  //   return selector;
-  // },
 }
 
 export { RegionPicker };

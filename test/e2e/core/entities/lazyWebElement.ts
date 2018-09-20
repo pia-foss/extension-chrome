@@ -102,16 +102,17 @@ class LazyWebElement {
     return operation(by);
   }
 
-  public waitAndFindElement(): Promise<WebElement> {
+  public waitAndFindElement(timeoutMultiplier = 1): Promise<WebElement> {
     const condition = until.elementLocated(this.by);
 
-    return Promise.resolve(this.driver.wait(condition, LazyWebElement.WAIT_TIME));
+    return Promise.resolve(
+      this.driver.wait(condition, LazyWebElement.WAIT_TIME * timeoutMultiplier),
+    );
   }
 
   public waitAndFindVisibleElement(timeoutMultiplier = 1): Promise<WebElement> {
-    const { WAIT_TIME } = getConfig();
     const condition = new Condition(`for element to be visible ${this}`, async () => {
-      const [element] = await this.driver.findElements(this.by);
+      const [element] = await this.findElements();
       if (element) {
         const displayed = await element.isDisplayed();
         return displayed && Promise.resolve(element);
@@ -119,7 +120,27 @@ class LazyWebElement {
       return Promise.resolve(false);
     });
 
-    return Promise.resolve(this.driver.wait<WebElement>(condition, WAIT_TIME * timeoutMultiplier));
+    return Promise.resolve(
+      this.driver.wait<WebElement>(condition, LazyWebElement.WAIT_TIME * timeoutMultiplier),
+    );
+  }
+
+  /**
+   * Wait for the element to not exist
+   *
+   * @param [timeoutMultiplier] multiplier for wait time, defaults to 2
+   * as waiting for elements to disappear is typically related to laoding gifs
+   * that may take extra time
+   */
+  public waitForNotPresent(timeoutMultiplier = 2): Promise<void> {
+    const condition = new Condition(`for element to not be present ${this}`, async () => {
+      const { length } = await this.findElements();
+      return length === 0;
+    });
+
+    return Promise.resolve(
+      this.driver.wait<void>(condition, LazyWebElement.WAIT_TIME * timeoutMultiplier),
+    );
   }
 
   public findElement(): Promise<WebElement> {
