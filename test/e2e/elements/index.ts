@@ -7,3 +7,4 @@ export * from './dropdown';
 export * from './image';
 export * from './container';
 export * from './option';
+export * from './select';

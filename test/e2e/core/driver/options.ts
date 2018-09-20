@@ -18,7 +18,7 @@ async function createOptions(): Promise<Options> {
   const extensionPath = root('builds', getBuild());
   options.addArguments(
     '--no-sandbox',
-    `load-extension=${extensionPath}`,
+    `--load-extension=${extensionPath}`,
   );
 
   return options;
