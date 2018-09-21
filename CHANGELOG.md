@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.6__
+
+* Fixed style issue on region sorter
+
 __v1.7.5__
 
 * Improving test reliability
