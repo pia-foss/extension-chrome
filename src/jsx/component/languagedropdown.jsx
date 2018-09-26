@@ -38,7 +38,7 @@ export default function(renderer, app, window, document) {
             languages = []
       languageMap.forEach((string, locale) => {
         languages.push(
-          (<option selected={i18n.locale === locale} value={locale}>{string}</option>)
+          (<option key={`${string}-${locale}`} selected={i18n.locale === locale} value={locale}>{string}</option>)
         )
       })
       return languages

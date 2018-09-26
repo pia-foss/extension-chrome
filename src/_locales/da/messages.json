@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Beskyt mod browser-fingeraftryk ved at give generisk information om din computer og forhindre adgang til visse browser-API'er."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Indstillinger for fingeraftrykbeskyttelse"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Denne indstilling kan give ekstra beskyttelse af personlige oplysninger og sikkerhed, men kan bryde visse websteder og få browseren til at opføre sig anderledes end forventet. En komplet liste over ændringer findes her:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Denne funktion anbefales, men nogle brugere kan finde den ubelejlig. Vælg venligst at aktivere eller deaktivere fingeraftrykbeskyttelse:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Aktiver"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Deaktiver"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Disse indstillinger kan også ændres fra panelet \"Udvidelsesindstillinger\" efter at have logget ind i udvidelsen."
+  },
   "TrackingProtection": {
     "message": "Sporingsbeskyttelse"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Skriv beskeder til fejlretningslogfilen. Tryk på tasten 'ctrl', og derefter tasten 'd', for at vise fejlretningslogfilen."
+  },
+  "LogMeOutOnClose": {
+    "message": "Log mig ud når browser lukker"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Når du har genåbnet browseren, bliver du ikke logget ind igen automatisk"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Denne indstilling kan ikke styres, hvis legitimationsoplysninger ikke huskes (login-skærm)"
   },
   "DebugLogIsEmpty": {
     "message": "Denne fejlretningslogfil er tom."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* præfiks er påkrævet"
+  },
+  "BypassInstructions": {
+    "message": "for at omgå alle underdomæner på et websted."
+  },
   "ProxyBypassList": {
     "message": "Bypass-liste"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Fra"
   },
+  "InvalidImportFileStructure": {
+    "message": "Filen kan ikke læses, vælg venligst en gyldig fil"
+  },
   "CurrentRegionText": {
     "message": "Aktuelle region"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "Husk mig"
+  },
+  "RememberMeTooltip": {
+    "message": "Gemmer dine legitimationsoplysninger mellem genstart af browseren"
   },
   "AllRegions": {
     "message": "ALLE REGIONER"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "Luxembourg"
+  },
+  "ae": {
+    "message": "De Forenede Arabiske Emirater"
+  },
+  "za": {
+    "message": "Sydafrika"
   }
 }

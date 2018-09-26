@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "提供有关计算机的通用信息并防止访问某些浏览器 API ，从而防止浏览器指纹识别。"
   },
+  "FingerprintProtectionHeader": {
+    "message": "指纹防护设置"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "此设置可以提供更多一层的隐私和安全，但可能会影响某些网站，导致浏览器的行为与预期不同。完整的修改列表请见此处："
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "建议使用此功能，但有些用户可能会觉得不方便。请选择启用或禁用指纹保护："
+  },
+  "FingerprintProtectionEnable": {
+    "message": "启用"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "禁用"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "登录扩展程序后，也可以从扩展设置面板更改此设置。"
+  },
   "TrackingProtection": {
     "message": "跟踪防护"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "将消息写入调试日志。按“ctrl”键，然后按“d”键以显示调试日志。"
+  },
+  "LogMeOutOnClose": {
+    "message": "浏览器关闭时让我退出"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "重新打开浏览器后，您将不会自动重新登录"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "不记住凭据时，无法控制此设置（登录屏幕）"
   },
   "DebugLogIsEmpty": {
     "message": "调试日志为空。"
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* 需要前缀"
+  },
+  "BypassInstructions": {
+    "message": "以绕过网站的所有子域名。"
+  },
   "ProxyBypassList": {
     "message": "绕过清单"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "关"
   },
+  "InvalidImportFileStructure": {
+    "message": "无法读取文件，请选择有效文件"
+  },
   "CurrentRegionText": {
     "message": "当前区域"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "记住我"
+  },
+  "RememberMeTooltip": {
+    "message": "在浏览器重新启动的间隔保存凭据"
   },
   "AllRegions": {
     "message": "所有地区"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "卢森堡"
+  },
+  "ae": {
+    "message": "阿拉伯联合酋长国"
+  },
+  "za": {
+    "message": "南非"
   }
 }

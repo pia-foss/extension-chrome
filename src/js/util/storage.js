@@ -1,52 +1,96 @@
-export default function(app) {
-  const self          = this,
-        localStorage  = window.localStorage,
-        memoryStorage = {},
-        stores        = {
-          "localStorage":  localStorage,
-          "memoryStorage": memoryStorage
-        }
+class Storage {
+  constructor(app) {
+    this._app = app;
 
-  self.hasItem = (key, backend = "localStorage") => {
-    const item = self.getItem(key, backend)
-    return item !== undefined && item !== null
+    // bindings
+    this.hasItem = this.hasItem.bind(this);
+    this.getItem = this.getItem.bind(this);
+    this.setItem = this.setItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
+
+    // init
+    this._stores = {
+      [Storage.MEMORY]: window.sessionStorage,
+      [Storage.LOCAL]: window.localStorage,
+    };
   }
 
-  self.getItem = (key, backend = "localStorage") => {
-    switch(backend) {
-    case "localStorage":
-      return stores[backend].getItem(key)
-    case "memoryStorage":
-      return stores[backend][key]
-    default:
-      throw `Unknown store: ${backend}`
+  _validateStore(store) {
+    switch (store) {
+      case Storage.LOCAL:
+      case Storage.MEMORY:
+        return true;
+
+      default:
+        console.error(debug(`no such store type: ${store}`));
+        return false;
     }
   }
 
-  self.setItem = (key, value, backend = "localStorage") => {
-    if(value === undefined || value === null)
-      value = ""
-    switch(backend) {
-    case "localStorage":
-      return stores[backend].setItem(key, value)
-    case "memoryStorage":
-      stores[backend][key] = value
-      return value
-    default:
-      throw `Unknown store: ${backend}`
+  _validateKey(key) {
+    const type = typeof key;
+    const isString = type === 'string';
+    const isEmpty = isString && !key;
+    if (!isString || isEmpty) {
+      let msg = 'key must be a valid string. ';
+      if (!isString) {
+        msg += `was: ${type}`;
+      }
+      else {
+        msg += 'was: empty string';
+      }
+      console.error(debug(msg));
+      return false;
+    }
+    return true;
+  }
+
+  _validateStoreAndKey({ store, key }) {
+    return this._validateStore(store) && this._validateKey(key);
+  }
+
+  _createOperationError(operation) {
+    // Refer to errors thrown in _validateStore or _validateKey
+    return new Error(`could not ${operation} item, see above error for more information`);
+  }
+
+  hasItem(key, store = Storage.LOCAL) {
+    const item = this.getItem(key, store);
+    return item !== null;
+  }
+
+  getItem(key, store = Storage.LOCAL) {
+    if (this._validateStoreAndKey({ store, key })) {
+      return this._stores[store].getItem(key);
+    }
+
+    throw this._createOperationError('get');
+  }
+
+  setItem(key, value, store = Storage.LOCAL) {
+    if (this._validateStoreAndKey({ store, key })) {
+      let newValue = value;
+      if (typeof newValue === 'undefined' || newValue === null) {
+        newValue = '';
+      }
+      this._stores[store].setItem(key, newValue);
+    }
+    else {
+      throw this._createOperationError('set');
     }
   }
 
-  self.removeItem = (key, backend = "localStorage") => {
-    switch(backend) {
-    case "localStorage":
-      return stores[backend].removeItem(key)
-    case "memoryStorage":
-      return delete(stores[backend][key])
-    default:
-      throw `Unknown store: ${backend}`
+  removeItem(key, store = Storage.LOCAL) {
+    if (this._validateStoreAndKey({ store, key })) {
+      this._stores[store].removeItem(key);
+    }
+    else {
+      throw this._createOperationError('remove');
     }
   }
-
-  return self
 }
+
+Storage.LOCAL = 'localStorage';
+Storage.MEMORY = 'memoryStorage';
+
+export default Storage;

@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Chroni przed „odciskiem palca“ przeglądarki, podając tylko ogólne informacje o komputerze i nie udzielając dostępu do niektórych interfejsów API przeglądarki."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Ustawienie ochrony odciskiem palca"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "To ustawienie może zapewnić dodatkową prywatność i bezpieczeństwo, ale może spowodować uszkodzenie niektórych witryn i niespodziewane zachowanie przeglądarki. Pełną listę zmian znajdziesz tutaj:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Ta funkcja jest zalecana, ale może okazać się uciążliwa dla części użytkowników. Zdecyduj, czy chcesz włączyć, czy wyłączyć ochronę odciskiem palca:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Włącz"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Wyłącz"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Ustawienia te można także zmienić w panelu „Ustawienia rozszerzeń“ po zalogowaniu się do rozszerzenia."
+  },
   "TrackingProtection": {
     "message": "Ochrona przed śledzeniem"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Zapisz komunikaty w dzienniku debugowania. Wciśnij klawisze „ctrl” i „d”, aby wyświetlić dziennik debugowania."
+  },
+  "LogMeOutOnClose": {
+    "message": "Wyloguj mnie przy zamykaniu przeglądarki"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Po ponownym otwarciu przeglądarki nie zostaniesz zalogowany(-a) automatycznie."
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Tego ustawienia nie można kontrolować, jeśli nie pamięta się danych uwierzytelniających (ekran logowania)."
   },
   "DebugLogIsEmpty": {
     "message": "Dziennik debugowania jest pusty"
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* wymagany prefiks"
+  },
+  "BypassInstructions": {
+    "message": "aby poominąć wszystkie poddomeny witryny."
+  },
   "ProxyBypassList": {
     "message": "Lista obejść"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Wył."
   },
+  "InvalidImportFileStructure": {
+    "message": "Nie można odczytać pliku, wybierz prawidłowy plik."
+  },
   "CurrentRegionText": {
     "message": "Bieżący region"
   },
@@ -359,6 +395,9 @@
   "RememberMe": {
     "message": "Zapamiętaj mnie"
   },
+  "RememberMeTooltip": {
+    "message": "Zapisuje twoje dane identyfikacyjne między restartami przeglądarki."
+  },
   "AllRegions": {
     "message": "WSZYSTKIE REGIONY"
   },
@@ -394,9 +433,6 @@
   },
   "us_new_york_city": {
     "message": "USA Nowy Jork"
-  },
-  "us_atlanta": {
-    "message": "USA Atlanta"
   },
   "us_atlanta": {
     "message": "USA Atlanta"
@@ -526,5 +562,11 @@
   },
   "lu": {
     "message": "Luksemburg"
+  },
+  "ae": {
+    "message": "Zjednoczone Emiraty Arabskie"
+  },
+  "za": {
+    "message": "Republika Południowej Afryki"
   }
 }

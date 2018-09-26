@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "ご利用のコンピューターについて一般的な情報を提供し、特定のブラウザAPIへのアクセスを防止することにより、ブラウザフィンガープリントから保護します。"
   },
+  "FingerprintProtectionHeader": {
+    "message": "指紋保護設定"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "この設定は追加のプライバシーおよびセキュリティを提供しますが、ウェブサイトが壊れたりブラウザが予期せぬ動作をする原因になる場合があります。変更の完全なリストはこちらからご覧いただけます:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "この機能は推奨されていますが、ユーザーの中には不便性を感じる方もいます。指紋保護を「有効にする」または「無効にする」を選択してください:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "有効にする"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "無効にする"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "この設定はエクステンションにログインした後で、「エクステンション設定」パネルからも変更することができます。"
+  },
   "TrackingProtection": {
     "message": "トラッキング保護"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "デバッグログにメッセージを入力します。「Ctrl」キーを押しながら「d」キーを押してデバッグログを表示します。"
+  },
+  "LogMeOutOnClose": {
+    "message": "ブラウザーを閉じたときにログアウトする"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "ブラウザを開いた後、自動的に再度ログインされません"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "認証情報が記憶されていない（ログイン画面）場合、この設定を制御することはできません"
   },
   "DebugLogIsEmpty": {
     "message": "デバッグログが空です。"
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com、*.hello2.com、*.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* プレフィックスは必須です"
+  },
+  "BypassInstructions": {
+    "message": "（ウェブサイトのすべてのサブドメインをバイパスするため）"
+  },
   "ProxyBypassList": {
     "message": "バイパスリスト"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "オフ"
   },
+  "InvalidImportFileStructure": {
+    "message": "ファイルを読み取れません。有効なファイルを選択してください"
+  },
   "CurrentRegionText": {
     "message": "現在の地域"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "記憶させる"
+  },
+  "RememberMeTooltip": {
+    "message": "ブラウザのリスタート間で認証情報を保存します"
   },
   "AllRegions": {
     "message": "すべての地域"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "ルクセンブルク"
+  },
+  "ae": {
+    "message": "アラブ首長国連邦"
+  },
+  "za": {
+    "message": "南アフリカ"
   }
 }

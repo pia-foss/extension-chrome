@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "提供電腦的普通資料，和防止存取某些瀏覽器的 API，以保護瀏覽器指紋。"
   },
+  "FingerprintProtectionHeader": {
+    "message": "指紋保護設定"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "此設定提供額外隱私及安全保障，但可能會導致部分網站及瀏覽器出現異常。你可以在這裡查看完整的改動清單："
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "此功能建議啟用，不過部份使用者可能會覺得不便。請選擇是否啟用指紋保護："
+  },
+  "FingerprintProtectionEnable": {
+    "message": "啟用"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "停用"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "您也可以在登入擴充功能後，於「擴充功能設定」控制台中變更此設定。"
+  },
   "TrackingProtection": {
     "message": "追蹤防護"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "將訊息寫到錯誤偵測紀錄。按 Ctrl + D 鍵可顯示錯誤偵測紀錄。"
+  },
+  "LogMeOutOnClose": {
+    "message": "瀏覽器關閉時為我登出"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "當您重新開啟瀏覽器時，將不會自動登入"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "如果沒有記住憑證（登入頁面），便無法控制此設定。"
   },
   "DebugLogIsEmpty": {
     "message": "錯誤偵測紀錄目前為空白。"
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com、*.hello2.com、*.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* 字首為必須"
+  },
+  "BypassInstructions": {
+    "message": "繞過某個網站的所有子網域。"
+  },
   "ProxyBypassList": {
     "message": "繞道列表"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "關閉"
   },
+  "InvalidImportFileStructure": {
+    "message": "無法讀取檔案，請選擇有效的檔案"
+  },
   "CurrentRegionText": {
     "message": "目前區域"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "記住我"
+  },
+  "RememberMeTooltip": {
+    "message": "在瀏覽器重新啟動之間儲存您的憑證"
   },
   "AllRegions": {
     "message": "所有地區"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "盧森堡"
+  },
+  "ae": {
+    "message": "阿拉伯聯合大公國"
+  },
+  "za": {
+    "message": "南非"
   }
 }

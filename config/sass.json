@@ -1,19 +1,17 @@
 {
-  "dist": {
-    "options": {
-      "style": "compressed",
-      "trace": true,
-      "unixNewlines": true,
-      "bundleExec": true,
-      "precision": 10,
-      "sourcemap": "none"
-    },
-    "files": [{
+	"options": {
+		"sourceMap": false,
+    "outputSyle": "compressed",
+    "precision": 10,
+    "includePaths": ["node_modules/bootstrap-sass/assets/stylesheets"]
+	},
+	"dist": {
+		"files": [{
       "expand": true,
       "cwd": "./src/scss",
-      "src": ["*.scss"],
+      "src": ["*.scss", "popups/*.scss"],
       "dest": "<%= grunt.config.get('buildpath') %>/css/",
       "ext": ".css"
     }]
-  }
+	}
 }

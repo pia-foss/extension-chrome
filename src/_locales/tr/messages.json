@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Bilgisayarınız hakkında özel olmayan bilgiler sağlayarak ve belirli tarayıcı API'lerine erişilmesini engelleyerek tarayıcı parmak izi çıkarılmasına karşı korunun."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Parmak İzi Koruması Ayarı"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Bu ayar, ekstra gizlilik ve koruma sağlayabilir ancak bazı web sitelerini bozabilir ve tarayıcının beklenenden farklı davranmasına neden olabilir. Değişikliklerin tam listesini buradan bulabilirsiniz:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Bu özellik tavsiye edilmektedir ama bazı kullanıcılar onu uygunsuz bulabilir. Lütfen Parmak İzi Korumasını ya açın ya da kapatın:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Aç"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Kapat"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Bu ayar, uzantıda oturum açtıktan sonra \"Uzantı Ayarları\" panelinden de değiştirilebilir."
+  },
   "TrackingProtection": {
     "message": "İzlenme koruması"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Mesajları hata ayıklama günlüğüne yazın. Hata ayıklama günlüğünü açmak önce 'ctrl' tuşuna ve ardından 'd' tuşuna basın."
+  },
+  "LogMeOutOnClose": {
+    "message": "Tarayıcı kapatıldığında oturumu kapat"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "Tarayıcı tekrar açıldığında oturumunuz otomatik olarak açılmayacak"
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Bu ayar, oturum açma bilgileri hatırlanmadığında (oturum açma ekranı) kontrol edilemez"
   },
   "DebugLogIsEmpty": {
     "message": "Hata ayıklama günlüğü boş."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* ön ek gerekli;"
+  },
+  "BypassInstructions": {
+    "message": "bir web sitesinin tüm alt alanlarını atlamak için."
+  },
   "ProxyBypassList": {
     "message": "Atlama Listesi"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Kapalı"
   },
+  "InvalidImportFileStructure": {
+    "message": "Dosya okunamıyor, lütfen geçerli bir dosya seçin"
+  },
   "CurrentRegionText": {
     "message": "Mevcut Bölge"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "Beni hatırla"
+  },
+  "RememberMeTooltip": {
+    "message": "Tarayıcının kapatılıp yeniden açıldığı aralarda oturum bilgilerinizi kaydedin"
   },
   "AllRegions": {
     "message": "TÜM BÖLGELER"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "Lüksemburg"
+  },
+  "ae": {
+    "message": "Birleşik Arap Emirlikleri"
+  },
+  "za": {
+    "message": "Güney Afrika"
   }
 }

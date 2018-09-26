@@ -1,4 +1,5 @@
 import "babel-polyfill";
+
 import storage            from "util/storage";
 import settings           from "util/settings";
 import icon               from "util/icon";
@@ -8,7 +9,7 @@ import user               from "util/user";
 import bypasslist         from "util/bypasslist";
 import latencytest        from "util/latencytest";
 import buildinfo          from "util/buildinfo";
-import logger             from "util/logger";
+import Logger             from "util/logger";
 import counter            from "util/counter";
 import settingsmanager    from "util/settingsmanager";
 import errorinfo          from "util/errorinfo";
@@ -31,7 +32,7 @@ import BrowserProxy      from "chromesettings/proxy";
 import autofill          from "chromesettings/autofill";
 import eventhandler from "eventhandler/eventhandler";
 
-(new function(window) {
+(function() {
   const self = Object.create(null);
   const deepFreeze = (obj) => {
     if(@@freezeApp) {
@@ -44,7 +45,7 @@ import eventhandler from "eventhandler/eventhandler";
 
   self.frozen = @@freezeApp;
   self.buildinfo    = new buildinfo(self);
-  self.logger       = new logger(self);
+  self.logger       = new Logger(self);
   self.eventhandler = new eventhandler(self);
   window.debug = self.logger.debug; /* eslint-ignore no-unused-vars */
 
@@ -66,6 +67,7 @@ import eventhandler from "eventhandler/eventhandler";
 
   /* self.proxy is a %{browser}Setting like self.chromesettings.* objects are. */
   self.proxy = Object.freeze(BrowserProxy(self));
+  self.util.bypasslist.init();
 
   self.contentsettings = Object.create(null);
   self.contentsettings.camera      = new camera(self);
@@ -73,7 +75,6 @@ import eventhandler from "eventhandler/eventhandler";
   self.contentsettings.location    = new location(self);
   self.contentsettings.flash       = new flash(self);
   self.contentsettings.extensionNotification = new extensionNotification(self);
-  self.contentsettings = deepFreeze(self.contentsettings);
 
   self.chromesettings = Object.create(null);
   self.chromesettings.networkprediction = new networkprediction(self);
@@ -83,24 +84,43 @@ import eventhandler from "eventhandler/eventhandler";
   self.chromesettings.thirdpartycookies = new thirdpartycookies(self);
   self.chromesettings.safebrowsing      = new safebrowsing(self);
   self.chromesettings.autofill          = new autofill(self);
+
+  // Initialize settings
+  const initSettings = (settings) => Object.values(settings)
+    .filter((setting) => setting.init)
+    .forEach((setting) => setting.init());
+
+  initSettings(self.chromesettings);
+  initSettings(self.contentsettings);
+
+  // Freeze settings
+  self.contentsettings = deepFreeze(self.contentsettings);
   self.chromesettings = deepFreeze(self.chromesettings);
 
   (() => {
     const {proxy} = self;
     const {user,settings,regionlist} = self.util;
-    settings.setDefaults();
+    settings.init();
 
-    if(!user.inStorage()) { proxy.disable(); }
+    if(!user.loggedIn) { proxy.disable(); }
     if(!regionlist.synced) { regionlist.sync(); }
 
     proxy.readSettings()
     .then(() => {
       if(!proxy.isControllable()) { return; }
-      if(user.inStorage()) { user.auth().catch(proxy.disable);  }
+      const {loggedIn, logOutOnClose} = user;
+      if (loggedIn) {
+        if (logOutOnClose) {
+          user.logout().catch(proxy.disable);
+        }
+        else {
+          user.auth().catch(proxy.disable);
+        }
+      }
     });
 
     window.app = Object.freeze(self);
     debug("background.js: initialized");
   })();
 
-}(window, document))
+}());
