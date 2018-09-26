@@ -253,8 +253,8 @@ const createInitialSectionInfos = (
         },
         {
           settingID: 'blockhyperlinkaudit',
-          label: t('BlockHyperLinkAuditing'),
-          tooltip: t('BlockHyperLinkAuditingTooltip'),
+          label: t('BlockHyperlinkAuditing'),
+          tooltip: t('BlockHyperlinkAuditingTooltip'),
         },
         {
           settingID: 'blockutm',
