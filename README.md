@@ -1,6 +1,6 @@
 [![PIA logo][pia-image]][pia-url]
 
-README v0.2 / 16 May 2018
+README v0.3 / 25 May 2018
 
 
 # Private Internet Access
@@ -13,7 +13,7 @@ This repo contains all the code needed to build and run the Private Internet Acc
 Please be advised that connecting to a proxy through our extension only protects traffic from that particular browser and not on applications that may be installed on the operating system itself.
 
 
-## Getting started
+## About
 This client allows a user to sign-in to their PIA account and choose a particular proxy server to route all their browser traffic through. The client itself is has additional features such as:
  - Block Adobe flash
  - Block WebRTC IP Detection
@@ -31,7 +31,7 @@ This client allows a user to sign-in to their PIA account and choose a particula
 
 
 ## Usage
-Please start by ensuring that all the requirements in the [Requirements](#requirements) section of this README is installed.
+Please start by ensuring that all the requirements in the [Installation](#installation) section of this README is installed. For more information, please refer to that section.
 
 Building the client is as simple as running the build command:
 
@@ -45,22 +45,17 @@ For Windows users, please set your environment variables using:
 
 The unpacked extension can be installed from the following url in chrome: [chrome://extensions/](chrome://extensions/)
 
-For detailed instructions please refer to the [Installation](#installation) section.
-
 
 ## Installation
-
-
-### Requirements
+#### Requirements
  - Git (latest)
- - Ruby 2.4.4 (2.5.1 not yet supported)
  - NodeJS 8.1.0 or greater
  - Chrome Web Browser (support for the latest two versions)
 
+**Git**  
 Please use these instructions to install Git on your computer if it is not already installed: [Installing Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
 
-We recommend using [rbenv](https://github.com/rbenv/rbenv) to install ruby on MacOS or using the [ruby installer](https://rubyinstaller.org/) for windows. Ruby can be installed on linux using your built in package manager.
-
+**NodeJS**  
 We recommend installing NodeJS via [nvm](https://github.com/creationix/nvm) on MacOS and Linux. On Windows, you can simply use the node installer found [here](https://nodejs.org/en/).
 
 
@@ -78,7 +73,6 @@ Bundle is used when managing Ruby gems. NPM is used when managing node packages.
 
 To install all dependencies the extension needs to build run:
 
-    bundle install
     npm install
 
 
@@ -135,19 +129,39 @@ to the webstore.
   * Click "Load unpacked extension", and choose the path to the build directory.
 
 
-### Testing
-**Ensure that the following environment variables are set before running tests**
-**EXTENSION_ID**
-**TEST_USERNAME**
-**TEST_PASSWORD**
+## Testing
+**Ensure that the following environment variables are set before running tests**  
+**EXTENSION_ID**  
+**TEST_USERNAME**  
+**TEST_PASSWORD**  
 
-There are feature specs written in Ruby ("./spec/features").
-To run these specs, "chromedriver" needs to be installed and available on $PATH.
-On OSX this can be done with:
+
+#### Testing Requirements
+ - Ruby 2.4.4 (2.5.1 not yet supported)
+ - Bundler
+ - ChromeDriver
+
+**Ruby**  
+We recommend using [rbenv](https://github.com/rbenv/rbenv) to install ruby on MacOS or using the [ruby installer](https://rubyinstaller.org/) for windows. Ruby can be installed on linux using your built in package manager.
+
+**ChromeDriver**  
+On MacOS, running this command will install chromedriver:
 
     brew install chromedriver
 
-And then running all the specs:
+On Windows, please use this [link](http://chromedriver.chromium.org/downloads) to install ChromeDriver and ensure that it is on the $PATH variable.
+
+On Linux, please install ChromeDriver using your built in package manager.
+
+**Bundler**  
+Bundler can be install through a Ruby Gem with:
+
+    gem install bundler
+    bundle install
+
+**Running the spec files**  
+There are feature specs written in Ruby ("./spec/features").
+To run all the specs:
 
     rake
 
@@ -162,7 +176,7 @@ that:
     build=debug rspec spec/features/path/to/feature/test
 
 
-### Translations
+## Translations
 
 **Ensure that a `config/oneskyauthfile.json` exist before uploading translations. This file should contain the public and secret keys for your 1sky account**
 **Ensure that the ONESKY_PROJECT_ID environment variable is set**
@@ -178,7 +192,7 @@ Translations for all locales can be downloaded with the following task:
     grunt oneskyExport
 
 
-### Deployment
+## Deployment
 #### Deploying to the Chrome Webstore
 
 **Ensure the `webstore.pem` file exists.**

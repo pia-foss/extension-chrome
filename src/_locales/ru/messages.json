@@ -41,6 +41,24 @@
   "FingerprintProtectionTooltip": {
     "message": "Защититесь от сбора идентификационных данных из браузера, предоставив общую информацию о своем ПК и предотвратив доступ к определенным API браузера."
   },
+  "FingerprintProtectionHeader": {
+    "message": "Настройка защиты отпечатком пальца"
+  },
+  "FingerprintProtectionDisclaimer": {
+    "message": "Этот параметр способен обеспечить дополнительную конфиденциальность и безопасность, однако может конфликтовать с некоторыми веб-сайтами и вызывать непредвиденное поведение браузера. Полный список изменений можно найти здесь:"
+  },
+  "FingerprintProtectionInstructions": {
+    "message": "Рекомендуется использовать эту функцию, но некоторые пользователи могут счесть ее неудобной. Выберите, хотите ли вы включить защиту идентификационных данных отпечатком пальца:"
+  },
+  "FingerprintProtectionEnable": {
+    "message": "Включить"
+  },
+  "FingerprintProtectionDisable": {
+    "message": "Отключить"
+  },
+  "FingerprintProtectionAfterword": {
+    "message": "Этот параметр также можно изменить на панели «Настройки расширения» после входа в расширение."
+  },
   "TrackingProtection": {
     "message": "Защита от отслеживания"
   },
@@ -61,6 +79,15 @@
   },
   "DebugModeTooltip": {
     "message": "Запись сообщений в журнал отладки. Нажмите «ctrl», а затем клавишу «d», чтобы отобразить журнал отладки."
+  },
+  "LogMeOutOnClose": {
+    "message": "Выходить из расширения при закрытии браузера"
+  },
+  "LogMeOutOnCloseTooltip": {
+    "message": "При повторном открытии браузера вход не будет выполняться автоматически."
+  },
+  "LogMeOutOnCloseDisabled": {
+    "message": "Этим параметром нельзя управлять, если не запоминать учетные данные (экран входа)"
   },
   "DebugLogIsEmpty": {
     "message": "Журнал отладки пустой."
@@ -200,6 +227,12 @@
   "BypassListPlaceholder": {
     "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
   },
+  "BypassInstructionsBold": {
+    "message": "* требуется префикс"
+  },
+  "BypassInstructions": {
+    "message": "для обхода всех поддоменов для веб-сайта."
+  },
   "ProxyBypassList": {
     "message": "Список обходов"
   },
@@ -293,6 +326,9 @@
   "OffText": {
     "message": "Выкл."
   },
+  "InvalidImportFileStructure": {
+    "message": "Невозможно прочесть файл, выберите допустимый файл"
+  },
   "CurrentRegionText": {
     "message": "Текущий регион"
   },
@@ -358,6 +394,9 @@
   },
   "RememberMe": {
     "message": "Запомнить меня"
+  },
+  "RememberMeTooltip": {
+    "message": "Сохранение ваших учетных данных между перезапусками браузера"
   },
   "AllRegions": {
     "message": "ВСЕ РЕГИОНЫ"
@@ -523,5 +562,11 @@
   },
   "lu": {
     "message": "Люксембург"
+  },
+  "ae": {
+    "message": "ОАЭ"
+  },
+  "za": {
+    "message": "ЮАР"
   }
 }

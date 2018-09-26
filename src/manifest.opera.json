@@ -24,6 +24,7 @@
     "privacy",
     "contentSettings",
     "alarms",
+    "downloads",
     "<all_urls>"
   ],
   "content_scripts": [

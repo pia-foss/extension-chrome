@@ -16,20 +16,20 @@ const {build, freezeApp, audience, browser} = process.env; // eslint-disable-lin
 // helper functions
 const stringify = (s) => {
   return typeof(s) === "string" ? s : JSON.stringify(s);
-}
+};
 
 const info = (s) => {
   echomd(`${color.yellow("INFO")}: ${stringify(s)}`);
-}
+};
 
 const ok = (s) => {
   echomd(`${color.green("OK")}: ${stringify(s)}`);
-}
+};
 
 const panic = (s) => {
   echomd(`${color.red("PANIC")}: ${stringify(s)}`);
   process.exit(1); // eslint-disable-line no-process-exit
-}
+};
 
 const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') => {
   return new Promise((resolve, reject) => {
@@ -44,8 +44,8 @@ const sendToSlack = (text, channels=['#qa-extension'], iconEmoji='robot_face') =
         }).finally(resolve);
       });
     }
-  })
-}
+  });
+};
 
 
 module.exports = function(grunt) {
@@ -57,8 +57,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-gitinfo');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-babel');
-  grunt.loadNpmTasks('grunt-bowercopy');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
@@ -79,10 +78,10 @@ module.exports = function(grunt) {
     let tasks = [];
     switch(build) {
       case "debug":
-        tasks = ["env:debug", "config:debug", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
+        tasks = ["env:debug", "config:debug", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
         break;
       case "webstore":
-        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "bowercopy", "sass", "browserify", "uglify", "copyfiles",
+        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "uglify", "copyfiles",
                      "purifycss", "cssmin", "changelog", "htmlmin", "removeartifacts"];
         break;
       default:
@@ -93,23 +92,23 @@ module.exports = function(grunt) {
 
   grunt.registerTask("default", "build");
 
-  grunt.registerTask("release", ["setreleaseenv", "build", "createzip", "compress"]);
+  grunt.registerTask("release", ["setreleaseenv", "build", "createzip", "compress", "webstorepublish"]);
 
-  grunt.freezeApp = () => { return freezeApp !== "0"; }
+  grunt.freezeApp = () => { return freezeApp !== "0"; };
 
   grunt.getCommit = () => {
     if(["yes", "1", "true"].includes(gitinfo)) {
       return grunt.config.get('gitinfo').local.branch.current.SHA;
     }
-  }
+  };
 
   grunt.getBranch = () => {
     if(["yes", "1", "true"].includes(gitinfo)) {
       return grunt.config.get('gitinfo').local.branch.current.name;
     }
-  }
+  };
 
-  grunt.zipName = () => { return getZipPath(build); }
+  grunt.zipName = () => { return getZipPath(build); };
 
   grunt.registerTask("setreleaseenv", "Set release env vars", () => {
     const empty = (s) => !s || (s.trim && s.trim().length === 0);
@@ -128,22 +127,22 @@ module.exports = function(grunt) {
       if(audience === "internal")
         return `New extension *v${pkgVersion}* published for *testers*.\n` +
                `URL: ${webstoreURL}\n` +
-               `It can take up to 15 minutes to become available on the store.`
+               `It can take up to 15 minutes to become available on the store.`;
       else
         return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
                `URL: ${webstoreURL}\n` +
-               `It can take up to 15 minutes to become available on the store.`
+               `It can take up to 15 minutes to become available on the store.`;
     };
 
     const pendingAnnoucement = (audience, webstoreURL) => {
       if(audience === "internal")
         return `New extension *v${pkgVersion}* published for *testers*\n` +
                `URL: ${webstoreURL}\n` +
-               `It will be available on store after review, which can take up to 60 minutes.`
+               `It will be available on store after review, which can take up to 60 minutes.`;
       else
         return `New extension *v${pkgVersion}* published for *all PIA users*.\n` +
                `URL: ${webstoreURL}\n` +
-               `It will be available on store after review, which can take up to 60 minutes.`
+               `It will be available on store after review, which can take up to 60 minutes.`;
     };
 
     const confirmPublish  = (res) => {
@@ -233,9 +232,9 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask("removeartifacts", "Remove artifacts created during the build process.", () => {
-    fs.removeSync('src/scss/vendored');
     fs.removeSync('src/js/templates');
     fs.removeSync('src/js/component');
+    fs.removeSync('src/js/hoc');
     fs.removeSync('tmp/');
   });
-}
+};

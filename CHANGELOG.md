@@ -1,5 +1,122 @@
 __HEAD__
 
+__v1.7.0__
+
+* Public Release for v1.7.0
+
+__v1.6.26__
+
+* Fixed translation for hyperlink auditing setting
+* Fixed style break out in the region selection area
+
+__v1.6.25__
+
+* Fixed chrome upgrade page closing window
+
+__v1.7.0-beta__
+
+* Updated Translations
+
+__v1.6.24__
+
+* Updated Error handling to open close popup windows
+
+__v1.6.23__
+
+* Fixed issue where user couldn't import bypass file after changing contents
+
+__v1.6.22__
+
+* Fixed a styling issue with "Remember me" tooltip misplaced during login error.
+
+__v1.6.21__
+
+* Fixed settings not being initialized properly
+
+__v1.6.20__
+
+* Fixed bug where remember me tooltip was not showing on hover
+
+__v1.6.19__
+
+* Fixed visual bug with popover on extension settings
+
+* Updated Changelog to have consistent phrasing
+
+__v1.6.18__
+
+* Fixed bug on Windows where foreground would not close when losing focus
+
+__v1.6.17__
+
+* Updated NPM build script to include automated packaging
+
+* Updated the Bypass list custom rule instructions and placeholder
+
+__v1.6.16__
+
+* Fixed bug where foreground would not close on Windows 10
+
+__v1.6.15__
+
+* Added error messages to import popup if file is invalid
+
+__v1.6.14__
+
+* Added linting for airbnb style guide
+
+__v1.6.13__
+
+* Fixed components breaking out of parent styling
+
+__v1.6.12__
+
+* Added tooltip to remember me checkbox
+
+__v1.6.11__
+
+* Updated remember me checkbox design
+
+__v1.6.10__
+
+* Added "Log me out on browser close" setting
+
+__v1.6.9__
+
+* Debounced proxy button to avoid crashing browser
+
+__v1.6.8__
+
+* Fixed bug where extension automatically attempted to log user in
+
+__v1.6.7__
+
+* Added try/catch along code base to catch any 'dead object' errors that hang the UI
+
+__v1.6.6__
+
+* Fixed a bug where localStorage was not being cleared by unchecking "remember me"
+
+__v1.6.5__
+
+* Centered add button on bypass list
+
+__v1.6.4__
+
+* Routed Latency checks through HTTPS
+
+__v1.6.3__
+
+* Added import/export feature for bypass list
+
+__v1.6.2__
+
+* Updated project dependencies
+
+__v1.6.1__
+
+ * Updated Region selection/favorite tab design
+
 __v1.6.0__
 
 * Update region translations
@@ -8,13 +125,13 @@ __v1.6.0__
 
 __v1.5.11__
 
-* Update Helpdesk links
+* Updated Helpdesk links
 
-* Update translations for new Berlin region.
+* Updated translations for new Berlin region.
 
 __v1.5.10__
 
-* Update translations for Washington DC region.
+* Updated translations for Washington DC region.
 
 __v1.5.9__
 

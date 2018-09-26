@@ -4,7 +4,6 @@ builds/
 zips/
 src/js/react_component/*.js
 src/js/component/
-src/scss/vendored/
 .sass-cache/
 .DS_Store
 todo.txt

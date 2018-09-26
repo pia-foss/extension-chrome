@@ -7,7 +7,6 @@ module.exports = {
   cssmin: require("./cssmin.json"),
   htmlmin: require("./htmlmin.json"),
   eslint: require("./eslint.json"),
-  bowercopy: require("./bowercopy.json"),
   oneskyExport: require("./oneskyexport"),
   oneskyImport: require("./oneskyimport"),
   env: require("./env.json"),
