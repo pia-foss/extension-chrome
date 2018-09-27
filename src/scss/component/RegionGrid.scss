@@ -1,0 +1,12 @@
+#region-grid {
+  max-height: 350px;
+  min-height: 350px;
+  overflow-y: auto;
+
+  .regionrow {
+    display: flex;
+    margin: 0;
+
+    &:last-child { margin-bottom: 10px; }
+  }
+}

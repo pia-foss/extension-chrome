@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Too many failed login attempts. Try again later."
   },
+  "UnknownError": {
+    "message": "Unknown error has occured."
+  },
   "CopyToClipboard": {
     "message": "Copy Debug Log"
   },
@@ -332,6 +335,9 @@
   "CurrentRegionText": {
     "message": "Current Region"
   },
+  "NoRegionSelected": {
+    "message": "No Region Selected"
+  },
   "ChangeExtensionSettings": {
     "message": "Extension Settings"
   },
@@ -380,6 +386,9 @@
   "ConnectionFailMessage": {
     "message": "You might have lost connectivity to the internet, your connection might have been temporarily interrupted, or the Private Internet Access server you are connecting to might have connectivity issues."
   },
+  "NoNetworkConnection": {
+    "message": "No Network Connection"
+  },
   "YouAreConnectedTo": {
     "message": "You are connected to %{region}"
   },
@@ -392,6 +401,9 @@
   "disabled": {
     "message": "disabled"
   },
+  "unavailable": {
+    "message": "unavailable"
+  },
   "RememberMe": {
     "message": "Remember me"
   },
@@ -403,6 +415,12 @@
   },
   "FavoriteRegions": {
     "message": "FAVORITE REGIONS"
+  },
+  "NoRegionsFound": {
+    "message": "No Regions Found"
+  },
+  "RefreshRegions": {
+    "message": "Refresh Regions"
   },
   "us_california": {
     "message": "US California"

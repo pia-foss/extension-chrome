@@ -1,56 +1,80 @@
-export default function(app) {
-  const self         = this,
-        latencytest  = app.util.latencytest,
-        allRegionsAreOffline = (regions) => {
-          return regions.every((region) => region.offline)
-        },
-        setRegionState = (region, avgLatency) => {
-          if(avgLatency === "error" || avgLatency > 3500) {
-            region.offline = true
-            region.latency = 50000
-            debug(`regionsorter.js: '${region.name.toLowerCase()}' offline.`)
-          } else {
-            region.offline = false
-            region.latency = avgLatency
-          }
-        },
-        finished = (resolver, regions) => {
-          if(latencytest.testCount === 0) {
-            if(allRegionsAreOffline(regions))
-              self.nameSort(regions).then((regions) => resolver(regions))
-            else
-              resolver(regions.sort((a,b) => { return a.latency - b.latency }))
-            debug("regionsorter.js: finished latency test.")
-            return true
-          }
-        }
+export default function (app) {
+  let inProgressPromise;
+  const self = this;
+  const { latencytest } = app.util;
 
-  let inProgressPromise
+  const allRegionsAreOffline = (regions) => {
+    return regions.every((region) => { return region.offline; });
+  };
+
+  const setRegionState = (regionParam, avgLatency) => {
+    const region = regionParam;
+    if (avgLatency === 'error' || avgLatency > 3500) {
+      region.offline = true;
+      region.latency = 50000;
+      debug(`regionsorter.js: '${region.name.toLowerCase()}' offline.`);
+    }
+    else {
+      region.offline = false;
+      region.latency = avgLatency;
+    }
+  };
+
+  const finished = (resolve, regions) => {
+    if (latencytest.testCount === 0) {
+      if (allRegionsAreOffline(regions)) {
+        self.nameSort(regions).then((sortedRegions) => { return resolve(sortedRegions); });
+      }
+      else {
+        resolve(regions.sort((a, b) => { return a.latency - b.latency; }));
+      }
+      debug('regionsorter.js: finished latency test.');
+      return true;
+    }
+
+    return false;
+  };
 
   self.nameSort = (regions) => {
-    return new Promise((resolver) => {
-      resolver(regions.sort((a, b) => a.name.localeCompare(b.name)))
-    })
-  }
+    return new Promise((resolve) => {
+      const regionsSortedByName = regions.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+      return resolve(regionsSortedByName);
+    });
+  };
 
   self.latencySort = (regions) => {
-    inProgressPromise = inProgressPromise || new Promise((resolver) => {
-      let curpos        = 0,
-          concurrency   = 12, /* The number of tests to run concurrently. */
-          receiveResult = (res) => {
-            const {region,latencyAvg} = res
-            setRegionState(region, latencyAvg)
-            curpos++
-            if(finished(resolver, regions))
-              inProgressPromise = undefined
-            else
-              regions[curpos] && latencytest.start(regions[curpos]).then(receiveResult)
-          }
-      for(let i = 0; i < concurrency; i++)
-        latencytest.start(regions[i]).then(receiveResult)
-    })
-    return inProgressPromise
-  }
+    // return empty array if regions are empty or undefined
+    if (!regions || regions.length === 0) { return Promise.resolve([]); }
 
-  return self
+    // return current promise if already exists
+    if (inProgressPromise) { return inProgressPromise; }
+
+    // set new promise with latency tests to inProgressPromise
+    inProgressPromise = new Promise((resolve) => {
+      let curpos = 0;
+      const maxConcurrency = 12; /* The number of tests to run concurrently. */
+
+      const receiveResult = (res) => {
+        const { region, latencyAvg } = res;
+        setRegionState(region, latencyAvg);
+        curpos += 1;
+
+        if (finished(resolve, regions)) { inProgressPromise = undefined; }
+        else if (regions[curpos]) {
+          latencytest.start(regions[curpos]).then(receiveResult);
+        }
+      };
+
+      for (let i = 0; i < maxConcurrency; i++) {
+        latencytest.start(regions[i]).then(receiveResult);
+      }
+    });
+
+    // return promise
+    return inProgressPromise;
+  };
+
+  return self;
 }

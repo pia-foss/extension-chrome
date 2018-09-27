@@ -1,18 +1,6 @@
 #debuglog-template {
   max-height: 580px;
 
-  .dlcopybtn {
-    padding: 15px 5px 15px 25px;
-
-    .btn { font-size: 13px; }
-  }
-
-  .dldeletebtn {
-    padding: 15px 25px 15px 5px;
-
-    .btn { font-size: 13px; }
-  }
-
   .emptytext {
     margin-top: 60px;
     color: #999;
@@ -21,7 +9,7 @@
   .still-loading {
     padding: 10px 65px;
     margin-top: 20px;
-    text-align:center;
+    text-align: center;
   }
 
   ul {

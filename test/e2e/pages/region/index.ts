@@ -25,7 +25,7 @@ class RegionPage extends PageObject {
     this.sort = new Dropdown(
       {
         selector: createSelector({
-          value: '.region-sorter-dropdown',
+          value: '#region-sorter-dropdown',
         }),
         name: 'region sort',
       },

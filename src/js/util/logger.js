@@ -4,7 +4,7 @@ export default class Logger {
     this.entries = [];
     this.MAX_LOG_SIZE = 200;
     this.listeners = new Map([
-      ['NewMessage', []]
+      ['NewMessage', []],
     ]);
 
     // bindings
@@ -16,7 +16,7 @@ export default class Logger {
     this.stringify = this.stringify.bind(this);
   }
 
-  debug (message, condition) {
+  debug(message, condition) {
     if (this.app.util.settings.getItem('debugmode') && (!condition || condition())) {
       // remove extraneous entries
       while (this.entries.length >= this.MAX_LOG_SIZE) { this.entries.shift(); }
@@ -40,28 +40,28 @@ export default class Logger {
     return message;
   }
 
-  getEntries () {
+  getEntries() {
     return Array.from(this.entries).reverse();
   }
 
-  removeEntries () {
+  removeEntries() {
     this.entries = [];
   }
 
-  addEventListener (event, listener) {
+  addEventListener(event, listener) {
     this.listeners.get(event).push(listener);
   }
 
-  removeEventListener (event, listener) {
+  removeEventListener(event, listener) {
     const currentListeners = this.listeners.get(event);
-    let filteredListeners = currentListeners.filter((item) => {
+    const filteredListeners = currentListeners.filter((item) => {
       return item !== listener;
     });
     this.listeners.set(event, filteredListeners);
   }
 
-  stringify (message) {
-    if(typeof(message) === 'string') { return message; }
-    else { return JSON.stringify(message); }
+  stringify(message) {
+    if (typeof (message) === 'string') { return message; }
+    return JSON.stringify(message);
   }
 }

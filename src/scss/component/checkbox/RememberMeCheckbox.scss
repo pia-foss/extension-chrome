@@ -1,0 +1,12 @@
+.remember-me-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  position: relative;
+
+  > label {
+    font-weight: normal;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+.status-text {
+  .status-title {
+    margin-top: 30px;
+    color: #C7C8CA;
+    font-size: .9em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .status {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &.enabled { color: $green; }
+    &.disabled { color: $orange; }
+    &.unavailable { color: #29ABE2; }
+  }
+}

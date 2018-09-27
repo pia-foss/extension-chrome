@@ -92,31 +92,6 @@ class BypassPage extends PageObject {
       this,
     );
   }
-
-  // getNthRuleName(num) {
-  //   const selector = [
-  //     this.buildNthRuleSelector(num),
-  //     '.name',
-  //   ].join(' ');
-
-  //   return this.getText(selector);
-  // }
-
-  // removeNthRule(num) {
-  //   const selector = [
-  //     this.buildNthRuleSelector(num),
-  //     '.rem',
-  //   ].join(' ');
-
-  //   this.click(selector);
-  // }
-
-  // buildNthRuleSelector(num) {
-  //   return [
-  //     foreground.sections.bypasslist.selector,
-  //     `.otherbypassitem:nth-child(${num})`,
-  //   ].join(' ');
-  // }
 }
 
 export { BypassPage };

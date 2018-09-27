@@ -30,7 +30,7 @@ class OfflineWarning extends Component {
     return (
       offline ? (
         <div className="offline-warning">
-          No Network Connection
+          { t('NoNetworkConnection') }
         </div>
       ) : ''
     );

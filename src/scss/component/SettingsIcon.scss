@@ -1,0 +1,19 @@
+.settings-icon {
+  background-image: url('/images/settings_2x.png');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: 0px 0px;
+  width: 30px;
+  height: 30px;
+  float: left;
+
+  &:hover {
+    cursor: pointer;
+    background-position: 0px -30px;
+  }
+
+  &:active {
+    cursor: pointer;
+    background-position: 0px -30px;
+  }
+}

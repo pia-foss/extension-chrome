@@ -1,48 +1,46 @@
-import React                  from "react";
-import ReactDOM               from "react-dom";
-import LoginTemplate          from 'templates/logintemplate';
-import AuthenticatedTemplate  from 'templates/authenticatedtemplate';
-import ChangeRegionTemplate   from 'templates/changeregiontemplate';
-import SettingsTemplate       from 'templates/settingstemplate';
-import ChromeUpgradeTemplate  from 'templates/chromeupgradetemplate';
-import PleaseWaitTemplate     from 'templates/pleasewaittemplate';
-import UncontrollableTemplate from 'templates/uncontrollabletemplate';
-import ChangelogTemplate      from 'templates/changelogtemplate';
-import DebugLogTemplate       from 'templates/debuglogtemplate';
-import BypassListTemplate     from 'templates/bypasslisttemplate';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import LoginTemplate from 'templates/LoginTemplate';
+import AuthenticatedTemplate from 'templates/AuthenticatedTemplate';
+import ChangeRegionTemplate from 'templates/ChangeRegionTemplate';
+import SettingsTemplate from 'templates/SettingsTemplate';
+import ChromeUpgradeTemplate from 'templates/ChromeUpgradeTemplate';
+import PleaseWaitTemplate from 'templates/PleaseWaitTemplate';
+import UncontrollableTemplate from 'templates/UncontrollableTemplate';
+import ChangelogTemplate from 'templates/ChangeLogTemplate';
+import DebugLogTemplate from 'templates/DebugLogTemplate';
+import BypassListTemplate from 'templates/BypassListTemplate';
 
 export default class Renderer {
-  constructor(app, window, document) {
-    // TODO: remove ref to React when components are more stable
-    this.react = React;
-    this.currentTemplate  = undefined;
+  constructor() {
+    this.currentTemplate = undefined;
     this.previousTemplate = undefined;
     this.templates = {
-      "login":           () => LoginTemplate(this, app, window, document),
-      "authenticated":   () => AuthenticatedTemplate(this, app, window, document),
-      "change_region":   () => ChangeRegionTemplate(this, app, window, document),
-      "settings":        () => SettingsTemplate(this, app, window, document),
-      "upgrade_chrome":  () => ChromeUpgradeTemplate(this, app, window, document),
-      "please_wait":     () => PleaseWaitTemplate(this, app, window, document),
-      "uncontrollable":  () => UncontrollableTemplate(this, app, window, document),
-      "changelog":       () => ChangelogTemplate(this, app, window, document),
-      "debuglog":        () => DebugLogTemplate(this, app, window, document),
-      "bypasslist":      () => BypassListTemplate(this, app, window, document)
+      login: () => { return LoginTemplate(); },
+      authenticated: () => { return AuthenticatedTemplate(); },
+      change_region: () => { return ChangeRegionTemplate(); },
+      settings: () => { return SettingsTemplate(); },
+      upgrade_chrome: () => { return ChromeUpgradeTemplate(); },
+      please_wait: () => { return PleaseWaitTemplate(); },
+      uncontrollable: () => { return UncontrollableTemplate(); },
+      changelog: () => { return ChangelogTemplate(); },
+      debuglog: () => { return DebugLogTemplate(); },
+      bypasslist: () => { return BypassListTemplate(); },
     };
 
     // bindings
     this.renderTemplate = this.renderTemplate.bind(this);
   }
 
-  renderTemplate (templateName, customNode) {
+  renderTemplate(templateName, customNode) {
     try {
       const template = this.templates[templateName];
 
-      if(template) {
+      if (template) {
         this.previousTemplate = this.currentTemplate;
-        this.currentTemplate  = templateName;
-        customNode = customNode || document.getElementById("template-content");
-        ReactDOM.render(React.createElement(template()), customNode);
+        this.currentTemplate = templateName;
+        const newNode = customNode || document.getElementById('template-content');
+        ReactDOM.render(React.createElement(template()), newNode);
       }
     }
     /**
