@@ -1,0 +1,32 @@
+#login {
+  overflow: auto;
+  margin: 15px 0px 10px 0px;
+
+  .text-danger {
+    border: 1px solid #ea6105;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    background: #FCF2E9;
+    background-image: url('../images/settings_warning_2x.png');
+    background-size: 20px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+    padding: 13px 25px 14px 50px;
+    color: #EA6105;
+    font-size: 11px;
+  }
+
+  .hidden { display: none; }
+
+  .form-control:focus { box-shadow: none; }
+
+  #submit-form-button {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .resetpw {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}

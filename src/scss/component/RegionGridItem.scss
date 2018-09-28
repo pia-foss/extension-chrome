@@ -1,0 +1,66 @@
+.regionbox {
+  flex: 1;
+  max-width:43%;
+  margin: 20px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: -5px;
+  cursor: pointer;
+
+  &:nth-child(even) { margin-left: -5px; }
+
+  &:hover { border: 2px solid #39b54a; }
+
+  &.active {
+    border: 2px solid #39b54a;
+
+    &:before {
+      width: 35px;
+      height: 35px;
+      content: "";
+      display: block;
+      background: url('../images/selected_2x.png') no-repeat;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-size: contain;
+    }
+  }
+
+  .regionwrapper {
+    padding: 15px 0px;
+
+    .heart {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 20px;
+      height: 17px;
+      z-index: 10;
+    }
+
+    .flag {
+      float: left;
+
+      img {
+        height: 40px;
+        border: 1px solid #ddd;
+      }
+    }
+
+    .name {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .grid-item-latency {
+      color: #999;
+      font-size: 11px;
+      margin-top: -12px;
+      margin-bottom: 10px;
+    }
+
+    .server-offline-text { margin-top: -12px; }
+  }
+}

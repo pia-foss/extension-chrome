@@ -30,7 +30,7 @@
   "settings" : {
     "import/resolver": {
       "node": {
-          "paths": ["./src/js"]
+          "paths": ["./src/js", "./src/jsx"]
         }
     }
   },

@@ -4,8 +4,10 @@ import initOnError from 'eventhandler/onerror';
 import { sendMessage, Target, Type } from './helpers/messaging';
 
 // get background app and renderer
-const { app } = chrome.extension.getBackgroundPage();
-const renderer = new Renderer(app, window, document);
+const background = chrome.extension.getBackgroundPage();
+const { app } = background;
+const renderer = new Renderer();
+background.renderer = renderer;
 
 // setup global bindings
 window.debug = app.logger.debug;
@@ -60,11 +62,8 @@ new Promise((resolve) => {
   .then(() => { renderer.renderTemplate('please_wait'); })
   // check if regions need to be synched
   .then(() => {
-    let regionPromise;
     const { regionlist } = app.util;
-    if (regionlist.hasRegions()) { regionPromise = Promise.resolve(); }
-    else { regionPromise = regionlist.sync(); }
-    return regionPromise;
+    if (!regionlist.hasRegions()) { regionlist.sync(); }
   })
   // check proxy settings loaded
   .then(() => {
@@ -82,12 +81,10 @@ new Promise((resolve) => {
   })
   // render view
   .then(([controllable, needsUpgrade]) => {
-    const { regionlist } = app.util;
-    const hasRegions = regionlist.hasRegions();
     /* NOTE: port controllable handling to firefox */
     if (!controllable) { renderer.renderTemplate('uncontrollable'); }
     else if (needsUpgrade) { renderer.renderTemplate('upgrade_chrome'); }
-    else if (app.util.user.loggedIn && hasRegions) { renderer.renderTemplate('authenticated'); }
+    else if (app.util.user.loggedIn) { renderer.renderTemplate('authenticated'); }
     else { app.proxy.disable().then(() => { return renderer.renderTemplate('login'); }); }
   })
   // send frontend started message

@@ -1,0 +1,55 @@
+.regionfilter {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  margin: 0px;
+
+  #list-icon {
+    background-image: url('/images/list_icon_2x.png');
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: center 0px;
+    background-color: #fff;
+    width: 38px;
+    height: 33px;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+      background-position: center -31px;
+    }
+
+    &.active {
+      cursor: pointer;
+      background-position: center -62px;
+      border: 1px solid #39b54a;
+    }
+  }
+
+  #grid-icon {
+    background-image: url('/images/grid_icon_2x.png');
+    background-repeat: no-repeat;
+    background-size: 38px;
+    background-position: center 0px;
+    background-color: #fff;
+    width: 38px;
+    height: 33px;
+    float: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-left: -1px;
+
+    &:hover {
+      cursor: pointer;
+      background-position: center -31px;
+    }
+
+    &.active {
+      cursor: pointer;
+      background-position: center -62px;
+      border: 1px solid #39b54a;
+    }
+  }
+}

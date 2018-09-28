@@ -1,0 +1,87 @@
+.sectionwrapper {
+  background: #f9f9f9;
+
+  &:hover {
+    .firstfield .settingheader .rightalign .expandicon { background-position: -20px 0px; }
+    .firstfield .settingheader .rightalign .counts { color: #555; }
+  }
+
+  &.open {
+    &:hover .firstfield .settingheader .rightalign .expandicon { background-position: 0px 0px; }
+
+    .firstfield .settingheader .rightalign .expandicon {
+      background-position: 0px 0px;
+      &:hover { background-position: 0px 0px; }
+    }
+
+    .SettingItemContainer{
+      height: auto;
+      overflow: visible;
+    }
+  }
+
+  &:hover, &.open { color: #5cb85c; }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .firstfield {
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    padding: 10px 5px;
+    float: left;
+    width: 100%;
+    background: #fff;
+    margin:-1px;
+    cursor:pointer;
+    outline: none;
+
+    .settingheader {
+      margin-top: 0px;
+      float: left;
+      width: 100%;
+      padding: 0px 15px;
+      font-weight: 500;
+      font-size: 13px;
+
+      &.settingblock { padding: 0 15px; }
+
+      .sectiontitle { pointer-events: none; }
+
+      .rightalign {
+        float: right;
+
+        .counts {
+          color: #A9A9A9;
+          font-weight: normal;
+          font-size: 12px;
+          margin-right: 10px;
+        }
+
+        .expandicon {
+          width: 15px;
+          height: 10px;
+          background-image: url('../images/expand_2x.png');
+          background-size: 35px;
+          background-position: -20px -15px;
+          display: inline-block;
+          float: right;
+          margin-top: 5px;
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.field { padding: 10px 5px; }
+  }
+
+  .SettingItemContainer {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 0px;
+  }
+}

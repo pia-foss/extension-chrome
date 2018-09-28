@@ -1,0 +1,49 @@
+.region-list-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+
+  &:first-child { border-top: 0; }
+
+  &.active {
+    background-color: $blue;
+    border-color: $blue;
+
+    .list-item-latency, .server-offline-text { color: #fff !important; }
+  }
+
+  .heart-container {
+    outline: none;
+
+    .heart {
+      width: 20px;
+      height: 17px;
+      margin-right: 10px;
+    }
+  }
+
+  .flag {
+    height: 24px;
+    width: 40px;
+    margin: 0px 10px 0px 0px;
+    border: 1px solid #ddd;
+  }
+
+  .regionnamelist {
+    max-width: 200px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .list-item-latency {
+    display: inline-block;
+    float: right;
+    font-size: 11px;
+    color: #999;
+    line-height: 2;
+    text-align: right;
+    width: 55px;
+  }
+}

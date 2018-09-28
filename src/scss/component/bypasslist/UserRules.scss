@@ -1,0 +1,69 @@
+.user-rules {
+  .add-container {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+
+    .add-rule-input{
+      margin: 0 auto;
+      width: 100%;
+      height: 35px;
+      padding: 5px 10px;
+      font-size: 13px;
+      border: 1px solid #D2D0D2;
+      outline: none;
+      border-radius: 3px;
+
+      &:disabled { background-color: #ddd; }
+      &:hover, &:focus { border: 1px solid #bbbbbb; }
+    }
+
+    .add-rule-btn {
+      width: 36px;
+      height: 32px;
+      border-radius: 100px;
+      background-color: #67C069;
+      border: 0;
+      color: #fff;
+      font-size: 21px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px 0 15px;
+
+      &:disabled, &:hover:disabled { background-color: #ddd; }
+
+      &:hover, &:active, &focus {
+        outline: none;
+        background: #53AA52;
+      }
+
+      > p {
+        pointer-events: none;
+        margin: 0;
+      }
+    }
+  }
+
+  .rule-list {
+    padding: 5px 10px 10px 10px;
+    font-size: 13px;
+    border: 1px solid #D2D0D2;
+    border-radius: 3px;
+    outline: none;
+    height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 10px;
+
+    &.disabled { background-color: #ddd; }
+
+    hr {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: 0;
+      border-top: 1px solid #eee;
+      opacity: .5;
+    }
+  }
+}

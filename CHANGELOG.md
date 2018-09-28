@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.7__
+
+* Full Offline support for regions
+
 __v1.7.6__
 
 * Fixed style issue on region sorter

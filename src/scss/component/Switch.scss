@@ -1,39 +1,18 @@
-.switch-container {
-    text-align: center;
-}
-
-/*
-.switch-container {
-  display: block;
-  width: 80px;
-  height: 40px;
-  background-color: red;
-  border-radius: 16px;
-
-  .knob {
-    width: 32px;
-    height: 32px;
-    background-color: white;
-    z-index: 100;
-  }
-}
-*/
-
 $switch-width: 100px;//53px;
 $switch-height: 50px;//31px;
 $switch-thumb-diameter: $switch-height - 8px;
-
 $switch-off-color: #D3382D;
 $switch-on-color: #29CC41;
 $switch-disabled-color: #29ABE2;
 
-.switch {
+.switch-container {
+  text-align: center;
+
+  .switch {
     box-sizing: border-box;
     width: $switch-width;
     height: $switch-height;
     -webkit-appearance: none;
-    //@include appearance(none);
-    //@include size(51px 31px);
     position: relative;
     border-radius: $switch-height / 2;
     cursor: pointer;
@@ -44,124 +23,68 @@ $switch-disabled-color: #29ABE2;
     border: none;
     background-color: $switch-off-color;
     text-transform: uppercase;
-    //@include transition-duration(600ms);
-    //@include transition-timing-function(ease-in-out);
-
     transition-duration: 500ms;
-
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-user-select: none;
 
-    // Background
-    /*&::before {
-        //@include box-sizing(border-box);
-        box-sizing: border-box;
-        //@include size(47px 27px);
-        width: 47px;
-        height: 27px;
-        content: ' ';
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        background-color: blue;
-        border-radius: 16px;
-        z-index: 1;
-        //@include transition-duration(300ms);
-        //@include transform(scale(1));
-    }*/
-
     // Thumb
     &::after {
-        //@include box-sizing(border-box);
-        //@include size(27px);
-        width: $switch-thumb-diameter;
-        height: $switch-thumb-diameter;
-        color: white;
-        text-indent: 3.25em;
-        line-height: $switch-thumb-diameter;
-        font-size: 16px;
-        position: absolute;
-        border-radius: $switch-thumb-diameter;
-        background: white;
-        z-index: 2;
-        top: 4px;
-        left: 4px;
-        /*
-        box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25),
-                    0px 4px 11px 0px rgba(0,0,0,0.08),
-                    -1px 3px 3px 0px rgba(0,0,0,0.14);
-        */
-        //@include transition(transform 300ms, width 280ms);
-        //@include transform(translate3d(0, 0, 0));
-        //@include transition-timing-function(cubic-bezier(0.42, 0.800, 0.58, 1.2));
-
-        transition-duration: 250ms;
-        //-webkit-transition: transform 300ms, width 280ms;
-        //-webkit-transform: translate3d(0, 0, 0);
-        //transition-timing-function: cubic-bezier(0.42, 0.800, 0.58, 1.2);
+      content: 'OFF';
+      width: $switch-thumb-diameter;
+      height: $switch-thumb-diameter;
+      color: white;
+      text-indent: 3.25em;
+      line-height: $switch-thumb-diameter;
+      font-size: 16px;
+      position: absolute;
+      border-radius: $switch-thumb-diameter;
+      background: white;
+      z-index: 2;
+      top: 4px;
+      left: 4px;
+      transition-duration: 250ms;
     }
 
     // Background tint for ON state
-    &:checked {
-        //@include linear-gradient(-180deg, $uiswitch-on-tint-start 0%, $uiswitch-on-tint-end 100%);
-        background-color: $switch-on-color;
-    }
+    &:checked { background-color: $switch-on-color; }
 
     // Thumb for ON state
     &:checked::after {
-        //@include transform(translate3d(16px, 0, 0));
-        -webkit-transform: translate3d(16px, 0, 0);
-        right: 20px;
-        left: inherit;
-        text-indent: -2.25em;
+      content: 'ON';
+      -webkit-transform: translate3d(16px, 0, 0);
+      right: 20px;
+      left: inherit;
+      text-indent: -2.25em;
     }
 
     // Thumb for active state
-    &:active::after {
-        //width: 35px;
-        width: $switch-height;
-    }
-
+    &:active::after { width: $switch-height; }
     &:checked::before,
-    &:active::before {
-        //@include transform(scale(0));
-        -webkit-transform: scale(0);
-    }
+    &:active::before { -webkit-transform: scale(0); }
 
     // Disabled
     &:disabled {
-        //opacity: 0.5;
-        cursor: default;
-        //@include transition(none);
-        -webkit-transition: none;
-        background-color: $switch-disabled-color;
+      cursor: default;
+      -webkit-transition: none;
+      background-color: $switch-disabled-color;
 
-        &:active::before,
-        &:active::after,
-        &:checked:active::before,
-        &:checked::before {
-            //width: 27px;
-            //-webkit-transform: translate3d(32px, 0, 0);
-            //@include transition(none);
-            -webkit-transition: none;
-        }
+      &:active::before,
+      &:active::after,
+      &:checked:active::before,
+      &:checked::before { -webkit-transition: none; }
 
-        // Thumb for ON state
-        //&:checked::after {
-        &::after {
-            //@include transform(translate3d(16px, 0, 0));
-            -webkit-transform: translate3d($switch-height / 2, 0, 0);
-            right: $switch-height;
-            left: inherit;
-            content: ' ';
-        }
+      // Thumb for ON state
+      &::after {
+        -webkit-transform: translate3d($switch-height / 2, 0, 0);
+        right: $switch-height;
+        left: inherit;
+        content: ' ';
+      }
 
-        // Thumb for active state
-        &:active::after {
-            //width: 35px;
-            width: $switch-thumb-diameter;
-        }
+      // Thumb for active state
+      &:active::after { width: $switch-thumb-diameter; }
     }
+  }
 }

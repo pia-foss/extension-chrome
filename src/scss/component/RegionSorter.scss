@@ -1,0 +1,18 @@
+#dropdownMenu1 {
+  width: 90%;
+  text-align: left;
+  background: #fff;
+  outline: none;
+  span:first-child { color: #999; }
+
+  .caret {
+    margin-top: 8.5px;
+    float: right;
+  }
+
+  & + .dropdown-menu {
+    width: 90%;
+
+    & > li > a:hover, & > li > a:focus { background-color: #e8f1e9; }
+  }
+}

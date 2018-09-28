@@ -9,7 +9,7 @@ class AuthenticatedRegion extends PageObject {
     super(
       {
         selector: createSelector({
-          value: '#region',
+          value: '.current-region',
         }),
         name: 'region section',
       },

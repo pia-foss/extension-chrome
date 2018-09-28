@@ -1,0 +1,28 @@
+#region-list {
+  max-height: 350px;
+  min-height: 350px;
+  overflow: auto;
+  display: flex;
+
+  .loader { align-self: center; }
+
+  .no-regions {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .no-regions-title {
+      font-size: 1.5em;
+      margin: 0 0 30px;
+    }
+  }
+
+  .list-group {
+    margin-bottom: 0;
+    width: 100%;
+  }
+}
