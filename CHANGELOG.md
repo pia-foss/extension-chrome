@@ -1,5 +1,7 @@
 __HEAD__
 
+* Added link to Chrome Setting Bug in settingsmanager.js file
+
 __v1.7.7__
 
 * Full Offline support for regions

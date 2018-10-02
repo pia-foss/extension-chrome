@@ -16,6 +16,14 @@ export default function(app) {
      microphone too). The property `microphone.isApplied()` will still be true but
      `camera.isApplied()` won't, so it can be used to determine if the setting should be
      reapplied again or not.
+
+     Link to Chrome Bug: https://bugs.chromium.org/p/chromium/issues/detail?id=700404#c18
+     This issue has been fixed in Chrome on Sept 21 2018.
+     Will keep this method around until at lesat 5 versions have passed.
+     Current Chrome Version: Version 69.0.3497.100 (Official Build) (64-bit)
+
+     After 5 versions have passed, add conditional code to only run the reapply method if the
+     version detected is older than Chrome version 71 (assume fix lands in that build).
   */
   this.reapply = (contentsettings) => {
     const connected = app.proxy.enabled()
