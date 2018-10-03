@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.10__
+
+* Hid debug button when debug mode is off
+
 __v1.7.9__
 
 * Autofocus username input on login screen
