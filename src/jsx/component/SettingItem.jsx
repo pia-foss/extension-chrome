@@ -28,7 +28,7 @@ class SettingItem extends Component {
       const newValue = await this.settings.toggle(settingID);
       // call parent function to update parent's state
       const { sectionName, onSettingChange } = this.props;
-      if (onSettingChange) { onSettingChange(sectionName, settingID, newValue); }
+      if (onSettingChange) { onSettingChange(settingID, newValue); }
     }
     catch (err) {
       console.error(err);

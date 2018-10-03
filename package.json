@@ -45,7 +45,7 @@
     "grunt-sass": "^2.1.0",
     "marked": "^0.4.0",
     "prop-types": "^15.6.1",
-    "react": "^16.4.0",
+    "react": "^16.5.2",
     "react-dom": "^16.4.0",
     "react-timeago": "^4.1.9",
     "timeago.js": "^3.0.2"

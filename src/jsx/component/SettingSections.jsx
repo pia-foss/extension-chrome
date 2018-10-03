@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import SettingSection from './SettingSection';
-import DebugSettingItem from './DebugSettingItem';
+import React, { Component, Fragment } from 'react';
+
 import {
-  createInitialSectionInfos,
-  createAdjustSectionSettingInfo,
-  createValueUpdater,
+  createSettingsData,
+  getSetting,
   getTotalCount,
   getEnabledCount,
-} from '../../js/data/sectionInfos';
+} from 'data/settings';
+import { createSectionsData, getSection } from 'data/sections';
+import SettingSection from './SettingSection';
+import SettingItem from './SettingItem';
+import DebugSettingItem from './DebugSettingItem';
 
 class SettingSections extends Component {
   constructor(props) {
@@ -19,47 +21,121 @@ class SettingSections extends Component {
 
     // Bindings
     this.onSettingChange = this.onSettingChange.bind(this);
-    this.debugSettingItemBuilder = this.debugSettingItemBuilder.bind(this);
+    this.getSectionProps = this.getSectionProps.bind(this);
+    this.getSettingProps = this.getSettingProps.bind(this);
 
     // Initialization
     const { settings, user } = this.app.util;
-    const { debugSettingItemBuilder } = this;
-    const browserType = this.app.buildinfo.browser;
-    const { languageDropdownBuilder } = this.props;
+    const { browser: browserType } = this.app.buildinfo;
     this.state = {
-      sectionInfos: createInitialSectionInfos(
-        { settings, browser: browserType, user },
-        { debugSettingItemBuilder, languageDropdownBuilder },
-      ),
+      sectionsData: createSectionsData({ t }),
+      settingsData: createSettingsData({
+        t,
+        user,
+        settings,
+        browser: browserType,
+      }),
     };
   }
 
-  onSettingChange(sectionName, settingID, enabled) {
-    const valueUpdater = createValueUpdater(enabled);
-    const adjustSettingValue = createAdjustSectionSettingInfo(sectionName, settingID, valueUpdater);
-    this.setState(adjustSettingValue);
+  onSettingChange(settingID, value) {
+    this.setState(({ settingsData }) => {
+      return {
+        settingsData: settingsData.map((setting) => {
+          if (setting.settingID === settingID) {
+            return Object.assign({}, setting, {
+              value,
+            });
+          }
+
+          return setting;
+        }),
+      };
+    });
   }
 
-  debugSettingItemBuilder() {
-    const { onDebugClick } = this.props;
-    return <DebugSettingItem onClick={onDebugClick} />;
+  getSectionProps(sectionKey) {
+    const { sectionsData, settingsData } = this.state;
+    const { name, label } = getSection(sectionKey, sectionsData);
+    const enabledCount = getEnabledCount(sectionKey, settingsData);
+    const totalCount = getTotalCount(sectionKey, settingsData);
+
+    return {
+      name,
+      label,
+      enabledCount,
+      totalCount,
+    };
+  }
+
+  getSettingProps(settingID) {
+    const { settingsData } = this.state;
+    const {
+      value,
+      controllable,
+      disabledValue,
+      tooltip,
+      label,
+      warning,
+      learnMore,
+      learnMoreHref,
+      section,
+    } = getSetting(settingID, settingsData);
+
+    return {
+      settingID,
+      controllable,
+      disabledValue,
+      tooltip,
+      label,
+      warning,
+      learnMore,
+      learnMoreHref,
+      sectionName: section,
+      key: settingID,
+      checked: value,
+      onSettingChange: this.onSettingChange,
+    };
   }
 
   render() {
-    const { sectionInfos } = this.state;
-    return sectionInfos.map((section) => {
-      return (
-        <SettingSection
-          label={section.label}
-          name={section.name}
-          totalCount={getTotalCount(section.settingInfos)}
-          enabledCount={getEnabledCount(section.settingInfos)}
-          key={section.name}
-          settingInfos={section.settingInfos}
-          onSettingChange={this.onSettingChange}
-        />
-      );
-    });
+    const {
+      props: { onDebugClick, languageDropdownBuilder },
+      state: { settingsData },
+    } = this;
+
+    return (
+      <Fragment>
+        <SettingSection {...this.getSectionProps('security')}>
+          <SettingItem {...this.getSettingProps('blockadobeflash')} />
+          <SettingItem {...this.getSettingProps('preventwebrtcleak')} />
+        </SettingSection>
+        <SettingSection {...this.getSectionProps('privacy')}>
+          <SettingItem {...this.getSettingProps('blockcamera')} />
+          <SettingItem {...this.getSettingProps('blockmicrophone')} />
+          <SettingItem {...this.getSettingProps('blocklocation')} />
+          <SettingItem {...this.getSettingProps('blocknetworkprediction')} />
+          <SettingItem {...this.getSettingProps('blocksafebrowsing')} />
+          <SettingItem {...this.getSettingProps('blockautofill')} />
+        </SettingSection>
+        <SettingSection {...this.getSectionProps('tracking')}>
+          <SettingItem {...this.getSettingProps('blockthirdpartycookies')} />
+          <SettingItem {...this.getSettingProps('blockreferer')} />
+          <SettingItem {...this.getSettingProps('blockhyperlinkaudit')} />
+          <SettingItem {...this.getSettingProps('blockutm')} />
+          <SettingItem {...this.getSettingProps('maceprotection')} />
+        </SettingSection>
+        <SettingSection {...this.getSectionProps('extension')}>
+          <SettingItem {...this.getSettingProps('allowExtensionNotifications')} />
+          <SettingItem {...this.getSettingProps('logoutOnClose')} />
+          <SettingItem {...this.getSettingProps('debugmode')} />
+          { getSetting('debugmode', settingsData).value
+            && <DebugSettingItem onClick={onDebugClick} />
+          }
+          { languageDropdownBuilder() }
+        </SettingSection>
+      </Fragment>
+    );
   }
 }
 

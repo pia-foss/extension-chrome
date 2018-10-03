@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import SettingItem from './SettingItem';
-import { getChecked } from '../../js/data/sectionInfos';
 
 class SettingsSection extends Component {
   constructor(props) {
@@ -18,8 +16,11 @@ class SettingsSection extends Component {
   }
 
   toggleSection() {
-    const { open } = this.state;
-    this.setState({ open: !open });
+    this.setState(({ open }) => {
+      return {
+        open: !open,
+      };
+    });
   }
 
   render() {
@@ -27,14 +28,20 @@ class SettingsSection extends Component {
     const {
       name,
       label,
-      settingInfos,
       onSettingChange,
       enabledCount,
       totalCount,
+      children,
     } = this.props;
 
+    const sectionClassList = [
+      'sectionwrapper',
+      open ? 'open' : 'closed',
+      name,
+    ];
+
     return (
-      <div className={`sectionwrapper ${open ? 'open' : 'closed'} ${name}`}>
+      <div className={sectionClassList.join(' ')}>
         <div
           role="button"
           tabIndex="-1"
@@ -62,31 +69,7 @@ class SettingsSection extends Component {
         </div>
 
         <div className="SettingItemContainer">
-          { settingInfos.map((settingInfo) => {
-            if (settingInfo.builder) {
-              // Inject component
-              const Builder = settingInfo.builder;
-              return <Builder key={settingInfo.key} />;
-            }
-            // Build SettingItem from information
-            return (
-              <SettingItem
-                key={settingInfo.settingID}
-                sectionName={name}
-                checked={getChecked(settingInfo)}
-                controllable={settingInfo.controllable}
-                disabledValue={settingInfo.disabledValue}
-                tooltip={settingInfo.tooltip}
-                label={settingInfo.label}
-                warning={settingInfo.warning}
-                learnMore={settingInfo.learnMore}
-                learnMoreHref={settingInfo.learnMoreHref}
-                onSettingChange={onSettingChange}
-                settingID={settingInfo.settingID}
-              />
-            );
-          })
-          }
+          { children }
         </div>
       </div>
     );
@@ -98,8 +81,6 @@ SettingsSection.propTypes = {
   totalCount: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  settingInfos: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onSettingChange: PropTypes.func.isRequired,
 };
 
 export default SettingsSection;
