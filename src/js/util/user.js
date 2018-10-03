@@ -1,11 +1,11 @@
-import tinyhttp from 'tinyhttp';
+import http from 'helpers/http';
 
 const USERNAME_KEY = 'form:username';
 const PASSWORD_KEY = 'form:password';
 const LOGGED_IN_KEY = 'loggedIn';
 
 class User {
-  constructor (app) {
+  constructor(app) {
     // bindings
     this.storageBackend = this.storageBackend.bind(this);
     this.setRememberMe = this.setRememberMe.bind(this);
@@ -19,33 +19,36 @@ class User {
     this.username = this.username.bind(this);
     this.auth = this.auth.bind(this);
     this.logout = this.logout.bind(this);
-    this._removeUsernameAndPasswordFromStorage = this._removeUsernameAndPasswordFromStorage.bind(this);
-    this._removeLoggedInFromStorage = this._removeLoggedInFromStorage.bind(this);
-    this._getLoggedInStorageItem = this._getLoggedInStorageItem.bind(this);
-    this._setLoggedInStorageItem = this._setLoggedInStorageItem.bind(this);
+    this.removeUsernameAndPasswordFromStorage = this
+      .removeUsernameAndPasswordFromStorage.bind(this);
+    this.removeLoggedInFromStorage = this.removeLoggedInFromStorage.bind(this);
+    this.getLoggedInStorageItem = this.getLoggedInStorageItem.bind(this);
+    this.setLoggedInStorageItem = this.setLoggedInStorageItem.bind(this);
 
     // init
-    this._app = app;
-    this._http = tinyhttp('https://www.privateinternetaccess.com');
+    this.app = app;
     this.authed = false;
     this.authing = false;
     this.authTimeout = 5000;
   }
 
-  get _storage () { return this._app.util.storage; }
-  get _settings () { return this._app.util.settings; }
-  get _icon () { return this._app.util.icon; }
-  get _proxy () { return this._app.proxy; }
+  get storage() { return this.app.util.storage; }
 
-  get logOutOnClose () {
-    return this._app.util.settings.getItem('logoutOnClose');
+  get settings() { return this.app.util.settings; }
+
+  get icon() { return this.app.util.icon; }
+
+  get proxy() { return this.app.proxy; }
+
+  get logOutOnClose() {
+    return this.app.util.settings.getItem('logoutOnClose');
   }
 
-  get loggedIn () {
-    const loggedInStorageItem = this._getLoggedInStorageItem();
+  get loggedIn() {
+    const loggedInStorageItem = this.getLoggedInStorageItem();
     const credentialsStored = Boolean(
-      this.getUsername().length &&
-      this.getPassword().length
+      this.getUsername().length
+      && this.getPassword().length,
     );
     if (loggedInStorageItem && !credentialsStored) {
       console.error(debug('user is expecting to be logged in, but no credentials exist'));
@@ -54,25 +57,25 @@ class User {
     return loggedInStorageItem && credentialsStored;
   }
 
-  _getLoggedInStorageItem () {
-    return this._app.util.storage.getItem(LOGGED_IN_KEY, this.storageBackend()) === 'true';
+  getLoggedInStorageItem() {
+    return this.app.util.storage.getItem(LOGGED_IN_KEY, this.storageBackend()) === 'true';
   }
 
-  _setLoggedInStorageItem (value) {
-    this._app.util.storage.setItem(LOGGED_IN_KEY, Boolean(value), this.storageBackend());
+  setLoggedInStorageItem(value) {
+    this.app.util.storage.setItem(LOGGED_IN_KEY, Boolean(value), this.storageBackend());
   }
 
-  _removeUsernameAndPasswordFromStorage () {
-    this._storage.removeItem(USERNAME_KEY, this.storageBackend());
-    this._storage.removeItem(PASSWORD_KEY, this.storageBackend());
+  removeUsernameAndPasswordFromStorage() {
+    this.storage.removeItem(USERNAME_KEY, this.storageBackend());
+    this.storage.removeItem(PASSWORD_KEY, this.storageBackend());
   }
 
-  _removeLoggedInFromStorage () {
-    this._storage.removeItem(LOGGED_IN_KEY, this.storageBackend());
+  removeLoggedInFromStorage() {
+    this.storage.removeItem(LOGGED_IN_KEY, this.storageBackend());
   }
 
-  storageBackend () {
-    return this._settings.getItem('rememberme') ? 'localStorage' : 'memoryStorage';
+  storageBackend() {
+    return this.settings.getItem('rememberme') ? 'localStorage' : 'memoryStorage';
   }
 
   /**
@@ -88,89 +91,93 @@ class User {
       // Get from current storage medium
       const username = this.getUsername();
       const password = this.getPassword();
-      const loggedIn = this._getLoggedInStorageItem();
+      const loggedIn = this.getLoggedInStorageItem();
 
       // Remove from current storage medium
-      this._removeUsernameAndPasswordFromStorage();
-      this._removeLoggedInFromStorage();
+      this.removeUsernameAndPasswordFromStorage();
+      this.removeLoggedInFromStorage();
 
       // Swap storage
-      this._settings.setItem('rememberme', Boolean(rememberMe));
+      this.settings.setItem('rememberme', Boolean(rememberMe));
 
       // Save in new storage medium
       this.setUsername(username);
       this.setPassword(password);
-      this._setLoggedInStorageItem(loggedIn);
+      this.setLoggedInStorageItem(loggedIn);
     }
   }
 
   getRememberMe() {
-    return this._settings.getItem('rememberme');
+    return this.settings.getItem('rememberme');
   }
 
-  inLocalStorage () {
+  inLocalStorage() {
     return this.storageBackend() === 'localStorage';
   }
 
   getUsername() {
-    const username = this._storage.getItem(USERNAME_KEY, this.storageBackend());
+    const username = this.storage.getItem(USERNAME_KEY, this.storageBackend());
     return typeof username === 'string' ? username.trim() : '';
   }
 
   getPassword() {
-    const password = this._storage.getItem(PASSWORD_KEY, this.storageBackend());
+    const password = this.storage.getItem(PASSWORD_KEY, this.storageBackend());
     return password || '';
   }
 
-  setUsername (username) {
-    this._storage.setItem(USERNAME_KEY, username.trim(), this.storageBackend());
+  setUsername(username) {
+    this.storage.setItem(USERNAME_KEY, username.trim(), this.storageBackend());
   }
 
-  setPassword (password) {
-    this._storage.setItem(PASSWORD_KEY, password, this.storageBackend());
+  setPassword(password) {
+    this.storage.setItem(PASSWORD_KEY, password, this.storageBackend());
   }
 
   password() {
     console.log('user.password() is deprecated, please use user.getPassword() instead');
-    console.trace && console.trace();
+    if (console.trace) { console.trace(); }
     return this.getPassword();
   }
 
   username() {
     console.log('user.username() is deprecated, please use user.getUsername() instead');
-    console.trace && console.trace();
+    if (console.trace) { console.trace(); }
     return this.getUsername();
   }
 
-  auth () {
-    const username = this.getUsername(),
-          password = this.getPassword(),
-          headers  = {"Authorization": `Basic ${btoa(unescape(encodeURIComponent(`${username}:${password}`)))}`};
-    debug("user.js: start auth");
-    return this._http.head("/api/client/auth", {headers, timeout: this.authTimeout}).then((xhr) => {
-      this.authing = false;
-      this.authed = true;
-      this._setLoggedInStorageItem(true);
-      this._icon.updateTooltip();
-      debug("user.js: auth ok");
-      return xhr;
-    }).catch((xhr) => {
-      this._setLoggedInStorageItem(false);
-      this.authing = false;
-      this.authed = false;
-      debug(`user.js: auth error, ${xhr.tinyhttp.cause}`);
-      throw(xhr);
-    });
+  auth() {
+    const username = this.getUsername();
+    const password = this.getPassword();
+    const headers = { Authorization: `Basic ${btoa(unescape(encodeURIComponent(`${username}:${password}`)))}` };
+    debug('user.js: start auth');
+    return http.head('https://www.privateinternetaccess.com/api/client/auth', { headers, timeout: this.authTimeout })
+      .then((res) => {
+        this.authing = false;
+        this.authed = true;
+        this.setLoggedInStorageItem(true);
+        this.icon.updateTooltip();
+        debug('user.js: auth ok');
+
+        return res;
+      })
+      .catch((res) => {
+        this.setLoggedInStorageItem(false);
+        this.authing = false;
+        this.authed = false;
+        debug(`user.js: auth error, ${res.cause}`);
+
+        throw res;
+      });
   }
 
-  logout (afterLogout) { /* FIXME: remove callback for promise chaining. */
-    return this._proxy.disable().then(() => {
+  logout(afterLogout) { /* FIXME: remove callback for promise chaining. */
+    return this.proxy.disable().then(() => {
       this.authed = false;
       if (!this.getRememberMe()) {
-        this._removeUsernameAndPasswordFromStorage();
+        this.removeUsernameAndPasswordFromStorage();
       }
-      this._setLoggedInStorageItem(false);
-      this._icon.updateTooltip();
+      this.setLoggedInStorageItem(false);
+      this.icon.updateTooltip();
       if (afterLogout) {
         afterLogout();
       }

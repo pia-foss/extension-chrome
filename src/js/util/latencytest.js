@@ -1,22 +1,33 @@
-import tinyhttp from "tinyhttp"
+import http from '../helpers/http';
 
-export default function(app) {
-  this.testCount = 0
-
-  this.start = (region) => {
-    return new Promise((resolve) => {
-      let t0
-      const http = tinyhttp(`http://${region.host}:8888`, {timeout: 3500}),
-            complete = () => {
-              const duration = performance.now() - t0
-              this.testCount -= 1
-              resolve({region, latencyAvg: Math.floor(duration) >= 3500 ? "error" : duration})
-            }
-      t0 = performance.now()
-      http.get('/ping.txt').then(complete).catch(complete)
-      this.testCount += 1
-    })
+class LatencyTest {
+  constructor(app) {
+    this.app = app;
+    this.testCount = 0;
   }
 
-  return this
+  async start(region) {
+    const timeout = LatencyTest.TIMEOUT;
+    const startTime = performance.now();
+    this.testCount += 1;
+    try {
+      await http.head(`http://${region.host}:8888/ping.txt`, { timeout });
+    }
+    catch (err) {
+      // do nothing
+    }
+    this.testCount -= 1;
+    const endTime = performance.now();
+    const duration = endTime - startTime;
+    const latencyAvg = Math.floor(duration) >= LatencyTest.TIMEOUT ? 'error' : duration;
+
+    return {
+      region,
+      latencyAvg,
+    };
+  }
 }
+
+LatencyTest.TIMEOUT = 3500;
+
+export default LatencyTest;

@@ -1,8 +1,7 @@
-import tinyhttp from 'tinyhttp';
+import http from 'helpers/http';
 
 export default function (app) {
   const self = Object.create(null);
-  const http = tinyhttp('https://www.privateinternetaccess.com');
   const { storage } = app.util;
   const defaultRegionID = 'us_new_york_city';
   const regionMap = new Map();
@@ -82,12 +81,12 @@ export default function (app) {
     else { favoriteRegions = []; }
 
     debug('regionlist.js: start sync');
-    return http.get('/api/client/services/https', { timeout: 5000 })
-      .then((xhr) => {
+    return http.get('https://www.privateinternetaccess.com/api/client/services/https', { timeout: 5000 })
+      .then(async (res) => {
         regionMap.clear();
-        const res = JSON.parse(xhr.response);
-        Object.keys(res).forEach((regionID) => {
-          const region = createRegion(regionID, res[regionID]);
+        const json = await res.json();
+        Object.keys(json).forEach((regionID) => {
+          const region = createRegion(regionID, json[regionID]);
           if (favoriteRegions.includes(regionID)) { region.isFavorite = true; }
           regionMap.set(regionID, region);
         });
@@ -96,13 +95,15 @@ export default function (app) {
         self.synced = true;
         app.util.bypasslist.updatePingGateways();
         debug('regionlist.js: sync ok');
-        return xhr;
+
+        return res;
       })
-      .catch((xhr) => {
+      .catch((res) => {
         self.syncing = false;
         self.synced = false;
-        debug(`regionlist.js: sync error (${xhr.tinyhttp.cause})`);
-        return xhr;
+        debug(`regionlist.js: sync error (${res.cause})`);
+
+        return res;
       });
   };
 

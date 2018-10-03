@@ -1,5 +1,6 @@
-import tinyhttp from 'tinyhttp';
 import React, { Component } from 'react';
+
+import http from 'helpers/http';
 import PageTitle from '../component/PageTitle';
 import OfflineWarning from '../component/OfflineWarning';
 
@@ -8,8 +9,8 @@ export default function () {
     componentDidMount() {
       const container = document.querySelector('#changelog');
       const url = chrome.extension.getURL('html/CHANGELOG.html');
-      const success = (xhr) => {
-        container.innerHTML = xhr.response;
+      const success = async (res) => {
+        container.innerHTML = await res.text();
         const links = document.querySelectorAll('#changelog a');
         for (let i = 0; i < links.length; i++) {
           links[i].addEventListener('click', (event) => {
@@ -21,7 +22,7 @@ export default function () {
         container.innerHTML = 'The changelog couldn\'t be loaded due to an error.';
       };
 
-      tinyhttp().get(url)
+      http.get(url)
         .then(success)
         .catch(error);
     }
