@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.9__
+
+* Autofocus username input on login screen
+
 __v1.7.8__
 
 * Refactored to use native fetch API

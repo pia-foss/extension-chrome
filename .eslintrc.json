@@ -12,6 +12,7 @@
     "arrow-body-style": ["error", "always"],
     "arrow-parens": ["error", "always"],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "react/jsx-boolean-value": "always",
     "react/jsx-curly-spacing": ["error", {
       "when": "always",
       "children": true,

@@ -8,6 +8,7 @@ const LoginField = ({
   type,
   onChange,
   defaultValue,
+  autoFocus,
 }) => {
   return (
     <input
@@ -18,6 +19,10 @@ const LoginField = ({
       onChange={onChange}
       defaultValue={defaultValue}
       className="pia-form-control form-control"
+      // If an autofocus action can be anticipated, it
+      // has been said by users to not break accessibility
+      // eslint-disable-next-line jsx-a11y/no-autofocus
+      autoFocus={autoFocus}
     />
   );
 };
@@ -29,9 +34,11 @@ LoginField.propTypes = {
   onChange: PropType.func.isRequired,
   autocomplete: PropType.string,
   defaultValue: PropType.string,
+  autoFocus: PropType.bool,
 };
 
 LoginField.defaultProps = {
+  autoFocus: false,
   autocomplete: '',
   defaultValue: '',
 };
