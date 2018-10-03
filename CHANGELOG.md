@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.8__
+
+* Refactored to use native fetch API
+
 * Added link to Chrome Setting Bug in settingsmanager.js file
 
 __v1.7.7__

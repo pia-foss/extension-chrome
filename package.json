@@ -48,8 +48,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-timeago": "^4.1.9",
-    "timeago.js": "^3.0.2",
-    "tinyhttp": "https://github.com/r-obert/tinyhttp.js"
+    "timeago.js": "^3.0.2"
   },
   "devDependencies": {
     "@types/chai": "^4.1.4",
