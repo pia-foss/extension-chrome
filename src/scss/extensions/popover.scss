@@ -88,6 +88,24 @@
       border-left: 0;
     }
   }
+  &.arrow-top {
+    &:before, &:after {
+      bottom: 0;
+      left: 20px;
+      margin-bottom: -9px;
+      border-bottom: 0;
+      border-right: 0;
+    }
+  }
+  &.arrow-right {
+    &:before, &:after {
+      left: -9px;
+      top: 5px;
+      margin-bottom: -9px;
+      border-left: 0;
+      border-bottom: 0;
+    }
+  }
 }
 
 .popover.darkpopover {
@@ -156,21 +174,11 @@
   }
 }
 
-.popover-owner:hover {
+.popover-trigger {
   &:hover {
-    > .popover {
+    > .popover,
+    ~ .popover {
       display: block;
-    }
-  }
-}
-
-.remember-me-container {
-  .popover {
-    margin-left: auto;
-    margin-right: auto;
-
-    &::after,&::before {
-      left: 10%;
     }
   }
 }
@@ -191,4 +199,10 @@
   transform: rotate(45deg);
   top: 100%;
   margin-top: -7px;
+}
+
+.sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-top::before, .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-top::after {
+  transform: rotate(45deg);
+  top: 0;
+  margin-bottom: -7px;
 }

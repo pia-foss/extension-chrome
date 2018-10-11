@@ -2,11 +2,34 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
   position: relative;
+  height: 25px;
+  overflow-y: visible;
 
-  > label {
+  .checkbox-container {
+    flex: auto 0 0;
+
+    .checkbox-facade {
+    }
+  }
+
+  .checkbox-label {
+    flex: auto 0 0;
     font-weight: normal;
-    margin-left: 10px;
+    padding-left: 10px;
     cursor: pointer;
+  }
+
+  .popover {
+    flex: auto 0 1;
+    width: auto;
+    top: -3px;
+    position: relative;
+    margin-left: 15px;
+
+    &:after, &:before {
+      top: 40%;
+    }
   }
 }
