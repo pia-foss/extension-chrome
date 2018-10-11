@@ -16,6 +16,7 @@
 @import "bootstrap/dropdowns";
 
 // Extension
+@import "layout";
 @import "colors";
 @import "roboto_font";
 @import "extensions/popover";
@@ -74,9 +75,9 @@ body {
 *, *:before, *:after { box-sizing: inherit; }
 
 #pia {
-  min-height: 210px;
-  width: 370px;
-  padding: 0 15px;
+  min-height: $appMinHeight;
+  width: $appWidth;
+  padding: $appVertPadding $appSidePadding;
   overflow-x: hidden;
 }
 
@@ -244,7 +245,7 @@ a, a:active, a:focus, a:hover { color: #39b54a; }
   width: 18px;
   position: relative;
 
-  label.checkbox-label {
+  label.checkbox-facade {
     position: absolute;
     width: 18px;
     height: 18px;
@@ -271,7 +272,7 @@ a, a:active, a:focus, a:hover { color: #39b54a; }
   }
 
   &:hover {
-    label.checkbox-label {
+    label.checkbox-facade {
       border: 1px solid #5cb85c;
       opacity: 1;
     }
@@ -283,9 +284,9 @@ a, a:active, a:focus, a:hover { color: #39b54a; }
     margin: 0px !important;
   }
 
-  input[type=checkbox]:checked + label.checkbox-label:after { opacity: 1; }
+  input[type=checkbox]:checked + label.checkbox-facade:after { opacity: 1; }
 
-  input[type=checkbox]:checked + label.checkbox-label { border: 1px solid #5cb85c; }
+  input[type=checkbox]:checked + label.checkbox-facade { border: 1px solid #5cb85c; }
 
   .dropdown {
     overflow: hidden;
