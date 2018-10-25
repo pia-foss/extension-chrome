@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.14__
+
+* Added missing flags
+
 __v1.7.13__
 
 * Refactored chromesettings
