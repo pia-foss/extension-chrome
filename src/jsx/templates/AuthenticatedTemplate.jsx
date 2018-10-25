@@ -7,7 +7,7 @@ import CurrentRegion from '../component/CurrentRegion';
 import OfflineWarning from '../component/OfflineWarning';
 
 export default function () {
-  return class AutehnticatedTemplate extends Component {
+  return class AuthenticatedTemplate extends Component {
     constructor(props) {
       super(props);
 

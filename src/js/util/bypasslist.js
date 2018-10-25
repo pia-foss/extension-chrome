@@ -104,7 +104,7 @@ export default class BypassList {
   updatePingGateways () {
     this._enabledRules.set('pinggateways', this.generatePingGateways());
     if(this._app.proxy.enabled()) {
-      this._app.proxy.enable(this._regionList.getSelectedRegion());
+      this._app.proxy.enable();
     }
   }
 
@@ -130,7 +130,7 @@ export default class BypassList {
       throw new Error(debug('proxy not ready'));
     }
     if (proxy.enabled()) {
-      return void proxy.enable(this._regionList.getSelectedRegion()).then(cb);
+      return void proxy.enable().then(cb);
     } else {
       return void cb();
     }
