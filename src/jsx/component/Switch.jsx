@@ -32,7 +32,7 @@ class Switch extends Component {
     let promise;
 
     if (this.proxy.enabled()) { promise = this.proxy.disable(); }
-    else { promise = this.proxy.enable(this.regionlist.getSelectedRegion()); }
+    else { promise = this.proxy.enable(); }
 
     return promise.then((proxy) => {
       this.setState({ enabled: proxy.enabled() });

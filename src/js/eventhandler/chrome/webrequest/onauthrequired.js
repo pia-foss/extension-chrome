@@ -24,29 +24,39 @@ export default function (app) {
   };
 
   return function handle(details) {
-    if (!active(details)) { return debug('onAuthRequired/1: refused.'); }
+    try {
+      if (!active(details)) {
+        debug('onAuthRequired/1: refused.');
+        return {};
+      }
 
-    const { counter, user } = app.util;
+      const { counter, user } = app.util;
 
-    counter.inc(details.requestId);
+      counter.inc(details.requestId);
 
-    if (counter.get(details.requestId) > 1) {
-      debug('onAuthRequired/1: failed.');
-      counter.del(details.requestId);
-      chrome.tabs.update({ url: chrome.extension.getURL('html/errorpages/authfail.html') });
+      if (counter.get(details.requestId) > 1) {
+        debug('onAuthRequired/1: failed.');
+        counter.del(details.requestId);
+        chrome.tabs.update({ url: chrome.extension.getURL('html/errorpages/authfail.html') });
+        user.logout();
+        return { cancel: true };
+      }
+
+      if (user.loggedIn) {
+        debug('onAuthRequired/1: allowed.');
+        return { authCredentials: { username: user.getUsername(), password: user.getPassword() } };
+      }
+
+      debug('onAuthRequired/1: user not logged in');
       user.logout();
+      chrome.tabs.reload(details.tabId);
+    }
+    catch (err) {
+      debug('onAuthRequired/1: refused due to error');
+      debug(`error: ${JSON.stringify(err, Object.getOwnPropertyNames(err))}`);
       return { cancel: true };
     }
 
-    if (user.loggedIn) {
-      debug('onAuthRequired/1: allowed.');
-      return { authCredentials: { username: user.getUsername(), password: user.getPassword() } };
-    }
-
-
-    debug('onAuthRequired/1: user not logged in');
-    user.logout();
-    chrome.tabs.reload(details.tabId);
     return { cancel: true };
   };
 }

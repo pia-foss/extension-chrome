@@ -1,32 +1,33 @@
-import ChromeSetting from "chromesettings/chromesetting"
+import ChromeSetting from 'chromesettings/chromesetting';
 
-export default function(app) {
-  const self = Object.create(ChromeSetting(chrome.privacy.websites.thirdPartyCookiesAllowed, (details) => {
-    return details.value === false
-  }))
+class ThirdPartyCookies extends ChromeSetting {
+  constructor() {
+    super(chrome.privacy.websites.thirdPartyCookiesAllowed);
 
-  self.settingID = "blockthirdpartycookies"
-  self.settingDefault = true
+    // bindings
+    this.onChange = this.onChange.bind(this);
 
-  self.applySetting = () => {
-    return self._set({value: false}).then(() => {
-      debug("thirdpartycookies.js: block ok")
-      return self
-    }).catch((error) => {
-      debug(`thirdpartycookies.js: block failed (${error})`)
-      return self
-    })
+    // functions
+    this.applySetting = this.createApplySetting(
+      false,
+      'thirdpartycookies',
+      'block',
+    );
+    this.clearSetting = this.createClearSetting(
+      'thirdpartycookies',
+      'unblock',
+    );
+
+    // init
+    this.settingID = 'blockthirdpartycookies';
+    this.settingDefault = true;
   }
 
-  self.clearSetting = () => {
-    return self._clear({}).then(() => {
-      debug("thirdpartycookies.js: unblock ok")
-      return self
-    }).catch((error) => {
-      debug(`thirdpartycookies.js: unblock failed (${error})`)
-      return self
-    })
+  // eslint-disable-next-line class-methods-use-this
+  onChange(details) {
+    this.setLevelOfControl(details.levelOfControl);
+    this.setBlocked(details.value === false);
   }
-
-  return self
 }
+
+export default ThirdPartyCookies;

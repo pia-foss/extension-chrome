@@ -2,70 +2,205 @@
    This object wraps a ChromeSetting: https://developer.chrome.com/extensions/types#type-ChromeSetting
    Similar to but not the same as a ContentSetting.
 */
-export default function(chromeSetting, blockedPredicate) {
-  const self = Object.create(null),
-        defaultSetOptions   = {scope: "regular"},
-        defaultGetOptions   = {},
-        defaultClearOptions = {scope: "regular"},
-        onChange = (details) => {
-          levelOfControl = details.levelOfControl
-          controllable = levelOfControl === "controllable_by_this_extension" || levelOfControl === "controlled_by_this_extension"
-          blocked = blockedPredicate(details)
-        }
+class ChromeSetting {
+  static get defaultSetOptions() { return { scope: 'regular' }; }
 
-  let levelOfControl,
-      controllable,
-      blocked,
-      applied
+  static get defaultGetOptions() { return {}; }
 
-  self.getLevelOfControl = () => levelOfControl
-  self.isControllable = () => levelOfControl === undefined || controllable
-  self.isBlocked = () => blocked
-  self.isApplied = () => applied
+  static get defaultClearOptions() { return { scope: 'regular' }; }
 
-  self._set = (options) => {
+  static get controlled() { return 'controlled_by_this_extension'; }
+
+  static get controllable() { return 'controllable_by_this_extension'; }
+
+
+  constructor(setting) {
+    // bindings
+    this.init = this.init.bind(this);
+    this.getLevelOfControl = this.getLevelOfControl.bind(this);
+    this.isControllable = this.isControllable.bind(this);
+    this.isBlocked = this.isBlocked.bind(this);
+    this.isApplied = this.isApplied.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.set = this.set.bind(this);
+    this.get = this.get.bind(this);
+    this.clear = this.clear.bind(this);
+    this.createApplySetting = this.createApplySetting.bind(this);
+    this.createClearSetting = this.createClearSetting.bind(this);
+
+    // init
+    this.setting = setting;
+    this.levelOfControl = undefined;
+    this.blocked = undefined;
+    this.applied = undefined;
+  }
+
+  init() {
+    this.setting.get({}, this.onChange);
+    this.setting.onChange.addListener(this.onChange);
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  onChange() {
+    throw new Error('each chromesetting must implement it\'s own onChange listener');
+  }
+
+  /**
+   * Get the current level of control
+   *
+   * @returns {string} current level of control
+   */
+  getLevelOfControl() {
+    return this.levelOfControl;
+  }
+
+  setLevelOfControl(levelOfControl) {
+    this.levelOfControl = levelOfControl;
+  }
+
+  /**
+   * Determine whether the setting is controllable
+   *
+   * @returns {boolean} whether setting is controllable
+   */
+  isControllable() {
+    return (
+      this.levelOfControl === undefined
+      || this.levelOfControl === ChromeSetting.controlled
+      || this.levelOfControl === ChromeSetting.controllable
+    );
+  }
+
+  /**
+   * Determine whether or not the setting is blocked
+   *
+   * @returns {boolean} whether setting is blocked
+   */
+  isBlocked() {
+    return this.blocked;
+  }
+
+  setBlocked(blocked) {
+    this.blocked = blocked;
+  }
+
+  /**
+   * Determine whether or not setting is applied
+   *
+   * @returns {boolean} whether setting is applied
+   */
+  isApplied() {
+    return this.applied;
+  }
+  /**
+   * Set the info for the setting
+   */
+  set(options) {
     return new Promise((resolve, reject) => {
-      if(self.isControllable())
-        chromeSetting.set(Object.assign({}, defaultSetOptions, options), () => {
-          if(chrome.runtime.lastError === undefined) {
-            applied = true
-            resolve()
-          } else {
-            reject(chrome.runtime.lastError)
+      if (this.isControllable()) {
+        this.setting.set(
+          Object.assign({}, ChromeSetting.defaultSetOptions, options),
+          () => {
+            if (chrome.runtime.lastError === undefined) {
+              this.applied = true;
+              resolve();
+            }
+            else {
+              reject(chrome.runtime.lastError);
+            }
+          },
+        );
+      }
+      else {
+        reject(new Error('extension cannot control this setting'));
+      }
+    });
+  }
+
+  /**
+   * Get the current info for setting
+   */
+  get() {
+    return new Promise((resolve, reject) => {
+      this.setting.get(
+        ChromeSetting.defaultGetOptions,
+        async (details) => {
+          await this.onChange(details);
+          if (chrome.runtime.lastError === undefined) {
+            resolve(details);
           }
-        })
-      else
-        reject("extension cannot control this setting")
-    })
-  }
-
-  self._get = () => {
-    return new Promise((resolve, reject) => {
-      chromeSetting.get(defaultGetOptions, (details) => {
-        onChange(details)
-        chrome.runtime.lastError === undefined ? resolve(details) : reject(chrome.runtime.lastError)
-      })
-    })
-  }
-
-  self._clear = (options) => {
-    return new Promise((resolve, reject) => {
-      if(self.isControllable())
-        chromeSetting.clear(Object.assign({}, defaultClearOptions, options || {}), () => {
-          if(chrome.runtime.lastError === undefined) {
-            applied = false
-            resolve()
-          } else {
-            reject(chrome.runtime.lastError)
+          else {
+            reject(chrome.runtime.lastError);
           }
-        })
-      else
-        reject("extension cannot control this setting")
-    })
+        },
+      );
+    });
   }
 
-  chromeSetting.get({}, onChange)
-  chromeSetting.onChange.addListener(onChange)
+  /**
+   * Clear the info for the setting
+   */
+  clear(options) {
+    return new Promise((resolve, reject) => {
+      if (this.isControllable()) {
+        this.setting.clear(
+          Object.assign({}, ChromeSetting.defaultClearOptions, options || {}),
+          () => {
+            if (chrome.runtime.lastError === undefined) {
+              this.applied = false;
+              resolve();
+            }
+            else {
+              reject(chrome.runtime.lastError);
+            }
+          },
+        );
+      }
+      else {
+        reject(new Error('extension cannot control this setting'));
+      }
+    });
+  }
 
-  return self
+  createApplySetting(value, name, action) {
+    return (async function applySetting() {
+      try {
+        await this.set({ value });
+        ChromeSetting.debug(name, `${action} ok`);
+      }
+      catch (err) {
+        ChromeSetting.debug(name, `${action} failed`);
+      }
+
+      return this;
+    }).bind(this);
+  }
+
+  createClearSetting(name, action) {
+    return (async function clearSetting() {
+      try {
+        await this.clear();
+        ChromeSetting.debug(name, `${action} ok`);
+      }
+      catch (err) {
+        ChromeSetting.debug(name, `${action} failed`);
+      }
+
+      return this;
+    }).bind(this);
+  }
+
+  static debug(name, msg, err) {
+    const debugMsg = `${name}.js: ${msg}`;
+    debug(debugMsg);
+    console.log(debugMsg);
+    if (err) {
+      const errMsg = `error: ${JSON.stringify(err, Object.getOwnPropertyNames(err))}`;
+      debug(errMsg);
+      console.error(errMsg);
+    }
+    return new Error(debugMsg);
+  }
 }
+
+export default ChromeSetting;

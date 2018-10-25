@@ -1,31 +1,32 @@
-import ChromeSetting from "chromesettings/chromesetting"
-export default function(app) {
-  const self = Object.create(ChromeSetting(chrome.privacy.services.safeBrowsingEnabled, (details) => {
-    return details.value === false
-  }))
+import ChromeSetting from 'chromesettings/chromesetting';
 
-  self.settingID = "blocksafebrowsing"
-  self.settingDefault = true
+class SafeBrowsing extends ChromeSetting {
+  constructor() {
+    super(chrome.privacy.services.safeBrowsingEnabled);
 
-  self.applySetting = () => {
-    return self._set({value: false}).then(() => {
-      debug("safebrowsing.js: block ok")
-      return self
-    }).catch((error) => {
-      debug(`safebrowsing.js: block failed (${error})`)
-      return self
-    })
+    // bindings
+    this.onChange = this.onChange.bind(this);
+
+    // functions
+    this.applySetting = this.createApplySetting(
+      false,
+      'safebrowsing',
+      'block',
+    );
+    this.clearSetting = this.createClearSetting(
+      'safebrowsing',
+      'unblock',
+    );
+
+    // init
+    this.settingID = 'blocksafebrowsing';
+    this.settingDefault = true;
   }
 
-  self.clearSetting = () => {
-    return self._clear().then(() => {
-      debug(`safebrowsing.js: unblock ok`)
-      return self
-    }).catch((error) => {
-      debug(`safebrowsing.js: unblock failed (${error})`)
-      return self
-    })
+  onChange(details) {
+    this.setLevelOfControl(details.levelOfControl);
+    this.setBlocked(details.value === false);
   }
-
-  return self
 }
+
+export default SafeBrowsing;

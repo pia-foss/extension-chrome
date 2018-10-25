@@ -95,7 +95,7 @@ class Settings {
     switch (settingID) {
       case ApplicationIDs.MACE_PROTECTION:
         if (this._proxy.enabled()) {
-          this._proxy.enable(this._regionlist.getSelectedRegion()).catch(console.error);
+          this._proxy.enable().catch(console.error);
         }
         break;
 

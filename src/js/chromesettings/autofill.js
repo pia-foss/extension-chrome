@@ -1,37 +1,33 @@
-import ChromeSetting from "chromesettings/chromesetting";
+import ChromeSetting from 'chromesettings/chromesetting';
 
-export default function(app) {
-  const setting = chrome.privacy.services.autofillEnabled;
-  const self = Object.create(ChromeSetting(setting, (details) => {
-    return details.value === false;
-  }));
+class AutoFill extends ChromeSetting {
+  constructor() {
+    super(chrome.privacy.services.autofillEnabled);
 
-  self.settingID = "blockautofill";
-  self.settingDefault = true;
+    // bindings
+    this.onChange = this.onChange.bind(this);
 
-  self.applySetting = () => {
-    return self._set({value: false})
-    .then(() => {
-      debug(`autofill.js: block ok`);
-      return self;
-    })
-    .catch((error) => {
-      debug(`autofill.js: block failed (${error})`);
-      return self;
-    });
+    // functions
+    this.applySetting = this.createApplySetting(
+      false,
+      'autofill',
+      'block',
+    );
+    this.clearSetting = this.createClearSetting(
+      'autofill',
+      'unblock',
+    );
+
+    // init
+    this.settingID = 'blockautofill';
+    this.settingDefault = true;
   }
 
-  self.clearSetting = () => {
-    return self._clear()
-    .then(() => {
-      debug(`autofill.js: unblock ok`);
-      return self;
-    })
-    .catch((error) => {
-      debug(`autofill.js: unblock failed (${error})`);
-      return self;
-    });
+  // eslint-disable-next-line class-methods-use-this
+  onChange(details) {
+    this.setLevelOfControl(details.levelOfControl);
+    this.setBlocked(details.value === false);
   }
-
-  return self;
 }
+
+export default AutoFill;
