@@ -12,15 +12,29 @@
 export default function (app) {
   const hostR = /^https-[a-zA-Z0-9-]+\.privateinternetaccess\.com$/;
   const active = (details) => {
-    const { proxy } = app;
-    const { regionlist, settings } = app.util;
-    const region = regionlist.getSelectedRegion();
-    const port = settings.getItem('maceprotection') ? region.macePort : region.port;
-    return proxy.enabled()
-      && details.isProxy
+    const { proxy, util: { regionlist } } = app;
+    const isValidHost = regionlist.testHost(details.challenger.host);
+    const isValidPort = regionlist.testPort(details.challenger.port);
+    const proxyEnabled = proxy.getEnabled();
+    const { isProxy } = details;
+    const isActive = (
+      isProxy
+      && isValidHost
+      && isValidPort
+      && proxyEnabled
       && hostR.test(details.challenger.host)
-      && region.host === details.challenger.host
-      && port === details.challenger.port;
+    );
+    debug('onauthrequired.js: testing if active');
+    debug(`proxy enabled: ${proxyEnabled}`);
+    debug(`isProxy: ${isProxy}`);
+    debug(`challenger host: ${details.challenger.host}`);
+    debug(`challenger port: ${details.challenger.port}`);
+    debug(`possible hosts: ${JSON.stringify(regionlist.getPotentialHosts())}`);
+    debug(`possible ports: ${JSON.stringify(regionlist.getPotentialPorts())}`);
+    debug(`isActive: ${isActive}`);
+    debug('onauthrequired.js: end test');
+
+    return isActive;
   };
 
   return function handle(details) {

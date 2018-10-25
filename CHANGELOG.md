@@ -4,6 +4,10 @@ __v1.7.13__
 
 * Refactored chromesettings
 
+__v1.7.12__
+
+* Fixed authentication dialog presented after changing regions
+
 __v1.7.11__
 
 * Moved remember me tooltip to avoid hiding submit button
