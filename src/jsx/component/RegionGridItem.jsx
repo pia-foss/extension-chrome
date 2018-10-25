@@ -22,11 +22,10 @@ class RegionGridItem extends Component {
     this.onFlagLoadError = this.onFlagLoadError.bind(this);
   }
 
-  onClick() {
+  async onClick() {
     this.regionlist.setSelectedRegion(this.region.id);
-    return this.app.proxy.enable(this.region).then(() => {
-      return this.renderer.renderTemplate('authenticated');
-    });
+    await this.app.proxy.enable(this.region);
+    return this.renderer.renderTemplate('authenticated');
   }
 
   onFlagLoadError(event) {

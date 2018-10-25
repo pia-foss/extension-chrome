@@ -1,36 +1,38 @@
-import ChromeSetting from "chromesettings/chromesetting"
-export default function(app) {
-  const self = Object.create(ChromeSetting(chrome.privacy.network.webRTCIPHandlingPolicy, (details) => {
-    return details.value === "disable_non_proxied_udp"
-  }))
+import ChromeSetting from 'chromesettings/chromesetting';
 
-  self.settingID = "preventwebrtcleak"
-  self.settingDefault = true
+class WebRTCSetting extends ChromeSetting {
+  constructor() {
+    super(chrome.privacy.network.webRTCIPHandlingPolicy);
 
-  self.applySetting = () => {
-    return self._set({value: "disable_non_proxied_udp"}).then(() => {
-      debug("webrtc.js: block ok")
-      return self
-    }).catch((error) => {
-      debug(`webrtc.js: block failed (${error})`)
-      return self
-    })
+    // bindings
+    this.init = this.init.bind(this);
+    this.onChange = this.onChange.bind(this);
+
+    // functions
+    this.applySetting = this.createApplySetting(
+      'disable_non_proxied_udp',
+      'webrtc',
+      'block',
+    );
+    this.clearSetting = this.createClearSetting(
+      'webrtc',
+      'unblock',
+    );
+
+    // init
+    this.settingID = 'preventwebrtcleak';
+    this.settingDefault = true;
   }
 
-  self.clearSetting = () => {
-    return self._clear().then(() => {
-      debug(`webrtc.js: unblock ok`)
-      return self
-    }).catch((error) => {
-      debug(`webrtc.js: unblock failed (${error})`)
-      return self
-    })
+  init() {
+    this.blockable = chrome.privacy.network.webRTCIPHandlingPolicy !== undefined;
+    super.init();
   }
 
-  self.init = () => {
-    self.blockable = chrome.privacy.network.webRTCIPHandlingPolicy !== undefined;
-  };
-
-
-  return self
+  onChange(details) {
+    this.levelOfControl = details.levelOfControl;
+    this.blocked = (details.value === 'disable_non_proxied_udp');
+  }
 }
+
+export default WebRTCSetting;

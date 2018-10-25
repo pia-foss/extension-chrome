@@ -70,7 +70,8 @@ self.util.errorinfo = new ErrorInfo(self);
 self.util = Object.freeze(self.util);
 
 /* self.proxy is a %{browser}Setting like self.chromesettings.* objects are. */
-self.proxy = Object.freeze(BrowserProxy(self));
+self.proxy = new BrowserProxy(self);
+self.proxy.init();
 self.util.bypasslist.init();
 
 // attach browser specific functions
@@ -104,32 +105,30 @@ self.util.settings.init();
 
 // Freeze settings
 self.contentsettings = deepFreeze(self.contentsettings);
-self.chromesettings = deepFreeze(self.chromesettings);
 
 // check if regions are set
 const { regionlist } = self.util;
 const regionsSet = regionlist.hasRegions();
 if (!regionsSet) { regionlist.sync(); }
 
-// check if application should logout on close, will disable proxy as well
-let userPromise;
-const { user } = self.util;
-if (user.loggedIn && user.logOutOnClose) { userPromise = user.logout(); }
-
 // check if proxy is controllable
-const { proxy } = self;
+const { proxy, util: { user } } = self;
 const controllablePromise = proxy.readSettings()
-  .then(() => { return proxy.isControllable(); });
-
-Promise.all([controllablePromise, userPromise])
-  /* NOTE: controllable handinling here should be ported to firefox */
-  .then(([controllable]) => {
+  .then(() => { return proxy.isControllable(); })
+  /* NOTE: controllable handling here should be ported to firefox */
+  .then(async (controllable) => {
     const proxyOnline = self.util.storage.getItem('online') === 'true';
-    if (user.loggedIn && proxyOnline && controllable) {
-      const currentRegion = regionlist.getSelectedRegion();
-      return proxy.enable(currentRegion);
+    if (user.loggedIn && user.logOutOnClose) {
+      // Disable proxy before logging out to prevent auth dialogs
+      await proxy.disable();
+      await user.logout();
     }
-    return proxy.disable();
+    else if (user.loggedIn && proxyOnline && controllable) {
+      await proxy.enable();
+    }
+    else {
+      await proxy.disable();
+    }
   })
   .catch((err) => {
     debug(err);

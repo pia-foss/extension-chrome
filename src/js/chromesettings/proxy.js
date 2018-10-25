@@ -1,65 +1,107 @@
 import ChromeSetting from 'chromesettings/chromesetting';
 
-const createProxyRule = (region, port) => {
-  return {
-    scheme: region.scheme,
-    host: region.host,
-    port,
-  };
-};
+const ONLINE_KEY = 'online';
 
-let settingsInMemory = false;
+class BrowserProxy extends ChromeSetting {
+  constructor(app) {
+    super(chrome.proxy.settings);
 
-export default function (app) {
-  const self = Object.create(ChromeSetting(chrome.proxy.settings, () => {
-    const { storage, icon, settingsmanager } = app.util;
-    switch (self.enabled()) {
-      case true:
-        settingsmanager.handleConnect();
-        icon.online();
-        storage.setItem('online', 'true');
-        break;
-      case false:
-        settingsmanager.handleDisconnect();
-        icon.offline();
-        storage.setItem('online', 'false');
-        break;
-      default:
-        break;
-    }
-    settingsInMemory = true;
-  }));
+    // bindings
+    this.onChange = this.onChange.bind(this);
+    this.settingsInMemory = this.settingsInMemory.bind(this);
+    this.enabled = this.enabled.bind(this);
+    this.readSettings = this.readSettings.bind(this);
+    this.enable = this.enable.bind(this);
+    this.disable = this.disable.bind(this);
+    this.getEnabled = this.getEnabled.bind(this);
 
-  self.settingsInMemory = () => { return settingsInMemory; };
-  self.enabled = () => { return self.getLevelOfControl() === 'controlled_by_this_extension'; };
+    // init
+    this.app = app;
+    this.settingID = 'proxy';
+    this.areSettingsInMemory = false;
+  }
 
-  self.readSettings = () => {
-    return self._get()
-      .then(() => {
-        debug('proxy.js: read settings');
-        return self;
-      });
-  };
+  settingsInMemory() {
+    return this.areSettingsInMemory;
+  }
 
-  self.enable = (region) => {
-    const { bypasslist, settings } = app.util;
+  getEnabled() {
+    return this.getLevelOfControl() === ChromeSetting.controlled;
+  }
+
+  enabled() {
+    return this.getEnabled();
+  }
+
+  async readSettings() {
+    await this.get();
+    BrowserProxy.debug('read settings');
+
+    return this;
+  }
+
+  async enable() {
+    const { bypasslist, settings, regionlist } = this.app.util;
+    const region = regionlist.getSelectedRegion();
     const port = settings.getItem('maceprotection') ? region.macePort : region.port;
-    const proxyRule = createProxyRule(region, port);
-    const value = { mode: 'fixed_servers', rules: { singleProxy: proxyRule, bypassList: bypasslist.toArray() } };
-    return self._set({ value })
-      .then(() => {
-        debug('proxy.js: enabled');
-        return self;
-      });
-  };
+    const proxyRule = BrowserProxy.createProxyRule(region, port);
+    const value = {
+      mode: 'fixed_servers',
+      rules: {
+        singleProxy: proxyRule,
+        bypassList: bypasslist.toArray(),
+      },
+    };
+    await this.set({ value });
+    BrowserProxy.debug('enabled');
 
-  self.disable = () => {
-    return self._clear()
-      .then(() => {
-        debug('proxy.js: disabled');
-        return self;
-      });
-  };
+    return this;
+  }
 
-  return self;
+  async disable() {
+    await this.clear();
+    BrowserProxy.debug('disabled');
+
+    return this;
+  }
+
+  onChange(details) {
+    const {
+      util: {
+        storage,
+        icon,
+        settingsmanager,
+      },
+    } = this.app;
+
+    this.setLevelOfControl(details.levelOfControl);
+    this.setBlocked(false);
+
+    if (this.getEnabled()) {
+      settingsmanager.handleConnect();
+      icon.online();
+      storage.setItem(ONLINE_KEY, String(true));
+    }
+    else {
+      settingsmanager.handleDisconnect();
+      icon.offline();
+      storage.setItem(ONLINE_KEY, String(false));
+    }
+    // eslint-disable-next-line no-param-reassign
+    this.areSettingsInMemory = true;
+  }
+
+  static createProxyRule(region, port) {
+    return {
+      scheme: region.scheme,
+      host: region.host,
+      port,
+    };
+  }
+
+  static debug(msg, err) {
+    return ChromeSetting.debug('proxy', msg, err);
+  }
 }
+
+export default BrowserProxy;

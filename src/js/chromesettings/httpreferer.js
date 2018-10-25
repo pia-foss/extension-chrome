@@ -1,32 +1,32 @@
-import ChromeSetting from "chromesettings/chromesetting"
+import ChromeSetting from 'chromesettings/chromesetting';
 
-export default function(app) {
-  const self = Object.create(ChromeSetting(chrome.privacy.websites.referrersEnabled, (details) => {
-    return details.value === false
-  }))
+class HttpReferer extends ChromeSetting {
+  constructor() {
+    super(chrome.privacy.websites.referrersEnabled);
 
-  self.settingID = "blockreferer"
-  self.settingDefault = true
+    // bindings
+    this.onChange = this.onChange.bind(this);
 
-  self.applySetting = () => {
-    return self._set({value: false}).then(() => {
-      debug("httpreferer.js: block ok")
-      return self
-    }).catch((error) => {
-      debug(`httpreferer.js: block failed (${error})`)
-      return self
-    })
+    // functions
+    this.applySetting = this.createApplySetting(
+      false,
+      'httpreferer',
+      'block',
+    );
+    this.clearSetting = this.createClearSetting(
+      'httpreferer',
+      'unblock',
+    );
+
+    // init
+    this.settingID = 'blockreferer';
+    this.settingDefault = true;
   }
 
-  self.clearSetting = () => {
-    return self._clear({}).then(() => {
-      debug("httpreferer.js: unblock ok")
-      return self
-    }).catch((error) => {
-      debug(`httpreferer.js: unblock failed (${error})`)
-      return self
-    })
+  onChange(details) {
+    this.setLevelOfControl(details.levelOfControl);
+    this.setBlocked(details.value === false);
   }
-
-  return self
 }
+
+export default HttpReferer;

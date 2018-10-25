@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.13__
+
+* Refactored chromesettings
+
 __v1.7.11__
 
 * Moved remember me tooltip to avoid hiding submit button
