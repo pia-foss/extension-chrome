@@ -43,7 +43,7 @@ export default function(app) {
           ctx.strokeRect(0, 0, width, height)
         },
         getFlagPath = (regionISO, size) => {
-          return `/images/icons/${regionISO}_icon_${size}.png`
+          return `/images/flags/${regionISO}_icon_${size}.png`
         },
         getFlagUrl = (regionISO, size) => {
           return `https://www.privateinternetaccess.com/images/flags/icons/${regionISO}_icon_${size}px.png`
