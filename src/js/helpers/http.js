@@ -58,6 +58,25 @@ async function getResult(request, timeout) {
 }
 
 /**
+ * Augment the provided error with cause and ok
+ *
+ * NOTE: Will fail to augment cyclic errors
+ */
+function augmentError(error, cause) {
+  try {
+    return Object.assign(error, {
+      cause,
+    });
+  }
+  catch (_) {
+    return Object.assign(
+      JSON.parse(JSON.stringify(error, Object.getOwnPropertyNames(error))),
+      { cause },
+    );
+  }
+}
+
+/**
  * Add a cause to failed requests
  *
  * @param {Error|Response|Symbol} err thrown error from fetch request
@@ -65,27 +84,16 @@ async function getResult(request, timeout) {
 function addCause(err) {
   let errWithCause;
   if (err === TIMED_OUT) {
-    errWithCause = Object.assign(new Response(), {
-      cause: 'timeout',
-      ok: false,
-    });
+    errWithCause = augmentError(new Error('timeout occurred'), 'timeout');
   }
   else if (err.ok === false) {
-    errWithCause = Object.assign(err, {
-      cause: 'status',
-    });
+    errWithCause = augmentError(err, 'status');
   }
   else if (!window.navigator.onLine) {
-    errWithCause = Object.assign(err, {
-      cause: 'offline',
-      ok: false,
-    });
+    errWithCause = augmentError(err, 'offline');
   }
   else {
-    errWithCause = Object.assign(err, {
-      cause: 'error',
-      ok: false,
-    });
+    errWithCause = augmentError(err, 'error');
   }
 
   return errWithCause;
