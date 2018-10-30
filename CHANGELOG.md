@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.15__
+
+* Improved http error handling
+
 __v1.7.14__
 
 * Added missing flags
