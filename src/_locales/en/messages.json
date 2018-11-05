@@ -329,8 +329,11 @@
   "OffText": {
     "message": "Off"
   },
+  "ImportFileMessage": {
+    "message": "Please select an exported Bypass Rules file (ex. bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
-    "message": "File cannot be read, pelase select a valid file"
+    "message": "File cannot be read, please select a valid file"
   },
   "CurrentRegionText": {
     "message": "Current Region"

@@ -10,23 +10,22 @@ chrome.runtime.getBackgroundPage(({ app }) => {
     logger: { debug },
   } = app;
 
-  /**
-   * Get the file input
-   *
-   * @returns {HTMLInputElement}
-   */
-  function getInput() {
-    return document.getElementById('import-file-input');
-  }
-
-  /**
-   * Get the input label
-   *
-   * @returns {HTMLLabelElement}
-   */
-  function getLabel() {
-    return document.getElementById('import-file-label');
-  }
+  const Element = {
+    input: {
+      id: 'import-file-input',
+    },
+    error: {
+      id: 'import-error',
+    },
+    label: {
+      id: 'import-file-label',
+      key: 'ImportLabel',
+    },
+    message: {
+      id: 'import-message',
+      key: 'ImportFileMessage',
+    },
+  };
 
   function getCurrentWindowID() {
     return new Promise((resolve) => {
@@ -57,7 +56,7 @@ chrome.runtime.getBackgroundPage(({ app }) => {
    */
   function setError(msg) {
     debug(`importrules.js: ${msg}`);
-    const [errElement] = document.getElementsByClassName('import-error');
+    const errElement = document.getElementById(Element.error.id);
     errElement.innerHTML = msg;
 
     return new Error(`importrules.js: ${msg}`);
@@ -154,14 +153,8 @@ chrome.runtime.getBackgroundPage(({ app }) => {
     this.addEventListener('change', onFileChange);
   }
 
-  /**
-   * Update the label text
-   *
-   * @param label {HTMLLabelElement}
-   */
-  function updateLabel(label) {
-    // eslint-disable-next-line no-param-reassign
-    label.innerHTML = t('ImportLabel');
+  function updateTranslation({ id, key }) {
+    document.getElementById(id).innerHTML = t(key);
   }
 
   onMessage(
@@ -171,8 +164,8 @@ chrome.runtime.getBackgroundPage(({ app }) => {
     },
     closeWindow,
   );
-  const label = getLabel();
-  const input = getInput();
-  updateLabel(label);
-  input.addEventListener('click', onImportClick);
+  updateTranslation(Element.message);
+  updateTranslation(Element.label);
+
+  document.getElementById(Element.input.id).addEventListener('click', onImportClick);
 });
