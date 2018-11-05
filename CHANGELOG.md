@@ -1,5 +1,10 @@
 __HEAD__
 
+__v1.7.16__
+
+* Fixed spelling mistake in import window
+* Added instructional message to import window
+
 __v1.7.15__
 
 * Improved http error handling

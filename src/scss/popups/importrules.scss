@@ -19,9 +19,10 @@ body {
       display: none;
     }
 
-    .import-error {
+    #import-error {
       color: red;
-      height: 30px;
+      font-size: 1.35rem;
+      margin-top: 3px;
     }
   }
 }
