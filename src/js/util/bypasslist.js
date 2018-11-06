@@ -215,7 +215,13 @@ export default class BypassList {
    *
    * @returns {void}
    */
-  saveRulesToFile () {
+  saveRulesToFile() {
+    // Due to a bug in chromium, the chrome.downloads API will crash the browser
+    // if used on the background script, present in Chromium 70 (unknown fix target).
+
+    // Gitlab issue: https://codex.londontrustmedia.com/extension/pia_chrome/issues/81
+    // Chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=892133&can=1&q=extension%20downloads&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
+    throw new Error('bypasslist.js: saveRulesToFile not available.');
     const payload = JSON.stringify({
       popularRules: this.enabledPopularRules(),
       userRules: this.getUserRules(),

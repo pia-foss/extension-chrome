@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { File } from 'helpers/file';
 
 class ImportExportRules extends Component {
   constructor(props) {
@@ -13,11 +14,21 @@ class ImportExportRules extends Component {
 
     // bindings
     this.onImportClick = this.onImportClick.bind(this);
+    this.onExportClick = this.onExportClick.bind(this);
   }
 
   onImportClick() {
     this.bypasslist.spawnImportTab();
     window.close();
+  }
+
+  onExportClick() {
+    const payload = JSON.stringify({
+      popularRules: this.bypasslist.enabledPopularRules(),
+      userRules: this.bypasslist.getUserRules(),
+    });
+    const file = new File('application/json', [payload]);
+    file.download('bypass-rules.json');
   }
 
   render() {
@@ -40,7 +51,7 @@ class ImportExportRules extends Component {
           <button
             type="button"
             className="col-xs-4 col-xs-offset-2 btn btn-success"
-            onClick={this.bypasslist.saveRulesToFile}
+            onClick={this.onExportClick}
           >
             { t('ExportLabel') }
           </button>
