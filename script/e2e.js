@@ -25,12 +25,15 @@ const {
     print(`MANIFEST_KEY=${process.env.MANIFEST_KEY}`);
     print(`EXTENSION_ID=${process.env.EXTENSION_ID}`);
     print(`FREEZE_APP=${process.env.freezeApp}`);
+    print(`SKIP_BUILD=${process.env.SKIP_BUILD}`);
 
     // Get manifest path
     const manifestPath = root('builds', process.env.build, 'manifest.json');
 
-    print('\n\n-- building extension --\n\n');
-    await compileCode(chrome);
+    if (String(process.env.SKIP_BUILD) !== 'true') {
+      print('\n\n-- building extension --\n\n');
+      await compileCode(chrome);
+    }
     print('\n\n-- injecting manifest key --\n\n');
     injectJsonProperty(manifestPath, {
       key: process.env.MANIFEST_KEY,

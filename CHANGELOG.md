@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.18__
+
+* Fixed authfail test
+
 __v1.7.17__
 
 * Fixed bug where exporting bypass rules would crash browser on linux

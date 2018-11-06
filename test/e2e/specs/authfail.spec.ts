@@ -27,13 +27,14 @@ idescribe('the page shown on authentication failure', function () {
 
   iit('contains a title and message is visible', async function () {
     // Arrange
-    const dirtyMessage = await translate(this.script, 'AuthFailMessage');
-    const actualMessage = await authfailPage.message.getText();
+    let expectedMessage = await translate(this.script, 'AuthFailMessage');
+    expectedMessage = await cleanHtml(this.script, expectedMessage);
     const expectedPageTitle = await translate(this.script, 'AuthFailPageTitle');
     const expectedTitle = await translate(this.script, 'AuthFailTitle');
 
     // Act
-    const expectedMessage = await cleanHtml(this.script, dirtyMessage);
+    let actualMessage = await authfailPage.message.getText();
+    actualMessage = actualMessage.replace(/\n/g, '');
     const actualPageTitle = await authfailPage.title.getText();
 
     // Assert
