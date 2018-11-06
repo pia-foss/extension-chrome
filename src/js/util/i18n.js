@@ -5,7 +5,7 @@ export default function i18n(app) {
   const translations = new Map([]);
   const rerouteMap = new Map([['pt', 'pt_BR']]);
   const detectBrowserLocale = () => {
-    let locale = chrome.i18n.getUILanguage().replace('-', '_');
+    let locale = chrome.i18n.getUILanguage().replace(/-/g, '_');
     if (this.languageMap.has(locale)) {
       return locale;
     }
