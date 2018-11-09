@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { File } from 'helpers/file';
+import File from 'helpers/file';
 
 class ImportExportRules extends Component {
   constructor(props) {
