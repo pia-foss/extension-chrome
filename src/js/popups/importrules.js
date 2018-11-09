@@ -27,19 +27,19 @@ chrome.runtime.getBackgroundPage(({ app }) => {
     },
   };
 
-  function getCurrentWindowID() {
+  function getCurrentTabID() {
     return new Promise((resolve) => {
-      chrome.windows.getCurrent(({ id: windowID }) => {
-        resolve(windowID);
+      chrome.tabs.getCurrent(({ id: tabID }) => {
+        resolve(tabID);
       });
     });
   }
 
   async function closeWindow() {
-    const windowID = await getCurrentWindowID();
+    const tabID = await getCurrentTabID();
 
     return new Promise((resolve) => {
-      chrome.windows.remove(windowID, (...args) => {
+      chrome.tabs.remove(tabID, (...args) => {
         resolve(...args);
       });
     });

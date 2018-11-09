@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.21__
+
+* Updated bypasslist import to use tab
+
 __v1.7.20__
 
 * Fixed authentication dialog showing on google pages
