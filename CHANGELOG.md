@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.20__
+
+* Fixed authentication dialog showing on google pages
+
 __v1.7.19__
 
 * Fixed i18n util only replacing first dash in locale
