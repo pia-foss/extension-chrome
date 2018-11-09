@@ -1,4 +1,5 @@
 import ChromeSetting from 'chromesettings/chromesetting';
+import http from '../helpers/http';
 
 const ONLINE_KEY = 'online';
 
@@ -53,6 +54,10 @@ class BrowserProxy extends ChromeSetting {
       },
     };
     await this.set({ value });
+    // Make request immediately to force handshake to proxy server
+    // Necessary because we cannot perform our side of handshake on
+    // Chrome pages for security reasons
+    http.head('https://privateinternetaccess.com');
     BrowserProxy.debug('enabled');
 
     return this;
