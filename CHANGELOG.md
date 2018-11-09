@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.22__
+
+* Remove download dialog from Bypass Export
+
 __v1.7.21__
 
 * Updated bypasslist import to use tab
