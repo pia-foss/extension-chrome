@@ -78,6 +78,18 @@ function createSettingsData({
       tooltip: t('BlockAutofillTooltip', { browser }),
     },
     {
+      settingID: 'blockautofillcreditcard',
+      section: getSectionName('privacy'),
+      label: t('BlockAutofillCreditCard'),
+      tooltip: t('BlockAutofillCreditCardTooltip', { browser }),
+    },
+    {
+      settingID: 'blockautofilladdress',
+      section: getSectionName('privacy'),
+      label: t('BlockAutofillAddress'),
+      tooltip: t('BlockAutofillAddressTooltip', { browser }),
+    },
+    {
       settingID: 'blockthirdpartycookies',
       section: getSectionName('tracking'),
       label: t('BlockThirdpartycookies'),
@@ -132,12 +144,19 @@ function createSettingsData({
     },
   ];
 
-  return data.map((setting) => {
-    return Object.assign({}, setting, {
-      controllable: settings.getControllable(setting.settingID),
-      value: settings.getItem(setting.settingID),
+  return data
+    .map((setting) => {
+      const controllable = settings.getControllable(setting.settingID);
+      const available = settings.getAvailable(setting.settingID);
+      const value = (available && controllable)
+        ? settings.getItem(setting.settingID)
+        : !!setting.disabledValue;
+      return Object.assign({}, setting, {
+        controllable,
+        value,
+        available,
+      });
     });
-  });
 }
 
 /**
@@ -149,6 +168,7 @@ function createSettingsData({
 function getSectionSettings(sectionKey, settingsData) {
   const sectionName = getSectionName(sectionKey);
   return settingsData
+    .filter((s) => { return s.available !== false; })
     .filter((setting) => {
       return setting.section === sectionName;
     });

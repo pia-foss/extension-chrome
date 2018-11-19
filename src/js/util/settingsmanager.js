@@ -1,15 +1,18 @@
-export default function(app) {
-  const apply = (csettings, settings) => {
-    for(let name in csettings)
-      if(settings.getItem(csettings[name].settingID))
-        csettings[name].applySetting()
-  }
-  const clear = (csettings) => {
-    for(let name in csettings)
-      if(!csettings[name].alwaysActive)
-        csettings[name].clearSetting()
-  }
+function clear(csettings) {
+  Object.values(csettings)
+    .filter((s) => { return s.isAvailable ? s.isAvailable() : true; })
+    .filter((s) => { return !s.alwaysActive; })
+    .forEach((s) => { s.clearSetting(); });
+}
 
+function apply(csettings, settings) {
+  Object.values(csettings)
+    .filter((s) => { return s.isAvailable ? s.isAvailable() : true; })
+    .filter((s) => { return settings.getItem(s.settingID); })
+    .forEach((s) => { s.applySetting(); });
+}
+
+export default function (app) {
   /*
      The purpose of this function is to deal with a Chrome bug where when one content setting
      is cleared, all other content settings are also cleared! (eg camera.clear() will clear
@@ -26,25 +29,27 @@ export default function(app) {
      version detected is older than Chrome version 71 (assume fix lands in that build).
   */
   this.reapply = (contentsettings) => {
-    const connected = app.proxy.enabled()
-    for(let name in contentsettings)
-      if(contentsettings[name].isApplied() && (connected || contentsettings[name].alwaysActive))
-        contentsettings[name].applySetting()
-  }
+    const connected = app.proxy.enabled();
+    Object.values(contentsettings)
+      .filter((s) => { return s.isAvailable ? s.isAvailable() : true; })
+      .filter((s) => { return s.isApplied(); })
+      .filter((s) => { return connected || s.alwaysActive; })
+      .forEach((s) => { s.applySetting(); });
+  };
 
   this.handleConnect = () => {
-    const {settings} = app.util,
-          {contentsettings, chromesettings} = app
-    apply(contentsettings, settings)
-    apply(chromesettings, settings)
-  }
+    const { settings } = app.util;
+    const { contentsettings, chromesettings } = app;
+    apply(contentsettings, settings);
+    apply(chromesettings, settings);
+  };
 
   this.handleDisconnect = () => {
-    const {contentsettings, chromesettings} = app
-    clear(chromesettings)
-    clear(contentsettings)
-    this.reapply(contentsettings)
-  }
+    const { contentsettings, chromesettings } = app;
+    clear(chromesettings);
+    clear(contentsettings);
+    this.reapply(contentsettings);
+  };
 
-  return this
+  return this;
 }
