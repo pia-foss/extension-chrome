@@ -24,6 +24,14 @@ class AutoFill extends ChromeSetting {
   }
 
   // eslint-disable-next-line class-methods-use-this
+  isAvailable() {
+    return (
+      !chrome.privacy.services.autofillAddressEnabled
+      && !chrome.privacy.services.autofillCreditCardEnabled
+    );
+  }
+
+  // eslint-disable-next-line class-methods-use-this
   onChange(details) {
     this.setLevelOfControl(details.levelOfControl);
     this.setBlocked(details.value === false);

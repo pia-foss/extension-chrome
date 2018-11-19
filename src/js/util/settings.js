@@ -55,7 +55,7 @@ class Settings {
   get _allSettings () { return [...Settings._appDefaults, ...this._apiSettings]; }
   get _appIDs () { return Settings._appDefaults.map((setting) => setting.settingID); }
   get _apiIDs () { return this._apiSettings.map((setting) => setting.settingID); }
-  get _allIDs () { return this._allSettings.map((setting) => setting.settingID); }
+  get settingIDs() { return this._allSettings.map((setting) => setting.settingID); }
 
   _getApiSetting (settingID) {
     return this._apiSettings
@@ -67,7 +67,7 @@ class Settings {
   }
 
   _validID (settingID) {
-    if (!this._allIDs.includes(settingID)) {
+    if (!this.settingIDs.includes(settingID)) {
       console.error(debug(`invalid settingID: ${settingID}`));
       return false;
     }
@@ -224,6 +224,25 @@ class Settings {
     }
     else {
       throw new Error('settings.js: cannot perform set without valid settingID');
+    }
+  }
+
+  getAvailable(settingID) {
+    if (this._validID(settingID)) {
+      if (Object.values(ApplicationIDs).includes(settingID)) {
+        return true;
+      }
+      if (this._apiIDs.includes(settingID)) {
+        const setting = this._getApiSetting(settingID);
+        if (typeof setting.isAvailable === 'function') {
+          return setting.isAvailable();
+        }
+        return true;
+      }
+      return true;
+    }
+    else {
+      throw new Error('settings.js: cannot get available w/o valid settingID');
     }
   }
 

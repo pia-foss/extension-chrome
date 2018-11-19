@@ -30,6 +30,8 @@ import NetworkPrediction from 'chromesettings/networkprediction';
 import SafeBrowsing from 'chromesettings/safebrowsing';
 import BrowserProxy from 'chromesettings/proxy';
 import AutoFill from 'chromesettings/autofill';
+import AutoFillCreditCard from 'chromesettings/autofillcreditcard';
+import AutoFillAddress from 'chromesettings/autofilladdress';
 import EventHandler from 'eventhandler/eventhandler';
 
 // build background application (self)
@@ -90,6 +92,10 @@ self.chromesettings.hyperlinkaudit = new HyperlinkAudit(self);
 self.chromesettings.webrtc = new WebRTC(self);
 self.chromesettings.thirdpartycookies = new ThirdPartyCookies(self);
 self.chromesettings.safebrowsing = new SafeBrowsing(self);
+// new API starting w/ chrome 70
+self.chromesettings.autofillcreditcard = new AutoFillCreditCard(self);
+self.chromesettings.autofilladdress = new AutoFillAddress(self);
+// old API, remove after chrome 70 reaches general availability
 self.chromesettings.autofill = new AutoFill(self);
 
 // Initialize all functions

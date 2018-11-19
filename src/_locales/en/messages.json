@@ -279,10 +279,22 @@
     "message": "Disable %{browser} from making direct connections to a network service that has privacy concerns around keeping logs. PIA Mace™ mitigates the risk in disabling this service."
   },
   "BlockAutofill": {
-    "message": "Disable Autofill"
+    "message": "Disable autofill"
   },
   "BlockAutofillTooltip": {
     "message": "Disable %{browser} from automatically filling in forms. This could leak personal data via hidden form fields."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "Disable credit card autofill"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Disable %{browser} from automatically filling in credit card information. This could leak personal data via hidden form fields."
+  },
+  "BlockAutofillAddress": {
+    "message": "Disable address autofill"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Disable %{browser} from automatically filling addresses and other form data. This could leak personal data via hidden form fields."
   },
   "BlockLocationAccess": {
     "message": "Block location access"

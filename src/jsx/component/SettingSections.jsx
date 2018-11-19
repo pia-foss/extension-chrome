@@ -73,19 +73,18 @@ class SettingSections extends Component {
     const {
       value,
       controllable,
-      disabledValue,
       tooltip,
       label,
       warning,
       learnMore,
       learnMoreHref,
       section,
+      available,
     } = getSetting(settingID, settingsData);
 
     return {
       settingID,
       controllable,
-      disabledValue,
       tooltip,
       label,
       warning,
@@ -95,6 +94,7 @@ class SettingSections extends Component {
       key: settingID,
       checked: value,
       onSettingChange: this.onSettingChange,
+      available,
     };
   }
 
@@ -116,6 +116,8 @@ class SettingSections extends Component {
           <SettingItem {...this.getSettingProps('blocklocation')} />
           <SettingItem {...this.getSettingProps('blocknetworkprediction')} />
           <SettingItem {...this.getSettingProps('blocksafebrowsing')} />
+          <SettingItem {...this.getSettingProps('blockautofillcreditcard')} />
+          <SettingItem {...this.getSettingProps('blockautofilladdress')} />
           <SettingItem {...this.getSettingProps('blockautofill')} />
         </SettingSection>
         <SettingSection {...this.getSectionProps('tracking')}>

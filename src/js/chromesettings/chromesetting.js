@@ -13,6 +13,7 @@ class ChromeSetting {
 
   static get controllable() { return 'controllable_by_this_extension'; }
 
+  static get notControllable() { return 'not_controllable'; }
 
   constructor(setting) {
     // bindings
@@ -35,9 +36,19 @@ class ChromeSetting {
     this.applied = undefined;
   }
 
-  init() {
-    this.setting.get({}, this.onChange);
-    this.setting.onChange.addListener(this.onChange);
+  async init() {
+    if (this.isAvailable()) {
+      this.setting.onChange.addListener(this.onChange);
+      await this.setting.get({}, this.onChange);
+    }
+    else {
+      this.setLevelOfControl(ChromeSetting.notControllable);
+      this.blocked = true;
+    }
+  }
+
+  isAvailable() {
+    return !!this.setting;
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -92,6 +103,7 @@ class ChromeSetting {
   isApplied() {
     return this.applied;
   }
+
   /**
    * Set the info for the setting
    */
@@ -122,6 +134,10 @@ class ChromeSetting {
    */
   get() {
     return new Promise((resolve, reject) => {
+      if (!this.isAvailable()) {
+        reject();
+        return;
+      }
       this.setting.get(
         ChromeSetting.defaultGetOptions,
         async (details) => {
