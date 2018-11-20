@@ -245,6 +245,10 @@ a, a:active, a:focus, a:hover { color: #39b54a; }
   width: 18px;
   position: relative;
 
+  .checkbox-input.disabled {
+    cursor: not-allowed;
+  }
+
   label.checkbox-facade {
     position: absolute;
     width: 18px;

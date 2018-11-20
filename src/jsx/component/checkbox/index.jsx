@@ -45,7 +45,11 @@ const Checkbox = (props) => {
         id={id}
         name={id}
         onChange={onChange}
-        className={buildClassName('input', id)}
+        className={buildClassName(
+          'input',
+          id,
+          ...(disabled ? ['disabled'] : []),
+        )}
         type="checkbox"
         disabled={disabled}
       />
