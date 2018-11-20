@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.24__
+
+* Removed links when setting disabled
+
 __v1.7.23__
 
 * Fixed autofill setting
