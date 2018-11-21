@@ -1,40 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class OfflineWarning extends Component {
-  constructor(props) {
-    super(props);
+import listenOnline from 'hoc/listenOnline';
 
-    // properties and state
-    this.state = { offline: !navigator.onLine };
+const OfflineWarning = ({ online }) => {
+  return (
+    !online ? (
+      <div className="offline-warning">
+        { t('NoNetworkConnection') }
+      </div>
+    ) : ''
+  );
+};
 
-    // bindings
-    this.handleNetworkStatusChange = this.handleNetworkStatusChange.bind(this);
-  }
+OfflineWarning.propTypes = {
+  online: PropTypes.bool.isRequired,
+};
 
-  componentDidMount() {
-    window.addEventListener('online', this.handleNetworkStatusChange);
-    window.addEventListener('offline', this.handleNetworkStatusChange);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('online', this.handleNetworkStatusChange);
-    window.removeEventListener('offline', this.handleNetworkStatusChange);
-  }
-
-  handleNetworkStatusChange() {
-    this.setState({ offline: !navigator.onLine });
-  }
-
-  render() {
-    const { offline } = this.state;
-    return (
-      offline ? (
-        <div className="offline-warning">
-          { t('NoNetworkConnection') }
-        </div>
-      ) : ''
-    );
-  }
-}
-
-export default OfflineWarning;
+export default listenOnline(OfflineWarning);

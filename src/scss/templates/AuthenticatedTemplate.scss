@@ -21,6 +21,14 @@
         margin-left: 60px;
         background-color: #fff;
 
+        &.disabled {
+          cursor: not-allowed;
+
+          &:hover, &:active {
+            background-position: 0px 0px;
+          }
+        }
+
         &:hover {
           background-color: #fff;
           background-position: 0px -30px;

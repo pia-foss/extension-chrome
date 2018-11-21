@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.25__
+
+* Disabled links when extension offline
+
 __v1.7.24__
 
 * Removed links when setting disabled
