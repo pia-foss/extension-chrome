@@ -10,6 +10,15 @@
     background: $orange;
     border-color: $orange;
 
+    &.disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+
+      &:hover, &:active, &:focus {
+        background: $orange;
+      }
+    }
+
     &:hover, &:active, &:focus {
       text-decoration: none;
       background: #dd8114;

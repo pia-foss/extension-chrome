@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import LoginField from 'component/LoginField';
 import onSubmit from 'eventhandler/templates/login/onSubmit';
 import RememberMeCheckbox from 'component/checkbox/RememberMeCheckbox';
+import listenOnline from 'hoc/listenOnline';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -48,7 +51,10 @@ class LoginForm extends Component {
   }
 
   render() {
-    const { user } = this.app.util;
+    const {
+      app: { util: { user } },
+      props: { online }
+    } = this;
 
     return (
       <form id="login" onSubmit={this.handleSubmit}>
@@ -90,7 +96,12 @@ class LoginForm extends Component {
             </button>
 
             <div className="resetpw text-center">
-              <a href={this.resetPasswordURL()} target="_blank" rel="noopener noreferrer">
+              <a
+                href={online ? this.resetPasswordURL() : undefined}
+                karget="_blank"
+                rel="noopener noreferrer"
+                className={online ? '' : 'disabled'}
+              >
                 { t('ResetPasswordText') }
               </a>
             </div>
@@ -103,4 +114,8 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+LoginForm.propTypes = {
+  online: PropTypes.bool.isRequired,
+};
+
+export default listenOnline(LoginForm);

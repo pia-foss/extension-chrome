@@ -28,5 +28,10 @@
   .resetpw {
     font-size: 14px;
     margin-top: 10px;
+
+    .disabled {
+      cursor: not-allowed;
+      text-decoration: none;
+    }
   }
 }

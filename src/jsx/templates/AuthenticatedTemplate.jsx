@@ -5,9 +5,10 @@ import SettingsIcon from '../component/SettingsIcon';
 import LogoutButton from '../component/LogoutButton';
 import CurrentRegion from '../component/CurrentRegion';
 import OfflineWarning from '../component/OfflineWarning';
+import listenOnline from 'hoc/listenOnline';
 
 export default function () {
-  return class AuthenticatedTemplate extends Component {
+  class AuthenticatedTemplate extends Component {
     constructor(props) {
       super(props);
 
@@ -27,6 +28,8 @@ export default function () {
     }
 
     render() {
+      const { props: { online } } = this;
+
       return (
         <div id="authenticated-template" className="row">
           <OfflineWarning />
@@ -47,8 +50,14 @@ export default function () {
 
               <a
                 title={t('AccountSettingsText')}
-                className="col-xs-4 btn-icon btn-account invokepop"
-                href={this.autologinURL()}
+                className={[
+                  'col-xs-4',
+                  'btn-icon',
+                  'btn-account',
+                  'invokepop',
+                  ...(online ? [] : ['disabled']),
+                ].join(' ')}
+                href={online ? this.autologinURL() : undefined}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -59,8 +68,13 @@ export default function () {
 
               <a
                 title={t('SupportText')}
-                className="col-xs-4 btn-icon btn-help"
-                href="https://www.privateinternetaccess.com/helpdesk/"
+                className={[
+                  'col-xs-4',
+                  'btn-icon',
+                  'btn-help',
+                  ...(online ? [] : ['disabled']),
+                ].join(' ')}
+                href={online ? 'https://www.privateinternetaccess.com/helpdesk/' : undefined}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -68,12 +82,13 @@ export default function () {
                   { t('SupportText') }
                 </div>
               </a>
-
               <LogoutButton />
             </div>
           </div>
         </div>
       );
     }
-  };
+  }
+
+  return listenOnline(AuthenticatedTemplate);
 }
