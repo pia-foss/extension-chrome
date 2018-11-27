@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.26__
+
+* Fixed links in settings not disabling offline
+
 __v1.7.25__
 
 * Disabled links when extension offline
