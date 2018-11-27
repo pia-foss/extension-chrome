@@ -37,6 +37,10 @@
   text-decoration: underline;
   display: block;
   clear: both;
+
+  &.disabled {
+    cursor: not-allowed;
+  }
 }
 
 .maceprotection {
