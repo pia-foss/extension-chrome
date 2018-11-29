@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.27__
+
+* Updated beta & release scripts
+
 __v1.7.26__
 
 * Fixed links in settings not disabling offline

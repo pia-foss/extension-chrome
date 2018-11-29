@@ -3,15 +3,21 @@ require('dotenv').config();
 const fs = require('fs-extra');
 const color = require('colors');
 const echomd = require('echomd');
-const config = require('./config');
 const Slack = require('node-slack');
+
+const config = require('./config');
 const webstoreConfigs = require('./config/webstorekeys');
 
 
 // variables
-let gitinfo = process.env.gitinfo; // eslint-disable-line no-process-env
+let { gitinfo } = process.env; // eslint-disable-line no-process-env
 const slack = new Slack(config.slack.hook, {});
-const {build, freezeApp, audience, browser} = process.env; // eslint-disable-line no-process-env
+const {
+  build,
+  freezeApp,
+  audience,
+  browser,
+} = process.env; // eslint-disable-line no-process-env
 
 // helper functions
 const stringify = (s) => {
@@ -58,9 +64,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-config');
   grunt.loadNpmTasks('grunt-replace');
@@ -81,8 +84,8 @@ module.exports = function(grunt) {
         tasks = ["env:debug", "config:debug", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "copyfiles", "changelog", "removeartifacts"];
         break;
       case "webstore":
-        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "uglify", "copyfiles",
-                     "purifycss", "cssmin", "changelog", "htmlmin", "removeartifacts"];
+        tasks = ["env:webstore", "config:webstore", "gitinfo", "deletebuild", "createbuild", "babel", "replace", "sass", "browserify", "copyfiles",
+                     "purifycss", "changelog", "removeartifacts"];
         break;
       default:
         return panic("The build name was not set, set $build and then rerun this task.");

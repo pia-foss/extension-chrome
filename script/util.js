@@ -17,9 +17,20 @@ const executablesDir = root('node_modules', '.bin');
 const webstoreKey = path.join(__dirname, '..', 'webstore.pem');
 const VERSION = fs.readFileSync(path.join(__dirname, '..', 'VERSION')).toString().trim();
 
+const NamingScheme = {
+  internal(browser) { return `private_internet_access-${browser}-v${VERSION}`; },
+  beta(browser) { return `private_internet_access-${browser}-v${VERSION}-beta`; },
+  public(browser) { return `private_internet_access-${browser}-v${VERSION}-release`; },
+};
+
 function print(message) {
   // eslint-disable-next-line no-console
   console.log(message);
+}
+
+function setEnv(key, value) {
+  process.env[key] = value;
+  print(`${key}=${value}`);
 }
 
 function execWithOutput(command, rejectOnErr = false) {
@@ -77,9 +88,10 @@ function generateWebstoreFilePath(browser) {
 }
 
 function generateFilePath(browser) {
-  let filename = `private_internet_access-${browser}-v${VERSION}.`;
-  if (browser === chrome) { filename += 'crx'; }
-  else if (browser === opera) { filename += 'nex'; }
+  const AUDIENCE = process.env.audience || 'internal';
+  let filename = NamingScheme[AUDIENCE](browser);
+  if (browser === chrome) { filename += '.crx'; }
+  else if (browser === opera) { filename += '.nex'; }
   return path.join(__dirname, '..', 'builds', filename);
 }
 
@@ -110,9 +122,9 @@ function packExtension(browser) {
 
 function generateExtension(browser) {
   // User Output
-  console.log(`Launching from directory: ${__dirname}`);
-  console.log(`Building extension version: ${VERSION}`);
-  console.log(`Detected Platform: ${platform}`);
+  print(`Launching from directory: ${__dirname}`);
+  print(`Building extension version: ${VERSION}`);
+  print(`Detected Platform: ${platform}`);
 
   // generate a build and pack the extension
   return compileCode(browser)
@@ -134,11 +146,12 @@ function injectJsonProperty(filePath, ...props) {
 }
 
 module.exports = {
+  print,
+  setEnv,
   chrome,
   opera,
   compileCode,
   generateExtension,
-  print,
   runMochaTests,
   root,
   injectJsonProperty,
