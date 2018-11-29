@@ -26,6 +26,11 @@
     "react/forbid-prop-types": [
       true,
       ["any"]
+    ],
+    "quotes": [
+      "error",
+      "single",
+      { "allowTemplateLiterals": true }
     ]
   },
   "settings" : {

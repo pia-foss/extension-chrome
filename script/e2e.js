@@ -1,6 +1,7 @@
 const { config } = require('dotenv');
 
 const {
+  setEnv,
   runMochaTests,
   print,
   root,
@@ -14,17 +15,12 @@ const {
     // setup env
     config();
 
-    process.env.build = 'webstore';
-    process.env.gitinfo = 'yes';
-    process.env.browser = 'chrome';
-    process.env.freezeApp = 0;
+    setEnv('build', 'webstore');
+    setEnv('audience', 'internal');
+    setEnv('freezeApp', 0);
 
-    print(`BUILD=${process.env.build}`);
-    print(`GITINFO=${process.env.gitinfo}`);
-    print(`BROWSER=${process.env.browser}`);
     print(`MANIFEST_KEY=${process.env.MANIFEST_KEY}`);
     print(`EXTENSION_ID=${process.env.EXTENSION_ID}`);
-    print(`FREEZE_APP=${process.env.freezeApp}`);
     print(`SKIP_BUILD=${process.env.SKIP_BUILD}`);
 
     // Get manifest path
