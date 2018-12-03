@@ -1,5 +1,8 @@
 __HEAD__
 
+__v1.8.0__
+
+* 1.8.0 Release
 * Update Translations
 
 __v1.7.28__
