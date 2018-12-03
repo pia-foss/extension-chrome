@@ -1,5 +1,9 @@
 __HEAD__
 
+__v1.7.28__
+
+* bypasslist firefox parity
+
 __v1.7.27__
 
 * Updated beta & release scripts

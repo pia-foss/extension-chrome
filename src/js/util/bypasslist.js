@@ -157,12 +157,14 @@ export default class BypassList {
     if (restartProxy) { this.restartProxy(); }
   }
 
-  enablePopularRule (name, restartProxy = true) {
-    if (!this.popularRulesByName().includes(name)) { return; }
-    if (this.enabledPopularRules().includes(name)) { return; }
+  enablePopularRule(name, restartProxy = true) {
+    if (!this.popularRulesByName().includes(name)) {
+      return Promise.reject(new Error(`${name} is not a valid popular rule`));
+    }
+    if (this.enabledPopularRules().includes(name)) { return Promise.resolve(); }
 
     return new Promise((resolve, reject) => {
-      const {storage} = this._app.util;
+      const { storage } = this._app.util;
       const complete = () => {
         storage.setItem(this._storageKeys.poprk, this.enabledPopularRules().join(','));
         resolve();
@@ -171,29 +173,32 @@ export default class BypassList {
       this._enabledRules.set(name, this._popularRules.get(name));
       if (restartProxy) {
         this.restartProxy(complete);
-      } else {
+      }
+      else {
         complete();
       }
     });
   }
 
-  disablePopularRule (name, restartProxy = true) {
-    if(!this.popularRulesByName().includes(name)) { return; }
+  disablePopularRule(name, restartProxy = true) {
+    if (!this.popularRulesByName().includes(name)) {
+      return Promise.reject(new Error(`${name} is not a valid popular rule`));
+    }
 
     return new Promise((resolve, reject) => {
       const complete = () => {
-        this._storage.setItem(this._storageKeys.poprk, this.enabledPopularRules().join(","));
+        this._storage.setItem(this._storageKeys.poprk, this.enabledPopularRules().join(','));
         resolve();
         debug(`bypasslist: removed ${name}`);
       };
-      if(this._enabledRules.has(name)) {
+      if (this._enabledRules.has(name)) {
         this._enabledRules.delete(name);
         if (restartProxy) {
           this.restartProxy(complete);
-        } else {
+        }
+        else {
           complete();
         }
-
       }
       else { reject(new Error('rule not found')); }
     });
