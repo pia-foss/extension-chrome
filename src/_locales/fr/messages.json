@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Trop de tentatives d'authentification échouées. Réessayez plus tard."
   },
+  "UnknownError": {
+    "message": "Une erreur inconnue s'est produite."
+  },
   "CopyToClipboard": {
     "message": "Copier le journal de débogage"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "Empêcher %{browser} de remplir automatiquement les formulaires. Il pourrait révéler des données personnelles via des champs cachés du formulaire."
   },
+  "BlockAutofillCreditCard": {
+    "message": "Désactiver le remplissage automatique de la carte de crédit"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Empêcher %{browser} de remplir automatiquement les informations de la carte de crédit. Il pourrait révéler des données personnelles via des champs cachés du formulaire."
+  },
+  "BlockAutofillAddress": {
+    "message": "Désactiver le remplissage automatique de l'adresse"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Empêcher %{browser} de remplir automatiquement les adresses et les autres formulaires de données. Il pourrait révéler des données personnelles via des champs cachés du formulaire."
+  },
   "BlockLocationAccess": {
     "message": "Bloquer l'accès à l'emplacement"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "OFF"
   },
+  "ImportFileMessage": {
+    "message": "Sélectionnez le fichier des règles de contournement (par ex. : règles-contournement.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Impossible de lire le fichier, veuillez sélectionner un fichier valide"
   },
   "CurrentRegionText": {
     "message": "Région actuelle"
+  },
+  "NoRegionSelected": {
+    "message": "Aucune région sélectionnée"
   },
   "ChangeExtensionSettings": {
     "message": "Paramètres de l'extension"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Vous avez peut-être perdu votre connexion à Internet, votre connexion s'est peut-être interrompue temporairement ou le serveur Private Internet Access auquel vous vous connectez pourrait présenter des problèmes de connexion."
   },
+  "NoNetworkConnection": {
+    "message": "Aucune connexion réseau"
+  },
   "YouAreConnectedTo": {
     "message": "Vous êtes connecté(e) à %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "désactivé"
   },
+  "unavailable": {
+    "message": "indisponible"
+  },
   "RememberMe": {
     "message": "Se souvenir de moi"
   },
   "RememberMeTooltip": {
-    "message": "Enregistre vos identifiants entre les redémarrages du navigateur"
+    "message": "Enregistre ces identifiants entre les redémarrages du navigateur"
   },
   "AllRegions": {
     "message": "TOUTES LES RÉGIONS"
   },
   "FavoriteRegions": {
     "message": "RÉGIONS FAVORITES"
+  },
+  "NoRegionsFound": {
+    "message": "Aucune région trouvée"
+  },
+  "RefreshRegions": {
+    "message": "Actualiser les régions"
   },
   "us_california": {
     "message": "US Californie"

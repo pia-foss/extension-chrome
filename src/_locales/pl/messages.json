@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Za dużo nieudanych prób logowania. Spróbuj ponownie później."
   },
+  "UnknownError": {
+    "message": "Wystąpił nieznany błąd."
+  },
   "CopyToClipboard": {
     "message": "Dziennik debugowania"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "Wyłącz w %{browser} automatyczne wypełnianie formularzy. W ten sposób mogą wyciekać dane osobowe przez ukryte pola formularza."
   },
+  "BlockAutofillCreditCard": {
+    "message": "Wyłącz automatyczne wypełnianie danych karty"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Wyłącz w %{browser} automatyczne wypełnianie danych karty. W ten sposób mogą wyciekać dane osobowe przez ukryte pola formularza."
+  },
+  "BlockAutofillAddress": {
+    "message": "Wyłącz automatyczne wypełnianie adresu"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Wyłącz w %{browser} automatyczne wypełnianie adresów i innych danych formularzy. W ten sposób mogą wyciekać dane osobowe przez ukryte pola formularza."
+  },
   "BlockLocationAccess": {
     "message": "Zablokuj dostęp do lokalizacji"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Wył."
   },
+  "ImportFileMessage": {
+    "message": "Zaznacz eksportowany plik dot. omijania reguł  (np. bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Nie można odczytać pliku, wybierz prawidłowy plik."
   },
   "CurrentRegionText": {
     "message": "Bieżący region"
+  },
+  "NoRegionSelected": {
+    "message": "Nie wybrano regionu"
   },
   "ChangeExtensionSettings": {
     "message": "Ustawienia rozszerzenia"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Być może połączenie z internetem zostało zerwane lub zostało chwilowo przerwane; być może też serwer Private Internet Access, z którym jesteś połączony(a), ma problemy z łącznością."
   },
+  "NoNetworkConnection": {
+    "message": "Brak połączenia z siecią"
+  },
   "YouAreConnectedTo": {
     "message": "Jesteś połączony(a) z %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "wyłączono"
   },
+  "unavailable": {
+    "message": "niedostępny"
+  },
   "RememberMe": {
     "message": "Zapamiętaj mnie"
   },
   "RememberMeTooltip": {
-    "message": "Zapisuje twoje dane identyfikacyjne między restartami przeglądarki."
+    "message": "Zapisuje te dane identyfikacyjne między restartami przeglądarki"
   },
   "AllRegions": {
     "message": "WSZYSTKIE REGIONY"
   },
   "FavoriteRegions": {
     "message": "ULUBIONE REGIONY"
+  },
+  "NoRegionsFound": {
+    "message": "Nie znaleziono regionu"
+  },
+  "RefreshRegions": {
+    "message": "Odśwież regiony"
   },
   "us_california": {
     "message": "USA Kalifornia"

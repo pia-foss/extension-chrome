@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "محاولات كثيرة لتسجيل الدخول. أعد المحاولة لاحقًا."
   },
+  "UnknownError": {
+    "message": "حصل خطأ غير معروف."
+  },
   "CopyToClipboard": {
     "message": "نسخ سجل التصحيح"
   },
@@ -276,10 +279,22 @@
     "message": "تعطيل %{browser} لمنع إجراء الاتصالات المباشرة إلى خدمة شبكة لها مخاوف تتعلق بالخصوصية حول حفظ السجلات. ™PIA Mace يقلل من مخاطر تعطيل هذه الخدمة."
   },
   "BlockAutofill": {
-    "message": "تعطيل التعبئة التلقائية"
+    "message": "تعطيل الملء التلقائي"
   },
   "BlockAutofillTooltip": {
     "message": "قم بتعطيل %{browser} من ملء النماذج تلقائيًا. هذا يمكن أن يؤدي إلى تسرب البيانات الشخصية عبر خانات النماذج المخفية."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "تعطيل الملء التلقائي لبطاقات الائتمان"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "امنع %{browser} من ملء خانات بطاقات الائتمان تلقائيًا. قد يؤدي ذلك إلى تسرب البيانات الشخصية عبر خانات النماذج المخفية."
+  },
+  "BlockAutofillAddress": {
+    "message": "تعطيل الملء التلقائي للعنوان"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "امنع %{browser} من ملء خانات العناوين تلقائيًا. قد يؤدي ذلك إلى تسرب البيانات الشخصية عبر خانات النماذج المخفية."
   },
   "BlockLocationAccess": {
     "message": "حظر الوصول للموقع"
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "غير مفعل"
   },
+  "ImportFileMessage": {
+    "message": "يرجى تحديد ملف تجاوز قواعد تم تصديره (مثلاً: bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "لا يمكن قراءة الملف، يرجى تحديد ملف صحيح"
   },
   "CurrentRegionText": {
     "message": "المنطقة الحالية"
+  },
+  "NoRegionSelected": {
+    "message": "لم يتم تحديد منطقة"
   },
   "ChangeExtensionSettings": {
     "message": "إعدادات الملحق"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "قد تكون فقدت الاتصال بالإنترنت، أو انقطع الاتصال مؤقتًا، أو قد يكون خادم Private Internet Access الذي تحاول الاتصال به يواجه مشاكل في الاتصال."
   },
+  "NoNetworkConnection": {
+    "message": "لا يوجد اتصال بالشبكة"
+  },
   "YouAreConnectedTo": {
     "message": "أنت متصل بدولة %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "تم التعطيل"
   },
+  "unavailable": {
+    "message": "غير متوفر"
+  },
   "RememberMe": {
     "message": "تذكرني"
   },
   "RememberMeTooltip": {
-    "message": "يحفظ بيانات تسجيل دخولك ما بين مرات إعادة تشغيل المتصفح"
+    "message": "يحفظ بيانات تسجيل الدخول عند إعادة تشغيل المتصفح"
   },
   "AllRegions": {
     "message": "جميع المناطق"
   },
   "FavoriteRegions": {
     "message": "المناطق المفضلة"
+  },
+  "NoRegionsFound": {
+    "message": "لا توجد مناطق"
+  },
+  "RefreshRegions": {
+    "message": "تحديث المناطق"
   },
   "us_california": {
     "message": "الولايات المتحدة - كاليفورنيا"

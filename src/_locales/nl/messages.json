@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Te veel mislukte inlogpogingen. Probeer het later opnieuw."
   },
+  "UnknownError": {
+    "message": "Er is een onbekende fout opgetreden."
+  },
   "CopyToClipboard": {
     "message": "Debuglogboek kopiëren"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "Voorkom dat %{browser} automatisch formulieren invult. Hierdoor kunnen ongemerkt persoonsgegevens worden gedeeld via verborgen formuliervelden."
   },
+  "BlockAutofillCreditCard": {
+    "message": "Creditcard automatisch invullen uitschakelen"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Voorkom dat %{browser} automatisch creditcardgegevens invult. Hierdoor kunnen ongemerkt persoonsgegevens worden gedeeld via verborgen formuliervelden."
+  },
+  "BlockAutofillAddress": {
+    "message": "Adres automatisch invullen uitschakelen"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Voorkom dat %{browser} automatisch adressen en andere formuliergegevens invult. Hierdoor kunnen ongemerkt persoonsgegevens worden gedeeld via verborgen formuliervelden."
+  },
   "BlockLocationAccess": {
     "message": "Locatietoegang blokkeren"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Uit"
   },
+  "ImportFileMessage": {
+    "message": "Selecteer een geëxporteerd Bypass Rules-bestand (bijv. bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Bestand kan niet worden gelezen. Kies een geldig bestand."
   },
   "CurrentRegionText": {
     "message": "Huidige regio"
+  },
+  "NoRegionSelected": {
+    "message": "Geen regio geselecteerd"
   },
   "ChangeExtensionSettings": {
     "message": "Extensie-instellingen"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Mogelijk heeft u geen internetverbinding meer of is deze tijdelijk onderbroken. Ook kan de server van Private Internet Access verbindingsproblemen hebben."
   },
+  "NoNetworkConnection": {
+    "message": "Geen netwerkverbinding"
+  },
   "YouAreConnectedTo": {
     "message": "U bent verbonden met %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "uitgeschakeld"
   },
+  "unavailable": {
+    "message": "niet beschikbaar"
+  },
   "RememberMe": {
     "message": "Mij onthouden"
   },
   "RememberMeTooltip": {
-    "message": "Slaat uw gegevens op bij het opnieuw opstarten van de browser"
+    "message": "Slaat deze gegevens op bij het opnieuw opstarten van de browser"
   },
   "AllRegions": {
     "message": "ALLE REGIO'S"
   },
   "FavoriteRegions": {
     "message": "FAVORIETE REGIO'S"
+  },
+  "NoRegionsFound": {
+    "message": "Geen regio's gevonden"
+  },
+  "RefreshRegions": {
+    "message": "Regio's vernieuwen"
   },
   "us_california": {
     "message": "VS Californië"

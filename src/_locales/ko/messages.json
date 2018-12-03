@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "로그인 실패가 너무 많았습니다. 나중에 다시 시도하십시오."
   },
+  "UnknownError": {
+    "message": "알 수 없는 오류가 발생했습니다."
+  },
   "CopyToClipboard": {
     "message": "디버그 로그 복사"
   },
@@ -276,10 +279,22 @@
     "message": "%{browser}이(가) 로그를 보관해서 프라이버시를 침해할 우려가 있는 네트워크 서비스에 직접 연결을 하지 못하게 합니다. PIA Mace™는 이러한 서비스를 비활성화해서 리스크를 완화합니다."
   },
   "BlockAutofill": {
-    "message": "자동 기입 비활성화"
+    "message": "자동 입력 비활성화"
   },
   "BlockAutofillTooltip": {
     "message": "%{browser}이(가) 양식에 자동으로 기입하지 못하게 합니다. 숨겨진 양식 필드를 통해 개인 정보가 유출될 수 있습니다."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "신용카드 자동 입력 비활성화"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "%{browser}이(가) 신용카드 정보를 자동으로 입력하는 것을 비활성화합니다. 숨겨진 양식 필드를 통해서 개인 정보가 유출될 수 있습니다."
+  },
+  "BlockAutofillAddress": {
+    "message": "주소 자동 입력 비활성화"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "%{browser}이(가) 주소 및 기타 양식 데이터를 자동으로 입력하는 것을 비활성화합니다. 숨겨진 양식 필드를 통해서 개인 정보가 유출될 수 있습니다."
   },
   "BlockLocationAccess": {
     "message": "위치 접근 차단"
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "끔"
   },
+  "ImportFileMessage": {
+    "message": "내보낸 우회 규칙 파일(예: bypass-rules.json)을 선택하세요"
+  },
   "InvalidImportFileStructure": {
     "message": "파일을 읽을 수 없습니다. 유효한 파일을 선택하세요"
   },
   "CurrentRegionText": {
     "message": "현재 지역"
+  },
+  "NoRegionSelected": {
+    "message": "선택된 지역이 없습니다"
   },
   "ChangeExtensionSettings": {
     "message": "확장 프로그램 설정"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "인터넷의 연결이 끊겼거나, 연결이 잠시 중단되었거나, 연결 중인 Private Internet Access에 연결 문제가 있을 수 있습니다."
   },
+  "NoNetworkConnection": {
+    "message": "네트워크 연결이 없습니다"
+  },
   "YouAreConnectedTo": {
     "message": "%{region}에 연결되었습니다"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "비활성화됨"
   },
+  "unavailable": {
+    "message": "이용 불가"
+  },
   "RememberMe": {
     "message": "ID 기억하기"
   },
   "RememberMeTooltip": {
-    "message": "브라우저를 다시 시작하는 동안 자격 증명을 저장합니다"
+    "message": "브라우저 재시작 사이에 이 자격 증명을 저장합니다"
   },
   "AllRegions": {
     "message": "모든 지역"
   },
   "FavoriteRegions": {
     "message": "선호 지역"
+  },
+  "NoRegionsFound": {
+    "message": "검색된 지역이 없습니다"
+  },
+  "RefreshRegions": {
+    "message": "지역 새로 고침"
   },
   "us_california": {
     "message": "미국 캘리포니아"

@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "For mange mislykkede forsøg på at logge på. Prøv igen senere."
   },
+  "UnknownError": {
+    "message": "Der er opstået en ukendt fejl."
+  },
   "CopyToClipboard": {
     "message": "Kopier fejlretningslogfil"
   },
@@ -276,10 +279,22 @@
     "message": "Deaktiver %{browser} fra at oprette direkte forbindelser til en netværkstjeneste, der har fortrolighedsproblemer angående logføring. PIA Mace™ mindsker risikoen ved at deaktivere denne service."
   },
   "BlockAutofill": {
-    "message": "Deaktiver Autoudfyld"
+    "message": "Deaktiver autoudfyld"
   },
   "BlockAutofillTooltip": {
     "message": "Deaktiver %{browser} fra automatisk udfyldning af formularer. Dette kan lække personlige data via skjulte formularfelter."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "Deaktiver autoudfyld af kreditkort"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Deaktiver %{browser} fra automatisk udfyldning af kreditkortoplysninger. Dette kan lække personlige data via skjulte formularfelter."
+  },
+  "BlockAutofillAddress": {
+    "message": "Deaktiver autoudfyld af adresser"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Deaktiver %{browser} fra automatisk udfyldning af adresser og andre formularfelter. Dette kan lække personlige data via skjulte formularfelter."
   },
   "BlockLocationAccess": {
     "message": "Bloker adgang til placering"
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Fra"
   },
+  "ImportFileMessage": {
+    "message": "Vælg venligst en eksporteret Bypass Rules-fil (f.eks bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Filen kan ikke læses, vælg venligst en gyldig fil"
   },
   "CurrentRegionText": {
     "message": "Aktuelle region"
+  },
+  "NoRegionSelected": {
+    "message": "Ingen region valgt"
   },
   "ChangeExtensionSettings": {
     "message": "Udvidelsesindstillinger"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Du har måske mistet forbindelse til internettet, din forbindelse kan være blevet midlertidigt afbrudt, eller Private Internet Access-serveren du forbinder med, kan have forbindelsesproblemer."
   },
+  "NoNetworkConnection": {
+    "message": "Ingen netværksforbindelse"
+  },
   "YouAreConnectedTo": {
     "message": "Du er forbundet til %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "deaktiveret"
   },
+  "unavailable": {
+    "message": "utilgængelig"
+  },
   "RememberMe": {
     "message": "Husk mig"
   },
   "RememberMeTooltip": {
-    "message": "Gemmer dine legitimationsoplysninger mellem genstart af browseren"
+    "message": "Gemmer disse legitimationsoplysninger mellem genstart af browseren"
   },
   "AllRegions": {
     "message": "ALLE REGIONER"
   },
   "FavoriteRegions": {
     "message": "FAVORITREGIONER"
+  },
+  "NoRegionsFound": {
+    "message": "Ingen regioner fundet"
+  },
+  "RefreshRegions": {
+    "message": "Opdater regioner"
   },
   "us_california": {
     "message": "USA, Californien"

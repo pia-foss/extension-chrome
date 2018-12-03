@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Zu viele fehlgeschlagene Anmeldeversuche. Später erneut versuchen."
   },
+  "UnknownError": {
+    "message": "Unbekannter Fehler."
+  },
   "CopyToClipboard": {
     "message": "Debug-Protokoll kopieren"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "Verhindert, dass %{browser} Formulare automatisch ausfüllt. Dies kann dazu führen, dass persönliche Daten über versteckte Formularfelder preisgegeben werden."
   },
+  "BlockAutofillCreditCard": {
+    "message": "Automatisches Ausfüllen für Kreditkarte deaktivieren"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Verhindert, dass %{browser} Kreditkarteninformationen automatisch ausfüllt. Dies kann dazu führen, dass persönliche Daten über versteckte Formularfelder preisgegeben werden."
+  },
+  "BlockAutofillAddress": {
+    "message": "Automatisches Ausfüllen der Adresse deaktivieren"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Verhindert, dass %{browser} die Adresse und andere Formulardaten automatisch ausfüllt. Dies kann dazu führen, dass persönliche Daten über versteckte Formularfelder preisgegeben werden."
+  },
   "BlockLocationAccess": {
     "message": "Standortzugriff sperren"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Aus"
   },
+  "ImportFileMessage": {
+    "message": "Bitte eine exportierte Bypass-Regeln-Datei auswählen (z. B. bypass-rules.json)."
+  },
   "InvalidImportFileStructure": {
     "message": "Datei kann nicht gelesen werden. Bitte eine gültige Datei auswählen."
   },
   "CurrentRegionText": {
     "message": "Aktuelle Region"
+  },
+  "NoRegionSelected": {
+    "message": "Keine Region ausgewählt"
   },
   "ChangeExtensionSettings": {
     "message": "Erweiterungseinstellungen"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Sie haben die Verbindung zum Internet verloren, die Verbindung wurde vorübergehend unterbrochen, oder der Server von Private Internet Access, mit dem Sie eine Verbindung herstellen möchten, hat Verbindungsprobleme."
   },
+  "NoNetworkConnection": {
+    "message": "Keine Netzwerkverbindung"
+  },
   "YouAreConnectedTo": {
     "message": "Sie sind mit %{region} verbunden"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "deaktiviert"
   },
+  "unavailable": {
+    "message": "nicht verfügbar"
+  },
   "RememberMe": {
     "message": "Angemeldet bleiben"
   },
   "RememberMeTooltip": {
-    "message": "Speichert Ihre Anmeldeinformationen zwischen den Neustarts des Browsers."
+    "message": "Speichert diese Anmeldeinformationen zwischen den Neustarts des Browsers"
   },
   "AllRegions": {
     "message": "ALLE REGIONEN"
   },
   "FavoriteRegions": {
     "message": "BEVORZUGTE REGIONEN"
+  },
+  "NoRegionsFound": {
+    "message": "Keine Regionen gefunden"
+  },
+  "RefreshRegions": {
+    "message": "Regionen aktualisieren"
   },
   "us_california": {
     "message": "USA, Kalifornien"

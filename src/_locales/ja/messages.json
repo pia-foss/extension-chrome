@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "ログイン最大試行回数を超えました。後でもう一度お試しください。"
   },
+  "UnknownError": {
+    "message": "原因不明なエラーが発生しました。"
+  },
   "CopyToClipboard": {
     "message": "デバッグログをコピー"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "%{browser}の自動フォーム入力を無効にします。自動フォーム入力により、隠れたフォームフィールド経由で個人情報が漏洩する場合があります。"
   },
+  "BlockAutofillCreditCard": {
+    "message": "クレジットカードの自動入力を無効化"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "%{browser}のクレジットカード情報の自動入力を無効にします。自動入力により、隠れたフォームフィールド経由で個人情報が漏洩する場合があります。"
+  },
+  "BlockAutofillAddress": {
+    "message": "住所の自動入力を無効化"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "%{browser}の住所やその他のフォームデータの自動入力を無効にします。自動入力により、隠れたフォームフィールド経由で個人情報が漏洩する場合があります。"
+  },
   "BlockLocationAccess": {
     "message": "位置情報アクセスをブロック"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "オフ"
   },
+  "ImportFileMessage": {
+    "message": "エクスポート済みの「バイパスルール」ファイル（例:bypass-rules.json）を選択してください"
+  },
   "InvalidImportFileStructure": {
     "message": "ファイルを読み取れません。有効なファイルを選択してください"
   },
   "CurrentRegionText": {
     "message": "現在の地域"
+  },
+  "NoRegionSelected": {
+    "message": "地域が選択されていません"
   },
   "ChangeExtensionSettings": {
     "message": "拡張機能設定"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "インターネット接続が失われたか、接続が一時的に中断されたか、お客様が接続しようとしているPrivate Internet Accessサーバーに接続問題が発生している可能性があります。"
   },
+  "NoNetworkConnection": {
+    "message": "ネットワーク接続がありません"
+  },
   "YouAreConnectedTo": {
     "message": "お客様は%{region}に接続されています"
   },
@@ -392,6 +416,9 @@
   "disabled": {
     "message": "無効にされました"
   },
+  "unavailable": {
+    "message": "利用不可"
+  },
   "RememberMe": {
     "message": "記憶させる"
   },
@@ -403,6 +430,12 @@
   },
   "FavoriteRegions": {
     "message": "お気に入りの地域"
+  },
+  "NoRegionsFound": {
+    "message": "地域が見つかりませんでした"
+  },
+  "RefreshRegions": {
+    "message": "地域を更新する"
   },
   "us_california": {
     "message": "米国 カリフォルニア"

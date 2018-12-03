@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "登录尝试失败次数过多。请稍后重试。"
   },
+  "UnknownError": {
+    "message": "发生未知错误。"
+  },
   "CopyToClipboard": {
     "message": "复制调试日志"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "禁止 %{browser} 自动填充表单。自动填充可能会通过隐藏的表单域泄漏个人数据。"
   },
+  "BlockAutofillCreditCard": {
+    "message": "禁用信用卡自动填充"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "禁止 %{browser} 自动填充信用卡信息。自动填充可能会通过隐藏的表单域泄漏个人数据。"
+  },
+  "BlockAutofillAddress": {
+    "message": "禁用地址自动填充"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "禁止 %{browser} 自动填充地址和其他表单数据。自动填充可能会通过隐藏的表单域泄漏个人数据。"
+  },
   "BlockLocationAccess": {
     "message": "阻止访问位置"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "关"
   },
+  "ImportFileMessage": {
+    "message": "请选择导出的绕过规则文件（例如 bypass-rules.json）"
+  },
   "InvalidImportFileStructure": {
     "message": "无法读取文件，请选择有效文件"
   },
   "CurrentRegionText": {
     "message": "当前区域"
+  },
+  "NoRegionSelected": {
+    "message": "未选择地区"
   },
   "ChangeExtensionSettings": {
     "message": "扩展程序设置"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "您可能未连接互联网、连接暂时中断，或者您连接到的 Private Internet Access 服务器存在连接问题。"
   },
+  "NoNetworkConnection": {
+    "message": "无网络连接"
+  },
   "YouAreConnectedTo": {
     "message": "您已连接到 %{region}"
   },
@@ -392,6 +416,9 @@
   "disabled": {
     "message": "已禁用"
   },
+  "unavailable": {
+    "message": "不可用"
+  },
   "RememberMe": {
     "message": "记住我"
   },
@@ -403,6 +430,12 @@
   },
   "FavoriteRegions": {
     "message": "喜爱地区"
+  },
+  "NoRegionsFound": {
+    "message": "未找到地区"
+  },
+  "RefreshRegions": {
+    "message": "刷新地区"
   },
   "us_california": {
     "message": "美国加利福尼亚"

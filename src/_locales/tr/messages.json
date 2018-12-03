@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Çok sayıda başarısız oturum açma girişiminde bulunuldu. Daha sonra tekrar deneyin."
   },
+  "UnknownError": {
+    "message": "Bilinmeyen bir hata oluştu."
+  },
   "CopyToClipboard": {
     "message": "Hata Ayıklama Günlüğünü Kopyala"
   },
@@ -276,10 +279,22 @@
     "message": "%{browser} tarayıcısının doğrudan günlük tutmayla ilgili gizlilik hususları içeren bir ağa bağlanmasına engel olun. PIA Mace™, bu hizmetin kapatılmasındaki riski düşürür."
   },
   "BlockAutofill": {
-    "message": "Otomatik Doldurmayı Kapat"
+    "message": "Otomatik doldurmayı kapat"
   },
   "BlockAutofillTooltip": {
     "message": "%{browser} tarayıcısının formları otomatik doldurma işlevini devre dışı bırakın. Gizli form alanlarıyla kişisel verilerin sızmasına neden olabilir."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "Otomatik kredi kartı bilgisini kapat"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "%{browser} tarayıcısının kredi kartı bilgilerini otomatik doldurma işlevini devre dışı bırakın. Gizli form alanlarıyla kişisel verilerin sızmasına neden olabilir."
+  },
+  "BlockAutofillAddress": {
+    "message": "Otomatik adres bilgisini kapat"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "%{browser} tarayıcısının adres bilgisini ve diğer bilgileri otomatik doldurma işlevini devre dışı bırakın. Gizli form alanlarıyla kişisel verilerin sızmasına neden olabilir."
   },
   "BlockLocationAccess": {
     "message": "Konuma erişimi engelleyin"
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Kapalı"
   },
+  "ImportFileMessage": {
+    "message": "Lütfen dışarı aktarılmış olan bir Atlama Kuralları dosyası seçin (örn. bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Dosya okunamıyor, lütfen geçerli bir dosya seçin"
   },
   "CurrentRegionText": {
     "message": "Mevcut Bölge"
+  },
+  "NoRegionSelected": {
+    "message": "Bölge Seçilmedi"
   },
   "ChangeExtensionSettings": {
     "message": "Uzantı Ayarları"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "İnternet bağlantınız kesilmiş, bağlantınız geçici olarak kesintiye uğramış ya da bağlanmaya çalıştığınız Private Internet Access sunucusunda bağlantı problemleri yaşanıyor olabilir."
   },
+  "NoNetworkConnection": {
+    "message": "Ağ Bağlantısı Yok"
+  },
   "YouAreConnectedTo": {
     "message": "%{region}'e bağlandınız"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "devre dışı"
   },
+  "unavailable": {
+    "message": "kullanılamıyor"
+  },
   "RememberMe": {
     "message": "Beni hatırla"
   },
   "RememberMeTooltip": {
-    "message": "Tarayıcının kapatılıp yeniden açıldığı aralarda oturum bilgilerinizi kaydedin"
+    "message": "Tarayıcının kapatılıp yeniden açıldığı aralarda bu bilgileri saklayın"
   },
   "AllRegions": {
     "message": "TÜM BÖLGELER"
   },
   "FavoriteRegions": {
     "message": "FAVORİ BÖLGELER"
+  },
+  "NoRegionsFound": {
+    "message": "Hiç Bölge Bulunamadı"
+  },
+  "RefreshRegions": {
+    "message": "Bölgeleri Yenile"
   },
   "us_california": {
     "message": "ABD Kaliforniya"

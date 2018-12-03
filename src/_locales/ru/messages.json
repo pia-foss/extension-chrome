@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Слишком много неудачных попыток входа. Повторите попытку позже."
   },
+  "UnknownError": {
+    "message": "Произошла неизвестная ошибка."
+  },
   "CopyToClipboard": {
     "message": "Копировать журнал отладки"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "Отключение функции автоматического заполнения форм в %{browser} . Если эта функция не отключена, возможна утечка персональных данных через скрытые поля формы."
   },
+  "BlockAutofillCreditCard": {
+    "message": "Отключить авто-заполнение платежной карты"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Отключение функции автоматического заполнения данных платежной карты в %{browser}. Если эта функция не отключена, возможна утечка персональных данных через скрытые поля формы."
+  },
+  "BlockAutofillAddress": {
+    "message": "Отключить авто-заполнение адреса"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Отключение функции автоматического заполнения адресов в %{browser} . Если эта функция не отключена, возможна утечка персональных данных через скрытые поля формы."
+  },
   "BlockLocationAccess": {
     "message": "Блокировать доступ к местоположению"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Выкл."
   },
+  "ImportFileMessage": {
+    "message": "Выберите экспортированный файл обхода правил (напр., bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Невозможно прочесть файл, выберите допустимый файл"
   },
   "CurrentRegionText": {
     "message": "Текущий регион"
+  },
+  "NoRegionSelected": {
+    "message": "Регион не выбран"
   },
   "ChangeExtensionSettings": {
     "message": "Настройки расширения"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Возможно, у вас исчезла возможность соединения с Интернетом, ваше интернет-соединение разорвано, или на сервере Private Internet Access, к которому вы подключаетесь, возникли технические проблемы."
   },
+  "NoNetworkConnection": {
+    "message": "Нет сетевого подключения"
+  },
   "YouAreConnectedTo": {
     "message": "Вы соединены с регионом «%{region}»"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "отключено"
   },
+  "unavailable": {
+    "message": "недоступно"
+  },
   "RememberMe": {
     "message": "Запомнить меня"
   },
   "RememberMeTooltip": {
-    "message": "Сохранение ваших учетных данных между перезапусками браузера"
+    "message": "Сохранение этих учетных данных между перезапусками браузера"
   },
   "AllRegions": {
     "message": "ВСЕ РЕГИОНЫ"
   },
   "FavoriteRegions": {
     "message": "ИЗБРАННЫЕ РЕГИОНЫ"
+  },
+  "NoRegionsFound": {
+    "message": "Регионы не найдены"
+  },
+  "RefreshRegions": {
+    "message": "Обновить регионы"
   },
   "us_california": {
     "message": "США, Калифорния"

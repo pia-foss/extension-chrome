@@ -1,8 +1,10 @@
 __HEAD__
 
+* Update Translations
+
 __v1.7.28__
 
-* bypasslist firefox parity
+* Bypass List Firefox Parity
 
 __v1.7.27__
 

@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Muitas tentativas malsucedidas de login. Tente novamente mais tarde."
   },
+  "UnknownError": {
+    "message": "Ocorreu um erro desconhecido."
+  },
   "CopyToClipboard": {
     "message": "Copiar log de depuração"
   },
@@ -281,6 +284,18 @@
   "BlockAutofillTooltip": {
     "message": "Impeça que o %{browser} preencha formulários automaticamente. Isso pode causar vazamento de dados pessoais via campos ocultos de formulários."
   },
+  "BlockAutofillCreditCard": {
+    "message": "Desativar preenchimento automático de cartão de crédito"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Impeça que o %{browser} preencha dados de cartão de crédito automaticamente. Isso pode causar vazamento de dados pessoais via campos ocultos de formulários."
+  },
+  "BlockAutofillAddress": {
+    "message": "Desativar preenchimento automático de endereço"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Impeça que o %{browser} preencha endereços e outros campos de formulário automaticamente. Isso pode causar vazamento de dados pessoais via campos ocultos de formulários."
+  },
   "BlockLocationAccess": {
     "message": "Bloquear acesso à localização"
   },
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Desligado"
   },
+  "ImportFileMessage": {
+    "message": "Selecione um arquivo de Contorno de Regras (ex. contorno-regras.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "O arquivo não pode ser lido. Selecione um arquivo válido."
   },
   "CurrentRegionText": {
     "message": "Região atual"
+  },
+  "NoRegionSelected": {
+    "message": "Nenhuma região selecionada"
   },
   "ChangeExtensionSettings": {
     "message": "Configurações de extensão"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Pode ser que você tenha perdido a conectividade à internet, sua conexão pode ter sido interrompida temporariamente, ou o servidor da Private Internet Access onde você está se conectando pode estar com problemas de conectividade."
   },
+  "NoNetworkConnection": {
+    "message": "Sem conexão com a internet"
+  },
   "YouAreConnectedTo": {
     "message": "Você está conectado à(ao) %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "desativado"
   },
+  "unavailable": {
+    "message": "indisponível"
+  },
   "RememberMe": {
     "message": "Lembrar de mim"
   },
   "RememberMeTooltip": {
-    "message": "Salva suas credenciais entre as reinicializações do navegador"
+    "message": "Salva estas credenciais entre as reinicializações do navegador"
   },
   "AllRegions": {
     "message": "TODAS AS REGIÕES"
   },
   "FavoriteRegions": {
     "message": "REGIÕES FAVORITAS"
+  },
+  "NoRegionsFound": {
+    "message": "Nenhuma região encontrada"
+  },
+  "RefreshRegions": {
+    "message": "Atualizar regiões"
   },
   "us_california": {
     "message": "EUA, Califórnia"

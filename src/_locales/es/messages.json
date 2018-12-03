@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Demasiados intentos de inicio de sesión erróneos. Vuelve a intentarlo más tarde."
   },
+  "UnknownError": {
+    "message": "Se ha producido un error desconocido."
+  },
   "CopyToClipboard": {
     "message": "Copiar registro de depuración"
   },
@@ -276,10 +279,22 @@
     "message": "Impide que %{browser} realice conexiones directas a un servicio de red con inquietudes de privacidad acerca del mantenimiento de registros. PIA Mace™ deshabilita este servicio para mitigar el riesgo."
   },
   "BlockAutofill": {
-    "message": "Deshabilitar Autocompletar"
+    "message": "Deshabilitar el autocompletado"
   },
   "BlockAutofillTooltip": {
     "message": "Impide que %{browser} complete los formularios automáticamente. Esto podría filtrar datos personales a través de los campos ocultos del formulario."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "Deshabilitar autocompletado de tarjeta de crédito."
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Deshabilita la opción en %{browser} de completar automáticamente la información de la tarjeta de crédito. Esto podría provocar una filtración de datos en campos ocultos."
+  },
+  "BlockAutofillAddress": {
+    "message": "Deshabilitar autocompletado de dirección"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Deshabilita la opción en %{browser} de completar automáticamente las direcciones y otros datos del formulario. Esto podría provocar una filtración de datos en campos ocultos."
   },
   "BlockLocationAccess": {
     "message": "Bloquea acceso a la ubicación"
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "No"
   },
+  "ImportFileMessage": {
+    "message": "Selecciona un archivo de reglas de derivación exportado (p. ej. bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
-    "message": "No se puede leer el archivo, selecciona uno válido"
+    "message": "No se puede leer el archivo, selecciona uno válido."
   },
   "CurrentRegionText": {
     "message": "Región actual"
+  },
+  "NoRegionSelected": {
+    "message": "No hay regiones seleccionadas"
   },
   "ChangeExtensionSettings": {
     "message": "Ajustes de extensión"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "Puede que hayas perdido la conectividad a Internet, la conexión se haya interrumpido temporalmente o el servidor de Private Internet Access al que te estás conectado tenga problemas de conectividad."
   },
+  "NoNetworkConnection": {
+    "message": "No hay conexión de red"
+  },
   "YouAreConnectedTo": {
     "message": "Estás conectado a %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "deshabilitado"
   },
+  "unavailable": {
+    "message": "no disponible"
+  },
   "RememberMe": {
     "message": "Recordarme"
   },
   "RememberMeTooltip": {
-    "message": "Guarda tus credenciales entre los reinicios del navegador"
+    "message": "Guarda estas credenciales entre los reinicios del navegador."
   },
   "AllRegions": {
     "message": "TODAS LAS REGIONES"
   },
   "FavoriteRegions": {
     "message": "REGIONES FAVORITAS"
+  },
+  "NoRegionsFound": {
+    "message": "No se encuentran regiones"
+  },
+  "RefreshRegions": {
+    "message": "Actualizar regiones"
   },
   "us_california": {
     "message": "EE. UU. California"

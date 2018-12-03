@@ -128,6 +128,9 @@
   "TooManyRequestsError": {
     "message": "Troppi tentativi di login non riusciti. Riprova più tardi."
   },
+  "UnknownError": {
+    "message": "Si è verificato un errore sconosciuto."
+  },
   "CopyToClipboard": {
     "message": "Copia archivio di debug"
   },
@@ -276,10 +279,22 @@
     "message": "Impedisci a %{browser} di completare connessioni dirette ad un servizio di rete con restrizioni di privacy relative all'archiviazione di registri. Disattivando questo servizio, PIA Mace™ riduce i rischi."
   },
   "BlockAutofill": {
-    "message": "Riemp. automatico"
+    "message": "Disattiva riemp. automatico"
   },
   "BlockAutofillTooltip": {
     "message": "Disattiva il riempimento automatico di moduli su %{browser} . Ciò potrebbe rivelare informazioni personali mediante campi di moduli nascosti."
+  },
+  "BlockAutofillCreditCard": {
+    "message": "Disattiva riemp. automatico carta di credito"
+  },
+  "BlockAutofillCreditCardTooltip": {
+    "message": "Disattiva il riempimento automatico dei dati della carta di credito su %{browser}. Ciò potrebbe rivelare informazioni personali mediante campi di moduli nascosti."
+  },
+  "BlockAutofillAddress": {
+    "message": "Disattiva riemp. automatico indirizzo"
+  },
+  "BlockAutofillAddressTooltip": {
+    "message": "Disattiva il riempimento automatico di indirizzi su %{browser}. Ciò potrebbe rivelare informazioni personali mediante campi di moduli nascosti."
   },
   "BlockLocationAccess": {
     "message": "Blocca accesso alla località"
@@ -326,11 +341,17 @@
   "OffText": {
     "message": "Off"
   },
+  "ImportFileMessage": {
+    "message": "Seleziona un file di Regole di bypass esportato (ex. bypass-rules.json)"
+  },
   "InvalidImportFileStructure": {
     "message": "Impossibile leggere il file. Seleziona un file valido."
   },
   "CurrentRegionText": {
     "message": "Regione corrente"
+  },
+  "NoRegionSelected": {
+    "message": "Nessuna regione selezionata"
   },
   "ChangeExtensionSettings": {
     "message": "Impostazioni estensione"
@@ -380,6 +401,9 @@
   "ConnectionFailMessage": {
     "message": "La connessione a Internet potrebbe essere stata persa o momentaneamente interrotta, oppure il server Private Internet Access a cui ti stai connettendo potrebbe avere problemi di connettività."
   },
+  "NoNetworkConnection": {
+    "message": "Nessuna connessione di rete"
+  },
   "YouAreConnectedTo": {
     "message": "Sei connesso a %{region}"
   },
@@ -392,17 +416,26 @@
   "disabled": {
     "message": "disattivato"
   },
+  "unavailable": {
+    "message": "non disponibile"
+  },
   "RememberMe": {
     "message": "Ricordami"
   },
   "RememberMeTooltip": {
-    "message": "Salva le credenziali tra i riavvii del browser"
+    "message": "Salva queste credenziali tra i riavvii del browser"
   },
   "AllRegions": {
     "message": "TUTTE LE REGIONI"
   },
   "FavoriteRegions": {
     "message": "REGIONI PREFERITE"
+  },
+  "NoRegionsFound": {
+    "message": "Nessuna regione rilevata"
+  },
+  "RefreshRegions": {
+    "message": "Aggiorna regioni"
   },
   "us_california": {
     "message": "US California"
