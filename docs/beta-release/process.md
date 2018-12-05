@@ -12,24 +12,33 @@
 
 ###  Create CRX file, ZIP file, and info.md files
 - `npm run beta`
+- `npm run beta:opera`
 
-###  Update info.md file in `./builds/info.md`
+###  Update info.md file in `./builds/info.md` and `./builds/info-opera.md`
 - The changelog in this file should be updated so that no patch numbers are referenced
 - Changelog should only include work since last beta release
 - Update the Date of Release to when the Beta should go out to the public
 
 ### Create master zip file with all generated files
 - `node script/chromeBetaMasterZip`
+- `node script/operaBetaMasterZip`
 - This should create a zip file with the ending `*-beta-release.zip` with all three files included.
 
 ### Notify Web team to update the client portal
 - Send the master zip file to the web team through the #general-escalation channel
 - Slack message template: `@web Here's the files for Chrome v{versionNumber} Extension Beta Release`
+- Slack message template: `@web Here's the files for Opera v{versionNumber} Extension Beta Release`
 - Include the master zip file in the above slack message
 - clean up any files that aren't needed anymore
 
 
 ## Chrome Zip File Contents:
+- INFO.md
+- CRX File
+- ZIP File
+
+
+## Opera Zip File Contents:
 - INFO.md
 - CRX File
 - ZIP File

@@ -5,6 +5,7 @@
     "dev:opera": "node script/operaDev",
     "qa": "node script/chromeQa && node script/operaQa",
     "beta": "node script/chromeBeta && node script/chromeBetaZip && node script/chromeBetaInfo",
+    "beta:opera": "node script/operaBeta && node script/operaBetaZip && node script/operaBetaInfo",
     "public": "node script/chromePublic && node script/operaPublic",
     "public:opera": "node script/operaPublic",
     "publish": "node script/chromePublish && echo \"no publish script for opera, must build manually via `npm run public:opera`\"",
