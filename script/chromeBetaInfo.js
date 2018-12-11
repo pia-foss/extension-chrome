@@ -1,7 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const dotenv = require('dotenv');
 const { execSync } = require('child_process');
 const { print } = require('./util');
+
+dotenv.config();
+
+// Get Date
+const date = process.env.RELEASE_DATE;
 
 // Get Version
 const versionFilePath = path.join(__dirname, '..', 'VERSION');
@@ -17,26 +23,48 @@ const CHANGELOG = clFile.trim();
 const filename = `private_internet_access-chrome-v${VERSION}-beta`;
 const crxFile = path.join(__dirname, '..', 'builds', `${filename}.crx`);
 const zipFile = path.join(__dirname, '..', 'builds', `${filename}.zip`);
-const infoFile = path.join(__dirname, '..', 'builds', 'info.md');
+const infoFile = path.join(__dirname, '..', 'builds', 'info-chrome.json');
+const downloadUrl = 'https://installers.privateinternetaccess.com/download/';
+
+const generateChangeLog = () => {
+  const changelog = [];
+  const changelogStart = process.env.CHANGELOG_START;
+  const changelogEnd = process.env.CHANGELOG_END;
+  let content = CHANGELOG.split(changelogStart)[1];
+  content = content.split(changelogEnd)[0].trim();
+  content = content.split('*');
+
+  content.forEach((line) => {
+    if (line) { changelog.push(line.trim()); }
+  });
+
+  return changelog;
+};
 
 const generateInfo = (checksums) => {
-  return `
-Version:
-${VERSION}
+  const firefox = {
+    version: VERSION,
+    available: true,
+    date,
+    commit: checksums.commit,
+    installers: [
+      {
+        platform: 'win',
+        platform_title: 'Windows',
+        url: `${downloadUrl}private_internet_access-chrome-${VERSION}-beta.zip`,
+        sha: checksums.zip,
+      },
+      {
+        platform: '',
+        platform_title: 'Mac / Linux / Other',
+        url: `${downloadUrl}private_internet_access-chrome-${VERSION}-beta.crx`,
+        sha: checksums.crx,
+      },
+    ],
+    changes: [...checksums.changelog],
+  };
 
-Release Date:
-{DateOfRelease}
-
-Git Commit Hash:
-${checksums.commit}
-
-SHA Checksum:
-zip: ${checksums.zip}
-crx: ${checksums.crx}
-
-ChangeLog:
-${CHANGELOG}
-`.trim();
+  return JSON.stringify(firefox);
 };
 
 Promise.resolve()
@@ -66,9 +94,17 @@ Promise.resolve()
     checksums.commit = commitHash;
     return checksums;
   })
+  // generate changelog
+  .then((checksums) => {
+    const data = checksums;
+    data.changelog = generateChangeLog();
+    return data;
+  })
   // generate info file
   .then((checksums) => {
-    const infoTemplate = generateInfo(checksums);
+    const releaseInfo = checksums;
+    releaseInfo.date = date;
+    const infoTemplate = generateInfo(releaseInfo);
     return fs.writeFileSync(infoFile, infoTemplate);
   })
   // --- Errors ---
