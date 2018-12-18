@@ -43,11 +43,28 @@ class RegionList {
     return this.getPotentialPorts().includes(port);
   }
 
+  getPotentialRegions() {
+    let regions;
+    const { util: { storage } } = this.app;
+    const fromStorage = storage.getItem('region');
+    const fromMemory = this.toArray();
+    if (fromStorage) {
+      const storageRegion = JSON.parse(fromStorage);
+      const filtered = fromMemory.filter((r) => { return r.id !== storageRegion.id; });
+      regions = [...filtered, storageRegion];
+    }
+    else {
+      regions = fromMemory;
+    }
+
+    return regions;
+  }
+
   /**
    * Get a list of hosts that are potentially being used for the active proxy connection
    */
   getPotentialHosts() {
-    return this.toArray()
+    return this.getPotentialRegions()
       .map((r) => { return r.host; });
   }
 
@@ -58,7 +75,7 @@ class RegionList {
     const { util: { settings } } = this.app;
     const key = settings.getItem('maceprotection') ? 'macePort' : 'port';
 
-    return this.toArray()
+    return this.getPotentialRegions()
       .map((r) => { return r[key]; });
   }
 
@@ -249,11 +266,9 @@ class RegionList {
   static debug(msg, err) {
     const debugMsg = `regionlist.js: ${msg}`;
     debug(debugMsg);
-    console.log(debugMsg);
     if (err) {
       const errMsg = `regionlist.js error: ${JSON.stringify(err, Object.getOwnPropertyNames(err))}`;
       debug(errMsg);
-      console.error(errMsg);
     }
     return new Error(debugMsg);
   }

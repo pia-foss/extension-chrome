@@ -51,7 +51,7 @@ class User {
       && this.getPassword().length,
     );
     if (loggedInStorageItem && !credentialsStored) {
-      console.error(debug('user is expecting to be logged in, but no credentials exist'));
+      debug('user is expecting to be logged in, but no credentials exist');
     }
 
     return loggedInStorageItem && credentialsStored;

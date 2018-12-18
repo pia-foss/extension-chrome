@@ -68,7 +68,7 @@ class Settings {
 
   _validID (settingID) {
     if (!this.settingIDs.includes(settingID)) {
-      console.error(debug(`invalid settingID: ${settingID}`));
+      debug(`invalid settingID: ${settingID}`);
       return false;
     }
 
@@ -95,7 +95,7 @@ class Settings {
     switch (settingID) {
       case ApplicationIDs.MACE_PROTECTION:
         if (this._proxy.enabled()) {
-          this._proxy.enable().catch(console.error);
+          this._proxy.enable().catch(debug);
         }
         break;
 
@@ -121,7 +121,7 @@ class Settings {
       await toggle.call(setting);
     }
     catch (_) {
-      console.error(debug(`failed to toggle setting: ${setting.settingID}`));
+      debug(`failed to toggle setting: ${setting.settingID}`);
     }
     const newValue = setting.isApplied();
     this.setItem(setting.settingID, newValue);

@@ -11,7 +11,7 @@ const createErrorBoundary = function (ReactClass) {
 
     componentDidCatch (err) {
       const msg = JSON.stringify(err, Object.getOwnPropertyNames(err));
-      console.error(msg);
+      debug(msg);
       this.setState(() => ({isError: true, msg}));
     }
 
