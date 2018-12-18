@@ -22,7 +22,7 @@ class Storage {
         return true;
 
       default:
-        console.error(debug(`no such store type: ${store}`));
+        debug(`no such store type: ${store}`);
         return false;
     }
   }
@@ -39,7 +39,7 @@ class Storage {
       else {
         msg += 'was: empty string';
       }
-      console.error(debug(msg));
+      debug(msg);
       return false;
     }
     return true;
