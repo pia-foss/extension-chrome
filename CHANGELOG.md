@@ -1,9 +1,13 @@
 __HEAD__
 
+__v1.8.1__
+
+* 1.8.1 Release
+* Fixed extension breaking on startup when proxy enabled
+
 __v1.8.0__
 
 * 1.8.0 Release
-* Fixed extension breaking on startup when proxy enabled
 * Update Changelog to follow version releases
 * Update Translations
 * Bypass List Firefox Parity
