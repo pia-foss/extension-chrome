@@ -1,14 +1,15 @@
+import File from '@helpers/file';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import File from 'helpers/file';
+import withAppContext from '@hoc/withAppContext';
 
 class ImportExportRules extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.app = background.app;
-
     // properties
+    this.app = props.context.app;
+    this.state = { showCheckmark: false };
     this.bypasslist = this.app.util.bypasslist;
     this.region = this.app.util.regionlist.getSelectedRegion();
 
@@ -29,19 +30,26 @@ class ImportExportRules extends Component {
     });
     const file = new File('application/json', [payload]);
     file.download('bypass-rules.json');
+
+    this.setState({ showCheckmark: true });
+    setTimeout(() => {
+      this.setState({ showCheckmark: false });
+    }, 3000);
   }
 
   render() {
+    const { showCheckmark } = this.state;
+    const showClass = showCheckmark ? 'show' : '';
     return (
       <div className="import-export-wrapper">
         <h3 className="bl_sectionheader">
           { t('ImportExportHeader') }
         </h3>
 
-        <div className="buttons row">
+        <div className="button-container">
           <button
             type="button"
-            className="col-xs-4 col-xs-offset-1 btn btn-success"
+            className="btn btn-success"
             disabled={!this.region}
             onClick={this.onImportClick}
           >
@@ -50,10 +58,11 @@ class ImportExportRules extends Component {
 
           <button
             type="button"
-            className="col-xs-4 col-xs-offset-2 btn btn-success"
+            className="btn btn-success"
             onClick={this.onExportClick}
           >
             { t('ExportLabel') }
+            <img className={`${showClass}`} alt="Exported" src="/images/selected_2x.png" />
           </button>
         </div>
       </div>
@@ -61,4 +70,8 @@ class ImportExportRules extends Component {
   }
 }
 
-export default ImportExportRules;
+ImportExportRules.propTypes = {
+  context: PropTypes.object.isRequired,
+};
+
+export default withAppContext(ImportExportRules);

@@ -1,6 +1,57 @@
-$black:  #111;
-$grey:   #e6e6e6;
-$green:  #39b54a;
-$blue:   #29abe2;
-$orange: #f7931e;
-$white:  #ffffff;
+$grey15: #22252E; // Dark Theme Lines
+$grey18: #2B2E39; // Dark Theme Row Hover
+$grey20: #323642; // Dark Text, Dark Theme Background
+$grey40: #5C6370;
+$grey55: #889099; // Grey icons, Disabled buttons
+$grey85: #D7D8D9; // Light Theme lines
+$grey92: #EEE; // Light Theme Background
+
+$white: #FFF; // White text
+
+$green: #5DDF5A;
+$green-light: #7AFA78;
+$green-dark20: #4CB649;
+$green-dark50: #037900;
+$green-gradient: linear-gradient(#5DDF5A, #4CB649); // Buttons, Status Indicator
+
+$yellow: #F9CF01; // Warning Text
+$yellow-light: #FFC800;
+$yellow-dark:  #E6B400;
+
+$red: #F24458; // Error Text
+$red-dark40: #B2352D;
+
+$blue: #216AE8; //edit
+$edit-dark: #1857C3;
+
+$red: #EF2424;
+$red-dark: #BF2121;
+
+
+
+// PIAX Button Redesign
+.btn {
+  color: $white;
+  background: $green-gradient;
+  &:focus { color: $white; }
+  &:hover { color: $white; background: linear-gradient(#7AFA78, #5DDF5A); }
+  &:active { background: linear-gradient(#4CB649, #40993D); }
+}
+
+.btn.btn-danger {
+  background: $red;
+  &:hover { background: darken($red, 10%); }
+  &:active { background: lighten($red, 10%); }
+}
+
+.dark .btn:disabled {
+  opacity: 1; // override bootstrap
+  color: $grey20;
+  background: $grey40;
+}
+
+.light .btn:disabled {
+  opacity: 1; // override bootstrap
+  color: $white;
+  background: $grey85;
+}

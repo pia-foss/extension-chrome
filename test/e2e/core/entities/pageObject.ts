@@ -1,7 +1,7 @@
 import { DriverFactory } from '../driver';
 import { LazyWebElement, ElementDescriptor } from './lazyWebElement';
 import { Actions, createActions } from './actions';
-import { WebElementBase } from './webElementBase';
+import { Node } from './node';
 
 /**
  * PageObject Base Class
@@ -11,11 +11,11 @@ import { WebElementBase } from './webElementBase';
  * If your selector relies on a parent for a unique selector, ensure you provide
  * a parent to your page object
  */
-abstract class PageObject extends WebElementBase {
+abstract class PageObject extends Node {
   private page: LazyWebElement;
   private overriddenUrl: string;
 
-  constructor(page: ElementDescriptor, parent?: PageObject) {
+  constructor(page: ElementDescriptor, parent?: Node) {
     super(page, parent);
     this.page = new LazyWebElement(page);
     this.overriddenUrl = '';
@@ -58,17 +58,6 @@ abstract class PageObject extends WebElementBase {
 
   protected path() {
     return 'html/foreground.html';
-  }
-
-  /**
-   * Sleep for x milliseconds
-   *
-   * In MOST cases, there is a better way than sleeping. Avoid using this
-   * at all costs, as sleeping is generally unreliable and leads to a brittle
-   * test suite
-   */
-  protected async sleep(milli: number) {
-    await this.pageDriver.sleep(milli);
   }
 
   public getUrl() {

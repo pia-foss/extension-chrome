@@ -1,131 +1,178 @@
-import http from 'helpers/http';
+import http from '@helpers/http';
 
-export default function i18n(app) {
-  let acceptedLocales;
-  const translations = new Map([]);
-  const rerouteMap = new Map([['pt', 'pt_BR']]);
-  const detectBrowserLocale = () => {
+/**
+ * I18n is a wrapper around the browser translation service
+ *
+ * We first attempt to come up with the translations ourselves, and
+ * if such a translation cannot be found we fallback to the
+ * chrome.i18n API
+ */
+class I18n {
+  constructor(app) {
+    // bindings
+    this.init = this.init.bind(this);
+    this.t = this.t.bind(this);
+    this.detectLocale = this.detectLocale.bind(this);
+    this.detectBrowserLocale = this.detectBrowserLocale.bind(this);
+    this.changeLocale = this.changeLocale.bind(this);
+    this.getWorker = this.getWorker.bind(this);
+    this.domain = this.domain.bind(this);
+
+    // init
+    window.t = this.t;
+    this.app = app;
+    this.rerouteMap = new Map([['pt', 'pt_BR']]);
+    this.domainMap = I18n.createDomainMap();
+    this.languageMap = I18n.createLanguageMap();
+    this.worker = null;
+    this.defaultLocale = 'en';
+    this.acceptedLocales = Array.from(this.languageMap.keys());
+    this.locale = this.detectLocale() || this.defaultLocale;
+    this.translations = new Map([]);
+    this.initializing = this.init();
+  }
+
+  async init() {
+    try {
+      await this.changeLocale(this.locale);
+    }
+    catch (_) {
+      debug(`i18n: error setting locale "${this.locale}"`);
+      if (this.locale !== this.defaultLocale) {
+        try {
+          await this.changeLocale(this.defaultLocale);
+          debug(`i18n: fell back to default locale: ${this.defaultLocale}`);
+        }
+        catch (__) {
+          debug(`i18n: fall back to default locale(${this.defaultLocale}) failed`);
+        }
+      }
+    }
+  }
+
+  /**
+   * Find the translation for a given key
+   */
+  t(key, variables = {}) {
+    let message = this.translations.get(key) || chrome.i18n.getMessage(key);
+    Object.keys(variables).forEach((varKey) => {
+      message = message.replace(new RegExp(`%{${varKey}}`, 'g'), variables[varKey]);
+    });
+
+    if (message.includes('%{browser}')) {
+      message = message.replace(new RegExp('%{browser}', 'g'), this.app.buildinfo.browser);
+    }
+
+    if (message.includes('%{appVersion}')) {
+      message = message.replace(new RegExp('%{appVersion}', 'g'), `v${this.app.buildinfo.version}`);
+    }
+
+    if (message.includes('%{region}')) {
+      const region = this.app.util.regionlist.getSelectedRegion();
+      message = message.replace(new RegExp('%{region}', 'g'), region.localizedName());
+    }
+
+    return message;
+  }
+
+  detectLocale() {
+    const { storage } = this.app.util;
+    const storageLocale = storage.getItem('locale');
+    const locale = storageLocale || this.detectBrowserLocale();
+    if (this.acceptedLocales.includes(locale)) {
+      return locale;
+    }
+    return undefined;
+  }
+
+  detectBrowserLocale() {
     let locale = chrome.i18n.getUILanguage().replace(/-/g, '_');
     if (this.languageMap.has(locale)) {
       return locale;
     }
     locale = locale.slice(0, 2);
 
-    return rerouteMap.get(locale) || locale;
-  };
-  const detectLocale = () => {
-    const { storage } = app.util;
-    const storageLocale = storage.getItem('locale');
-    const locale = storageLocale || detectBrowserLocale();
-    if (acceptedLocales.includes(locale)) {
-      return locale;
+    return this.rerouteMap.get(locale) || locale;
+  }
+
+  changeLocale(locale) {
+    const { icon } = this.app.util;
+    if (!this.acceptedLocales.includes(locale)) {
+      return Promise.reject();
     }
-    return undefined;
-  };
-
-  this.languageMap = new Map([
-    ['en', 'English'],
-    ['de', 'Deutsch'],
-    ['fr', 'Français'],
-    ['ru', 'Русский'],
-    ['it', 'Italiano'],
-    ['nl', 'Nederlands'],
-    ['tr', 'Türkçe'],
-    ['pl', 'Polski'],
-    ['pt_BR', 'Português (Brasil)'],
-    ['ja', '日本語'],
-    ['es', 'Español (México)'],
-    ['da', 'Dansk'],
-    ['th', 'ไทย'],
-    ['zh_TW', '繁體中文'],
-    ['zh_CN', '简体中文'],
-    ['ar', 'ةيبرعلا'],
-    ['ko', '한국어'],
-  ]);
-  acceptedLocales = Array.from(this.languageMap.keys());
-
-  this.domainMap = new Map([
-    ['en', 'www.privateinternetaccess.com'],
-    ['nl', 'nld.privateinternetaccess.com'],
-    ['fr', 'fra.privateinternetaccess.com'],
-    ['ru', 'rus.privateinternetaccess.com'],
-    ['it', 'ita.privateinternetaccess.com'],
-    ['ko', 'kor.privateinternetaccess.com'],
-    ['no', 'nor.privateinternetaccess.com'],
-    ['pl', 'pol.privateinternetaccess.com'],
-    ['es', 'mex.privateinternetaccess.com'],
-    ['ar', 'ara.privateinternetaccess.com'],
-    ['th', 'tha.privateinternetaccess.com'],
-    ['tr', 'tur.privateinternetaccess.com'],
-    ['ja', 'jpn.privateinternetaccess.com'],
-    ['da', 'dnk.privateinternetaccess.com'],
-    ['de', 'deu.privateinternetaccess.com'],
-    ['pt_BR', 'bra.privateinternetaccess.com'],
-    ['zh_CN', 'chi.privateinternetaccess.com'],
-    ['zh_TW', 'cht.privateinternetaccess.com'],
-  ]);
-
-
-  let worker = null;
-  this.worker = () => {
-    return worker;
-  };
-  this.defaultLocale = 'en';
-  this.locale = detectLocale() || this.defaultLocale;
-  this.domain = () => {
-    return this.domainMap.get(this.locale) || this.domainMap.get('en');
-  };
-
-  this.t = (key, variables = {}) => {
-    let message = translations.get(key) || chrome.i18n.getMessage(key);
-    Object.keys(variables).forEach((varKey) => {
-      message = message.replace(new RegExp(`%{${varKey}}`, 'g'), variables[varKey]);
-    });
-
-    return message;
-  };
-  window.t = this.t;
-
-  this.changeLocale = (locale) => {
-    const { icon } = app.util;
-    if (!acceptedLocales.includes(locale)) {
-      return new Promise((_, reject) => {
-        reject();
-      });
-    }
-    worker = http.get(`chrome-extension://${chrome.runtime.id}/_locales/${locale}/messages.json`)
+    this.worker = http.get(`chrome-extension://${chrome.runtime.id}/_locales/${locale}/messages.json`)
       .then(async (res) => {
         const json = await res.json();
-        translations.clear();
+        this.translations.clear();
         Object.keys(json).forEach((key) => {
-          translations.set(key, json[key].message);
+          this.translations.set(key, json[key].message);
         });
         this.locale = locale;
         icon.updateTooltip();
-        worker = null;
+        this.worker = null;
 
         return locale;
       })
       .catch((res) => {
-        worker = null;
+        this.worker = null;
 
         throw res;
       });
-    return worker;
-  };
+    return this.worker;
+  }
 
-  this.changeLocale(this.locale).catch(() => {
-    debug(`i18n: error setting locale "${this.locale}"`);
-    if (this.locale !== this.defaultLocale) {
-      this.changeLocale(this.defaultLocale)
-        .then(() => {
-          debug(`i18n: fell back to default locale: ${this.defaultLocale}`);
-        })
-        .catch(() => {
-          debug(`i18n: fall back to default locale(${this.defaultLocale}) failed`);
-        });
-    }
-  });
+  getWorker() {
+    return this.worker;
+  }
 
-  return this;
+  domain() {
+    return this.domainMap.get(this.locale) || this.domainMap.get('en');
+  }
+
+  static createLanguageMap() {
+    return new Map([
+      ['en', 'English'],
+      ['de', 'Deutsch'],
+      ['fr', 'Français'],
+      ['ru', 'Русский'],
+      ['it', 'Italiano'],
+      ['nl', 'Nederlands'],
+      ['tr', 'Türkçe'],
+      ['pl', 'Polski'],
+      ['pt_BR', 'Português (Brasil)'],
+      ['ja', '日本語'],
+      ['es', 'Español (México)'],
+      ['da', 'Dansk'],
+      ['th', 'ไทย'],
+      ['zh_TW', '繁體中文'],
+      ['zh_CN', '简体中文'],
+      ['ar', 'ةيبرعلا'],
+      ['ko', '한국어'],
+    ]);
+  }
+
+  static createDomainMap() {
+    return new Map([
+      ['en', 'www.privateinternetaccess.com'],
+      ['nl', 'nld.privateinternetaccess.com'],
+      ['fr', 'fra.privateinternetaccess.com'],
+      ['ru', 'rus.privateinternetaccess.com'],
+      ['it', 'ita.privateinternetaccess.com'],
+      ['ko', 'kor.privateinternetaccess.com'],
+      ['no', 'nor.privateinternetaccess.com'],
+      ['pl', 'pol.privateinternetaccess.com'],
+      ['es', 'mex.privateinternetaccess.com'],
+      ['ar', 'ara.privateinternetaccess.com'],
+      ['th', 'tha.privateinternetaccess.com'],
+      ['tr', 'tur.privateinternetaccess.com'],
+      ['ja', 'jpn.privateinternetaccess.com'],
+      ['da', 'dnk.privateinternetaccess.com'],
+      ['de', 'deu.privateinternetaccess.com'],
+      ['pt_BR', 'bra.privateinternetaccess.com'],
+      ['zh_CN', 'chi.privateinternetaccess.com'],
+      ['zh_TW', 'cht.privateinternetaccess.com'],
+    ]);
+  }
 }
+
+export default I18n;

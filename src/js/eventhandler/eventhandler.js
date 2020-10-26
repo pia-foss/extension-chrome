@@ -1,33 +1,40 @@
-import initOnAuthRequired      from 'eventhandler/chrome/webrequest/onauthrequired'
-import initOnCompleted         from 'eventhandler/chrome/webrequest/oncompleted'
-import initOnErrorOccurred     from 'eventhandler/chrome/webrequest/onerroroccurred'
-import initOnBeforeRequest     from 'eventhandler/chrome/webrequest/onbeforerequest'
-import initOnMessage           from 'eventhandler/chrome/runtime/onmessage'
-import initOnInstalled         from 'eventhandler/chrome/runtime/oninstalled'
-import initOnUpdateAvailable   from 'eventhandler/chrome/runtime/onupdateavailable'
-import initOnAlarm             from 'eventhandler/chrome/alarms/onalarm'
-import initOnError             from 'eventhandler/onerror'
+import applyOnAuthRequired from '@eventhandler/chrome/webrequest/onAuthRequired';
+import applyOnBeforeRedirect from '@eventhandler/chrome/webrequest/onBeforeRedirect';
+import applyOnBeforeRequest from '@eventhandler/chrome/webrequest/onBeforeRequest';
+import applyWebRequestOnCompleted from '@eventhandler/chrome/webrequest/onCompleted';
+import applyOnWebRequestError from '@eventhandler/chrome/webrequest/onErrorOccurred';
 
-export default function(app) {
-  const onAuthRequired    = initOnAuthRequired(app),
-        onCompleted       = initOnCompleted(app),
-        onMessage         = initOnMessage(app),
-        onErrorOccurred   = initOnErrorOccurred(app),
-        onBeforeRequest   = initOnBeforeRequest(app),
-        onInstalled       = initOnInstalled(app),
-        onUpdateAvailable = initOnUpdateAvailable(app),
-        onAlarm           = initOnAlarm(app),
-        onError           = initOnError(app)
+import applyOnInstalled from '@eventhandler/chrome/runtime/onInstalled';
+import applyOnMessage from '@eventhandler/chrome/runtime/onMessage';
+import applyOnUpdateAvailable from '@eventhandler/chrome/runtime/onUpdateAvailable';
 
-  chrome.webRequest.onAuthRequired.addListener(onAuthRequired, {urls: ["<all_urls>"]}, ["blocking"])
-  chrome.webRequest.onBeforeRequest.addListener(onBeforeRequest, {urls: ["<all_urls>"]}, ["blocking"])
-  chrome.webRequest.onCompleted.addListener(onCompleted, {urls: ["<all_urls>"]})
-  chrome.webRequest.onErrorOccurred.addListener(onErrorOccurred, {urls: ["<all_urls>"]})
-  chrome.runtime.onMessage.addListener(onMessage)
-  chrome.runtime.onInstalled.addListener(onInstalled)
-  chrome.runtime.onUpdateAvailable.addListener(onUpdateAvailable)
-  chrome.alarms.onAlarm.addListener(onAlarm)
-  window.addEventListener('error', onError)
+import applyOnChanged from '@eventhandler/chrome/cookies/onChanged';
 
-  return this
+import applyOnAlarm from '@eventhandler/chrome/alarms/onAlarm';
+
+import applyOnError from '@eventhandler/onError';
+
+export default function (app) {
+  const self = {};
+  applyOnAuthRequired(app, chrome.webRequest.onAuthRequired);
+  applyOnBeforeRedirect(app, chrome.webRequest.onBeforeRedirect);
+  applyOnBeforeRequest(app, chrome.webRequest.onBeforeRequest);
+  applyWebRequestOnCompleted(app, chrome.webRequest.onCompleted);
+  applyOnWebRequestError(app, chrome.webRequest.onErrorOccurred);
+
+  applyOnInstalled(app, chrome.runtime.onInstalled);
+  applyOnMessage(app, chrome.runtime.onMessage);
+  applyOnUpdateAvailable(app, chrome.runtime.onUpdateAvailable);
+
+  applyOnChanged(app, chrome.cookies.onChanged);
+
+  applyOnAlarm(app, chrome.alarms.onAlarm);
+
+  applyOnError(app, {
+    addListener(listener) {
+      window.addEventListener('error', listener);
+    },
+  });
+
+  return self;
 }

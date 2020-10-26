@@ -1,5 +1,8 @@
-import 'babel-polyfill';
-import { onMessage, Type, Target } from '../helpers/messaging';
+import '@babel/polyfill';
+import '@style/pia';
+import '@style/popups/importrules';
+
+import { onMessage, Type, Target } from '@helpers/messaging';
 
 chrome.runtime.getBackgroundPage(({ app }) => {
   const {

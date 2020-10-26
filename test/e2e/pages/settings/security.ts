@@ -6,11 +6,13 @@ import { createSelector } from '../../core/entities/selector';
 class SecuritySection extends SectionBase {
   public blockAdobeFlashCheckbox: Checkbox;
   public preventWebRtcLeak: Checkbox;
+  public httpsUpgrade: Checkbox;
+
   constructor(parent: PageObject) {
     super(
       {
         selector: createSelector({
-          value: '.sectionwrapper.security',
+          value: '.section-wrapper.security',
         }),
         name: 'security settings',
       },
@@ -33,6 +35,14 @@ class SecuritySection extends SectionBase {
         name: 'preventWebRtcLeak',
       },
       this,
+    );
+    this.httpsUpgrade = new Checkbox(
+      {
+        selector: createSelector({
+          value: '#httpsUpgrade',
+        }),
+        name: 'httpsUpgrade',
+      },
     );
   }
 }

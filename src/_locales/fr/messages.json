@@ -14,8 +14,11 @@
   "Extension": {
     "message": "Extension"
   },
-  "ResetPasswordText": {
-    "message": "Réinitialiser le mot de passe"
+  "ForgotPassword": {
+    "message": "Mot de passe oublié"
+  },
+  "BuyAccount": {
+    "message": "Acheter un compte"
   },
   "DeleteDebugLog": {
     "message": "Supprimer le journal"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "Afficher les messages de débogage dans le journal de débogage. Appuyez sur la touche « Ctrl », puis sur la touche « d » pour afficher la console de débogage."
   },
-  "LogMeOutOnClose": {
-    "message": "Me déconnecter à la fermeture du navigateur"
+  "DarkTheme": {
+    "message": "Thème sombre"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "Une fois le navigateur rouvert, vous serez reconnecté automatiquement"
+  "DarkThemeTooltip": {
+    "message": "Activez un thème plus sombre pour que l'extension l'utilise quand il y a peu de lumière"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "Ce paramètre n'est pas contrôlable si les identifiants ne sont pas en mémoire (écran de connexion)"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "IP du proxy"
   },
   "DebugLogIsEmpty": {
     "message": "Le journal de débogage est vide."
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "Les paramètres activés le seront toujours, que vous soyez connecté à une région ou non, à l'exception de PIA MACE™ qui n'est actif que lorsque vous êtes connecté à une région."
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "Activez l'extension en mode navigation privée en sélectionnant cette option dans les paramètres d'extension dans chrome://extensions."
   },
   "UsernamePlaceholder": {
     "message": "Nom d'utilisateur"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "Nom d'utilisateur et/ou mot de passe erronés."
-  },
-  "NetworkError": {
-    "message": "Échec de demande d'authentification à cause d'une erreur réseau. Veuillez réessayer."
   },
   "OfflineError": {
     "message": "La demande d'authentification a échoué car il semble que vous soyez hors-ligne. Veuillez vérifier que vous êtes connecté à Internet."
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "Journal de débogage copié"
   },
-  "NoAccountQuestion": {
-    "message": "Vous n'avez pas de compte ?"
-  },
-  "JoinText": {
-    "message": "INSCRIVEZ-VOUS POUR OBTENIR UN COMPTE VPN"
-  },
   "JoinURL": {
     "message": "https://fra.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "Exporter"
   },
-  "SettingsWarning": {
-    "message": "Ces paramètres ne sont pas en vigueur. Ils prennent effet lorsque vous êtes connecté(e) à une région."
+  "BypassWarningLead": {
+    "message": "Les demandes adressées aux sites Web répertoriés dans la Liste de contournement utilisent"
   },
-  "SettingsWarningConnected": {
-    "message": "Ces paramètres sont en vigueur. Les paramètres par défaut de %{browser} seront restaurés quand vous vous déconnecterez de %{region}."
-  },
-  "BypassWarning": {
-    "message": "Les demandes effectuées sur les sites web trouvés sur la liste de contournement utilisent une <span class=\"bold-underline\">connexion directe</span> qui n'est <span class=\"bold-underline\">pas</span> protégée par Private Internet Access™."
+  "BypassWarningBold": {
+    "message": "des connexions directes et ne sont pas protégées par Private Internet Access™."
   },
   "AccountSettingsText": {
     "message": "Paramètres du compte"
   },
-  "AutoLoginURL": {
-    "message": "https://fra.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "Ajouter une URL à la liste de contournement"
-  },
-  "SupportURL": {
-    "message": "https://fra.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "Aide et assistance"
-  },
-  "StatusText": {
-    "message": "État"
   },
   "OfflineText": {
     "message": "HORS-LIGNE"
   },
-  "PleaseWait": {
-    "message": "Chargement. Veuillez patienter."
-  },
   "Security": {
     "message": "Sécurité"
-  },
-  "AdsTrackersProtection": {
-    "message": "Protection contre les publicités, les traqueurs et logiciels malveillants"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "Qu'est-ce que MACE™ ?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ protège votre vie privée et votre sécurité en bloquant le contenu malveillant, les espions et les publicités."
+    "message": "PIA MACE™ protège votre vie privée et votre sécurité en bloquant le contenu malveillant, les espions et les publicités. Uniquement actif lorsque connecté à une région"
   },
   "WebRTCLeakProtection": {
     "message": "Bloquer la détection d'IP WebRTC"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "Empêchez %{browser} d'exécuter Adobe Flash. Adobe Flash peut être utilisé pour révéler votre adresse IP publique. La désactivation n'est pas recommandée."
   },
+  "HttpsUpgrade": {
+    "message": "Parcourez les sites web à l'aide d'HTTPS"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "Convertit automatiquement les sites web ou les liens pris en charge à l'aide d'une connexion non cryptée (HTTP) en connexion HTTPS plus sécurisée avant de quitter votre navigateur. Rendu possible grâce à HTTPS Everywhere et l'EFF."
+  },
+  "AlwaysActive": {
+    "message": "Paramètres toujours actifs"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "Implique les paramètres restent toujours actifs, que le proxy soit connecté ou non"
+  },
   "BlockUTM": {
     "message": "Supprimer les paramètres UTM"
   },
   "BlockUTMTooltip": {
     "message": "Supprimer les paramètres Urchin Tracking Model (UTM) des URL sur lesquelles vous cliquez. Les paramètres UTM permettent de suivre les informations de votre visite sur un site Internet."
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "Supprimer les paramètres FBCLID"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Supprimer les paramètres Facebook FBCLID des liens sortants dans Facebook. Les paramètres FBCLID permettent de suivre les informations de votre visite sur un site Internet."
   },
   "BypassInstructionsBold": {
     "message": "* préfixe requis"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "Liste de contournement"
   },
-  "SaveProxyBypassList": {
-    "message": "Enregistrer"
+  "SmartLocation": {
+    "message": "Localisation intelligente"
   },
-  "OKSaved": {
-    "message": "OK. Enregistré"
+  "WebAlreadyAdded": {
+    "message": "Sites web déjà ajoutés"
+  },
+  "AddSmartLocation": {
+    "message": "Ajouter la localisation intelligente"
   },
   "WelcomeToNewVersion": {
     "message": "Bienvenue sur %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "Aucune règle ajoutée"
+  },
+  "NoLocation": {
+    "message": "Aucune localisation ajoutée"
+  },
+  "OneLocation": {
+    "message": "localisation ajoutée"
+  },
+  "MultipleLocations": {
+    "message": "localisations"
   },
   "MultipleRulesAdded": {
     "message": "%{count} règles ajoutées"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "Empêcher les sites web d'accéder au micro de votre ordinateur."
   },
-  "UseRegionLocale": {
-    "message": "Paramètres linguistiques et régionaux privés"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "Les paramètres linguistiques et régionaux par défaut de votre navigateur sont gardés confidentiels en étant remplacés par les paramètres linguistiques et régionaux de la région actuelle."
-  },
   "Privacy": {
     "message": "Confidentialité"
-  },
-  "OnText": {
-    "message": "ON"
-  },
-  "OffText": {
-    "message": "OFF"
   },
   "ImportFileMessage": {
     "message": "Sélectionnez le fichier des règles de contournement (par ex. : règles-contournement.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "Aucune région sélectionnée"
+  },
+  "ChooseAutomatically": {
+    "message": "Choisir automatiquement"
   },
   "ChangeExtensionSettings": {
     "message": "Paramètres de l'extension"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "Latence"
   },
-  "SortBy": {
-    "message": "Trier par :"
+  "RegionSearch": {
+    "message": "Recherche..."
   },
   "CloseText": {
     "message": "Fermer"
   },
   "UpgradeBrowserMessage": {
     "message": "Private Internet Access ne peut être utilisé car votre version de %{browser} est obsolète. Veuillez mettre à jour %{browser} vers sa version la plus récente."
-  },
-  "LoadingText": {
-    "message": "Chargement"
   },
   "LogoutText": {
     "message": "Déconnexion"
@@ -390,7 +387,13 @@
     "message": "Erreur d'authentification"
   },
   "AuthFailMessage": {
-    "message": "Si vous avez récemment modifié votre mot de passe sur le site web Private Internet Access, une réauthentification avec l'extension pourrait réparer l'erreur.<br/><br/>Pour toute demande d'aide et d'assistance, contactez notre <a href=\"https://privateinternetaccess.com/helpdesk\">équipe d'assistance.</a>."
+    "message": "Si vous avez récemment modifié votre mot de passe sur le site web Private Internet Access, une réauthentification avec l'extension pourrait réparer l'erreur."
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "Pour obtenir de l'aide et de l'assistance, contactez notre"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "équipe d'assistance"
   },
   "ConnectionFailPageTitle": {
     "message": "Erreur de connexion | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "activé"
   },
-  "disabled": {
-    "message": "désactivé"
-  },
-  "unavailable": {
-    "message": "indisponible"
-  },
   "RememberMe": {
     "message": "Se souvenir de moi"
   },
   "RememberMeTooltip": {
-    "message": "Enregistre ces identifiants entre les redémarrages du navigateur"
+    "message": "Enregistre ce nom d'utilisateur entre les redémarrages du navigateur"
   },
-  "AllRegions": {
-    "message": "TOUTES LES RÉGIONS"
+  "Auto": {
+    "message": "Auto"
   },
-  "FavoriteRegions": {
-    "message": "RÉGIONS FAVORITES"
+  "CalculatingLatency": {
+    "message": "Calcul de la latence"
   },
   "NoRegionsFound": {
     "message": "Aucune région trouvée"
   },
   "RefreshRegions": {
     "message": "Actualiser les régions"
+  },
+  "ViewChangelog": {
+    "message": "voir le journal des changements"
+  },
+  "ChangelogTitle": {
+    "message": "Journal des changements"
+  },
+  "UnknownProxyError": {
+    "message": "Erreur de proxy inconnu"
+  },
+  "Connecting": {
+    "message": "connexion"
+  },
+  "Disconnecting": {
+    "message": "déconnexion"
+  },
+  "Connected": {
+    "message": "connecté"
+  },
+  "DefaultDisplay": {
+    "message": "AFFICHAGE PAR DÉFAUT"
+  },
+  "QuickConnect": {
+    "message": "CONNEXION RAPIDE"
+  },
+  "QuickSettings": {
+    "message": "PARAMÈTRES RAPIDES"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "DÉSACTIVER RÉFÉRENT HTTP"
+  },
+  "DEBUGLOGGING": {
+    "message": "JOURNAL DE DÉBOGAGE"
+  },
+  "LIGHTTHEME": {
+    "message": "THÈME CLAIR"
+  },
+  "FPPROTECTION": {
+    "message": "PROTECTION CONTRE LE FINGERPRINTING"
+  },
+  "BLOCKCAMERA": {
+    "message": "BLOQUER L'ACCÈS À LA CAMÉRA"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "BLOQUER L'ACCÈS AU MICRO"
+  },
+  "VIEWALL": {
+    "message": "VOIR TOUS LES PARAMÈTRES..."
+  },
+  "trial": {
+    "message": "Essai"
+  },
+  "days_left": {
+    "message": "jours restants"
+  },
+  "Subscription": {
+    "message": "ABONNEMENT"
+  },
+  "NoSubscriptionData": {
+    "message": "Aucune info de l'utilisateur trouvée"
+  },
+  "AddToBypassRules": {
+    "message": "AJOUTER AUX RÈGLES DE CONTOURNEMENT"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "Règle déjà incluse"
+  },
+  "RemoveRule": {
+    "message": "retirer"
+  },
+  "GatheringRegions": {
+    "message": "Collecte des régions"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox a récemment changé la façon dont les modules gèrent la connexion au proxy. Autoriser le module à s'exécuter en fenêtre privée est désormais obligatoire pour que les paramètres de proxy soient mis à jour."
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "Veuillez visiter l'URL ci-dessous pour voir la page de vos modules. Puis, cliquez sur le module « Private Internet Access » pour modifier ses paramètres. Ensuite, changez le paramètre de « Exécuter en fenêtre privée » en « Autoriser »."
+  },
+  "us": {
+    "message": "États-Unis"
+  },
+  "gb": {
+    "message": "Royaume-Uni"
+  },
+  "de": {
+    "message": "Allemagne"
+  },
+  "au": {
+    "message": "Australie"
+  },
+  "canada": {
+    "message": "Canada"
   },
   "us_california": {
     "message": "US Californie"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "AU Melbourne"
+  },
+  "aus_perth": {
+    "message": " Perth AU"
   },
   "nl": {
     "message": "Pays-Bas"

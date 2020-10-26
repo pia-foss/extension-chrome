@@ -1,7 +1,7 @@
-import ChromeSetting from 'chromesettings/chromesetting';
+import ChromeSetting from '@chromesettings/chromesetting';
 
 class AutoFillAddress extends ChromeSetting {
-  constructor() {
+  constructor(storage) {
     super(chrome.privacy.services.autofillAddressEnabled);
 
     // bindings
@@ -21,7 +21,7 @@ class AutoFillAddress extends ChromeSetting {
     // init
     this.settingID = 'blockautofilladdress';
     // If it exists, use value from old API
-    if (localStorage.getItem('settings:blockautofill') === 'false') {
+    if (storage.getItem('settings:blockautofill')) {
       this.settingDefault = false;
     }
     else {

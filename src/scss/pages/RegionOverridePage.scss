@@ -1,0 +1,73 @@
+@mixin flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+#region-override-template {
+  @include flexCol;
+  width: 100%;
+  background-color: #eae0c8;
+  padding: 0 20px 10px 20px;
+  margin: 17px 0;
+
+  .override-heading {
+    width: 100%;
+    @include flexCol;
+    justify-content: center;
+    
+    .override-title {
+      font-size: 20px;
+    }
+
+    .override-title, .disclaimer {
+      @include flexRow;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  .add-region {
+    @include flexCol;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+
+    .add {
+      align-self: flex-end;
+    }
+
+    .override-input {
+      @include flexRow;
+      justify-content: space-between;
+      width: 100%;
+
+      &.port {
+
+      }
+    }
+  }
+
+  .override-regions {
+    table-layout: fixed;
+    width: 100%;
+    overflow: hidden;
+
+    tr {
+      font-size: 10px;
+    }
+
+    td {
+      padding: 0 4px;
+
+      &.host, &.name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import {
   WebElement,
   until,
   Condition,
+  error,
 } from 'selenium-webdriver';
 import { expect } from 'chai';
 
@@ -29,7 +30,7 @@ type LazyChain = LazyWebElement[];
  * when a {@link LazyWebElement} is instantiated
  */
 class LazyWebElement {
-  private static WAIT_TIME = getConfig().WAIT_TIME;
+  private static WAIT_TIME = getConfig().waitTime;
   private selector: Selector;
   private name: string;
   private by: By;
@@ -100,6 +101,10 @@ class LazyWebElement {
     const by = bySelector(this.selector);
 
     return operation(by);
+  }
+
+  public selectorType() {
+    return this.selector.type;
   }
 
   public waitAndFindElement(timeoutMultiplier = 1): Promise<WebElement> {
@@ -175,8 +180,7 @@ class LazyWebElement {
         return el;
       }
 
-      // TODO: Ensure this matches findElement behavior
-      throw new Error();
+      throw new error.ElementNotVisibleError();
     };
 
     return this.operate(findElOp);

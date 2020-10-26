@@ -1,27 +1,43 @@
-export default function(app) {
-  const errorMap   = new Map([]),
-        generateID = () => {
-          let errorID = ""
-          for(let i = 0; i < 3; i++)
-            errorID += Math.random().toString(36)
-          return errorID
-        }
+class ErrorInfo {
+  constructor(app) {
+    // bindings
+    this.set = this.set.bind(this);
+    this.get = this.get.bind(this);
+    this.delete = this.delete.bind(this);
 
-  this.set = (errorName, url) => {
-    const errorID = generateID()
-    errorMap.set(errorID, [errorName, url])
-    return errorID
+    // init
+    this.app = app;
+    this.errorMap = new Map();
   }
 
-  this.get = (errorID) => {
-    return errorMap.get(errorID) || []
+  set(errorName, url) {
+    const errorID = ErrorInfo.generateID();
+    this.errorMap.set(errorID, [errorName, url]);
+    return errorID;
   }
 
-  this.delete = (errorID) => {
-    const deleted = errorMap.delete(errorID)
-    deleted ? debug(`errorinfo.js: delete ${errorID}`) : debug(`errorinfo.js: miss ${errorID}`)
-    return deleted
+  get(errorID) {
+    return this.errorMap.get(errorID) || [];
   }
 
-  return this
+  delete(errorID) {
+    const deleted = this.errorMap.delete(errorID);
+    if (deleted) {
+      debug(`errorinfo.js: delete ${errorID}`);
+    }
+    else {
+      debug(`errorinfo.js: miss ${errorID}`);
+    }
+    return deleted;
+  }
+
+  static generateID() {
+    let errorID = '';
+    for (let i = 0; i < 3; i++) {
+      errorID += Math.random().toString(36);
+    }
+    return errorID;
+  }
 }
+
+export default ErrorInfo;

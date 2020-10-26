@@ -1,27 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-const createErrorBoundary = function (ReactClass) {
+const createErrorBoundary = (ReactClass) => {
   return class ErrorBoundary extends Component {
     constructor(props) {
       super(props);
 
       // init
-      this.state = {isError: false, msg: ''};
+      this.state = { isError: false, msg: '' };
     }
 
-    componentDidCatch (err) {
+    componentDidCatch(err) {
       const msg = JSON.stringify(err, Object.getOwnPropertyNames(err));
       debug(msg);
-      this.setState(() => ({isError: true, msg}));
+      this.setState(() => { return { isError: true, msg }; });
     }
 
-    render () {
-      if (this.state.isError) {
+    render() {
+      const { state: { isError } } = this;
+      if (isError) {
+        // TODO: translation?
         return <div className="error-boundary">error: check console</div>;
       }
-      else {
-        return <ReactClass {...this.props} />;
-      }
+      return <ReactClass {...this.props} />;
     }
   };
 };

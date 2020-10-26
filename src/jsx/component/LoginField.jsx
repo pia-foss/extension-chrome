@@ -1,11 +1,12 @@
 import React from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 
 const LoginField = ({
   name,
+  type,
+  theme,
   localeKey,
   autocomplete,
-  type,
   onChange,
   defaultValue,
   autoFocus,
@@ -13,12 +14,13 @@ const LoginField = ({
   return (
     <input
       name={name}
-      placeholder={t(localeKey)}
-      autoComplete={autocomplete || 'on'}
       type={type}
+      maxLength="253"
       onChange={onChange}
+      placeholder={t(localeKey)}
       defaultValue={defaultValue}
-      className="pia-form-control form-control"
+      autoComplete={autocomplete || 'on'}
+      className={`login-input ${theme}`}
       // If an autofocus action can be anticipated, it
       // has been said by users to not break accessibility
       // eslint-disable-next-line jsx-a11y/no-autofocus
@@ -28,13 +30,14 @@ const LoginField = ({
 };
 
 LoginField.propTypes = {
-  name: PropType.string.isRequired,
-  type: PropType.string.isRequired,
-  localeKey: PropType.string.isRequired,
-  onChange: PropType.func.isRequired,
-  autocomplete: PropType.string,
-  defaultValue: PropType.string,
-  autoFocus: PropType.bool,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  localeKey: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  autocomplete: PropTypes.string,
+  defaultValue: PropTypes.string,
+  autoFocus: PropTypes.bool,
 };
 
 LoginField.defaultProps = {

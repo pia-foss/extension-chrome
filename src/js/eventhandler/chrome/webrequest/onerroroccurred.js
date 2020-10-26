@@ -1,5 +1,4 @@
 /*
-
   *** WARNING ***
   This event handler is always active. It could be run while a direct connection is being
   used, while another proxy extension is active, or while the Private Internet Access
@@ -9,7 +8,9 @@
   extension.
 
 */
-export default function initOnErrorOccurred(app) {
+import createApplyListener from '@helpers/applyListener';
+
+function openErrorPage(app) {
   const networkErrors = [
     'net::ERR_CONNECTION_RESET',
     'net::ERR_PROXY_CONNECTION_FAILED',
@@ -20,7 +21,7 @@ export default function initOnErrorOccurred(app) {
     { active: true, status: 'complete', url: ['http://*/*', 'https://*/*'] },
   ];
 
-  return function onErrorOccurred(details) {
+  return (details) => {
     const connectedToPIA = app.proxy.enabled();
     const errorOnMainFrame = details.type === 'main_frame';
     const catchableError = networkErrors.indexOf(details.error) > -1;
@@ -43,3 +44,7 @@ export default function initOnErrorOccurred(app) {
     return { cancel: true };
   };
 }
+
+export default createApplyListener((app, addListener) => {
+  addListener(openErrorPage(app), { urls: ['<all_urls>'] });
+});

@@ -1,0 +1,51 @@
+#change-region-page {
+  max-height: 580px;
+  background-color: $grey92;
+
+  &.dark { background-color: $grey20; }
+
+  .region-sort-selection {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $grey85;
+
+    &.dark {
+      background-color: $grey15;
+
+      button {
+        color: $grey55;
+        &.active { color: $white; }
+      }
+    }
+
+    button {
+      outline: 0;
+      border: 0px;
+      color: $grey20;
+      padding: 7px 24px;
+      font-size: 10pt;
+      background-color: transparent;
+      flex-grow: 1;
+
+      &:first-child { margin-right: 0px; }
+
+      &.active {
+        color: $grey18;
+        font-weight: 500;
+        font-size: 10pt;
+        padding: 7px 24px;
+      }
+    }
+
+    .heart-container {
+      outline: none;
+      padding: 7px 6px 7px 15px;
+
+      .heart {
+        width: 20px;
+        height: 17px;
+      }
+    }
+  }
+}

@@ -7,8 +7,8 @@ type TestFunction = (this: Context) => Promise<void>;
  *
  * Injects the selenium test context
  *
- * @param message TODO:
- * @param fn TODO:
+ * @param message - description of test case
+ * @param fn - test function
  */
 function iit(message: string, fn?: TestFunction, only = false) {
   const testFn = only ? it.only : it;

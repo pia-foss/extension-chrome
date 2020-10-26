@@ -7,12 +7,7 @@
   height: 25px;
   overflow-y: visible;
 
-  .checkbox-container {
-    flex: auto 0 0;
-
-    .checkbox-facade {
-    }
-  }
+  .checkbox-container { flex: auto 0 0; }
 
   .checkbox-label {
     flex: auto 0 0;
@@ -22,14 +17,7 @@
   }
 
   .popover {
-    flex: auto 0 1;
-    width: auto;
-    top: -3px;
     position: relative;
-    margin-left: 15px;
-
-    &:after, &:before {
-      top: 40%;
-    }
+    &.arrow-right { top: -3px; } // manual adjustment for remember me label popover
   }
 }

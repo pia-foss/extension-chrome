@@ -1,1 +1,66 @@
-.company-logo { margin: 20px 0px; }
+.company-logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  background-color: $grey92;
+  font-size: 12pt;
+  position: relative;
+
+  &.dark { background-color: $grey20; }
+
+  &.connected .connected-gradient { opacity: 1; }
+
+  &.initial,
+  &.connecting, &.connected.connecting,
+  &.offline, &.error.offline, &.connected.offline {
+    color: $grey20;
+    background-color: $yellow;
+    background-image: none;
+    transition: background 0.5s ease;
+    .connected-gradient { opacity: 0; }
+  }
+
+  &.error {
+    color: $white;
+    background-color: $red;
+    transition: background 0.5s ease;
+  }
+
+  .connected-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: $white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    background-image: $green-gradient;
+  }
+
+  .display-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    z-index: 100;
+
+    .display-left {
+      width: 20px;
+    }
+
+    .display-middle .pia-logo {
+      width: 185px;
+    }
+
+    .display-right {
+      width: 20px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+#changelog-page {
+  max-height: 580px;
+  overflow: auto;
+  color: $grey20;
+  background-color: $grey92;
+
+  &.dark {
+    color: $white;
+    background-color: $grey20;
+  }
+
+  #changelog {
+    margin: 15px;
+    font-size: 10pt;
+    word-wrap: break-word;
+
+    ul { padding-left: 25px; }
+  }
+}

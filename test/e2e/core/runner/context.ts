@@ -13,6 +13,7 @@ function createContext(mochaContext: MochaContext): Context {
   return Object.assign({}, mochaContext, {
     windows: new Windows(driver),
     script: new Script(driver),
+    driver: driver as any as undefined,
   });
 }
 

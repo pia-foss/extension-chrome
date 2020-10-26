@@ -1,47 +1,83 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import onFlagError from 'eventhandler/templates/changeregion/onFlagError';
+import { withRouter } from 'react-router-dom';
+import withAppContext from '@hoc/withAppContext';
+import onFlagError from '@eventhandler/pages/changeregion/onFlagError';
+import { css } from "@emotion/core";
+import BeatLoader from "react-spinners/BeatLoader";
 
 class RegionListItem extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.renderer = background.renderer;
-    this.app = background.app;
-
     // properties
+    this.app = props.context.app;
+    this.history = props.history;
     this.storage = this.app.util.storage;
     this.regionlist = this.app.util.regionlist;
-    this.region = props.region;
+    this.state = { isAuto: this.regionlist.getIsAuto() };
 
     // bindings
     this.onClick = this.onClick.bind(this);
     this.favorite = this.favorite.bind(this);
+    this.renderFlag = this.renderFlag.bind(this);
     this.renderLatency = this.renderLatency.bind(this);
+    this.renderFavorite = this.renderFavorite.bind(this);
+    this.renderClassname = this.renderClassname.bind(this);
     this.onFlagLoadError = this.onFlagLoadError.bind(this);
-  }
-
-  async onClick() {
-    this.regionlist.setSelectedRegion(this.region.id);
-    await this.app.proxy.enable();
-    return this.renderer.renderTemplate('authenticated');
   }
 
   onFlagLoadError(event) {
     return onFlagError(event, this.region);
   }
 
-  favorite(e) {
-    e.stopPropagation(); // Stops region from being selected
-    const editedRegion = this.regionlist.setFavoriteRegion(this.region);
-    this.setState(editedRegion);
+  async onClick(e) {
+    e.stopPropagation();
+    this.regionlist.setSelectedRegion(this.region.id);
+    await this.app.proxy.enable();
+    return this.history.push('/');
   }
 
-  renderLatency(region) {
-    if (this.storage.getItem('sortby') !== 'latency') { return undefined; }
+  get region() {
+    const { region } = this.props;
+    return region;
+  }
 
-    if (region.offline) {
+  favorite(e) {
+    e.stopPropagation(); // Stops region from being selected
+    this.regionlist.setFavoriteRegion(this.region);
+    const { context } = this.props;
+    context.rebuildApp();
+  }
+
+  renderClassname() {
+    let classname = 'region-list-item';
+    const { isAuto } = this.state;
+    const { nested, context: { theme } } = this.props;
+    const isSelected = this.regionlist.isSelectedRegion(this.region);
+    if (!isAuto && isSelected) { classname += ' active'; }
+    if (nested) { classname += ' nested'; }
+    if (theme) { classname += ` ${theme}`; }
+    return classname;
+  }
+
+  renderFlag() {
+    if (this.region.override) { return <div className="empty-flag" />; }
+    const { nested } = this.props;
+    if (nested) { return ''; }
+
+    return (
+      <img
+        className="flag"
+        alt={this.region.iso}
+        src={this.region.flag}
+        onError={this.onFlagLoadError}
+      />
+    );
+  }
+
+  renderLatency() {
+    if (this.region.offline) {
       return (
         <div className="list-item-latency server-offline-text">
           { t('OfflineText') }
@@ -49,87 +85,101 @@ class RegionListItem extends Component {
       );
     }
 
-    const latency = Math.floor(region.latency);
-    let latencyClass = 'latency-red';
-    if (latency <= 150) { latencyClass = 'latency-green'; }
-    else if (latency <= 500) { latencyClass = 'latency-orange'; }
-    const klass = `list-item-latency ${latencyClass}`;
+    const latency = Math.floor(this.region.latency);
+    const latencyClass = (() => {
+      if (latency === 'ERROR' || latency > 500 || latency === 'PENDING') { return 'latency-red'; }
+      if (latency <= 150 && latency > 0) { return 'latency-green'; }
+      if (latency <= 500 && latency > 150) { return 'latency-orange'; }
+      debug(`invalid latency: ${latency}`);
+      return 'latency-red';
+    })();
+
+      const loading = <BeatLoader
+                          size={5}
+                          margin={2}
+                          color={"#66ab00"}
+                          loading={true}
+                        />;
+    const latencyValue = (() => {
+      if (latency === 'PENDING') { return 'waiting'; }
+      if (latency === 'ERROR') { return loading; }
+      if (typeof latency === 'number' && latency >= 0) { return `${latency} ms`; }
+      debug(`RegionListItem: invalid latency: ${latency}`);
+      return  loading;
+    })();
+
+
     return (
-      <div className={klass}>
-        { latency }
-        ms
+      <div className={`list-item-latency ${latencyClass}`}>
+        { latencyValue }
       </div>
     );
   }
 
-  render() {
-    const latencyDiv = this.renderLatency(this.region);
-    const className = this.regionlist.isSelectedRegion(this.region)
-      ? 'region-list-item list-group-item active'
-      : 'region-list-item list-group-item';
-    const favorite = this.region.isFavorite
-      ? (
-        <div
-          role="button"
-          tabIndex="-1"
-          className="heart-container"
-          onClick={this.favorite}
-          onKeyPress={this.favorite}
-        >
-          <img
-            alt="Favorite"
-            className="heart"
-            src="/images/heart-full@2x.png"
-          />
-        </div>
-      )
-      : (
-        <div
-          role="button"
-          tabIndex="-1"
-          className="heart-container"
-          onClick={this.favorite}
-          onKeyPress={this.favorite}
-        >
-          <img
-            alt="Favorite"
-            className="heart"
-            src="/images/heart-outline@2x.png"
-          />
-        </div>
-      );
+  renderFavorite() {
+    const { isFavorite } = this.region;
+    const heartUrl = isFavorite ? '/images/heart-full@3x.png' : '/images/heart-outline@3x.png';
 
     return (
       <div
         role="button"
         tabIndex="-1"
+        className={`heart-container ${isFavorite ? 'active' : ''}`}
+        onClick={this.favorite}
+        onKeyPress={this.favorite}
+      >
+        <img
+          alt="Favorite"
+          className="heart"
+          src={heartUrl}
+        />
+      </div>
+    );
+  }
+
+  render() {
+    const className = this.renderClassname();
+    const flag = this.renderFlag();
+    const favorite = this.renderFavorite();
+    const latencyDiv = this.renderLatency();
+  
+    return (
+      <div
+        role="button"
+        tabIndex="-1"
         className={className}
-        data-region-latency={this.region.latency}
         data-region-id={this.region.id}
+        data-region-latency={this.region.latency}
         onClick={this.onClick}
         onKeyPress={this.onClick}
       >
-        { favorite }
+        <div className="arrow-container" />
 
-        <img
-          className="flag"
-          alt={this.region.iso}
-          src={this.region.flag}
-          onError={this.onFlagLoadError}
-        />
+        <div className="flag-container">
+          { flag }
+        </div>
 
         <span className="regionnamelist">
           { this.region.localizedName() }
         </span>
 
         { latencyDiv }
+
+        { favorite }
       </div>
     );
   }
 }
 
 RegionListItem.propTypes = {
+  nested: PropTypes.bool,
   region: PropTypes.object.isRequired,
+  context: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
-export default RegionListItem;
+RegionListItem.defaultProps = {
+  nested: false,
+};
+
+export default withRouter(withAppContext(RegionListItem));

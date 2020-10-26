@@ -1,8 +1,7 @@
 import { expect } from 'chai';
+import { Node } from '../core';
 
-import { WebElementBase } from '../core';
-
-class Checkbox extends WebElementBase {
+class Checkbox extends Node {
 
   private async getChecked() {
     const el = await this.element;

@@ -1,7 +1,7 @@
 {
   "extends": "tslint-config-airbnb",
   "rules": {
-    "brace-style": "stroustrup",
+    "brace-style": false,
     "arrow-parens": [true, "always"],
     "ter-prefer-arrow-callback": [false],
     "await-promise": [true, "IThenable"],

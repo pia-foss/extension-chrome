@@ -7,7 +7,8 @@ class AuthFailPage extends PageObject {
   public logo: Image;
   public image: Image;
   public message: Text;
-  public support: Link;
+  public supportLead: Text;
+  public supportLink: Link;
 
   constructor() {
     super({
@@ -46,21 +47,34 @@ class AuthFailPage extends PageObject {
     this.message = new Text(
       {
         selector: createSelector({
-          value: '#message',
+          value: '.error-message',
         }),
         name: 'message',
       },
       this,
     );
-    this.support = new Link(
+    this.supportLead = new Text(
       {
         selector: createSelector({
-          value: '#message > a',
+          value: '.error-support-lead',
         }),
-        name: 'support',
+        name: 'support lead',
       },
       this,
     );
+    this.supportLink = new Link(
+      {
+        selector: createSelector({
+          value: '.error-support > a',
+        }),
+        name: 'support link',
+      },
+      this,
+    );
+  }
+
+  public async loadExtension() {
+    return this.sleep(1000);
   }
 
   protected path() {

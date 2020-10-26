@@ -1,5 +1,4 @@
 /*
-
   *** WARNING ***
   This event handler is always active. It could be run while a direct connection is being
   used, while another proxy extension is active, or while the Private Internet Access
@@ -9,24 +8,25 @@
   extension.
 
 */
-export default function (app) {
+import createApplyListener from '@helpers/applyListener';
+
+function authenticate(app) {
   const hostR = /^https-[a-zA-Z0-9-]+\.privateinternetaccess\.com$/;
+
   const active = (details) => {
     const { proxy, util: { regionlist } } = app;
+    const proxyEnabled = proxy.getEnabled();
     const isValidHost = regionlist.testHost(details.challenger.host);
     const isValidPort = regionlist.testPort(details.challenger.port);
-    const proxyEnabled = proxy.getEnabled();
-    const { isProxy } = details;
-    const isActive = (
-      isProxy
-      && isValidHost
-      && isValidPort
-      && proxyEnabled
+    const isActive = proxyEnabled
+      && details.isProxy
       && hostR.test(details.challenger.host)
-    );
+      && isValidHost
+      && isValidPort;
+
     debug('onauthrequired.js: testing if active');
     debug(`proxy enabled: ${proxyEnabled}`);
-    debug(`isProxy: ${isProxy}`);
+    debug(`isProxy: ${details.isProxy}`);
     debug(`challenger host: ${details.challenger.host}`);
     debug(`challenger port: ${details.challenger.port}`);
     debug(`possible hosts: ${JSON.stringify(regionlist.getPotentialHosts())}`);
@@ -39,15 +39,12 @@ export default function (app) {
 
   return function handle(details) {
     try {
-      if (!active(details)) {
-        debug('onAuthRequired/1: refused.');
-        return {};
-      }
+      debug('onauthrequired.js: servicing request for authentication');
+      if (!active(details)) { return debug('onAuthRequired/1: refused.'); }
 
       const { counter, user } = app.util;
 
       counter.inc(details.requestId);
-
       if (counter.get(details.requestId) > 1) {
         debug('onAuthRequired/1: failed.');
         counter.del(details.requestId);
@@ -56,21 +53,38 @@ export default function (app) {
         return { cancel: true };
       }
 
-      if (user.loggedIn) {
+      if (user.getLoggedIn()) {
         debug('onAuthRequired/1: allowed.');
-        return { authCredentials: { username: user.getUsername(), password: user.getPassword() } };
+
+        const username = user.getUsername();
+        const password = user.getPassword();
+        const token = user.getAuthToken();
+
+        let credentials = { cancel: true };
+        if (username && password) {
+          credentials = { authCredentials: { username, password } };
+        }
+        else if (token) {
+          const tokenUser = token.substring(0, token.length / 2);
+          const tokenPass = token.substring(token.length / 2);
+          credentials = { authCredentials: { username: tokenUser, password: tokenPass } };
+        }
+        return credentials;
       }
 
       debug('onAuthRequired/1: user not logged in');
       user.logout();
       chrome.tabs.reload(details.tabId);
+      return { cancel: true };
     }
     catch (err) {
       debug('onAuthRequired/1: refused due to error');
       debug(`error: ${JSON.stringify(err, Object.getOwnPropertyNames(err))}`);
       return { cancel: true };
     }
-
-    return { cancel: true };
   };
 }
+
+export default createApplyListener((app, addListener) => {
+  addListener(authenticate(app), { urls: ['<all_urls>'] }, ['blocking']);
+});

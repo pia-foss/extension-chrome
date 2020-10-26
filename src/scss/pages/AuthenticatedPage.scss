@@ -1,0 +1,29 @@
+#authenticated-page{
+  display: flex;
+  flex-direction: column;
+  max-height: 580px;
+
+  .company-logo { flex-grow: 0; }
+
+  .connection {
+    max-height: 540px;
+    overflow-y: auto;
+    border-top: thin solid $grey85;
+    background-color: $grey92;
+    flex-grow: 1;
+
+    &.dark {
+      border-top: thin solid $grey15;
+      background-color: $grey20;
+    }
+
+    .switch-container {
+      overflow: hidden;
+      max-height: 210px;
+
+      &.closed { max-height: 0; }
+    }
+  }
+
+  .drawer-handle { flex-grow: 0; }
+}

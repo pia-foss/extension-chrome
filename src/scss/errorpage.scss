@@ -1,97 +1,86 @@
-@import "bootstrap/variables";
-@import "bootstrap/normalize";
-@import "bootstrap/mixins";
-@import "bootstrap/grid";
-@import "bootstrap/buttons";
 @import "colors";
 @import "roboto_font";
 
-body {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-}
-h1  {
-    margin: 10px 0;
-}
-#PIALogo {
-    margin-top: 75px;
-    margin-bottom: 150px;
-    text-align: center;
-}
-
-#PIALogo img {
-    max-width: 210px;
-}
-
-.btn-orange {
-    color: #543802 !important;
-    background-image: linear-gradient(-180deg, #FAD961 0%, #F9C152 6%, #F89033 88%, #F76B1C 100%) !important;
-    border: 1px solid #D1900D !important;
-    border-radius: 4px !important;
-    font-weight: 500 !important;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100px;
-    padding: 10px 15px;
-    &:focus, &:hover {
-        background-image: linear-gradient(-180deg, #FAD961 0%, #F9C152 25%, #F89033 100%) !important;
-        color: #543802 !important;
-        font-weight: 500;
-    }
-
-    &:active {
-        background-image: linear-gradient(0deg, #FAD961 0%, #F9C152 6%, #F89033 88%, #F76B1C 100%) !important;
-        color: #543802 !important;
-        font-weight: 500;
-    }
-}
-
-#title {
-    font-size: 2.75em;
-    margin-bottom: 0px !important;
-}
-
-#error {
-    color: #666;
-    font-size: 13px;
-    line-height: 2;
-}
-
-#message {
-    color: #818181;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 1.7;
-    padding: 0px 30px;
-}
+body { font-family: "Roboto", Helvetica, Arial, sans-serif; font-size: 12px; }
+h1  { margin: 10px 0; }
 
 .container {
-    max-width: 720px;
-}
+  margin: auto;
+  max-width: 750px;
 
-.leftcontainer img {
-    max-width: 200px;
-}
-
-.leftcontainer, .rightcontainer {
+  #PIALogo {
     text-align: center;
+    margin: 75px 0 100px;
+
+    img { max-width: 210px; }
+  }
+
+  .left-container, .right-container {
+    float: left;
+    width: 50%;
     padding: 0px;
+  }
+
+  .left-container {
+    text-align: center;
+
+    img {
+      max-width: 300px;
+      margin-right: 50px;
+    }
+  }
+
+  .right-container {
+    text-align: left;
+
+    #title {
+      font-size: 2.75em;
+      margin-bottom: 0px !important;
+    }
+
+    #error {
+      color: #666;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    #message {
+      color: #818181;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-top: 20px;
+
+      .error-message {
+        margin-bottom: 20px;
+      }
+    }
+
+    .btn {
+      font-weight: 500;
+      font-size: 12pt;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: 100px;
+      padding: 10px 15px;
+    }
+  }
 }
 
-@media (min-width: 992px) {
-    #message {
-        padding: 0px;
+@media (max-width: 750px) {
+  .container {
+    .left-container, .right-container {
+      float: none;
+      width: 100%;
+      text-align: center;
     }
-    .leftcontainer img {
-        max-width: 300px;
+
+    .left-container {
+      img { max-width: 200px; margin: 0; }
     }
-    .leftcontainer img {
-        margin-right: 50px;
+
+    .right-container {
+      #message { padding: 0px 30px; }
     }
-    .leftcontainer {
-        text-align: right;
-    }
-    .rightcontainer {
-        text-align: left;
-    }
+  }
 }

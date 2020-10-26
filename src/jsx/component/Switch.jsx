@@ -1,62 +1,60 @@
-import React, { Component } from 'react';
-import StatusText from 'component/StatusText';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Switch extends Component {
-  constructor(props) {
-    super(props);
+const Switch = (props) => {
+  let { mode, connection } = props;
+  const {
+    theme,
+    region,
+    regions,
+    classes,
+    onToggleConnection,
+  } = props;
 
-    const background = chrome.extension.getBackgroundPage();
-    this.app = background.app;
+  // noop if connection is 'error'
+  let handler = onToggleConnection;
+  const pending = regions.some((current) => { return current.latency === 'PENDING'; });
+  if (connection === 'error' || !region) { handler = () => {}; }
 
-    // properties
-    this.debounce = null;
-    this.proxy = this.app.proxy;
-    this.regionlist = this.app.util.regionlist;
-    this.state = {
-      enabled: this.proxy.enabled(),
-      region: this.regionlist.getSelectedRegion(),
-    };
-
-    // bindings
-    this.onChange = this.onChange.bind(this);
-    this.handleProxy = this.handleProxy.bind(this);
+  // Show switch in loading mode if pending on region latency
+  if (!region ) {
+    mode = 'connecting';
+    connection = 'connected';
   }
 
-  onChange() {
-    // debounce the calls to the proxy handler by 175ms
-    clearTimeout(this.debounce);
-    this.debounce = setTimeout(() => { this.handleProxy(); }, 175);
-  }
+  return (
+    <div
+      role="button"
+      tabIndex="-1"
+      className={`outer-circle ${theme} ${connection} ${mode} ${classes}`}
+      onClick={handler}
+      onKeyPress={handler}
+    >
+      <div className="spinner">
+        <div className="spinner-gradient" />
 
-  handleProxy() {
-    let promise;
-
-    if (this.proxy.enabled()) { promise = this.proxy.disable(); }
-    else { promise = this.proxy.enable(); }
-
-    return promise.then((proxy) => {
-      this.setState({ enabled: proxy.enabled() });
-    });
-  }
-
-  render() {
-    const { enabled, region } = this.state;
-    return (
-      <div>
-        <StatusText enabled={enabled} hasRegion={!!region} />
-
-        <div className="switch-container">
-          <input
-            type="checkbox"
-            className="switch"
-            checked={enabled}
-            disabled={!region}
-            onChange={this.onChange}
-          />
+        <div className="spinner-inner">
+          <div className="power-icon" />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+Switch.propTypes = {
+  region: PropTypes.object,
+  regions: PropTypes.array,
+  classes: PropTypes.string,
+  mode: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  connection: PropTypes.string.isRequired,
+  onToggleConnection: PropTypes.func.isRequired,
+};
+
+Switch.defaultProps = {
+  classes: '',
+  regions: [],
+  region: undefined,
+};
 
 export default Switch;

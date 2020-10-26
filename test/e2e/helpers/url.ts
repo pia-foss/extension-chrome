@@ -1,7 +1,7 @@
 import { URL } from 'url';
 
 interface Param {
-  name: string;
+  key: string;
   value: string;
 }
 
@@ -23,8 +23,8 @@ exports.PIA_URL = PIA_URL;
 const createPiaUrl = (pathname = '', params = [] as Param[]) => {
   const url = new URL(PIA_URL);
   url.pathname = pathname;
-  params.forEach(({ name, value }) => {
-    return url.searchParams.set(name, value);
+  params.forEach(({ key, value }) => {
+    return url.searchParams.set(key, value);
   });
 
   return url.toString();

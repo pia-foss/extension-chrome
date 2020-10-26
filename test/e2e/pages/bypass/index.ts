@@ -15,7 +15,7 @@ class BypassPage extends PageObject {
   constructor() {
     super({
       selector: createSelector({
-        value: '#bypasslist-template',
+        value: '#bypasslist-page',
       }),
       name: 'bypass page',
     });

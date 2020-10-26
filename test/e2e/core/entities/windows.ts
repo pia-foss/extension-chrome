@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 
 import { Driver } from '../driver';
-import { WebElementBase } from './webElementBase';
+import { Node } from './node';
 
 interface WaitOpts {
-  waitForVisible?: WebElementBase;
+  waitForVisible?: Node;
 }
 
 class Windows {

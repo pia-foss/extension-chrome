@@ -1,0 +1,59 @@
+.smart-location-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $grey20;
+    padding: 8px 0;
+    border-bottom: 1px solid $grey85;
+  
+    &.dark {
+      color: $white;
+      border-bottom: 1px solid $grey15;
+    }
+  
+    &:last-child {
+      border-bottom: 0;
+    }
+  
+    .name {
+      flex-grow: 1;
+      width: calc(100% - 30px);
+      padding: 0 10px;
+      overflow: hidden;
+      word-break: break-all;
+    }
+
+    .image-flag{
+      width:15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+  
+    .rem {
+      width: 15px;
+      height: 10px;
+      outline: none;
+      background-image: url('../images/delete_icon.png');
+      background-size: 14px;
+      background-position: 2px -2px;
+      background-repeat: no-repeat;
+      display: inline-block;
+      cursor: pointer;
+  
+      // &:hover { background-position: 2px -20px; }
+    }
+    .edit {
+      width: 15px;
+      height: 10px;
+      outline: none;
+      background-image: url('../images/baseline_edit_white_18dp.png');
+      background-size: 11px;
+      background-position: 2px 0;
+      background-repeat: no-repeat;
+      display: inline-block;
+      cursor: pointer;
+  
+      // &:hover { color:green }
+    }
+  }
+  

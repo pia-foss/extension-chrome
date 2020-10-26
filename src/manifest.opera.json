@@ -4,6 +4,7 @@
   "description": "Defeat censorship, unblock any website and access the open Internet the way it was meant to be with Private Internet Access®",
   "version": "@@version",
   "default_locale": "en",
+  "homepage_url": "https://privateinternetaccess.com",
   "browser_action": {
     "default_icon": {
       "16": "images/icons/loader_16.png",
@@ -18,23 +19,20 @@
     "scripts": ["js/background.js"]
   },
   "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "cookies",
     "webRequest",
     "webRequestBlocking",
     "proxy",
     "privacy",
     "contentSettings",
     "alarms",
+    "clipboardRead",
+    "clipboardWrite",
     "downloads",
     "<all_urls>"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.privateinternetaccess.com/xpages/sign-in"
-      ],
-      "run_at": "document_start",
-      "js": ["js/contentscripts/clientsignin.js"]
-    }
   ],
   "icons": {
     "16": "images/icons/icon16.png",

@@ -3,7 +3,6 @@ import { AuthenticatedPage } from '../pages/authenticated';
 import { idescribe, iit, Context } from '../core';
 import { getStorage } from '../scripts/getStorage';
 import { expect } from 'chai';
-import { StorageType } from '../types';
 
 idescribe('login page', function () {
   let loginPage: LoginPage;
@@ -59,12 +58,8 @@ idescribe('login page', function () {
     });
 
     idescribe('when checked', function () {
-      iit('username and password are present in local storage', async function () {
-        await testStorage(this, 'localStorage', false);
-      });
-
-      iit('username and password are not present in memory storage', async function () {
-        await testStorage(this, 'memoryStorage', true);
+      iit('username is present in local storage', async function () {
+        await testStorage(this, false);
       });
     });
 
@@ -73,30 +68,21 @@ idescribe('login page', function () {
         await loginPage.uncheckRememberMe();
       });
 
-      iit('username and password are not present in local storage', async function () {
-        await testStorage(this, 'localStorage', true);
-      });
-
-      iit('username and password are present in memory storage', async function () {
-        await testStorage(this, 'memoryStorage', false);
+      iit('username is not present in local storage', async function () {
+        await testStorage(this, true);
       });
     });
 
-    async function testStorage(context: Context, storage: StorageType, expectNull: boolean) {
+    async function testStorage(context: Context, expectNull: boolean) {
       // Arrange
       const expectedUsername = 'test-username';
-      const expectedPassword = 'test-password';
 
       // Act
       await loginPage.username.setValue(expectedUsername);
-      await loginPage.password.setValue(expectedPassword);
-      const usernamePending = getStorage(context.script, 'form:username', storage);
-      const passwordPending = getStorage(context.script, 'form:password', storage);
-      const [username, password] = await Promise.all([usernamePending, passwordPending]);
+      const username = await getStorage(context.script, 'form:username');
 
       // Assert
-      expect(username).to.eq(expectNull ? null : expectedUsername);
-      expect(password).to.eq(expectNull ? null : expectedPassword);
+      expect(username).to.eq(expectNull ? '' : expectedUsername);
     }
 
     idescribe('when toggled', function () {

@@ -1,14 +1,14 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+
+import withAppContext from '@hoc/withAppContext';
 
 class LanguageDropdown extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.renderer = background.renderer;
-    this.app = background.app;
-
     // properties
+    this.app = props.context.app;
     this.i18n = this.app.util.i18n;
     this.storage = this.app.util.storage;
 
@@ -19,14 +19,15 @@ class LanguageDropdown extends Component {
 
   changeLanguage(event) {
     const { target } = event;
+    const { context: { rebuildApp } } = this.props;
     const targetLocale = target.value;
 
     this.i18n.changeLocale(targetLocale)
       .then((locale) => {
+        const { updateLanguage } = this.props;
         this.storage.setItem('locale', locale);
-        this.renderer.renderTemplate('settings');
-        /* reopen 'Extension' section to give impression template wasn't re-rendered */
-        document.querySelector('.developer').classList.add('open');
+        rebuildApp();
+        updateLanguage();
         debug(`i18n: language changed to ${this.i18n.languageMap.get(locale)}`);
       })
       .catch(() => {
@@ -56,9 +57,14 @@ class LanguageDropdown extends Component {
   }
 
   render() {
+    const { context: { theme } } = this.props;
     return (
-      <div className="languages-container dropdown">
-        <select id="languages" defaultValue={this.i18n.locale} onChange={this.changeLanguage}>
+      <div className={`languages-container ${theme} dropdown`}>
+        <select
+          className={`languages ${theme}`}
+          defaultValue={this.i18n.locale}
+          onChange={this.changeLanguage}
+        >
           { this.languages() }
         </select>
       </div>
@@ -66,4 +72,9 @@ class LanguageDropdown extends Component {
   }
 }
 
-export default LanguageDropdown;
+LanguageDropdown.propTypes = {
+  context: PropTypes.object.isRequired,
+  updateLanguage: PropTypes.func.isRequired,
+};
+
+export default withAppContext(LanguageDropdown);

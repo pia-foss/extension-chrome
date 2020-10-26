@@ -1,13 +1,36 @@
 {
   "extends": "eslint-config-airbnb",
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017,
     "ecmaFeatures": {
       "jsx": true,
-      "experimentalDecorators": true
+      "experimentalDecorators": true,
+      "experimentalObjectRestSpread": true
     }
   },
+  "plugins": [
+    "jest"
+  ],
+  "settings" : {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "globals": {
+    "t": true,
+    "debug": true
+  },
+  "env": {
+    "browser": true,
+    "webextensions": true,
+    "jest/globals": true
+  },
   "rules": {
+    "import/no-named-as-default": "off",
+    "import/no-extraneous-dependencies": "off",
     "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
     "arrow-body-style": ["error", "always"],
     "arrow-parens": ["error", "always"],
@@ -31,21 +54,7 @@
       "error",
       "single",
       { "allowTemplateLiterals": true }
-    ]
-  },
-  "settings" : {
-    "import/resolver": {
-      "node": {
-          "paths": ["./src/js", "./src/jsx"]
-        }
-    }
-  },
-  "globals": {
-    "t": true,
-    "debug": true
-  },
-  "env": {
-    "browser": true,
-    "webextensions": true
+    ],
+    "no-await-in-loop": 0
   }
 }

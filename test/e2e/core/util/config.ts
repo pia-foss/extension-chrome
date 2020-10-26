@@ -2,24 +2,16 @@ import { config as loadConfig } from 'dotenv';
 
 import { isNothing } from './isNothing';
 
-type Key
-  = NumberKey;
-
-type NumberKey
-  = 'WAIT_TIME';
-
-type NumConfig = {
-  [key in NumberKey]: number;
-};
-
-export type Config = NumConfig;
+export interface Config {
+  waitTime: number;
+}
 
 let cache: Config | null = null;
 
 loadConfig();
 
 function errorOut(errorMsg: string) {
-  throw new Error(`
+  return new Error(`
     There may be a problem with your config file (.env).
 
     Please see the file
@@ -38,26 +30,26 @@ function errorOut(errorMsg: string) {
   `);
 }
 
-function getKey(key: Key, cast: NumberConstructor | StringConstructor) {
+function getValue<V>(key: string, cast: (v: string) => V): V {
   const value = process.env[key];
   if (isNothing(value)) {
-    return errorOut(`no value was found for the key "${key}"`);
+    throw errorOut(`no value was found for the key "${key}"`);
   }
   try {
     return cast(value);
   }
   catch {
-    return errorOut(`the key "${key}" could not be cast to a ${cast.name}`);
+    throw errorOut(`the key "${key}" could not be cast to a ${cast.name}`);
   }
 }
 
-function getNumKey(key: NumberKey) {
-  return getKey(key, Number) as number;
+function getNumValue(key: string) {
+  return getValue(key, Number);
 }
 
 export function getConfig(): Config {
   const config = cache || {
-    WAIT_TIME: getNumKey('WAIT_TIME'),
+    waitTime: getNumValue('WAIT_TIME'),
   };
   cache = config;
 

@@ -14,8 +14,11 @@
   "Extension": {
     "message": "扩展程序"
   },
-  "ResetPasswordText": {
-    "message": "重设密码"
+  "ForgotPassword": {
+    "message": "忘了密码"
+  },
+  "BuyAccount": {
+    "message": "购买账户"
   },
   "DeleteDebugLog": {
     "message": "清除日志"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "将消息写入调试日志。按“ctrl”键，然后按“d”键以显示调试日志。"
   },
-  "LogMeOutOnClose": {
-    "message": "浏览器关闭时让我退出"
+  "DarkTheme": {
+    "message": "深色主题"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "重新打开浏览器后，您将不会自动重新登录"
+  "DarkThemeTooltip": {
+    "message": "为扩展程序启用深色主题以在低光照环境中使用"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "不记住凭据时，无法控制此设置（登录屏幕）"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "代理 IP"
   },
   "DebugLogIsEmpty": {
     "message": "调试日志为空。"
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "无论您是否连接到某个区域，启用的设置现在始终有效，但 PIA MACE™ 除外，它仅在您连接到某个区域时才有效。"
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "在隐身模式下启用扩展程序，方法是访问 chrome://extensions，在扩展程序设置中选择此选项。"
   },
   "UsernamePlaceholder": {
     "message": "用户名"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "用户名和/或密码错误。"
-  },
-  "NetworkError": {
-    "message": "由于网络错误，登录请求失败。请稍后重试。"
   },
   "OfflineError": {
     "message": "登录请求失败，因为您似乎处于离线状态。请检查您是否连接到互联网。"
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "调试日志已复制"
   },
-  "NoAccountQuestion": {
-    "message": "还没有帐户？"
-  },
-  "JoinText": {
-    "message": "注册 VPN 帐户"
-  },
   "JoinURL": {
     "message": "https://chi.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "导出"
   },
-  "SettingsWarning": {
-    "message": "这些设置没有生效。它们在您已连接到某区域时生效。"
+  "BypassWarningLead": {
+    "message": "对“绕过”列表中列出的网站发出的请求使用"
   },
-  "SettingsWarningConnected": {
-    "message": "这些设置已生效。当您与 %{region} 断开连接时，它们将恢复为 %{browser} 的默认设置。"
-  },
-  "BypassWarning": {
-    "message": "对免过滤清单中的网站提出的请求使用的是<span class=\"bold-underline\">直接连接</span>，<span class=\"bold-underline\">不</span>受 Private Internet Access™ 保护。"
+  "BypassWarningBold": {
+    "message": "直接连接，不受 Private Internet Access™ 的保护。"
   },
   "AccountSettingsText": {
     "message": "帐户设置"
   },
-  "AutoLoginURL": {
-    "message": "https://chi.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "将 URL 添加到免过滤清单"
-  },
-  "SupportURL": {
-    "message": "https://chi.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "帮助和支持"
-  },
-  "StatusText": {
-    "message": "状态"
   },
   "OfflineText": {
     "message": "离线"
   },
-  "PleaseWait": {
-    "message": "正在加载。请稍候。"
-  },
   "Security": {
     "message": "安全"
-  },
-  "AdsTrackersProtection": {
-    "message": "广告、跟踪程序和恶意软件防护"
   },
   "MaceProtection": {
     "message": "PIA Mace™"
@@ -207,7 +189,7 @@
     "message": "什么是 MACE™？"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ 通过阻止恶意内容、跟踪程序和广告来保护您的隐私和安全。"
+    "message": "PIA MACE™ 通过阻止恶意内容、跟踪程序和广告来保护您的隐私和安全。仅在连接到某区域时才有效"
   },
   "WebRTCLeakProtection": {
     "message": "阻止 WebRTC 检测 IP"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "阻止 %{browser} 运行 Adobe Flash。Adobe Flash 可用于显示您的公用 IP 地址。不建议禁用。"
   },
+  "HttpsUpgrade": {
+    "message": "使用 HTTPS 浏览网站"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "在离开浏览器之前，使用未加密连接 (HTTP) 自动将支持的网站或链接转换为更安全的 HTTPS 连接。这一切是通过 HTTPS Everywhere 和 EFF 实现的。"
+  },
+  "AlwaysActive": {
+    "message": "始终有效设置"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "使设置始终保持有效状态，无论代理是否已连接"
+  },
   "BlockUTM": {
     "message": "移除 UTM 参数"
   },
   "BlockUTMTooltip": {
     "message": "从您点击的 URL 中删除 Urchin 跟踪模型 (UTM) 参数。UTM 参数用于跟踪您访问某网站的信息。"
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "移除 FBCLID 参数"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "从 Facebook 中的外发链接中删除 Facebook FBCLID 参数。FBCLID 参数用于跟踪您访问某网站的信息"
   },
   "BypassInstructionsBold": {
     "message": "* 需要前缀"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "绕过清单"
   },
-  "SaveProxyBypassList": {
-    "message": "保存"
+  "SmartLocation": {
+    "message": "智能位置"
   },
-  "OKSaved": {
-    "message": "好的。已保存"
+  "WebAlreadyAdded": {
+    "message": "网站已添加"
+  },
+  "AddSmartLocation": {
+    "message": "添加智能位置"
   },
   "WelcomeToNewVersion": {
     "message": "欢迎使用 %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "未添加规则"
+  },
+  "NoLocation": {
+    "message": "未添加位置"
+  },
+  "OneLocation": {
+    "message": "位置已添加"
+  },
+  "MultipleLocations": {
+    "message": "位置"
   },
   "MultipleRulesAdded": {
     "message": "添加了 %{count} 个规则"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "阻止网站访问计算机的麦克风。"
   },
-  "UseRegionLocale": {
-    "message": "专用区域设置和语言设置"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "将浏览器的默认区域设置和语言设置替换为当前区域的区域设置和语言设置，从而使其保持为专用。"
-  },
   "Privacy": {
     "message": "隐私"
-  },
-  "OnText": {
-    "message": "开"
-  },
-  "OffText": {
-    "message": "关"
   },
   "ImportFileMessage": {
     "message": "请选择导出的绕过规则文件（例如 bypass-rules.json）"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "未选择地区"
+  },
+  "ChooseAutomatically": {
+    "message": "自动选择"
   },
   "ChangeExtensionSettings": {
     "message": "扩展程序设置"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "延迟时间"
   },
-  "SortBy": {
-    "message": "排序方式："
+  "RegionSearch": {
+    "message": "搜索..."
   },
   "CloseText": {
     "message": "关闭"
   },
   "UpgradeBrowserMessage": {
     "message": "无法使用 Private Internet Access ，因为您的 %{browser} 版本已过时。请将 %{browser} 升级到最新版本。"
-  },
-  "LoadingText": {
-    "message": "正在加载"
   },
   "LogoutText": {
     "message": "注销"
@@ -390,7 +387,13 @@
     "message": "身份验证错误"
   },
   "AuthFailMessage": {
-    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://privateinternetaccess.com/helpdesk\">支持团队</a>。"
+    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。"
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "如需获得帮助和支持，请联系我们的"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "支持团队"
   },
   "ConnectionFailPageTitle": {
     "message": "连接错误 | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "已启用"
   },
-  "disabled": {
-    "message": "已禁用"
-  },
-  "unavailable": {
-    "message": "不可用"
-  },
   "RememberMe": {
     "message": "记住我"
   },
   "RememberMeTooltip": {
-    "message": "在浏览器重新启动的间隔保存凭据"
+    "message": "在浏览器重新启动的间隔保存用户名"
   },
-  "AllRegions": {
-    "message": "所有地区"
+  "Auto": {
+    "message": "自动"
   },
-  "FavoriteRegions": {
-    "message": "喜爱地区"
+  "CalculatingLatency": {
+    "message": "正在计算延迟"
   },
   "NoRegionsFound": {
     "message": "未找到地区"
   },
   "RefreshRegions": {
     "message": "刷新地区"
+  },
+  "ViewChangelog": {
+    "message": "查看更改日志"
+  },
+  "ChangelogTitle": {
+    "message": "更改日志"
+  },
+  "UnknownProxyError": {
+    "message": "发生未知代理错误"
+  },
+  "Connecting": {
+    "message": "正在连接"
+  },
+  "Disconnecting": {
+    "message": "正在断开连接"
+  },
+  "Connected": {
+    "message": "已连接"
+  },
+  "DefaultDisplay": {
+    "message": "默认显示"
+  },
+  "QuickConnect": {
+    "message": "快速连接"
+  },
+  "QuickSettings": {
+    "message": "快速设置"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "禁用 HTTP 引荐"
+  },
+  "DEBUGLOGGING": {
+    "message": "调试日志"
+  },
+  "LIGHTTHEME": {
+    "message": "浅色主题"
+  },
+  "FPPROTECTION": {
+    "message": "指纹防护"
+  },
+  "BLOCKCAMERA": {
+    "message": "阻止访问相机"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "阻止访问麦克风"
+  },
+  "VIEWALL": {
+    "message": "查看所有设置..."
+  },
+  "trial": {
+    "message": "线索"
+  },
+  "days_left": {
+    "message": "天剩余"
+  },
+  "Subscription": {
+    "message": "订阅"
+  },
+  "NoSubscriptionData": {
+    "message": "未找到用户信息"
+  },
+  "AddToBypassRules": {
+    "message": "添加到免过滤清单"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "已包含规则"
+  },
+  "RemoveRule": {
+    "message": "删除"
+  },
+  "GatheringRegions": {
+    "message": "聚集地区"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox 近期更改了插件处理代理连接的方式。现在，要更新代理设置，需要允许插件在私有 Windows 中运行。"
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "请访问以下网址查看您的插件页面。然后，点击 \"Private Internet Access\" 插件以修改其设置。您可以从中将“在私有 Windows 中运行”设置更改为“允许”。"
+  },
+  "us": {
+    "message": "美国"
+  },
+  "gb": {
+    "message": "英国"
+  },
+  "de": {
+    "message": "德国"
+  },
+  "au": {
+    "message": "澳大利亚"
+  },
+  "canada": {
+    "message": "加拿大"
   },
   "us_california": {
     "message": "美国加利福尼亚"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "澳大利亚墨尔本"
+  },
+  "aus_perth": {
+    "message": " 澳大利亚珀斯"
   },
   "nl": {
     "message": "荷兰"

@@ -1,0 +1,32 @@
+#smart-location-page {
+    max-height: 580px;
+    overflow: auto;
+    color: $grey20;
+    background-color: $grey92;
+  
+    &.dark {
+      color: $white;
+      background-color: $grey20;
+    }
+  
+    .bypass-wrap {
+      padding: 0px 15px 15px 15px;
+  
+      .introtext {
+        font-size: 8pt;
+        color: $grey55;
+  
+        strong {
+          font-weight: 500;
+          text-decoration: underline;
+        }
+      }
+  
+      .bl_sectionheader {
+        font-size: 10pt;
+  
+        &.instructions { margin-bottom: 5px; }
+      }
+    }
+  }
+  

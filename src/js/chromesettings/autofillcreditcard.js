@@ -1,7 +1,7 @@
-import ChromeSetting from 'chromesettings/chromesetting';
+import ChromeSetting from '@chromesettings/chromesetting';
 
 class AutoFillCreditCard extends ChromeSetting {
-  constructor() {
+  constructor(storage) {
     super(chrome.privacy.services.autofillCreditCardEnabled);
 
     // bindings
@@ -20,7 +20,7 @@ class AutoFillCreditCard extends ChromeSetting {
 
     // init
     this.settingID = 'blockautofillcreditcard';
-    if (localStorage.getItem('settings:blockautofill') === 'false') {
+    if (storage.getItem('settings:blockautofill')) {
       this.settingDefault = false;
     }
     else {

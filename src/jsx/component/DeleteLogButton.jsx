@@ -1,15 +1,13 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import withAppContext from '@hoc/withAppContext';
 
 class DeleteLogButton extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.renderer = background.renderer;
-    this.app = background.app;
-
     // properties
+    this.app = props.context.app;
     this.logger = this.app.logger;
 
     // bindings
@@ -19,27 +17,19 @@ class DeleteLogButton extends Component {
   onClick(event) {
     event.preventDefault();
     this.logger.removeEntries();
-    const { parentComponent } = this.props;
-    parentComponent.setState({ entries: [] });
   }
 
   render() {
     return (
-      <div className="col-xs-5 dldeletebtn">
-        <button
-          type="button"
-          className="col-xs-12 btn btn-danger"
-          onClick={this.onClick}
-        >
-          { t('DeleteDebugLog') }
-        </button>
-      </div>
+      <button type="button" className="btn btn-danger clear" onClick={this.onClick}>
+        { t('DeleteDebugLog') }
+      </button>
     );
   }
 }
 
 DeleteLogButton.propTypes = {
-  parentComponent: PropTypes.object.isRequired,
+  context: PropTypes.object.isRequired,
 };
 
-export default DeleteLogButton;
+export default withAppContext(DeleteLogButton);

@@ -18,7 +18,7 @@ const Target = {
   BACKGROUND: '@background',
 };
 
-const validateMeta = function (meta, props) {
+const validateMeta = (meta) => {
   if (typeof meta !== 'object') {
     throw new Error(`expected meta to be object, not ${typeof meta}`);
   }
@@ -33,7 +33,7 @@ const validateMeta = function (meta, props) {
   }
 };
 
-const isValidTarget = function (listenerTarget, senderTarget) {
+const isValidTarget = (listenerTarget, senderTarget) => {
   if (senderTarget === Target.ALL) {
     return true;
   }
@@ -53,7 +53,7 @@ const isValidTarget = function (listenerTarget, senderTarget) {
  *
  * @returns {void}
  */
-const onMessage = function (meta, listener) {
+const onMessage = (meta, listener) => {
   validateMeta(meta);
   chrome.runtime.onMessage.addListener((message) => {
     if (message.type === meta.type && isValidTarget(meta.target, message.target)) {
@@ -71,7 +71,7 @@ const onMessage = function (meta, listener) {
  *
  * @returns {void}
  */
-const sendMessage = function (meta, data) {
+const sendMessage = (meta, data) => {
   validateMeta(meta);
   const { target, type } = meta;
   chrome.runtime.sendMessage({

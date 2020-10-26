@@ -1,0 +1,22 @@
+.region-search {
+  padding: 15px 15px;
+  border-top: 1px solid $grey85;
+
+  &.dark {
+    border-top: 1px solid $grey15;
+
+    .region-search-input {
+      color: $grey85;
+      background-color: $grey15;
+    }
+  }
+
+  .region-search-input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 20px;
+    color: $grey20;
+    background-color: $grey85;
+  }
+}

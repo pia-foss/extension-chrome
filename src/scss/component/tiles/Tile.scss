@@ -1,0 +1,31 @@
+.tile {
+  border-top: thin solid $grey85;
+
+  &.dark { border-top: thin solid $grey15; }
+
+  .child {
+    position: relative;
+
+    .save-flag {
+      top: 0;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: $white;
+      z-index: 10;
+      outline: none;
+    }
+  }
+}
+
+.flag-enter { opacity: 0; }
+.flag-enter.flag-enter-active {
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.flag-leave { opacity: 1; }
+.flag-leave.flag-leave-active {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+}

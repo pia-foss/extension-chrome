@@ -1,10 +1,26 @@
-export default function(app) {
-  const self  = this,
-        table = {}
+class Counter {
+  constructor(app) {
+    // bindings
+    this.get = this.get.bind(this);
+    this.inc = this.inc.bind(this);
+    this.del = this.del.bind(this);
 
-  self.get = (member) => table[member] || 0
-  self.inc = (member) => table[member] = (table[member] || 0) + 1
-  self.del = (member) => delete(table[member])
+    // init
+    this.app = app;
+    this.table = {};
+  }
 
-  return self
+  get(member) {
+    return this.table[member] || 0;
+  }
+
+  inc(member) {
+    this.table[member] = (this.table[member] || 0) + 1;
+  }
+
+  del(member) {
+    delete this.table[member];
+  }
 }
+
+export default Counter;

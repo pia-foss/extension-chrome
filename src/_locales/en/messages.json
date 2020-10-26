@@ -14,8 +14,11 @@
   "Extension": {
     "message": "Extension"
   },
-  "ResetPasswordText": {
-    "message": "Reset Password"
+  "ForgotPassword": {
+    "message": "Forgot Password"
+  },
+  "BuyAccount": {
+    "message": "Buy Account"
   },
   "DeleteDebugLog": {
     "message": "Clear Log"
@@ -57,7 +60,7 @@
     "message": "Disable"
   },
   "FingerprintProtectionAfterword": {
-    "message": "This settings can also be changed from the \"Extension Settings\" panel after logging into the extension."
+    "message": "This setting can also be changed from the \"Extension Settings\" panel after logging into the extension."
   },
   "TrackingProtection": {
     "message": "Tracking protection"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "Write messages to the debug log. Press the 'ctrl' key followed by the 'd' key to show the debug log."
   },
-  "LogMeOutOnClose": {
-    "message": "Log me out on browser close"
+  "DarkTheme": {
+    "message": "Dark theme"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "After reopening the browser you will not be logged back in automatically"
+  "DarkThemeTooltip": {
+    "message": "Enable a darker theme for the extension to use in low light conditions"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "This setting cannot be controlled while credentials are not being remembered (login screen)"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "Proxy IP"
   },
   "DebugLogIsEmpty": {
     "message": "The debug log is empty."
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "Enabled settings are now always active whether you are connected to a region or not, with the exception of PIA MACE™ which is only active when you are connected to a region."
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "Enable extension in incognito mode by selecting this option from extension settings in chrome://extensions ."
   },
   "UsernamePlaceholder": {
     "message": "Username"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "Username and/or password are incorrect."
-  },
-  "NetworkError": {
-    "message": "Login request failed due to a network error. Please try again."
   },
   "OfflineError": {
     "message": "Login request failed because you appear to be offline. Please check if you are connected to the internet."
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "Debug log copied"
   },
-  "NoAccountQuestion": {
-    "message": "Don't have an account?"
-  },
-  "JoinText": {
-    "message": "SIGN UP FOR A VPN ACCOUNT"
-  },
   "JoinURL": {
     "message": "https://www.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "Export"
   },
-  "SettingsWarning": {
-    "message": "These settings are not in effect. They come into effect while you are connected to a region."
+  "BypassWarningLead": {
+    "message": "Requests made to websites listed in the Bypass List use"
   },
-  "SettingsWarningConnected": {
-    "message": "These settings are in effect. They will be restored to %{browser}'s default settings when you disconnect from %{region}."
-  },
-  "BypassWarning": {
-    "message": "Requests made to websites found on the Bypass List use a <span class=\"bold-underline\">direct connection</span> that is <span class=\"bold-underline\">not</span> protected by Private Internet Access™."
+  "BypassWarningBold": {
+    "message": "direct connections and are not protected by Private Internet Access™."
   },
   "AccountSettingsText": {
     "message": "Account Settings"
   },
-  "AutoLoginURL": {
-    "message": "https://www.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "Add URL to bypass list"
-  },
-  "SupportURL": {
-    "message": "https://www.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "Help & Support"
-  },
-  "StatusText": {
-    "message": "Status"
   },
   "OfflineText": {
     "message": "OFFLINE"
   },
-  "PleaseWait": {
-    "message": "Loading. Please wait."
-  },
   "Security": {
     "message": "Security"
-  },
-  "AdsTrackersProtection": {
-    "message": "Ads, Trackers & Malware Protection"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "What is MACE™?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ helps protect your privacy and security by blocking malicious content, trackers and ads."
+    "message": "PIA MACE™ helps protect your privacy and security by blocking malicious content, trackers and ads. Only active when connected to a region"
   },
   "WebRTCLeakProtection": {
     "message": "Block WebRTC IP Detection"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "Block %{browser} from running Adobe Flash. Adobe Flash can be used to reveal your public IP address. Not recommended to disable."
   },
+  "HttpsUpgrade": {
+    "message": "Browse websites using HTTPS"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "Automatically converts supported websites or links using an unencrypted connection (HTTP) to a more secure HTTPS connection before leaving your browser. Made possible because of HTTPS Everywhere and the EFF."
+  },
+  "AlwaysActive": {
+    "message": "Always active settings"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "Cause settings to always remain active, regardless of whether proxy is connected or not"
+  },
   "BlockUTM": {
     "message": "Remove UTM parameters"
   },
   "BlockUTMTooltip": {
     "message": "Remove Urchin Tracking Model(UTM) parameters from URLs you click on. UTM parameters are used to track information about your visit to a website."
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "Remove FBCLID parameters"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Remove Facebook FBCLID parameters from outgoing links in Facebook. FBCLID parameters are used to track information about your visit to a website"
   },
   "BypassInstructionsBold": {
     "message": "* prefix required"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "Bypass List"
   },
-  "SaveProxyBypassList": {
-    "message": "Save"
+  "SmartLocation": {
+    "message": "Smart Location"
   },
-  "OKSaved": {
-    "message": "OK. Saved"
+  "WebAlreadyAdded":{
+    "message":"Websites already added"
+  },
+  "AddSmartLocation":{
+    "message":"Add smart location"
   },
   "WelcomeToNewVersion": {
     "message": "Welcome to %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "No rules added"
+  },
+  "NoLocation":{
+    "message":"No location added"
+  },
+  "OneLocation":{
+    "message":"location added"
+  },
+  "MultipleLocations":{
+    "message":"locations"
   },
   "MultipleRulesAdded": {
     "message": "%{count} rules added"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "Block websites from accessing your computer's microphone."
   },
-  "UseRegionLocale": {
-    "message": "Private locale and language settings"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "The default locale and language settings of your browser are kept private by replacing them with the locale and language settings of the current region."
-  },
   "Privacy": {
     "message": "Privacy"
-  },
-  "OnText": {
-    "message": "On"
-  },
-  "OffText": {
-    "message": "Off"
   },
   "ImportFileMessage": {
     "message": "Please select an exported Bypass Rules file (ex. bypass-rules.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "No Region Selected"
+  },
+  "ChooseAutomatically": {
+    "message": "Choose Automatically"
   },
   "ChangeExtensionSettings": {
     "message": "Extension Settings"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "Latency"
   },
-  "SortBy": {
-    "message": "Sort by:"
+  "RegionSearch": {
+    "message": "Search..."
   },
   "CloseText": {
     "message": "Close"
   },
   "UpgradeBrowserMessage": {
     "message": "Private Internet Access cannot be used because your version of %{browser} is outdated. Please upgrade %{browser} to its latest version."
-  },
-  "LoadingText": {
-    "message": "Loading"
   },
   "LogoutText": {
     "message": "Logout"
@@ -390,7 +387,13 @@
     "message": "Authentication error"
   },
   "AuthFailMessage": {
-    "message": "If you recently changed your password on the Private Internet Access website then re-authenticating with the extension might fix this error.<br /><br />For help and support, contact our <a href=\"https://privateinternetaccess.com/helpdesk\">support team</a>."
+    "message": "If you recently changed your password on the Private Internet Access website then re-authenticating with the extension might fix this error."
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "For help and support, contact our"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "support team"
   },
   "ConnectionFailPageTitle": {
     "message": "Connection error | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "enabled"
   },
-  "disabled": {
-    "message": "disabled"
-  },
-  "unavailable": {
-    "message": "unavailable"
-  },
   "RememberMe": {
     "message": "Remember me"
   },
   "RememberMeTooltip": {
-    "message": "Saves these credentials between browser restarts"
+    "message": "Saves username between browser restarts"
   },
-  "AllRegions": {
-    "message": "ALL REGIONS"
+  "Auto": {
+    "message": "Auto"
   },
-  "FavoriteRegions": {
-    "message": "FAVORITE REGIONS"
+  "CalculatingLatency": {
+    "message": "Calculating Latency"
   },
   "NoRegionsFound": {
     "message": "No Regions Found"
   },
   "RefreshRegions": {
     "message": "Refresh Regions"
+  },
+  "ViewChangelog": {
+    "message": "view changelog"
+  },
+  "ChangelogTitle": {
+    "message": "Changelog"
+  },
+  "UnknownProxyError": {
+    "message": "Unknown Proxy Error Occured"
+  },
+  "Connecting": {
+    "message": "connecting"
+  },
+  "Disconnecting": {
+    "message": "disconnecting"
+  },
+  "Connected": {
+    "message": "connected"
+  },
+  "DefaultDisplay": {
+    "message": "DEFAULT DISPLAY"
+  },
+  "QuickConnect": {
+    "message": "QUICK CONNECT"
+  },
+  "QuickSettings": {
+    "message": "QUICK SETTINGS"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "DISABLE HTTP REFERRER"
+  },
+  "DEBUGLOGGING": {
+    "message": "DEBUG LOGGING"
+  },
+  "LIGHTTHEME": {
+    "message": "LIGHT THEME"
+  },
+  "FPPROTECTION": {
+    "message": "FINGERPRINT PROTECTION"
+  },
+  "BLOCKCAMERA": {
+    "message": "BLOCK CAMERA ACCESS"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "BLOCK MICROPHONE ACCESS"
+  },
+  "VIEWALL": {
+    "message": "VIEW ALL SETTINGS..."
+  },
+  "trial":{
+    "message":"Trial"
+  },
+  "days_left": {
+    "message":"days left"
+  },
+  "Subscription": {
+    "message": "SUBSCRIPTION"
+  },
+  "NoSubscriptionData": {
+    "message": "No User Information Found"
+  },
+  "AddToBypassRules": {
+    "message": "ADD TO BYPASS RULES"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "Rule Already Included"
+  },
+  "RemoveRule": {
+    "message": "remove"
+  },
+  "GatheringRegions": {
+    "message": "Gathering Regions"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox has recently changed the way addons handle proxy connection. Allowing the addon to run in Private Windows is now required for proxy settings to be updated."
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "Please visit the URL below to view you addons page. Then click on the \"Private Internet Access\" addon to modify its settings. From here, change the \"Run in Private Windows\" setting to \"Allow\"."
+  },
+  "us": {
+    "message": "United States"
+  },
+  "gb": {
+    "message": "United Kingdom"
+  },
+  "de": {
+    "message": "Germany"
+  },
+  "au": {
+    "message": "Australia"
+  },
+  "canada": {
+    "message": "Canada"
   },
   "us_california": {
     "message": "US California"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "AU Melbourne"
+  },
+  "aus_perth": {
+    "message": " AU Perth"
   },
   "nl": {
     "message": "Netherlands"

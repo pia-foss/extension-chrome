@@ -1,0 +1,23 @@
+.subscription > .subscription {
+  padding: 10px 20px;
+  height: 85px;
+  color: $grey55;
+
+  &.dark {
+    .subscription-content .subscription-plan { color: $white; }
+  }
+
+  .subscription-header {
+    font-size: 10pt;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .subscription-content {
+    .subscription-plan {
+      color: $grey20;
+      text-transform: capitalize;
+    }
+    .subscription-expiration { color: $grey55; }
+  }
+}

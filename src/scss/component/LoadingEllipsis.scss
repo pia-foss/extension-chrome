@@ -1,0 +1,43 @@
+.loading-auto {
+  color: $grey20;
+  height: 80px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: thin solid $grey85;
+
+  .loading-auto-text { margin-right: 5px; }
+
+  .loading-auto-animation {
+    .one {
+      opacity: 1;
+      animation: dot 1.3s infinite;
+      animation-delay: 0.0s;
+    }
+
+    .two {
+      opacity: 1;
+      animation: dot 1.3s infinite;
+      animation-delay: 0.2s;
+    }
+
+    .three {
+      opacity: 1;
+      animation: dot 1.3s infinite;
+      animation-delay: 0.3s;
+    }
+  }
+
+  @keyframes dot {
+        0% { opacity: 1; }
+       25% { opacity: 1; }
+      100% { opacity: 0; }
+  }
+
+  &.dark {
+    color: $white;
+    background-color: $grey20;
+    border-top: thin solid $grey15;
+  }
+}

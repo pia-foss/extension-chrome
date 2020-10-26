@@ -39,8 +39,14 @@ function createData(): SettingData[] {
     },
     {
       sectionName: 'privacy',
-      settingName: 'disableAutofill',
-      settingID: 'blockautofill',
+      settingName: 'disableAutofillCreditCard',
+      settingID: 'blockautofillcreditcard',
+      expectedDefault: true,
+    },
+    {
+      sectionName: 'privacy',
+      settingName: 'disableAutofillAddress',
+      settingID: 'blockautofilladdress',
       expectedDefault: true,
     },
     {
@@ -53,6 +59,12 @@ function createData(): SettingData[] {
       sectionName: 'security',
       settingName: 'preventWebRtcLeak',
       settingID: 'preventwebrtcleak',
+      expectedDefault: true,
+    },
+    {
+      sectionName: 'security',
+      settingName: 'httpsUpgrade',
+      settingID: 'httpsUpgrade',
       expectedDefault: true,
     },
     {
@@ -81,6 +93,12 @@ function createData(): SettingData[] {
     },
     {
       sectionName: 'tracking',
+      settingName: 'removeFbclidParameters',
+      settingID: 'blockfbclid',
+      expectedDefault: true,
+    },
+    {
+      sectionName: 'tracking',
       settingName: 'piaMace',
       settingID: 'maceprotection',
       expectedDefault: true,
@@ -90,12 +108,6 @@ function createData(): SettingData[] {
       settingName: 'allowDesktopNotifications',
       settingID: 'allowExtensionNotifications',
       expectedDefault: true,
-    },
-    {
-      sectionName: 'extension',
-      settingName: 'logoutOnClose',
-      settingID: 'logoutOnClose',
-      expectedDefault: false,
     },
     {
       sectionName: 'extension',

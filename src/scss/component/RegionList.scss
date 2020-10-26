@@ -1,28 +1,30 @@
-#region-list {
+.regions {
+  display: flex;
+  flex-direction: column;
   max-height: 350px;
   min-height: 350px;
-  overflow: auto;
+  overflow-y: scroll;
+
+  &.centered { justify-content: center; }
+
+  .region-list { padding: 0; margin: 0; }
+  .latency-green { color: $green-dark20 !important; }
+  .latency-orange { color: $yellow-dark !important; }
+  .latency-red { color: $red !important; }
+}
+
+.no-regions {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
-  .loader { align-self: center; }
-
-  .no-regions {
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .no-regions-title {
-      font-size: 1.5em;
-      margin: 0 0 30px;
-    }
-  }
-
-  .list-group {
-    margin-bottom: 0;
-    width: 100%;
+  .no-regions-title {
+    font-size: 1.5em;
+    margin: 0 0 30px;
+    &.dark { color: $white; }
   }
 }

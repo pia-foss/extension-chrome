@@ -1,0 +1,26 @@
+.auto-region {
+  .region-list-item {
+    padding: 15px;
+    max-height: 65px;
+    border-bottom: 4px solid $grey85;
+
+    &.dark {
+      background-color: $grey20;
+      border-bottom: 4px solid $grey15;
+
+      &:hover { background-color: $grey18; }
+
+      .regionnamelist .region-name-title { color: $grey92; }
+      .regionnamelist .region-name-label { color: $grey55; }
+    }
+
+    &:hover { background-color: $grey85; }
+
+    .regionnamelist .region-name-title {
+      padding-bottom: 5px;
+
+      &.active { color: $green-dark20; }
+    }
+    .regionnamelist .region-name-label { color: $grey55; }
+  }
+}

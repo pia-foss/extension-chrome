@@ -1,75 +1,110 @@
 import PropTypes from 'prop-types';
+import Switch from '@component/Switch';
 import React, { Component } from 'react';
-import RegionListItem from 'component/RegionListItem';
+import RegionIso from '@component/RegionIso';
+import RegionAuto from '@component/RegionAuto';
+import withAppContext from '@hoc/withAppContext';
+import RegionListItem from '@component/RegionListItem';
 
 class RegionList extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.app = background.app;
-
     // properties
+    this.app = props.context.app;
     this.storage = this.app.util.storage;
     this.regionlist = this.app.util.regionlist;
     this.regionsorter = this.app.util.regionsorter;
-    this.state = { regions: [], mode: 'loading' };
-    this.mounted = false;
 
     // bindings
-    this.sortRegions = this.sortRegions.bind(this);
-    this.updateRegions = this.updateRegions.bind(this);
+    this.filterRegions = this.filterRegions.bind(this);
+    this.renderAutoRegion = this.renderAutoRegion.bind(this);
+    this.componentizeRegions = this.componentizeRegions.bind(this);
   }
 
-  componentDidMount() {
-    this.mounted = true;
-    return this.sortRegions();
-  }
+  filterRegions(regions) {
+    const { sortBy, search, showFavorites } = this.props;
 
-  componentDidUpdate() {
-    const active = document.querySelector('div#regions .active');
-    if (active) { active.scrollIntoView(); }
-  }
-
-  componentWillUnmount() {
-    this.mounted = false;
-  }
-
-  sortRegions() {
-    const mode = 'render';
-    const allRegions = this.regionlist.toArray();
-    const sortType = this.storage.getItem('sortby');
-
+    // determine sort order
     let sort = this.regionsorter.nameSort;
-    if (sortType === 'latency') { sort = this.regionsorter.latencySort; }
+    if (sortBy === 'latency') { sort = this.regionsorter.latencySort; }
 
-    sort(allRegions).then((regions) => {
-      if (this.mounted) { this.setState({ regions, mode }); }
-    });
-  }
-
-  updateRegions() {
-    this.setState({ mode: 'loading' });
-    this.regionlist.sync().then(this.sortRegions);
-  }
-
-  render() {
-    const { regions, mode } = this.state;
-    const { showFavorites } = this.props;
-    const listItems = regions
+    // sort by name or latency
+    return sort(regions)
+      // filter by search input
+      .filter((region) => {
+        return region.localizedName().toLowerCase().includes(search.toLowerCase());
+      })
+      // filter favorites
       .filter((region) => {
         if (showFavorites) { return region.isFavorite; }
         return true;
       })
-      .map((region) => {
-        return (<RegionListItem key={region.id} region={region} />);
+      // group regions by ISO
+      .reduce((prev, curr) => {
+        const isoMap = prev;
+        if (isoMap[curr.iso]) { isoMap[curr.iso].push(curr); }
+        else { isoMap[curr.iso] = [curr]; }
+        return isoMap;
+      }, {});
+  }
+
+  componentizeRegions() {
+    const { regions } = this.props;
+    const filteredRegions = this.filterRegions(regions);
+
+    const componentRegions = [];
+    Object.values(filteredRegions)
+      .forEach((isoRegions) => {
+        const region = isoRegions[0];
+
+        if (isoRegions.length === 1) {
+          componentRegions.push((
+            <RegionListItem key={region.id} region={region} />
+          ));
+        }
+        else {
+          const { iso } = region;
+          componentRegions.push((
+            <RegionIso key={iso} iso={iso} regions={isoRegions} />
+          ));
+        }
       });
+
+    return componentRegions;
+  }
+
+  renderAutoRegion() {
+    const { regions } = this.props;
+    const hasRegions = this.regionlist.hasRegions();
+    const pending = regions.some((current) => { return current.latency === 'PENDING'; });
+
+    if (!hasRegions || pending) { return ''; }
+
+    const region = this.regionsorter.latencySort(regions)[0];
+    return (<RegionAuto region={region} />);
+  }
+
+  render() {
+    const filteredRegions = this.componentizeRegions();
+    const {
+      mode,
+      regions,
+      syncRegions,
+      context: { theme },
+    } = this.props;
 
     // Loading screen when between actions
     if (mode === 'loading') {
       return (
-        <div id="region-list">
-          <div className="loader" />
+        <div className="regions centered">
+          <Switch
+            theme={theme}
+            mode="connecting"
+            classes="waiting region"
+            connection="disconnected"
+            onToggleConnection={() => {}}
+          />
         </div>
       );
     }
@@ -77,29 +112,26 @@ class RegionList extends Component {
     // No Regions Found screen if no regions exists
     if (regions.length === 0) {
       return (
-        <div id="region-list" className="no-regions">
-          <div className="no-regions">
-            <div className="no-regions-title">
-              { t('NoRegionsFound') }
-            </div>
-
-            <button
-              type="button"
-              className="btn btn-success"
-              onClick={this.updateRegions}
-            >
-              { t('RefreshRegions') }
-            </button>
+        <div className="no-regions">
+          <div className={`no-regions-title ${theme}`}>
+            { t('NoRegionsFound') }
           </div>
+
+          <button type="button" className="btn btn-success" onClick={syncRegions}>
+            { t('RefreshRegions') }
+          </button>
         </div>
       );
     }
 
     // Render regions
     return (
-      <div id="region-list">
-        <ul className="list-group">
-          { listItems }
+      <div className="regions">
+        <div className="auto-region">
+          { this.renderAutoRegion() }
+        </div>
+        <ul className="region-list">
+          { filteredRegions }
         </ul>
       </div>
     );
@@ -107,7 +139,13 @@ class RegionList extends Component {
 }
 
 RegionList.propTypes = {
+  mode: PropTypes.string.isRequired,
+  search: PropTypes.string.isRequired,
+  regions: PropTypes.array.isRequired,
+  sortBy: PropTypes.string.isRequired,
+  context: PropTypes.object.isRequired,
+  syncRegions: PropTypes.func.isRequired,
   showFavorites: PropTypes.bool.isRequired,
 };
 
-export default RegionList;
+export default withAppContext(RegionList);

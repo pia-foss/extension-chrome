@@ -21,6 +21,7 @@ idescribe('the connection failed page', function () {
     robotsPage = new RobotsPage();
     await loginPage.navigate();
     await loginPage.signIn();
+    await authPage.waitForLatencyTest();
     await authPage.switchOn();
     const id = await failConnection(this.script);
     await connFailPage.navigate((url) => {

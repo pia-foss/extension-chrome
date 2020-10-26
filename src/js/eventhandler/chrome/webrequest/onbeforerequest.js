@@ -1,5 +1,4 @@
 /*
-
   *** WARNING ***
   This event handler is always active. It could be run while a direct connection is being
   used, while another proxy extension is active, or while the Private Internet Access
@@ -9,64 +8,90 @@
   extension.
 
 */
-import 'url';
+import createApplyListener from '@helpers/applyListener';
 
-export default function onBeforeRequest(app) {
-  const utmParamNames = ['utm_source', 'utm_medium', 'utm_term', 'utm_content', 'utm_campaign'];
-  const hasUTMQuery = (url) => {
-    return !!utmParamNames.find((name) => {
-      return url.searchParams.has(name);
-    });
-  };
-  const newURLWithoutUTMQuery = (url) => {
-    utmParamNames.forEach((name) => {
-      return url.searchParams.delete(name);
-    });
-    return url.toString();
-  };
+function connFailRedirect(app) {
+  const { util: { errorinfo } } = app;
   const connUrl = `chrome-extension://${chrome.runtime.id}/html/errorpages/connfail.html`;
-  const isConnFailReload = (url) => {
+
+  function isConnFailReload(url) {
     return connUrl === url.slice(0, connUrl.length) && url.slice(-7, url.length) === '#reload';
-  };
-  const getURLFromErrorID = (errorID) => {
-    const { errorinfo } = app.util;
+  }
+
+  function getErrorUrl(errorID) {
     const url = errorinfo.get(errorID)[1];
     return url;
-  };
+  }
 
   return (details) => {
-    const { proxy } = app;
-    const { settings } = app.util;
-
-    // We handle the connfail redirects here because a bug exists in chrome
-    // resulting in page resources not being after a redirect using window.location.
-    // https://stackoverflow.com/questions/11950306/chrome-background-images-not-rendered-after-refreshing-page-javascript-redire
     if (isConnFailReload(details.url)) {
-      const errorID = new URL(details.url).searchParams.get('id');
+      const url = new URL(details.url);
+      const errorID = url.searchParams.get('id');
       const message = {
         id: errorID,
         request: 'RequestErrorDelete',
       };
       chrome.runtime.sendMessage(message);
-      const redirectUrl = getURLFromErrorID(errorID);
+      const redirectUrl = getErrorUrl(errorID);
       if (redirectUrl) {
         debug('connfail. try reload failed URL');
+        return { redirectUrl };
       }
-      return redirectUrl ? { redirectUrl } : undefined;
-    }
-    if (!proxy.enabled()) {
-      return undefined;
-    }
-    if (settings.getItem('blockutm')) {
-      const url = new URL(details.url);
-      const redirectUrl = hasUTMQuery(url) ? newURLWithoutUTMQuery(url) : undefined;
-      if (redirectUrl) {
-        debug('blockutm. remove UTM query string.');
-      }
-
-      return redirectUrl ? { redirectUrl } : undefined;
     }
 
     return undefined;
   };
 }
+
+function filterQueryParameters(app) {
+  const { util: { settings } } = app;
+  const filterLists = {
+    blockutm: ['utm_source', 'utm_medium', 'utm_term', 'utm_content', 'utm_campaign'],
+    blockfbclid: ['fbclid'],
+  };
+
+  function containsFilterQueries(url, filterList) {
+    return !!filterList.find((param) => {
+      return url.searchParams.has(param);
+    });
+  }
+
+  function createFilteredUrl(url, filterList) {
+    const copy = new URL(url);
+    filterList.forEach((queryParam) => {
+      copy.searchParams.delete(queryParam);
+    });
+
+    return copy.toString();
+  }
+
+  function getFilterList() {
+    return Object.keys(filterLists)
+      .filter((key) => { return settings.isActive(key); })
+      .map((key) => { return filterLists[key]; })
+      .reduce((a, b) => { return [...a, ...b]; }, []);
+  }
+
+  return (details) => {
+    if (settings.enabled()) {
+      const filterList = getFilterList();
+      const url = new URL(details.url);
+      if (filterList.length && containsFilterQueries(url, filterList)) {
+        const redirectUrl = createFilteredUrl(url, filterList);
+        if (redirectUrl) {
+          debug(`onbeforerequest.js: filtered ${JSON.stringify(filterList)}`);
+          return { redirectUrl };
+        }
+        debug(`onbeforerequest.js: failed to filter ${JSON.stringify(filterList)}`);
+      }
+    }
+    return undefined;
+  };
+}
+
+export default createApplyListener((app, addListener) => {
+  const { util: { httpsUpgrade } } = app;
+  addListener(connFailRedirect(app), { urls: ['<all_urls>'] }, ['blocking']);
+  addListener(httpsUpgrade.onBeforeRequest, { urls: ['*://*/*', 'ftp://*/*'] }, ['blocking']);
+  addListener(filterQueryParameters(app), { urls: ['<all_urls>'] }, ['blocking']);
+});

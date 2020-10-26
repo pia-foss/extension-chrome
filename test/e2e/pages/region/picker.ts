@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { PageObject } from '../../core';
 import { Button, Container } from '../../elements';
 import { createSelector } from '../../core/entities/selector';
@@ -7,19 +8,28 @@ class RegionPicker extends PageObject {
   public melbourneFlagList: Button;
   public melbourneFlagGrid: Button;
   public melbourneLatency: Button;
-  public grid: Button;
-  public list: Button;
+  public melbourneFavorite: Button;
+  public list: Container;
   public loader: Container;
 
   constructor(parent: PageObject) {
     super(
       {
         selector: createSelector({
-          value: '#regions',
+          value: '.regions',
         }),
         name: 'selector',
       },
       parent,
+    );
+    this.list = new Container(
+      {
+        selector: createSelector({
+          value: '.region-list',
+        }),
+        name: 'list',
+      },
+      this,
     );
     this.melbourneRegion = new Button(
       {
@@ -57,24 +67,15 @@ class RegionPicker extends PageObject {
       },
       this,
     );
-    this.grid = new Button(
+    this.melbourneFavorite = new Button(
       {
         selector: createSelector({
-          value: '#region-grid',
+          value: '*[data-region-id=aus_melbourne] .heart-container',
         }),
-        name: 'grid',
+        name: 'melbourneFavorite'
       },
       this,
-    );
-    this.list = new Button(
-      {
-        selector: createSelector({
-          value: '#region-list',
-        }),
-        name: 'list',
-      },
-      this,
-    );
+    ),
     this.loader = new Container(
       {
         selector: createSelector({
@@ -84,6 +85,11 @@ class RegionPicker extends PageObject {
       },
       this,
     );
+  }
+
+  async isMelbourneFavorite(value: boolean) {
+    const activeSort = await this.melbourneFavorite.hasClass('active');
+    expect(activeSort).to.eq(value);
   }
 }
 

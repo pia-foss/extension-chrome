@@ -1,0 +1,86 @@
+.quick-connect {
+  padding: 10px 20px;
+  height: 85px;
+  color: $grey55;
+
+  &.dark { color: $grey55; }
+
+  .quick-connect-header {
+    font-size: 10pt;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+  }
+
+  .quick-connect-flags {
+    display: flex;
+    justify-content: space-between;
+
+    .connect-region {
+      display: inline-block;
+      outline: none;
+
+      &.connected .flag-container {
+        background-image: radial-gradient(circle closest-side, #5DDF5A, transparent);
+      }
+
+      &.disconnected.connecting .flag-container,
+      &.connected.connecting .flag-container {
+        background-image: radial-gradient(circle closest-side, $yellow, transparent);
+      }
+
+      .flag-container {
+        width: 35px;
+        height: 30px;
+        padding: 5px 0;
+        text-align: center;
+
+        .flag-clickable {
+          outline: none;
+          width: 25px;
+          height: 15px;
+          margin: auto;
+        }
+
+        img { width: 100%; height: 100%; }
+
+        .fav-region {
+          position: relative;
+
+          .flag-heart {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: -5px;
+            bottom: -12px;
+
+            &.dark {
+              width: 12px;
+              height: 12px;
+              right: -1px;
+              bottom: -9px
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.quick-connect-warning {
+  color: $grey55;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+
+  &.dark { color: $white; }
+
+  .loading-auto, .loading-auto.dark {
+    border-top: 0;
+    height: auto;
+    padding: 0;
+    font-weight: normal;
+  }
+}

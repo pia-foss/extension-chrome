@@ -1,5 +1,200 @@
 __HEAD__
 
+__v2.2.7__
+
+* Translations and css changes for some of them.
+
+__v2.2.6__
+
+* Proxy Ip updates when changing tab
+
+__v2.2.5__
+
+* Fixed smart location not grabbing correct proxy
+* Remember me now clears when false
+
+__v2.2.3__
+
+* Added loading icon in region tile
+
+
+__v2.2.2__
+
+* Smart location loading improvements
+* Fix for smart location domain grab
+* Fix for smart location current region changing
+
+__v2.2.1__
+
+* Always on changes and fixes
+
+__v2.2.0__
+
+* Added smart location feature
+
+__v2.1.20__
+
+* Fix proxy enabled status
+
+__v2.1.19__
+
+* Fix storage fails to retrieve falsy values
+
+__v2.1.18__
+
+* Add toggle for always active settings
+
+__v2.1.17__
+
+* Update e2e tests
+
+__v2.1.16__
+
+* Fix console error when bypass tile can't find the current tab url
+
+__v2.1.15__
+
+* Fix malformed support link on authentication failure page
+
+__v2.1.14__
+
+* Remove session storage
+
+__v2.1.13__
+
+* Fix memory leaks in extension
+
+__v2.1.12__
+
+* Transition to extension storage
+
+__v2.1.11__
+
+* Bundle region data with extension
+
+__v2.1.10__
+
+* Increase "Debug Log Copied" visibility to 5 secs
+
+__v2.1.9__
+
+* Update startup warning to be calmer
+
+__v2.1.8__
+
+* Fix styling issue with translated bypass list tile
+
+__v2.1.7__
+
+* Fix bug with storing https-upgrade rulesets on installation
+
+__v2.1.6__
+
+* Reset Drawer position on navigation
+
+__v2.1.5__
+
+* Initialize i18n with app.browser
+
+__v2.1.4__
+
+* Add IP tile
+
+__v2.1.3__
+
+* Add https-upgrade/rulesets unit tests
+
+__v2.1.2__
+
+* Remove unused locale keys
+
+__v2.1.1__
+
+* Update utils to ES6 classes
+
+__v2.1.1__
+
+* Update "tabs" permission to "activeTab"
+* Fix Netflix Rule breaking proxy connections
+
+__v2.1.0__
+
+* Fix exclusions for https-upgrade
+* Add unit tests for https-upgrade
+* Fix translated region name spacing on region list
+* Fix Issue with displaying Uncontrollable or Upgrade pages
+* Fix failing tests
+* Fix swapped camera and microphone images in quick settings
+* Add unit tests for https-upgrade
+* Improve latency test error handling
+* Improve latency test results
+* Change beta process to use zip files
+* Fix translation capitalization
+* Decouple privacy, security, tracking settings from proxy
+* Fix navigational keybinds
+* Update https-upgrade to PIA source
+* Add chrome to browserslist to fix styling on chrome
+* Add unit test framework
+* Target relevant versions for "bug on Windows where foreground would not close when losing focus"
+* Add badge to icon
+* Add build name to settings page
+* Add Bypass Rules Tile
+* Adjust CSS to remove green dots from arrows on settings page
+* Prevent button text in Debug Log from creating horizontal scrollbars
+* Prevent text in Debug Log from creating horizontal scrollbars
+* Fix Tile ordering on startup
+* Disallow selection of Tile text
+* Fix Setting text not updating on language change
+* Refactor React code to use the context API for global data
+* Migrate to Webpack
+* Add React Router, Remove Renderer Class
+* Add HTTPS Upgrade feature
+* Enhance QA functionality
+
+__v2.0.2__
+
+* Revert latency frequency
+* Convert latency test to use ips rather than domains
+
+__v2.0.1__
+
+* Extend latency test frequency to once a day
+
+__v2.0.0__
+
+* 2.0.0 Release
+* Update Remember Me tooltip wording
+* Add no-op to setAccount if account parameter is undefined
+* Add maxlength to bypass rule input field (32779)
+* Add maxlength to login input fields (253 chars)
+* Backport CSS fixes for text breakout on DebugLog Page
+* Beta Release
+* Componentize Drawer Handle
+* Add Checkmark on Export button after Bypasslist export completion
+* Fix tile ordering on authenticated view on theme change
+* Adjust spacing for new Translations
+* Update Translations
+* Add new tests for settings & tiles, improved test core
+* Remove LogoutOnClose setting
+* Fix bug where enabling extension in incognito would sometimes log user out
+* Translate "view changelog"
+* Add homepage to extension page
+* Add setting to filter Facebook fbclid query parameters
+* Refactor user to remove unnecessary properties
+* Bypass-list Firefox parity
+* Add Token Based Authentication
+* Add Quick Settings Tile
+* Add Subscription Tile
+* Add Quick Connect Tile
+* Convert current region component to Quick Region Tile
+* Add Tiles system to main view
+* Add Auto Region
+* Add Region Latency refresh button when no regions found
+* Move Region latency polling to a timer based system
+* Add Region search by name feature
+* Remove Region Grid View
+* Update view components to met new design spec
+
 __v1.8.1__
 
 * 1.8.1 Release

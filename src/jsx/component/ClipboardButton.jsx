@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import withAppContext from '@hoc/withAppContext';
 
 class ClipboardButton extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.app = background.app;
-
     // properties
+    this.app = props.context.app;
     this.logger = this.app.logger;
     this.platforminfo = this.app.util.platforminfo;
 
@@ -41,22 +41,20 @@ class ClipboardButton extends Component {
     btn.innerHTML = t('CopiedToClipboard');
     window.setTimeout(() => {
       btn.innerHTML = t('CopyToClipboard');
-    }, 500);
+    }, 5000);
   }
 
   render() {
     return (
-      <div className="col-xs-7 dlcopybtn">
-        <button
-          type="button"
-          className="col-xs-12 btn btn-success"
-          onClick={this.onClick}
-        >
-          { t('CopyToClipboard') }
-        </button>
-      </div>
+      <button type="button" className="btn copy noselect" onClick={this.onClick}>
+        { t('CopyToClipboard') }
+      </button>
     );
   }
 }
 
-export default ClipboardButton;
+ClipboardButton.propTypes = {
+  context: PropTypes.object.isRequired,
+};
+
+export default withAppContext(ClipboardButton);

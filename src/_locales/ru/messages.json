@@ -14,8 +14,11 @@
   "Extension": {
     "message": "Расширение"
   },
-  "ResetPasswordText": {
-    "message": "Сбросить пароль"
+  "ForgotPassword": {
+    "message": "Забыли пароль?"
+  },
+  "BuyAccount": {
+    "message": "Купить учетную запись"
   },
   "DeleteDebugLog": {
     "message": "Очистить журнал"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "Запись сообщений в журнал отладки. Нажмите «ctrl», а затем клавишу «d», чтобы отобразить журнал отладки."
   },
-  "LogMeOutOnClose": {
-    "message": "Выходить из расширения при закрытии браузера"
+  "DarkTheme": {
+    "message": "Темная тема"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "При повторном открытии браузера вход не будет выполняться автоматически."
+  "DarkThemeTooltip": {
+    "message": "Включите более темную тему для использования расширения в условиях слабой освещенности"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "Этим параметром нельзя управлять, если не запоминать учетные данные (экран входа)"
+  "IpReal": {
+    "message": "IP-адрес"
+  },
+  "IpProxy": {
+    "message": "IP-адрес прокси"
   },
   "DebugLogIsEmpty": {
     "message": "Журнал отладки пустой."
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "Активированные настойки теперь применяются всегда независимо от того, подключились вы к региону или нет – за исключением настройки PIA MACE™, которая активна только в случае, если вы подключились к региону."
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "Включите расширение в режиме инкогнито, выбрав этот пункт в настройках расширения на экране chrome://extensions."
   },
   "UsernamePlaceholder": {
     "message": "Имя пользователя"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "Неверное сочетание имени пользователя и пароля."
-  },
-  "NetworkError": {
-    "message": "Не удалось выполнить вход из-за ошибки сети. Повторите попытку."
   },
   "OfflineError": {
     "message": "Не удалось выполнить вход, т.к., судя по всему, вы не в сети. Проверьте подключение к Интернету."
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "Журнал отладки скопирован"
   },
-  "NoAccountQuestion": {
-    "message": "Нет учетной записи?"
-  },
-  "JoinText": {
-    "message": "ЗАРЕГИСТРИРОВАТЬ УЧЕТНУЮ ЗАПИСЬ VPN"
-  },
   "JoinURL": {
     "message": "https://rus.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "Экспорт"
   },
-  "SettingsWarning": {
-    "message": "Эти настройки не действительны. Они действуют, только когда вы соединены с регионом."
+  "BypassWarningLead": {
+    "message": "Запросы, сделанные к веб-сайтам в списке обходов, используют"
   },
-  "SettingsWarningConnected": {
-    "message": "Эти настройки действуют. Сброс до настроек по умолчанию браузера %{browser} произойдет, когда вы отсоединитесь от региона «%{region}»."
-  },
-  "BypassWarning": {
-    "message": "Запросы к веб-сайтам, входящим в «Список обходов», используют <span class=\"bold-underline\">прямое подключение</span>, которое <span class=\"bold-underline\">не</span> защищено Private Internet Access™"
+  "BypassWarningBold": {
+    "message": "прямые подключения и не защищены Private Internet Access™."
   },
   "AccountSettingsText": {
     "message": "Настройки учетной записи"
   },
-  "AutoLoginURL": {
-    "message": "https://rus.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "Добавить URL-адрес в список обходов"
-  },
-  "SupportURL": {
-    "message": "https://rus.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "Справка и поддержка"
-  },
-  "StatusText": {
-    "message": "Статус"
   },
   "OfflineText": {
     "message": "НЕ В СЕТИ"
   },
-  "PleaseWait": {
-    "message": "Выполняется загрузка. Ожидайте."
-  },
   "Security": {
     "message": "Безопасность"
-  },
-  "AdsTrackersProtection": {
-    "message": "Защита от рекламы, трекеров и вредоносного ПО"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "Что такое MACE™?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ помогает обеспечить вам конфиденциальность и безопасность, блокируя вредоносный контент, трекеры и рекламу."
+    "message": "PIA MACE™ помогает обеспечить вам конфиденциальность и безопасность, блокируя вредоносный контент, трекеры и рекламу. Параметр активен только при подключении к региону."
   },
   "WebRTCLeakProtection": {
     "message": "Блокировать определение IP в WebRTC"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "Запретите браузеру %{browser} запускать Adobe Flash. Adobe Flash может использоваться для определения ваших общедоступных и закрытых IP-адресов. Рекомендуется не отключать эту настройку."
   },
+  "HttpsUpgrade": {
+    "message": "Просматривайте веб-страницы с использованием HTTPS"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "Автоматическое преобразование поддерживаемых веб-сайтов или ссылок, использующих нешифрованное подключение (HTTP), в более защищенное подключение HTTPS перед выходом из браузера. Эту возможность обеспечивают функции HTTPS Everywhere и EFF."
+  },
+  "AlwaysActive": {
+    "message": "Всегда активные настройки"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "Если выбрать этот параметр, настройки всегда остаются активными независимо от того, подключен ли прокси"
+  },
   "BlockUTM": {
     "message": "Удалять параметры UTM"
   },
   "BlockUTMTooltip": {
     "message": "Удаление параметров UTM (Urchin Tracking Mode) из URL-адресов, которые вы активируете. Параметры UTM  используются для отслеживания информации о вашем посещении веб-сайта."
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "Удалять параметры FBCLID"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Удаление параметров FBCLID Facebook из исходящих ссылок в Facebook. Параметры FBCLID используются для отслеживания информации о вашем посещении веб-сайта"
   },
   "BypassInstructionsBold": {
     "message": "* требуется префикс"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "Список обходов"
   },
-  "SaveProxyBypassList": {
-    "message": "Сохранить"
+  "SmartLocation": {
+    "message": "Смарт-местоположение"
   },
-  "OKSaved": {
-    "message": "ОК. Сохранено"
+  "WebAlreadyAdded": {
+    "message": "Уже добавленные веб-сайты"
+  },
+  "AddSmartLocation": {
+    "message": "Добавить смарт-местоположение"
   },
   "WelcomeToNewVersion": {
     "message": "Добро пожаловать в %{appVersion}!"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "Правила не добавлены"
+  },
+  "NoLocation": {
+    "message": "Местоположение не добавлено"
+  },
+  "OneLocation": {
+    "message": "местоположение добавлено"
+  },
+  "MultipleLocations": {
+    "message": "местоположения"
   },
   "MultipleRulesAdded": {
     "message": "Добавлено правил: %{count}"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "Блокировка доступа к микрофону компьютера для веб-сайтов."
   },
-  "UseRegionLocale": {
-    "message": "Конфиденциальные национальные и языковые настройки"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "Обеспечение конфиденциальности используемых по умолчанию национальных и языковых настроек браузера путем замены их национальными и языковыми настройками текущего региона."
-  },
   "Privacy": {
     "message": "Конфиденциальность"
-  },
-  "OnText": {
-    "message": "Вкл."
-  },
-  "OffText": {
-    "message": "Выкл."
   },
   "ImportFileMessage": {
     "message": "Выберите экспортированный файл обхода правил (напр., bypass-rules.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "Регион не выбран"
+  },
+  "ChooseAutomatically": {
+    "message": "Выбрать автоматически"
   },
   "ChangeExtensionSettings": {
     "message": "Настройки расширения"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "Латентность"
   },
-  "SortBy": {
-    "message": "Упорядочить по:"
+  "RegionSearch": {
+    "message": "Поиск..."
   },
   "CloseText": {
     "message": "Закрыть"
   },
   "UpgradeBrowserMessage": {
     "message": "Использование Private Internet Access невозможно, т.к. вы используете устаревшую версию браузера %{browser}. Please Обновите %{browser} до последней версии."
-  },
-  "LoadingText": {
-    "message": "Загрузка..."
   },
   "LogoutText": {
     "message": "Выход"
@@ -390,7 +387,13 @@
     "message": "Ошибка аутентификации."
   },
   "AuthFailMessage": {
-    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения.<br /><br />Для получения справки и поддержки обращайтесь в нашу <a href=\"https://privateinternetaccess.com/helpdesk\">службу поддержки</a>."
+    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения."
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "Для получения справки и поддержки обращайтесь в нашу"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "службу поддержки"
   },
   "ConnectionFailPageTitle": {
     "message": "Ошибка подключения | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "активировано"
   },
-  "disabled": {
-    "message": "отключено"
-  },
-  "unavailable": {
-    "message": "недоступно"
-  },
   "RememberMe": {
     "message": "Запомнить меня"
   },
   "RememberMeTooltip": {
-    "message": "Сохранение этих учетных данных между перезапусками браузера"
+    "message": "Сохранение имени пользователя между перезапусками браузера"
   },
-  "AllRegions": {
-    "message": "ВСЕ РЕГИОНЫ"
+  "Auto": {
+    "message": "Авто"
   },
-  "FavoriteRegions": {
-    "message": "ИЗБРАННЫЕ РЕГИОНЫ"
+  "CalculatingLatency": {
+    "message": "Расчет задержки..."
   },
   "NoRegionsFound": {
     "message": "Регионы не найдены"
   },
   "RefreshRegions": {
     "message": "Обновить регионы"
+  },
+  "ViewChangelog": {
+    "message": "просмотреть историю изменений"
+  },
+  "ChangelogTitle": {
+    "message": "История изменений"
+  },
+  "UnknownProxyError": {
+    "message": "Произошла неизвестная ошибка прокси-сервера"
+  },
+  "Connecting": {
+    "message": "подключение..."
+  },
+  "Disconnecting": {
+    "message": "отключение..."
+  },
+  "Connected": {
+    "message": "подключено"
+  },
+  "DefaultDisplay": {
+    "message": "ОТОБРАЖЕНИЕ ПО УМОЛЧАНИЮ"
+  },
+  "QuickConnect": {
+    "message": "БЫСТРОЕ ПОДКЛЮЧЕНИЕ"
+  },
+  "QuickSettings": {
+    "message": "БЫСТРЫЕ НАСТРОЙКИ"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "ОТКЛЮЧИТЬ РЕФЕРЕР HTTP"
+  },
+  "DEBUGLOGGING": {
+    "message": "ВЕДЕНИЕ ЖУРНАЛА ОТЛАДКИ"
+  },
+  "LIGHTTHEME": {
+    "message": "СВЕТЛАЯ ТЕМА"
+  },
+  "FPPROTECTION": {
+    "message": "ЗАЩИТА ОТПЕЧАТКОМ ПАЛЬЦА"
+  },
+  "BLOCKCAMERA": {
+    "message": "БЛОКИРОВАТЬ ДОСТУП К КАМЕРЕ"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "БЛОКИРОВАТЬ ДОСТУП К МИКРОФОНУ"
+  },
+  "VIEWALL": {
+    "message": "ПРОСМОТРЕТЬ ВСЕ НАСТРОЙКИ..."
+  },
+  "trial": {
+    "message": "Пробная версия"
+  },
+  "days_left": {
+    "message": "дн. осталось"
+  },
+  "Subscription": {
+    "message": "ПОДПИСКА"
+  },
+  "NoSubscriptionData": {
+    "message": "Информация о пользователе не найдена"
+  },
+  "AddToBypassRules": {
+    "message": "ДОБАВИТЬ В ПРАВИЛА ОБХОДОВ"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "Правило уже включено"
+  },
+  "RemoveRule": {
+    "message": "удалить"
+  },
+  "GatheringRegions": {
+    "message": "Сбор данных по регионам"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Браузер Firefox недавно изменил подход к обработке расширениями подключений через прокси-сервер. Теперь для обновления настроек прокси необходимо разрешить запускать расширение в индивидуальном окне."
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "Для просмотра страницы расширений перейдите по URL-адресу ниже. После этого щелкните по расширению «Private Internet Access» для доступа к его настройкам, а затем измените значение параметра «Запускать в индивидуальном окне» на «Разрешить»."
+  },
+  "us": {
+    "message": "США"
+  },
+  "gb": {
+    "message": "Великобритания"
+  },
+  "de": {
+    "message": "Германия"
+  },
+  "au": {
+    "message": "Австралия"
+  },
+  "canada": {
+    "message": "Канада"
   },
   "us_california": {
     "message": "США, Калифорния"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "Австралия, Мельбурн"
+  },
+  "aus_perth": {
+    "message": " Австралия, Перт"
   },
   "nl": {
     "message": "Нидерланды"

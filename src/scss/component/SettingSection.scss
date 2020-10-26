@@ -1,87 +1,97 @@
-.sectionwrapper {
-  background: #f9f9f9;
+.section-wrapper {
+  background-color: $grey92;
+  border-bottom: 1px solid $grey85;
 
-  &:hover {
-    .firstfield .settingheader .rightalign .expandicon { background-position: -20px 0px; }
-    .firstfield .settingheader .rightalign .counts { color: #555; }
+  &.dark {
+    background-color: $grey20;
+    border-bottom: 1px solid $grey15;
+
+    .section-header { background-color: $grey20; }
+    &.open .section-header { border-bottom: 1px solid $grey15; }
+    &:hover .section-header .rightalign .counts { color: $grey92; }
   }
 
-  &.open {
-    &:hover .firstfield .settingheader .rightalign .expandicon { background-position: 0px 0px; }
-
-    .firstfield .settingheader .rightalign .expandicon {
-      background-position: 0px 0px;
-      &:hover { background-position: 0px 0px; }
-    }
-
-    .SettingItemContainer{
-      height: auto;
-      overflow: visible;
-    }
-  }
-
-  &:hover, &.open { color: #5cb85c; }
-
-  &::after {
-    content: "";
-    display: block;
-    clear: both;
-  }
-
-  .firstfield {
-    border-top: 1px solid #efefef;
-    border-bottom: 1px solid #efefef;
-    padding: 10px 5px;
-    float: left;
-    width: 100%;
-    background: #fff;
-    margin:-1px;
-    cursor:pointer;
-    outline: none;
-
-    .settingheader {
-      margin-top: 0px;
-      float: left;
-      width: 100%;
-      padding: 0px 15px;
-      font-weight: 500;
-      font-size: 13px;
-
-      &.settingblock { padding: 0 15px; }
-
-      .sectiontitle { pointer-events: none; }
-
+  &.fr, &.it, &.pl, &.ja, &.es{
+    .section-header {  
+      .section-label {
+        font-size: 8pt;
+      }
       .rightalign {
         float: right;
 
         .counts {
-          color: #A9A9A9;
-          font-weight: normal;
-          font-size: 12px;
+          font-size: 8pt;
           margin-right: 10px;
         }
+      }
+   }
+  }
 
-        .expandicon {
-          width: 15px;
-          height: 10px;
-          background-image: url('../images/expand_2x.png');
-          background-size: 35px;
-          background-position: -20px -15px;
-          display: inline-block;
-          float: right;
-          margin-top: 5px;
-          pointer-events: none;
+  &.ru, &.pt_BR{
+    .section-header {  
+      .section-label {
+        font-size: 8pt;
+      }
+      .rightalign {
+        .counts {
+          font-size: 7pt;
         }
       }
+   }
+  }
+
+  &:hover, &.open { color: $green-dark20; }
+
+  &:hover .section-header .rightalign {
+    .counts { color: #555; }
+    .expandicon { background-position: -20px 0px; }
+  }
+
+  &.open {
+    .section-header {
+      border-bottom: 1px solid $grey85;
+      .rightalign .expandicon { background-position: 0px 0px; }
     }
 
-    &.field { padding: 10px 5px; }
+    .section-body { display: block; }
   }
 
-  .SettingItemContainer {
-    display: block;
-    clear: both;
-    overflow: hidden;
-    height: 0px;
+  .section-header {
+    height: 40px;
+    padding: 10px 15px;
+    background: $grey92;
+    cursor:pointer;
+    outline: none;
+
+    .section-label {
+      font-weight: 500;
+      font-size: 10pt;
+      pointer-events: none;
+    }
+
+    .rightalign {
+      float: right;
+
+      .counts {
+        color: #A9A9A9;
+        font-weight: normal;
+        font-size: 9pt;
+        margin-right: 10px;
+      }
+
+      .expandicon {
+        width: 15px;
+        height: 10px;
+        background-image: url('../images/expand_2x.png');
+        background-size: 35px;
+        background-position: -20px -14px;
+        display: inline-block;
+        float: right;
+        margin-top: 5px;
+        pointer-events: none;
+      }
+    }
   }
+
+  .section-body { display: none; }
 }

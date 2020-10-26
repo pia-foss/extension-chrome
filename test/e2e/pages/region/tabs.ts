@@ -3,34 +3,44 @@ import { createSelector } from '../../core/entities/selector';
 import { Button } from '../../elements';
 
 class RegionTabs extends PageObject {
-  public all: Button;
-  public favorites: Button;
+  public nameSort: Button;
+  public latencySort: Button;
+  public favoritesSort: Button;
 
   constructor(parent: PageObject) {
     super(
       {
         selector: createSelector({
-          value: '.favorite-region-selector',
+          value: '.region-sort-selection',
         }),
-        name: 'region tabs',
+        name: 'region sort tabs',
       },
       parent,
     );
-    this.all = new Button(
+    this.nameSort = new Button(
       {
         selector: createSelector({
-          value: '.all',
+          value: '.name',
         }),
-        name: 'all',
+        name: 'nameSort',
       },
       this,
     );
-    this.favorites = new Button(
+    this.latencySort = new Button(
+      {
+        selector: createSelector({
+          value: '.latency',
+        }),
+        name: 'latencySort',
+      },
+      this,
+    );
+    this.favoritesSort = new Button(
       {
         selector: createSelector({
           value: '.favorites',
         }),
-        name: 'favorites',
+        name: 'favoritesSort',
       },
       this,
     );

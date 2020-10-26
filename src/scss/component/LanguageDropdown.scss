@@ -1,21 +1,24 @@
 .languages-container {
-  margin-bottom: 10px;
-
-  #languages {
-    padding: 3px 6px;
+  .languages {
+    height: 30px;
+    padding: 3px 25px 3px 6px;
     margin: 0;
     border-radius: 1px;
-    background: #fff;
-    color: #333;
     border: none;
     outline: none;
-    display: inline-block;
-    -webkit-appearance: none;
     appearance: none;
-    border: 1px solid #ccc;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 9pt;
+    color: $grey20;
+    background-color: $grey92;
+    border: 1px solid $grey85;
 
-    &:hover { border: 1px solid #5cb85c; }
+    &:hover { border: 1px solid $green-dark20; }
+
+    &.dark {
+      color: $white;
+      background-color: $grey20;
+      border: 1px solid $grey15;
+    }
   }
 }

@@ -1,25 +1,59 @@
-.settingitem {
-  color: #333;
+.setting-item {
+  overflow: visible;
+  padding: 5px 20px;
+  background-color: $grey85;
+  display: flex;
+  align-items: center;
 
-  .settingblock {
-    padding: 0px 15px 5px 15px;
+  &:first-child { padding-top: 10px; }
+  &:last-child { padding-bottom: 10px; }
 
-    .errorsubline {
-      font-size: 10px;
-      color: #cc0000;
-      margin-top: -4px;
-      float: left;
+  &.dark {
+    background-color: $grey18;
+    .setting-item-label .controllable-setting { color: $grey85; }
+  }
+
+  .setting-item-label {
+    flex-grow: 1;
+    position: relative;
+
+    a { text-decoration: none; }
+
+    .controllable-setting {
+      cursor: pointer;
+      color: $grey20;
+      font-size: 10pt;
+      font-weight: normal;
+      margin-bottom: 0;
+
+      &.languages { width: 150px; }
+    }
+
+    .error-line {
+      color: $red;
+      font-size: 8pt;
+      margin-top: -2px;
+      display: block;
+    }
+
+    .learnmore-container {
+      margin-top: -5px;
+
+      .learnmore {
+        font-size: 8pt;
+        text-decoration: underline;
+
+        &.disabled { cursor: not-allowed; }
+      }
     }
   }
 
   .checkbox-container {
     float: right;
     text-align: right;
-    margin-right: 15px;
-    padding-right: 20px;
+    margin-right: -2px;
+    width: auto;
 
-    .checkbox-input {
-      cursor: pointer;
-    }
+    .checkbox-input { cursor: pointer; }
   }
 }

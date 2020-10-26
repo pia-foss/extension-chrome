@@ -1,31 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tooltip = ({
-  message,
-  orientation,
-}) => {
+const Tooltip = ({ theme, message, orientation }) => {
   switch (orientation) {
     case 'bottom':
-    case 'top':
     case 'right':
+    case 'top':
       break;
 
     default: throw new Error(`invalid orientation: ${orientation}`);
   }
 
-  const className = `popover arrow-${orientation}`;
-
   return (
-    <div className={className}>
+    <div className={`popover arrow-${orientation} ${theme}`}>
       { message }
     </div>
   );
 };
 
 Tooltip.propTypes = {
-  message: PropTypes.string.isRequired,
   orientation: PropTypes.string,
+  theme: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 };
 
 Tooltip.defaultProps = {

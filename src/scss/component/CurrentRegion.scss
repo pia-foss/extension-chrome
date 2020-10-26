@@ -1,59 +1,59 @@
 .current-region {
-  margin-top: 30px;
-  padding: 15px 12px 20px 25px;
+  padding: 20px;
   font-size: 1em;
   font-weight: 300;
-  border-top: thin solid #F2F2F2;
-  border-bottom: thin solid #F2F2F2;
+  color: $grey20;
+  background-color: $grey92;
   cursor: pointer;
+  outline: none;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
+  &.dark {
     color: $white;
-    background-color: $blue;
+    background-color: $grey20;
+    &:hover { background-color: $grey18; }
+  }
 
-    .title { color: #fff; }
+  &:hover { background-color: $grey85; }
 
-    .go-forward-image {
-      background-image: url('/images/forward_2xwhover.png');
-      background-position: 0 -20px;
+  .region-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .flag {
+      margin-right: 10px;
+
+      img { width: 50px; }
+
+      .empty-flag {
+        width: 50px;
+        height: 40px;
+      }
+    }
+
+    .region-name {
+      display: flex;
+      flex-direction: column;
+      .title { font-size: 9pt; }
+
+      .name {
+        font-size: 10pt;
+        font-weight: 500;
+      }
     }
   }
 
   .go-forward-image {
-    float: right;
     width: 20px;
     height: 20px;
-    margin: 10px;
+    margin: 5px;
     background-position: 0 0;
     background-size: 20px 40px;
     background-repeat: no-repeat;
     background-image: url('/images/forward_2xwhover.png');
-
-    &:hover {
-      background-image: url('/images/forward_2xwhover.png');
-      background-position: 0 -20px;
-    }
-  }
-
-  .flag {
-    float: left;
-    margin: 5px 12px 0 0;
-
-    img { width: 60px; }
-
-    .empty-flag {
-      width: 60px;
-      height: 40px;
-    }
-  }
-
-  .title {
-    color: #B8B8B8;
-    font-size: .8em;
-  }
-
-  .name {
-    font-size: 1.2em;
-    font-weight: 500;
   }
 }

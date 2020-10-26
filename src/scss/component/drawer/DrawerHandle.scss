@@ -1,0 +1,21 @@
+.drawer-handle {
+  border-top: thin solid $grey85;
+  outline: none;
+
+  &.dark { border-top: thin solid $grey15; }
+
+  .drawer-handle-arrow {
+    width: 20px;
+    height: 20px;
+    margin: 10px auto;
+    transform: rotate(90deg);
+    background-position: 0 0;
+    background-size: 20px 40px;
+    background-repeat: no-repeat;
+    background-image: url('/images/forward_2xwhover.png');
+
+    &.open {
+      transform: rotate(-90deg);
+    }
+  }
+}

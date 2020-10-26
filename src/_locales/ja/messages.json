@@ -14,8 +14,11 @@
   "Extension": {
     "message": "拡張機能"
   },
-  "ResetPasswordText": {
-    "message": "パスワードを再設定"
+  "ForgotPassword": {
+    "message": "パスワードをお忘れの場合"
+  },
+  "BuyAccount": {
+    "message": "アカウント購入"
   },
   "DeleteDebugLog": {
     "message": "ログを消去"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "デバッグログにメッセージを入力します。「Ctrl」キーを押しながら「d」キーを押してデバッグログを表示します。"
   },
-  "LogMeOutOnClose": {
-    "message": "ブラウザーを閉じたときにログアウトする"
+  "DarkTheme": {
+    "message": "ダークテーマ"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "ブラウザを開いた後、自動的に再度ログインされません"
+  "DarkThemeTooltip": {
+    "message": "低照度の環境でエクステンションが使用できるのはダークテーマです。低照度の環境ではダークテーマを有効にしてください"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "認証情報が記憶されていない（ログイン画面）場合、この設定を制御することはできません"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "プロキシ IP"
   },
   "DebugLogIsEmpty": {
     "message": "デバッグログが空です。"
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "ひとつの地域に接続されているか否かに関わらず、有効にされた設定は常に有効に保たれるようになりました。例外として、PIA MACE™はひとつの地域に接続されているときのみ有効です。"
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "Chromeの拡張機能設定から「//extensions」オプションを選択して、シークレットモードで拡張機能を有効にします。"
   },
   "UsernamePlaceholder": {
     "message": "ユーザー名"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "ユーザー名および/またはパスワードが正しくありません。"
-  },
-  "NetworkError": {
-    "message": "ネットワークエラーが発生したため、ログインリクエストに失敗しました。もう一度お試しください。"
   },
   "OfflineError": {
     "message": "ログインリクエストに失敗しました。オフラインになっていることが原因と考えられます。インターネットに接続していることを確認してください。"
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "デバッグログがコピーされました"
   },
-  "NoAccountQuestion": {
-    "message": "アカウントをお持ちでありませんか？"
-  },
-  "JoinText": {
-    "message": "VPNアカウントにサインアップ"
-  },
   "JoinURL": {
     "message": "https://jpn.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "エクスポート"
   },
-  "SettingsWarning": {
-    "message": "これらの設定が無効になっています。お客様が地域に接続されると有効になります。"
+  "BypassWarningLead": {
+    "message": "バイパスリストに記載されているウェブサイトに対して行われたリクエストは"
   },
-  "SettingsWarningConnected": {
-    "message": "これらの設定が有効になっています。%{region}から切断されると%{browser}のデフォルト設定に戻されます。"
-  },
-  "BypassWarning": {
-    "message": "バイパスリストで見つかったウェブサイトに行われたリクエストは、Private Internet Access™ゲートウェイで保護<span class='bold-underline'>されていない</span><span class='bold-underline'>直接の接続</span>を使用します。"
+  "BypassWarningBold": {
+    "message": "直接の接続を使用します。これらのリクエストはPrivate Internet Access™によって保護されていません。"
   },
   "AccountSettingsText": {
     "message": "アカウント設定"
   },
-  "AutoLoginURL": {
-    "message": "https://jpn.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "URLをバイパスリストに追加"
-  },
-  "SupportURL": {
-    "message": "https://jpn.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "ヘルプ＆サポート"
-  },
-  "StatusText": {
-    "message": "状態"
   },
   "OfflineText": {
     "message": "オフライン"
   },
-  "PleaseWait": {
-    "message": "読み込み中。お待ちください。"
-  },
   "Security": {
     "message": "安全性"
-  },
-  "AdsTrackersProtection": {
-    "message": "広告、トラッカー＆マルウェア保護"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "MACE™とは？"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ は悪意のあるコンテンツ、トラッカー、および広告をブロックすることにより、あなたのプライバシーとセキュリティーを保護します。"
+    "message": "PIA MACE™ は悪意のあるコンテンツ、トラッカー、および広告をブロックすることにより、あなたのプライバシーとセキュリティーを保護します。ひとつの地域に接続されているときだけ有効です"
   },
   "WebRTCLeakProtection": {
     "message": "WebRTCとIP検出をブロックしましょう"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "%{browser}がAdobe Flashを実行するのをブロックします。Adobe Flashは公開IPアドレスを暴露するのに使用される場合があります。無効にすることは奨励されていません。"
   },
+  "HttpsUpgrade": {
+    "message": "HTTPSを使用してウェブサイトを閲覧"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "ブラウザーから離れる前に、暗号化されていない接続（HTTP）を使用して、サポートされているウェブサイトまたはリンクをより安全なHTTPS接続に自動的に変換します。HTTPS Everywhere および EFF のおかげで可能となっています。"
+  },
+  "AlwaysActive": {
+    "message": "常にアクティブな設定"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "プロキシが接続されているかどうかに関係なく、設定を常にアクティブのままにします"
+  },
   "BlockUTM": {
     "message": "UTMパラメタを除去"
   },
   "BlockUTMTooltip": {
     "message": "ユーザーがクリックするURLからUrchinトラッキングモード（UTM）パラメタを取り除きます。UTMパラメタはユーザーのウェブサイトへの訪問に関する情報追跡のために使用されます。"
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com、*.hello2.com、*.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "FBCLIDパラメタを除去"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Facebookから外部にアクセスするリンクからFBCLIDパラメタを取り除きます。FBCLIDパラメタはユーザーのウェブサイトへの訪問に関する情報追跡のために使用されます。"
   },
   "BypassInstructionsBold": {
     "message": "* プレフィックスは必須です"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "バイパスリスト"
   },
-  "SaveProxyBypassList": {
-    "message": "保存"
+  "SmartLocation": {
+    "message": "スマート位置情報"
   },
-  "OKSaved": {
-    "message": "OK。保存されました"
+  "WebAlreadyAdded": {
+    "message": "ウェブサイトは既に追加されています"
+  },
+  "AddSmartLocation": {
+    "message": "スマート位置情報を追加"
   },
   "WelcomeToNewVersion": {
     "message": "%{appVersion}へようこそ"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "追加されたルールはありません"
+  },
+  "NoLocation": {
+    "message": "追加された位置情報はありません"
+  },
+  "OneLocation": {
+    "message": "位置情報が追加されました"
+  },
+  "MultipleLocations": {
+    "message": "位置情報"
   },
   "MultipleRulesAdded": {
     "message": "%{count}個のルールが追加されました"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "ウェブサイトがコンピューターのマイクにアクセスするのをブロックします。"
   },
-  "UseRegionLocale": {
-    "message": "位置設定と言語設定をプライベートに"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "デフォルトの位置設定と言語設定を現在の地域の位置と言語設定で置き換えることにより、ブラウザのデフォルトの位置設定と言語設定をプライベートに保ちます。"
-  },
   "Privacy": {
     "message": "プライバシー"
-  },
-  "OnText": {
-    "message": "オン"
-  },
-  "OffText": {
-    "message": "オフ"
   },
   "ImportFileMessage": {
     "message": "エクスポート済みの「バイパスルール」ファイル（例:bypass-rules.json）を選択してください"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "地域が選択されていません"
+  },
+  "ChooseAutomatically": {
+    "message": "自動的に選択"
   },
   "ChangeExtensionSettings": {
     "message": "拡張機能設定"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "待ち時間"
   },
-  "SortBy": {
-    "message": "並び替え順:"
+  "RegionSearch": {
+    "message": "検索…"
   },
   "CloseText": {
     "message": "閉じる"
   },
   "UpgradeBrowserMessage": {
     "message": "%{browser}のバージョンが古いため、プライベートインターネットアクセスが使用できません。%{browser}を最新バージョンにアップデートしてください。"
-  },
-  "LoadingText": {
-    "message": "読み込み中"
   },
   "LogoutText": {
     "message": "ログアウト"
@@ -390,7 +387,13 @@
     "message": "認証エラー"
   },
   "AuthFailMessage": {
-    "message": "最近Private Internet Accessウェブサイトのパスワードを変更した方は、このエラーを拡張機能で再認証することより解決できる場合があります。<br /><br />ヘルプとサポートが必要な方は、<a href=\"https://privateinternetaccess.com/helpdesk\">サポートチーム</a>までお問い合わせください。"
+    "message": "最近Private Internet Accessウェブサイトのパスワードを変更した方は、このエラーを拡張機能で再認証することより解決できる場合があります。"
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "ヘルプとサポートが必要な方は"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "サポートチームまでお問い合わせください"
   },
   "ConnectionFailPageTitle": {
     "message": "接続エラー | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "有効にされました"
   },
-  "disabled": {
-    "message": "無効にされました"
-  },
-  "unavailable": {
-    "message": "利用不可"
-  },
   "RememberMe": {
     "message": "記憶させる"
   },
   "RememberMeTooltip": {
-    "message": "ブラウザのリスタート間で認証情報を保存します"
+    "message": "ブラウザのリスタート間でユーザー名を保存します"
   },
-  "AllRegions": {
-    "message": "すべての地域"
+  "Auto": {
+    "message": "自動"
   },
-  "FavoriteRegions": {
-    "message": "お気に入りの地域"
+  "CalculatingLatency": {
+    "message": "待ち時間を計算中"
   },
   "NoRegionsFound": {
     "message": "地域が見つかりませんでした"
   },
   "RefreshRegions": {
     "message": "地域を更新する"
+  },
+  "ViewChangelog": {
+    "message": "チェンジログを表示"
+  },
+  "ChangelogTitle": {
+    "message": "チェンジログ"
+  },
+  "UnknownProxyError": {
+    "message": "不明のプロキシエラーが発生しました"
+  },
+  "Connecting": {
+    "message": "接続中"
+  },
+  "Disconnecting": {
+    "message": "切断中"
+  },
+  "Connected": {
+    "message": "接続済み"
+  },
+  "DefaultDisplay": {
+    "message": "デフォルト表示"
+  },
+  "QuickConnect": {
+    "message": "クイック接続"
+  },
+  "QuickSettings": {
+    "message": "クイック設定"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "HTTPリファラを無効にする"
+  },
+  "DEBUGLOGGING": {
+    "message": "デバッグログ"
+  },
+  "LIGHTTHEME": {
+    "message": "ライトテーマ"
+  },
+  "FPPROTECTION": {
+    "message": "フィンガープリント保護"
+  },
+  "BLOCKCAMERA": {
+    "message": "カメラへのアクセスをブロック"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "マイクへのアクセスをブロック"
+  },
+  "VIEWALL": {
+    "message": "すべての設定を表示…"
+  },
+  "trial": {
+    "message": "トライアル"
+  },
+  "days_left": {
+    "message": "日後に終了"
+  },
+  "Subscription": {
+    "message": "サブスクリプション"
+  },
+  "NoSubscriptionData": {
+    "message": "ユーザー情報は見つかりませんでした"
+  },
+  "AddToBypassRules": {
+    "message": "バイパスルールに追加"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "ルールは既に含まれています"
+  },
+  "RemoveRule": {
+    "message": "削除"
+  },
+  "GatheringRegions": {
+    "message": "地域を収集しています"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefoxは最近アドオンのプロキシ接続対処方法を変更しました。プロキシ設定をアップデートするには、プライベートウィンドウでのアドオン実行の許可が必要となりました。"
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "下のURLを訪問し、アドオンページを表示してください。次に「Private Internet Access」アドオンをクリックして設定を変更します。そこから、「プライベートウィンドウで実行」設定を「許可」に変更します。"
+  },
+  "us": {
+    "message": "アメリカ"
+  },
+  "gb": {
+    "message": "イギリス"
+  },
+  "de": {
+    "message": "ドイツ"
+  },
+  "au": {
+    "message": "オーストラリア"
+  },
+  "canada": {
+    "message": "カナダ"
   },
   "us_california": {
     "message": "米国 カリフォルニア"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "オーストラリア メルボルン"
+  },
+  "aus_perth": {
+    "message": " オーストラリア、パース"
   },
   "nl": {
     "message": "オランダ"

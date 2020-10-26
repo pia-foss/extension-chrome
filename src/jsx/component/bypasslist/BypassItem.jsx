@@ -1,11 +1,11 @@
 import React from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 
-const BypassItem = ({ onRemoveItem, rule }) => {
+const BypassItem = ({ rule, theme, onRemoveItem }) => {
   return (
-    <div className="bypass-rule">
+    <div className={`bypass-rule ${theme}`}>
       <span className="name">
-        { rule }
+        { rule.userInput }
       </span>
 
       <span
@@ -20,8 +20,9 @@ const BypassItem = ({ onRemoveItem, rule }) => {
 };
 
 BypassItem.propTypes = {
-  rule: PropType.string.isRequired,
-  onRemoveItem: PropType.func.isRequired,
+  rule: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+  onRemoveItem: PropTypes.func.isRequired,
 };
 
 export default BypassItem;

@@ -169,6 +169,7 @@ function createMethod(methodOpts = {}) {
 const http = {
   get: createMethod({ method: 'GET' }),
   head: createMethod({ method: 'HEAD' }),
+  post: createMethod({ method: 'POST' }),
 };
 
 export default http;

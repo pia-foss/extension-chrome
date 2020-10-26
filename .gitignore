@@ -1,3 +1,4 @@
+.idea/
 node_modules/
 bower_components/
 builds/
@@ -14,7 +15,8 @@ todo.txt
 .cache
 .bundle
 .bundled
-package-lock.json
 .env
 config/oneskyauthfile.json
 webstore.pem
+coverage/
+yarn.lock

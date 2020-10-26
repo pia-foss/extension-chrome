@@ -1,4 +1,4 @@
-import { getSectionName } from './sections';
+import { getSectionName } from '@data/sections';
 
 /**
   interface SettingData {
@@ -20,24 +20,25 @@ import { getSectionName } from './sections';
  *
  * @param {*} deps Dependencies to calculate settings data
  */
-function createSettingsData({
-  t,
-  settings,
-  browser,
-  user,
-}) {
+function createSettingsData({ t, settings }) {
   const data = [
     {
       settingID: 'blockadobeflash',
       section: getSectionName('security'),
       label: t('BlockAdobeFlash'),
-      tooltip: t('AdobeFlashTooltip', { browser }),
+      tooltip: t('AdobeFlashTooltip'),
     },
     {
       settingID: 'preventwebrtcleak',
       section: getSectionName('security'),
       label: t('WebRTCLeakProtection'),
-      tooltip: t('WebRTCTooltip', { browser }),
+      tooltip: t('WebRTCTooltip'),
+    },
+    {
+      settingID: 'httpsUpgrade',
+      section: getSectionName('security'),
+      label: t('HttpsUpgrade'),
+      tooltip: t('HttpsUpgradeTooltip'),
     },
     {
       settingID: 'blockcamera',
@@ -61,13 +62,13 @@ function createSettingsData({
       settingID: 'blocknetworkprediction',
       section: getSectionName('privacy'),
       label: t('BlockNetworkPrediction'),
-      tooltip: t('BlockNetworkPredictionTooltip', { browser }),
+      tooltip: t('BlockNetworkPredictionTooltip'),
     },
     {
       settingID: 'blocksafebrowsing',
       section: getSectionName('privacy'),
       label: t('BlockSafeBrowsing'),
-      tooltip: t('BlockSafeBrowsingTooltip', { browser }),
+      tooltip: t('BlockSafeBrowsingTooltip'),
       learnMoreHref: 'https://en.wikipedia.org/wiki/Google_Safe_Browsing#Privacy',
       learnMore: t('ReadMore'),
     },
@@ -75,31 +76,31 @@ function createSettingsData({
       settingID: 'blockautofill',
       section: getSectionName('privacy'),
       label: t('BlockAutofill'),
-      tooltip: t('BlockAutofillTooltip', { browser }),
+      tooltip: t('BlockAutofillTooltip'),
     },
     {
       settingID: 'blockautofillcreditcard',
       section: getSectionName('privacy'),
       label: t('BlockAutofillCreditCard'),
-      tooltip: t('BlockAutofillCreditCardTooltip', { browser }),
+      tooltip: t('BlockAutofillCreditCardTooltip'),
     },
     {
       settingID: 'blockautofilladdress',
       section: getSectionName('privacy'),
       label: t('BlockAutofillAddress'),
-      tooltip: t('BlockAutofillAddressTooltip', { browser }),
+      tooltip: t('BlockAutofillAddressTooltip'),
     },
     {
       settingID: 'blockthirdpartycookies',
       section: getSectionName('tracking'),
       label: t('BlockThirdpartycookies'),
-      tooltip: t('BlockThirdpartycookies', { browser }),
+      tooltip: t('BlockThirdpartycookiesTooltip'),
     },
     {
       settingID: 'blockreferer',
       section: getSectionName('tracking'),
       label: t('BlockHTTPReferer'),
-      tooltip: t('BlockHTTPRefererTooltip', { browser }),
+      tooltip: t('BlockHTTPRefererTooltip'),
     },
     {
       settingID: 'blockhyperlinkaudit',
@@ -112,6 +113,12 @@ function createSettingsData({
       section: getSectionName('tracking'),
       label: t('BlockUTM'),
       tooltip: t('BlockUTMTooltip'),
+    },
+    {
+      settingID: 'blockfbclid',
+      section: getSectionName('tracking'),
+      label: t('BlockFBCLID'),
+      tooltip: t('BlockFBCLIDTooltip'),
     },
     {
       settingID: 'maceprotection',
@@ -128,19 +135,22 @@ function createSettingsData({
       tooltip: t('AllowExtensionNotificationsTooltip'),
     },
     {
-      settingID: 'logoutOnClose',
+      settingID: 'darkTheme',
       section: getSectionName('extension'),
-      label: t('LogMeOutOnClose'),
-      tooltip: t('LogMeOutOnCloseTooltip'),
-      warning: t('LogMeOutOnCloseDisabled'),
-      controllable: user.getRememberMe(),
-      disabledValue: true,
+      label: t('DarkTheme'),
+      tooltip: t('DarkThemeTooltip'),
     },
     {
       settingID: 'debugmode',
       section: getSectionName('extension'),
       label: t('DebugMode'),
       tooltip: t('DebugModeTooltip'),
+    },
+    {
+      settingID: 'alwaysActive',
+      section: getSectionName('extension'),
+      label: t('AlwaysActive'),
+      tooltip: t('AlwaysActiveTooltip'),
     },
   ];
 

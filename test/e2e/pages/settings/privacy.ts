@@ -9,13 +9,14 @@ class PrivacySection extends SectionBase {
   public blockLocation: Checkbox;
   public disableNetworkPrediction: Checkbox;
   public disableSafeBrowsing: Checkbox;
-  public disableAutofill: Checkbox;
+  public disableAutofillCreditCard: Checkbox;
+  public disableAutofillAddress: Checkbox;
 
   constructor(parent: PageObject) {
     super(
       {
         selector: createSelector({
-          value: '.sectionwrapper.privacy',
+          value: '.section-wrapper.privacy',
         }),
         name: 'privacy settings',
       },
@@ -66,12 +67,21 @@ class PrivacySection extends SectionBase {
       },
       this,
     );
-    this.disableAutofill = new Checkbox(
+    this.disableAutofillCreditCard = new Checkbox(
       {
         selector: createSelector({
-          value: '#blockautofill',
+          value: '#blockautofillcreditcard',
         }),
-        name: 'disableAutofill',
+        name: 'disableAutofillCreditCard',
+      },
+      this,
+    );
+    this.disableAutofillAddress = new Checkbox(
+      {
+        selector: createSelector({
+          value: '#blockautofilladdress',
+        }),
+        name: 'disableAutofillAddress',
       },
       this,
     );

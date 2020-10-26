@@ -1,24 +1,25 @@
 .popular { // need to enforce scoping
   .popular-rule {
-    padding: 7px 15px 2px 15px;
+    width: 110px;
+    padding: 7px 15px 5px;
     border-radius: 25px;
-    margin: 0 5px 5px 0;
+    border: 1px solid $grey85;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &.dark { border: 1px solid $grey15; }
 
     label {
       font-weight: 400;
-      font-size: 13px;
-      padding-top: 1px;
+      font-size: 10pt;
+      margin: 0;
+      cursor: pointer;
 
-      &.popular-rule-name { text-transform: capitalize; }
-    }
-
-    .checkmarkcontainer { margin-right: 0px; }
-
-    .checkbox-container {
-      float: right;
-      text-alijgn: right;
-      margin-right: 0px;
-      padding-right: 20px;
+      &.popular-rule-name {
+        line-height: 1;
+        text-transform: capitalize;
+      }
     }
   }
 }

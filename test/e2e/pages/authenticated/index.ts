@@ -1,69 +1,122 @@
 import { PageObject } from '../../core';
 import { createSelector } from '../../core/entities/selector';
-import { Checkbox, Text } from '../../elements';
+import { Text, Image } from '../../elements';
 import { AuthenticatedMenu } from './menu';
-import { AuthenticatedRegion } from './region';
+import { AuthenticatedTiles } from './tiles';
+import { ProxySwitch } from './proxy-switch';
 
 class AuthenticatedPage extends PageObject {
-  private switch: Checkbox;
-  public status: Text;
+  private switch: ProxySwitch;
+  public status: Image;
+  public connected: Text;
   public menu: AuthenticatedMenu;
-  public region: AuthenticatedRegion;
+  public tiles: AuthenticatedTiles;
 
   constructor() {
     super({
       selector: createSelector({
-        value: '#authenticated-template',
+        value: '#authenticated-page',
       }),
-      name: 'authenticated',
+      name: 'AuthenticatedPage',
     });
-    this.switch = new Checkbox(
+    this.switch = new ProxySwitch(
       {
         selector: createSelector({
-          value: 'input[type=checkbox].switch',
+          value: '.outer-circle',
         }),
-        name: 'switch',
+        name: 'ProxySwitch',
       },
       this,
     );
-    this.status = new Text(
+    this.status = new Image(
       {
         selector: createSelector({
-          value: '.status',
+          value: '.pia-logo',
         }),
-        name: 'status',
+        name: 'PiaLogo',
+      },
+      this,
+    );
+    this.connected = new Text(
+      {
+        selector: createSelector({
+          value: '.connected-gradient',
+        }),
+        name: 'ConnectedGradient',
       },
       this,
     );
     this.menu = new AuthenticatedMenu(this);
-    this.region = new AuthenticatedRegion(this);
+    this.tiles = new AuthenticatedTiles(this);
   }
 
   private async waitForDebounce() {
-    await this.sleep(500);
+    await this.sleep(650);
+  }
+
+  public async wait(value: number) {
+    await this.sleep(value);
+  }
+
+  /**
+   * Wait for the latency test to complete
+   *
+   * Because "auto" is the default region, must wait for
+   * the latency test to complete before currentRegion
+   * is interactive
+   */
+  public async waitForLatencyTest() {
+    await this.tiles.getCurrentRegionTile().waitForLatencyTest();
   }
 
   public async toggleSwitch() {
-    await this.switch.toggle();
+    await this.switch.click();
     await this.waitForDebounce();
   }
 
   public async switchOn() {
-    await this.switch.check();
+    const disabled = await this.switch.hasClass('disconnected');
+    if (disabled) { await this.switch.click(); }
+
     await this.waitForDebounce();
   }
 
   public async switchOff() {
-    await this.switch.uncheck();
+    await this.switch.waitForConnected();
+    const enabled = await this.switch.hasClass('connected');
+    if (enabled) { await this.switch.click(); }
+
     await this.waitForDebounce();
   }
 
+  public async getConnectedText() {
+    await this.sleep(1650);
+    const error = await this.switch.hasClass('error');
+    if (error) { await this.sleep(4000); }
+    return await this.connected.getText();
+  }
+
+  public async getDisconnectedImage() {
+    await this.sleep(1650);
+    const error = await this.switch.hasClass('error');
+    if (error) { await this.sleep(4000); }
+    return await this.status.getAlt();
+  }
+
   public async expectSwitchOn() {
-    await this.switch.expectChecked();
+    const error = await this.switch.hasClass('error');
+    if (error) { await this.sleep(4000); }
+    await this.switch.expectClass('connected');
   }
 
   public async expectSwitchOff() {
-    await this.switch.expectNotChecked();
+    const error = await this.switch.hasClass('error');
+    if (error) { await this.sleep(4000); }
+    await this.switch.expectClass('disconnected');
+  }
+
+  public async waitForConnected() {
+    return this.switch.waitForConnected();
   }
 }
 

@@ -1,13 +1,13 @@
-import { WebElementBase } from '../core';
+import { Node } from '../core';
 import { ElementDescriptor } from '../core/entities/lazyWebElement';
 import { Option } from './option';
 
-class Select extends WebElementBase {
+class Select extends Node {
   private readonly options: Option[];
 
   constructor(
     descriptor: ElementDescriptor,
-    parent: WebElementBase,
+    parent: Node,
     ...optionsIds: string[]
   ) {
     super(descriptor, parent);

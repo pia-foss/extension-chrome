@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "Private Internet Access",
+  "description": "Defeat censorship, unblock any website and access the open Internet the way it was meant to be with Private Internet Access®",
+  "version": "@@version",
+  "default_locale": "en",
+  "homepage_url": "https://privateinternetaccess.com",
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icons/loader_16.png",
+      "32": "images/icons/loader_32.png",
+      "48": "images/icons/loader_48.png",
+      "64": "images/icons/loader_64.png",
+      "128": "images/icons/loader_128.png"
+    },
+    "default_popup": "html/foreground.html"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "proxy",
+    "privacy",
+    "contentSettings",
+    "alarms",
+    "background",
+    "downloads",
+    "<all_urls>"
+  ],
+  "icons": {
+    "16": "images/icons/icon16.png",
+    "32": "images/icons/icon32.png",
+    "64": "images/icons/icon64.png",
+    "48": "images/icons/icon48.png",
+    "128": "images/icons/icon128.png"
+  }
+}

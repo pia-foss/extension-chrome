@@ -4,6 +4,7 @@ import { ExtensionSection } from './extension';
 import { PrivacySection } from './privacy';
 import { TrackingSection } from './tracking';
 import { SecuritySection } from './security';
+import { SectionBase } from './sectionBase';
 import { Text, Button, Link, Select } from '../../elements';
 
 class SettingsPage extends PageObject {
@@ -14,8 +15,6 @@ class SettingsPage extends PageObject {
   public securitySection: SecuritySection;
   public bypassList: Button;
   public changelogLink: Link;
-  public connectedWarning: Text;
-  public disconnectedWarning: Text;
   public back: Button;
   public language: Select;
   public title: Text;
@@ -23,7 +22,7 @@ class SettingsPage extends PageObject {
   constructor() {
     super({
       selector: createSelector({
-        value: '#settings-template',
+        value: '#settings-page',
       }),
       name: 'settings page',
     });
@@ -35,7 +34,7 @@ class SettingsPage extends PageObject {
     this.language = new Select(
       {
         selector: createSelector({
-          value: '#languages',
+          value: '.languages',
         }),
         name: 'LanguageSelect',
       },
@@ -46,7 +45,7 @@ class SettingsPage extends PageObject {
     this.bypassList = new Button(
       {
         selector: createSelector({
-          value: '.sectionwrapper.bypass',
+          value: '.section-wrapper.bypass',
         }),
         name: 'bypassList',
       },
@@ -58,24 +57,6 @@ class SettingsPage extends PageObject {
           value: '.panelfooter a',
         }),
         name: 'changelogLink',
-      },
-      this,
-    );
-    this.connectedWarning = new Text(
-      {
-        selector: createSelector({
-          value: '.settingswarning-connected',
-        }),
-        name: 'connectedWarning',
-      },
-      this,
-    );
-    this.disconnectedWarning = new Text(
-      {
-        selector: createSelector({
-          value: '.settingswarning-disconnected',
-        }),
-        name: 'disconnectedWarning',
       },
       this,
     );
@@ -99,8 +80,33 @@ class SettingsPage extends PageObject {
     );
   }
 
-  async changeLanguage() {
+  public async changeLanguage() {
     await this.language.selectOption(SettingsPage.FRENCH);
+  }
+
+  public getSections() {
+    return [
+      this.extensionSection,
+      this.privacySection,
+      this.trackingSection,
+      this.securitySection,
+    ];
+  }
+
+  public getSection(sectionName: string): SectionBase {
+    const section = (this as any)[`${sectionName}Section`];
+    if (!section) {
+      throw new Error(`no such section with name: ${sectionName}`);
+    }
+    return section;
+  }
+
+  public async expandAll() {
+    const sections = this.getSections();
+    // Must use for loop (can't perform concurrently)
+    for (const section of sections) {
+      await section.expand();
+    }
   }
 }
 

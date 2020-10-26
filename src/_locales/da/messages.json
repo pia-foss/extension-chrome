@@ -14,8 +14,11 @@
   "Extension": {
     "message": "Forlængelse"
   },
-  "ResetPasswordText": {
-    "message": "Nulstil kodeord"
+  "ForgotPassword": {
+    "message": "Glemt adgangskode"
+  },
+  "BuyAccount": {
+    "message": "Køb konto"
   },
   "DeleteDebugLog": {
     "message": "Ryd logfil"
@@ -57,7 +60,7 @@
     "message": "Deaktiver"
   },
   "FingerprintProtectionAfterword": {
-    "message": "Disse indstillinger kan også ændres fra panelet \"Udvidelsesindstillinger\" efter at have logget ind i udvidelsen."
+    "message": "Denne indstilling kan også ændres fra panelet \"Udvidelsesindstillinger\" efter at have logget ind i udvidelsen."
   },
   "TrackingProtection": {
     "message": "Sporingsbeskyttelse"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "Skriv beskeder til fejlretningslogfilen. Tryk på tasten 'ctrl', og derefter tasten 'd', for at vise fejlretningslogfilen."
   },
-  "LogMeOutOnClose": {
-    "message": "Log mig ud når browser lukker"
+  "DarkTheme": {
+    "message": "Mørkt tema"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "Når du har genåbnet browseren, bliver du ikke logget ind igen automatisk"
+  "DarkThemeTooltip": {
+    "message": "Aktiver et mørkere tema for udvidelsen til brug under svagt lys"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "Denne indstilling kan ikke styres, hvis legitimationsoplysninger ikke huskes (login-skærm)"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "Proxy-IP"
   },
   "DebugLogIsEmpty": {
     "message": "Denne fejlretningslogfil er tom."
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "Aktiverede indstillinger er nu altid aktive, uanset om du er tilsluttet en region eller ej, med undtagelse af PIA MACE™, som kun er aktiv, når du er tilsluttet en region."
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "Aktivér udvidelse i inkognitotilstand ved at vælge denne indstilling fra udvidelsesindstillinger i chrome://extensions ."
   },
   "UsernamePlaceholder": {
     "message": "Brugernavn"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "Brugernavn og/eller adgangskode er forkert."
-  },
-  "NetworkError": {
-    "message": "Anmoding om logon mislykkedes på grund af en netværksfejl. Prøv igen."
   },
   "OfflineError": {
     "message": "Anmodning om logon mislykkedes, fordi du tilsyneladende er offline. Tjek, om du har forbindelse til internettet."
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "Fejlretningslogfil kopieret"
   },
-  "NoAccountQuestion": {
-    "message": "Har du ikke en konto?"
-  },
-  "JoinText": {
-    "message": "TILMELD DIG EN VPN-KONTO"
-  },
   "JoinURL": {
     "message": "https://dnk.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "Eksporter"
   },
-  "SettingsWarning": {
-    "message": "Disse indstillinger er ikke gældende. De vil være gældende når du er tilsluttet en region."
+  "BypassWarningLead": {
+    "message": "Anmodninger foretaget til websider, der er anført i bypass-listen, bruger"
   },
-  "SettingsWarningConnected": {
-    "message": "Disse indstillinger er sat i kraft. De vil blive gendannet til %{browser}s standardindstillinger, når du afbryder forbindelsen fra %{region}."
-  },
-  "BypassWarning": {
-    "message": "Anmodninger lavet til hjemmesider fundet på Bypass-listen, bruger en <span class=\"bold-underline\">direkte forbindelse</span> der <span class=\"bold-underline\">ikke</span> er beskyttet af Private Internet Access™."
+  "BypassWarningBold": {
+    "message": "direkte forbindelser og er ikke beskyttet af Private Internet Access™."
   },
   "AccountSettingsText": {
     "message": "Kontoindstillinger"
   },
-  "AutoLoginURL": {
-    "message": "https://dnk.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "Tilføj URL til at bypass-liste"
-  },
-  "SupportURL": {
-    "message": "https://dnk.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "Hjælp og support"
-  },
-  "StatusText": {
-    "message": "Status"
   },
   "OfflineText": {
     "message": "OFFLINE"
   },
-  "PleaseWait": {
-    "message": "Loader. Vent venligst."
-  },
   "Security": {
     "message": "Sikkerhed"
-  },
-  "AdsTrackersProtection": {
-    "message": "Beskyttelse fra reklamer, trackers og malware"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "Hvad er MACE™?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ hjælper med at beskytte dit privatliv og din sikkerhed ved at blokere ondsindet indhold, trackers og annoncer."
+    "message": "PIA MACE™ hjælper med at beskytte dit privatliv og din sikkerhed ved at blokere ondsindet indhold, trackers og annoncer. Kun aktiv når forbundet til en region."
   },
   "WebRTCLeakProtection": {
     "message": "Bloker WebRTC IP-detektion"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "Bloker %{browser} fra at køre Adobe Flash. Adobe Flash kan bruges til at afsløre din offentlige IP-adresse. Anbefales ikke at deaktivere."
   },
+  "HttpsUpgrade": {
+    "message": "Gennemse hjemmesider ved hjælp af HTTPS"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "Konverterer automatisk understøttede websider eller links ved hjælp af en ukrypteret forbindelse (HTTP) til en mere sikker HTTPS-forbindelse, inden du forlader din browser. Muliggjort på grund af HTTPS Everywhere og EFF."
+  },
+  "AlwaysActive": {
+    "message": "Altid aktive indstillinger"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "Gør, at disse indstillinger altid forbliver aktive, uanset om proxy er tilsluttet eller ej"
+  },
   "BlockUTM": {
     "message": "Fjern UTM-parametre"
   },
   "BlockUTMTooltip": {
     "message": "Fjern parametre for Urchin Tracking Model (UTM) fra de webadresser, du klikker på. UTM-parametre bruges til at spore oplysninger om dit besøg på en webside."
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "Fjern FBCLID-parametre"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Fjern Facebook FBCLID-parametre fra udgående links i Facebook. FBCLID-parametre bruges til at spore oplysninger om dit besøg på et websted"
   },
   "BypassInstructionsBold": {
     "message": "* præfiks er påkrævet"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "Bypass-liste"
   },
-  "SaveProxyBypassList": {
-    "message": "Gem"
+  "SmartLocation": {
+    "message": "Smart-placering"
   },
-  "OKSaved": {
-    "message": "OK. Gemt"
+  "WebAlreadyAdded": {
+    "message": "Websider allerede tilføjet"
+  },
+  "AddSmartLocation": {
+    "message": "Tilføj smart-placering"
   },
   "WelcomeToNewVersion": {
     "message": "Velkommen til %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "Ingen regler tilføjet"
+  },
+  "NoLocation": {
+    "message": "Ingen placering tilføjet"
+  },
+  "OneLocation": {
+    "message": "placering tilføjet"
+  },
+  "MultipleLocations": {
+    "message": "placeringer"
   },
   "MultipleRulesAdded": {
     "message": "%{count} regler tilføjet"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "Bloker websider fra at få adgang til din computers mikrofon."
   },
-  "UseRegionLocale": {
-    "message": "Private lokale og sprogindstillinger"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "Standard lokale og sprogindstillinger i din browser holdes private, ved at erstatte dem med indstillingerne for det aktuelle områdes lokale og sprog."
-  },
   "Privacy": {
     "message": "Fortrolighed"
-  },
-  "OnText": {
-    "message": "Til"
-  },
-  "OffText": {
-    "message": "Fra"
   },
   "ImportFileMessage": {
     "message": "Vælg venligst en eksporteret Bypass Rules-fil (f.eks bypass-rules.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "Ingen region valgt"
+  },
+  "ChooseAutomatically": {
+    "message": "Vælg automatisk"
   },
   "ChangeExtensionSettings": {
     "message": "Udvidelsesindstillinger"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "Latenstid"
   },
-  "SortBy": {
-    "message": "Sorter efter:"
+  "RegionSearch": {
+    "message": "Søg..."
   },
   "CloseText": {
     "message": "Luk"
   },
   "UpgradeBrowserMessage": {
     "message": "Private Internet Access kan ikke bruges, fordi din version af %{browser} er forældet. Opgrader venligst %{browser} til den nyeste version."
-  },
-  "LoadingText": {
-    "message": "Loader"
   },
   "LogoutText": {
     "message": "Log ud"
@@ -390,7 +387,13 @@
     "message": "Autentifikationsfejl"
   },
   "AuthFailMessage": {
-    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl.<br /><br />For hjælp og support, kontakt vores <a href=\"https://privateinternetaccess.com/helpdesk\">supportteam</a>."
+    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl."
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "For hjælp og support kontakt vores"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "supportteam"
   },
   "ConnectionFailPageTitle": {
     "message": "Forbindelsesfejl | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "aktiveret"
   },
-  "disabled": {
-    "message": "deaktiveret"
-  },
-  "unavailable": {
-    "message": "utilgængelig"
-  },
   "RememberMe": {
     "message": "Husk mig"
   },
   "RememberMeTooltip": {
-    "message": "Gemmer disse legitimationsoplysninger mellem genstart af browseren"
+    "message": "Gemmer brugernavn mellem genstart af browseren"
   },
-  "AllRegions": {
-    "message": "ALLE REGIONER"
+  "Auto": {
+    "message": "Auto"
   },
-  "FavoriteRegions": {
-    "message": "FAVORITREGIONER"
+  "CalculatingLatency": {
+    "message": "Beregning af latens"
   },
   "NoRegionsFound": {
     "message": "Ingen regioner fundet"
   },
   "RefreshRegions": {
     "message": "Opdater regioner"
+  },
+  "ViewChangelog": {
+    "message": "se changelog"
+  },
+  "ChangelogTitle": {
+    "message": "Changelog"
+  },
+  "UnknownProxyError": {
+    "message": "Ukendt proxyfejl opstået"
+  },
+  "Connecting": {
+    "message": "forbinder"
+  },
+  "Disconnecting": {
+    "message": "afbryder forbindelse"
+  },
+  "Connected": {
+    "message": "forbundet"
+  },
+  "DefaultDisplay": {
+    "message": "STANDARDVISNING"
+  },
+  "QuickConnect": {
+    "message": "HURTIGFORBINDELSE"
+  },
+  "QuickSettings": {
+    "message": "HURTIGINDSTILLINGER"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "DEAKTIVER HTTP-HENVISER"
+  },
+  "DEBUGLOGGING": {
+    "message": "FEJLRETNINGSLOGFIL"
+  },
+  "LIGHTTHEME": {
+    "message": "LYST TEMA"
+  },
+  "FPPROTECTION": {
+    "message": "FINGERAFTRYKBESKYTTELSE"
+  },
+  "BLOCKCAMERA": {
+    "message": "BLOKER KAMERAADGANG"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "BLOKER MIKROFONADGANG"
+  },
+  "VIEWALL": {
+    "message": "SE ALLE INDSTILLINGER..."
+  },
+  "trial": {
+    "message": "Prøve"
+  },
+  "days_left": {
+    "message": "dage tilbage"
+  },
+  "Subscription": {
+    "message": "ABONNEMENT"
+  },
+  "NoSubscriptionData": {
+    "message": "Ingen brugerinformation fundet"
+  },
+  "AddToBypassRules": {
+    "message": "TILFØJ TIL BYPASS-REGLER"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "Regel allerede inkluderet"
+  },
+  "RemoveRule": {
+    "message": "fjern"
+  },
+  "GatheringRegions": {
+    "message": "Indhenter regioner"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox har for nylig ændret måden addons håndterer proxy-forbindelse. Tilladelse af addon til at køre i Private Windows er nu påkrævet for at proxyindstillinger kan opdateres."
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "Besøg webadressen nedenfor, for at se din addons-side. Klik derefter på \"Private Internet Access\"-addon for at ændre dens indstillinger. Herfra ændrer du indstillingen \"Kør i Private Windows\" til \"Tillad\""
+  },
+  "us": {
+    "message": "USA"
+  },
+  "gb": {
+    "message": "England"
+  },
+  "de": {
+    "message": "Tyskland"
+  },
+  "au": {
+    "message": "Australien"
+  },
+  "canada": {
+    "message": "Canada"
   },
   "us_california": {
     "message": "USA, Californien"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "AU, Melbourne"
+  },
+  "aus_perth": {
+    "message": " AU Perth"
   },
   "nl": {
     "message": "Holland"

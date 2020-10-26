@@ -1,0 +1,31 @@
+#login-page {
+  color: $grey20;
+  background-color: $grey92;
+
+  &.dark {
+    color: $white;
+    background-color: $grey20;
+
+    .other-options a:hover { color: $grey85; }
+  }
+
+  .other-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-bottom: 20px;
+
+    a {
+      font-size: 10pt;
+      color: $grey55;
+      text-decoration: none;
+
+      &:hover { color: darken($grey55, 15%); }
+
+      &.disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

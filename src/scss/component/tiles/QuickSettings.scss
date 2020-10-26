@@ -1,0 +1,35 @@
+.quick-settings {
+  padding: 10px 20px;
+  height: 85px;
+  color: $grey55;
+
+  &.dark { color: $grey55; }
+
+  .quick-settings-header {
+    font-size: 10pt;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .quick-settings-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .quick-settings-option {
+      outline: none;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.dark.active:hover, &.active:hover { border: 2px solid $green; }
+      &.dark:hover, { border: 2px solid $grey40; }
+      &:hover { border: 2px solid $grey85; }
+
+      img { width: 18px; height: 18px; }
+    }
+  }
+}

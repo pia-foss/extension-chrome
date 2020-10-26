@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 /**
- * Add online prop to a component
+ * Injects the online status into nested component
  */
 function listenOnline(NestedComponent) {
   class OnlineListener extends Component {

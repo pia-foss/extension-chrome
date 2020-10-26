@@ -24,6 +24,7 @@ idescribe('the application language', function () {
 
     await loginPage.navigate();
     await loginPage.signIn();
+    await authPage.menu.toggleDropdown();
     await authPage.menu.settings.click();
     await settingsPage.extensionSection.expand();
     await settingsPage.changeLanguage();
@@ -57,9 +58,10 @@ idescribe('the application language', function () {
 
   iit('changes domain for account control panel', async function () {
     await settingsPage.back.click();
+    await authPage.menu.toggleDropdown();
     await authPage.menu.account.click();
     await this.windows
-      .expectNextTabIs('https://fra.privateinternetaccess.com/pages/client-control-panel');
+      .expectNextTabIs('https://fra.privateinternetaccess.com/pages/client-sign-in');
   });
 
   iit('stores locale in local storage', async function () {

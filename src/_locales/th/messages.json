@@ -14,8 +14,11 @@
   "Extension": {
     "message": "ส่วนเสริม"
   },
-  "ResetPasswordText": {
-    "message": "รีเซ็ตรหัสผ่าน"
+  "ForgotPassword": {
+    "message": "ลืมรหัสผ่าน"
+  },
+  "BuyAccount": {
+    "message": "ซื้อบัญชี"
   },
   "DeleteDebugLog": {
     "message": "ล้างบันทึก"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "เขียนข้อความไปยังบันทึกจุดบกพร่อง กดปุ่ม ctrl แล้วตามด้วยปุ่ม d เพื่อแสดงบันทึกจุดบกพร่อง"
   },
-  "LogMeOutOnClose": {
-    "message": "ออกจากระบบเมื่อปิดเบราว์เซอร์"
+  "DarkTheme": {
+    "message": "ธีมสีเข้ม"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "หลังจากทำการเปิดเบราว์เซอร์ใหม่คุณจะไม่ออกจากระบบอัตโนมัติ"
+  "DarkThemeTooltip": {
+    "message": "เปิดใช้งานธีมสีเข้มขึ้นสำหรับส่วนขยายเพื่อใช้ในสถานการณ์ที่แสงน้อย"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "การตั้งค่านี้ไม่สามารถถูกควบคุมได้ขณะที่ข้อมูลไม่ถูกจดจำ (หน้าจอเข้าสู่ระบบ)"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "Proxy IP"
   },
   "DebugLogIsEmpty": {
     "message": "บันทึกการแก้จุดบกพร่องว่างเปล่า"
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "ขณะนี้การตั้งค่าที่เปิดใช้งานจะเปิดใช้งานเสมอไม่ว่าคุณจะเชื่อมต่อกับภูมิภาคหรือไม่ด้วย ยกเว้น PIA MACE™ ซึ่งจะใช้งานได้เฉพาะเมื่อคุณเชื่อมต่อกับภูมิภาคเท่านั้น"
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "เปิดใช้งานส่วนขยายในโหมดไม่ระบุตัวตนโดยเลือกตัวเลือกนี้จากการตั้งค่าส่วนขยายใน chrome: // extensions"
   },
   "UsernamePlaceholder": {
     "message": "ชื่อผู้ใช้"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "ชื่อผู้ใช้และ/หรือรหัสผ่านไม่ถูกต้อง"
-  },
-  "NetworkError": {
-    "message": "คำขอเข้าสู่ระบบล้มเหลวเนื่องจากข้อผิดพลาดของเครือข่าย โปรดลองใหม่อีกครั้ง"
   },
   "OfflineError": {
     "message": "คำขอเข้าสู่ระบบล้มเหลวเนื่องจากคุณออฟไลน์อยู่ โปรดตรวจสอบว่าคุณเชื่อมต่อกับอินเทอร์เน็ตหรือไม่"
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "คัดลอกบันทึกจุดบกพร่องแล้ว"
   },
-  "NoAccountQuestion": {
-    "message": "ไม่มีบัญชี?"
-  },
-  "JoinText": {
-    "message": "ลงทะเบียนบัญชี VPN"
-  },
   "JoinURL": {
     "message": "https://tha.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "ส่งออก"
   },
-  "SettingsWarning": {
-    "message": "การตั้งค่าเหล่านี้ไม่ได้มีผลอยู่ในขณะนี้ และจะมีผลเมื่อคุณเชื่อมต่อกับพื้นที่"
+  "BypassWarningLead": {
+    "message": "คำขอถูกส่งไปยังเว็บไซต์ที่อยู่ในรายการบายพาสใช้"
   },
-  "SettingsWarningConnected": {
-    "message": "การตั้งค่าเหล่านี้มีผลอยู่ และจะถูกเรียกคืนไปยังการตั้งค่าเริ่มต้นของ %{browser} เมื่อคุณเลิกเชื่อมต่อกับ %{region}"
-  },
-  "BypassWarning": {
-    "message": "คำขอเข้าถึงเว็บไซต์ซึ่งพบบน Bypass List ใช้ <span class=\"bold-underline\">การเชื่อมต่อโดยตรง</span> ซึ่ง <span class=\"bold-underline\">ไม่ได้รับ</span> การป้องกันจากPrivate Internet Access™"
+  "BypassWarningBold": {
+    "message": "การเชื่อมต่อโดยตรงและไม่ได้รับการปกป้องโดย Private Internet Access™"
   },
   "AccountSettingsText": {
     "message": "ตั้งค่าบัญชี"
   },
-  "AutoLoginURL": {
-    "message": "https://tha.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "เพิ่ม URL ไปยังรายชื่อปล่อยผ่าน"
-  },
-  "SupportURL": {
-    "message": "https://tha.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "ช่วยเหลือและสนับสนุน"
-  },
-  "StatusText": {
-    "message": "สถานะ"
   },
   "OfflineText": {
     "message": "ออฟไลน์"
   },
-  "PleaseWait": {
-    "message": "กำลังโหลด โปรดรอสักครู่"
-  },
   "Security": {
     "message": "ความปลอดภัย"
-  },
-  "AdsTrackersProtection": {
-    "message": "ป้องกันโฆษณา, ตัวติดตามและมัลแวร์"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "MACE™ คืออะไร?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ ช่วยปกป้องความเป็นส่วนตัวและความปลอดภัยของคุณโดยบล็อกเนื้อหาอันตราย ตัวติดตาม และโฆษณาต่างๆ"
+    "message": "PIA MACE™ ช่วยปกป้องความเป็นส่วนตัวและความปลอดภัยของคุณโดยบล็อกเนื้อหาอันตราย ตัวติดตาม และโฆษณาต่างๆ สามารถใช้งานได้เฉพาะเมื่อเชื่อมต่อกับภูมิภาคเท่านั้น"
   },
   "WebRTCLeakProtection": {
     "message": "บล็อกการป้องกัน IP WebRTC"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "บล็อก %{browser} ไม่ให้รับโปรแกรม Adobe Flash เนื่องจาก Adobe Flash สามารถเปิดเผยที่อยู่ IP สาธารณะของคุณ ไม่แนะนำให้ปิดการใช้งาน"
   },
+  "HttpsUpgrade": {
+    "message": "เรียกดูเว็บไซต์โดยใช้ HTTPS"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "แปลงเว็บไซต์หรือลิงก์ที่สนับสนุนโดยอัตโนมัติโดยใช้การเชื่อมต่อที่ไม่ได้เข้ารหัส (HTTP) เป็นการเชื่อมต่อ HTTPS ที่ปลอดภัยยิ่งขึ้นก่อนออกจากเบราว์เซอร์ของคุณ สามารถทำได้เนื่องด้วย HTTPS ที่มีทุกที่และ EFF"
+  },
+  "AlwaysActive": {
+    "message": "การตั้งค่าที่ใช้งานอยู่เสมอ"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "ทำให้การตั้งค่ายังคงทำงานอยู่เสมอไม่ว่าจะเชื่อมต่อกับพร็อกซีหรือไม่ก็ตาม"
+  },
   "BlockUTM": {
     "message": "ลบพารามิเตอร์ UTM"
   },
   "BlockUTMTooltip": {
     "message": "ลบพารามิเตอร์มอดูลติดตามของ Urchin (UTM) จาก URL ที่คุณคลิก พารามิเตอร์ UTM ใช้ติดตามข้อมูลการเข้าเว็บไซต์ของคุณ"
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "ลบพารามิเตอร์ FBCLID"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "ลบพารามิเตอร์ Facebook FBCLID ออกจากลิงก์ขาออกใน Facebook พารามิเตอร์ FBCLID ใช้สำหรับติดตามข้อมูลเกี่ยวกับการเยี่ยมชมเว็บไซต์ของคุณ"
   },
   "BypassInstructionsBold": {
     "message": "* ต้องมีคำนำหน้า"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "รายชื่อปล่อยผ่าน"
   },
-  "SaveProxyBypassList": {
-    "message": "บันทึก"
+  "SmartLocation": {
+    "message": "ตำแหน่งอัจฉริยะ"
   },
-  "OKSaved": {
-    "message": "ตกลง บันทึกแล้ว"
+  "WebAlreadyAdded": {
+    "message": "เพิ่มเว็บไซต์แล้ว"
+  },
+  "AddSmartLocation": {
+    "message": "เพิ่มตำแหน่งอัจฉริยะ"
   },
   "WelcomeToNewVersion": {
     "message": "ยินดีต้อนรับสู่ %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "ไม่มีกฎที่เพิ่ม"
+  },
+  "NoLocation": {
+    "message": "ไม่มีตำแหน่งที่เพิ่ม"
+  },
+  "OneLocation": {
+    "message": "ตำแหน่งที่เพิ่ม"
+  },
+  "MultipleLocations": {
+    "message": "ตำแหน่ง"
   },
   "MultipleRulesAdded": {
     "message": "เพิ่มกฎ %{count} ข้อแล้ว"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "บล็อกเว็บไซต์จากการเข้าถึงไมโครโฟนคอมพิวเตอร์ของคุณ"
   },
-  "UseRegionLocale": {
-    "message": "พื้นที่ส่วนตัวและการตั้งค่าภาษา"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "การตั้งค่าสถานที่ตั้งและภาษาเริ่มต้นของเบราว์เซอร์จะถูกเก็บเป็นข้อมูลส่วนตัวโดยการแทนที่ด้วยการตั้งค่าสถานที่ตั้งและภาษาของสถานที่ปัจจุบัน"
-  },
   "Privacy": {
     "message": "ความเป็นส่วนตัว"
-  },
-  "OnText": {
-    "message": "เปิด"
-  },
-  "OffText": {
-    "message": "ปิด"
   },
   "ImportFileMessage": {
     "message": "กรุณาเลือกไฟล์ Bypass Rules ที่ส่งออก (เช่น bypass-rules.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "ไม่ได้เลือกภูมิภาค"
+  },
+  "ChooseAutomatically": {
+    "message": "เลือกโดยอัตโนมัติ"
   },
   "ChangeExtensionSettings": {
     "message": "ตั้งค่าส่วนขยาย"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "ความหน่วงเวลา"
   },
-  "SortBy": {
-    "message": "เรียงตาม:"
+  "RegionSearch": {
+    "message": "ค้นหา..."
   },
   "CloseText": {
     "message": "ปิด"
   },
   "UpgradeBrowserMessage": {
     "message": "Private Internet Access ไม่สามารถทำงานได้เนื่องจากเวอร์ชัน %{browser} ของคุณเก่า โปรดอัปเกรด %{browser} ของคุณเป็นเวอร์ชันล่าสุด"
-  },
-  "LoadingText": {
-    "message": "กำลังโหลด"
   },
   "LogoutText": {
     "message": "ออกจากระบบ"
@@ -390,7 +387,13 @@
     "message": "ข้อผิดพลาดในการยืนยันตัวตน"
   },
   "AuthFailMessage": {
-    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็วๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br /><br />สำหรับความช่วยเหลือและสอบถาม กรุณาติดต่อ <a href=\"https://privateinternetaccess.com/helpdesk\">ทีมช่วยเหลือ</a>"
+    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็วๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้"
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "หากต้องการความช่วยเหลือและการสนับสนุน โปรดติดต่อ"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "ฝ่ายสนับสนุน"
   },
   "ConnectionFailPageTitle": {
     "message": "ข้อผิดพลาดการเชื่อมต่อ | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "เปิดใช้งาน"
   },
-  "disabled": {
-    "message": "ปิดใช้งาน"
-  },
-  "unavailable": {
-    "message": "ไม่สามารถใช้งานได้"
-  },
   "RememberMe": {
     "message": "จดจำฉัน"
   },
   "RememberMeTooltip": {
-    "message": "บันทึกข้อมูลเหล่านี้ระหว่างรีสตาร์ทเบราว์เซอร์"
+    "message": "บันทึกชื่อผู้ใช้ระหว่างรีสตาร์ทเบราว์เซอร์"
   },
-  "AllRegions": {
-    "message": "ทุกภูมิภาค"
+  "Auto": {
+    "message": "อัตโนมัติ"
   },
-  "FavoriteRegions": {
-    "message": "ภูมิภาคโปรด"
+  "CalculatingLatency": {
+    "message": "กำลังคำนวณเวลาแฝง"
   },
   "NoRegionsFound": {
     "message": "ไม่พบภูมิภาค"
   },
   "RefreshRegions": {
     "message": "รีเฟรชภูมิภาค"
+  },
+  "ViewChangelog": {
+    "message": "ดูประวัติการเปลี่ยนแปลง"
+  },
+  "ChangelogTitle": {
+    "message": "ประวัติการเปลี่ยนแปลง"
+  },
+  "UnknownProxyError": {
+    "message": "เกิดข้อผิดพลาดพร็อกซีที่ไม่รู้จัก"
+  },
+  "Connecting": {
+    "message": "กำลังเชื่อมต่อ"
+  },
+  "Disconnecting": {
+    "message": "กำลังยกเลิกการเชื่อมต่อ"
+  },
+  "Connected": {
+    "message": "เชื่อมต่อแล้ว"
+  },
+  "DefaultDisplay": {
+    "message": "การแสดงผลเริ่มต้น"
+  },
+  "QuickConnect": {
+    "message": "เชื่อมต่ออย่างรวดเร็ว"
+  },
+  "QuickSettings": {
+    "message": "การตั้งค่าอย่างรวดเร็ว"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "ปิดใช้งานการส่งต่อ HTTP"
+  },
+  "DEBUGLOGGING": {
+    "message": "กำลังบันทึกการแก้จุดบกพร่อง"
+  },
+  "LIGHTTHEME": {
+    "message": "ธีมสีอ่อน"
+  },
+  "FPPROTECTION": {
+    "message": "การป้องกันลายนิ้วมือ"
+  },
+  "BLOCKCAMERA": {
+    "message": "บล็อกการใช้กล้อง"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "บล็อกการใช้ไมโครโฟน"
+  },
+  "VIEWALL": {
+    "message": "ดูการตั้งค่าทั้งหมด..."
+  },
+  "trial": {
+    "message": "ทดลองใช้"
+  },
+  "days_left": {
+    "message": "วันที่เหลือ"
+  },
+  "Subscription": {
+    "message": "การสมัครสมาชิก"
+  },
+  "NoSubscriptionData": {
+    "message": "ไม่พบข้อมูลผู้ใช้"
+  },
+  "AddToBypassRules": {
+    "message": "เพิ่มไปยังกฎการปล่อยผ่าน"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "รวมกฎแล้ว"
+  },
+  "RemoveRule": {
+    "message": "ลบออก"
+  },
+  "GatheringRegions": {
+    "message": "การรวบรวมภูมิภาค"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox เพิ่งเปลี่ยนวิธีการเพิ่ม (addon)  เพื่อจัดการการเชื่อมต่อพร็อกซี่ โดยการอนุญาตการเพิ่มทำงานในหน้าต่างส่วนตัวจำเป็นต้องอัพเดตการตั้งค่าพร็อกซี่"
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "กรุณาเยี่ยมชม URL ด้านล่างเพื่อดูหน้าเสริม จากนั้นกดการเพิ่ม\"การเข้าถึงอินเตอร์เน็ตส่วนตัว\" เพื่อปรับการตั้งค่า และเปลี่ยนการตั้งค่าจาก \"ทำงานในหน้าต่างส่วนตัว\" เป็น \"อนุญาต\""
+  },
+  "us": {
+    "message": "สหรัฐอเมริกา"
+  },
+  "gb": {
+    "message": "สหราชอาณาจักร"
+  },
+  "de": {
+    "message": "เยอรมนี"
+  },
+  "au": {
+    "message": "ออสเตรเลีย"
+  },
+  "canada": {
+    "message": "แคนาดา"
   },
   "us_california": {
     "message": "แคลิฟอร์เนีย สหรัฐอเมริกา"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "เมลเบิร์น ออสเตรเลีย"
+  },
+  "aus_perth": {
+    "message": " ออสเตรเลีย เพิร์ธ"
   },
   "nl": {
     "message": "เนเธอร์แลนด์"

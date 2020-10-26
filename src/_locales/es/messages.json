@@ -14,8 +14,11 @@
   "Extension": {
     "message": "Extensión"
   },
-  "ResetPasswordText": {
-    "message": "Restablecer contraseña"
+  "ForgotPassword": {
+    "message": "¿Olvidaste la contraseña?"
+  },
+  "BuyAccount": {
+    "message": "Comprar cuenta"
   },
   "DeleteDebugLog": {
     "message": "Borrar registro"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "Escribe mensajes en el registro de depuración. Pulsa la tecla \"Ctrl\" seguida la tecla \"d\" para mostrar el registro de depuración."
   },
-  "LogMeOutOnClose": {
-    "message": "Cerrar sesión al cerrar el navegador"
+  "DarkTheme": {
+    "message": "Tema oscuro"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "Cuando se vuelva a abrir el navegador, no iniciarás sesión automáticamente"
+  "DarkThemeTooltip": {
+    "message": "Habilita un tema más oscuro para la extensión para usar con poca iluminación."
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "Este ajuste no se puede controlar si no se recuerdan las credenciales (pantalla de inicio de sesión)"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "IP de proxy"
   },
   "DebugLogIsEmpty": {
     "message": "El registro de depuración está vacío."
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "Ahora los ajustes habilitados están siempre activos tanto si se está conectado a una región o no, con las excepción de PIA MACE™, que solo está activo si se está conectado a una región."
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "Selecciona esta opción en los ajustes de extensiones en chrome://extensions para habilitar la extensión en el modo Incógnito."
   },
   "UsernamePlaceholder": {
     "message": "Nombre de usuario"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "El nombre de usuario o la contraseña son incorrectos."
-  },
-  "NetworkError": {
-    "message": "No se pudo iniciar sesión debido a un error de red. Vuelve a intentarlo más tarde."
   },
   "OfflineError": {
     "message": "No se pudo iniciar sesión porque pareces desconectado. Comprueba si estás conectado a Internet."
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "Registro de depuración copiado"
   },
-  "NoAccountQuestion": {
-    "message": "¿No tiene una cuenta?"
-  },
-  "JoinText": {
-    "message": "REGISTRAR UNA CUENTA DE VPN"
-  },
   "JoinURL": {
     "message": "https://mex.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "Exportar"
   },
-  "SettingsWarning": {
-    "message": "Estos ajustes no están activos. Solo tendrán efecto mientras estés conectado a una región."
+  "BypassWarningLead": {
+    "message": "Las solicitudes realizadas a sitios web que se encuentran en la lista de omisiones usan una"
   },
-  "SettingsWarningConnected": {
-    "message": "Estos ajustes no están activos. Se restablecerán los ajustes predeterminados de %{browser} cuando te desconectes de %{region}."
-  },
-  "BypassWarning": {
-    "message": "Las solicitudes realizadas a sitios web que se encuentran en la lista de omisiones usan una <span class='bold-underline'>conexión directa</span> que <span class='bold-underline'>no</span> está protegida por Private Internet Access™. "
+  "BypassWarningBold": {
+    "message": "conexión directa que no está protegida por Private Internet Access™."
   },
   "AccountSettingsText": {
     "message": "Ajustes de cuenta"
   },
-  "AutoLoginURL": {
-    "message": "https://mex.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "Añadir URL a la lista de omisiones"
-  },
-  "SupportURL": {
-    "message": "https://mex.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "Ayuda y soporte"
-  },
-  "StatusText": {
-    "message": "Estado"
   },
   "OfflineText": {
     "message": "SIN CONEXIÓN"
   },
-  "PleaseWait": {
-    "message": "Cargando. Espera."
-  },
   "Security": {
     "message": "Seguridad"
-  },
-  "AdsTrackersProtection": {
-    "message": "Protección contra anuncios, rastreadores y malware"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "¿Qué es MACE™?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ bloquea contenido malicioso, rastreadores y publicidad para ayudar a proyeger su privacidad y su seguridad."
+    "message": "PIA MACE™ bloquea contenido malicioso, rastreadores y publicidad para ayudar a proteger su privacidad y su seguridad. Solo se activa al estar conectado a una región."
   },
   "WebRTCLeakProtection": {
     "message": "Bloquear detección de IP de WebRTC"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "Impide que %{browser} ejecute Adobe Flash. Adobe Flash se puede usar para mostrar tu dirección IP pública. Te recomendamos no deshabilitarlo."
   },
+  "HttpsUpgrade": {
+    "message": "Examinar sitios web que usen HTTPS"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "Convierte automáticamente los sitios web admitidos o enlaces que usan una conexión no encriptada (HTTP) a una conexión HTTPS más segura antes de salir del navegador. Posible debido a HTTPS Everywhere y EFF."
+  },
+  "AlwaysActive": {
+    "message": "Ajustes siempre activos"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "Hace que los ajustes estén siempre activos, independientemente de si el proxy está conectado o no."
+  },
   "BlockUTM": {
     "message": "Eliminar parámetros UTM"
   },
   "BlockUTMTooltip": {
     "message": "Eliminar parámetros de modelo de rastreo urchin (UTM) de las URL en las que haces clic. Los parámetros UTM se usan para rastrear la información sobre tu visita a un sitio web."
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "Eliminar parámetros FBCLID"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Elimina los parámetros FBCLID de Facebook de los enlaces salientes en Facebook. Los parámetros FBCLID se usan para hacer un seguimiento de la información sobre tu visita a un sitio web."
   },
   "BypassInstructionsBold": {
     "message": "*se requiere prefijo"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "Lista de omisiones"
   },
-  "SaveProxyBypassList": {
-    "message": "Guardar"
+  "SmartLocation": {
+    "message": "Ubicación inteligente"
   },
-  "OKSaved": {
-    "message": "De acuerdo. Guardado."
+  "WebAlreadyAdded": {
+    "message": "Sitios web ya añadidos"
+  },
+  "AddSmartLocation": {
+    "message": "Añadir ubicación inteligente"
   },
   "WelcomeToNewVersion": {
     "message": "Bienvenido a %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "No se han añadido reglas"
+  },
+  "NoLocation": {
+    "message": "No se añadió ninguna ubicación"
+  },
+  "OneLocation": {
+    "message": "ubicación añadida"
+  },
+  "MultipleLocations": {
+    "message": "ubicaciones"
   },
   "MultipleRulesAdded": {
     "message": "%{count} reglas añadidas"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "Bloquea los sitios web para impedir su acceso al micrófono de tu equipo."
   },
-  "UseRegionLocale": {
-    "message": "Configuración regional y de idioma privada"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "La configuración regional y de idioma de tu navegador se mantienen privadas sustituyéndoas por la configuración regional y de idioma de la región actual."
-  },
   "Privacy": {
     "message": "Privacidad"
-  },
-  "OnText": {
-    "message": "Sí"
-  },
-  "OffText": {
-    "message": "No"
   },
   "ImportFileMessage": {
     "message": "Selecciona un archivo de reglas de derivación exportado (p. ej. bypass-rules.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "No hay regiones seleccionadas"
+  },
+  "ChooseAutomatically": {
+    "message": "Elegir automáticamente"
   },
   "ChangeExtensionSettings": {
     "message": "Ajustes de extensión"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "Latencia"
   },
-  "SortBy": {
-    "message": "Ordenar por:"
+  "RegionSearch": {
+    "message": "Buscar..."
   },
   "CloseText": {
     "message": "Cerrar"
   },
   "UpgradeBrowserMessage": {
     "message": "Private Internet Access no se puede usar porque tu versión de %{browser} está obsoleta. Actualiza %{browser} a la versión más reciente."
-  },
-  "LoadingText": {
-    "message": "Cargando"
   },
   "LogoutText": {
     "message": "Cerrar sesión"
@@ -390,7 +387,13 @@
     "message": "Error de autenticación"
   },
   "AuthFailMessage": {
-    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema.<br /><br />Para obtener ayuda y asistencia, ponte en contacto con nuestro <a href=\"https://privateinternetaccess.com/helpdesk\">equipo de asistencia</a>."
+    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema."
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "Para obtener ayuda y asistencia, ponte en contacto con nuestro"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "equipo de asistencia"
   },
   "ConnectionFailPageTitle": {
     "message": "Error de conexión | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "habilitado"
   },
-  "disabled": {
-    "message": "deshabilitado"
-  },
-  "unavailable": {
-    "message": "no disponible"
-  },
   "RememberMe": {
     "message": "Recordarme"
   },
   "RememberMeTooltip": {
-    "message": "Guarda estas credenciales entre los reinicios del navegador."
+    "message": "Guarda este nombre de usuario entre los reinicios del navegador."
   },
-  "AllRegions": {
-    "message": "TODAS LAS REGIONES"
+  "Auto": {
+    "message": "Automático"
   },
-  "FavoriteRegions": {
-    "message": "REGIONES FAVORITAS"
+  "CalculatingLatency": {
+    "message": "Calculando latencia"
   },
   "NoRegionsFound": {
     "message": "No se encuentran regiones"
   },
   "RefreshRegions": {
     "message": "Actualizar regiones"
+  },
+  "ViewChangelog": {
+    "message": "ver registro de cambios"
+  },
+  "ChangelogTitle": {
+    "message": "Registro de cambios"
+  },
+  "UnknownProxyError": {
+    "message": "Se ha producido un error de proxy desconocido"
+  },
+  "Connecting": {
+    "message": "conectando"
+  },
+  "Disconnecting": {
+    "message": "desconectando"
+  },
+  "Connected": {
+    "message": "conectado"
+  },
+  "DefaultDisplay": {
+    "message": "VISUALIZACIÓN PREDETERMINADA"
+  },
+  "QuickConnect": {
+    "message": "CONEXIÓN RÁPIDA"
+  },
+  "QuickSettings": {
+    "message": "AJUSTES RÁPIDOS"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "DESHABILITAR RECOMENDADOR HTTP"
+  },
+  "DEBUGLOGGING": {
+    "message": "REGISTRO DE DEPURACIÓN"
+  },
+  "LIGHTTHEME": {
+    "message": "TEMA LUMINOSO"
+  },
+  "FPPROTECTION": {
+    "message": "PROTECCIÓN DE HUELLA DACTILAR"
+  },
+  "BLOCKCAMERA": {
+    "message": "BLOQUEA EL ACCESO A LA CÁMARA"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "BLOQUEA EL ACCESO AL MICRÓFONO"
+  },
+  "VIEWALL": {
+    "message": "VER TODOS LOS AJUSTES..."
+  },
+  "trial": {
+    "message": "Prueba"
+  },
+  "days_left": {
+    "message": "días restantes"
+  },
+  "Subscription": {
+    "message": "SUSCRIPCIÓN"
+  },
+  "NoSubscriptionData": {
+    "message": "No se ha encontrado información de usuario"
+  },
+  "AddToBypassRules": {
+    "message": "AÑADIR A REGLAS DE DERIVACIÓN"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "Regla ya incluida"
+  },
+  "RemoveRule": {
+    "message": "eliminar"
+  },
+  "GatheringRegions": {
+    "message": "Recopilando regiones"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox ha cambiado recientemente la forma en que los complementos gestionan la conexión proxy. Ahora es necesario permitir que el complemento se ejecute en ventanas privadas para actualizar la configuración de proxy."
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "Visita la siguiente URL para ver la página de complementos. A continuación, haz clic en el complemento \"Private Internet Access\" para modificar su configuración. Desde ahí, cambia la configuración de \"Ejecutar en ventanas privadas\" a \"Permitir\"."
+  },
+  "us": {
+    "message": "Estados Unidos"
+  },
+  "gb": {
+    "message": "Reino Unido"
+  },
+  "de": {
+    "message": "Alemania"
+  },
+  "au": {
+    "message": "Australia"
+  },
+  "canada": {
+    "message": "Canadá"
   },
   "us_california": {
     "message": "EE. UU. California"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "Australia Melbourne"
+  },
+  "aus_perth": {
+    "message": " AU Perth"
   },
   "nl": {
     "message": "Países Bajos"

@@ -1,0 +1,59 @@
+#debuglog-page {
+  max-height: 580px;
+  min-height: 210px;
+  overflow: auto;
+  color: $grey20;
+  background-color: $grey92;
+
+  &.dark {
+    color: $white;
+    background-color: $grey20;
+  }
+
+  .still-loading {
+    color: $grey55;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .reload-container {
+    margin: 0 20px;
+    .btn { width: 100%; }
+  }
+
+  .no-entries {
+    color: $grey55;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .debug-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 15px 25px 0;
+
+    .copy, .clear {
+      margin-bottom: 15px;
+      outline: none;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    overflow: hidden;
+    word-break: break-all;
+
+    li { margin-bottom: 10px; }
+    li:last-child { margin-bottom: 0px; }
+    li span { overflow-wrap: break-word; }
+
+    time {
+      color: $grey55;
+      font-size: 11px;
+    }
+  }
+}

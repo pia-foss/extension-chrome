@@ -1,4 +1,4 @@
-import ChromeSetting from 'chromesettings/chromesetting';
+import ChromeSetting from '@chromesettings/chromesetting';
 
 class SafeBrowsing extends ChromeSetting {
   constructor() {

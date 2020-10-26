@@ -1,26 +1,22 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import withAppContext from '@hoc/withAppContext';
 
 class SettingsSection extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.app = background.app;
-
-    // Bindings
-    this.toggleSection = this.toggleSection.bind(this);
-
-    // Init
+    // properties
+    this.app = props.context.app;
     this.state = { open: false };
+    this.i18n = this.app.util.i18n;
+    // bindings
+    this.toggleSection = this.toggleSection.bind(this);
   }
 
   toggleSection() {
-    this.setState(({ open }) => {
-      return {
-        open: !open,
-      };
-    });
+    const { open } = this.state;
+    this.setState({ open: !open });
   }
 
   render() {
@@ -28,47 +24,40 @@ class SettingsSection extends Component {
     const {
       name,
       label,
-      onSettingChange,
       enabledCount,
       totalCount,
       children,
+      context: { theme },
     } = this.props;
-
-    const sectionClassList = [
-      'sectionwrapper',
-      open ? 'open' : 'closed',
-      name,
-    ];
+    const lang = this.i18n.locale ? this.i18n.locale : 'en';
 
     return (
-      <div className={sectionClassList.join(' ')}>
+      <div className={`section-wrapper ${name} ${theme} ${open ? 'open' : ''} ${lang}`}>
         <div
           role="button"
           tabIndex="-1"
-          className="firstfield field"
+          className="section-header noselect"
           onClick={this.toggleSection}
           onKeyPress={this.toggleSection}
         >
-          <div className="col-xs-12 settingblock settingheader noselect">
-            <span className="sectiontitle col-xs-6">
-              { label }
+          <span className="section-label">
+            { label }
+          </span>
+
+          <div className="rightalign">
+            <span className="counts">
+              { enabledCount }
+              /
+              { totalCount }
+              &nbsp;
+              { t('enabled') }
             </span>
 
-            <div className="rightalign">
-              <span className="counts">
-                { enabledCount }
-                /
-                { totalCount }
-                &nbsp;
-                { t('enabled') }
-              </span>
-
-              <span className="expandicon" />
-            </div>
+            <span className="expandicon" />
           </div>
         </div>
 
-        <div className="SettingItemContainer">
+        <div className="section-body">
           { children }
         </div>
       </div>
@@ -81,6 +70,8 @@ SettingsSection.propTypes = {
   totalCount: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  context: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 };
 
-export default SettingsSection;
+export default withAppContext(SettingsSection);

@@ -1,0 +1,25 @@
+.drawer {
+  overflow: hidden;
+  &.dark {
+    .drawer-renderable .drawer-header {
+      color: $white;
+      background-color: $grey15;
+    }
+  }
+
+  .drawer-renderable {
+    max-height: 0;
+    overflow: hidden;
+
+    .drawer-header {
+      color: $grey20;
+      background-color: $grey85;
+      text-transform: uppercase;
+      font-size: 9pt;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

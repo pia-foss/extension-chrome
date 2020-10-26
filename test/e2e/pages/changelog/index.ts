@@ -4,7 +4,7 @@ class ChangelogPage extends PageObject {
   constructor() {
     super({
       selector: createSelector({
-        value: '#changelog-template',
+        value: '#changelog-page',
       }),
       name: 'ChangelogPage',
     });

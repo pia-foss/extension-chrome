@@ -6,6 +6,7 @@ import { AuthenticatedPage } from '../pages/authenticated';
 import { Checkbox } from '../elements';
 import { SectionBase } from '../pages/settings/sectionBase';
 import { getStorage } from '../scripts/getStorage';
+import { setLevelOfControl } from '../scripts/setLevelOfControl';
 import { expect } from 'chai';
 
 idescribe('the settings page', function () {
@@ -22,28 +23,29 @@ idescribe('the settings page', function () {
     // Nav
     await loginPage.navigate();
     await loginPage.signIn();
+    await authPage.menu.toggleDropdown();
     await authPage.menu.settings.click();
   });
 
-  idescribe('when proxy connected', function () {
-    beforeEach(async function () {
-      await settingsPage.back.click();
-      await authPage.switchOn();
-      await authPage.menu.settings.click();
-    });
-    iit('informs user the settings are in effect', async function () {
-      await settingsPage.connectedWarning.expect.visible;
-      await settingsPage.disconnectedWarning.expect.not.visible;
-    });
-  });
-
   idescribe('when proxy disconnected', function () {
-    iit('warns user the settings aren\'t in effect', async function () {
-      await settingsPage.disconnectedWarning.expect.visible;
-      await settingsPage.connectedWarning.expect.not.visible;
+    iit('shows a warning when a setting is uncontrollable', async function () {
+      const expectedText = 'The extension cannot control this setting.';
+      settingsPage.back.click();
+      await setLevelOfControl(this.script, {
+        levelOfControl: 'not_controllable',
+        settingID: 'hyperlinkaudit',
+      });
+      await authPage.menu.toggleDropdown();
+      await authPage.menu.settings.click();
+      const { trackingSection } = settingsPage;
+      await trackingSection.expand();
+      await trackingSection.disableHyperLinkAuditing.expectNotChecked();
+      await trackingSection.disableHyperLinkAuditing.toggle();
+      await trackingSection.disableHyperLinkAuditing.expectNotChecked();
+      await trackingSection.hyperLinkAuditMessage.expect.exists;
+      const text = await trackingSection.hyperLinkAuditMessage.getText();
+      expect(text).to.eq(expectedText);
     });
-
-    iit('shows a warning when a setting is uncontrollable');
 
     createData().map((settingData) => {
       idescribe(`"${settingData.settingName}" setting`, function () {
@@ -72,7 +74,7 @@ idescribe('the settings page', function () {
           await checkbox.check();
 
           const storageValue = await getStorage(this.script, `settings:${settingData.settingID}`);
-          expect(storageValue).to.eq('true');
+          expect(storageValue).to.eq(true);
           await checkbox.expectChecked();
         });
 
@@ -82,7 +84,7 @@ idescribe('the settings page', function () {
           await checkbox.uncheck();
 
           const storageValue = await getStorage(this.script, `settings:${settingData.settingID}`);
-          expect(storageValue).to.eq('false');
+          expect(storageValue).to.eq(false);
           await checkbox.expectNotChecked();
         });
       });

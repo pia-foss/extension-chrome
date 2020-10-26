@@ -1,15 +1,75 @@
 .region-list-item {
+  padding: 7px 15px;
+  max-height: 35px;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  justify-content: flex-start;
+  background-color: $grey92;
+  border-bottom: 1px solid $grey85;
 
-  &:first-child { border-top: 0; }
+  &.dark {
+    color: $grey92;
+    background-color: $grey20;
+    border-bottom: 1px solid $grey15;
 
-  &.active {
-    background-color: $blue;
-    border-color: $blue;
+    &:hover { background-color: $grey18; }
 
-    .list-item-latency, .server-offline-text { color: #fff !important; }
+    &.nested {
+      background-color: darken($grey20, 5%);
+      border-bottom: 1px solid $grey15;
+
+      &:hover { background-color: $grey18; }
+    }
+
+    .flag-container .flag { border: 1px solid $grey20; }
+  }
+
+  &:hover { background-color: $grey85; }
+  &.active { color: $green-dark20; }
+  &.nested {
+    background-color: darken($grey92, 5%);
+    border-bottom: 1px solid $grey85;
+
+    &:hover { background-color: $grey85; }
+  }
+
+  .arrow-container { width: 15px; flex-shrink: 0; }
+
+  .flag-container {
+    height: 20px;
+    width: 30px;
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    .flag {
+      width: 100%;
+      height: 100%;
+      border: 1px solid $grey85;
+    }
+  }
+
+  .regionnamelist {
+    flex-grow: 1;
+    flex-basis: 150px;
+    font-size: 9pt;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+  }
+
+  .list-item-latency {
+    flex-basis: 45px;
+    font-size: 8pt;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  .server-offline-text {
+    font-size: 8pt;
+    color: $red;
   }
 
   .heart-container {
@@ -18,32 +78,6 @@
     .heart {
       width: 20px;
       height: 17px;
-      margin-right: 10px;
     }
-  }
-
-  .flag {
-    height: 24px;
-    width: 40px;
-    margin: 0px 10px 0px 0px;
-    border: 1px solid #ddd;
-  }
-
-  .regionnamelist {
-    max-width: 200px;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .list-item-latency {
-    display: inline-block;
-    float: right;
-    font-size: 11px;
-    color: #999;
-    line-height: 2;
-    text-align: right;
-    width: 55px;
   }
 }

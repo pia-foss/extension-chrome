@@ -1,21 +1,21 @@
 import { PageObject } from '../../core';
 import { createSelector } from '../../core/entities/selector';
-import { Input, Button, Checkbox, Link, Image, Text } from '../../elements';
+import { Input, Button, Checkbox, Link, Container, Text } from '../../elements';
 
 class LoginPage extends PageObject {
-  private logo: Image;
+  private logo: Container;
   public username: Input;
   public password: Input;
   public submit: Button;
   public reset: Link;
-  public signUp: Button;
+  public join: Button;
   public rememberMe: Checkbox;
   public errorMessage: Text;
 
   constructor() {
     super({
       selector: createSelector({
-        value: '#login-template',
+        value: '#login-page',
       }),
       name: 'login page',
     });
@@ -40,7 +40,7 @@ class LoginPage extends PageObject {
     this.submit = new Button(
       {
         selector: createSelector({
-          value: '#submit-form-button',
+          value: '.btn-submit',
         }),
         name: 'submit',
       },
@@ -49,16 +49,16 @@ class LoginPage extends PageObject {
     this.reset = new Link(
       {
         selector: createSelector({
-          value: '.resetpw.text-center > a',
+          value: '.other-options > .reset',
         }),
         name: 'reset',
       },
       this,
     );
-    this.signUp = new Button(
+    this.join = new Button(
       {
         selector: createSelector({
-          value: '.join-PIA > .btn-signup',
+          value: '.other-options > .join',
         }),
         name: 'sign up',
       },
@@ -82,10 +82,10 @@ class LoginPage extends PageObject {
       },
       this,
     );
-    this.logo = new Image(
+    this.logo = new Container(
       {
         selector: createSelector({
-          value: '.company-logo img',
+          value: '.company-logo',
         }),
         name: 'logo',
       },

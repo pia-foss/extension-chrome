@@ -1,6 +1,6 @@
-import { WebElementBase } from '../core/entities/webElementBase';
+import { Node } from '../core';
 
-class Button extends WebElementBase {
+class Button extends Node {
   public async getLabel() {
     const el = await this.element;
 
@@ -8,7 +8,7 @@ class Button extends WebElementBase {
   }
 
   public async click() {
-    // A button cannot clikc a hidden element, hence we wait for the element
+    // A button cannot click a hidden element, hence we wait for the element
     // to be visible
     const el = await this.visibleElement;
 

@@ -1,5 +1,4 @@
 .popular {
-  display: block;
-  clear: both;
-  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
 }

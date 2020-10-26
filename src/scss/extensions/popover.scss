@@ -1,212 +1,86 @@
 .popover {
-  box-sizing: border-box;
-  width: 26em;
-  max-width: 100%;
-  padding: 1em;
-  border: 1px solid #dadada;
-  background: #fff;
-  float: left;
-  position: absolute;
-  top: 35px;
-  font-family: Helvetica;
-  font-size: 13px;
   display: none;
-  line-height: 1.4;
-  color: #666;
-  padding: 11px;
-  z-index:999;
-}
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  z-index: 999;
+  color: $grey20;
+  font-size: 10pt;
+  border: 1px solid $grey15;
+  background: $grey92;
 
-.macetooltip label {
-  &:hover {
-    cursor: pointer;
-    .popover {
-      display: block;
-    }
-  }
-  text-decoration: none;
-  color: #666;
-  font-size:12px;
-  span {
-    border-bottom: none;
-  }
-}
-
-.learnmore {
-  font-size: 11px;
-  text-decoration: underline;
-  display: block;
-  clear: both;
-
-  &.disabled {
-    cursor: not-allowed;
-  }
-}
-
-.maceprotection {
-    margin-bottom: 5px;
-}
-
-.maceprotection .learnmore {
-  margin-top:-2px;
-}
-
-.popover {
   &:before {
     content: '';
-    display: block;
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 1px solid #dadada;
-    background: #fff;
-    -webkit-transform: rotate(225deg);
-    -moz-transform: rotate(225deg);
-    -ms-transform: rotate(225deg);
-    -o-transform: rotate(225deg);
-    transform: rotate(225deg);
-  }
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    border: 1px solid #dadada;
-    background: #fff;
-    -webkit-transform: rotate(225deg);
-    -moz-transform: rotate(225deg);
-    -ms-transform: rotate(225deg);
-    -o-transform: rotate(225deg);
-    transform: rotate(225deg);
-  }
-  &:before {
     z-index: -1;
+    background: $grey92;
+    border: 1px solid $grey15;
   }
-  &.arrow-bottom {
-    &:before, &:after {
-      top: 0%;
-      left: 20px;
-      margin-top: -9px;
-      border-top: 0;
-      border-left: 0;
-    }
-  }
-  &.arrow-top {
-    &:before, &:after {
-      bottom: 0;
-      left: 20px;
-      margin-bottom: -9px;
-      border-bottom: 0;
-      border-right: 0;
-    }
-  }
-  &.arrow-right {
-    &:before, &:after {
-      left: -9px;
-      top: 5px;
-      margin-bottom: -9px;
-      border-left: 0;
-      border-bottom: 0;
-    }
-  }
-}
 
-.popover.darkpopover {
-  width: 7.5em;
-  max-width: 7.5em;
-  text-align: center;
-  color: #fff;
-  margin-left:-23px;
-  border-radius:2px;
-  padding: 3px 6px;
-  background: #3a3a3a;
-  bottom: 38px;
-  font-size:11px;
-  word-break: break-word;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-  top:auto !important;
-  z-index:999;
-  max-width: inherit;
-  &:before {
-    width: 9px;
-    height: 9px;
-    background: #3a3a3a;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-    top: 100%;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    margin-top: -7px;
+  &.dark {
+    color: $white;
+    background: $grey18;
+    border: 1px solid $grey85;
+
+    &:before {
+      background: $grey18;
+      border: 1px solid $grey85;
+    }
   }
-  &:after {
-    width: 9px;
-    height: 9px;
-    background: #3a3a3a;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-    top: 100%;
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    margin-top: -7px;
+
+  &.small {
+    width: 90px;
+    font-size: 9pt;
+    left: -100%;
+    right: -100%;
+    text-align: center;
   }
-  &:before {
-    z-index: -1;
-  }
+
   &.arrow-bottom {
-    &:before, &:after {
+    bottom: 100%;
+    margin-bottom: 15px;
+    &.left-align:before { left: 20px; }
+
+    &:before{
       top: 100%;
       left: 50%;
-      margin-left:-4px;
-      margin-top: -4px;
+      margin-top: -7px;
       border-top: 0;
       border-left: 0;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &.arrow-top {
+    top: 100%;
+    margin-top: 15px;
+    &.left-align:before { left: 20px; }
+
+    &:before {
+      top: 0;
+      left: 50%;
+      margin-top: -8px;
+      border-bottom: 0;
+      border-right: 0;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+
+  &.arrow-right {
+    margin-left: 15px;
+
+    &:before {
+      top: 50%;
+      left: -8px;
+      border-left: 0;
+      border-bottom: 0;
+      transform: translateY(-50%) rotate(225deg);
     }
   }
 }
 
-.btn-icon, .settings-icon {
-  &:hover {
-    cursor: pointer;
-    .popover {
-      display: block;
-    }
-  }
-}
-
-.popover-trigger {
-  &:hover {
-    > .popover,
-    ~ .popover {
-      display: block;
-    }
-  }
-}
-
-.settings-icon .popover.darkpopover {
-  bottom: 48px;
-}
-
-
-.sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover {
-  top: initial;
-  bottom: 35px;
-  min-height: 200%;
-  margin-bottom: 10px;
-}
-
-.sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-bottom::before, .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-bottom::after {
-  transform: rotate(45deg);
-  top: 100%;
-  margin-top: -7px;
-}
-
-.sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-top::before, .sectionwrapper.developer .SettingItemContainer .settingitem .settingblock .macetooltip .popover.arrow-top::after {
-  transform: rotate(45deg);
-  top: 0;
-  margin-bottom: -7px;
+.controllable-setting:hover, .popover-trigger:hover {
+  .popover, ~ .popover { display: block; }
 }

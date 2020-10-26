@@ -1,0 +1,21 @@
+.import-export-wrapper {
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      width: 110px;
+      img {
+        width: 0;
+        height: 0;
+        margin-left: 5px;
+        transition: all 0.25s ease-in;
+
+        &.show {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+  }
+}

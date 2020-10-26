@@ -14,8 +14,11 @@
   "Extension": {
     "message": "확장 프로그램"
   },
-  "ResetPasswordText": {
-    "message": "비밀번호 재설정"
+  "ForgotPassword": {
+    "message": "비밀번호 찾기"
+  },
+  "BuyAccount": {
+    "message": "계정 구입"
   },
   "DeleteDebugLog": {
     "message": "로그 지우기"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "디버그 로그에 메시지를 기록합니다. 'ctrl' 키를 누르고 'd' 키를 누르면 디버그 로그가 표시됩니다."
   },
-  "LogMeOutOnClose": {
-    "message": "브라우저를 닫을 때 로그아웃"
+  "DarkTheme": {
+    "message": "다크 테마"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "다시 브라우저를 열 때 자동으로 다시 로그인하지 않습니다."
+  "DarkThemeTooltip": {
+    "message": "조명이 약한 조건에서 확장이 사용할 다크 테마를 활성화합니다"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "이 설정은 자격 증명이 저장되지 않은 경우(로그인 화면), 제어할 수 없습니다."
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "프록시 IP"
   },
   "DebugLogIsEmpty": {
     "message": "디버그 로그가 비어 있습니다."
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "지역에 연결될 때만 활성화되는 PIA MACE™를 제외하고, 설정을 활성화하면 지역에 연결되었는지 여부와 상관 없이 언제나 활성화됩니다."
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "chrome://extensions의 확장 설정에서 이 옵션을 선택하여 익명 모드에서 확장을 활성화합니다."
   },
   "UsernamePlaceholder": {
     "message": "사용자 이름"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "사용자 이름 및/또는 비밀번호가 잘못되었습니다."
-  },
-  "NetworkError": {
-    "message": "네트워크 오류로 로그인 요청이 실패했습니다. 다시 시도해주십시오."
   },
   "OfflineError": {
     "message": "로그인 요청이 실패했습니다. 오프라인 상태인 것 같습니다. 인터넷에 연결되어 있는지 확인하십시오."
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "디버그 로그 복사 완료"
   },
-  "NoAccountQuestion": {
-    "message": "계정이 없으세요?"
-  },
-  "JoinText": {
-    "message": "VPN 계정 가입"
-  },
   "JoinURL": {
     "message": "https://kor.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "내보내기"
   },
-  "SettingsWarning": {
-    "message": "이 설정은 적용되고 있지 않습니다. 지역에 연결될 때 적용됩니다."
+  "BypassWarningLead": {
+    "message": "우회 목록에 등록된 웹사이트에 대한 요청은"
   },
-  "SettingsWarningConnected": {
-    "message": "이 설정은 적용되고 있습니다. %{region}에서 연결을 해제할 때 %{browser}의 기본 설정으로 복원됩니다."
-  },
-  "BypassWarning": {
-    "message": "우회 목록에 있는 웹사이트에 대한 요청은 Private Internet Access™의 보호를 <span class='bold-underline'>받지 않는</span> <span class='bold-underline'>직접 연결</span>을 사용합니다."
+  "BypassWarningBold": {
+    "message": "직접 연결을 사용하며 Private Internet Access™에 의해 보호되지 않습니다."
   },
   "AccountSettingsText": {
     "message": "계정 설정"
   },
-  "AutoLoginURL": {
-    "message": "https://kor.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "우회 목록에 URL 추가"
-  },
-  "SupportURL": {
-    "message": "https://kor.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "도움말 및 지원"
-  },
-  "StatusText": {
-    "message": "상태"
   },
   "OfflineText": {
     "message": "오프라인"
   },
-  "PleaseWait": {
-    "message": "로드 중. 잠시만 기다려주십시오."
-  },
   "Security": {
     "message": "보안"
-  },
-  "AdsTrackersProtection": {
-    "message": "광고, 트래커, 맬웨어 방지"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "MACE™는 무엇입니까?"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™는 악성 콘텐츠, 트래커 및 광고를 차단해서 사용자의 개인정보와 보안을 보호합니다."
+    "message": "PIA MACE™는 악성 콘텐츠, 트래커 및 광고를 차단해서 사용자의 개인 정보와 보안을 보호합니다. 지역에 연결될 때만 활성화됩니다"
   },
   "WebRTCLeakProtection": {
     "message": "WebRTC IP 보호 차단"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "%{browser}이(가) Adobe Flash를 실행하는 것을 차단합니다. Adobe Flash는 사용자의 공용 IP 주소를 드러낼 때 사용될 수 있습니다. 비활성화를 권장하지 않습니다."
   },
+  "HttpsUpgrade": {
+    "message": "HTTPS를 사용한 웹사이트 탐색"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "브라우저에서 나가기 전에 암호화되지 않은 연결(HTTP)을 사용하는 지원되는 웹사이트 또는 링크를 더 안전한 HTTPS로 자동으로 전환합니다. HTTPS Everywhere 및 EFF 덕분에 가능."
+  },
+  "AlwaysActive": {
+    "message": "항상 활성 설정"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "프록시 연결 여부와 상관 없이 설정을 항상 활성 상태로 유지합니다."
+  },
   "BlockUTM": {
     "message": "UTM 매개 변수 제거"
   },
   "BlockUTMTooltip": {
     "message": "클릭한 URL에서 어친 트래킹 모델(UTM) 매개 변수를 제거합니다. UTM 매개 변수는 웹사이트에 대한 방문 정보를 추적할 때 사용됩니다."
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com, *.hello2.com, *.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "FBCLID 매개 변수 제거"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "Facebook의 외부 연결 링크로부터 Facebook FBCLID 매개 변수를 제거합니다. FBCLID 매개 변수는 사용자의 웹사이트 방문 정보를 추적하는 데 사용됩니다"
   },
   "BypassInstructionsBold": {
     "message": "* 접두사 필요"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "우회 목록"
   },
-  "SaveProxyBypassList": {
-    "message": "저장"
+  "SmartLocation": {
+    "message": "스마트 위치"
   },
-  "OKSaved": {
-    "message": "확인. 저장 완료"
+  "WebAlreadyAdded": {
+    "message": "웹사이트가 이미 추가됨"
+  },
+  "AddSmartLocation": {
+    "message": "스마트 위치 추가"
   },
   "WelcomeToNewVersion": {
     "message": "%{appVersion}에 환영합니다"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "규칙이 추가되지 않음"
+  },
+  "NoLocation": {
+    "message": "위치가 추가되지 않음"
+  },
+  "OneLocation": {
+    "message": "위치가 추가됨"
+  },
+  "MultipleLocations": {
+    "message": "위치"
   },
   "MultipleRulesAdded": {
     "message": "%{count}개의 규칙이 추가됨"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "웹사이트가 컴퓨터의 마이크에 접근하는 것을 차단합니다."
   },
-  "UseRegionLocale": {
-    "message": "비공개 로캘 및 언어 설정"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "브라우저의 기본 로캘 및 언어 설정을 현재 지역의 로캘 및 언어 설정으로 교체해서 비공개로 유지합니다."
-  },
   "Privacy": {
     "message": "개인정보"
-  },
-  "OnText": {
-    "message": "켬"
-  },
-  "OffText": {
-    "message": "끔"
   },
   "ImportFileMessage": {
     "message": "내보낸 우회 규칙 파일(예: bypass-rules.json)을 선택하세요"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "선택된 지역이 없습니다"
+  },
+  "ChooseAutomatically": {
+    "message": "자동 선택"
   },
   "ChangeExtensionSettings": {
     "message": "확장 프로그램 설정"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "지연 시간"
   },
-  "SortBy": {
-    "message": "정렬 기준:"
+  "RegionSearch": {
+    "message": "검색..."
   },
   "CloseText": {
     "message": "닫기"
   },
   "UpgradeBrowserMessage": {
     "message": "현재 %{browser}의 버전이 오래되어서 Private Internet Access를 사용할 수 없습니다. %{browser}을(를) 최신 버전으로 업그레이드하세요."
-  },
-  "LoadingText": {
-    "message": "불러오는 중"
   },
   "LogoutText": {
     "message": "로그아웃"
@@ -390,7 +387,13 @@
     "message": "인증 오류"
   },
   "AuthFailMessage": {
-    "message": "최근 Private Internet Access 웹사이트에서 비밀번호를 변경한 경우 확장 프로그램을 다시 인증하면 이 오류가 수정될 수 있습니다.<br /><br />도움이 필요할 경우 당사의 <a href=\"https://privateinternetaccess.com/helpdesk\">지원팀</a>에 문의하십시오. "
+    "message": "최근 Private Internet Access 웹사이트에서 비밀번호를 변경한 경우 확장 프로그램을 다시 인증하면 이 오류가 수정될 수 있습니다."
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "도움이 필요하시만 저희"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "지원팀에 문의하세요"
   },
   "ConnectionFailPageTitle": {
     "message": "연결 오류 | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "활성화됨"
   },
-  "disabled": {
-    "message": "비활성화됨"
-  },
-  "unavailable": {
-    "message": "이용 불가"
-  },
   "RememberMe": {
     "message": "ID 기억하기"
   },
   "RememberMeTooltip": {
-    "message": "브라우저 재시작 사이에 이 자격 증명을 저장합니다"
+    "message": "브라우저 재시작 사이에 사용자 이름을 저장합니다"
   },
-  "AllRegions": {
-    "message": "모든 지역"
+  "Auto": {
+    "message": "자동"
   },
-  "FavoriteRegions": {
-    "message": "선호 지역"
+  "CalculatingLatency": {
+    "message": "대기 시간 계산 중"
   },
   "NoRegionsFound": {
     "message": "검색된 지역이 없습니다"
   },
   "RefreshRegions": {
     "message": "지역 새로 고침"
+  },
+  "ViewChangelog": {
+    "message": "변경 로그 보기"
+  },
+  "ChangelogTitle": {
+    "message": "변경 로그"
+  },
+  "UnknownProxyError": {
+    "message": "알 수 없는 프록시 오류가 발생했습니다"
+  },
+  "Connecting": {
+    "message": "연결 중"
+  },
+  "Disconnecting": {
+    "message": "연결 해제 중"
+  },
+  "Connected": {
+    "message": "연결됨"
+  },
+  "DefaultDisplay": {
+    "message": "기본 표시"
+  },
+  "QuickConnect": {
+    "message": "빠른 연결"
+  },
+  "QuickSettings": {
+    "message": "빠른 설정"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "HTTP 참조 페이지 비활성화"
+  },
+  "DEBUGLOGGING": {
+    "message": "디버그 로깅"
+  },
+  "LIGHTTHEME": {
+    "message": "라이트 테마"
+  },
+  "FPPROTECTION": {
+    "message": "지문 보호"
+  },
+  "BLOCKCAMERA": {
+    "message": "카메라 액세스 차단"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "마이크 액세스 차단"
+  },
+  "VIEWALL": {
+    "message": "모든 설정 보기..."
+  },
+  "trial": {
+    "message": "체험"
+  },
+  "days_left": {
+    "message": "일 남음"
+  },
+  "Subscription": {
+    "message": "구독"
+  },
+  "NoSubscriptionData": {
+    "message": "사용자 정보를 찾을 수 없습니다"
+  },
+  "AddToBypassRules": {
+    "message": "바이패스 규칙에 추가"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "규칙에 이미 포함됨"
+  },
+  "RemoveRule": {
+    "message": "제거"
+  },
+  "GatheringRegions": {
+    "message": "지역 수집"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox는 최근 애드온이 프록시 연결을 취급하는 방식을 변경했습니다. 프록시 설정을 업데이트하려면 이제는 애드온이 프라이빗 윈도우에서 실행되도록 허용해야 합니다."
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "아래 URL을 방문하여 애드온 페이지를 확인하세요. 그런 다음, \"Private Internet Access\" 애드온을 클릭하여 설정을 변경하세요. 여기서 \"프라이빗 윈도우에서 실행\" 설정을 \"허용\"으로 변경하세요."
+  },
+  "us": {
+    "message": "미국"
+  },
+  "gb": {
+    "message": "영국"
+  },
+  "de": {
+    "message": "독일"
+  },
+  "au": {
+    "message": "호주"
+  },
+  "canada": {
+    "message": "캐나다"
   },
   "us_california": {
     "message": "미국 캘리포니아"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "호주 멜버른"
+  },
+  "aus_perth": {
+    "message": " 호주 퍼스"
   },
   "nl": {
     "message": "네덜란드"

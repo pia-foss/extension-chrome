@@ -14,8 +14,11 @@
   "Extension": {
     "message": "擴充功能"
   },
-  "ResetPasswordText": {
-    "message": "重置密碼"
+  "ForgotPassword": {
+    "message": "忘記密碼"
+  },
+  "BuyAccount": {
+    "message": "購買帳號"
   },
   "DeleteDebugLog": {
     "message": "清除紀錄"
@@ -80,17 +83,26 @@
   "DebugModeTooltip": {
     "message": "將訊息寫到錯誤偵測紀錄。按 Ctrl + D 鍵可顯示錯誤偵測紀錄。"
   },
-  "LogMeOutOnClose": {
-    "message": "瀏覽器關閉時為我登出"
+  "DarkTheme": {
+    "message": "深色主題"
   },
-  "LogMeOutOnCloseTooltip": {
-    "message": "當您重新開啟瀏覽器時，將不會自動登入"
+  "DarkThemeTooltip": {
+    "message": "為擴充功能啟用深色主題，方便在昏暗環境下使用"
   },
-  "LogMeOutOnCloseDisabled": {
-    "message": "如果沒有記住憑證（登入頁面），便無法控制此設定。"
+  "IpReal": {
+    "message": "IP"
+  },
+  "IpProxy": {
+    "message": "Proxy IP"
   },
   "DebugLogIsEmpty": {
     "message": "錯誤偵測紀錄目前為空白。"
+  },
+  "PersistentSettingsDisclaimer": {
+    "message": "不論您是否連線到區域網路，已啟用的設定現在都會處於使用中，唯有  PIA MACE™ 例外，因為  PIA MACE™ 僅在您連線到區域網路時才會使用。"
+  },
+  "PersistentIncognitoDisclaimer": {
+    "message": "在 chrome://extensions 中的擴充功能設定選取這個選項，以啟用無痕模式中的擴充功能。"
   },
   "UsernamePlaceholder": {
     "message": "使用者名稱"
@@ -109,9 +121,6 @@
   },
   "WrongUsernameAndPassword": {
     "message": "使用者名稱及/或密碼錯誤。"
-  },
-  "NetworkError": {
-    "message": "網路發生錯誤，目前無法登入，請再試一次。"
   },
   "OfflineError": {
     "message": "登入失敗。您似乎處於離線狀態，請檢查您是否已連線到網際網路。"
@@ -137,12 +146,6 @@
   "CopiedToClipboard": {
     "message": "已複製錯誤偵測紀錄"
   },
-  "NoAccountQuestion": {
-    "message": "沒有帳號？"
-  },
-  "JoinText": {
-    "message": "註冊一個VPN帳號"
-  },
   "JoinURL": {
     "message": "https://cht.privateinternetaccess.com/pages/buy-vpn/"
   },
@@ -161,44 +164,23 @@
   "ExportLabel": {
     "message": "匯入"
   },
-  "SettingsWarning": {
-    "message": "這些設定並未生效，它們只會在連線至區域時生效。"
+  "BypassWarningLead": {
+    "message": "對旁路清單中的網站提出的使用要求"
   },
-  "SettingsWarningConnected": {
-    "message": "這些設定已生效。當您中斷%{region}連線時，它們便會回復 %{browser} 的預設設定。"
-  },
-  "BypassWarning": {
-    "message": "向繞路清單上的網頁傳送要求時是使用<span class=\"bold-underline\">不</span>受 Private Internet Access™ 保護的<span class=\"bold-underline\">直接連線</span>。"
+  "BypassWarningBold": {
+    "message": "直接連線，且不受 Private Internet Access™ 保護。"
   },
   "AccountSettingsText": {
     "message": "帳戶設定"
   },
-  "AutoLoginURL": {
-    "message": "https://cht.privateinternetaccess.com/xpages/sign-in"
-  },
-  "AddUrlToBypassList": {
-    "message": "將網址加到繞路清單"
-  },
-  "SupportURL": {
-    "message": "https://cht.privateinternetaccess.com/pages/client-support/"
-  },
   "SupportText": {
     "message": "協助與支援"
-  },
-  "StatusText": {
-    "message": "狀態"
   },
   "OfflineText": {
     "message": "離線"
   },
-  "PleaseWait": {
-    "message": "載入中，請稍候。"
-  },
   "Security": {
     "message": "安全性"
-  },
-  "AdsTrackersProtection": {
-    "message": "廣告、追蹤器及惡意程式防護"
   },
   "MaceProtection": {
     "message": "PIA MACE™"
@@ -207,7 +189,7 @@
     "message": "MACE™ 是什麼？"
   },
   "MaceTooltip": {
-    "message": "PIA MACE™ 透過封鎖惡意內容、追蹤器及廣告來協助您保障隱私及網路安全。"
+    "message": "PIA MACE™ 透過封鎖惡意內容、追蹤器及廣告來協助您保障隱私及網路安全。僅限於連線至區域網路時使用。"
   },
   "WebRTCLeakProtection": {
     "message": "阻止 WebRTC IP 位址偵測"
@@ -221,14 +203,29 @@
   "AdobeFlashTooltip": {
     "message": "阻止 %{browser} 運行 Adobe Flash。Adobe Flash 可以用來披露您的公開 IP 位址。不建議停用。"
   },
+  "HttpsUpgrade": {
+    "message": "瀏覽使用 HTTPS 的網站"
+  },
+  "HttpsUpgradeTooltip": {
+    "message": "離開瀏覽器前，自動將使用未加密連線 (HTTP) 的受支援網站或連結轉換為更安全的 HTTPS 連線。之所以能這麼做，是因為 HTTPS Everywhere 以及 EFF 的緣故。"
+  },
+  "AlwaysActive": {
+    "message": "永遠啟用設定"
+  },
+  "AlwaysActiveTooltip": {
+    "message": "不論代理伺服器是否連線，都將設定保持在永遠啟用的狀態"
+  },
   "BlockUTM": {
     "message": "移除 UTM 參數"
   },
   "BlockUTMTooltip": {
     "message": "從您所點擊的網址移除 UTM（Urchin 追蹤模組）參數。UTM 參數用來追蹤您造訪網站的狀況。"
   },
-  "BypassListPlaceholder": {
-    "message": "hello1.com、*.hello2.com、*.hello3.com/page.html"
+  "BlockFBCLID": {
+    "message": "移除 FBCLID 參數"
+  },
+  "BlockFBCLIDTooltip": {
+    "message": "從 Facebook 的出站連結移除 Facebook FBCLID 參數。FBCLID 參數用來追蹤您瀏覽網站的狀況。"
   },
   "BypassInstructionsBold": {
     "message": "* 字首為必須"
@@ -239,11 +236,14 @@
   "ProxyBypassList": {
     "message": "繞道列表"
   },
-  "SaveProxyBypassList": {
-    "message": "儲存"
+  "SmartLocation": {
+    "message": "智慧地點"
   },
-  "OKSaved": {
-    "message": "好的，已儲存。"
+  "WebAlreadyAdded": {
+    "message": "已新增網站"
+  },
+  "AddSmartLocation": {
+    "message": "新增智慧地點"
   },
   "WelcomeToNewVersion": {
     "message": "歡迎使用 %{appVersion}"
@@ -256,6 +256,15 @@
   },
   "NoRulesAdded": {
     "message": "目前未新增任何規則"
+  },
+  "NoLocation": {
+    "message": "目前未新增任何地點"
+  },
+  "OneLocation": {
+    "message": "已新增地點"
+  },
+  "MultipleLocations": {
+    "message": "地點"
   },
   "MultipleRulesAdded": {
     "message": "已新增 %{count} 條規則"
@@ -326,20 +335,8 @@
   "BlockMicrophoneAccessTooltip": {
     "message": "封鎖網站存取您電腦的麥克風。"
   },
-  "UseRegionLocale": {
-    "message": "讓地理位置及語言設定保持私密"
-  },
-  "UseRegionLocaleTooltip": {
-    "message": "要讓瀏覽器的預設地理位置及語言設定保持私密，您需要用目前區域的地理位置及語言設定來取代它。"
-  },
   "Privacy": {
     "message": "隱私"
-  },
-  "OnText": {
-    "message": "開啟"
-  },
-  "OffText": {
-    "message": "關閉"
   },
   "ImportFileMessage": {
     "message": "請選擇一個已匯出的旁路規則檔案 (例：bypass-rules.json)"
@@ -352,6 +349,9 @@
   },
   "NoRegionSelected": {
     "message": "未選取任何區域"
+  },
+  "ChooseAutomatically": {
+    "message": "自動選擇"
   },
   "ChangeExtensionSettings": {
     "message": "擴充功能設定"
@@ -368,17 +368,14 @@
   "RegionLatency": {
     "message": "延遲"
   },
-  "SortBy": {
-    "message": "排序依據："
+  "RegionSearch": {
+    "message": "搜尋"
   },
   "CloseText": {
     "message": "關閉"
   },
   "UpgradeBrowserMessage": {
     "message": "Private Internet Access 目前無法使用，因為您的 %{browser} 版本已過時。請將 %{browser} 提升至最新版本。"
-  },
-  "LoadingText": {
-    "message": "載入中"
   },
   "LogoutText": {
     "message": "登出"
@@ -391,6 +388,12 @@
   },
   "AuthFailMessage": {
     "message": "如果您最近曾在 Private Internet Access 網站上更改密碼，為擴充功能重新進行驗證應該能修正此錯誤。<br/><br/>若您需要協助與支援，請聯繫我們的<a href=\"https://privateinternetaccess.com/helpdesk\">支援團隊</a>。"
+  },
+  "AuthFailMessageSupportLead": {
+    "message": "若您需要協助與支援，請聯繫我們的"
+  },
+  "AuthFailMessageSupportEnd": {
+    "message": "支援團隊"
   },
   "ConnectionFailPageTitle": {
     "message": "連線錯誤 | Private Internet Access"
@@ -413,29 +416,119 @@
   "enabled": {
     "message": "已啟用"
   },
-  "disabled": {
-    "message": "已停用"
-  },
-  "unavailable": {
-    "message": "無法使用"
-  },
   "RememberMe": {
     "message": "記住我"
   },
   "RememberMeTooltip": {
-    "message": "在瀏覽器重新啟動之間儲存這些憑證"
+    "message": "在瀏覽器重新啟動之間儲存使用者名稱"
   },
-  "AllRegions": {
-    "message": "所有地區"
+  "Auto": {
+    "message": "自動"
   },
-  "FavoriteRegions": {
-    "message": "最愛地區"
+  "CalculatingLatency": {
+    "message": "正在計算延遲"
   },
   "NoRegionsFound": {
     "message": "找不到相符地區"
   },
   "RefreshRegions": {
     "message": "重新整理地區"
+  },
+  "ViewChangelog": {
+    "message": "檢視更新日誌"
+  },
+  "ChangelogTitle": {
+    "message": "更新日誌"
+  },
+  "UnknownProxyError": {
+    "message": "代理伺服器發生未知錯誤"
+  },
+  "Connecting": {
+    "message": "連線中"
+  },
+  "Disconnecting": {
+    "message": "正在中斷連線"
+  },
+  "Connected": {
+    "message": "已連線"
+  },
+  "DefaultDisplay": {
+    "message": "預設顯示"
+  },
+  "QuickConnect": {
+    "message": "快速連線"
+  },
+  "QuickSettings": {
+    "message": "快速設定"
+  },
+  "MACE": {
+    "message": "MACE"
+  },
+  "HTTPREFERRER": {
+    "message": "停用 HTTP 參照位址"
+  },
+  "DEBUGLOGGING": {
+    "message": "偵錯記錄"
+  },
+  "LIGHTTHEME": {
+    "message": "淺色主題"
+  },
+  "FPPROTECTION": {
+    "message": "指紋保護"
+  },
+  "BLOCKCAMERA": {
+    "message": "封鎖相機存取權"
+  },
+  "BLOCKMICROPHONE": {
+    "message": "封鎖麥克風存取權"
+  },
+  "VIEWALL": {
+    "message": "查看所有設定……"
+  },
+  "trial": {
+    "message": "試用"
+  },
+  "days_left": {
+    "message": "days left"
+  },
+  "Subscription": {
+    "message": "訂閱"
+  },
+  "NoSubscriptionData": {
+    "message": "找不到相符的使用者資訊"
+  },
+  "AddToBypassRules": {
+    "message": "新增至旁路規則"
+  },
+  "RuleAlreadyIncluded": {
+    "message": "已納入規則"
+  },
+  "RemoveRule": {
+    "message": "移除"
+  },
+  "GatheringRegions": {
+    "message": "聚集地區"
+  },
+  "PrivateBrowsingChangeLead": {
+    "message": "Firefox 最近變更了附加元件處理代理伺服器連線的方式。現在，您需要更新伺服器設定，允許附加元件在隱私視窗中執行。"
+  },
+  "PrivateBrowsingChangeDirections": {
+    "message": "請點進下方的網址以查看您的附加元件頁面，之後按一下「Private Internet Access」附加元件以修改設定。在該頁面中，將「在隱私視窗中執行」的設定變更為「允許」。"
+  },
+  "us": {
+    "message": "美國"
+  },
+  "gb": {
+    "message": "英國"
+  },
+  "de": {
+    "message": "德國"
+  },
+  "au": {
+    "message": "澳洲"
+  },
+  "canada": {
+    "message": "加拿大"
   },
   "us_california": {
     "message": "美國加州"
@@ -508,6 +601,9 @@
   },
   "aus_melbourne": {
     "message": "澳洲墨爾本"
+  },
+  "aus_perth": {
+    "message": "澳洲伯斯"
   },
   "nl": {
     "message": "荷蘭"

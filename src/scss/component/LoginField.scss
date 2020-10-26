@@ -1,0 +1,22 @@
+.login-input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 0;
+  border-bottom: 1px solid $grey85;
+  background-color: $grey92;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1px solid $grey55;
+  }
+
+  &.dark {
+    color: $white;
+    background-color: $grey20;
+    border-bottom: 1px solid $grey55;
+
+    &:focus { border-bottom: 1px solid $grey92; }
+  }
+}

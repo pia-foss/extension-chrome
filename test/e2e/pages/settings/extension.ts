@@ -5,7 +5,6 @@ import { createSelector } from '../../core/entities/selector';
 
 class ExtensionSection extends SectionBase {
   public allowDesktopNotifications: Checkbox;
-  public logoutOnClose: Checkbox;
   public debugMode: Checkbox;
   public viewDebugLog: Checkbox;
   public uiLanguages: Checkbox;
@@ -14,7 +13,7 @@ class ExtensionSection extends SectionBase {
     super(
       {
         selector: createSelector({
-          value: '.sectionwrapper.developer',
+          value: '.section-wrapper.developer',
         }),
         name: 'extension settings',
       },
@@ -26,15 +25,6 @@ class ExtensionSection extends SectionBase {
           value: '#allowExtensionNotifications',
         }),
         name: 'allowDesktopNotifications',
-      },
-      this,
-    );
-    this.logoutOnClose = new Checkbox(
-      {
-        selector: createSelector({
-          value: '#logoutOnClose',
-        }),
-        name: 'logoutOnClose',
       },
       this,
     );
@@ -59,7 +49,7 @@ class ExtensionSection extends SectionBase {
     this.uiLanguages = new Checkbox(
       {
         selector: createSelector({
-          value: '#languages',
+          value: '.languages',
         }),
         name: 'uiLanguages',
       },

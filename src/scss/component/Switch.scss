@@ -1,90 +1,207 @@
-$switch-width: 100px;//53px;
-$switch-height: 50px;//31px;
-$switch-thumb-diameter: $switch-height - 8px;
-$switch-off-color: #D3382D;
-$switch-on-color: #29CC41;
-$switch-disabled-color: #29ABE2;
+.outer-circle {
+  width: 150px;
+  height: 150px;
+  margin: 30px auto 30px;
+  border-radius: 100%;
+  border: 8px solid $grey85;
+  background-color: $grey92;
+  outline: none;
 
-.switch-container {
-  text-align: center;
+  &.dark {
+    border: 8px solid $grey15;
+    background-color: $grey20;
 
-  .switch {
-    box-sizing: border-box;
-    width: $switch-width;
-    height: $switch-height;
-    -webkit-appearance: none;
-    position: relative;
-    border-radius: $switch-height / 2;
-    cursor: pointer;
-    outline: 0;
-    z-index: 0;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: $switch-off-color;
-    text-transform: uppercase;
-    transition-duration: 500ms;
-    -webkit-touch-callout: none;
-    -webkit-text-size-adjust: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-user-select: none;
+    .spinner .spinner-gradient { background-color: $grey20; }
+    .spinner .spinner-inner { background-color: $grey20; }
+  }
 
-    // Thumb
-    &::after {
-      content: 'OFF';
-      width: $switch-thumb-diameter;
-      height: $switch-thumb-diameter;
-      color: white;
-      text-indent: 3.25em;
-      line-height: $switch-thumb-diameter;
-      font-size: 16px;
-      position: absolute;
-      border-radius: $switch-thumb-diameter;
-      background: white;
-      z-index: 2;
-      top: 4px;
-      left: 4px;
-      transition-duration: 250ms;
-    }
+  &.waiting {
+    border: 0;
+    cursor: default;
 
-    // Background tint for ON state
-    &:checked { background-color: $switch-on-color; }
-
-    // Thumb for ON state
-    &:checked::after {
-      content: 'ON';
-      -webkit-transform: translate3d(16px, 0, 0);
-      right: 20px;
-      left: inherit;
-      text-indent: -2.25em;
-    }
-
-    // Thumb for active state
-    &:active::after { width: $switch-height; }
-    &:checked::before,
-    &:active::before { -webkit-transform: scale(0); }
-
-    // Disabled
-    &:disabled {
-      cursor: default;
-      -webkit-transition: none;
-      background-color: $switch-disabled-color;
-
-      &:active::before,
-      &:active::after,
-      &:checked:active::before,
-      &:checked::before { -webkit-transition: none; }
-
-      // Thumb for ON state
-      &::after {
-        -webkit-transform: translate3d($switch-height / 2, 0, 0);
-        right: $switch-height;
-        left: inherit;
-        content: ' ';
-      }
-
-      // Thumb for active state
-      &:active::after { width: $switch-thumb-diameter; }
+    .spinner .spinner-inner {
+      width: 145px;
+      height: 145px;
     }
   }
+
+  &.region { margin-top: 0; }
+
+  &.login {
+    border: 0;
+    width: 10px;
+    height: 10px;
+    margin: 5px auto;
+    cursor: default;
+
+    .spinner .spinner-gradient {
+      background-image: linear-gradient(-160deg, white 10%, white 35%, #5DDF5A 100%);
+    }
+
+    .spinner .spinner-inner {
+      width: 7px;
+      height: 7px;
+      background-color: #5DDF5A;
+    }
+  }
+
+  &.connected {
+    &:hover {
+      .spinner {
+        background-color: $green-light;
+
+        .spinner-gradient { background-color: $green-light; }
+
+        .spinner-inner .power-icon {
+          color: $green-light;
+          border: 2px solid $green-light;
+          border-top-color: transparent;
+          &:before { background-color: $green-light; }
+        }
+      }
+    }
+
+    .spinner {
+      background-color: $green;
+
+      .spinner-gradient { background-color: $green; }
+
+      .spinner-inner .power-icon {
+        color: $green;
+        border: 2px solid $green;
+        border-top-color: transparent;
+        &:before { background-color: $green; }
+      }
+    }
+  }
+
+  &.initial, 
+  &.disconnected {
+    &:hover {
+      .spinner {
+        background-color: $yellow-light;
+
+        .spinner-gradient { background-color: $yellow-light; }
+
+        .spinner-inner .power-icon {
+          color: $yellow-light;
+          border: 2px solid $yellow-light;
+          border-top-color: transparent;
+          &:before { background-color: $yellow-light; }
+        }
+      }
+    }
+
+    .spinner {
+      background-color: $yellow-dark;
+
+      .spinner-gradient { background-color: $yellow-dark; }
+
+      .spinner-inner .power-icon {
+        color: $yellow-dark;
+        border: 2px solid $yellow-dark;
+        border-top-color: transparent;
+        &:before { background-color: $yellow-dark; }
+      }
+    }
+  }
+
+  &.error {
+    .spinner {
+      background-color: $red;
+
+      .spinner-gradient { background-color: $red; }
+
+      .spinner-inner .power-icon {
+        color: $red;
+        border: 2px solid $red;
+        border-top-color: transparent;
+        &:before { background-color: $red; }
+      }
+    }
+  }
+
+  &.connecting {
+    &.connected.dark .spinner { background-color: $yellow-dark; }
+    &.connected.dark:hover .spinner { background-color: $yellow-dark; }
+    &.connected.dark .spinner .spinner-gradient {
+      background-image: linear-gradient(-160deg, $grey20 10%, $grey20 35%, $yellow-dark 100%);
+    }
+
+    &.disconnected.dark .spinner { background-color: $green; }
+    &.disconnected.dark:hover .spinner { background-color: $green; }
+    &.disconnected.dark .spinner .spinner-gradient {
+      background-image: linear-gradient(-160deg, $grey20 10%, $grey20 35%, $green 100%);
+    }
+
+    &.connected .spinner { background-color: $yellow-dark; }
+    &.connected:hover .spinner { background-color: $yellow-dark; }
+    &.connected .spinner .spinner-gradient {
+      background-image: linear-gradient(-160deg, $grey92 10%, $grey92 35%, $yellow-dark 100%);
+    }
+
+    &.disconnected .spinner { background-color: $green; }
+    &.disconnected:hover .spinner { background-color: $green; }
+    &.disconnected .spinner .spinner-gradient {
+      background-image: linear-gradient(-160deg, $grey92 10%, $grey92 35%, $green 100%);
+    }
+
+    .spinner {
+      animation: spin 1s infinite linear;
+
+      .spinner-inner .power-icon { opacity: 0; }
+    }
+  }
+
+  .spinner {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .spinner-gradient {
+			width: 100%;
+			height: 100%;
+      position: absolute;
+      left: 24%;
+      background-color: $grey92;
+    }
+
+    .spinner-inner {
+      position: absolute;
+			width: 130px;
+			height: 130px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+			background-color: $grey92;
+			border-radius: 100%;
+
+      .power-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: -5px;
+          left: 0;
+          right: 0;
+          margin: auto;
+          width: 2px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+	100% { transform: rotate(360deg); }
 }

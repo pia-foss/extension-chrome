@@ -1,41 +1,37 @@
 import PropTypes from 'prop-types';
 import React, { Component, Fragment } from 'react';
-
 import {
   createSettingsData,
   getSetting,
   getTotalCount,
   getEnabledCount,
-} from 'data/settings';
-import { createSectionsData, getSection } from 'data/sections';
-import SettingSection from './SettingSection';
-import SettingItem from './SettingItem';
-import DebugSettingItem from './DebugSettingItem';
+} from '@data/settings';
+import withAppContext from '@hoc/withAppContext';
+import { createSectionsData, getSection } from '@data/sections';
+import SettingItem from '@component/SettingItem';
+import SettingSection from '@component/SettingSection';
+import DebugSettingItem from '@component/DebugSettingItem';
+import LanguageDropdown from '@component/LanguageDropdown';
 
 class SettingSections extends Component {
   constructor(props) {
     super(props);
 
-    const background = chrome.extension.getBackgroundPage();
-    this.app = background.app;
+    // properties
+    this.app = props.context.app;
+    this.languageDropdown = LanguageDropdown;
+    const { settings } = this.app.util;
+    this.state = {
+      sectionsData: createSectionsData({ t }),
+      settingsData: createSettingsData({ t, settings }),
+    };
 
-    // Bindings
+    // bindings
+    this.updateLanguage = this.updateLanguage.bind(this);
     this.onSettingChange = this.onSettingChange.bind(this);
     this.getSectionProps = this.getSectionProps.bind(this);
     this.getSettingProps = this.getSettingProps.bind(this);
-
-    // Initialization
-    const { settings, user } = this.app.util;
-    const { browser: browserType } = this.app.buildinfo;
-    this.state = {
-      sectionsData: createSectionsData({ t }),
-      settingsData: createSettingsData({
-        t,
-        user,
-        settings,
-        browser: browserType,
-      }),
-    };
+    this.languageDropdownBuilder = this.languageDropdownBuilder.bind(this);
   }
 
   onSettingChange(settingID, value) {
@@ -43,9 +39,7 @@ class SettingSections extends Component {
       return {
         settingsData: settingsData.map((setting) => {
           if (setting.settingID === settingID) {
-            return Object.assign({}, setting, {
-              value,
-            });
+            return Object.assign({}, setting, { value });
           }
 
           return setting;
@@ -70,6 +64,7 @@ class SettingSections extends Component {
 
   getSettingProps(settingID) {
     const { settingsData } = this.state;
+    const { changeTheme } = this.props;
     const {
       value,
       controllable,
@@ -93,22 +88,51 @@ class SettingSections extends Component {
       sectionName: section,
       key: settingID,
       checked: value,
+      changeTheme,
       onSettingChange: this.onSettingChange,
       available,
     };
   }
 
+  updateLanguage() {
+    const { settings } = this.app.util;
+    this.setState({
+      sectionsData: createSectionsData({ t }),
+      settingsData: createSettingsData({ t, settings }),
+    });
+  }
+
+  languageDropdownBuilder() {
+    const { context: { theme } } = this.props;
+    const LanguageDropDown = this.languageDropdown;
+
+    return (
+      <div className={`setting-item ${theme} noselect`}>
+        <div className="setting-item-label">
+          <label htmlFor="languages" className="controllable-setting languages noselect">
+            { t('UILanguage') }
+            <div className={`popover arrow-bottom ${theme} left-align`}>
+              { t('UILanguageTooltip') }
+            </div>
+          </label>
+        </div>
+        <div className="checkbox-container">
+          <LanguageDropDown updateLanguage={this.updateLanguage} />
+        </div>
+      </div>
+    );
+  }
+
   render() {
-    const {
-      props: { onDebugClick, languageDropdownBuilder },
-      state: { settingsData },
-    } = this;
+    const { settingsData } = this.state;
+    const { onDebugClick, context: { theme } } = this.props;
 
     return (
       <Fragment>
         <SettingSection {...this.getSectionProps('security')}>
           <SettingItem {...this.getSettingProps('blockadobeflash')} />
           <SettingItem {...this.getSettingProps('preventwebrtcleak')} />
+          <SettingItem {...this.getSettingProps('httpsUpgrade')} />
         </SettingSection>
         <SettingSection {...this.getSectionProps('privacy')}>
           <SettingItem {...this.getSettingProps('blockcamera')} />
@@ -125,16 +149,18 @@ class SettingSections extends Component {
           <SettingItem {...this.getSettingProps('blockreferer')} />
           <SettingItem {...this.getSettingProps('blockhyperlinkaudit')} />
           <SettingItem {...this.getSettingProps('blockutm')} />
+          <SettingItem {...this.getSettingProps('blockfbclid')} />
           <SettingItem {...this.getSettingProps('maceprotection')} />
         </SettingSection>
         <SettingSection {...this.getSectionProps('extension')}>
-          <SettingItem {...this.getSettingProps('allowExtensionNotifications')} />
-          <SettingItem {...this.getSettingProps('logoutOnClose')} />
+          <SettingItem onClick={this.app.util.settingsmanager.clearAndReapplySettings()} {...this.getSettingProps('allowExtensionNotifications')} />
+          <SettingItem {...this.getSettingProps('alwaysActive')} />
+          <SettingItem {...this.getSettingProps('darkTheme')} />
           <SettingItem {...this.getSettingProps('debugmode')} />
           { getSetting('debugmode', settingsData).value
-            && <DebugSettingItem onClick={onDebugClick} />
+            && <DebugSettingItem onClick={onDebugClick} theme={theme} />
           }
-          { languageDropdownBuilder() }
+          { this.languageDropdownBuilder() }
         </SettingSection>
       </Fragment>
     );
@@ -142,8 +168,9 @@ class SettingSections extends Component {
 }
 
 SettingSections.propTypes = {
+  context: PropTypes.object.isRequired,
+  changeTheme: PropTypes.func.isRequired,
   onDebugClick: PropTypes.func.isRequired,
-  languageDropdownBuilder: PropTypes.func.isRequired,
 };
 
-export default SettingSections;
+export default withAppContext(SettingSections);
