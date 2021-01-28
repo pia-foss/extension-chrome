@@ -15,18 +15,7 @@ const SettingsDisclaimer = ({ onDismiss, theme, whichDisclaimer }) => {
             role="button"
           />
         </div>
-      ) : (
-        <div className={`settings-disclaimer tile ${theme}`}>
-          <span className="disclaimer-contents">
-            {t("PersistentIncognitoDisclaimer")}
-          </span>
-          <div
-            className="disclaimer-dismiss"
-            onClick={onDismiss.bind(this, "incognito")}
-            role="button"
-          />
-        </div>
-      )}
+      ) : null }
     </div>
   );
 };

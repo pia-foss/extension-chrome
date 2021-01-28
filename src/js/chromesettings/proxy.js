@@ -67,6 +67,7 @@ class BrowserProxy extends ChromeSetting {
   async enable() {
     const didChange = !this.getEnabled();
     this.changing = true;
+    const key = app.util.regionlist.getPort();
     try {
       const {
         bypasslist,
@@ -78,7 +79,8 @@ class BrowserProxy extends ChromeSetting {
       const locations =  Object.values(regionlist.getRegions());
       //get dictionary
       const nodeDict = pacengine.getNodeDictFromLocations(
-        locations
+        locations,
+        key
       );
       const userRulesSmartLoc = smartlocation.getSmartLocationRules('smartLocationRules').map(loc =>{
         return {cc:loc.proxy.id,domain:loc.userRules,country:loc}
@@ -111,8 +113,8 @@ class BrowserProxy extends ChromeSetting {
             }
           }
       } else {
-
-        const port = settings.getItem('maceprotection') ? region.macePort : region.port;
+        
+        const port = region[key];
         const proxyRule = BrowserProxy.createProxyRule(region, port);
         value = {
               mode: 'fixed_servers',

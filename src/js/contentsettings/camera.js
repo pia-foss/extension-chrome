@@ -4,7 +4,7 @@ export default function (app) {
   const self = Object.create(ContentSetting(app, chrome.contentSettings.camera));
 
   self.settingID = 'blockcamera';
-  self.settingDefault = true;
+  self.settingDefault = false;
 
   self.applySetting = () => {
     return self._set({ setting: 'block' }).then(() => {

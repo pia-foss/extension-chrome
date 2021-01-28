@@ -1,0 +1,12 @@
+#onboarding-settings-page {
+  max-height: auto;
+  max-width: 270px;
+  margin: auto;
+  #onboarding-settings {
+    padding: 0;
+    color: $grey20;
+    background-color: $grey92;
+    border:1px solid #585D6F;
+    &.dark { color: $grey85; background-color: $grey20; }
+  }
+}

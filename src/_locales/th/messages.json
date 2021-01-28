@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "ส่วนขยายเบราว์เซอร์"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "ขอบคุณที่ติดตั้ง"
+  },
+  "StartSlide": {
+    "message": "มาเริ่มกันเลย"
+  },
+  "Step1": {
+    "message": "ขั้นตอนที่ 1 จาก 2"
+  },
+  "Step2": {
+    "message": "ขั้นตอนที่ 2 จาก 2"
+  },
+  "ChooseTheme": {
+    "message": "เลือกธีมของคุณ"
+  },
+  "EnableSetings": {
+    "message": "เปิดใช้งานฟีเจอร์เพิ่มเติม"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access มาพร้อมกับ "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "ธีมสีอ่อนและสีเข้มเพื่อให้เข้ากับรูปลักษณ์"
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "และการใช้งานของเบราว์เซอร์ของคุณ"
+  },
+  "OnBoardingStart": {
+    "message": "เริ่มต้น"
+  },
+  "WhiteTheme": {
+    "message": "ธีมสีอ่อน"
+  },
+  "Next": {
+    "message": "ถัดไป"
+  },
+  "Skip": {
+    "message": "ข้าม"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "ฟีเจอร์เพิ่มเติม"
+  },
+  "encounterMessage_1": {
+    "message": "ขอบคุณสำหรับความคิดเห็นของคุณ! หากคุณพบปัญหาทางเทคนิคใดๆ โปรด "
+  },
+  "encounterMessage_2": {
+    "message": "ติดต่อฝ่ายสนับสนุนของเรา "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "ให้คะแนนประสบการณ์ของคุณกับ PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "ขอบคุณสำหรับความคิดเห็นของคุณ! เราจะขอบคุณมากถ้าคุณสละเวลาให้คะแนนเราบน "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "ขอบคุณสำหรับความคิดเห็นของคุณ! หากคุณพบปัญหาทางเทคนิคใดๆ โปรด "
+  },
   "UILanguage": {
     "message": "ภาษา UI"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "บันทึกการแก้จุดบกพร่องว่างเปล่า"
@@ -387,7 +453,7 @@
     "message": "ข้อผิดพลาดในการยืนยันตัวตน"
   },
   "AuthFailMessage": {
-    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็วๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้"
+    "message": "หากคุณเปลี่ยนรหัสผ่านในเว็บไซต์ Private Internet Access เมื่อเร็วๆ นี้ การยืนยันตัวตนอีกครั้งด้วยส่วนเสริมอาจแก้ไขปัญหานี้ได้<br /><br />สำหรับความช่วยเหลือและการสนับสนุน โปรดติดต่อ<a href=\"https://privateinternetaccess.com/helpdesk\">ทีมสนับสนุน</a>ของเรา"
   },
   "AuthFailMessageSupportLead": {
     "message": "หากต้องการความช่วยเหลือและการสนับสนุน โปรดติดต่อ"

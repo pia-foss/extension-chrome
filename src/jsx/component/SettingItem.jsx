@@ -16,6 +16,8 @@ class SettingItem extends Component {
     this.toggle = this.toggle.bind(this);
     this.buildLabel = this.buildLabel.bind(this);
     this.buildWarningSpan = this.buildWarningSpan.bind(this);
+    this.i18n = this.app.util.i18n;
+
   }
 
   async toggle() {
@@ -83,14 +85,16 @@ class SettingItem extends Component {
       learnMore,
       controllable,
       learnMoreHref,
-      context: { theme },
+      
     } = this.props;
     const WarningSpan = this.buildWarningSpan;
     const target = learnMoreHref === '#' ? undefined : '_blank';
     const classNames = controllable ? 'controllable-setting' : 'uncontrollable-setting';
+    const theme = this.props.context.getTheme();
+    const lang = this.i18n.locale ? this.i18n.locale : 'en';
 
     return (
-      <div className={`${settingID}-item`}>
+      <div className={`${settingID}-item ${lang}`}>
         <a href={settingID} className="noselect">
           <label
             htmlFor={settingID}
@@ -126,15 +130,27 @@ class SettingItem extends Component {
       settingID,
       available,
       controllable,
-      context: { theme },
+      component,
     } = this.props;
+
+    const theme = this.props.context.getTheme();
+    const lang = this.i18n.locale ? this.i18n.locale : 'en';
 
     return (available)
       ? (
-        <div className={`setting-item ${theme} noselect`}>
+        <div className={`setting-item ${theme} noselect ${lang}`}>
           <div className="setting-item-label">
             { this.buildLabel() }
           </div>
+          {component == 'switch' ? <label className="switch">
+                <input id={settingID}
+                 theme={theme}
+                 checked={checked}
+                 disabled={!controllable}
+                 type="checkbox"
+                 onChange={this.toggle} ></input>
+                <span className="slider round"></span>
+          </label> :
           <Checkbox
             id={settingID}
             theme={theme}
@@ -142,7 +158,9 @@ class SettingItem extends Component {
             disabled={!controllable}
             onChange={this.toggle}
           />
+           }
         </div>
+      
       )
       : '';
   }
@@ -156,6 +174,7 @@ SettingItem.propTypes = {
   learnMoreHref: PropTypes.string,
   learnMore: PropTypes.string,
   controllable: PropTypes.bool,
+  component: PropTypes.string,
   warning: PropTypes.string,
   online: PropTypes.bool.isRequired,
   changeTheme: PropTypes.func.isRequired,

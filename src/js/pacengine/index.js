@@ -48,6 +48,7 @@ e.data.localIPsRE = ${engine.data.localIPsRE.toString()};\
 // Export complete stringified proxy.pac
 // The pac script needs to be self-contained as it cannot access outside data.
 // NOTE: You can eval and test the behaviour in your console using this:
+
 exports.exportPAC = function(defaultLocation, nodeDict, rules, pageExcludes) {
   rules = rules || [];
   pageExcludes = pageExcludes || [];
@@ -98,12 +99,14 @@ exports.getProxyStateByURL = function(url, host, rules) {
 // e.g. {"GB":"HTTPS 8.8.8.8:443;HTTPS 8.8.8.9:443","US":"HTTPS 2.2.2.2:443"}
 // parameter noExtras removes the HTTPS and port appendix
 exports.getNodeDictFromLocations = function(
-  locations
+  locations,
+  key
 ) {
     const nodeDict = {};
     locations.map(node => {
-        const {host, port,id} = node;
-        nodeDict[id] = `HTTPS ${host}:80`;
+        const {host,id} = node;
+        const port = node[key];
+        nodeDict[id] = `HTTPS ${host}:${port}`;
     });
   return nodeDict;
 };

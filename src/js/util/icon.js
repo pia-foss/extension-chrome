@@ -38,7 +38,7 @@ class Icon {
     const tabState = {
       isDefault: state === 'DEFAULT', // Only occurs if no rule did match
       isLocal: state === 'LOCAL', // Only true on local sites (including config.localDomains)
-      isDirect: state === 'OFF', 
+      isDirect: state === 'OFF',
       isRuleActive: false,
       customCountry: null
     };

@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "ملحق المتصفح"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "نشكرك على تثبيت"
+  },
+  "StartSlide": {
+    "message": "هيا لتعرف كيف تبدأ"
+  },
+  "Step1": {
+    "message": "خطوة 1 من 2"
+  },
+  "Step2": {
+    "message": "خطوة 2 من 2"
+  },
+  "ChooseTheme": {
+    "message": "اختر النُسق"
+  },
+  "EnableSetings": {
+    "message": "تمكين الميزات الإضافية"
+  },
+  "PrivateInternetComesWith": {
+    "message": "يأتي مع Private Internet Access "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "نُسق فاتحة وداكنة لتناسب مظهر "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "وشكل متصفحك"
+  },
+  "OnBoardingStart": {
+    "message": "هيا نبدأ"
+  },
+  "WhiteTheme": {
+    "message": "النُسق الفاتح"
+  },
+  "Next": {
+    "message": "التالي"
+  },
+  "Skip": {
+    "message": "تخطي"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "الميزات الإضافية"
+  },
+  "encounterMessage_1": {
+    "message": "شكرًا لك على ملاحظاتك! إذا واجهت أي مشاكل تقنية يرجى "
+  },
+  "encounterMessage_2": {
+    "message": "الاتصال بقسم الدعم "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "قيّم تجربتك مع PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "شكرًا لك على ملاحظاتك! سنكون ممتنين إذا منحتنا تقييمًا على "
+  },
+  "feedbackMessage_2": {
+    "message": "متجر Chrome Web"
+  },
+  "encountermessage_1": {
+    "message": "شكرًا لك على ملاحظاتك! إذا واجهت أي مشاكل تقنية يرجى "
+  },
   "UILanguage": {
     "message": "لغة واجهة المستخدم"
   },
@@ -84,7 +150,7 @@
     "message": "اكتب الرسائل في سجل تصحيح الأخطاء. اضغط مفتاح \"ctrl\" متبوعًا بمفتاح \"d\" لعرض سجل تصحيح الأخطاء."
   },
   "DarkTheme": {
-    "message": "سمة داكنة"
+    "message": "النُسق الداكن"
   },
   "DarkThemeTooltip": {
     "message": "مكّن السمة الداكنة للملحق لاستخدامه في البيئات ضعيفة الإضاءة"
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "وكيل IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "سجل تصحيح الأخطاء فارغ."
@@ -387,7 +453,7 @@
     "message": "خطأ في المصادقة"
   },
   "AuthFailMessage": {
-    "message": "إذا قمت بتغيير كلمة مرورك مؤخرًا على موقع Private Internet Access الإلكتروني فقد تحل عملية إعادة إجراء عملية المصادقة هذا الخطأ."
+    "message": "إذا قمت بتغيير كلمة مرورك مؤخرًا على موقع Private Internet Access الإلكتروني فقد تحل عملية إعادة إجراء عملية المصادقة هذا الخطأ.<br /><br />للحصول على المساعدة والدعم، اتصل بـ <a href=\"https://privateinternetaccess.com/helpdesk\">فريق الدعم</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "للمساعدة والدعم، اتصل بنا"
@@ -510,10 +576,10 @@
     "message": "جمع المناطق"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "لقد غيّرت Firefox مؤخرًا الطريقة التي تتعامل بها الملحقات الإضافية مع اتصال الوكيل. مطلوب الآن السماح بتشغيل الملحق الإضافي في Windows لتحديث إعدادات الوكيل."
+    "message": "لقد غيّرت Firefox مؤخرًا الطريقة التي تتعامل بها الملحقات الإضافية مع اتصالات الوكيل. مطلوب الآن السماح بتشغيل الملحق الإضافي في Windows لتحديث إعدادات الوكيل."
   },
   "PrivateBrowsingChangeDirections": {
-    "message": "يرجى زيارة الرابط أدناه لعرض صفحة الملحقات الإضافية. ثم اضغط فوق الملحق \"Private Internet Access\" لتعديل إعداداته. من هنا، قم بتغيير إعداد (تشغيل في نافذة خاصة) \"Run in Private Windows\" إلى (سماح) \"Allow\"."
+    "message": "يرجى زيارة الرابط أدناه لعرض صفحة ملحقاتك الإضافية. ثم اضغط فوق الملحق \"Private Internet Access\" لتعديل إعداداته. من هنا، قم بتغيير إعداد (تشغيل في نافذة خاصة) \"Run in Private Windows\" إلى (سماح) \"Allow\"."
   },
   "us": {
     "message": "الولايات المتحدة"

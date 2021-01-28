@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "浏览器扩展程序"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "感谢安装"
+  },
+  "StartSlide": {
+    "message": "让我们开始吧"
+  },
+  "Step1": {
+    "message": "第 1 步，共 2 步"
+  },
+  "Step2": {
+    "message": "第 2 步，共 2 步"
+  },
+  "ChooseTheme": {
+    "message": "选择主题"
+  },
+  "EnableSetings": {
+    "message": "启用额外功能"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access 配有"
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "浅色和深色主题以适应"
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "浏览器的外观和感觉"
+  },
+  "OnBoardingStart": {
+    "message": "开始体验"
+  },
+  "WhiteTheme": {
+    "message": "浅色主题"
+  },
+  "Next": {
+    "message": "下一步"
+  },
+  "Skip": {
+    "message": "跳过"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "额外功能"
+  },
+  "encounterMessage_1": {
+    "message": "感谢您的反馈意见！如果您遇到任何技术问题，请"
+  },
+  "encounterMessage_2": {
+    "message": "联系支持部门"
+  },
+  "JustInTimeDisclaimer": {
+    "message": "评价您的 PIA 使用体验"
+  },
+  "feedbackMessage_1": {
+    "message": "感谢您的反馈意见！如果您能在以下平台为我们评分，我们将不胜感激："
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "感谢您的反馈意见！如果您遇到任何技术问题，请"
+  },
   "UILanguage": {
     "message": "用户界面语言"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "代理 IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "调试日志为空。"
@@ -387,7 +453,7 @@
     "message": "身份验证错误"
   },
   "AuthFailMessage": {
-    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。"
+    "message": "如果您最近在 Private Internet Access 网站上更改了密码，则使用该扩展程序重新验证可能会修复此错误。<br /><br />如需帮助和支持，请联系我们的<a href=\"https://privateinternetaccess.com/helpdesk\">su支持团队</a>。"
   },
   "AuthFailMessageSupportLead": {
     "message": "如需获得帮助和支持，请联系我们的"

@@ -20,7 +20,7 @@ class SafeBrowsing extends ChromeSetting {
 
     // init
     this.settingID = 'blocksafebrowsing';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   onChange(details) {

@@ -6,6 +6,7 @@ const context = createContext({
   theme: 'dark',
   rebuildApp: () => {},
   updateTheme: () => {},
+  getTheme: () => {}
 });
 
 class AppContext {
@@ -17,6 +18,7 @@ class AppContext {
 
     // bindings
     this.updateTheme = this.updateTheme.bind(this);
+    this.getTheme = this.getTheme.bind(this);
     this.receiveMessage = this.receiveMessage.bind(this);
 
     // handle setting theme on extension body
@@ -46,6 +48,11 @@ class AppContext {
     this.rebuildApp();
   }
 
+  getTheme(){
+    const theme = this.app.util.settings.getItem('darkTheme');
+    return theme ? 'dark' : 'light';
+  }
+
   receiveMessage(message) {
     if (message.target !== this.id) { return false; }
     if (message.type !== 'refresh') { return false; }
@@ -62,6 +69,7 @@ class AppContext {
       theme: this.theme,
       rebuildApp: this.rebuildApp,
       updateTheme: this.updateTheme,
+      getTheme: this.getTheme
     };
   }
 }

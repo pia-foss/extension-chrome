@@ -24,26 +24,38 @@ function getSectionName(key) {
   }
 }
 
-function createSectionsData({ t }) {
-  return [
+function createSectionsData({ t },defaultArray) {
+  const sectionsArray = [
     {
       name: 'security',
+      defaultOpen:false,
       label: t('Security'),
     },
     {
       name: getSectionName('privacy'),
+      defaultOpen:false,
       label: t('Privacy'),
     },
     {
       name: getSectionName('tracking'),
+      defaultOpen:false,
       label: t('Tracking'),
     },
     {
       name: getSectionName('extension'),
+      defaultOpen:true,
       label: t('Extension'),
-    },
-  ];
+    }
+  ]
+    
+  if(defaultArray){
+    defaultArray.map((v,k) => {
+      sectionsArray[k].defaultOpen = v;
+    })
+  }
+  return sectionsArray;
 }
+
 
 function getSection(sectionKey, sectionData) {
   const sectionName = getSectionName(sectionKey);

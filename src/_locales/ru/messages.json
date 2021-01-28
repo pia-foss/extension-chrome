@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Расширение для браузера"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Благодарим за установку"
+  },
+  "StartSlide": {
+    "message": "Давайте приступим"
+  },
+  "Step1": {
+    "message": "ШАГ 1 ИЗ 2"
+  },
+  "Step2": {
+    "message": "ШАГ 2 ИЗ 2"
+  },
+  "ChooseTheme": {
+    "message": "Выберите тему"
+  },
+  "EnableSetings": {
+    "message": "Включить дополнительные функции"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access включает "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "светлую и темную темы под "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "оформление вашего браузера"
+  },
+  "OnBoardingStart": {
+    "message": "НАЧАТЬ"
+  },
+  "WhiteTheme": {
+    "message": "Светлая тема"
+  },
+  "Next": {
+    "message": "ДАЛЕЕ"
+  },
+  "Skip": {
+    "message": "ПРОПУСТИТЬ"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Дополнительные функции"
+  },
+  "encounterMessage_1": {
+    "message": "Благодарим за отзыв! Если у вас возникнут технические проблемы, "
+  },
+  "encounterMessage_2": {
+    "message": "обращайтесь в нашу службу поддержки "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Оцените свои впечатления от PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Благодарим за отзыв! Мы также будем благодарны, если вы оцените нас в "
+  },
+  "feedbackMessage_2": {
+    "message": "Интернет-магазине Chrome"
+  },
+  "encountermessage_1": {
+    "message": "Благодарим за отзыв! Если у вас возникнут технические проблемы, "
+  },
   "UILanguage": {
     "message": "Язык интерфейса"
   },
@@ -93,7 +159,7 @@
     "message": "IP-адрес"
   },
   "IpProxy": {
-    "message": "IP-адрес прокси"
+    "message": "IP-адрес VPN"
   },
   "DebugLogIsEmpty": {
     "message": "Журнал отладки пустой."
@@ -387,7 +453,7 @@
     "message": "Ошибка аутентификации."
   },
   "AuthFailMessage": {
-    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения."
+    "message": "Если вы недавно сменили пароль на веб-сайте Private Internet Access, эту ошибку можно исправить, повторно выполнив аутентификацию расширения.<br /><br />Если вам требуются помощь и поддержка обращайтесь в нашу <a href=\"https://privateinternetaccess.com/helpdesk\">службу поддержки</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Для получения справки и поддержки обращайтесь в нашу"

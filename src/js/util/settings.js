@@ -28,6 +28,7 @@ const ApplicationIDs = {
   MACE_PROTECTION: 'maceprotection',
   DEBUG_MODE: 'debugmode',
   REMEMBER_ME: 'rememberme',
+  FIRST_RUN: 'firstRun',
   DARK_THEME: 'darkTheme',
   HTTPS_UPGRADE: 'httpsUpgrade',
   ALWAYS_ON: 'alwaysActive',
@@ -140,6 +141,7 @@ class Settings {
    */
   async toggleApiSetting(setting) {
     const toggle = setting.isApplied() ? setting.clearSetting : setting.applySetting;
+    
     try {
       await toggle.call(setting);
     }
@@ -349,15 +351,15 @@ class Settings {
       },
       {
         settingID: ApplicationIDs.BLOCK_UTM,
-        settingDefault: true,
+        settingDefault: false,
       },
       {
         settingID: ApplicationIDs.BLOCK_FBCLID,
-        settingDefault: true,
+        settingDefault: false,
       },
       {
         settingID: ApplicationIDs.MACE_PROTECTION,
-        settingDefault: true,
+        settingDefault: false,
       },
       {
         settingID: ApplicationIDs.DEBUG_MODE,
@@ -368,17 +370,21 @@ class Settings {
         settingDefault: true,
       },
       {
+        settingID: ApplicationIDs.FIRST_RUN,
+        settingDefault: true,
+      },
+      {
         settingID: ApplicationIDs.DARK_THEME,
         settingDefault: true,
       },
       {
         settingID: ApplicationIDs.HTTPS_UPGRADE,
-        settingDefault: true,
+        settingDefault: false,
       },
       {
         settingID: ApplicationIDs.ALWAYS_ON,
         settingDefault: true,
-      },
+      }
     ];
   }
 }

@@ -22,7 +22,7 @@ import IpManager from '@util/ipmanager';
 import Microphone from '@contentsettings/microphone';
 import Camera from '@contentsettings/camera';
 import Location from '@contentsettings/location';
-import Flash from '@contentsettings/flash';
+// import Flash from '@contentsettings/flash';
 import ExtensionNotification from '@contentsettings/extension_notification';
 
 import HyperlinkAudit from '@chromesettings/hyperlinkaudit';
@@ -95,7 +95,7 @@ const self = Object.create(null);
   self.contentsettings.camera = new Camera(self);
   self.contentsettings.microphone = new Microphone(self);
   self.contentsettings.location = new Location(self);
-  self.contentsettings.flash = new Flash(self);
+  // self.contentsettings.flash = new Flash(self);
   self.contentsettings.extensionNotification = new ExtensionNotification(self);
 
   // attach chrome settings functions

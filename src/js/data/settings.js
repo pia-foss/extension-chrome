@@ -22,12 +22,12 @@ import { getSectionName } from '@data/sections';
  */
 function createSettingsData({ t, settings }) {
   const data = [
-    {
-      settingID: 'blockadobeflash',
-      section: getSectionName('security'),
-      label: t('BlockAdobeFlash'),
-      tooltip: t('AdobeFlashTooltip'),
-    },
+    // {
+    //   settingID: 'blockadobeflash',
+    //   section: getSectionName('security'),
+    //   label: t('BlockAdobeFlash'),
+    //   tooltip: t('AdobeFlashTooltip'),
+    // },
     {
       settingID: 'preventwebrtcleak',
       section: getSectionName('security'),

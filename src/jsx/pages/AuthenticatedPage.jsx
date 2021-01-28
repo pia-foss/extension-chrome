@@ -5,11 +5,13 @@ import Drawer from '@component/drawer/Drawer';
 import CompanyLogo from '@component/CompanyLogo';
 import withAppContext from '@hoc/withAppContext';
 import DrawerOutlet from '@component/drawer/DrawerOutlet';
-import SettingsDisclaimer from '@component/SettingsDisclaimer';
+import JustInTime from '@component/JustInTime';
 import DrawerHandle from '../component/drawer/DrawerHandle';
+import { AppProvider } from '@contexts/AppContext';
+import OnboardingPage from '@pages/OnboardingPage';
 
-const SETTINGS_DISCLAIMER_KEY = 'app::settingsDisclaimerDismissed';
-const INCOGNITO_DISCLAIMER_KEY = 'app::incognitoDisclaimerDismissed'
+const SETTINGS_DISCLAIMER_KEY = 'app::justInTimeDismissed';
+const INCOGNITO_DISCLAIMER_KEY = 'app::incognitoDisclaimerDismissed';
 
 class AuthenticatedPage extends Component {
   constructor(props) {
@@ -23,15 +25,8 @@ class AuthenticatedPage extends Component {
     this.storage = this.app.util.storage;
     this.settings = this.app.util.settings;
     this.regionlist = this.app.util.regionlist;
-    this.state = {
-      mode: '',
-      error: '',
-      drawerOpen: false,
-      enabled: this.proxy.enabled(),
-      tiles: this.storage.getItem('tiles'),
-      settingsDisclaimerDismissed: this.getSettingsDisclaimerDismissed('settings'),
-      incognitoDisclaimerDismissed: this.getSettingsDisclaimerDismissed('incognito'),
-    };
+    const theme = this.app.util.settings.getItem('darkTheme') ? 'dark' : 'light';
+   
 
     // bindings
     this.onToggleDrawer = this.onToggleDrawer.bind(this);
@@ -39,17 +34,31 @@ class AuthenticatedPage extends Component {
     this.toggleTileSaved = this.toggleTileSaved.bind(this);
     this.onToggleConnection = this.onToggleConnection.bind(this);
     this.handleProxyConnection = this.handleProxyConnection.bind(this);
-    this.getSettingsDisclaimerDismissed = this.getSettingsDisclaimerDismissed.bind(this);
-    this.dismissSettingsDisclaimer = this.dismissSettingsDisclaimer.bind(this);
-
+    this.updateFirstRun = this.updateFirstRun.bind(this);
+    this.buildContext = this.buildContext.bind(this);
+    this.updateTheme = props.context.updateTheme;
+    this.getTheme = props.context.getTheme;
+    this.getjustInTimeDismissedDismissed = this.getjustInTimeDismissedDismissed.bind(this);
+    this.dismissjustInTime = this.dismissjustInTime.bind(this);
+    this.state = {
+      mode: '',
+      error: '',
+      drawerOpen: false,
+      enabled: this.proxy.enabled(),
+      tiles: this.storage.getItem('tiles'),
+      firstRun: null,
+      context: this.buildContext(theme),
+      justInTimeDismissed: this.getjustInTimeDismissedDismissed(),
+      indexConnections: this.storage.getItem('connectionIndex')
+    };
     // default tiles
     const defaultTiles = [
       { name: 'RegionTile', saved: true },
+      { name: 'Ip', saved: true },
       { name: 'QuickConnect', saved: false },
-      { name: 'Subscription', saved: false },
       { name: 'QuickSettings', saved: false },
       { name: 'BypassRules', saved: false },
-      { name: 'Ip', saved: false },
+      { name: 'Subscription', saved: false },
     ];
 
     // ensure each tile from storage still exists
@@ -73,8 +82,12 @@ class AuthenticatedPage extends Component {
     // default tile data if no tile data found
     else { tiles = defaultTiles; }
 
+    // check if this is the first time being run
+    this.firstRun = this.app.util.settings.getItem('firstRun', true);
+
     // reset state.tiles
     this.state.tiles = tiles;
+    this.state.firstRun = this.firstRun;
   }
 
   onToggleDrawer() {
@@ -86,6 +99,11 @@ class AuthenticatedPage extends Component {
     // debounce the calls to the proxy handler by 175ms
     clearTimeout(this.debounce);
     this.debounce = setTimeout(() => { this.handleProxyConnection(); }, 175);
+  }
+
+  updateFirstRun() {
+    const firstRun = this.settings.getItem("firstRun");
+    this.setState({ firstRun });
   }
 
   onQuickConnect(regionId) {
@@ -103,43 +121,26 @@ class AuthenticatedPage extends Component {
       });
   }
 
-  getSettingsDisclaimerDismissed(what) {
-    const objValues ={
-      settings:SETTINGS_DISCLAIMER_KEY,
-      incognito:INCOGNITO_DISCLAIMER_KEY
-    }
+  getjustInTimeDismissedDismissed() {
     const { app: { util: { storage } } } = this;
     const value = storage.getItem(SETTINGS_DISCLAIMER_KEY);
     return value;
   }
 
 
-  dismissSettingsDisclaimer(what) {
+  dismissjustInTime(what) {
     const objValues ={
       settings:{
         value:SETTINGS_DISCLAIMER_KEY,
-        objState:{settingsDisclaimerDismissed: true}
-      },
-      incognito:{
-        value:INCOGNITO_DISCLAIMER_KEY,
-        objState:{incognitoDisclaimerDismissed: true}
+        objState:{justInTimeDismissed: false}
       }
     }
     const { app: { util: { storage } } } = this;
-    storage.setItem(objValues[what].value, true);
+    storage.setItem(objValues[what].value, false);
     this.setState(() => {
       return objValues[what].objState;
     });
   }
-  
-  //Here seems to be the problem
-  // dismissSettingsDisclaimer() {
-  //   const { app: { util: { storage } } } = this;
-  //   storage.setItem(SETTINGS_DISCLAIMER_KEY, true);
-  //   this.setState(() => {
-  //     return { settingsDisclaimerDismissed: true };
-  //   });
-  // }
 
   handleProxyConnection() {
     let promise;
@@ -151,6 +152,9 @@ class AuthenticatedPage extends Component {
 
     return promise
       .then((proxy) => {
+        if(!proxy.enabled()){
+          this.incrementIndexConnection();
+        }
         // artificial delay to allow animation to shine
         setTimeout(() => { this.setState({ enabled: proxy.enabled(), mode: '' }); }, 500);
       })
@@ -158,6 +162,15 @@ class AuthenticatedPage extends Component {
         debug(err);
         this.error = t('UnknownProxyError');
       });
+  }
+
+  incrementIndexConnection(){
+    let connectionIndex = this.storage.getItem('connectionIndex') ? this.storage.getItem('connectionIndex') : 0;
+    if(connectionIndex == 10){
+      this.storage.setItem(SETTINGS_DISCLAIMER_KEY, true);
+      this.setState({justInTimeDismissed:true});
+    }
+    this.storage.setItem('connectionIndex' ,connectionIndex += 1);
   }
 
   toggleTileSaved(name, saved) {
@@ -174,15 +187,35 @@ class AuthenticatedPage extends Component {
     this.setState({ tiles: filteredTiles });
   }
 
+  buildContext(newTheme) {
+    const {
+      app,
+      updateTheme,
+      getTheme,
+      updateFirstRun,
+      rebuildApp,
+    } = this;
+    return {
+      app,
+      theme: newTheme,
+      updateTheme,
+      getTheme,
+      updateFirstRun,
+      rebuildApp,
+    };
+  }
+
   render() {
     const {
       mode,
       tiles,
       enabled,
       drawerOpen,
-      settingsDisclaimerDismissed,
-      incognitoDisclaimerDismissed
+      firstRun,
+      context,
+      justInTimeDismissed
     } = this.state;
+
     const { context: { theme } } = this.props;
     let { error } = this.state;
     let connection = enabled ? 'connected' : 'disconnected';
@@ -197,6 +230,15 @@ class AuthenticatedPage extends Component {
     // filter tiles
     const savedTiles = tiles.filter((tile) => { return tile.saved; });
     const unsavedTiles = tiles.filter((tile) => { return !tile.saved; });
+
+    // if a user never loged in  the app he is redirected to the onboarding page
+    if (firstRun) {
+      return (
+        <AppProvider value={context} >
+          <OnboardingPage updateFirstRun= {this.updateFirstRun} />
+        </AppProvider>
+      );
+    }
 
     return (
       <div id="authenticated-page" className="row">
@@ -214,18 +256,10 @@ class AuthenticatedPage extends Component {
             />
           </div>
           
-          { !settingsDisclaimerDismissed && (
-            <SettingsDisclaimer
+          { justInTimeDismissed && (
+            <JustInTime
               whichDisclaimer={'settingDisclaimer'}
-              onDismiss={this.dismissSettingsDisclaimer}
-              theme={theme}
-            />
-          ) }
-
-          { !incognitoDisclaimerDismissed && (
-            <SettingsDisclaimer
-              whichDisclaimer={'incognitoDisclaimer'}
-              onDismiss={this.dismissSettingsDisclaimer}
+              onDismiss={this.dismissjustInTime}
               theme={theme}
             />
           ) }

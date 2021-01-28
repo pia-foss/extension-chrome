@@ -20,7 +20,7 @@ class AutoFill extends ChromeSetting {
 
     // init
     this.settingID = 'blockautofill';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   // eslint-disable-next-line class-methods-use-this

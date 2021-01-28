@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Extensión de navegador"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Gracias por instalar"
+  },
+  "StartSlide": {
+    "message": "Empecemos"
+  },
+  "Step1": {
+    "message": "PASO 1 DE 2"
+  },
+  "Step2": {
+    "message": "PASO 2 DE 2"
+  },
+  "ChooseTheme": {
+    "message": "Elige tu tema"
+  },
+  "EnableSetings": {
+    "message": "Habilitar características adicionales"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access incluye "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "temas oscuros y claros para adaptarse  "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "al aspecto de tu escritorio."
+  },
+  "OnBoardingStart": {
+    "message": "EMPEZAR"
+  },
+  "WhiteTheme": {
+    "message": "Tema claro"
+  },
+  "Next": {
+    "message": "SIGUIENTE"
+  },
+  "Skip": {
+    "message": "OMITIR"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Características adicionales"
+  },
+  "encounterMessage_1": {
+    "message": "Gracias por tus comentarios. Si encuentras algún problema técnico, "
+  },
+  "encounterMessage_2": {
+    "message": "ponte en contacto con el departamento de atención al cliente. "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Valora tu experiencia con PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Gracias por tus comentarios. Te agradeceríamos que pudieras valorarnos en "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "Gracias por tus comentarios. Si encuentras algún problema técnico, "
+  },
   "UILanguage": {
     "message": "Idioma de la interfaz"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "IP de proxy"
+    "message": "IP de VPN"
   },
   "DebugLogIsEmpty": {
     "message": "El registro de depuración está vacío."
@@ -387,7 +453,7 @@
     "message": "Error de autenticación"
   },
   "AuthFailMessage": {
-    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema."
+    "message": "Si has cambiado hace poco tu contraseña en el sitio web de Private Internet Access website, prueba a volver a autenticar con la extensión para corregir el problema.<br /><br />Para obtener ayuda y asistencia, ponte en contacto con nuestro <a href=\"https://privateinternetaccess.com/helpdesk\">equipo de asistencia</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Para obtener ayuda y asistencia, ponte en contacto con nuestro"

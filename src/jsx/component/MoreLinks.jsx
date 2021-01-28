@@ -22,6 +22,7 @@ class MoreLinks extends Component {
     this.openAccount = this.openAccount.bind(this);
     this.openSupport = this.openSupport.bind(this);
     this.openSettings = this.openSettings.bind(this);
+    this.openExtraFeatures = this.openExtraFeatures.bind(this);
     this.displayDropdown = this.displayDropdown.bind(this);
     this.documentClickListener = this.documentClickListener.bind(this);
   }
@@ -49,6 +50,10 @@ class MoreLinks extends Component {
 
   openSettings() {
     if (this.user.getLoggedIn()) { this.history.push('/settings'); }
+  }
+
+  openExtraFeatures() {
+    if (this.user.getLoggedIn()) { this.history.push('/extrafeatures'); }
   }
 
   openAccount() {
@@ -91,6 +96,18 @@ class MoreLinks extends Component {
 
         <div className={`more-links-dropdown ${open ? 'open' : ''}`}>
           <ul>
+            <li>
+              <div
+                role="button"
+                tabIndex="-1"
+                className={`${this.user.getLoggedIn() ? '' : 'disabled'}`}
+                onClick={this.openExtraFeatures}
+                onKeyPress={this.openExtraFeatures}
+              >
+                { t('ChangeExtraFeaturesSettings') }
+              </div>
+            </li>
+
             <li>
               <div
                 role="button"

@@ -1,0 +1,111 @@
+.just-in-time {
+  position: relative;
+  padding: 5px 5px 5px 15px;
+  font-size: 15px;
+  background-color: $grey85;
+  color:$grey20;
+
+ 
+  .response-message {
+    padding: 3px;
+    font-size: 14px;
+    a {
+      cursor: pointer;
+      &:hover {
+        color:#1c581b;
+      }
+      &:link {
+        text-decoration: underline;
+      }
+    }
+    &.dark {
+      a {
+        cursor: pointer;
+        &:hover {
+          color: $green-light;
+        }
+        &:link {
+          text-decoration: underline;
+        }
+      }
+    }
+    
+    &.pt_BR {
+      font-size: 12px;
+      padding-right: 30px;
+    }
+    
+    &.ja{
+      font-size: 12px;
+      padding-right: 30px;
+    }
+
+    &.es{
+      font-size: 12px;
+      padding-right: 30px;
+    }
+
+    &.da {
+      font-size: 13px;
+      padding-right: 25px;
+    }
+
+    &.th{
+      font-size: 13px;
+      padding-right: 25px;
+    }
+
+    &.zh_TW {
+      font-size: 13px;
+      padding-right: 25px;
+    }
+
+    &.zh_CN {
+      font-size: 13px;
+      padding-right: 25px;
+    }
+    
+    &.ar {
+      font-size: 13px;
+      padding-right: 25px;
+    }
+
+    &.ko {
+      font-size: 13px;
+      padding-right: 25px;
+    }
+    
+  }
+
+
+  .just-in-time-contents {
+    margin-top: 7px;
+  }
+
+  .just-in-time-start {
+    margin-top: 7px;
+    margin-left: -5px;
+    cursor: pointer;
+  }
+
+  .just-in-time-dismiss {
+    position: absolute;
+    right: 15px;
+    top: 9px;
+    height: 18px;
+    width: 18px;
+    background-image: url("../images/delete@2x.png");
+    background-size: 15px;
+    background-repeat: no-repeat;
+  }
+
+  &.dark {
+    color: $grey92;
+    background-color: #22252e;
+  }
+
+  .tr {
+    font-size: 13px;
+  }
+  
+}

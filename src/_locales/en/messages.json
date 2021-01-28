@@ -1,4 +1,52 @@
 {
+  "JustInTimeDisclaimer":{
+    "message": "Rate your experience with PIA"
+  },
+  "encounterMessage_1":{
+    "message":"Thank you for your feedback! If you encounter any technical problems please "
+  },
+  "encounterMessage_2":{
+    "message":"contact the support department "
+  },
+  "feedbackMessage_1":{
+    "message":"Thank you for your feedback! We would appreciate it if rate us on "
+  },
+  "feedbackMessage_2":{
+    "message":"Chrome Web Store"
+  },
+  "FirstSlideInstallThanks":{
+    "message":"Thanks for installing the"
+  },
+  "PrivateInternetAccess":{
+    "message":"Private Internet Access"
+  },
+  "BrowserMessage":{
+    "message":"Browser Extension"
+  },
+  "StartSlide":{
+    "message":"Let's get you started"
+  },
+  "Step1":{
+    "message":"STEP 1 OF 2"
+  },
+  "Step2":{
+    "message":"STEP 2 OF 2"
+  },
+  "ChooseTheme":{
+    "message":"Choose yout theme"
+  },
+  "EnableSetings":{
+    "message":"Enable Extra Features"
+  },
+  "PrivateInternetComesWith":{
+    "message":"Private Internet Access comes with "
+  },
+  "LightAndDarkDisclaimer":{
+    "message":"light and dark themes to fit the look "
+  },
+  "LookOfBrowserDisclaimer":{
+    "message":"and feel of your browser"
+  },
   "UILanguage": {
     "message": "UI Language"
   },
@@ -59,6 +107,9 @@
   "FingerprintProtectionDisable": {
     "message": "Disable"
   },
+  "OnBoardingStart":{
+    "message":"GET STARTED"
+  },
   "FingerprintProtectionAfterword": {
     "message": "This setting can also be changed from the \"Extension Settings\" panel after logging into the extension."
   },
@@ -84,7 +135,16 @@
     "message": "Write messages to the debug log. Press the 'ctrl' key followed by the 'd' key to show the debug log."
   },
   "DarkTheme": {
-    "message": "Dark theme"
+    "message": "Dark Theme"
+  },
+  "WhiteTheme": {
+    "message": "Light Theme"
+  },
+  "Next":{
+    "message":"NEXT"
+  },
+  "Skip":{
+    "message":"SKIP"
   },
   "DarkThemeTooltip": {
     "message": "Enable a darker theme for the extension to use in low light conditions"
@@ -93,7 +153,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "The debug log is empty."
@@ -355,6 +415,9 @@
   },
   "ChangeExtensionSettings": {
     "message": "Extension Settings"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Extra Features"
   },
   "CannotUsePIAMessage": {
     "message": "Private Internet Access cannot be used because another extension is controlling your browsers proxy settings."

@@ -20,7 +20,7 @@ class ThirdPartyCookies extends ChromeSetting {
 
     // init
     this.settingID = 'blockthirdpartycookies';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   // eslint-disable-next-line class-methods-use-this

@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "ブラウザ拡張機能"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "インストールありがとうございます:"
+  },
+  "StartSlide": {
+    "message": "さあ、始めましょう"
+  },
+  "Step1": {
+    "message": "ステップ 2中1"
+  },
+  "Step2": {
+    "message": "ステップ 2中2"
+  },
+  "ChooseTheme": {
+    "message": "テーマを選択します"
+  },
+  "EnableSetings": {
+    "message": "追加機能を有効にします"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Accessには"
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "ブラウザの外観とフィールに合うライトおよびダークテーマが"
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "搭載されています:"
+  },
+  "OnBoardingStart": {
+    "message": "始める"
+  },
+  "WhiteTheme": {
+    "message": "ライトテーマ"
+  },
+  "Next": {
+    "message": "次へ"
+  },
+  "Skip": {
+    "message": "スキップ"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "追加機能"
+  },
+  "encounterMessage_1": {
+    "message": "フィードバックをありがとうございます！技術的問題に遭遇した場合は"
+  },
+  "encounterMessage_2": {
+    "message": "サポート部門までお問い合わせください"
+  },
+  "JustInTimeDisclaimer": {
+    "message": "PIAの使用感を評価してください"
+  },
+  "feedbackMessage_1": {
+    "message": "フィードバックをありがとうございます！評価していただければ幸いです:"
+  },
+  "feedbackMessage_2": {
+    "message": "Chromeウェブストア"
+  },
+  "encountermessage_1": {
+    "message": "フィードバックをありがとうございます！技術的問題に遭遇した場合は"
+  },
   "UILanguage": {
     "message": "UI言語"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "プロキシ IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "デバッグログが空です。"
@@ -387,7 +453,7 @@
     "message": "認証エラー"
   },
   "AuthFailMessage": {
-    "message": "最近Private Internet Accessウェブサイトのパスワードを変更した方は、このエラーを拡張機能で再認証することより解決できる場合があります。"
+    "message": "最近Private Internet Accessのウェブサイトでパスワードを変更した場合は、拡張機能を使用して再認証すると、このエラーが修正される場合があります。<br/> <br/>ヘルプとサポートについては、<a href=\"https://privateinternetaccess.com/helpdesk\">サポートチーム</a>までお問い合わせください。"
   },
   "AuthFailMessageSupportLead": {
     "message": "ヘルプとサポートが必要な方は"
@@ -510,7 +576,7 @@
     "message": "地域を収集しています"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefoxは最近アドオンのプロキシ接続対処方法を変更しました。プロキシ設定をアップデートするには、プライベートウィンドウでのアドオン実行の許可が必要となりました。"
+    "message": "Firefoxは最近、アドオンがプロキシ接続を処理する方法を変更しました。プロキシ設定を更新するには、アドオンをプライベートウィンドウで実行できるようにする必要があります。"
   },
   "PrivateBrowsingChangeDirections": {
     "message": "下のURLを訪問し、アドオンページを表示してください。次に「Private Internet Access」アドオンをクリックして設定を変更します。そこから、「プライベートウィンドウで実行」設定を「許可」に変更します。"

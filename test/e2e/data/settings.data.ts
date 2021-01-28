@@ -49,12 +49,12 @@ function createData(): SettingData[] {
       settingID: 'blockautofilladdress',
       expectedDefault: true,
     },
-    {
-      sectionName: 'security',
-      settingName: 'blockAdobeFlashCheckbox',
-      settingID: 'blockadobeflash',
-      expectedDefault: true,
-    },
+    // {
+    //   sectionName: 'security',
+    //   settingName: 'blockAdobeFlashCheckbox',
+    //   settingID: 'blockadobeflash',
+    //   expectedDefault: false,
+    // },
     {
       sectionName: 'security',
       settingName: 'preventWebRtcLeak',

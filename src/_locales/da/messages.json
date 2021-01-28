@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Browserforlængelse"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Tak fordi du installerede"
+  },
+  "StartSlide": {
+    "message": "Lad os få dig i gang"
+  },
+  "Step1": {
+    "message": "TRIN 1 AF 2"
+  },
+  "Step2": {
+    "message": "TRIN 2 AF 2"
+  },
+  "ChooseTheme": {
+    "message": "Vælg dit tema"
+  },
+  "EnableSetings": {
+    "message": "Aktiver ekstra funktioner"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access kommer med "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "lyse og mørke temaer, der passer til udseendet "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "og fornemmelsen af din browser"
+  },
+  "OnBoardingStart": {
+    "message": "KOM I GANG"
+  },
+  "WhiteTheme": {
+    "message": "Lyst tema"
+  },
+  "Next": {
+    "message": "NÆSTE"
+  },
+  "Skip": {
+    "message": "SPRING OVER"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Ekstra funktioner"
+  },
+  "encounterMessage_1": {
+    "message": "Tak for din feedback! Hvis du støder på tekniske problemer, bedes du "
+  },
+  "encounterMessage_2": {
+    "message": "kontakte supportafdelingen "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Bedøm din oplevelse med PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Tak for din feedback! Vi ville sætte pris på det, hvis du bedømte os på "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "Tak for din feedback! Hvis du støder på tekniske problemer, bedes du "
+  },
   "UILanguage": {
     "message": "Grænsefladesprog"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy-IP"
+    "message": "VPN-IP"
   },
   "DebugLogIsEmpty": {
     "message": "Denne fejlretningslogfil er tom."
@@ -387,7 +453,7 @@
     "message": "Autentifikationsfejl"
   },
   "AuthFailMessage": {
-    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl."
+    "message": "Hvis du for nylig har ændret din adgangskode på webstedet Private Internet Access, kan genautentifikation med forlængelsen rette op på denne fejl. <br /><br />For hjælp og support, kan du kontakte vores <a href=\"https://privateinternetaccess.com/helpdesk\">supportteam</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "For hjælp og support kontakt vores"
@@ -510,10 +576,10 @@
     "message": "Indhenter regioner"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefox har for nylig ændret måden addons håndterer proxy-forbindelse. Tilladelse af addon til at køre i Private Windows er nu påkrævet for at proxyindstillinger kan opdateres."
+    "message": "Firefox har for nylig ændret måden addons håndterer proxy-forbindelser. Tilladelse af addon til at køre i Private Windows er nu påkrævet for at proxyindstillinger kan opdateres."
   },
   "PrivateBrowsingChangeDirections": {
-    "message": "Besøg webadressen nedenfor, for at se din addons-side. Klik derefter på \"Private Internet Access\"-addon for at ændre dens indstillinger. Herfra ændrer du indstillingen \"Kør i Private Windows\" til \"Tillad\""
+    "message": "Besøg webadressen nedenfor, for at se din addons-side. Klik derefter på \"Private Internet Access\"-addon for at ændre dens indstillinger. Herfra ændrer du indstillingen \"Kør i Private Windows\" til \"Tillad\"."
   },
   "us": {
     "message": "USA"

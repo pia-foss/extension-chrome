@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Estensione browser"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Grazie per aver installato"
+  },
+  "StartSlide": {
+    "message": "Iniziamo"
+  },
+  "Step1": {
+    "message": "PASSAGGIO 1 DI 2"
+  },
+  "Step2": {
+    "message": "PASSAGGIO 2 DI 2"
+  },
+  "ChooseTheme": {
+    "message": "Scegli il tuo tema"
+  },
+  "EnableSetings": {
+    "message": "Abilita funzioni extra"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access include "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "i temi chiaro e scuro a seconda dello stile "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "che vuoi dare al tuo browser"
+  },
+  "OnBoardingStart": {
+    "message": "INIZIA"
+  },
+  "WhiteTheme": {
+    "message": "Tema chiaro"
+  },
+  "Next": {
+    "message": "AVANTI"
+  },
+  "Skip": {
+    "message": "SALTA"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Funzioni extra"
+  },
+  "encounterMessage_1": {
+    "message": "Grazie per il feedback! In caso di problemi tecnici, "
+  },
+  "encounterMessage_2": {
+    "message": "contatta l'assistenza "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Valuta la tua esperienza con PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Grazie per il feedback! Ci piacerebbe che ci valutassi su "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "Grazie per il feedback! In caso di problemi tecnici, "
+  },
   "UILanguage": {
     "message": "Lingua IU"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy IP"
+    "message": "IP VPN"
   },
   "DebugLogIsEmpty": {
     "message": "L'archivio di debug è vuoto."
@@ -387,7 +453,7 @@
     "message": "Errore di autenticazione."
   },
   "AuthFailMessage": {
-    "message": "Se hai recentemente cambiato la password sul sito web Private Internet Access, la riautenticazione con l'estensione dovrebbe correggere l'errore.href=\"https://privateinternetaccess.com/helpdesk\">support team</a>."
+    "message": "Se hai recentemente cambiato la password sul sito web Private Internet Access, la riautenticazione con l'estensione dovrebbe correggere l'errore.<br /><br />Per assistenza, contatta il nostro<a href=\"https://privateinternetaccess.com/helpdesk\">team dedicato</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Per guida e assistenza, contatta il nostro"
@@ -510,7 +576,7 @@
     "message": "Regioni di raccolta"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefox ha appena cambiato il modo in cui gli addon gestiscono la connessione proxy: ora è obbligatorio consentire l'avvio dell'addon su finestre private affinché le impostazioni proxy siano caricate."
+    "message": "Firefox ha appena cambiato il modo in cui gli addon gestiscono le connessioni proxy: ora è obbligatorio consentire l'avvio dell'addon su finestre private affinché le impostazioni proxy siano aggiornate."
   },
   "PrivateBrowsingChangeDirections": {
     "message": "Visita l'URL a seguito per visualizzare la tua pagina di addon, quindi clicca sull'addon \"Private Internet Access\" per modificarne le impostazioni. Da qui, cambia a \"Consenti\" l'impostazione \"Avvia su finestre private\"."

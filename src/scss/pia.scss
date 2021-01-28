@@ -40,7 +40,7 @@
 @import "component/tiles/QuickConnect";
 @import "component/tiles/QuickSettings";
 @import "component/tiles/Subscription";
-@import "component/SettingsDisclaimer";
+@import "component/JustInTime";
 @import "component/tiles/BypassRules";
 @import "component/tiles/Ip";
 
@@ -52,7 +52,10 @@
 @import "pages/UpgradePage";
 @import "pages/DebugLogPage";
 @import "pages/LoginPage";
+@import "pages/OnboardingPage";
 @import "pages/SettingsPage";
+@import "pages/ExtraFeaturesPage";
+@import "pages/OnboardingSettingsPage";
 @import "pages/UncontrollablePage";
 @import "pages/RegionOverridePage";
 @import "pages/SmartLocationPage";
@@ -146,7 +149,9 @@ input, button, select, textarea {
   padding: 6px 12px;
   line-height: 1.428571429;
   user-select: none;
+  background-color: #1E2025;
 }
+
 
 // this is in all the i18n css files
 // not sure if this is used anywhere

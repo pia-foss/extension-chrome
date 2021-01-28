@@ -2,11 +2,11 @@ import isDev from '@helpers/isDev';
 
 function getLegacyInfo() {
   return [
-    { key: 'app::settingsDisclaimerDismissed', type: 'bool' },
-    { key: 'app::incognitoDisclaimerDismissed', type: 'bool' },
+    { key: 'app::justInTimeDismissed', type: 'bool' },
     { key: 'form:password', type: 'string' },
     { key: 'form:username', type: 'string' },
     { key: 'showFavorites', type: 'bool' },
+    { key: 'connectionIndex', type: 'number' },
     { key: 'sortby', type: 'string' },
     { key: 'visibleISOs', type: 'object' },
     { key: 'favoriteregions', type: 'string' },
@@ -27,7 +27,7 @@ function getLegacyInfo() {
     { key: 'smartLocationRules', type: 'object' },
     { key: 'regionlist::override', type: 'object' },
     { key: 'settings:allowExtensionNotifications', type: 'bool' },
-    { key: 'settings:blockadobeflash', type: 'bool' },
+    // { key: 'settings:blockadobeflash', type: 'bool' },
     { key: 'settings:blockautofill', type: 'bool' },
     { key: 'settings:blockautofilladdress', type: 'bool' },
     { key: 'settings:blockautofillcreditcard', type: 'bool' },
@@ -48,6 +48,7 @@ function getLegacyInfo() {
     { key: 'settings:maceprotection', type: 'bool' },
     { key: 'settings:preventwebrtcleak', type: 'bool' },
     { key: 'settings:rememberme', type: 'bool' },
+    { key: 'settings:firstRun', type: 'bool' },
     { key: 'tiles', type: 'object' },
   ];
 }

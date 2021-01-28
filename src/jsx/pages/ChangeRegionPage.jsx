@@ -19,7 +19,7 @@ class ChangeRegionPage extends Component {
     this.state = {
       search: '',
       mode: 'render',
-      sortBy: this.storage.getItem('sortby') || 'name',
+      sortBy: this.storage.getItem('sortby') || 'latency',
       showFavorites: !!this.storage.getItem('showFavorites'),
     };
 
@@ -89,6 +89,14 @@ class ChangeRegionPage extends Component {
         <div className={`region-sort-selection ${theme}`}>
           <button
             type="button"
+            data-value="latency"
+            onClick={this.changeSortBy}
+            className={`latency ${sortBy === 'latency' ? 'active' : ''}`}
+          >
+            { t('RegionLatency') }
+          </button>
+          <button
+            type="button"
             data-value="name"
             onClick={this.changeSortBy}
             className={`name ${sortBy === 'name' ? 'active' : ''}`}
@@ -96,14 +104,6 @@ class ChangeRegionPage extends Component {
             { t('RegionName') }
           </button>
 
-          <button
-            type="button"
-            data-value="latency"
-            onClick={this.changeSortBy}
-            className={`latency ${sortBy === 'latency' ? 'active' : ''}`}
-          >
-            { t('RegionLatency') }
-          </button>
 
           { this.renderFavorite() }
         </div>

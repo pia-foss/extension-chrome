@@ -10,6 +10,7 @@ class RegionList {
     this.testHost = this.testHost.bind(this);
     this.testPort = this.testPort.bind(this);
     this.getPotentialRegions = this.getPotentialRegions.bind(this);
+    this.getPort = this.getPort.bind(this);
     this.getPotentialHosts = this.getPotentialHosts.bind(this);
     this.getPotentialPorts = this.getPotentialPorts.bind(this);
     this.initialOverrideRegions = this.initialOverrideRegions.bind(this);
@@ -216,6 +217,12 @@ class RegionList {
 
   getRegion(id) {
     return this.getRegions()[id];
+  }
+
+  getPort(){
+    const { util: { settings } } = app;
+    const key = settings.getItem('maceprotection') ? 'macePort' : 'port';
+    return key;
   }
 
   /**

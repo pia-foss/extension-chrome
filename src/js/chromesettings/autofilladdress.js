@@ -25,7 +25,7 @@ class AutoFillAddress extends ChromeSetting {
       this.settingDefault = false;
     }
     else {
-      this.settingDefault = true;
+      this.settingDefault = false;
     }
   }
 

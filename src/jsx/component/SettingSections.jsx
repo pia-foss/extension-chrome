@@ -50,13 +50,14 @@ class SettingSections extends Component {
 
   getSectionProps(sectionKey) {
     const { sectionsData, settingsData } = this.state;
-    const { name, label } = getSection(sectionKey, sectionsData);
+    const { name, label, defaultOpen } = getSection(sectionKey, sectionsData);
     const enabledCount = getEnabledCount(sectionKey, settingsData);
     const totalCount = getTotalCount(sectionKey, settingsData);
 
     return {
       name,
       label,
+      defaultOpen,
       enabledCount,
       totalCount,
     };
@@ -129,29 +130,6 @@ class SettingSections extends Component {
 
     return (
       <Fragment>
-        <SettingSection {...this.getSectionProps('security')}>
-          <SettingItem {...this.getSettingProps('blockadobeflash')} />
-          <SettingItem {...this.getSettingProps('preventwebrtcleak')} />
-          <SettingItem {...this.getSettingProps('httpsUpgrade')} />
-        </SettingSection>
-        <SettingSection {...this.getSectionProps('privacy')}>
-          <SettingItem {...this.getSettingProps('blockcamera')} />
-          <SettingItem {...this.getSettingProps('blockmicrophone')} />
-          <SettingItem {...this.getSettingProps('blocklocation')} />
-          <SettingItem {...this.getSettingProps('blocknetworkprediction')} />
-          <SettingItem {...this.getSettingProps('blocksafebrowsing')} />
-          <SettingItem {...this.getSettingProps('blockautofillcreditcard')} />
-          <SettingItem {...this.getSettingProps('blockautofilladdress')} />
-          <SettingItem {...this.getSettingProps('blockautofill')} />
-        </SettingSection>
-        <SettingSection {...this.getSectionProps('tracking')}>
-          <SettingItem {...this.getSettingProps('blockthirdpartycookies')} />
-          <SettingItem {...this.getSettingProps('blockreferer')} />
-          <SettingItem {...this.getSettingProps('blockhyperlinkaudit')} />
-          <SettingItem {...this.getSettingProps('blockutm')} />
-          <SettingItem {...this.getSettingProps('blockfbclid')} />
-          <SettingItem {...this.getSettingProps('maceprotection')} />
-        </SettingSection>
         <SettingSection {...this.getSectionProps('extension')}>
           <SettingItem onClick={this.app.util.settingsmanager.clearAndReapplySettings()} {...this.getSettingProps('allowExtensionNotifications')} />
           <SettingItem {...this.getSettingProps('alwaysActive')} />

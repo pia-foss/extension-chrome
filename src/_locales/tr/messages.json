@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Tarayıcı Uzantısı"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Teşekkürler! Şunu yüklediniz:"
+  },
+  "StartSlide": {
+    "message": "Başlamanıza yardımcı olalım"
+  },
+  "Step1": {
+    "message": "Adım 1/2"
+  },
+  "Step2": {
+    "message": "Adım 2/2"
+  },
+  "ChooseTheme": {
+    "message": "Temanızı seçin"
+  },
+  "EnableSetings": {
+    "message": "Ek Özellikleri Etkinleştirin"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access, tarayıcınızın "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "görünüm ve hissiyatına uyacak "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "açık ve koyu temalar içerir"
+  },
+  "OnBoardingStart": {
+    "message": "KULLANIMA BAŞLAYIN"
+  },
+  "WhiteTheme": {
+    "message": "Açık Tema"
+  },
+  "Next": {
+    "message": "İLERİ"
+  },
+  "Skip": {
+    "message": "ATLA"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Ek Özellikler"
+  },
+  "encounterMessage_1": {
+    "message": "Geri bildiriminiz için teşekkürler! Herhangi teknik bir sorunla karşılaşırsanız lütfen "
+  },
+  "encounterMessage_2": {
+    "message": "destek birimiyle iletişime geçin "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "PIA ile yaşadığınız deneyimi değerlendirin"
+  },
+  "feedbackMessage_1": {
+    "message": "Geri bildiriminiz için teşekkürler! Bizi şurada değerlendirirseniz seviniriz: "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Mağazası"
+  },
+  "encountermessage_1": {
+    "message": "Geri bildiriminiz için teşekkürler! Herhangi teknik bir sorunla karşılaşırsanız lütfen "
+  },
   "UILanguage": {
     "message": "Arayüz Dili"
   },
@@ -84,7 +150,7 @@
     "message": "Mesajları hata ayıklama günlüğüne yazın. Hata ayıklama günlüğünü açmak önce 'ctrl' tuşuna ve ardından 'd' tuşuna basın."
   },
   "DarkTheme": {
-    "message": "Koyu tema"
+    "message": "Koyu Tema"
   },
   "DarkThemeTooltip": {
     "message": "Düşük ışık koşullarında kullanmak üzere uzantı için daha koyu bir temayı etkinleştirin"
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Vekil Sunucu IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "Hata ayıklama günlüğü boş."
@@ -387,7 +453,7 @@
     "message": "Kimlik doğrulama hatası"
   },
   "AuthFailMessage": {
-    "message": "Private Internet Access web sitesinde parolanızı yakın zamanda değiştirdiyseniz, uzantı ile yeniden kimlik doğrulayarak giriş yapmak bu hatayı düzeltebilir."
+    "message": "Private Internet Access web sitesinde parolanızı yakın zamanda değiştirdiyseniz, uzantı ile yeniden kimlik doğrulayarak giriş yapmak bu hatayı düzeltebilir. <br /><br />Yardım ve destek almak için, <a href=\"https://privateinternetaccess.com/helpdesk\">destek ekibimizle</a> iletişime geçin."
   },
   "AuthFailMessageSupportLead": {
     "message": "Yardım ve destek için başvuracağınız yer,"
@@ -510,7 +576,7 @@
     "message": "Bölgeler Alınıyor"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefox, kısa süre önce eklentilerin vekil sunucu bağlantısını idare ediş şeklini değiştirdi. Şu anda eklentinin Özel Pencerelerde çalışmasına izin verebilmeniz için vekil sunucu ayarlarının güncellenmesi gerekiyor."
+    "message": "Firefox, kısa süre önce eklentilerin vekil sunucu bağlantılarını idare ediş şeklini değiştirdi. Şu anda eklentinin Özel Pencerelerde çalışmasına izin verebilmeniz için vekil sunucu ayarlarının güncellenmesi gerekiyor."
   },
   "PrivateBrowsingChangeDirections": {
     "message": "Eklentiler sayfanızı görüntülemek için lütfen aşağıdaki URL'yi ziyaret edin. Ardından \"Private Internet Access\" eklentisine tıklayarak ayarlarını değiştirin. Buradan \"Run in Private Windows\" ayarını \"İzin Ver\" olarak belirleyin."

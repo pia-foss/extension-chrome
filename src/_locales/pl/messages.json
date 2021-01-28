@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Rozszerzenie przeglądarki"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Dziękujemy za zainstalowanie"
+  },
+  "StartSlide": {
+    "message": "Zaczynamy"
+  },
+  "Step1": {
+    "message": "KROK 1 Z 2"
+  },
+  "Step2": {
+    "message": "KROK 2 Z 2"
+  },
+  "ChooseTheme": {
+    "message": "Wybierz motyw"
+  },
+  "EnableSetings": {
+    "message": "Włącz dodatkowe funkcje"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access jest dostępny z "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "motywami jasnymi i ciemnymi, które możesz "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "dopasować do grafiki swojej przeglądarki"
+  },
+  "OnBoardingStart": {
+    "message": "ZACZYNAJMY"
+  },
+  "WhiteTheme": {
+    "message": "Motyw jasny"
+  },
+  "Next": {
+    "message": "DALEJ"
+  },
+  "Skip": {
+    "message": "POMIŃ"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Dodatkowe funkcje"
+  },
+  "encounterMessage_1": {
+    "message": "Dziękujemy za opinię! W razie problemów technicznych "
+  },
+  "encounterMessage_2": {
+    "message": "skontaktuj się z naszym działem obsługi "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Oceń swoje doświadczenia z PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Dziękujemy za opinię! Będziemy wdzięczni, jeśli zechcesz nas ocenić w "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "Dziękujemy za opinię! W razie problemów technicznych "
+  },
   "UILanguage": {
     "message": "Język IU"
   },
@@ -84,7 +150,7 @@
     "message": "Zapisz komunikaty w dzienniku debugowania. Wciśnij klawisze „ctrl” i „d”, aby wyświetlić dziennik debugowania."
   },
   "DarkTheme": {
-    "message": "Ciemny motyw"
+    "message": "Motyw ciemny"
   },
   "DarkThemeTooltip": {
     "message": "Użyj ciemniejszego motywu w tym rozszerzeniu, aby móc z niego korzystać przy słabszym oświetleniu"
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "IP serwera proxy"
+    "message": "IP VPN-u"
   },
   "DebugLogIsEmpty": {
     "message": "Dziennik debugowania jest pusty"
@@ -387,7 +453,7 @@
     "message": "Uwierzytelnianie"
   },
   "AuthFailMessage": {
-    "message": "Jeśli niedawno zmieniono hasło w witrynie Private Internet Access, ponowne uwierzytelnienie przez rozszerzenie może naprawić ten błąd."
+    "message": "Jeśli niedawno zmieniono hasło w witrynie Private Internet Access, ponowne uwierzytelnienie przez rozszerzenie może naprawić ten błąd. <br /><br />Aby uzyskać pomoc, skontaktuj się z naszym help and support, contact our <a href=\"https://privateinternetaccess.com/helpdesk\">działem obsługi</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Aby uzyskać pomoc i wsparcie techniczne, skontaktuj się z"
@@ -510,10 +576,10 @@
     "message": "Zbieranie regionów"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefox ostatnio zmienił sposób obsługi połączeń z serwerem proxy przez dodatki rozszerzające. umożliwiając ich działanie w prywatnym oknie Teraz ustawienia serwera proxy wymagają obecnie aktualizacji."
+    "message": "Firefox ostatnio zmienił sposób obsługi połączeń z serwerem proxy przez dodatki, umożliwiając działanie dodatku w prywatnym oknie, co powoduje teraz konieczność aktualizacji ustawień serwera proxy."
   },
   "PrivateBrowsingChangeDirections": {
-    "message": "Odwiedź poniższy adres URL, aby wyświetlić stronę z dodatkami. Następnie kliknij dodatek \"Private Internet Access\", aby zmienić jego ustawienia. Tam zmień \"Uruchamiaj w prywatnym Oknie\" na \" Zezwól\"."
+    "message": "Odwiedź poniższy adres URL, aby wyświetlić stronę ze swoimi dodatkami. Następnie kliknij dodatek \"Private Internet Access\", aby zmienić tutaj jego ustawienia. Tam zmień \"Uruchamiaj w prywatnym Oknie\" na \"Zezwól\"."
   },
   "us": {
     "message": "Stany Zjednoczone"

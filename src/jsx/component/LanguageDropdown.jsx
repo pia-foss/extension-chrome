@@ -57,7 +57,8 @@ class LanguageDropdown extends Component {
   }
 
   render() {
-    const { context: { theme } } = this.props;
+    const theme = this.props.context.getTheme();
+
     return (
       <div className={`languages-container ${theme} dropdown`}>
         <select

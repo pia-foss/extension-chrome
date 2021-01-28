@@ -4,7 +4,7 @@ export default function (app) {
   const self = Object.create(ContentSetting(app, chrome.contentSettings.location));
 
   self.settingID = 'blocklocation';
-  self.settingDefault = true;
+  self.settingDefault = false;
 
   self.applySetting = () => {
     return self._set({setting: 'block'})

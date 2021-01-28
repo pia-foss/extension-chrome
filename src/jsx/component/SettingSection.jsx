@@ -12,11 +12,23 @@ class SettingsSection extends Component {
     this.i18n = this.app.util.i18n;
     // bindings
     this.toggleSection = this.toggleSection.bind(this);
+    this.toggleDefaultSection = this.toggleDefaultSection.bind(this);
   }
 
   toggleSection() {
     const { open } = this.state;
     this.setState({ open: !open });
+  }
+
+  toggleDefaultSection(){
+    const { defaultOpen } = this.props;
+    if(defaultOpen){
+      this.toggleSection()
+    }
+  }
+
+  componentDidMount () {
+    this.toggleDefaultSection();
   }
 
   render() {
@@ -27,8 +39,10 @@ class SettingsSection extends Component {
       enabledCount,
       totalCount,
       children,
-      context: { theme },
+      
     } = this.props;
+    // this.toggleDefaultSection();
+    const theme = this.props.context.getTheme();
     const lang = this.i18n.locale ? this.i18n.locale : 'en';
 
     return (
@@ -57,7 +71,7 @@ class SettingsSection extends Component {
           </div>
         </div>
 
-        <div className="section-body">
+        <div className={`section-body ${lang}`}>
           { children }
         </div>
       </div>

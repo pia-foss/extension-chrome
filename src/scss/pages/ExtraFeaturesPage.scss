@@ -1,0 +1,35 @@
+#extra-features-page {
+  max-height: 580px;
+  overflow: auto;
+
+  #extra-features {
+    padding: 0;
+    color: $grey20;
+    background-color: $grey92;
+
+    &.dark { color: $grey85; background-color: $grey20; }
+
+    .panelfooter {
+      width: 100%;
+      font-size: 10px;
+      text-align: center;
+      overflow: auto;
+      padding: 10px 5px;
+
+      .buildinfo {
+        text-align: left;
+        padding: 5px 0px 0px 0px;
+        width: fit-content;
+        margin: auto;
+
+        .title {
+          width: 50px;
+          font-weight: bold;
+          display: inline-block;
+          // the next line is necessary to stop a hover clipping bug in chrome
+          float: left;
+        }
+      }
+    }
+  }
+}

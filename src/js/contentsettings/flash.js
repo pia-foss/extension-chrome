@@ -3,13 +3,12 @@ import ContentSetting from '@contentsettings/contentsetting';
 export default function (app) {
   const self = Object.create(ContentSetting(app, chrome.contentSettings.plugins));
 
-  self.settingID = 'blockadobeflash';
-  self.settingDefault = true;
+  // self.settingID = 'blockadobeflash';
+  // self.settingDefault = false;
 
   self.applySetting = () => {
     return self._set({
-      setting: 'block',
-      resourceIdentifier: { id: 'adobe-flash-player' },
+      setting: 'block'
     }).then(() => {
       debug(`flash.js: block ok`);
       return self;

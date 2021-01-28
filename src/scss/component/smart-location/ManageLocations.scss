@@ -1,297 +1,342 @@
 .user-rules {
-  
-    .button-container{
-        display: flex;
-        flex-wrap: wrap;
-        .smart-location-h3{
-            font-size: 15px;
-        }
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 45px;
-            height: 22px;
-            left:120px;
-            margin-top: 13px;
-          }
-          
-          .switch input { 
-            opacity: 0;
-            width: 0;
-            height: 0;
-          }
-          
-          .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-          }
-          
-          .slider:before {
-            position: absolute;
-            content: "";
-            height: 13px;
-            width: 13px;
-            left: 3px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-          }
-          
-          input:checked + .slider {
-            background-color: $green;
-          }
-          
-          input:focus + .slider {
-            box-shadow: 0 0 1px #2196F3;
-          }
-          
-          input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-          }
-          
-          /* Rounded sliders */
-          .slider.round {
-            border-radius: 34px;
-          }
-          
-          .slider.round:before {
-            border-radius: 50%;
-          }
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    .smart-location-h3 {
+      font-size: 15px;
     }
-    .add-container-smart-location {
-   
-    
-      &.dark {
-        .add-rule-input {
-          color: $white;
-          background-color: $grey20;
-          border: 1px solid $grey15;
-  
-          &:hover, &:focus { border: 1px solid darken($grey20, 10%); }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 22px;
+      left: 120px;
+      margin-top: 13px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 13px;
+      width: 13px;
+      left: 3px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: $green;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+  }
+  .add-container-smart-location {
+    &.dark {
+      .add-rule-input {
+        color: $white;
+        background-color: $grey20;
+        border: 1px solid $grey15;
+
+        &:hover,
+        &:focus {
+          border: 1px solid darken($grey20, 10%);
         }
-      }
-  
-      .add-rule-input{
-        margin: 0 auto;
-        width: 100%;
-        height: 35px;
-        padding: 5px 10px;
-        font-size: 10pt;
-        border: 1px solid $grey85; 
-        outline: none;
-        border-radius: 3px;
-  
-        &:disabled { background-color: $grey55; }
-        &:hover, &:focus { border: 1px solid darken($grey85, 10%); }
-      }
-      .add-rule-input-error{
-        margin: 0 auto;
-        width: 100%;
-        height: 35px;
-        padding: 5px 10px;
-        font-size: 10pt;
-        border:1px solid #ff0000; 
-        outline: none;
-        border-radius: 3px;
-  
-        &:disabled { background-color: $grey55; }
-        &:hover, &:focus { border: 1px solid darken($grey85, 10%); }
-      }
-      .country-lists{
-          //  display: flex;
-           margin-top: 10px;
-           .countries{
-            margin: 0 auto;
-            width: 100%;
-            height: 35px;
-            padding: 5px 10px;
-            font-size: 10pt;
-            border: 1px solid $grey85;
-            outline: none;
-            border-radius: 3px;
-            &:disabled { background-color: $grey55; }
-            &:hover, &:focus { border: 1px solid darken($grey85, 10%); }
-            margin-bottom: 30px;
-           }
-           .buttons{
-            margin-top: 10px;
-            margin-left: 100px;
-             .add-rule-btn {
-               width: 36px;
-               height: 32px;
-               border-radius: 100px;
-               background-color: $green-dark20;
-               border: 0;
-               color: $white;
-               font-size: 21px;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               margin-left: 150px;
-               outline: none;
-         
-               &:disabled, &:hover:disabled { background-color: $grey55; }
-         
-               &:hover, &:active, &:focus { background: $green-dark50; }
-         
-               > p {
-                 pointer-events: none;
-                 margin: 0;
-               }
-             }
-             .edit-delete{
-                display:flex;
-               .edit-btn-rule{
-                span{
-                  width: 15px;
-                  height: 10px;
-                  outline: none;
-                  background-image: url('../images/baseline_edit_white_18dp.png');
-                  background-size: 11px;
-                  background-position: 2px 0;
-                  background-repeat: no-repeat;
-                  display: inline-block;
-                  cursor: pointer;
-                 }
-                 width: 36px;
-                 height: 32px;
-                 border-radius: 100px;
-                 background-color: $blue;
-                 border: 0;
-                 color: $white;
-                 font-size: 30px;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 margin-left: 110px; 
-                //  margin: 0 10px 0 15px;
-                 outline: none;
-           
-                 &:disabled, &:hover:disabled { background-color: $grey55; }
-           
-                 &:hover, &:active, &:focus { background: $edit-dark; }
-           
-                 > p {
-                   pointer-events: none;
-                   margin: 0;
-                 }
-               }
-               .delete-btn-rule{
-                span{
-                  width: 15px;
-                  height: 10px;
-                  outline: none;
-                  background-image: url('../images/baseline_delete_white_18dp.png');
-                  background-size: 11px;
-                  background-position: 2px 0;
-                  background-repeat: no-repeat;
-                  display: inline-block;
-                  cursor: pointer;
-                 }
-                 width: 36px;
-                 height: 32px;
-                 border-radius: 100px;
-                 background-color: $red;
-                 border: 0;
-                 color: $white;
-                 font-size: 21px;
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 margin-left:5px;
-                //  margin: 0 10px 0 15px;
-                 outline: none;
-           
-                 &:disabled, &:hover:disabled { background-color: $grey55; }
-           
-                 &:hover, &:active, &:focus { background: $red-dark; }
-           
-                 > p {
-                   pointer-events: none;
-                   margin: 0;
-                 }
-               }
-             }
-           }
       }
     }
-  
-    .rule-list {
-      padding: 2px 10px 2px 10px;
+
+    .add-rule-input {
+      margin: 0 auto;
+      width: 100%;
+      height: 35px;
+      padding: 5px 10px;
       font-size: 10pt;
       border: 1px solid $grey85;
-      border-radius: 3px;
       outline: none;
-      height: 133px;
-      overflow-y: auto;
+      border-radius: 3px;
+
+      &:disabled {
+        background-color: $grey55;
+      }
+      &:hover,
+      &:focus {
+        border: 1px solid darken($grey85, 10%);
+      }
+    }
+    .add-rule-input-error {
+      margin: 0 auto;
       width: 100%;
+      height: 35px;
+      padding: 5px 10px;
+      font-size: 10pt;
+      border: 1px solid #ff0000;
+      outline: none;
+      border-radius: 3px;
+
+      &:disabled {
+        background-color: $grey55;
+      }
+      &:hover,
+      &:focus {
+        border: 1px solid darken($grey85, 10%);
+      }
+    }
+    .country-lists {
+      //  display: flex;
       margin-top: 10px;
-  
-      &.dark { border: 1px solid $grey15; }
-  
-      &.disabled { background-color: $grey55; }
-    }
-
-    &.fr, &.it, &.pl, &.es{
-      .button-container {
-        .smart-location-h3{
-          font-size: 13px;
+      .countries {
+        margin: 0 auto;
+        width: 100%;
+        height: 35px;
+        padding: 5px 10px;
+        font-size: 10pt;
+        border: 1px solid $grey85;
+        outline: none;
+        border-radius: 3px;
+        &:disabled {
+          background-color: $grey55;
         }
-        .switch {
-          left:100px;
+        &:hover,
+        &:focus {
+          border: 1px solid darken($grey85, 10%);
         }
+        margin-bottom: 30px;
       }
-    }
+      .buttons {
+        margin-top: 10px;
+        margin-left: 100px;
+        .add-rule-btn {
+          width: 36px;
+          height: 32px;
+          border-radius: 100px;
+          background-color: $green-dark20;
+          border: 0;
+          color: $white;
+          font-size: 21px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 150px;
+          outline: none;
 
-    &.ru, &.pt_BR {
-      .button-container {
-        .smart-location-h3{
-          font-size: 13px;
-        }
-        .switch {
-          left:90px;
-        }
-      }
-    }
-    
-    &.zh_TW, &.zh_CN, &.ar {
-      .button-container {
-        .smart-location-h3{
-          font-size: 13px;
-        }
-        .switch {
-          left:190px;
-        }
-      }
-    }
+          &:disabled,
+          &:hover:disabled {
+            background-color: $grey55;
+          }
 
-    &.ko {
-      .button-container {
-        .smart-location-h3{
-          font-size: 13px;
-        }
-        .switch {
-          left:170px;
-        }
-      }
-    }
+          &:hover,
+          &:active,
+          &:focus {
+            background: $green-dark50;
+          }
 
-    *.ja {
-      .button-container {
-        .switch {
-          left:140px;
+          > p {
+            pointer-events: none;
+            margin: 0;
+          }
+        }
+        .edit-delete {
+          display: flex;
+          .edit-btn-rule {
+            span {
+              width: 15px;
+              height: 10px;
+              outline: none;
+              background-image: url("../images/baseline_edit_white_18dp.png");
+              background-size: 11px;
+              background-position: 2px 0;
+              background-repeat: no-repeat;
+              display: inline-block;
+              cursor: pointer;
+            }
+            width: 36px;
+            height: 32px;
+            border-radius: 100px;
+            background-color: $blue;
+            border: 0;
+            color: $white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 110px;
+            //  margin: 0 10px 0 15px;
+            outline: none;
+
+            &:disabled,
+            &:hover:disabled {
+              background-color: $grey55;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+              background: $edit-dark;
+            }
+
+            > p {
+              pointer-events: none;
+              margin: 0;
+            }
+          }
+          .delete-btn-rule {
+            span {
+              width: 15px;
+              height: 10px;
+              outline: none;
+              background-image: url("../images/baseline_delete_white_18dp.png");
+              background-size: 11px;
+              background-position: 2px 0;
+              background-repeat: no-repeat;
+              display: inline-block;
+              cursor: pointer;
+            }
+            width: 36px;
+            height: 32px;
+            border-radius: 100px;
+            background-color: $red;
+            border: 0;
+            color: $white;
+            font-size: 21px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 5px;
+            //  margin: 0 10px 0 15px;
+            outline: none;
+
+            &:disabled,
+            &:hover:disabled {
+              background-color: $grey55;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+              background: $red-dark;
+            }
+
+            > p {
+              pointer-events: none;
+              margin: 0;
+            }
+          }
         }
       }
     }
   }
-  
+
+  .rule-list {
+    padding: 2px 10px 2px 10px;
+    font-size: 10pt;
+    border: 1px solid $grey85;
+    border-radius: 3px;
+    outline: none;
+    height: 133px;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 10px;
+
+    &.dark {
+      border: 1px solid $grey15;
+    }
+
+    &.disabled {
+      background-color: $grey55;
+    }
+  }
+
+  &.fr,
+  &.it,
+  &.pl,
+  &.es {
+    .button-container {
+      .smart-location-h3 {
+        font-size: 13px;
+      }
+      .switch {
+        left: 100px;
+      }
+    }
+  }
+
+  &.ru,
+  &.pt_BR {
+    .button-container {
+      .smart-location-h3 {
+        font-size: 13px;
+      }
+      .switch {
+        left: 90px;
+      }
+    }
+  }
+
+  &.zh_TW,
+  &.zh_CN,
+  &.ar {
+    .button-container {
+      .smart-location-h3 {
+        font-size: 13px;
+      }
+      .switch {
+        left: 190px;
+      }
+    }
+  }
+
+  &.ko {
+    .button-container {
+      .smart-location-h3 {
+        font-size: 13px;
+      }
+      .switch {
+        left: 170px;
+      }
+    }
+  }
+
+  *.ja {
+    .button-container {
+      .switch {
+        left: 140px;
+      }
+    }
+  }
+}

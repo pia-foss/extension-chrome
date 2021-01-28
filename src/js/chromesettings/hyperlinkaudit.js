@@ -20,7 +20,7 @@ class HyperLinkAudit extends ChromeSetting {
 
     // init
     this.settingID = 'blockhyperlinkaudit';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   onChange(details) {

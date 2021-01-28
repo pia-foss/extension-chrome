@@ -20,7 +20,7 @@ class NetworkPrediction extends ChromeSetting {
 
     // init
     this.settingID = 'blocknetworkprediction';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   onChange(details) {

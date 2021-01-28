@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Extension de navigateur"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Merci d'avoir installé"
+  },
+  "StartSlide": {
+    "message": "On vous aide à démarrer"
+  },
+  "Step1": {
+    "message": "ÉTAPE 1 SUR 2"
+  },
+  "Step2": {
+    "message": "ÉTAPE 2 SUR 2"
+  },
+  "ChooseTheme": {
+    "message": "Choisissez votre thème"
+  },
+  "EnableSetings": {
+    "message": "Activer les fonctionnalités supplémentaires"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access comprend "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "Un thème clair et sombre pour s'adapter "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "à l'apparence de votre navigateur"
+  },
+  "OnBoardingStart": {
+    "message": "COMMENCER"
+  },
+  "WhiteTheme": {
+    "message": "Thème clair"
+  },
+  "Next": {
+    "message": "SUIVANT"
+  },
+  "Skip": {
+    "message": "PASSER"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Fonctionnalités supplémentaires"
+  },
+  "encounterMessage_1": {
+    "message": "Merci pour vos commentaires ! Si vous rencontrez des problèmes techniques, veuillez "
+  },
+  "encounterMessage_2": {
+    "message": "contacter le département d'assistance "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Évaluez votre expérience avec PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Merci pour vos commentaires ! Nous vous serions reconnaissants si vous nous évalueriez sur "
+  },
+  "feedbackMessage_2": {
+    "message": "le Chrome Web Stor"
+  },
+  "encountermessage_1": {
+    "message": "Merci pour vos commentaires ! Si vous rencontrez des problèmes techniques, veuillez "
+  },
   "UILanguage": {
     "message": "Langue de l'interface"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "IP du proxy"
+    "message": "IP VPN"
   },
   "DebugLogIsEmpty": {
     "message": "Le journal de débogage est vide."
@@ -387,7 +453,7 @@
     "message": "Erreur d'authentification"
   },
   "AuthFailMessage": {
-    "message": "Si vous avez récemment modifié votre mot de passe sur le site web Private Internet Access, une réauthentification avec l'extension pourrait réparer l'erreur."
+    "message": "Si vous avez récemment modifié votre mot de passe sur le site web Private Internet Access, une réauthentification avec l'extension pourrait réparer l'erreur. <br /><br />Pour obtenir de l'aide et bénéficier d'une assistance, contactez notre <a href=\"https://privateinternetaccess.com/helpdesk\">équipe d'assistance</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Pour obtenir de l'aide et de l'assistance, contactez notre"
@@ -510,7 +576,7 @@
     "message": "Collecte des régions"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefox a récemment changé la façon dont les modules gèrent la connexion au proxy. Autoriser le module à s'exécuter en fenêtre privée est désormais obligatoire pour que les paramètres de proxy soient mis à jour."
+    "message": "Firefox a récemment changé la façon dont les modules gèrent les connexions au proxy. Autoriser le module à s'exécuter en fenêtre privée est désormais obligatoire pour que les paramètres de proxy soient mis à jour."
   },
   "PrivateBrowsingChangeDirections": {
     "message": "Veuillez visiter l'URL ci-dessous pour voir la page de vos modules. Puis, cliquez sur le module « Private Internet Access » pour modifier ses paramètres. Ensuite, changez le paramètre de « Exécuter en fenêtre privée » en « Autoriser »."

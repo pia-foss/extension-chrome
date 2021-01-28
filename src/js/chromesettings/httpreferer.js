@@ -20,7 +20,7 @@ class HttpReferer extends ChromeSetting {
 
     // init
     this.settingID = 'blockreferer';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   onChange(details) {

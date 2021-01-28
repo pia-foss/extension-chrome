@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Browser-Erweiterung"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Danke für die Installation der"
+  },
+  "StartSlide": {
+    "message": "Los geht's"
+  },
+  "Step1": {
+    "message": "SCHRITT 1 VON 2"
+  },
+  "Step2": {
+    "message": "SCHRITT 2 VON 2"
+  },
+  "ChooseTheme": {
+    "message": "Wählen Sie Ihr Design"
+  },
+  "EnableSetings": {
+    "message": "Zusätzliche Funktionen aktivieren"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access kommt im "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "hellen und dunklen Design passend zum Aussehen "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "und Gefühl Ihres Browsers"
+  },
+  "OnBoardingStart": {
+    "message": "LOS GEHT'S"
+  },
+  "WhiteTheme": {
+    "message": "Helles Design"
+  },
+  "Next": {
+    "message": "WEITER"
+  },
+  "Skip": {
+    "message": "ÜBERSPRINGEN"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Zusätzliche Funktionen"
+  },
+  "encounterMessage_1": {
+    "message": "Danke für Ihr Feedback! Falls Sie auf technische Probleme stoßen "
+  },
+  "encounterMessage_2": {
+    "message": "kontaktieren Sie den Support "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Bewerten Sie Ihre Erfahrung mit PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Danke für Ihr Feedback! Wir begrüßen Ihre Bewertung im "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "Danke für Ihr Feedback! Falls Sie auf technische Probleme stoßen "
+  },
   "UILanguage": {
     "message": "Sprache (Benutzeroberfläche)"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy-IP"
+    "message": "VPN-IP"
   },
   "DebugLogIsEmpty": {
     "message": "Die Debug-Chronik ist leer."
@@ -387,7 +453,7 @@
     "message": "Authentifizierungsfehler"
   },
   "AuthFailMessage": {
-    "message": "Wenn Sie vor Kurzem Ihr Passwort auf der Website von Private Internet Access geändert haben, könnte eine erneute Authentifizierung mit der Erweiterung diesen Fehler beheben.<br /><br />Bitte kontaktieren Sie unseren <a href=\"https://privateinternetaccess.com/helpdesk\">Kundendienst</a>, wenn Sie Hilfe benötigen."
+    "message": "Wenn Sie vor Kurzem Ihr Passwort auf der Website von Private Internet Access geändert haben, könnte eine erneute Authentifizierung mit der Erweiterung diesen Fehler beheben.<br /><br />Bitte wenden Sie sich für Hilfe und Unterstützung an unseren <a href=\"https://privateinternetaccess.com/helpdesk\">Support</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Hilfe und Unterstützung erhalten Sie von unserem"
@@ -486,10 +552,10 @@
     "message": "ALLE EINSTELLUNGEN ANZEIGEN..."
   },
   "trial": {
-    "message": "Proef"
+    "message": "Testversion"
   },
   "days_left": {
-    "message": "dagen over"
+    "message": "Tage übrig"
   },
   "Subscription": {
     "message": "ABONNEMENT"

@@ -1,5 +1,36 @@
 __HEAD__
 
+__v.2.4.4__
+
+* Added translations for onboarding and just in time
+
+__v.2.4.3__
+
+* Just in time (rating system)
+
+__v.2.3.2__
+
+* Hotfix for mace
+
+__v.2.3.1__
+
+* Changed port for smart location
+
+__v.2.3.0__
+
+* Adobe flash functionality is no more
+* Added new light theme background and some styles for onboarding
+* Added onboarding screen for new users
+* Added new tab for extra features 
+* IpTile is default true
+* Settings are now default false when extension is installed
+* No more warnings for new users
+* Latency is the default tab
+
+__v2.2.8__
+
+* More translations.
+
 __v2.2.7__
 
 * Translations and css changes for some of them.

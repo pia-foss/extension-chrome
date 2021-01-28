@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "Browserextensie"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "Bedankt voor het installeren van de"
+  },
+  "StartSlide": {
+    "message": "Laten we beginnen"
+  },
+  "Step1": {
+    "message": "STAP 1 VAN 2"
+  },
+  "Step2": {
+    "message": "STAP 2 VAN 2"
+  },
+  "ChooseTheme": {
+    "message": "Kies uw thema"
+  },
+  "EnableSetings": {
+    "message": "Extra functies inschakelen"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access wordt geleverd met "
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "lichte en donkere thema's die passen bij "
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "uw browser"
+  },
+  "OnBoardingStart": {
+    "message": "AAN DE SLAG"
+  },
+  "WhiteTheme": {
+    "message": "Licht thema"
+  },
+  "Next": {
+    "message": "VOLGENDE"
+  },
+  "Skip": {
+    "message": "OVERSLAAN"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "Extra functies"
+  },
+  "encounterMessage_1": {
+    "message": "Bedankt voor uw feedback! Neem bij technische problemen "
+  },
+  "encounterMessage_2": {
+    "message": "contact op met onze supportafdeling "
+  },
+  "JustInTimeDisclaimer": {
+    "message": "Beoordeel uw ervaring met PIA"
+  },
+  "feedbackMessage_1": {
+    "message": "Bedankt voor uw feedback. We zouden het op prijs stellen als u ons een beoordeling kon geven op de "
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome Web Store"
+  },
+  "encountermessage_1": {
+    "message": "Bedankt voor uw feedback. Neem bij technische problemen "
+  },
   "UILanguage": {
     "message": "Taal UI"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy-IP"
+    "message": "VPN-IP"
   },
   "DebugLogIsEmpty": {
     "message": "Het debuglogboek is leeg."
@@ -387,7 +453,7 @@
     "message": "Authenticatiefout"
   },
   "AuthFailMessage": {
-    "message": "Als u recentelijk uw wachtwoord hebt gewijzigd op de website van Private Internet Access, kunt u deze fout mogelijk verhelpen door de extensie opnieuw te verifiëren."
+    "message": "Als u recentelijk uw wachtwoord hebt gewijzigd op de website van Private Internet Access, kunt u deze fout mogelijk verhelpen door de extensie opnieuw te verifiëren.<br /><br />Neem voor hulp en ondersteuning contact op met ons <a href=\"https://privateinternetaccess.com/helpdesk\">supportteam</a>."
   },
   "AuthFailMessageSupportLead": {
     "message": "Neem voor hulp en ondersteuning contact op met onze"
@@ -486,7 +552,7 @@
     "message": "ALLE INSTELLINGEN BEKIJKEN..."
   },
   "trial": {
-    "message": "Proefversie"
+    "message": "Proefperiode"
   },
   "days_left": {
     "message": "resterende dagen"

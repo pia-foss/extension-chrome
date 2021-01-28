@@ -4,7 +4,7 @@ import { Checkbox } from '../../elements';
 import { createSelector } from '../../core/entities/selector';
 
 class SecuritySection extends SectionBase {
-  public blockAdobeFlashCheckbox: Checkbox;
+  // public blockAdobeFlashCheckbox: Checkbox;
   public preventWebRtcLeak: Checkbox;
   public httpsUpgrade: Checkbox;
 
@@ -18,15 +18,15 @@ class SecuritySection extends SectionBase {
       },
       parent,
     );
-    this.blockAdobeFlashCheckbox = new Checkbox(
-      {
-        selector: createSelector({
-          value: '#blockadobeflash',
-        }),
-        name: 'blockAdobeFlashCheckbox',
-      },
-      this,
-    );
+    // this.blockAdobeFlashCheckbox = new Checkbox(
+    //   {
+    //     selector: createSelector({
+    //       value: '#blockadobeflash',
+    //     }),
+    //     name: 'blockAdobeFlashCheckbox',
+    //   },
+    //   this,
+    // );
     this.preventWebRtcLeak = new Checkbox(
       {
         selector: createSelector({

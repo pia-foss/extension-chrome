@@ -1,4 +1,70 @@
 {
+  "PrivateInternetAccess": {
+    "message": "Private Internet Access"
+  },
+  "BrowserMessage": {
+    "message": "瀏覽器擴充功能"
+  },
+  "FirstSlideInstallThanks": {
+    "message": "感謝您安裝"
+  },
+  "StartSlide": {
+    "message": "讓我們協助您開始使用"
+  },
+  "Step1": {
+    "message": "步驟 1 (共 2 步驟)"
+  },
+  "Step2": {
+    "message": "步驟 2 (共 2 步驟)"
+  },
+  "ChooseTheme": {
+    "message": "選擇主題"
+  },
+  "EnableSetings": {
+    "message": "啟用額外功能"
+  },
+  "PrivateInternetComesWith": {
+    "message": "Private Internet Access 具備"
+  },
+  "LightAndDarkDisclaimer": {
+    "message": "淺色和深色主題，可搭配您的瀏覽器外觀"
+  },
+  "LookOfBrowserDisclaimer": {
+    "message": "及風格"
+  },
+  "OnBoardingStart": {
+    "message": "開始使用"
+  },
+  "WhiteTheme": {
+    "message": "淺色主題"
+  },
+  "Next": {
+    "message": "下一步"
+  },
+  "Skip": {
+    "message": "略過"
+  },
+  "ChangeExtraFeaturesSettings": {
+    "message": "額外功能"
+  },
+  "encounterMessage_1": {
+    "message": "感謝您提供意見回饋！如果您遇到任何技術性問題，請"
+  },
+  "encounterMessage_2": {
+    "message": "聯絡支援部門"
+  },
+  "JustInTimeDisclaimer": {
+    "message": "使用 PIA 為您的體驗評分"
+  },
+  "feedbackMessage_1": {
+    "message": "感謝您提供意見回饋！如果您能到這裡為我們評分，我們會非常感激："
+  },
+  "feedbackMessage_2": {
+    "message": "Chrome 線上應用程式商店"
+  },
+  "encountermessage_1": {
+    "message": "感謝您提供意見回饋！如果您遇到任何技術性問題，請"
+  },
   "UILanguage": {
     "message": "UI 語言"
   },
@@ -93,7 +159,7 @@
     "message": "IP"
   },
   "IpProxy": {
-    "message": "Proxy IP"
+    "message": "VPN IP"
   },
   "DebugLogIsEmpty": {
     "message": "錯誤偵測紀錄目前為空白。"
@@ -387,7 +453,7 @@
     "message": "驗證錯誤"
   },
   "AuthFailMessage": {
-    "message": "如果您最近曾在 Private Internet Access 網站上更改密碼，為擴充功能重新進行驗證應該能修正此錯誤。<br/><br/>若您需要協助與支援，請聯繫我們的<a href=\"https://privateinternetaccess.com/helpdesk\">支援團隊</a>。"
+    "message": "如果您最近曾在 Private Internet Access 網站上變更密碼，那麼使用擴充功能重新進行驗證應該能修正此錯誤。\n<br /><br />如需協助與支援，請聯絡我們的<a href=\"https://privateinternetaccess.com/helpdesk\">支援團隊</a>。"
   },
   "AuthFailMessageSupportLead": {
     "message": "若您需要協助與支援，請聯繫我們的"
@@ -489,7 +555,7 @@
     "message": "試用"
   },
   "days_left": {
-    "message": "days left"
+    "message": "剩餘 {num} 天"
   },
   "Subscription": {
     "message": "訂閱"
@@ -510,7 +576,7 @@
     "message": "聚集地區"
   },
   "PrivateBrowsingChangeLead": {
-    "message": "Firefox 最近變更了附加元件處理代理伺服器連線的方式。現在，您需要更新伺服器設定，允許附加元件在隱私視窗中執行。"
+    "message": "Firefox 最近變更了附加元件處理代理伺服器的連線方式。您需要更新 Proxy 設定，以允許附加元件在隱私視窗中執行。"
   },
   "PrivateBrowsingChangeDirections": {
     "message": "請點進下方的網址以查看您的附加元件頁面，之後按一下「Private Internet Access」附加元件以修改設定。在該頁面中，將「在隱私視窗中執行」的設定變更為「允許」。"

@@ -21,7 +21,7 @@ class WebRTCSetting extends ChromeSetting {
 
     // init
     this.settingID = 'preventwebrtcleak';
-    this.settingDefault = true;
+    this.settingDefault = false;
   }
 
   init() {
