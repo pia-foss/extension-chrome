@@ -38,7 +38,7 @@ class ManageLocations extends Component {
     this.onUserSelectChange = this.onUserSelectChange.bind(this);
     this.exit = this.exit.bind(this);
     this.edit = this.edit.bind(this);
-    this.verifyDomains = this.verifyDomains.bind(this)
+    this.verifyDomains = this.verifyDomains.bind(this);
   }
 
   async reinitializedProxy(){

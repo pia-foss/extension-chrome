@@ -1,5 +1,12 @@
 __HEAD__
 
+__v.3.1.0__ (13.05.2021)
+
+* Latency loading remains stuck fixed
+* After some time SL is not working fixed
+* Bypasslist for firefox not working fixed
+* New server endpoint
+
 __v.3.0.2__ (08.02.2021)
 
 * Hotfix for broken storage when updating to upper version

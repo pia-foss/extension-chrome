@@ -99,7 +99,6 @@ class BrowserProxy extends ChromeSetting {
         }
       }
       let value = {};
-      
       if(smartlocation.getSmartLocationRules('smartLocationRules').length > 0 && smartlocation.getSmartLocationRules('checkSmartLocation')){
         this.rules = userRulesSmartLoc;
         const pacScript = pacengine.exportPAC(

@@ -5,7 +5,7 @@ import RegionIso from '@component/RegionIso';
 import RegionAuto from '@component/RegionAuto';
 import withAppContext from '@hoc/withAppContext';
 import RegionListItem from '@component/RegionListItem';
-
+import * as _ from 'lodash';
 class RegionList extends Component {
   constructor(props) {
     super(props);
@@ -48,6 +48,7 @@ class RegionList extends Component {
         return isoMap;
       }, {});
   }
+  
 
   componentizeRegions() {
     const { regions } = this.props;
@@ -91,10 +92,10 @@ class RegionList extends Component {
       mode,
       regions,
       syncRegions,
+      verifyLatencyRegions,
       context: { theme },
     } = this.props;
-
-
+    
     // Loading screen when between actions
     if (mode === 'loading') {
       return (
@@ -124,7 +125,7 @@ class RegionList extends Component {
         </div>
       );
     }
-
+    verifyLatencyRegions(regions);
     // Render regions
     return (
       <div className="regions">

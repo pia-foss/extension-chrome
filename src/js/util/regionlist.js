@@ -89,11 +89,8 @@ class RegionList {
     this.normalRegions = {};
 
     // replace with new data from server
-    Object.keys(defaultRegions).forEach((regionID) => {
-      const region = RegionList.createNormalRegion(
-        regionID,
-        defaultRegions[regionID]
-      );
+    defaultRegions.map((reg) => {
+      const region = RegionList.createNormalRegion(reg.name, reg);
       if (favoriteRegions.includes(region.id)) {
         region.isFavorite = true;
       }
@@ -242,7 +239,8 @@ class RegionList {
     const fromStorage = this.storage.getItem(OVERRIDE_KEY);
     if (fromStorage) {
       overrideRegions = {};
-      const fromStorageMap = typeof fromStorage == 'string' ?  JSON.parse(fromStorage) : fromStorage;
+      const fromStorageMap =
+        typeof fromStorage == "string" ? JSON.parse(fromStorage) : fromStorage;
       Object.keys(fromStorageMap).forEach((id) => {
         overrideRegions[id] = RegionList.localize(fromStorageMap[id]);
       });
@@ -553,8 +551,7 @@ class RegionList {
 
     try {
       // get latest regions from server
-      const url =
-        "https://www.privateinternetaccess.com/api/client/services/https";
+      const url = "https://serverlist.piaservers.net/proxy";
       const response = await http.get(url, { timeout: 5000 });
       const json = await response.json();
 
@@ -562,13 +559,14 @@ class RegionList {
       this.normalRegions = {};
 
       // replace with new data from server
-      Object.keys(json).forEach((regionID) => {
-        const region = RegionList.createNormalRegion(regionID, json[regionID]);
+      json.map((reg) => {
+        const region = RegionList.createNormalRegion(reg.name, reg);
         if (favoriteRegions.includes(region.id)) {
           region.isFavorite = true;
         }
         this.normalRegions[region.id] = region;
       });
+
 
       // update bypasslist with new dns records
       bypasslist.updatePingGateways();
@@ -702,6 +700,7 @@ class RegionList {
   }
 
   static createNormalRegion(regionID, region) {
+    regionID = regionID.split(' ').join('_');
     return RegionList.localize({
       scheme: "https",
       id: regionID,

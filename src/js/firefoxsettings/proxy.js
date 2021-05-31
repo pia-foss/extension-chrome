@@ -14,11 +14,12 @@ class Proxy {
 
       const region = app.util.regionlist.getSelectedRegion();
       if ( !region ) return
-      
-      if (app.util.bypasslist.toArray().includes(origin))
+
+      const parseUrl =  app.helpers.UrlParser.parse(origin);
+      if (app.util.bypasslist.toArray().includes(origin) 
+      || app.util.bypasslist.toArray().includes(parseUrl.domain))
         return { type: 'direct' };
       //smart location proxy rule check
-
       const proxyRule = this.changeProxyRule(this.getUserRules(requestInfo.url));
       
       if(proxyRule){

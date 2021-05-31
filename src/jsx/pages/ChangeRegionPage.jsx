@@ -29,7 +29,19 @@ class ChangeRegionPage extends Component {
     this.onSearchUpdate = this.onSearchUpdate.bind(this);
     this.renderFavorite = this.renderFavorite.bind(this);
     this.toggleFavorites = this.toggleFavorites.bind(this);
+    this.verifyLatencyRegions = this.verifyLatencyRegions.bind(this);
   }
+
+    
+  verifyLatencyRegions(regions){
+    const filteredRegions = _.filter(regions, { 'latency':'PENDING' });
+    if(filteredRegions.length > (regions.length - 10)){
+      this.regionlist.sync().then(() => {
+        this.setState({ mode: 'render', regions: this.regionlist.toArray() });
+      });
+    }
+  }
+
 
   onSearchUpdate({ target: { value } }) {
     this.setState({ search: value });
@@ -81,7 +93,6 @@ class ChangeRegionPage extends Component {
     } = this.state;
     const { context: { theme } } = this.props;
     const regions = this.regionlist.toArray();
-
     return (
       <div id="change-region-page" className={`row ${theme}`}>
         <PageTitle text={t('SelectRegionText')} />
@@ -117,6 +128,7 @@ class ChangeRegionPage extends Component {
           regions={regions}
           showFavorites={showFavorites}
           syncRegions={this.syncRegions}
+          verifyLatencyRegions = {this.verifyLatencyRegions}
         />
       </div>
     );
