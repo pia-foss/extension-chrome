@@ -28,6 +28,7 @@ class SettingItem extends Component {
     try {
       // change settings in background app
       const newValue = await this.settings.toggle(settingID);
+      this.app.util.settingsmanager.clearAndReapplySettings(settingID)
       // call parent function to update parent's state
       const { onSettingChange } = this.props;
       if (onSettingChange) { onSettingChange(settingID, newValue); }
@@ -132,6 +133,7 @@ class SettingItem extends Component {
       controllable,
       component,
     } = this.props;
+    
 
     const theme = this.props.context.getTheme();
     const lang = this.i18n.locale ? this.i18n.locale : 'en';

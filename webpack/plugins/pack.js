@@ -4,6 +4,7 @@ const { AsyncParallelHook } = require('tapable');
 const fs = require('fs-extra');
 const rimraf = require('rimraf');
 const {
+  root,
   dist,
   print,
   Color,
@@ -18,9 +19,10 @@ const {
 
 class PackPlugin {
   constructor(opts = {}) {
+    this.browser = opts.browser || getBrowser();
+    PackPlugin.validate(this.browser, opts);
     this.source = dist();
     this.dest = opts.dest || dist('..');
-    this.browser = opts.browser || getBrowser();
     this.build = opts.build || getBuild();
     this.platform = opts.platform || process.platform;
     this.useWebstoreKey = Boolean(opts.useWebstoreKey) || false;
@@ -28,14 +30,19 @@ class PackPlugin {
     this.version = opts.version || getVersion();
     this.filename = formatFilename(opts.filename)
       || defaultFilename();
+    this.apiKey = opts.apiKey;
+    this.apiSecret = opts.apiSecret;
+    this.replaceDist = opts.replaceDist || false;
   }
 
   packCommand() {
     const {
       source,
+      apiKey,
       browser,
-      useWebstoreKey,
+      apiSecret,
       webstoreKey,
+      useWebstoreKey,
     } = this;
     const { platform } = process;
     let command;
@@ -48,17 +55,37 @@ class PackPlugin {
         command = PackPlugin.chromeExe(platform);
         break;
       }
+      case 'firefox': {
+        command = PackPlugin.firefoxExe(platform);
+        break;
+      }
       default: throw new Error(`unsupported browser: ${browser}`);
     }
-    if (useWebstoreKey) {
-      if (!webstoreKey) {
-        throw new Error('missing webstore key');
-      }
-      command += ` --pack-extension-key=${webstoreKey}`;
-    }
-    command += ` --pack-extension=${source}`;
 
-    return command;
+    switch (browser) {
+      case 'firefox': {
+        command += ' sign';
+        command += ` --api-key=${apiKey}`;
+        command += ` --api-secret=${apiSecret}`;
+        command += ` --source-dir=${source}`;
+        command += ` --artifacts-dir=${dist('..')}`;
+        command += `  --timeout=300000`;
+        return command;
+      }
+      case 'chrome':
+      case 'opera': {
+        if (useWebstoreKey) {
+          if (!webstoreKey) {
+            throw new Error('missing webstore key');
+          }
+          command += ` --pack-extension-key=${webstoreKey}`;
+        }
+        command += ` --pack-extension=${source}`;
+
+        return command;
+      }
+      default: throw new Error(`invalid browser: ${browser}`);
+    }
   }
 
   async checkFileExists(filepath, limit) {
@@ -87,22 +114,37 @@ class PackPlugin {
 
     compiler.hooks.done.tapPromise('PackPlugin', async () => {
       try {
-        execSync(this.packCommand());
-        await PackPlugin.remove(path.join(this.dest, `${getBuildDirName()}.pem`));
-        const defaultFilePath = PackPlugin.getDefaultFilePath();
+        const {
+          dest,
+          browser,
+          filename,
+        } = this;
+        const command = this.packCommand();
+        execSync(command);
+        if (browser === 'chrome' || browser === 'opera') {
+          await PackPlugin.remove(path.join(dest, `${getBuildDirName()}.pem`));
+        }
+        const defaultFilePath = PackPlugin.getDefaultFilePath(browser);
         const outputPath = this.getOutputPath();
         await this.checkFileExists(defaultFilePath, 3);
+        if (this.replaceDist) {
+          await PackPlugin.remove(outputPath);
+        }
         fs.moveSync(defaultFilePath, outputPath);
         print('PackPlugin: completed successfully');
-        compiler.hooks.packed.promise(this.dest, this.filename);
+        compiler.hooks.packed.promise(dest, filename);
       }
       catch (err) {
         print('PackPlugin: failed with error', Color.red);
         print(err.message || err, Color.red);
         print('try packing via browser UI to debug', Color.red);
-        throw err.message || err;
+        process.exit(1);
       }
     });
+  }
+
+  static firefoxExe() {
+    return root('node_modules', '.bin', 'web-ext');
   }
 
   static chromeExe(platform) {
@@ -135,11 +177,22 @@ class PackPlugin {
     }
   }
 
-  static getDefaultFilePath() {
-    const dirName = getBuildDirName();
+  static getDefaultFilePath(browser) {
     const ext = getExt();
-    const filepath = dist('..', `${dirName}.${ext}`);
-    return filepath;
+    let name;
+    switch (browser) {
+      case 'chrome':
+      case 'opera': {
+        name = getBuildDirName();
+        break;
+      }
+      case 'firefox': {
+        name = `private_internet_access-${getVersion()}-an+fx`;
+        break;
+      }
+      default: throw new Error(`invalid browser: "${browser}"`);
+    }
+    return dist('..', `${name}.${ext}`);
   }
 
   static async remove(filepath) {
@@ -149,6 +202,20 @@ class PackPlugin {
         else { resolve(); }
       });
     });
+  }
+
+  static validate(browser, opts) {
+    const msg = (opt) => { return `PackPlugin: expected ${opt} opt`; };
+    const check = (opt) => {
+      if (typeof opts[opt] === 'undefined') {
+        print(msg(opt), Color.red);
+        process.exit(1);
+      }
+    };
+    if (browser === 'firefox') {
+      check('apiKey');
+      check('apiSecret');
+    }
   }
 }
 

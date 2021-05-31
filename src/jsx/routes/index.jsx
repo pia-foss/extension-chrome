@@ -14,6 +14,7 @@ import UncontrollablePage from '@pages/UncontrollablePage';
 import RegionOverridePage from '@pages/RegionOverridePage';
 import PrivateRoute from './PrivateRoute';
 import SmartLocationPage from '@pages/SmartLocationPage';
+import PrivateBrowsingPage from '@pages/PrivateBrowsingPage';
 
 
 export const Path = {
@@ -28,6 +29,7 @@ export const Path = {
   extraFeatures: '/extrafeatures',
   changelog: '/changelog',
   bypassList: '/bypasslist',
+  privateBrowsing: '/private-browsing',
   smartLocation:'/smartlocation'
 };
 
@@ -50,6 +52,7 @@ const Routes = () => {
       <PrivateRoute path={Path.extraFeatures} component={ExtraFeaturesPage} />
       <PrivateRoute path={Path.changelog} component={ChangelogPage} />
       <PrivateRoute path={Path.bypassList} component={BypassListPage} />
+      <PrivateRoute path={Path.privateBrowsing} component={PrivateBrowsingPage} />
       <PrivateRoute path={Path.smartLocation} component={SmartLocationPage} />
       <Route component={LoginPage} />
     </Switch>

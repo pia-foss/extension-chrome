@@ -14,7 +14,15 @@ class AppContext {
     // properties
     this.id = FOREGROUND;
     this.rebuildApp = contextUpdate;
-    this.app = chrome.extension.getBackgroundPage().app;
+
+    if(typeof browser == 'undefined'){
+      this.app = chrome.extension.getBackgroundPage().app;
+    }else{
+      // / get app from background page
+        const background = browser.extension.getBackgroundPage();
+        if (background) { this.app = background.app; }
+        else { this.app = window.app; }
+    }
 
     // bindings
     this.updateTheme = this.updateTheme.bind(this);
@@ -25,8 +33,13 @@ class AppContext {
     this.theme = this.app.util.settings.getItem('darkTheme') ? 'dark' : 'light';
     if (this.theme === 'dark') { document.body.classList.add('dark'); }
 
+    
     // add runtime message handler
-    chrome.runtime.onMessage.addListener(this.receiveMessage);
+    if(typeof browser == 'undefined'){
+      chrome.runtime.onMessage.addListener(this.receiveMessage);
+    }else{
+      browser.runtime.onMessage.addListener(this.receiveMessage);
+    }
   }
 
   // helper function to updateTheme and context from nested component
@@ -43,7 +56,6 @@ class AppContext {
       document.body.classList.remove('dark');
       this.app.util.settings.setItem('darkTheme', false);
     }
-
     // update app
     this.rebuildApp();
   }
@@ -56,7 +68,6 @@ class AppContext {
   receiveMessage(message) {
     if (message.target !== this.id) { return false; }
     if (message.type !== 'refresh') { return false; }
-
     // refresh app data
     this.rebuildApp();
     return false;

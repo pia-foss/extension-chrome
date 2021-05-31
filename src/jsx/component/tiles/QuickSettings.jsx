@@ -11,6 +11,7 @@ class QuickSettings extends Component {
 
     // properties
     this.app = props.context.app;
+    this.sameApp = this.app.sameApp;
     this.history = props.history;
     this.settings = this.app.util.settings;
     this.state = {
@@ -20,10 +21,8 @@ class QuickSettings extends Component {
         blockreferer: { id: 'blockreferer', display: t('HTTPREFERRER'), folder: 'referer' },
         debugmode: { id: 'debugmode', display: t('DEBUGLOGGING'), folder: 'debug' },
         darkTheme: { id: 'darkTheme', display: t('LIGHTTHEME'), folder: 'theme' },
-        blockcamera: { id: 'blockcamera', display: t('BLOCKCAMERA'), folder: 'camera' },
-        blockmicrophone: { id: 'blockmicrophone', display: t('BLOCKMICROPHONE'), folder: 'audio' },
         viewAll: { id: 'viewAll', display: t('VIEWALL'), folder: 'more' },
-      },
+      }
     };
 
     // bindings
@@ -34,6 +33,13 @@ class QuickSettings extends Component {
     this.renderSettings = this.renderSettings.bind(this);
     this.generateSetting = this.generateSetting.bind(this);
     this.generateSettings = this.generateSettings.bind(this);
+
+    if(typeof browser == 'undefined'){
+      this.state.settings['blockcamera'] = { id: 'blockcamera', display: t('BLOCKCAMERA'), folder: 'camera' };
+      this.state.settings['blockmicrophone'] = { id: 'blockmicrophone', display: t('BLOCKMICROPHONE'), folder: 'audio' };
+    }else{
+      this.state.settings["fingerprintprotection"] = { id: 'fingerprintprotection', display: t('FPPROTECTION'), folder: 'fp' }
+    } 
   }
 
   onClick(e) {

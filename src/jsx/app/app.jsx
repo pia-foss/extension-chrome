@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import '@style/pia';
 import AppContext, { AppProvider } from '@contexts/AppContext';
 import Routes, { Path } from '@routes';
+import PrivateBrowsingPage from '@pages/PrivateBrowsingPage';
 
 /**
  * App is the main entry point for the view on the foreground
@@ -31,9 +32,35 @@ class App extends Component {
     };
 
     // check if proxy is controllable
-    const { app } = this.appContext;
+    let { app } = this.appContext;
+    
     this.uncontrollable = !app.proxy.isControllable();
     if (this.uncontrollable) { setTimeout(() => { this.history.push(Path.uncontrollable); }, 0); }
+
+    // check if this is the first time being run
+    this.firstRun = app.util.settings.getItem('firstRun', true);
+
+    if(typeof browser != "undefined"){
+      browser.proxy.settings.get({})
+      .then(({ value }) => {
+          return browser.proxy.settings.set({ value });
+        })
+        .catch((err) => {
+          if (err.toString() === 'Error: proxy.settings requires private browsing permission.') {
+            this.setState({ privateRequired: true });
+            setTimeout(() => { this.history.push(Path.privateBrowsing); }, 0);
+          }
+        });
+      }
+
+    
+    // define inital state
+    this.state = {
+      lastKeyIsCtrl: false,
+      privateRequired: this.privateRequired,
+      firstRun: this.firstRun,
+      context: this.appContext.build(),
+    };
 
     // check for compatibility
     this.upgrade = !app.chromesettings.webrtc.blockable;
@@ -45,6 +72,11 @@ class App extends Component {
 
   contextUpdate() {
     this.setState({ context: this.appContext.build() });
+  }
+
+  updateFirstRun() {
+    const firstRun = this.app.util.settings.getItem('firstRun', true);
+    this.setState({ firstRun });
   }
 
   handleKeyDown(event) {
@@ -79,7 +111,15 @@ class App extends Component {
   }
 
   render() {
-    const { context } = this.state;
+    const { context, privateRequired } = this.state;
+    if (privateRequired) {
+      return (
+        <AppProvider value={context}>
+          <PrivateBrowsingPage />
+        </AppProvider>
+      );
+    }
+
     return (
       <AppProvider value={context}>
         <Routes />

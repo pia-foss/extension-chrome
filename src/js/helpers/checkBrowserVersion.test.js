@@ -6,6 +6,7 @@ const Browser = {
   chrome: 'chrome',
   brave: 'brave',
   opera: 'opera',
+  firefox: 'firefox'
 };
 
 const OS = {
@@ -58,6 +59,21 @@ const UserAgentList = [
   {
     value: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/$version.0.3578.98 Safari/537.36 OPR/58.0.3135.68',
     browser: Browser.opera,
+    os: OS.ubuntu,
+  },
+  {
+    value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6; rv:65.0) Gecko/20100101 Firefox/$version.0',
+    browser: Browser.firefox,
+    os: OS.windows,
+  },
+  {
+    value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/$version.0',
+    browser: Browser.firefox,
+    os: OS.mac,
+  },
+  {
+    value: 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/$version.0',
+    browser: Browser.firefox,
     os: OS.ubuntu,
   },
 ];

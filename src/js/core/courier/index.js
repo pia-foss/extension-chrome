@@ -10,7 +10,11 @@ class Courier {
     this.receiveMessage = this.receiveMessage.bind(this);
 
     // handle listener
-    chrome.runtime.onMessage.addListener(this.receiveMessage);
+    if(typeof browser == 'undefined'){
+      chrome.runtime.onMessage.addListener(this.receiveMessage);
+    }else{
+      browser.runtime.onMessage.addListener(this.receiveMessage);
+    }
   }
 
   async sendMessage(type, data) {

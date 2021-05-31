@@ -1,0 +1,25 @@
+.private-browsing-page {
+  background-color: $grey92;
+
+  &.dark { background-color: $grey20; }
+
+  .warningicon {
+    height: 65px;
+    width: 65px;
+    background-image: url('../images/warning.svg');
+    background-size: 65px 65px;
+    margin: 20px auto 0;
+  }
+
+  .warningtext {
+    color: $red;
+    padding: 10px 20px;
+    font-size: 10pt;
+  }
+
+  .addons {
+    text-align: center;
+    color: $green;
+    padding-bottom: 30px;
+  }
+}

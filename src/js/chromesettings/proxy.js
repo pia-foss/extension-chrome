@@ -82,10 +82,13 @@ class BrowserProxy extends ChromeSetting {
         locations,
         key
       );
-      const userRulesSmartLoc = smartlocation.getSmartLocationRules('smartLocationRules').map(loc =>{
-        return {cc:loc.proxy.id,domain:loc.userRules,country:loc}
-      })
-      const region = regionlist.getRegionFromStorage();
+      let userRulesSmartLoc;
+      if( smartlocation.getSmartLocationRules('smartLocationRules')){
+        userRulesSmartLoc = smartlocation.getSmartLocationRules('smartLocationRules').map(loc =>{
+          return {cc:loc.proxy.id,domain:loc.userRules,country:loc}
+        });
+      }
+      const region = regionlist.getSelectedRegion();
 
       if (didChange) {
         try {
@@ -103,7 +106,7 @@ class BrowserProxy extends ChromeSetting {
           region.id,
           nodeDict,
           userRulesSmartLoc,
-          bypasslist.toArray()
+          bypasslist.getRulesSmartLoc()
         );
         //get the pac script
         value= {

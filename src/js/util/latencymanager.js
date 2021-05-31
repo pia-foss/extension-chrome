@@ -18,7 +18,6 @@ class LatencyManager {
 
   constructor(app) {
     this.app = app;
-
     this.run = this.run.bind(this);
   }
 

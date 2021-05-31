@@ -6,16 +6,16 @@ html {
     background: $grey55;
   }
   .onboarding-page {
-    padding: 0px 10px;
-    margin: -17px -35px;
+    padding: 0px;
+    margin: 0px -30px;
+    margin-top: -10px;
     background-image: url(../images/light_background.png);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-repeat: no-repeat;
     background-size: cover;
-    background-color: #FFFFFF;
-    overflow:auto;
+    background-repeat: no-repeat;
+    overflow: auto;
     .bullets-skip {
       display: flex;
       justify-content: space-between;
@@ -151,7 +151,6 @@ html {
             color: white;
           }
         }
-
       }
   
       .middle-disclaimers {
@@ -254,20 +253,20 @@ html {
           }
         }
       }
-
+  
       &.de {
         .middle-disclaimers {
           margin-left:30px;
           margin-right:30px;
         }
-
+  
         .theme-buttons {
           .btn-skip{
             font-size: 5px;
           }
         }
       }
-
+  
       &.ja{
         .middle-disclaimers {
           margin-left:40px;
@@ -350,7 +349,6 @@ html {
   
     &.dark {
       background-image: url(../images/background.png);
-      
       #carousel li .bullet {
         background-color: rgba(0, 0, 0, 0);
         border: 1px solid #ffffff;
@@ -368,37 +366,42 @@ html {
           color: white;
         }
       }
+
+
+  
+      &.de, &.ru, &.da {
+        .bullets-skip {
+          .btn-skip {
+            font-size:8px;
+          }
+          .btn-next {
+            font-size:9px;
+            padding:6px 25px;
+          }
+        }
+        .carousel{
+          margin:auto;
+        }
+      }
+  
+      &.pt_BR, &.es{
+        .bullets-skip {
+          .btn-skip {
+            font-size:8px;
+          }
+          .btn-next {
+            font-size:9px;
+            padding:6px 12px;
+          }
+        }
+        .carousel{
+          margin:auto;
+        }
+      }
     }
 
-    &.de, &.ru, &.da {
-      .bullets-skip {
-        .btn-skip {
-          font-size:8px;
-        }
-        .btn-next {
-          font-size:9px;
-          padding:6px 25px;
-        }
-      }
-      .carousel{
-        margin:auto;
-      }
+    &.firefox{
+      height:450px;
     }
-
-    &.pt_BR, &.es{
-      .bullets-skip {
-        .btn-skip {
-          font-size:8px;
-        }
-        .btn-next {
-          font-size:9px;
-          padding:6px 12px;
-        }
-      }
-      .carousel{
-        margin:auto;
-      }
-    }
-    
   }
 }

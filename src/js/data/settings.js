@@ -21,13 +21,8 @@ import { getSectionName } from '@data/sections';
  * @param {*} deps Dependencies to calculate settings data
  */
 function createSettingsData({ t, settings }) {
-  const data = [
-    // {
-    //   settingID: 'blockadobeflash',
-    //   section: getSectionName('security'),
-    //   label: t('BlockAdobeFlash'),
-    //   tooltip: t('AdobeFlashTooltip'),
-    // },
+  let data;
+  const commonSettings = [
     {
       settingID: 'preventwebrtcleak',
       section: getSectionName('security'),
@@ -41,66 +36,10 @@ function createSettingsData({ t, settings }) {
       tooltip: t('HttpsUpgradeTooltip'),
     },
     {
-      settingID: 'blockcamera',
-      section: getSectionName('privacy'),
-      label: t('BlockCameraAccess'),
-      tooltip: t('BlockCameraAccessTooltip'),
-    },
-    {
-      settingID: 'blockmicrophone',
-      section: getSectionName('privacy'),
-      label: t('BlockMicrophoneAccess'),
-      tooltip: t('BlockMicrophoneAccessTooltip'),
-    },
-    {
-      settingID: 'blocklocation',
-      section: getSectionName('privacy'),
-      label: t('BlockLocationAccess'),
-      tooltip: t('BlockLocationAccessTooltip'),
-    },
-    {
       settingID: 'blocknetworkprediction',
       section: getSectionName('privacy'),
       label: t('BlockNetworkPrediction'),
       tooltip: t('BlockNetworkPredictionTooltip'),
-    },
-    {
-      settingID: 'blocksafebrowsing',
-      section: getSectionName('privacy'),
-      label: t('BlockSafeBrowsing'),
-      tooltip: t('BlockSafeBrowsingTooltip'),
-      learnMoreHref: 'https://en.wikipedia.org/wiki/Google_Safe_Browsing#Privacy',
-      learnMore: t('ReadMore'),
-    },
-    {
-      settingID: 'blockautofill',
-      section: getSectionName('privacy'),
-      label: t('BlockAutofill'),
-      tooltip: t('BlockAutofillTooltip'),
-    },
-    {
-      settingID: 'blockautofillcreditcard',
-      section: getSectionName('privacy'),
-      label: t('BlockAutofillCreditCard'),
-      tooltip: t('BlockAutofillCreditCardTooltip'),
-    },
-    {
-      settingID: 'blockautofilladdress',
-      section: getSectionName('privacy'),
-      label: t('BlockAutofillAddress'),
-      tooltip: t('BlockAutofillAddressTooltip'),
-    },
-    {
-      settingID: 'blockthirdpartycookies',
-      section: getSectionName('tracking'),
-      label: t('BlockThirdpartycookies'),
-      tooltip: t('BlockThirdpartycookiesTooltip'),
-    },
-    {
-      settingID: 'blockreferer',
-      section: getSectionName('tracking'),
-      label: t('BlockHTTPReferer'),
-      tooltip: t('BlockHTTPRefererTooltip'),
     },
     {
       settingID: 'blockhyperlinkaudit',
@@ -129,12 +68,6 @@ function createSettingsData({ t, settings }) {
       learnMoreHref: 'https://www.privateinternetaccess.com/helpdesk/kb/articles/what-is-mace',
     },
     {
-      settingID: 'allowExtensionNotifications',
-      section: getSectionName('extension'),
-      label: t('AllowExtensionNotifications'),
-      tooltip: t('AllowExtensionNotificationsTooltip'),
-    },
-    {
       settingID: 'darkTheme',
       section: getSectionName('extension'),
       label: t('DarkTheme'),
@@ -151,9 +84,109 @@ function createSettingsData({ t, settings }) {
       section: getSectionName('extension'),
       label: t('AlwaysActive'),
       tooltip: t('AlwaysActiveTooltip'),
-    },
-  ];
-
+    }
+  ] 
+  let uniqueSettings = [];
+  //TODO1: uniqueSettings - ce difera si commonSetiings ce este la ambele
+  // commonSettings- ce e coumn
+  // uniqueSettings - trecem prin inf firefox,chrome
+  
+  if(typeof browser == "undefined"){
+    uniqueSettings = [
+      {
+        settingID: 'blockcamera',
+        section: getSectionName('privacy'),
+        label: t('BlockCameraAccess'),
+        tooltip: t('BlockCameraAccessTooltip'),
+      },
+      {
+        settingID: 'blockmicrophone',
+        section: getSectionName('privacy'),
+        label: t('BlockMicrophoneAccess'),
+        tooltip: t('BlockMicrophoneAccessTooltip'),
+      },
+      {
+        settingID: 'blocklocation',
+        section: getSectionName('privacy'),
+        label: t('BlockLocationAccess'),
+        tooltip: t('BlockLocationAccessTooltip'),
+      },
+      {
+        settingID: 'blocksafebrowsing',
+        section: getSectionName('privacy'),
+        label: t('BlockSafeBrowsing'),
+        tooltip: t('BlockSafeBrowsingTooltip'),
+        learnMoreHref: 'https://en.wikipedia.org/wiki/Google_Safe_Browsing#Privacy',
+        learnMore: t('ReadMore'),
+      },
+      {
+        settingID: 'blockautofill',
+        section: getSectionName('privacy'),
+        label: t('BlockAutofill'),
+        tooltip: t('BlockAutofillTooltip'),
+      },
+      {
+        settingID: 'blockautofillcreditcard',
+        section: getSectionName('privacy'),
+        label: t('BlockAutofillCreditCard'),
+        tooltip: t('BlockAutofillCreditCardTooltip'),
+      },
+      {
+        settingID: 'blockautofilladdress',
+        section: getSectionName('privacy'),
+        label: t('BlockAutofillAddress'),
+        tooltip: t('BlockAutofillAddressTooltip'),
+      },
+      {
+        settingID: 'blockthirdpartycookies',
+        section: getSectionName('tracking'),
+        label: t('BlockThirdpartycookies'),
+        tooltip: t('BlockThirdpartycookiesTooltip'),
+      },
+      {
+        settingID: 'blockreferer',
+        section: getSectionName('tracking'),
+        label: t('BlockHTTPReferer'),
+        tooltip: t('BlockHTTPRefererTooltip'),
+      },
+      {
+        settingID: 'allowExtensionNotifications',
+        section: getSectionName('extension'),
+        label: t('AllowExtensionNotifications'),
+        tooltip: t('AllowExtensionNotificationsTooltip'),
+      }
+    ];
+  }else{
+    uniqueSettings = [
+      {
+        settingID: 'preventwebrtcleak',
+        section: getSectionName('security'),
+        label: t('WebRTCLeakProtection'),
+        tooltip: t('WebRTCTooltip', { browser }),
+      },
+      {
+        settingID: 'trackingprotection',
+        section: getSectionName('tracking'),
+        label: t('TrackingProtection'),
+        tooltip: t('TrackingProtectionTooltip'),
+      },
+      {
+        settingID: 'fingerprintprotection',
+        section: getSectionName('tracking'),
+        label: t('FingerprintProtection'),
+        tooltip: t('FingerprintProtectionTooltip', { browser }),
+        learnMore: 'Mozilla Wiki - Security/Fingerprinting',
+        learnMoreHref: 'https://wiki.mozilla.org/Security/Fingerprinting',
+      },
+      {
+        settingID: 'blockreferer',
+        section: getSectionName('tracking'),
+        label: t('BlockHTTPReferer'),
+        tooltip: t('BlockHTTPRefererTooltip', { browser }),
+      },
+    ];
+  }
+  data  = [...commonSettings,...uniqueSettings];
   return data
     .map((setting) => {
       const controllable = settings.getControllable(setting.settingID);
@@ -217,7 +250,6 @@ function getSetting(settingID, settingsData) {
   if (!setting) {
     throw new Error(`no such setting with id: ${settingID}`);
   }
-
   return setting;
 }
 

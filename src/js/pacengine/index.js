@@ -106,7 +106,7 @@ exports.getNodeDictFromLocations = function(
     locations.map(node => {
         const {host,id} = node;
         const port = node[key];
-        nodeDict[id] = `HTTPS ${host}:${port}`;
+        nodeDict[id] = typeof browser == 'undefined' ? `HTTPS ${host}:${port}` : `${host}:${port}`;
     });
   return nodeDict;
 };

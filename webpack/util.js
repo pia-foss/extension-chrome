@@ -28,7 +28,8 @@ exports.print = print;
  *
  * Uses environment variable "BROWSER"
  */
-const getBrowser = () => { return process.env.BROWSER || 'chrome'; };
+const getBrowser = () => { 
+  return process.env.BROWSER || 'chrome'; };
 exports.getBrowser = getBrowser;
 
 /**
@@ -212,6 +213,9 @@ const getExt = (browser = getBrowser()) => {
     case 'opera': {
       return 'crx';
     }
+    case 'firefox': {
+      return 'xpi';
+    }
     default: throw new Error(`invalid browser: ${browser}`);
   }
 };
@@ -259,8 +263,10 @@ const getAliases = (config = 'webpack') => {
     ['@helpers', ['src', 'js', 'helpers']],
     ['@popups', ['src', 'js', 'popups']],
     ['@chromesettings', ['src', 'js', 'chromesettings']],
+    ['@firefoxsettings', ['src', 'js', 'firefoxsettings']],
     ['@contentsettings', ['src', 'js', 'contentsettings']],
     ['@eventhandler', ['src', 'js', 'eventhandler']],
+    ['@mockapp', ['src', 'js', 'mockapp']],
     ['@app', ['src', 'jsx', 'app']],
     ['@data', ['src', 'js', 'data']],
     ['@errorpages', ['src', 'js', 'errorpages']],

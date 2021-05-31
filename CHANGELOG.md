@@ -1,22 +1,36 @@
 __HEAD__
 
-__v.2.4.4__
+__v.3.0.2__ (08.02.2021)
+
+* Hotfix for broken storage when updating to upper version
+
+__v.3.0.1__ (03.02.2021)
+
+* Fixed expand arrow from server list
+* Temporarily addons not being temporarily fixed
+* Connection animation respects the connection state
+
+__v.3.0.0__ (2.02.2021)
+
+* Same app feature
+
+__v.2.4.4__ (07.12.2020)
 
 * Added translations for onboarding and just in time
 
-__v.2.4.3__
+__v.2.4.3__ (19.11.2020)
 
 * Just in time (rating system)
 
-__v.2.3.2__
+__v.2.3.2__ (12.11.2020)
 
 * Hotfix for mace
 
-__v.2.3.1__
+__v.2.3.1__ (05.11.2020)
 
 * Changed port for smart location
 
-__v.2.3.0__
+__v.2.3.0__ (29.10.2020)
 
 * Adobe flash functionality is no more
 * Added new light theme background and some styles for onboarding
@@ -31,7 +45,7 @@ __v2.2.8__
 
 * More translations.
 
-__v2.2.7__
+__v2.2.7__ (15.09.2020)
 
 * Translations and css changes for some of them.
 
@@ -44,12 +58,12 @@ __v2.2.5__
 * Fixed smart location not grabbing correct proxy
 * Remember me now clears when false
 
-__v2.2.3__
+__v2.2.3__ (25.08.2020)
 
 * Added loading icon in region tile
 
 
-__v2.2.2__
+__v2.2.2__ (05.08.2020)
 
 * Smart location loading improvements
 * Fix for smart location domain grab

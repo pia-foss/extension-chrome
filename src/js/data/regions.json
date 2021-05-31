@@ -23,14 +23,6 @@
     "name": "US Chicago",
     "iso": "US"
   },
-  "us_south_west": {
-    "dns": "https-us-texas.privateinternetaccess.com",
-    "ping": "162.216.46.182",
-    "port": 443,
-    "mace": 80,
-    "name": "US Texas",
-    "iso": "US"
-  },
   "us_florida": {
     "dns": "https-us-florida.privateinternetaccess.com",
     "ping": "193.37.252.29",
@@ -87,14 +79,6 @@
     "name": "US Atlanta",
     "iso": "US"
   },
-  "us_las_vegas": {
-    "dns": "https-us-lasvegas.privateinternetaccess.com",
-    "ping": "162.251.236.11",
-    "port": 443,
-    "mace": 80,
-    "name": "US Las Vegas",
-    "iso": "US"
-  },
   "us_houston": {
     "dns": "https-us-houston.privateinternetaccess.com",
     "ping": "205.251.148.114",
@@ -103,28 +87,12 @@
     "name": "US Houston",
     "iso": "US"
   },
-  "us_denver": {
-    "dns": "https-us-denver.privateinternetaccess.com",
-    "ping": "199.115.96.74",
-    "port": 443,
-    "mace": 80,
-    "name": "US Denver",
-    "iso": "US"
-  },
   "uk": {
     "dns": "https-uk-london.privateinternetaccess.com",
     "ping": "185.253.98.70",
     "port": 443,
     "mace": 80,
     "name": "UK London",
-    "iso": "GB"
-  },
-  "uk_southampton": {
-    "dns": "https-uk-southampton.privateinternetaccess.com",
-    "ping": "88.202.231.48",
-    "port": 443,
-    "mace": 80,
-    "name": "UK Southampton",
     "iso": "GB"
   },
   "uk_manchester": {
@@ -175,22 +143,6 @@
     "name": "AU Melbourne",
     "iso": "AU"
   },
-  "aus_perth": {
-    "dns": "https-au-perth.privateinternetaccess.com",
-    "ping": "103.77.234.90",
-    "port": 443,
-    "mace": 80,
-    "name": "AU Perth",
-    "iso": "AU"
-  },
-  "de_berlin": {
-    "dns": "https-de-berlin.privateinternetaccess.com",
-    "ping": "185.230.127.244",
-    "port": 443,
-    "mace": 80,
-    "name": "DE Berlin",
-    "iso": "DE"
-  },
   "germany": {
     "dns": "https-de-frankfurt.privateinternetaccess.com",
     "ping": "82.102.16.210",
@@ -198,14 +150,6 @@
     "mace": 80,
     "name": "DE Frankfurt",
     "iso": "DE"
-  },
-  "nz": {
-    "dns": "https-nz.privateinternetaccess.com",
-    "ping": "103.231.91.37",
-    "port": 443,
-    "mace": 80,
-    "name": "New Zealand",
-    "iso": "NZ"
   },
   "nl": {
     "dns": "https-nl.privateinternetaccess.com",
@@ -247,14 +191,6 @@
     "name": "Finland",
     "iso": "FI"
   },
-  "swiss": {
-    "dns": "https-swiss.privateinternetaccess.com",
-    "ping": "82.102.24.173",
-    "port": 443,
-    "mace": 80,
-    "name": "Switzerland",
-    "iso": "CH"
-  },
   "france": {
     "dns": "https-france.privateinternetaccess.com",
     "ping": "194.187.249.188",
@@ -295,22 +231,6 @@
     "name": "Luxembourg",
     "iso": "LU"
   },
-  "ireland": {
-    "dns": "https-ireland.privateinternetaccess.com",
-    "ping": "23.92.127.74",
-    "port": 443,
-    "mace": 80,
-    "name": "Ireland",
-    "iso": "IE"
-  },
-  "italy": {
-    "dns": "https-italy.privateinternetaccess.com",
-    "ping": "82.102.21.220",
-    "port": 443,
-    "mace": 80,
-    "name": "Italy",
-    "iso": "IT"
-  },
   "spain": {
     "dns": "https-spain.privateinternetaccess.com",
     "ping": "185.230.124.59",
@@ -327,14 +247,6 @@
     "name": "Romania",
     "iso": "RO"
   },
-  "hungary": {
-    "dns": "https-hungary.privateinternetaccess.com",
-    "ping": "185.128.26.25",
-    "port": 443,
-    "mace": 80,
-    "name": "Hungary",
-    "iso": "HU"
-  },
   "poland": {
     "dns": "https-poland.privateinternetaccess.com",
     "ping": "185.244.214.202",
@@ -342,22 +254,6 @@
     "mace": 80,
     "name": "Poland",
     "iso": "PL"
-  },
-  "ae": {
-    "dns": "https-ae.privateinternetaccess.com",
-    "ping": "207.89.22.133",
-    "port": 443,
-    "mace": 80,
-    "name": "UAE",
-    "iso": "AE"
-  },
-  "hk": {
-    "dns": "https-hk.privateinternetaccess.com",
-    "ping": "119.81.135.59",
-    "port": 443,
-    "mace": 80,
-    "name": "Hong Kong",
-    "iso": "HK"
   },
   "sg": {
     "dns": "https-sg.privateinternetaccess.com",
@@ -383,22 +279,6 @@
     "name": "Japan",
     "iso": "JP"
   },
-  "mexico": {
-    "dns": "https-mexico.privateinternetaccess.com",
-    "ping": "169.57.0.204",
-    "port": 443,
-    "mace": 80,
-    "name": "Mexico",
-    "iso": "MX"
-  },
-  "brazil": {
-    "dns": "https-brazil.privateinternetaccess.com",
-    "ping": "177.154.145.106",
-    "port": 443,
-    "mace": 80,
-    "name": "Brazil",
-    "iso": "BR"
-  },
   "in": {
     "dns": "https-in.privateinternetaccess.com",
     "ping": "138.128.180.218",
@@ -406,13 +286,5 @@
     "mace": 80,
     "name": "India",
     "iso": "IN"
-  },
-  "za": {
-    "dns": "https-za.privateinternetaccess.com",
-    "ping": "155.254.115.73",
-    "port": 443,
-    "mace": 80,
-    "name": "South Africa",
-    "iso": "ZA"
-  }
+ }
 }

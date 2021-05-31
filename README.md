@@ -156,6 +156,12 @@ only build a distributable that needs to be manually distributed.
 
     `yarn run release`
 
+#### Deploying to the Firefox Add-on Store
+**These instructions are still in flux.**
+**Ensure that you've created a web-ext api key and secret beforehand**
+At the root of the project, run the following command
+`yarn run public`
+This should create a new `.xpi` file in `builds/firefox-public` that can be uploaded to the add-on store via the addons website. This is a manual process for now until an automated procedure can be established.
 ## Contributing
 
 By contributing to this project you are agreeing to the terms stated in the Contributor License Agreement (CLA) [here](/CLA.rst). For more details please see [CONTRIBUTING.md](/.github/CONTRIBUTING.md). Issues and Pull Requests should use these templates: [ISSUES](/.github/ISSUE_TEMPLATE.md) and [PULL REQUESTS](/.github/PULL_REQUEST_TEMPLATE.md)
@@ -180,3 +186,5 @@ This project is licensed under the [MIT (Expat) license](https://choosealicense.
 [pia-image]: https://www.privateinternetaccess.com/assets/PIALogo2x-0d1e1094ac909ea4c93df06e2da3db4ee8a73d8b2770f0f7d768a8603c62a82f.png
 [pia-url]: https://www.privateinternetaccess.com/
 [wiki]: https://en.wikipedia.org/wiki/Private_Internet_Access
+
+// Firefox readme

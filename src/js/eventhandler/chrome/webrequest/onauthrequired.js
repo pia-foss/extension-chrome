@@ -15,11 +15,14 @@ function authenticate(app) {
 
   const active = (details) => {
     const { proxy, util: { regionlist } } = app;
-    const proxyEnabled = proxy.getEnabled();
+    let proxyEnabled;
+    proxyEnabled = proxy.enabled();
     const isValidHost = regionlist.testHost(details.challenger.host);
     const isValidPort = regionlist.testPort(details.challenger.port);
-    const isActive = proxyEnabled
-      && details.isProxy
+
+    const isActive = 
+    // proxyEnabled && 
+         details.isProxy
       && hostR.test(details.challenger.host)
       && isValidHost
       && isValidPort;
@@ -76,8 +79,7 @@ function authenticate(app) {
       user.logout();
       chrome.tabs.reload(details.tabId);
       return { cancel: true };
-    }
-    catch (err) {
+    } catch (err) {
       debug('onAuthRequired/1: refused due to error');
       debug(`error: ${JSON.stringify(err, Object.getOwnPropertyNames(err))}`);
       return { cancel: true };

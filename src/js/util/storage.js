@@ -4,6 +4,7 @@ function getLegacyInfo() {
   return [
     { key: 'app::justInTimeDismissed', type: 'bool' },
     { key: 'form:password', type: 'string' },
+    { key: 'sameAppBrowser', type: 'string' },
     { key: 'form:username', type: 'string' },
     { key: 'showFavorites', type: 'bool' },
     { key: 'connectionIndex', type: 'number' },
@@ -41,6 +42,8 @@ function getLegacyInfo() {
     { key: 'settings:blockreferer', type: 'bool' },
     { key: 'settings:blocksafebrowsing', type: 'bool' },
     { key: 'settings:blockthirdpartycookies', type: 'bool' },
+    { key: 'settings:trackingprotection', type: 'bool' },
+    { key: 'settings:fingerprintprotection', type: 'bool' },
     { key: 'settings:blockutm', type: 'bool' },
     { key: 'settings:darkTheme', type: 'bool' },
     { key: 'settings:debugmode', type: 'bool' },

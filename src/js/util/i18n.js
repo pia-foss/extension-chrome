@@ -1,4 +1,5 @@
 import http from '@helpers/http';
+import { type } from 'os';
 
 /**
  * I18n is a wrapper around the browser translation service
@@ -31,6 +32,7 @@ class I18n {
     this.translations = new Map([]);
     this.initializing = this.init();
   }
+  
 
   async init() {
     try {
@@ -100,7 +102,10 @@ class I18n {
     if (!this.acceptedLocales.includes(locale)) {
       return Promise.reject();
     }
-    this.worker = http.get(`chrome-extension://${chrome.runtime.id}/_locales/${locale}/messages.json`)
+    
+    let targetURL = chrome.extension.getURL(`/_locales/${locale}/messages.json`);
+
+    this.worker = http.get(targetURL)
       .then(async (res) => {
         const json = await res.json();
         this.translations.clear();

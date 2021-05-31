@@ -14,7 +14,7 @@ const ACCOUNT_ENDPOINT = 'https://www.privateinternetaccess.com/api/client/v2/ac
  * the extension
  */
 class User {
-  constructor(app) {
+  constructor(app,foreground = false) {
     // bindings
     this.getLoggedIn = this.getLoggedIn.bind(this);
     this.setLoggedIn = this.setLoggedIn.bind(this);
@@ -34,6 +34,7 @@ class User {
 
     // init
     this.app = app;
+    this.foreground = foreground;
     this.authTimeout = 5000;
 
     // handle getting account info from storage
@@ -48,14 +49,16 @@ class User {
     this.username = storage.getItem(USERNAME_KEY) || '';
     this.authToken = storage.getItem(AUTH_TOKEN_KEY) || '';
     // init loggedIn, user#setLoggedIn relies on app to be initialized
-    this.loggedIn = !!storage.getItem(LOGGED_IN_KEY);
+    this.loggedIn = storage.getItem(LOGGED_IN_KEY)|| '';
   }
-
+ 
   /* ------------------------------------ */
   /*              Getters                 */
   /* ------------------------------------ */
 
   get storage() { return this.app.util.storage; }
+
+  get adapter() { return this.app.adapter; }
 
   get settings() { return this.app.util.settings; }
 
@@ -87,17 +90,22 @@ class User {
     const { app: { util: { settingsmanager } } } = this;
     this.loggedIn = value;
     this.storage.setItem(LOGGED_IN_KEY, value);
-    if (value) {
-      settingsmanager.enable();
-    }
-    else {
-      settingsmanager.disable();
+    if (this.foreground && typeof browser != 'undefined') {
+      this.adapter.sendMessage('util.user.setLoggedIn', { value });
+    } else {
+      if (value) {
+        settingsmanager.enable();
+      }
+      else {
+        settingsmanager.disable();
+      }
     }
   }
 
   /**
    * Get whether or not username & token should be remembered
    */
+
   getRememberMe() { return this.settings.getItem(REMEMBER_ME_KEY); }
 
   setRememberMe(rememberMe) {
@@ -106,7 +114,11 @@ class User {
 
     // update username and rememberMe in localStorage
     this.storage.setItem(USERNAME_KEY, username);
-    this.settings.setItem(REMEMBER_ME_KEY, Boolean(rememberMe));
+    this.settings.setItem(REMEMBER_ME_KEY, Boolean(rememberMe), this.foreground);
+
+    if (this.foreground && typeof browser != 'undefined') {
+      this.adapter.sendMessage('util.user.setRememberMe', { rememberMe });
+    }
   }
 
   checkUserName(){
@@ -125,6 +137,10 @@ class User {
     if (this.getRememberMe()) {
       this.storage.setItem(USERNAME_KEY, this.username);
     }
+
+    if (this.foreground && typeof browser != 'undefined') {
+      this.adapter.sendMessage('util.user.setUsername', { username: this.username });
+    }
   }
 
   getPassword() { return this.password || ''; }
@@ -134,6 +150,9 @@ class User {
   setAuthToken(authToken) {
     this.authToken = authToken;
     this.storage.setItem(AUTH_TOKEN_KEY, authToken);
+    if (this.foreground && typeof browser != 'undefined') {
+      this.adapter.sendMessage('util.user.setAuthToken', { authToken });
+    }
   }
 
   setAccount(account) {
@@ -141,6 +160,9 @@ class User {
     this.account = account;
     delete this.account.email;
     this.storage.setItem('account', account);
+    if (this.foreground && typeof browser != 'undefined') {
+      this.adapter.sendMessage('util.user.setAccount', account);
+    }
   }
 
   /**

@@ -50,22 +50,32 @@ class Settings {
     this.getItem = this.getItem.bind(this);
     this.setItem = this.setItem.bind(this);
     this.toggle = this.toggle.bind(this);
+    this.getAll = this.getAll.bind(this);
     this.getControllable = this.getControllable.bind(this);
     this.enabled = this.enabled.bind(this);
   }
 
   /* App Getters */
+
+  get contentSettings() { 
+    const contentSettings = this.app.contentsettings ? this.app.contentsettings : {}; 
+    return contentSettings }
+
+
   get storage() { return this.app.util.storage; }
 
   get proxy() { return this.app.proxy; }
 
   get logger() { return this.app.logger; }
 
-  get contentSettings() { return this.app.contentsettings; }
+  // get contentSettings() { return this.app.contentsettings; }
 
   get chromeSettings() { return this.app.chromesettings; }
 
   get regionlist() { return this.app.util.regionlist; }
+
+  get adapter() { return this.app.adapter; }
+
 
   /* Transformations */
 
@@ -167,7 +177,7 @@ class Settings {
   init() {
     this.allSettings.forEach((setting) => {
       if (!this.hasItem(setting.settingID)) {
-        this.setItem(setting.settingID, setting.settingDefault);
+        this.setItem(setting.settingID, setting.settingDefault, true);
       }
     });
   }
@@ -181,7 +191,10 @@ class Settings {
    *
    * @throws {Error} if settingID is not valid
    */
-  async toggle(settingID) {
+  async toggle(settingID, bridged) {
+    if (!bridged && typeof browser != 'undefined') {
+      this.adapter.sendMessage('util.settings.toggle', { settingID });
+    }
     // Look for setting in application settings
     if (this.existsApplicationSetting(settingID)) {
       return this.toggleApplicationSetting(settingID);
@@ -222,9 +235,12 @@ class Settings {
    *
    * @throws {Error} if settingID is not valid
    */
-  getItem(settingID) {
+  getItem(settingID, defaultValue = null) {
     if (this.validID(settingID)) {
-      return !!this.storage.getItem(`settings:${settingID}`);
+      const value = this.storage.getItem(`settings:${settingID}`);
+     if (value === null) { return defaultValue; }
+
+      return typeof browser == 'undefined' ? !!this.storage.getItem(`settings:${settingID}`): value === String(true);
     }
 
     throw new Error('settings.js: cannot perform get without valid settingID');
@@ -256,20 +272,34 @@ class Settings {
    *
    * @param {string} settingID ID of setting
    * @param {boolean} value new value for setting
-   *
+   *  
    * @throws {Error} if settingID is not valid
    *
    * @returns {void}
    */
-  setItem(settingID, value) {
+  setItem(settingID, value, bridged) {
     if (this.validID(settingID)) {
-      const newValue = String(value) === String(true);
-      this.storage.setItem(`settings:${settingID}`, newValue);
+      const newValue = String(value) === 'true';
+      const key = `settings:${settingID}`;
+      this.storage.setItem(key, newValue);
+      if (!bridged && typeof browser != 'undefined') {
+        this.adapter.sendMessage('updateSettings', { settingID, value: newValue });
+      }
     }
     else {
-      throw new Error('settings.js: cannot perform set without valid settingID');
+      throw new Error('cannot perform setItem with invalid settingID');
     }
   }
+
+  getAll() {
+    return this.settingIDs.map((settingID) => {
+      return {
+        settingID,
+        value: this.getItem(settingID),
+      };
+    });
+  }
+
 
   getAvailable(settingID) {
     if (this.validID(settingID)) {
@@ -306,14 +336,10 @@ class Settings {
         if (typeof setting.isControllable === 'function') {
           return setting.isControllable();
         }
-
         return true;
-      }
-
-      // By default controllable is true
+      }      // By default controllable is true
       return true;
     }
-
     throw new Error('settings.js: cannot get controllable without valid settingID');
   }
 

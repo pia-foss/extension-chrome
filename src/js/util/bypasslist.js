@@ -1,5 +1,7 @@
+import { Type } from '@helpers/messagingFirefox';
+
 export default class BypassList {
-  constructor(app) {
+  constructor(app,foreground) {
     // Bindings
     this.init = this.init.bind(this);
     this.generatePingGateways = this.generatePingGateways.bind(this);
@@ -17,11 +19,14 @@ export default class BypassList {
     this.enabledPopularRules = this.enabledPopularRules.bind(this);
     this.toArray = this.toArray.bind(this);
     this.saveRulesToFile = this.saveRulesToFile.bind(this);
+    this.resetPopularRules = this.resetPopularRules.bind(this);
     this.importRules = this.importRules.bind(this);
     this.spawnImportTab = this.spawnImportTab.bind(this);
+    this.getRulesSmartLoc = this.getRulesSmartLoc.bind(this);
 
     // Init
     this.app = app;
+    this.foreground = foreground;
     this.storage = app.util.storage;
     this.storageKeys = {
       userrk: 'bypasslist:customlist',
@@ -88,6 +93,25 @@ export default class BypassList {
     }
   }
 
+  resetPopularRules() {
+    // turn off all popular rules
+    this.popularRulesByName().map((rule) => {
+      return this.disablePopularRule(rule, true);
+    });
+
+    // turn on popular and user rules from storage
+    const { userrk, poprk } = this.storageKeys;
+    if (this.storage.hasItem(poprk) && this.storage.getItem(poprk).length > 0) {
+      this.storage.getItem(poprk).split(',').forEach((name) => {
+        this.enablePopularRule(name, true);
+      });
+    }
+
+    if (this.storage.hasItem(userrk)) {
+      this.setUserRules(this.storage.getItem(userrk).split(','), true);
+    }
+  }
+
   generatePingGateways() {
     const { util: { regionlist } } = this.app;
     const http = regionlist.toArray().map((r) => {
@@ -121,6 +145,7 @@ export default class BypassList {
   }
 
   async restartProxy(cb = () => {}) {
+
     const { proxy } = this.app;
     if (!proxy) { throw new Error(debug('proxy not ready')); }
     if (proxy.enabled()) { await proxy.enable().then(cb); }
@@ -131,11 +156,25 @@ export default class BypassList {
     return BypassList.trimUserRules(Array.from(this.enabledRules.get(this.storageKeys.userrk)));
   }
 
-  setUserRules(rules) {
+  setUserRules(rules, bridged) {
+    const { adapter } = this.app;
     this.storage.setItem(this.storageKeys.userrk, BypassList.trimUserRules(Array.from(rules)).join(','));
     this.enabledRules.set(this.storageKeys.userrk, rules);
+    if (!bridged && typeof browser != 'undefined') { adapter.sendMessage('setUserRules', rules); }
     return this.getUserRules();
   }
+
+  getRulesSmartLoc(){
+    const { helpers } = app;
+    const bypassRules = this.enabledRules.get(this.storageKeys.userrk);
+
+    const rules = bypassRules.map((v,k) => {
+      if(helpers.UrlParser.parse(v)){
+        return helpers.UrlParser.parse(v).domain
+      }
+    });
+    return rules;
+  };
 
   addUserRule(string, restartProxy = false) {
     let userString = string;
@@ -154,48 +193,60 @@ export default class BypassList {
     if (restartProxy) { this.restartProxy(); }
   }
 
-  enablePopularRule(name, restartProxy = true) {
+  enablePopularRule(name, bridged, restartProxy = true) {
     if (!this.popularRulesByName().includes(name)) {
       return Promise.reject(new Error(`${name} is not a valid popular rule`));
     }
     if (this.enabledPopularRules().includes(name)) { return Promise.resolve(); }
 
-    return new Promise((resolve) => {
-      const complete = () => {
-        this.storage.setItem(this.storageKeys.poprk, this.enabledPopularRules().join(','));
-        debug(`bypasslist: added ${name}`);
-        resolve();
-      };
+    const { adapter } = this.app;
 
+    return new Promise((resolve) => {
+      // enable rule
       this.enabledRules.set(name, this.popularRules.get(name));
 
-      if (restartProxy) { this.restartProxy(complete); }
-      else { complete(); }
-    });
+      // ensure mock app is aware of this change
+      // TODO: send the restartProxy params over to adapter
+      if (!bridged && typeof browser != 'undefined') {
+        return resolve(adapter.sendMessage('enablePopularRule', { name, restartProxy }));
+      }
+      return resolve();
+    })
+      .then(() => {
+        if (!this.foreground && restartProxy) { return this.restartProxy(); }
+        return Promise.resolve();
+      })
+      .then(() => {
+        this.storage.setItem(this.storageKeys.poprk, this.enabledPopularRules().join(','));
+        debug(`bypasslist: added ${name}`);
+      });
   }
 
-  disablePopularRule(name, restartProxy = true) {
+  disablePopularRule(name, bridged, restartProxy = true) {
     if (!this.popularRulesByName().includes(name)) {
-      return Promise.reject(new Error(`${name} is not a valid popular rule`));
+      return Promise.reject(new Error(`no such popular rule: ${name}`));
     }
+    if (!this.enabledPopularRules().includes(name)) { return Promise.resolve(); }
 
-    return new Promise((resolve, reject) => {
-      const complete = () => {
-        this.storage.setItem(this.storageKeys.poprk, this.enabledPopularRules().join(','));
-        resolve();
-        debug(`bypasslist: removed ${name}`);
-      };
-      if (this.enabledRules.has(name)) {
-        this.enabledRules.delete(name);
-        if (restartProxy) {
-          this.restartProxy(complete);
-        }
-        else {
-          complete();
-        }
+    const { adapter } = this.app;
+
+    return new Promise((resolve) => {
+      // disable rule
+      this.enabledRules.delete(name);
+
+      // ensure mock app is aware of this change
+      if (!bridged && typeof browser != 'undefined') {
+        return resolve(adapter.sendMessage('disablePopularRule', { name, restartProxy }));
       }
-      else { reject(new Error('rule not found')); }
-    });
+      return resolve();
+    })
+      .then(() => {
+        if (!this.foreground && restartProxy) { this.restartProxy(); }
+      })
+      .then(() => {
+        this.storage.setItem(this.storageKeys.poprk, this.enabledPopularRules().join(','));
+        debug(`bypasslist: removed ${name}`);
+      });
   }
 
   enabledPopularRules() {
@@ -217,18 +268,18 @@ export default class BypassList {
    * @returns {void}
    */
   saveRulesToFile() {
-    // Due to a bug in chromium, the chrome.downloads API will crash the browser
-    // if used on the background script, present in Chromium 70 (unknown fix target).
-
-    // Gitlab issue: https://codex.londontrustmedia.com/extension/pia_chrome/issues/81
-    // Chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=892133&can=1&q=extension%20downloads&colspec=ID%20Pri%20M%20Stars%20ReleaseBlock%20Component%20Status%20Owner%20Summary%20OS%20Modified
-    throw new Error('bypasslist.js: saveRulesToFile not available.');
-    // const payload = JSON.stringify({
-    //   popularRules: this.enabledPopularRules(),
-    //   userRules: this.getUserRules(),
-    // });
-    // const file = new File('application/json', [payload]);
-    // file.download('bypass-rules.json');
+    if (this.foreground && typeof browser != 'undefined') {
+      const { adapter } = this.app;
+      adapter.sendMessage(Type.DOWNLOAD_BYPASS_JSON);
+    }
+    else {
+      const payload = JSON.stringify({
+        popularRules: this.enabledPopularRules(),
+        userRules: this.getUserRules(),
+      });
+      const file = new File('application/json', [payload]);
+      file.download('bypass-rules.json');
+    }
   }
 
   /**

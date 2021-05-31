@@ -23,7 +23,7 @@ class OnboardingSettings extends Component {
     const { settings } = this.app.util;
     this.state = {
       sectionsData: createSectionsData({ t },[true,false,false,false]),
-      settingsData: createSettingsData({ t, settings }),
+      settingsData: createSettingsData({ t, settings },this.app),
     };
 
     // bindings
@@ -100,7 +100,7 @@ class OnboardingSettings extends Component {
     const { settings } = this.app.util;
     this.setState({
       sectionsData: createSectionsData({ t },[true,false,false,false]),
-      settingsData: createSettingsData({ t, settings }),
+      settingsData: createSettingsData({ t, settings },this.app),
     });
   }
 
@@ -125,32 +125,65 @@ class OnboardingSettings extends Component {
     );
   }
 
+  settingsBrowser(){
+    
+    //TODOF: make an object with [{name:security,childern:[preventwebrtcleak,httpsUpgrade]}]
+    if(typeof browser == "undefined"){
+      return (
+        <div>
+           <SettingSection {...this.getSectionProps('security')}>
+          <SettingItem {...this.getSettingProps('preventwebrtcleak')} />
+          <SettingItem {...this.getSettingProps('httpsUpgrade')} />
+          </SettingSection>
+          <SettingSection {...this.getSectionProps('privacy')}>
+            <SettingItem {...this.getSettingProps('blockcamera')} />
+            <SettingItem {...this.getSettingProps('blockmicrophone')} />
+            <SettingItem {...this.getSettingProps('blocklocation')} />
+            <SettingItem {...this.getSettingProps('blocknetworkprediction')} />
+            <SettingItem {...this.getSettingProps('blocksafebrowsing')} />
+            <SettingItem {...this.getSettingProps('blockautofillcreditcard')} />
+            <SettingItem {...this.getSettingProps('blockautofilladdress')} />
+            <SettingItem {...this.getSettingProps('blockautofill')} />
+          </SettingSection>
+          <SettingSection {...this.getSectionProps('tracking')}>
+            <SettingItem {...this.getSettingProps('blockthirdpartycookies')} />
+            <SettingItem {...this.getSettingProps('blockreferer')} />
+            <SettingItem {...this.getSettingProps('blockhyperlinkaudit')} />
+            <SettingItem {...this.getSettingProps('blockutm')} />
+            <SettingItem {...this.getSettingProps('blockfbclid')} />
+            <SettingItem {...this.getSettingProps('maceprotection')} />
+          </SettingSection>
+        </div>
+      );
+    }else{
+      return (
+        <div>
+            <SettingSection {...this.getSectionProps('security')}>
+            <SettingItem {...this.getSettingProps('preventwebrtcleak')} />
+            <SettingItem {...this.getSettingProps('httpsUpgrade')} />
+          </SettingSection>
+          <SettingSection {...this.getSectionProps('privacy')}>
+            <SettingItem {...this.getSettingProps('blocknetworkprediction')} />
+          </SettingSection>
+          <SettingSection {...this.getSectionProps('tracking')}>
+            <SettingItem {...this.getSettingProps('trackingprotection')} />
+            <SettingItem {...this.getSettingProps('fingerprintprotection')} />
+            <SettingItem {...this.getSettingProps('blockreferer')} />
+            <SettingItem {...this.getSettingProps('blockhyperlinkaudit')} />
+            <SettingItem {...this.getSettingProps('blockutm')} />
+            <SettingItem {...this.getSettingProps('blockfbclid')} />
+            <SettingItem {...this.getSettingProps('maceprotection')} />
+          </SettingSection>
+        </div>
+      );
+    }
+  }
+
   render() {
 
     return (
       <Fragment>
-        <SettingSection {...this.getSectionProps('security')}>
-          <SettingItem {...this.getSettingProps('preventwebrtcleak')} />
-          <SettingItem {...this.getSettingProps('httpsUpgrade')} />
-        </SettingSection>
-        <SettingSection {...this.getSectionProps('privacy')}>
-          <SettingItem {...this.getSettingProps('blockcamera')} />
-          <SettingItem {...this.getSettingProps('blockmicrophone')} />
-          <SettingItem {...this.getSettingProps('blocklocation')} />
-          <SettingItem {...this.getSettingProps('blocknetworkprediction')} />
-          <SettingItem {...this.getSettingProps('blocksafebrowsing')} />
-          <SettingItem {...this.getSettingProps('blockautofillcreditcard')} />
-          <SettingItem {...this.getSettingProps('blockautofilladdress')} />
-          <SettingItem {...this.getSettingProps('blockautofill')} />
-        </SettingSection>
-        <SettingSection {...this.getSectionProps('tracking')}>
-          <SettingItem {...this.getSettingProps('blockthirdpartycookies')} />
-          <SettingItem {...this.getSettingProps('blockreferer')} />
-          <SettingItem {...this.getSettingProps('blockhyperlinkaudit')} />
-          <SettingItem {...this.getSettingProps('blockutm')} />
-          <SettingItem {...this.getSettingProps('blockfbclid')} />
-          <SettingItem {...this.getSettingProps('maceprotection')} />
-        </SettingSection>
+        {this.settingsBrowser()}
       </Fragment>
     );
   }

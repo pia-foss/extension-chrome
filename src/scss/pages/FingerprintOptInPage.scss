@@ -1,0 +1,41 @@
+.fingerprint-opt-in {
+  max-height: 580px;
+  color: $grey20;
+  background-color: $grey92;
+
+  &.dark {
+    color: $white;
+    background-color: $grey20;
+  }
+
+  .fingerprint-section {
+    padding: 0 30px 20px;
+  }
+
+  .fingerprint-disclaimer-header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .fingerprint-disclaimer-link {
+    text-align: center;
+    padding-top: 10px;
+
+    > a.disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .fingerprint-options{
+    margin-bottom: 15px;
+  }
+
+  .fingerprint-options-buttons {
+    display: flex;
+    justify-content: space-around;
+
+    button { min-width: 120px; }
+  }
+}

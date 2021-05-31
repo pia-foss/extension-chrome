@@ -34,8 +34,7 @@ class Subscription extends Component {
       const now = new Date().getTime();
       const timeDiff = expirationTime - now;
       expirationDays = Math.round(timeDiff / oneDay);
-    }
-    else {
+    } else {
       this.user.updateAccount()
         .then((account) => {
           const accountPlan = account.plan;

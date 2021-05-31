@@ -23,7 +23,7 @@ class SettingSections extends Component {
     const { settings } = this.app.util;
     this.state = {
       sectionsData: createSectionsData({ t }),
-      settingsData: createSettingsData({ t, settings }),
+      settingsData: createSettingsData({ t, settings },this.app),
     };
 
     // bindings
@@ -99,7 +99,7 @@ class SettingSections extends Component {
     const { settings } = this.app.util;
     this.setState({
       sectionsData: createSectionsData({ t }),
-      settingsData: createSettingsData({ t, settings }),
+      settingsData: createSettingsData({ t, settings },this.app),
     });
   }
 
@@ -124,14 +124,14 @@ class SettingSections extends Component {
     );
   }
 
-  render() {
+  browserSettings(){
     const { settingsData } = this.state;
     const { onDebugClick, context: { theme } } = this.props;
-
-    return (
-      <Fragment>
+    
+    if(typeof browser == 'undefined'){
+      return (
         <SettingSection {...this.getSectionProps('extension')}>
-          <SettingItem onClick={this.app.util.settingsmanager.clearAndReapplySettings()} {...this.getSettingProps('allowExtensionNotifications')} />
+          <SettingItem {...this.getSettingProps('allowExtensionNotifications')} />
           <SettingItem {...this.getSettingProps('alwaysActive')} />
           <SettingItem {...this.getSettingProps('darkTheme')} />
           <SettingItem {...this.getSettingProps('debugmode')} />
@@ -140,6 +140,28 @@ class SettingSections extends Component {
           }
           { this.languageDropdownBuilder() }
         </SettingSection>
+      );
+    }else{
+      return (
+        <SettingSection {...this.getSectionProps('extension')}>
+          <SettingItem 
+          {...this.getSettingProps('alwaysActive')} />
+          <SettingItem {...this.getSettingProps('darkTheme')} />
+          <SettingItem {...this.getSettingProps('debugmode')} />
+          { getSetting('debugmode', settingsData).value
+            && <DebugSettingItem onClick={onDebugClick} theme={theme} />
+          }
+          { this.languageDropdownBuilder() }
+        </SettingSection>
+      );
+    }
+  }
+
+  render() {
+
+    return (
+      <Fragment>
+        { this.browserSettings() }
       </Fragment>
     );
   }

@@ -20,7 +20,7 @@ class ChangeRegionPage extends Component {
       search: '',
       mode: 'render',
       sortBy: this.storage.getItem('sortby') || 'latency',
-      showFavorites: !!this.storage.getItem('showFavorites'),
+      showFavorites: typeof browser == 'undefined' ? !!this.storage.getItem('showFavorites') : this.storage.getItem('showFavorites') === 'true',
     };
 
     // bindings
@@ -37,7 +37,9 @@ class ChangeRegionPage extends Component {
 
   syncRegions() {
     this.setState({ mode: 'loading' });
-    this.regionlist.sync();
+    this.regionlist.sync().then(() => {
+      this.setState({ mode: 'render', regions: this.regionlist.toArray() });
+    });
   }
 
   changeSortBy(event) {
@@ -48,7 +50,7 @@ class ChangeRegionPage extends Component {
   }
 
   toggleFavorites() {
-    const favorite = this.storage.getItem('showFavorites');
+    const favorite = typeof browser == 'undefined' ? this.storage.getItem('showFavorites') : this.storage.getItem('showFavorites') === 'true';
     this.storage.setItem('showFavorites', !favorite);
     this.setState({ showFavorites: !favorite });
   }

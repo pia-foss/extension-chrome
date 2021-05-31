@@ -22,8 +22,9 @@ class LanguageDropdown extends Component {
     const { context: { rebuildApp } } = this.props;
     const targetLocale = target.value;
 
+    
     this.i18n.changeLocale(targetLocale)
-      .then((locale) => {
+    .then((locale) => {
         const { updateLanguage } = this.props;
         this.storage.setItem('locale', locale);
         rebuildApp();

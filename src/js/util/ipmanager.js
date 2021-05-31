@@ -24,6 +24,7 @@ class IpManager {
     this.getRealIP = this.getRealIP.bind(this);
     this.getProxyIP = this.getProxyIP.bind(this);
     this.updateIpByRegion = this.updateIpByRegion.bind(this);
+    this.updateByCountry = this.updateByCountry.bind(this);
 
     // init
     this.app = app;
@@ -48,13 +49,25 @@ class IpManager {
 
   updateIpByRegion(tab){
     const location = this.app.util.regionlist.getRegionById(tab.customCountry);
-    if(location){
+    if(location && this.app.proxy.getEnabled()){
       this.proxyIP = location.ping;
     }else{
-      this.update();
+      if(typeof browser == 'undefined'){
+        const region = this.app.util.regionlist.getSelectedRegion();
+        this.updateByCountry(region);
+      }else{
+        this.update({ retry: true });
+      }
     }
   }
 
+  updateByCountry(country){
+    if(country){
+      this.proxyIP = country.ping;
+      this.app.util.icon.online(country);
+    }
+  }
+  
   /**
    * Update an IP
    *
@@ -75,7 +88,8 @@ class IpManager {
     let attempt = 0;
     const maxAttempts = retry ? 10 : 0;
     const attemptUpdate = async () => {
-      const url = 'https://www.privateinternetaccess.com/api/client/services/https/status';
+      const date = new Date().getTime();
+      const url = `https://www.privateinternetaccess.com/api/client/services/https/status?${date}`;
       const res = await http.get(url);
       const info = await res.json();
       const { ip } = info;
@@ -88,7 +102,9 @@ class IpManager {
         this.realIP = ip;
         this.proxyIP = null;
       }
-      this.app.courier.sendMessage('refresh');
+      if(typeof browser == 'undefined'){
+        this.app.courier.sendMessage('refresh');
+      }
     };
     while (attempt <= maxAttempts) {
       await timer((attempt ** 2) * 1000);

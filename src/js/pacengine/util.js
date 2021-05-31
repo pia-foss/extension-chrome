@@ -99,8 +99,7 @@ exports.generateInstallId = function() {
     }
     return chunks;
   };
-  
-  exports.isChrome = typeof browser === 'undefined'; // Lets hope they won't add support for `browser`
+
   
   // Praise stackoverflow.com! (and Java™)
   exports.hashCode = val => {

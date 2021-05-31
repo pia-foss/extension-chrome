@@ -5,7 +5,6 @@ import withAppContext from '@hoc/withAppContext';
 class DeleteLogButton extends Component {
   constructor(props) {
     super(props);
-
     // properties
     this.app = props.context.app;
     this.logger = this.app.logger;
@@ -17,6 +16,8 @@ class DeleteLogButton extends Component {
   onClick(event) {
     event.preventDefault();
     this.logger.removeEntries();
+    const { parentComponent } = this.props;
+    parentComponent.setState({ entries: [] });
   }
 
   render() {
@@ -30,6 +31,7 @@ class DeleteLogButton extends Component {
 
 DeleteLogButton.propTypes = {
   context: PropTypes.object.isRequired,
+  parentComponent: PropTypes.object.isRequired,
 };
 
 export default withAppContext(DeleteLogButton);

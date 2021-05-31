@@ -26,9 +26,11 @@ function isBound(bound) {
    checkVersion(null, 71)   // false
    checkVersion(null, null) // error
  */
-function checkBrowserVersion(start, end) {
+function checkBrowserVersion(start, end,app) {
+  const {sameApp} = app;
   // get version
-  const regex = /^.*Chrome\/(\d+)\..*$/;
+  const browser = sameApp.returnBrowser();
+  const regex = browser == 'firefox' ? /^.*Firefox\/(\d+)\..*$/ : /^.*Chrome\/(\d+)\..*$/;
   const [, versionStr] = navigator.userAgent.match(regex);
   const version = Number(versionStr);
 

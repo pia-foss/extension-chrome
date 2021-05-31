@@ -13,7 +13,9 @@ export default class Network {
   async updateNetworkStatus() {
     // update local status
     this.status = navigator.onLine;
-    this.app.courier.sendMessage('refresh');
+    if(typeof browser == 'undefined'){
+      this.app.courier.sendMessage('refresh');
+    }
 
     // check for region data
     const { regionlist } = this.app.util;
@@ -32,7 +34,9 @@ export default class Network {
     const { latencymanager } = this.app.util;
     if (pending) {
       await latencymanager.run();
-      this.app.courier.sendMesage('refresh');
+      if(typeof browser == 'undefined'){
+        this.app.courier.sendMessage('refresh');
+      }
     }
 
     return Promise.resolve();

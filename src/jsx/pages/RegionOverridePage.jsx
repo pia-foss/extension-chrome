@@ -29,7 +29,7 @@ class RegionOverridePage extends Component {
     };
   }
 
-  onAddClick() {
+  async onAddClick() {
     const { name, host, port } = this.state;
     const { util: { regionlist } } = this.app;
 
@@ -49,6 +49,9 @@ class RegionOverridePage extends Component {
     }
 
     this.refreshRegions();
+
+    // to update latency & ping gateways
+    await regionlist.sync();
   }
 
   onChange(ev) {

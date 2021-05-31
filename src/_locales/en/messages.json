@@ -2,6 +2,18 @@
   "JustInTimeDisclaimer":{
     "message": "Rate your experience with PIA"
   },
+  "encounterMessageFirefox_1":{
+    "message":"Thank you for your feedback! If you encounter any technical problems please "
+  },
+  "encounterMessageFirefox_2":{
+    "message":"contact the support department "
+  },
+  "feedbackMessageFirefox_1":{
+    "message":"Thank you for your feedback! We would appreciate it if rate us on "
+  },
+  "feedbackMessageFirefox_2":{
+    "message":"Firefox Browser Addons"
+  },
   "encounterMessage_1":{
     "message":"Thank you for your feedback! If you encounter any technical problems please "
   },

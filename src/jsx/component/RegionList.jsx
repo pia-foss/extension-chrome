@@ -94,6 +94,7 @@ class RegionList extends Component {
       context: { theme },
     } = this.props;
 
+
     // Loading screen when between actions
     if (mode === 'loading') {
       return (

@@ -314,8 +314,7 @@ if (build === Build.E2E) {
 if (build === Build.DEVELOPMENT || build === Build.E2E) {
   environments
     .set('FREEZE_APP', false);
-}
-else {
+} else {
   environments
     .set('FREEZE_APP', true);
 }
@@ -331,29 +330,56 @@ if (build === Build.DEVELOPMENT || build === Build.QA) {
 }
 
 // -------------------- Pack ---------------------- //
+// -------------------- Pack ---------------------- //
+if(getBrowser() == 'firefox'){
+  if (build === Build.BETA || build === Build.QA || build === Build.E2E) {
+    config
+      .plugin('pack')
+        .use(PackPlugin, [{
+          apiKey: env('FIREFOX_KEY'),
+          apiSecret: env('FIREFOX_SECRET'),
+        }])
+        .end()
+      .end();
+  }
+  else if (build === Build.PUBLIC) {
+    config
+      .plugin('pack')
+        .use(PackPlugin, [{
+          apiKey: env('FIREFOX_KEY'),
+          apiSecret: env('FIREFOX_SECRET'),
+          // Don't want to include [build] (default behaviour)
+          filename: 'private_internet_access-[browser]-v[version].[ext]',
+        }])
+        .end()
+      .end();
+  }
+}else{
+  if (build === Build.QA) {
+    config
+      .plugin('pack')
+        .use(PackPlugin, [{
+          useWebstoreKey: shouldRelease(),
+          webstoreKey: root('webstore.pem'),
+        }])
+        .end()
+      .end();
+    }
+  
+  else if (build === Build.PUBLIC) {
+    config
+      .plugin('pack')
+        .use(PackPlugin, [{
+          useWebstoreKey: shouldRelease(),
+          webstoreKey: root('webstore.pem'),
+          // Don't want to include [build] (default behaviour)
+          filename: 'private_internet_access-[browser]-v[version].[ext]',
+        }])
+        .end()
+      .end();
+  }
+}
 
-if (build === Build.QA) {
-  config
-    .plugin('pack')
-      .use(PackPlugin, [{
-        useWebstoreKey: shouldRelease(),
-        webstoreKey: root('webstore.pem'),
-      }])
-      .end()
-    .end();
-}
-else if (build === Build.PUBLIC) {
-  config
-    .plugin('pack')
-      .use(PackPlugin, [{
-        useWebstoreKey: shouldRelease(),
-        webstoreKey: root('webstore.pem'),
-        // Don't want to include [build] (default behaviour)
-        filename: 'private_internet_access-[browser]-v[version].[ext]',
-      }])
-      .end()
-    .end();
-}
 
 // -------------------- Beta ---------------------- //
 

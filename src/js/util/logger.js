@@ -34,7 +34,9 @@ export default class Logger {
       this.entries.push([new Date().toISOString(), Logger.stringify(message)]);
 
       // update any UIs with new debug messages
-      this.app.courier.sendMessage('refresh');
+      if(typeof browser == 'undefined'){
+        this.app.courier.sendMessage('refresh');
+      }
     }
 
     return message;
@@ -46,7 +48,9 @@ export default class Logger {
 
   removeEntries() {
     this.entries = [];
-    this.app.courier.sendMessage('refresh');
+    if(typeof browser == 'undefined'){
+      this.app.courier.sendMessage('refresh');
+    }
   }
 
   static stringify(message) {

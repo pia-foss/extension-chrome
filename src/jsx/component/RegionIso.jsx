@@ -33,8 +33,8 @@ class RegionIso extends Component {
   }
 
   getRegionVisibility() {
-    const visibleISOs = this.storage.getItem('visibleISOs') || {};
-    return visibleISOs;
+    const visibleISOs = this.storage.getItem('visibleISOs') || '{}';
+    return JSON.parse(visibleISOs);
   }
 
   toggleRegionVisibility() {
@@ -43,7 +43,7 @@ class RegionIso extends Component {
 
     // update storage
     visibleISOs[this.iso] = !showRegions;
-    this.storage.setItem('visibleISOs', visibleISOs);
+    this.storage.setItem('visibleISOs', JSON.stringify(visibleISOs));
 
     // update state
     this.setState({ showRegions: !showRegions });

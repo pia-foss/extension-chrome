@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Switch = (props) => {
+
   let { mode, connection } = props;
   const {
     theme,
@@ -17,7 +18,7 @@ const Switch = (props) => {
   if (connection === 'error' || !region) { handler = () => {}; }
 
   // Show switch in loading mode if pending on region latency
-  if (!region ) {
+  if (!region) {
     mode = 'connecting';
     connection = 'connected';
   }

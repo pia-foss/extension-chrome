@@ -19,7 +19,7 @@ class OnboardingPage extends Component {
     this.fingerprintProtectionSetting = "";
     this.fingerprintProtectionSettingId = "";
     this.i18n = this.app.util.i18n;
-
+    this.sameApp = this.app.sameApp;
 
     // Bindings
     this.enable = this.enable.bind(this);
@@ -97,14 +97,14 @@ class OnboardingPage extends Component {
     let { indexSlide, checkedArray } = this.state;
     checkedArray= [false,false,false];
     const lang = this.i18n.locale ? this.i18n.locale : 'en';
-
+    const browser = this.sameApp.returnBrowser();
     //store value true for where the index is
     checkedArray[indexSlide] = true;
 
     const theme = this.props.context.getTheme();
 
     return (
-      <div className={`onboarding-page ${theme} ${lang}`}>
+      <div className={`onboarding-page ${theme} ${lang} ${browser}`}>
         {/* Slides */}
         {this.checkSlides()}
         {/* Bullets and buttons (skip, next) */}

@@ -33,7 +33,11 @@ class Icon {
   }
 
   getCurrentState(url, parseUrl) {
-    const state = pacengine.getProxyStateByURL(url, parseUrl.host, this.app.proxy.rules);
+    const userRulesSmartLoc = this.app.util.smartlocation.getSmartLocationRules('smartLocationRules').map(loc =>{
+      return {cc:loc.proxy.id,domain:loc.userRules,country:loc}
+    })
+    const rules = typeof browser == 'undefined' ? this.app.proxy.rules : userRulesSmartLoc;
+    const state = pacengine.getProxyStateByURL(url, parseUrl.host, rules);
     // Add booleans indicating the state of a tab.
     const tabState = {
       isDefault: state === 'DEFAULT', // Only occurs if no rule did match
@@ -47,7 +51,6 @@ class Icon {
     if (tabState.isRuleActive && !tabState.isDirect) {
       tabState.customCountry = state;
     }
-
     return tabState;
   }
 
@@ -82,7 +85,6 @@ class Icon {
   }
 
   async online() {
-
     const regionSelected = this.app.util.regionlist.getSelectedRegion();  
     const imageData = {};
     const imagePromises = [];

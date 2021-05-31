@@ -5,7 +5,7 @@ const BypassItem = ({ rule, theme, onRemoveItem }) => {
   return (
     <div className={`bypass-rule ${theme}`}>
       <span className="name">
-        { rule.userInput }
+        { rule }
       </span>
 
       <span

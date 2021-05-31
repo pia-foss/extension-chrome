@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import StarIconEmpty from "@material-ui/icons/StarOutlined";
 import StarIconFilled from "@material-ui/icons/Star";
 import http from "@helpers/http";
-const SETTINGS_DISCLAIMER_KEY = 'app::justInTimeDismissed';
+const SETTINGS_DISCLAIMER_KEY = "app::justInTimeDismissed";
 
 class JustInTime extends Component {
   constructor(props) {
@@ -60,59 +60,100 @@ class JustInTime extends Component {
 
   changeMessage(index) {
     const { theme } = this.props;
-    const lang = this.i18n.locale ? this.i18n.locale : 'en';
+    const lang = this.i18n.locale ? this.i18n.locale : "en";
     if (index < 4) {
-      this.setState({
-        afterReview: (
-          <div className={`response-message ${theme} ${lang}`}>
-           {t("encounterMessage_1")}
-            <a
-              href="#"
-              onClick={() => {
-                this.openAccount(
-                  "https://www.privateinternetaccess.com/helpdesk/"
-                );
-              }}
-            >
-              {t("encounterMessage_2")}
-            </a>
-
-            .
-          </div>
-        ),
-      });
+      if (typeof browser == "undefined") {
+        this.setState({
+          afterReview: (
+            <div className={`response-message ${theme} ${lang}`}>
+              {t("encounterMessage_1")}
+              <a
+                href="#"
+                onClick={() => {
+                  this.openAccount(
+                    "https://www.privateinternetaccess.com/helpdesk/"
+                  );
+                }}
+              >
+                {t("encounterMessage_2")}
+              </a>
+              .
+            </div>
+          ),
+        });
+      } else {
+        this.setState({
+          afterReview: (
+            <div className={`response-message ${theme} ${lang}`}>
+              {t("encounterMessageFirefox_1")}
+              <a
+                href="#"
+                onClick={() => {
+                  this.openAccount(
+                    "https://www.privateinternetaccess.com/helpdesk/"
+                  );
+                }}
+              >
+                {t("encounterMessageFirefox_2")}
+              </a>
+              .
+            </div>
+          ),
+        });
+      }
     } else {
-      this.setState({
-        afterReview: (
-          <div className={`response-message ${theme} ${lang}`}>
-            {t("feedbackMessage_1")}
-            <a
-              href="#"
-              onClick={() => {
-                this.openAccount(
-                  "https://chrome.google.com/webstore/detail/private-internet-access/jplnlifepflhkbkgonidnobkakhmpnmh"
-                );
-              }}
-            >
-               {t("feedbackMessage_2")}
-            </a>
-
-            .
-          </div>
-        ),
-      });
+      if (typeof browser == "undefined") {
+        this.setState({
+          afterReview: (
+            <div className={`response-message ${theme} ${lang}`}>
+              {t("feedbackMessage_1")}
+              <a
+                href="#"
+                onClick={() => {
+                  this.openAccount(
+                    "https://chrome.google.com/webstore/detail/private-internet-access/jplnlifepflhkbkgonidnobkakhmpnmh"
+                  );
+                }}
+              >
+                {t("feedbackMessage_2")}
+              </a>
+              .
+            </div>
+          ),
+        });
+      } else {
+        this.setState({
+          afterReview: (
+            <div className={`response-message ${theme} ${lang}`}>
+              {t("feedbackMessageFirefox_1")}
+              <a
+                href="#"
+                onClick={() => {
+                  this.openAccount(
+                    "https://addons.mozilla.org/en-US/firefox/addon/private-internet-access-ext/"
+                  );
+                }}
+              >
+                {t("feedbackMessageFirefox_2")}
+              </a>
+              .
+            </div>
+          ),
+        });
+      }
     }
   }
 
   renderStars(index) {
     const { currentIndex } = this.state;
     const { theme } = this.props;
-    let startTheme = "#889099"
-    if(theme == "dark"){
-      startTheme = '#323642'
+    let startTheme = "#889099";
+    if (theme == "dark") {
+      startTheme = "#323642";
     }
     let stars = (
       <StarIconEmpty
+        key={index}
         className="stars"
         onMouseLeave={() => {
           this.setState({ currentIndex: null });
@@ -130,6 +171,7 @@ class JustInTime extends Component {
     if (currentIndex && currentIndex >= index) {
       stars = (
         <StarIconFilled
+         key={index}
           className="stars"
           onClick={() => {
             this.sendStars(index);
@@ -150,14 +192,18 @@ class JustInTime extends Component {
   render() {
     const { onDismiss, theme } = this.props;
     const { afterReview } = this.state;
-    const lang = this.i18n.locale ? this.i18n.locale : 'en';
+    const lang = this.i18n.locale ? this.i18n.locale : "en";
 
     return (
       <div>
         <div className={`just-in-time tile ${theme}`}>
-        {!afterReview ? ( <div  className={`just-in-time-contents ${lang}`}>
-            {t("JustInTimeDisclaimer")}
-        </div>  ): (<div></div> )}
+          {!afterReview ? (
+            <div className={`just-in-time-contents ${lang}`}>
+              {t("JustInTimeDisclaimer")}
+            </div>
+          ) : (
+            <div></div>
+          )}
           {!afterReview ? (
             <div className="just-in-time-start">
               {[1, 2, 3, 4, 5].map((v) => {
